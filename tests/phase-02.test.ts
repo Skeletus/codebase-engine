@@ -128,7 +128,7 @@ test("empty directory produces an honest empty snapshot and projection does not 
 
 test("desktop capability/config prevents broad renderer native access and cloud frontend startup", () => {
   const capability = JSON.parse(readFileSync("src-tauri/capabilities/main.json", "utf8"));
-  assert.deepEqual(capability.permissions, ["core:event:allow-listen", "core:event:allow-unlisten", "allow-select-repository", "allow-start-analysis", "allow-cancel-analysis", "allow-read-evidence", "allow-query-structure"]);
+  assert.deepEqual(capability.permissions, ["core:event:allow-listen", "core:event:allow-unlisten", "allow-select-repository", "allow-start-analysis", "allow-cancel-analysis", "allow-read-evidence", "allow-query-structure", "allow-list-repositories", "allow-open-repository", "allow-forget-repository", "allow-local-settings", "allow-reopen-analysis", "allow-investigate-snapshot", "allow-record-measurement", "allow-pilot-measurements"]);
   const config = JSON.parse(readFileSync("src-tauri/tauri.conf.json", "utf8"));
   assert(!config.build.devUrl, "desktop runs packaged static assets, not a Next server");
   assert.deepEqual(config.bundle.resources, { "resources/generated/engine/": "engine/" }, "packaged engine copies stay in an excluded generated directory");

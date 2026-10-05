@@ -3,13 +3,16 @@
 Run `pnpm engine <directory>` independently of the web application. Optional
 `--out <snapshot>` and `--read <snapshot>` exercise validated versioned snapshots.
 The application owns adapters; repositories cannot register or execute adapters.
-The engine has no network, provider, identity or persistence dependency.
+The deterministic parser/graph entry points have no network, provider, identity
+or persistence dependency. Phase 03 desktop orchestration uses the separate
+`lib/storage` interface and SQLite implementation; algorithms never issue SQL.
 
 Contracts retain file dependency evidence, first-occurrence locations, hashes,
 type-only status, framework declarations and complete coverage diagnostics.
 Dependency reachability is structural evidence, not execution flow. ASTs stay
 inside the TypeScript/JavaScript adapter. Evidence reads reject changed hashes
-and return unavailable when the repository is missing or inaccessible.
+and return stale for changed/deleted files or a missing root, and unavailable
+for policy-denied or unreadable evidence. A redirected root is never trusted.
 
 One reader governs traversal, resolution, configuration inheritance and evidence.
 It permits only the canonical selected root and rejects symlinks beneath it,
@@ -33,16 +36,16 @@ buffers and check file identity; this is static-analysis policy, not an OS sandb
 
 `pnpm test` covers contracts, parser parity, policies, graph queries, import
 boundaries and existing parser/map-counts/insights scripts. Required web checks
-remain `pnpm exec tsc --noEmit`, `pnpm lint`, `pnpm build`; the legacy web build
-still requires its existing Clerk/Supabase configuration.
+remain `pnpm exec tsc --noEmit`, `pnpm lint`, `pnpm build`; desktop and storage
+need no cloud configuration. See `docs/phase-03-desktop.md` for native checks.
 
-Visualization receives a replaceable operations interface. Only the legacy
-compatibility components bind Next actions to an existing analysis ID; local
-snapshots have a separate contract and never enter those actions. Supabase and
-GitHub remain legacy services. LangSmith is removed; legacy OpenAI explanations
-remain web-only and are not a local-engine capability.
+Visualization receives a replaceable operations interface and a validated
+canonical snapshot projection. GitHub ingestion and Supabase runtime services
+are retired; their historical migrations remain untouched. Optional external
+explanations remain disabled; provider-independent rendering is preserved.
 
 Manual acceptance remains the user's responsibility: inspect existing graph
 selection, folding, categories, routes and details; run local analysis with cloud
-adapters disabled, inspect coverage, and confirm the legacy UI cannot submit a
-local repository root. No desktop or later-phase features are introduced here.
+adapters disabled, inspect coverage, and confirm no GitHub/cloud submission
+path remains. The Phase 01 command remains standalone; desktop
+persistence acceptance is documented separately for Phase 03.

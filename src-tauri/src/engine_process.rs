@@ -26,18 +26,37 @@ fn node_entry(entry: &Path) -> Result<String, String> {
 }
 
 pub fn engine_command(command: Command, resources: &Path, root: &Path) -> Result<Command, String> {
-    let entry = resources.join("scripts/sidecar.ts");
+    entry_command(command, resources, "sidecar.ts", Some(root))
+}
+pub fn storage_command(
+    command: Command,
+    resources: &Path,
+    database: &Path,
+    root: Option<&Path>,
+) -> Result<Command, String> {
+    Ok(entry_command(command, resources, "storage.ts", root)?
+        .env("CODE_INTELLIGENCE_DB", database.as_os_str()))
+}
+fn entry_command(
+    command: Command,
+    resources: &Path,
+    script: &str,
+    root: Option<&Path>,
+) -> Result<Command, String> {
+    let entry = resources.join("scripts").join(script);
     if !entry.is_file() {
         return Err("Bundled engine is missing; run desktop:prepare".into());
     }
-    let command = command
+    let mut command = command
         .args([
             "--disable-warning=ExperimentalWarning",
             &node_entry(&entry)?,
         ])
         .env_clear()
-        .env("CODE_INTELLIGENCE_ROOT", root.as_os_str())
         .current_dir(resources);
+    if let Some(root) = root {
+        command = command.env("CODE_INTELLIGENCE_ROOT", root.as_os_str());
+    }
     // Rust really clears the Windows environment. Node's spawn() silently
     // restores OS variables, which hid this in the old Node-only smoke test.
     // OpenSSL's Windows CSPRNG needs SystemRoot; preserve that one OS path,
@@ -365,6 +384,97 @@ mod tests {
         std::fs::remove_file(scratch.join("b.ts")).unwrap();
         std::fs::remove_dir(&scratch).unwrap();
         assert!(passed, "{diagnostic}");
+    }
+
+    #[test]
+    fn shell_plugin_launches_sqlite_with_private_extended_paths_and_no_cloud_environment() {
+        use tauri_plugin_shell::{process::CommandEvent, ShellExt};
+        let app = tauri::test::mock_builder()
+            .plugin(tauri_plugin_shell::init())
+            .build(tauri::test::mock_context(tauri::test::noop_assets()))
+            .unwrap();
+        let manifest = std::path::PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+        let scratch = manifest
+            .join("target")
+            .join(format!("phase-03 sqlite spaces-{}", std::process::id()));
+        std::fs::create_dir(&scratch).unwrap();
+        let root = scratch.canonicalize().unwrap();
+        let database = root.join("intelligence.sqlite");
+        let resources = manifest.join("target/debug/engine").canonicalize().unwrap();
+        let inspection: std::process::Command = storage_command(
+            app.shell().sidecar("code-engine").unwrap(),
+            &resources,
+            &database,
+            Some(&root),
+        )
+        .unwrap()
+        .into();
+        let mut names: Vec<_> = inspection
+            .get_envs()
+            .filter(|(_, value)| value.is_some())
+            .map(|(name, _)| name.to_string_lossy().to_uppercase())
+            .collect();
+        names.sort();
+        #[cfg(windows)]
+        assert_eq!(
+            names,
+            [
+                "CODE_INTELLIGENCE_DB",
+                "CODE_INTELLIGENCE_ROOT",
+                "SYSTEMROOT"
+            ]
+        );
+        #[cfg(not(windows))]
+        assert_eq!(names, ["CODE_INTELLIGENCE_DB", "CODE_INTELLIGENCE_ROOT"]);
+        for request in [
+            serde_json::json!({"version":1,"type":"register"}),
+            serde_json::json!({"version":1,"type":"theme","theme":"dark"}),
+            serde_json::json!({"version":1,"type":"settings","initialTheme":"light"}),
+        ] {
+            let (mut events, mut child) = storage_command(
+                app.shell().sidecar("code-engine").unwrap(),
+                &resources,
+                &database,
+                Some(&root),
+            )
+            .unwrap()
+            .spawn()
+            .unwrap();
+            child.write(format!("{request}\n").as_bytes()).unwrap();
+            let output = tauri::async_runtime::block_on(async {
+                let mut reply = None;
+                let mut diagnostics = EngineDiagnostics::default();
+                while let Some(event) = events.recv().await {
+                    match event {
+                        CommandEvent::Stdout(bytes) => {
+                            reply =
+                                Some(serde_json::from_slice::<serde_json::Value>(&bytes).unwrap());
+                        }
+                        CommandEvent::Stderr(bytes) => diagnostics.capture(&bytes),
+                        CommandEvent::Terminated(status) => {
+                            assert_eq!(
+                                status.code,
+                                Some(0),
+                                "{}",
+                                diagnostics.exited(status.code, status.signal)
+                            );
+                            return reply.unwrap();
+                        }
+                        CommandEvent::Error(error) => {
+                            panic!("{}", diagnostics.transport_error(&error))
+                        }
+                        _ => {}
+                    }
+                }
+                panic!("Storage event stream closed");
+            });
+            assert_eq!(output["ok"], true, "{output}");
+            if request["type"] == "settings" {
+                assert_eq!(output["result"]["theme"], "dark");
+            }
+        }
+        std::fs::remove_file(database).unwrap();
+        std::fs::remove_dir(scratch).unwrap();
     }
 
     #[test]

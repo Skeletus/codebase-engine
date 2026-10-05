@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-investigate-snapshot"
+description = "Enables the investigate_snapshot command without any pre-configured scope."
+commands.allow = ["investigate_snapshot"]
+
+[[permission]]
+identifier = "deny-investigate-snapshot"
+description = "Denies the investigate_snapshot command without any pre-configured scope."
+commands.deny = ["investigate_snapshot"]

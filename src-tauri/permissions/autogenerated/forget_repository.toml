@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-forget-repository"
+description = "Enables the forget_repository command without any pre-configured scope."
+commands.allow = ["forget_repository"]
+
+[[permission]]
+identifier = "deny-forget-repository"
+description = "Denies the forget_repository command without any pre-configured scope."
+commands.deny = ["forget_repository"]

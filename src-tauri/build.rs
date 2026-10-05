@@ -5,6 +5,14 @@ fn main() {
         "cancel_analysis",
         "read_evidence",
         "query_structure",
+        "investigate_snapshot",
+        "record_measurement",
+        "pilot_measurements",
+        "list_repositories",
+        "open_repository",
+        "forget_repository",
+        "local_settings",
+        "reopen_analysis",
     ]);
     tauri_build::try_build(tauri_build::Attributes::new().app_manifest(manifest))
         .expect("Desktop build configuration failed");

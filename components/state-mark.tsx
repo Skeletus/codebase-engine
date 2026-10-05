@@ -1,10 +1,10 @@
-import type { Status } from "@/lib/pipeline/stages";
+import type { JobState } from "@/lib/storage/types";
 
 // State is carried by shape, not hue: green, amber and blue already mean
 // direction and interaction elsewhere, so status stays greyscale. The ring
 // fills as an analysis progresses; failure crosses it out; a stale run's ring
 // is broken, because nothing is holding it any more.
-export function StateMark({ status, stale = false }: { status: Status; stale?: boolean }) {
+export function StateMark({ status, stale = false }: { status: JobState; stale?: boolean }) {
   return (
     <svg viewBox="0 0 10 10" className="size-2.5 shrink-0" aria-hidden="true">
       {status === "complete" ? (

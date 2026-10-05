@@ -10,7 +10,7 @@ import { adjacency, DEFAULT_DEPTH, reach, type Adjacency, type Direction } from 
 import { groupFan, groupId } from "@/lib/graph/view";
 import type { Edge, ParsedFile, Project } from "@/lib/parser/types";
 import { railLabel, UNCLASSIFIED, type ModelRole } from "@/lib/roles";
-import { ExplanationPanel, targetKey, type ExplainTarget, type ExplanationState, type Freshness } from "./explanation-panel";
+import { ExplanationPanel, targetKey, type ExplainTarget, type ExplanationState } from "./explanation-panel";
 import { CategorySwatch } from "./map/swatch";
 
 export type Tab = "structure" | "explanation";
@@ -43,12 +43,8 @@ type Props = {
   onReveal: (path: string) => void;
   onHover: (hover: Selection) => void;
   modelRoles: ReadonlyMap<string, ModelRole>;
-  analysisId: string;
-  commitSha: string;
   explanations: ReadonlyMap<string, ExplanationState>;
-  freshness: ReadonlyMap<string, Freshness>;
   onExplain: (target: ExplainTarget) => void;
-  onRerun: () => Promise<{ error: string | null }>;
   evidence?: (path: string) => ReactNode;
 };
 
@@ -74,12 +70,8 @@ export function DetailPane(props: Props) {
     props.evidence ? (target.kind === "file" ? props.evidence(target.path) : <p className="p-3 text-xs text-fg-muted">Select a file to inspect local source evidence.</p>) :
     <ExplanationPanel
       target={target}
-      analysisId={props.analysisId}
-      commitSha={props.commitSha}
       state={props.explanations.get(targetKey(target))}
-      freshness={props.freshness.get(targetKey(target))}
       onExplain={props.onExplain}
-      onRerun={props.onRerun}
       isPath={(p) => byPath.has(p)}
       renderPath={(p) => <InlinePath path={p} paths={paths} />}
     />

@@ -1,11 +1,9 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import type { ReactNode } from "react";
 import type { ExplainResult } from "@/lib/analysis/operations";
 import { railLabel } from "@/lib/roles";
 import { ExplanationText } from "./explanation-text";
-import { RerunButton } from "./progress/rerun-button";
 
 export type ExplainTarget = { kind: "file"; path: string } | { kind: "group"; dir: string };
 
@@ -18,22 +16,10 @@ export type ExplanationState =
   | { status: "error"; error: string }
   | { status: "done"; result: Extract<ExplainResult, { ok: true }> };
 
-/** Whether what was explained is still what the repository holds. */
-export type Freshness =
-  | { status: "checking" }
-  | { status: "current" }
-  /** The repository has moved past the analysed commit. For a file, what became of it; a folder has no single hash to compare. */
-  | { status: "moved"; head: string; file: "unchanged" | "changed" | "deleted" | null }
-  | { status: "unknown"; error: string };
-
 export function ExplanationPanel(props: {
   target: ExplainTarget;
-  analysisId: string;
-  commitSha: string;
   state: ExplanationState | undefined;
-  freshness: Freshness | undefined;
   onExplain: (target: ExplainTarget) => void;
-  onRerun: () => Promise<{ error: string | null }>;
   isPath: (path: string) => boolean;
   renderPath: (path: string) => ReactNode;
 }) {
@@ -70,7 +56,6 @@ export function ExplanationPanel(props: {
   const { result } = state;
   return (
     <div className="px-3 py-3">
-      <FreshnessNote freshness={props.freshness} target={target} rerun={props.onRerun} commitSha={props.commitSha} />
       <ExplanationText text={result.body} isPath={props.isPath} onPath={props.renderPath} />
       <div className="mt-3 space-y-0.5 border-t border-line pt-2 text-[10px] text-fg-muted">
         {result.labelled && (
@@ -84,34 +69,6 @@ export function ExplanationPanel(props: {
         <p>
           <span className="font-mono">{result.model}</span> · {result.cached ? "from cache, no model call" : "new answer"}
         </p>
-      </div>
-    </div>
-  );
-}
-
-function FreshnessNote(props: { freshness: Freshness | undefined; target: ExplainTarget; rerun: () => Promise<{ error: string | null }>; commitSha: string }) {
-  const router = useRouter();
-  const f = props.freshness;
-  if (!f || f.status === "current") return null;
-  const analysed = <span className="font-mono">{props.commitSha.slice(0, 7)}</span>;
-  if (f.status === "checking") {
-    return <p className="mb-2 text-[10px] text-fg-muted">Checking the repository for newer commits…</p>;
-  }
-  if (f.status === "unknown") {
-    return <p className="mb-2 text-[10px] text-fg-muted">Couldn&apos;t check whether this is still current: {f.error}</p>;
-  }
-  const head = <span className="font-mono">{f.head.slice(0, 7)}</span>;
-  let sentence: ReactNode;
-  if (f.file === "changed") sentence = <>This file has changed since {analysed} was analysed, so this explanation is stale. The repository is at {head}.</>;
-  else if (f.file === "deleted") sentence = <>This file no longer exists at {head}, the repository&apos;s latest commit. {analysed} was analysed.</>;
-  else if (f.file === "unchanged")
-    sentence = <>The repository has moved past {analysed} to {head}. This file is unchanged, but its neighbours may not be.</>;
-  else sentence = <>The repository has moved past {analysed} to {head}, so this explanation may be stale.</>;
-  return (
-    <div className="mb-3 rounded-[3px] border border-line bg-raised px-2 py-1.5 text-[11px]">
-      <p>{sentence}</p>
-      <div className="mt-1.5">
-        <RerunButton rerun={props.rerun} label="Re-analyse" onStarted={() => router.refresh()} />
       </div>
     </div>
   );

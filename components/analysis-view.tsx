@@ -1,7 +1,7 @@
 "use client";
 
-import { useCallback, useMemo, useRef, useState, type ReactNode } from "react";
-import type { AnalysisOperations, HeadResult } from "@/lib/analysis/operations";
+import { useCallback, useMemo, useState, type ReactNode } from "react";
+import type { AnalysisOperations } from "@/lib/analysis/operations";
 import { foldDirectories } from "@/lib/graph/fold";
 import type { Selection } from "@/lib/graph/highlight";
 import type { Direction } from "@/lib/graph/reach";
@@ -10,7 +10,7 @@ import type { Coverage, Edge, ParsedFile, Route } from "@/lib/parser/types";
 import type { ModelRole } from "@/lib/roles";
 import { CategoryRail } from "./category-rail";
 import { DetailPane, type RepositoryFacts, type Tab } from "./detail-pane";
-import { targetKey, type ExplainTarget, type ExplanationState, type Freshness } from "./explanation-panel";
+import { targetKey, type ExplainTarget, type ExplanationState } from "./explanation-panel";
 import { DependencyMap } from "./map/dependency-map";
 import { RouteTable } from "./route-table";
 import { Shell } from "./shell";
@@ -26,11 +26,10 @@ export function AnalysisView({
   routes,
   routeCoverage,
   modelRoles: storedModelRoles,
-  analysisId,
-  commitSha,
   repository,
   operations,
   evidence,
+  investigations,
 }: {
   files: ParsedFile[];
   edges: Edge[];
@@ -38,11 +37,10 @@ export function AnalysisView({
   routeCoverage: Coverage["routes"];
   /** Roles the model gave files no convention identified, by path. */
   modelRoles: Record<string, ModelRole>;
-  analysisId: string;
-  commitSha: string;
   repository: Omit<RepositoryFacts, "routes">;
   operations: AnalysisOperations;
   evidence?: (path: string) => ReactNode;
+  investigations?: (onReveal: (path: string) => void, selectedFile: string | null) => ReactNode;
 }) {
   const folding = useMemo(() => foldDirectories(files), [files]);
   const byPath = useMemo(() => new Map(files.map((f) => [f.path, f])), [files]);
@@ -58,21 +56,16 @@ export function AnalysisView({
   const [category, setCategory] = useState<string | null>(null);
   // The centre column shows the map or the route table; the rail and the pane
   // keep working on either.
-  const [centre, setCentre] = useState<"map" | "routes">("map");
+  const [centre, setCentre] = useState<"map" | "routes" | "investigations">("map");
   // Explanations fetched on this page, by file or folder, so moving the
   // selection away and back finds the answer still there without asking again.
   const [explanations, setExplanations] = useState<ReadonlyMap<string, ExplanationState>>(() => new Map());
-  const [freshness, setFreshness] = useState<ReadonlyMap<string, Freshness>>(() => new Map());
   const [modelRoles, setModelRoles] = useState<ReadonlyMap<string, ModelRole>>(() => new Map(Object.entries(storedModelRoles)));
-  // The repository's latest commit, asked for once per page load: GitHub's
-  // unauthenticated API allows few requests, and one answer serves every file.
-  const head = useRef<Promise<HeadResult> | null>(null);
 
   const explain = useCallback(
     (target: ExplainTarget) => {
       const key = targetKey(target);
       setExplanations((prev) => new Map(prev).set(key, { status: "loading" }));
-      setFreshness((prev) => new Map(prev).set(key, { status: "checking" }));
 
       void (async () => {
         const result = await (target.kind === "file" ? operations.explainFile(target.path) : operations.explainFolder(target.dir));
@@ -83,21 +76,6 @@ export function AnalysisView({
         }
       })();
 
-      // Alongside the explanation, not in front of it: a cached answer shows
-      // at once, and whether it's current arrives when GitHub answers.
-      void (async () => {
-        const latest = await (head.current ??= operations.repositoryHead());
-        if (!latest.ok) head.current = null;
-        let state: Freshness;
-        if (!latest.ok) state = { status: "unknown", error: latest.error };
-        else if (latest.head === latest.analysed) state = { status: "current" };
-        else if (target.kind === "group") state = { status: "moved", head: latest.head, file: null };
-        else {
-          const file = await operations.fileAtHead(target.path, latest.head);
-          state = file.ok ? { status: "moved", head: latest.head, file: file.state } : { status: "unknown", error: file.error };
-        }
-        setFreshness((prev) => new Map(prev).set(key, state));
-      })();
     },
     [operations],
   );
@@ -177,8 +155,12 @@ export function AnalysisView({
           <div role="tablist" className="flex h-7 shrink-0 items-end gap-3 border-b border-line bg-surface px-3 text-[11px]">
             <CentreTab label="Map" on={centre === "map"} onClick={() => setCentre("map")} />
             <CentreTab label="Routes" count={routes.length} on={centre === "routes"} onClick={() => setCentre("routes")} />
+            {investigations && <CentreTab label="Investigations / Ask" on={centre === "investigations"} onClick={() => setCentre("investigations")} />}
           </div>
           <div className="relative min-h-0 flex-1">
+            {investigations && <div className={`absolute inset-0 ${centre === "investigations" ? "" : "invisible"}`}>
+              {investigations((file) => { reveal(file); setCentre("map"); setTab("structure"); }, selection?.kind === "file" ? selection.path : null)}
+            </div>}
             {/* The map stays mounted under the table, so switching back keeps its viewport. */}
             <div className={`absolute inset-0 ${centre === "map" ? "" : "invisible"}`}>
               <DependencyMap
@@ -230,12 +212,8 @@ export function AnalysisView({
           onReveal={reveal}
           onHover={setHover}
           modelRoles={modelRoles}
-          analysisId={analysisId}
-          commitSha={commitSha}
           explanations={explanations}
-          freshness={freshness}
           onExplain={explain}
-          onRerun={operations.rerun}
           evidence={evidence}
         />
       }

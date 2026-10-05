@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-pilot-measurements"
+description = "Enables the pilot_measurements command without any pre-configured scope."
+commands.allow = ["pilot_measurements"]
+
+[[permission]]
+identifier = "deny-pilot-measurements"
+description = "Denies the pilot_measurements command without any pre-configured scope."
+commands.deny = ["pilot_measurements"]

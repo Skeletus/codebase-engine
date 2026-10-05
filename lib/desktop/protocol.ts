@@ -1,5 +1,6 @@
 import { validateSnapshot } from "../engine/contract.ts";
 import type { CodeSnapshot, StructuralQuery, StructuralResult } from "../engine/types.ts";
+import { validateInvestigation, validateInvestigationResult, type Investigation, type InvestigationResult } from "../engine/investigations.ts";
 
 export const PROTOCOL_VERSION = 1;
 export const MAX_REQUEST_BYTES = 16 * 1024;
@@ -7,13 +8,14 @@ export const MAX_EVENT_BYTES = 32 * 1024 * 1024;
 export type EvidenceResult = { state: "current"; source: string } | { state: "stale" | "unavailable" };
 type Identity = { version: 1; requestId: string; jobId: string };
 export type EngineRequest = Identity & (
-  { type: "analyze"; root: string } | { type: "evidence"; file: string } | { type: "query"; query: StructuralQuery }
+  { type: "analyze"; root: string } | { type: "reopen" } | { type: "evidence"; file: string } | { type: "query"; query: StructuralQuery } | { type: "investigation"; query: Investigation }
 );
 export type EngineEvent = Identity & (
   { type: "progress"; stage: "select" | "parse" | "validate" } |
   { type: "complete"; snapshot: CodeSnapshot } |
   { type: "evidence"; evidence: EvidenceResult } |
   { type: "query"; result: StructuralResult } |
+  { type: "investigation"; result: InvestigationResult } |
   { type: "error"; code: string; message: string }
 );
 export function record(value: unknown): Record<string, unknown> {
@@ -38,6 +40,8 @@ function exact(r: Record<string, unknown>, keys: string[]) {
 export function validateRequest(value: unknown): EngineRequest {
   const r = record(value), base = identity(r);
   if (r.type === "analyze") { exact(r, ["root"]); return { ...base, type: r.type, root: text(r.root, 4096) }; }
+  if (r.type === "reopen") { exact(r, []); return { ...base, type: r.type }; }
+  if (r.type === "investigation") { exact(r, ["query"]); return { ...base, type: r.type, query: validateInvestigation(r.query) }; }
   if (r.type === "evidence") { exact(r, ["file"]); return { ...base, type: r.type, file: text(r.file, 4096) }; }
   if (r.type === "query") {
     exact(r, ["query"]);
@@ -56,6 +60,7 @@ export function validateEvent(value: unknown): EngineEvent {
     return { ...base, type: r.type, stage: r.stage };
   }
   if (r.type === "complete") { exact(r, ["snapshot"]); return { ...base, type: r.type, snapshot: validateSnapshot(r.snapshot) }; }
+  if (r.type === "investigation") { exact(r, ["result"]); return { ...base, type: r.type, result: validateInvestigationResult(r.result) }; }
   if (r.type === "error") { exact(r, ["code", "message"]); return { ...base, type: r.type, code: text(r.code, 80), message: text(r.message, 1024) }; }
   if (r.type === "evidence") {
     exact(r, ["evidence"]); const e = record(r.evidence);

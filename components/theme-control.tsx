@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useSyncExternalStore } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { invoke, isTauri } from "@tauri-apps/api/core";
 import { parseTheme, THEME_STORAGE, THEMES, type Theme } from "@/lib/theme";
 
 function applyTheme(theme: Theme) {
@@ -20,12 +21,26 @@ function savedTheme(): Theme {
 
 export function ThemeControl({ initial }: { initial: Theme }) {
   const theme = useSyncExternalStore(subscribe, savedTheme, () => initial);
+  const [pending, setPending] = useState(false), [error, setError] = useState("");
+  const choice = useRef(0);
+  useEffect(() => {
+    if (!isTauri()) return;
+    let disposed = false;
+    const initialChoice = choice.current;
+    void invoke<{ theme: Theme }>("local_settings", { initialTheme: savedTheme() }).then((saved) => { if (!disposed && choice.current === initialChoice) applyTheme(parseTheme(saved.theme)); }).catch(() => { if (!disposed && choice.current === initialChoice) setError("Stored theme unavailable"); });
+    return () => { disposed = true; };
+  }, []);
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
   }, [theme]);
 
-  function choose(next: Theme) {
-    applyTheme(next);
+  async function choose(next: Theme) {
+    if (!isTauri()) { applyTheme(next); return; }
+    choice.current++;
+    setPending(true); setError("");
+    try { await invoke("local_settings", { theme: next }); applyTheme(next); }
+    catch { setError("Theme could not be saved"); }
+    finally { setPending(false); }
   }
 
   return (
@@ -40,7 +55,8 @@ export function ThemeControl({ initial }: { initial: Theme }) {
           type="button"
           role="radio"
           aria-checked={theme === t}
-          onClick={() => choose(t)}
+          disabled={pending}
+          onClick={() => void choose(t)}
           className={`h-full px-2 first:rounded-l last:rounded-r ${
             theme === t ? "bg-raised text-fg" : "text-fg-muted hover:text-fg"
           }`}
@@ -48,6 +64,7 @@ export function ThemeControl({ initial }: { initial: Theme }) {
           {t}
         </button>
       ))}
+      {error && <span role="alert" className="ml-2">{error}</span>}
     </div>
   );
 }

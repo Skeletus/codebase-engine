@@ -8,6 +8,15 @@ Read `../../CLAUDE.md`, `../project-doc.md`, and the active phase before impleme
 
 ## Architectural audit
 
+The audit below describes the Original Cartograph Baseline, not the current
+implementation. The user has accepted Phases 01–03. See
+[Phase 03 desktop verification and manual acceptance](../phase-03-desktop.md)
+for durable local analysis; its manual acceptance is separate from automated
+verification. Historical migrations remain evidence, not active cloud setup.
+Phase 04 delivery/verification and its outstanding installed-platform and pilot
+gates are tracked in [the pilot guide](../phase-04-pilot.md). No pilot-ready
+qualification is implied until every Phase 04 completion criterion passes.
+
 The repository is one pnpm application, not a developed package monorepo. Nested package.json files mainly establish ESM for standalone TypeScript scripts. Next.js 16 App Router, React 19, strict TypeScript, Tailwind v4, React Flow, and dagre provide the UI. No Tauri or SQLite implementation exists.
 
 The parser already accepts arbitrary local directories through `parseRepository(directory)`. Selection and parsing are separate stages. It uses ts-morph for syntax, TypeScript module resolution for imports, and a versioned runtime-validated output contract (currently v4). It extracts ESM/CommonJS imports and exports, file hashes, roles, routes, and detailed skip/unresolved coverage. Framework adapters are TS/JS AST consumers, not language adapters. Next.js and NestJS route declarations are supported conservatively; Express route extraction is withheld. There are no resolved symbol calls, request-to-route edges, or general execution flows.

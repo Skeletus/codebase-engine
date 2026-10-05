@@ -1,5 +1,6 @@
 import { createHash } from "node:crypto";
 import path from "node:path";
+import { lstatSync, realpathSync } from "node:fs";
 import { adjacency, reach } from "../graph/reach.ts";
 import { RepositoryReader } from "../repository/read-policy.ts";
 import { validateSnapshot } from "./contract.ts";
@@ -23,10 +24,17 @@ export function readEvidence(snapshot: CodeSnapshot, fileId: string): { state: "
   const file = checked.files.find((f) => f.id === fileId);
   if (!file) throw new Error("Unknown snapshot file");
   try {
+    if (path.toNamespacedPath(realpathSync.native(checked.origin.root)) !== path.toNamespacedPath(checked.origin.root)) return { state: "unavailable" };
     const reader = new RepositoryReader(checked.origin.root);
     for (const d of checked.diagnostics) if (d.category === "excluded-directory") reader.exclude(d.path);
     const bytes = reader.read(path.resolve(reader.root, file.path), "source");
     if (createHash("sha256").update(bytes).digest("hex") !== file.hash) return { state: "stale" };
     return { state: "current", source: bytes.toString("utf8") };
-  } catch { return { state: "unavailable" }; }
+  } catch {
+    // A deleted file/root is stale evidence, not proof that the relationship
+    // disappeared. Do not read contents outside the repository policy.
+    try { lstatSync(path.resolve(checked.origin.root, file.path)); }
+    catch (error) { if ((error as NodeJS.ErrnoException).code === "ENOENT" || (error as NodeJS.ErrnoException).code === "ENOTDIR") return { state: "stale" }; }
+    return { state: "unavailable" };
+  }
 }

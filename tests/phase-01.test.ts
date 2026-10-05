@@ -12,7 +12,6 @@ import { serializeParseResult, deserializeParseResult } from "../lib/parser/cont
 import { RepositoryReader, READ_LIMITS } from "../lib/repository/read-policy.ts";
 import { walkRepository } from "../lib/parser/walk.ts";
 import { findCycles } from "../lib/graph/insights.ts";
-import { parseRepositoryUrl } from "../lib/pipeline/github.ts";
 
 function fixture(contents: Record<string, string>, run: (root: string) => void) {
   const root = realpathSync(mkdtempSync(path.join(tmpdir(), "cartograph-phase01-")));
@@ -210,11 +209,18 @@ test("local analysis never requests network or executes repository configuration
   });
 });
 
-test("legacy GitHub ingestion rejects local root inputs", () => {
-  for (const root of ["C:\\Projects\\private", "/tmp/private", "file:///tmp/private", "../repo"]) {
-    assert.throws(() => parseRepositoryUrl(root));
+test("retired GitHub ingestion and cloud adapters cannot accept local repository roots", () => {
+  for (const file of ["lib/pipeline/github.ts", "lib/pipeline/submit.ts", "lib/pipeline/run.ts", "lib/supabase/admin.ts", "lib/supabase/browser.ts", "lib/supabase/server.ts", "scripts/analyze.ts"]) {
+    assert.throws(() => readFileSync(file), { code: "ENOENT" });
   }
-  assert.deepEqual(parseRepositoryUrl("https://github.com/owner/name"), { owner: "owner", name: "name" });
+  const pkg = JSON.parse(readFileSync("package.json", "utf8"));
+  assert(!pkg.dependencies["@supabase/supabase-js"]);
+  assert(!pkg.dependencies.tar);
+  assert(!pkg.scripts.analyze);
+  assert.doesNotMatch(readFileSync(".env.example", "utf8"), /SUPABASE|CLERK|OPENAI_API_KEY|AGENT_URL/);
+  for (const file of ["components/analysis-view.tsx", "components/explanation-panel.tsx", "lib/analysis/operations.ts"]) {
+    assert.doesNotMatch(readFileSync(file, "utf8"), /repositoryHead|fileAtHead|commitSha|GitHub|supabase/);
+  }
 });
 
 test("protected import graph and visualization cannot reach cloud/server capabilities", () => {
