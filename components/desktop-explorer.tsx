@@ -6,15 +6,25 @@ import { listen } from "@tauri-apps/api/event";
 import { belongsToJob, validateEvent, type EvidenceResult } from "@/lib/desktop/protocol";
 import { projectSnapshot } from "@/lib/desktop/projection";
 import type { CodeSnapshot } from "@/lib/engine/types";
-import type { AnalysisOperations } from "@/lib/analysis/operations";
+import type { AnalysisOperations, ExplainResult } from "@/lib/analysis/operations";
+import type { ExplanationSelection } from "@/lib/ai/selection";
 import type { StoredRepository } from "@/lib/storage/types";
 import { AnalysisView } from "./analysis-view";
 import { ThemeControl } from "./theme-control";
 import { Investigations } from "./investigations";
 import { PilotMeasurements } from "./pilot-measurements";
+import { ExternalAi } from "./external-ai";
 
 type Repository = StoredRepository;
 export function DesktopExplorer() {
+  const [aiProvider, setAiProvider] = useState("");
+  const [explanation, setExplanation] = useState<ExplanationSelection | null>(null);
+  const explanationReply = useRef<((result: ExplainResult) => void) | null>(null);
+  function finishExplanation(result: ExplainResult) { explanationReply.current?.(result); explanationReply.current = null; setExplanation(null); }
+  function explain(selection: ExplanationSelection): Promise<ExplainResult> {
+    if (explanationReply.current) return Promise.resolve({ ok: false, error: "Finish the active explanation first" });
+    return new Promise((resolve) => { explanationReply.current = resolve; setExplanation(selection); });
+  }
   const [ready, setReady] = useState(false), [repository, setRepository] = useState<Repository | null>(null);
   const [snapshot, setSnapshot] = useState<CodeSnapshot | null>(null), [message, setMessage] = useState("Initializing native events and local storage…");
   const [displayJob, setDisplayJob] = useState("");
@@ -103,8 +113,9 @@ export function DesktopExplorer() {
   }
   const projection = useMemo(() => snapshot ? projectSnapshot(snapshot) : null, [snapshot]);
   const operations: AnalysisOperations = {
-    explainFile: async () => ({ ok: false, error: "External explanations are not enabled in this phase" }),
-    explainFolder: async () => ({ ok: false, error: "External explanations are not enabled in this phase" }),
+    explainFile: (path) => explain({ kind: "file", path }),
+    explainFolder: (path) => explain({ kind: "folder", path: path === "." ? "" : path }),
+    explainInvestigation: (query) => explain({ kind: "investigation", query }),
   };
   return <>
     <header className="flex h-10 shrink-0 items-center gap-3 border-b border-line px-3 text-xs">
@@ -115,6 +126,7 @@ export function DesktopExplorer() {
       {busy && <button className="rounded border border-line px-2 py-1" onClick={() => void invoke("cancel_analysis", { jobId: job.current }).catch((error) => setMessage(String(error)))}>Cancel</button>}
       <span className="min-w-0 flex-1 truncate font-mono text-fg-muted" title={repository?.root}>{repository?.root}</span>
       <ThemeControl initial="system" />
+      <ExternalAi key={`${displayJob}:${explanation ? "approval" : "settings"}`} provider={aiProvider} onProviderChange={setAiProvider} jobId={displayJob} pending={explanation} onResult={finishExplanation} />
       <button className="text-accent" onClick={() => setMeasurementsOpen(!measurementsOpen)} aria-expanded={measurementsOpen}>Pilot measurements</button>
     </header>
     {repository && <p className="shrink-0 border-b border-line px-3 py-1 text-[11px] text-fg-muted">{repository.updatedAt ? `Stored snapshot: ${repository.updatedAt}` : "No completed snapshot"}{repository.lastJob ? ` · Last refresh: ${repository.lastJob.state}` : ""}{!repository.available ? " · Root missing, moved or inaccessible. Historical graph only; restore the directory at its registered path or open its new location." : " · Source is checked against the snapshot before display."}</p>}
@@ -130,7 +142,7 @@ export function DesktopExplorer() {
     {snapshot && projection && <AnalysisView key={displayJob} {...projection} modelRoles={{}}
       repository={{ name: repository?.root.split(/[\\/]/).filter(Boolean).at(-1) ?? "Repository", projects: snapshot.projects.map((p) => ({ path: p.path, adapter: p.extractor })), skipped: snapshot.coverage.files.skipped, unresolved: snapshot.coverage.relationships.unresolved }}
       operations={operations} evidence={(file) => <SourceEvidence key={`${displayJob}:${file}`} file={file} jobId={displayJob} snapshot={snapshot} busy={busy} />}
-      investigations={(onReveal, selectedFile) => <Investigations snapshot={snapshot} jobId={displayJob} busy={busy} selectedFile={selectedFile} onReveal={onReveal} />} />}
+      investigations={(onReveal, selectedFile) => <Investigations snapshot={snapshot} jobId={displayJob} busy={busy} selectedFile={selectedFile} onReveal={onReveal} onExplain={operations.explainInvestigation} />} />}
     {ready && !snapshot && !busy && <p className="p-4 text-xs text-fg-muted">Choose a local directory or reopen a stored repository. Complete analyses are saved in application-owned SQLite storage; Git metadata, accounts, and network access are unnecessary.</p>}
   </>;
 }

@@ -50,6 +50,19 @@ try {
   const [analyzed] = await run("sidecar", [{ version: 1, jobId: "initial", requestId: "initial", type: "analyze", root: repo.root }], authority);
   const initial = validateEvent(analyzed); assert(initial.type === "complete");
   assert.equal(initial.snapshot.files.length, 2); assert.equal(initial.snapshot.relationships.length, 1);
+  const prepared = await run("sidecar", [
+    { version: 1, jobId: "ai-local", requestId: "ai-local", type: "reopen" },
+    { version: 1, jobId: "ai-local", requestId: "ai-prepare", type: "explanation", query: { kind: "file", path: "a.ts" } },
+  ], authority);
+  const packageEvent = validateEvent(prepared[1]); assert(packageEvent.type === "explanation");
+  const payload = JSON.parse(packageEvent.result.payload); assert.equal(payload.edges.length, 1); assert.equal(payload.files.length, 2);
+  assert.doesNotMatch(packageEvent.result.payload, /export const|origin|root/);
+  const [digest] = await run("storage", [{ version: 1, type: "explanation-digest", input: packageEvent.result.payload }]);
+  assert.equal(digest, packageEvent.result.digest);
+  const cacheKey = `openai:fake:structural-v1:${digest}`;
+  const answer = JSON.stringify({ body: "Synthetic smoke explanation", citations: ["F1"] });
+  const [cached] = await run("storage", [{ version: 1, type: "explanation-cache", repositoryId: repo.repositoryId, key: cacheKey, answer }]); assert.equal(cached, answer);
+  assert.equal((await run("storage", [{ version: 1, type: "explanation-cache", repositoryId: repo.repositoryId, key: cacheKey }]))[0], answer);
   renameSync(root, root + " moved");
   const reopened = await run("sidecar", [
     { version: 1, jobId: "reopen", requestId: "reopen", type: "reopen" },
@@ -69,7 +82,7 @@ try {
   await run("storage", [{ version: 1, type: "forget", repositoryId: repo.repositoryId }]);
   assert.deepEqual((await run("storage", [{ version: 1, type: "list" }]))[0], []);
   assert(existsSync(path.join(root + " moved", "a.ts")), "forget must never delete source");
-  console.log(`PASS: bundled Node ${runtime.node}; SQLite analyze/restart/historical reopen/stale evidence/impact witnesses/numeric measurement/reset/forget; no PATH, cloud configuration or repository dependencies`);
+  console.log(`PASS: bundled Node ${runtime.node}; SQLite analyze/restart/historical reopen/stale evidence/impact witnesses/numeric measurement/reset/optional AI evidence digest/cache/forget; no PATH, cloud configuration or repository dependencies`);
 } finally {
   assert(path.basename(directory).startsWith("cartograph smoke spaces "));
   rmSync(directory, { recursive: true, force: true });

@@ -2,8 +2,9 @@
 
 Phase 03 automated and manual acceptance was confirmed by the user. Phase 04
 adds deterministic investigations and optional local numeric measurements.
-**PILOT-READY MVP is not yet qualified.** Installed-package acceptance on all
-three operating systems and the developer task trials below remain required.
+**PILOT-READY MVP is not yet qualified.** The user accepted Phase 04 Windows
+manual acceptance. macOS/Linux installed-package acceptance and the developer
+task trials below remain required.
 Do not infer qualification from a passing build or a development window.
 
 ## Implemented boundaries
@@ -206,7 +207,7 @@ declare permanent speedup thresholds from these initial observations.
 
 | Platform | Build/CPU/OS evidence | Installed offline workflow | Pilot task trials |
 | --- | --- | --- | --- |
-| Windows | Windows 10 Pro 10.0.19045 / x64; Rust target x86_64-pc-windows-msvc; Node 24.19.0; WebView2 154.0.4258.53; package outcome recorded below | Pending user acceptance | Pending |
+| Windows | Windows 10 Pro 10.0.19045 / x64; Rust target x86_64-pc-windows-msvc; Node 24.19.0; WebView2 154.0.4258.53; package outcome recorded below | Phase 04 manual acceptance accepted by user | Pending |
 | macOS | Unavailable in this Windows session; unqualified | Not run | Not run |
 | Linux | Unavailable in this Windows session; unqualified | Not run | Not run |
 
@@ -232,16 +233,17 @@ measurement recording/reset, and repository forgetting without PATH, cloud
 configuration or repository-installed dependencies. These are automated engine
 checks, not installed GUI acceptance or human pilot trials.
 
-Windows x64 build artifacts (application 0.1.0, bundled Node 24.19.0):
+Historical Phase 04 Windows x64 build artifacts (application 0.1.0, bundled
+Node 24.19.0; later builds replace these output paths):
 
 | Artifact under `src-tauri/target/release/bundle/` | Bytes | SHA-256 |
 | --- | --- | --- |
 | `msi/Codebase Intelligence_0.1.0_x64_en-US.msi` | 255,003,982 | `BE94A2B17E7C2B4D250970341C7B01215E37A96198512C2802E28BFC4ED3017F` |
 | `nsis/Codebase Intelligence_0.1.0_x64-setup.exe` | 243,885,085 | `022BF482D9F26297FB3F38D7513F8E8C7A74E0EE0089B1A1B6D23633FC6BBE90` |
 
-Installation location, installed startup/renderer behavior, signing status and
-human task outcomes remain to be recorded through manual acceptance. Neither
-installer has been accepted as an installed pilot package in this session.
+The user subsequently accepted Windows manual acceptance. Detailed platform
+qualification records and human pilot task outcomes remain required; that
+acceptance does not qualify macOS/Linux or formal pilot trials.
 
 Initial Windows terminal benchmark (single local run, no pilot participant):
 

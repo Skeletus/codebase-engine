@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-send-explanation"
+description = "Enables the send_explanation command without any pre-configured scope."
+commands.allow = ["send_explanation"]
+
+[[permission]]
+identifier = "deny-send-explanation"
+description = "Denies the send_explanation command without any pre-configured scope."
+commands.deny = ["send_explanation"]

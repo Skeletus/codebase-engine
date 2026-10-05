@@ -1,4 +1,5 @@
 import { SqliteAnalysisStore, StorageError } from "../lib/storage/sqlite.ts";
+import { createHash } from "node:crypto";
 import { validateStorageRequest } from "../lib/desktop/storage-protocol.ts";
 import { MAX_REQUEST_BYTES, MAX_EVENT_BYTES } from "../lib/desktop/protocol.ts";
 
@@ -21,6 +22,8 @@ process.stdin.on("data", (chunk: Buffer) => {
     if (request.type !== "finish") store.recover();
     let result: unknown;
     switch (request.type) {
+      case "explanation-digest": result = createHash("sha256").update(request.input).digest("hex"); break;
+      case "explanation-cache": result = store.explanationCache(request.repositoryId, request.key, request.answer); break;
       case "list": result = store.list(); break;
       case "register": {
         const root = process.env.CODE_INTELLIGENCE_ROOT;

@@ -14,7 +14,12 @@ implementation. The user has accepted Phases 01–03. See
 for durable local analysis; its manual acceptance is separate from automated
 verification. Historical migrations remain evidence, not active cloud setup.
 Phase 04 delivery/verification and its outstanding installed-platform and pilot
-gates are tracked in [the pilot guide](../phase-04-pilot.md). No pilot-ready
+gates are tracked in [the pilot guide](../phase-04-pilot.md). The user accepted
+Phase 04 implementation and Windows manual acceptance and explicitly authorized
+Phase 05 while macOS/Linux qualification and formal pilot trials remain open.
+Phase 05 now includes user-authorized OpenAI/Groq BYOK provider support.
+Phase 05 boundaries and acceptance are tracked in [the BYOK guide](../phase-05-byok.md).
+No pilot-ready
 qualification is implied until every Phase 04 completion criterion passes.
 
 The repository is one pnpm application, not a developed package monorepo. Nested package.json files mainly establish ESM for standalone TypeScript scripts. Next.js 16 App Router, React 19, strict TypeScript, Tailwind v4, React Flow, and dagre provide the UI. No Tauri or SQLite implementation exists.

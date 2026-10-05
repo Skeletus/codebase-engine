@@ -1,7 +1,11 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 mod engine_process;
+mod explanations;
 use engine_process::{engine_command, storage_command, EngineDiagnostics};
+use explanations::{
+    cancel_explanation, prepare_explanation, provider_configuration, send_explanation, Explanations,
+};
 
 use serde::Serialize;
 use serde_json::{json, Value};
@@ -225,6 +229,7 @@ fn decode_event(bytes: &[u8], expected_job: &str) -> Result<Value, String> {
         Some("evidence") if event["evidence"].is_object() => vec!["evidence"],
         Some("query") if event["result"].is_object() => vec!["result"],
         Some("investigation") if event["result"].is_object() => vec!["result"],
+        Some("explanation") if event["result"].is_object() => vec!["result"],
         Some("error")
             if event["code"]
                 .as_str()
@@ -259,6 +264,7 @@ fn stop(session: &mut Session) {
     }
 }
 fn fail(app: &tauri::AppHandle, job: &str, code: &str, message: &str) {
+    explanations::invalidate(app);
     let engine = app.state::<Engine>();
     let Ok(mut session) = engine.0.lock() else {
         return;
@@ -286,6 +292,7 @@ fn fail(app: &tauri::AppHandle, job: &str, code: &str, message: &str) {
 
 #[tauri::command]
 async fn select_repository(app: tauri::AppHandle) -> Result<Option<Value>, String> {
+    explanations::invalidate(&app);
     let picker_app = app.clone();
     let picked =
         tauri::async_runtime::spawn_blocking(move || -> Result<Option<Repository>, String> {
@@ -362,6 +369,7 @@ async fn list_repositories(app: tauri::AppHandle) -> Reply {
 }
 #[tauri::command]
 async fn open_repository(app: tauri::AppHandle, repository_id: String) -> Reply {
+    explanations::invalidate(&app);
     if !valid_id(&repository_id) {
         return Err("Invalid repository identity".into());
     }
@@ -397,6 +405,7 @@ async fn open_repository(app: tauri::AppHandle, repository_id: String) -> Reply 
 }
 #[tauri::command]
 async fn forget_repository(app: tauri::AppHandle, repository_id: String) -> Reply {
+    explanations::invalidate(&app);
     if !valid_id(&repository_id) {
         return Err("Invalid repository identity".into());
     }
@@ -475,6 +484,7 @@ async fn launch_analysis(
     job_id: String,
     reopen: bool,
 ) -> Result<(), String> {
+    explanations::invalidate(&app);
     let database = database_path(&app)?;
     let engine = app.state::<Engine>();
     let mut session = engine.0.lock().map_err(|_| "Engine state unavailable")?;
@@ -609,6 +619,7 @@ async fn launch_analysis(
                             "evidence" => Ok(event["evidence"].clone()),
                             "query" => Ok(event["result"].clone()),
                             "investigation" => Ok(event["result"].clone()),
+                            "explanation" => Ok(event["result"].clone()),
                             _ => Err("Evidence/query operation failed".into()),
                         };
                         let _ = sender.send(reply);
@@ -702,7 +713,7 @@ async fn request(
     tauri::async_runtime::spawn_blocking(move || {
         let engine = app.state::<Engine>();
         let mut session = engine.0.lock().map_err(|_| "Engine state unavailable")?;
-        if session.job_id.as_deref() != Some(&job_id) || session.running || (operation != "investigation" && !session.files.contains(&file)) { return Err("Unknown or unavailable snapshot file".into()); }
+        if session.job_id.as_deref() != Some(&job_id) || session.running || (!matches!(operation, "investigation" | "explanation") && !session.files.contains(&file)) { return Err("Unknown or unavailable snapshot file".into()); }
         if session.pending.len() >= 16 { return Err("Too many pending evidence requests".into()); }
         let request_id = id();
         let event = match query {
@@ -866,6 +877,7 @@ fn main() {
         .plugin(tauri_plugin_dialog::init())
         .plugin(tauri_plugin_shell::init())
         .manage(Engine::default())
+        .manage(Explanations::default())
         .setup(|app| {
             let development = if cfg!(debug_assertions) {
                 app.config().build.dev_url.clone()
@@ -892,12 +904,17 @@ fn main() {
             open_repository,
             forget_repository,
             local_settings,
-            reopen_analysis
+            reopen_analysis,
+            provider_configuration,
+            prepare_explanation,
+            send_explanation,
+            cancel_explanation
         ])
         .build(tauri::generate_context!())
         .expect("Desktop initialization failed")
         .run(|app, event| {
             if matches!(event, tauri::RunEvent::Exit) {
+                explanations::invalidate(app);
                 if let Ok(mut session) = app.state::<Engine>().0.lock() {
                     session.closing = true;
                     stop(&mut session);

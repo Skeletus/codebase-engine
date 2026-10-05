@@ -4,24 +4,28 @@ import { useEffect, useRef, useState } from "react";
 import { invoke } from "@tauri-apps/api/core";
 import type { CodeSnapshot } from "@/lib/engine/types";
 import { INTENTS, verifyInvestigation, type Intent, type Investigation, type InvestigationResult } from "@/lib/engine/investigations";
+import type { ExplainResult } from "@/lib/analysis/operations";
+import { ExplanationText } from "./explanation-text";
 
-export function Investigations({ snapshot, jobId, busy, selectedFile, onReveal }: {
+export function Investigations({ snapshot, jobId, busy, selectedFile, onReveal, onExplain }: {
   snapshot: CodeSnapshot; jobId: string; busy: boolean; selectedFile: string | null; onReveal: (file: string) => void;
+  onExplain: (query: Investigation) => Promise<ExplainResult>;
 }) {
   const [search, setSearch] = useState(""), [scope, setScope] = useState<"all" | "paths" | "exports" | "entries">("all");
   const [target, setTarget] = useState(""), [intent, setIntent] = useState<Intent>("dependents");
   const [depth, setDepth] = useState(2), [budget, setBudget] = useState(50);
   const [pending, setPending] = useState(false), [error, setError] = useState("");
   const [result, setResult] = useState<InvestigationResult | null>(null);
+  const [answeredQuery, setAnsweredQuery] = useState<Investigation | null>(null), [explanation, setExplanation] = useState<ExplainResult | null>(null);
   const sequence = useRef(0);
   useEffect(() => () => { sequence.current++; }, []);
   async function run(query: Investigation) {
     const current = ++sequence.current;
-    setPending(true); setError(""); setResult(null);
+    setPending(true); setError(""); setResult(null); setAnsweredQuery(null); setExplanation(null);
     try {
       const raw = await invoke<unknown>("investigate_snapshot", { jobId, query });
       const checked = verifyInvestigation(snapshot, query, raw);
-      if (sequence.current === current) setResult(checked);
+      if (sequence.current === current) { setResult(checked); setAnsweredQuery(query); }
     } catch (error) { if (sequence.current === current) setError(`Investigation unavailable: ${String(error).slice(0, 500)}. Reopen the stored analysis if the engine stopped.`); }
     finally { if (sequence.current === current) setPending(false); }
   }
@@ -50,6 +54,8 @@ export function Investigations({ snapshot, jobId, busy, selectedFile, onReveal }
     {error && <p role="alert" className="my-3">{error}</p>}
     {result && <div aria-label="Investigation answer" className="space-y-3 border-t border-line pt-3">
       <p role="status">{result.message}</p>
+      {result.state === "ok" && answeredQuery && <button disabled={busy} className="text-accent" onClick={() => { const n = sequence.current; void onExplain(answeredQuery).then((answer) => { if (n === sequence.current) setExplanation(answer); }); }}>Explain this investigation — inspect external payload first</button>}
+      {explanation && <section className="border border-line p-2"><p>Generated, unverified interpretation — verified results below remain authoritative.</p>{explanation.ok ? <><ExplanationText text={explanation.body} isPath={(p) => files.has(p)} onPath={(p) => <button className="text-accent" onClick={() => onReveal(p)}>{p}</button>} /><p>{explanation.model} · {explanation.cached ? "matching local cache; no provider call" : "new answer"}</p>{explanation.citations?.map((c) => <p key={c.id}>[{c.id}] <button className="text-accent" onClick={() => onReveal(c.path)}>{c.path}</button></p>)}</> : <p role="alert">{explanation.error}</p>}</section>}
       <p>Omitted beyond depth: {result.beyondDepth} · Omitted by result budget: {result.beyondBudget}. Depth/budget cap the answer; reachability counts scan the full stored file graph.</p>
       {result.candidates.map((file) => <div key={file} className="flex gap-2"><button className="text-accent" onClick={() => setTarget(file)}>Choose exact target</button><button className="font-mono text-accent" onClick={() => onReveal(file)}>{file}</button><span className="text-fg-muted">{files.get(file)?.role ?? "no convention role"}</span></div>)}
       {result.rows.map((row) => <details key={row.file} className="rounded border border-line p-2">

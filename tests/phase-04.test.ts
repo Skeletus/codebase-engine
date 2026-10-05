@@ -129,7 +129,7 @@ test("pilot measurement allowlists reject strings, repository payloads and inval
     assert.equal(investigate(store.load(repo.repositoryId)!, { operation: "ask", intent: "dependents", target: "common.ts", depth: 64, budget: 200 }).state, "ok");
     failure.exec("DROP TRIGGER reject_measurement"); failure.close();
     store.resetMeasurements(); assert.equal(store.measurements().total, 0); assert.deepEqual(store.load(repo.repositoryId), f.snapshot);
-    const db = new DatabaseSync(file); db.exec("DROP TABLE pilot_measurements; PRAGMA user_version=1"); db.close(); store.close();
+    const db = new DatabaseSync(file); db.exec("DROP TABLE explanation_cache; DROP TABLE pilot_measurements; PRAGMA user_version=1"); db.close(); store.close();
     const upgraded = new SqliteAnalysisStore(file); try { assert.deepEqual(upgraded.load(repo.repositoryId), f.snapshot); assert.equal(upgraded.measurements().total, 0); } finally { upgraded.close(); }
   } finally { try { store.close(); } catch { /* Already closed for upgrade test. */ } f.cleanup(); }
 });

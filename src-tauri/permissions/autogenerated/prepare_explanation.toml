@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-prepare-explanation"
+description = "Enables the prepare_explanation command without any pre-configured scope."
+commands.allow = ["prepare_explanation"]
+
+[[permission]]
+identifier = "deny-prepare-explanation"
+description = "Denies the prepare_explanation command without any pre-configured scope."
+commands.deny = ["prepare_explanation"]

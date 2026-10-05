@@ -12,7 +12,7 @@ if (!(target.startsWith(process.arch === "x64" ? "x86_64-" : "aarch64-"))) throw
 const resources = path.join(root, "src-tauri/resources/generated/engine");
 mkdirSync(path.join(resources, "scripts"), { recursive: true });
 mkdirSync(path.join(root, "src-tauri/binaries"), { recursive: true });
-for (const dir of ["engine", "parser", "repository", "graph", "desktop", "storage"]) cpSync(path.join(root, "lib", dir), path.join(resources, "lib", dir), { recursive: true, dereference: true });
+for (const dir of ["engine", "parser", "repository", "graph", "desktop", "storage", "ai"]) cpSync(path.join(root, "lib", dir), path.join(resources, "lib", dir), { recursive: true, dereference: true });
 copyFileSync(path.join(root, "lib/roles.ts"), path.join(resources, "lib/roles.ts"));
 copyFileSync(path.join(root, "scripts/sidecar.ts"), path.join(resources, "scripts/sidecar.ts"));
 copyFileSync(path.join(root, "scripts/storage.ts"), path.join(resources, "scripts/storage.ts"));

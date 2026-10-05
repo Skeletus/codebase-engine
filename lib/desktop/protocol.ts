@@ -1,4 +1,5 @@
 import { validateSnapshot } from "../engine/contract.ts";
+import { validateSelection, type ExplanationSelection } from "../ai/selection.ts";
 import type { CodeSnapshot, StructuralQuery, StructuralResult } from "../engine/types.ts";
 import { validateInvestigation, validateInvestigationResult, type Investigation, type InvestigationResult } from "../engine/investigations.ts";
 
@@ -8,7 +9,7 @@ export const MAX_EVENT_BYTES = 32 * 1024 * 1024;
 export type EvidenceResult = { state: "current"; source: string } | { state: "stale" | "unavailable" };
 type Identity = { version: 1; requestId: string; jobId: string };
 export type EngineRequest = Identity & (
-  { type: "analyze"; root: string } | { type: "reopen" } | { type: "evidence"; file: string } | { type: "query"; query: StructuralQuery } | { type: "investigation"; query: Investigation }
+  { type: "analyze"; root: string } | { type: "reopen" } | { type: "evidence"; file: string } | { type: "query"; query: StructuralQuery } | { type: "investigation"; query: Investigation } | { type: "explanation"; query: ExplanationSelection }
 );
 export type EngineEvent = Identity & (
   { type: "progress"; stage: "select" | "parse" | "validate" } |
@@ -16,6 +17,7 @@ export type EngineEvent = Identity & (
   { type: "evidence"; evidence: EvidenceResult } |
   { type: "query"; result: StructuralResult } |
   { type: "investigation"; result: InvestigationResult } |
+  { type: "explanation"; result: { payload: string; digest: string; ids: string[]; files: string[] } } |
   { type: "error"; code: string; message: string }
 );
 export function record(value: unknown): Record<string, unknown> {
@@ -41,6 +43,7 @@ export function validateRequest(value: unknown): EngineRequest {
   const r = record(value), base = identity(r);
   if (r.type === "analyze") { exact(r, ["root"]); return { ...base, type: r.type, root: text(r.root, 4096) }; }
   if (r.type === "reopen") { exact(r, []); return { ...base, type: r.type }; }
+  if (r.type === "explanation") { exact(r, ["query"]); return { ...base, type: r.type, query: validateSelection(r.query) }; }
   if (r.type === "investigation") { exact(r, ["query"]); return { ...base, type: r.type, query: validateInvestigation(r.query) }; }
   if (r.type === "evidence") { exact(r, ["file"]); return { ...base, type: r.type, file: text(r.file, 4096) }; }
   if (r.type === "query") {
@@ -60,6 +63,11 @@ export function validateEvent(value: unknown): EngineEvent {
     return { ...base, type: r.type, stage: r.stage };
   }
   if (r.type === "complete") { exact(r, ["snapshot"]); return { ...base, type: r.type, snapshot: validateSnapshot(r.snapshot) }; }
+  if (r.type === "explanation") {
+    exact(r, ["result"]); const result = record(r.result);
+    if (Object.keys(result).some((k) => !["payload", "digest", "ids", "files"].includes(k)) || typeof result.payload !== "string" || result.payload.length > 6000 || typeof result.digest !== "string" || !/^[a-f0-9]{64}$/.test(result.digest) || !Array.isArray(result.ids) || result.ids.length > 40 || !result.ids.every((id) => typeof id === "string" && /^[FER][1-9][0-9]?$/.test(id)) || !Array.isArray(result.files) || result.files.length > 8 || !result.files.every((p) => typeof p === "string" && p.length <= 4096)) throw new Error("Invalid explanation package");
+    return { ...base, type: r.type, result: { payload: result.payload, digest: result.digest, ids: result.ids as string[], files: result.files as string[] } };
+  }
   if (r.type === "investigation") { exact(r, ["result"]); return { ...base, type: r.type, result: validateInvestigationResult(r.result) }; }
   if (r.type === "error") { exact(r, ["code", "message"]); return { ...base, type: r.type, code: text(r.code, 80), message: text(r.message, 1024) }; }
   if (r.type === "evidence") {

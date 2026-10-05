@@ -32,8 +32,8 @@ export function ExplanationPanel(props: {
         <ExplainButton label="Explain" onClick={() => props.onExplain(target)} />
         <p className="mt-1.5 text-fg-muted">
           {target.kind === "file"
-            ? "Written by a model from this file's source and every file it imports or is imported by, as parsed."
-            : "Written by a model from what's in this folder and every import crossing into or out of it, as parsed."}
+            ? "Optional generated interpretation of selected file metadata and partial verified evidence. Inspect the exact payload before sending."
+            : "Optional generated interpretation of a bounded folder evidence sample. Truncation and coverage limits are included; inspect before sending."}
         </p>
       </div>
     );
@@ -56,7 +56,11 @@ export function ExplanationPanel(props: {
   const { result } = state;
   return (
     <div className="px-3 py-3">
+      <p className="mb-2 text-[11px] text-fg-muted">Generated, unverified explanation — not new structural evidence.</p>
+      <p className="mb-2 text-[10px] text-fg-muted">Matches the inspected snapshot package. Source hashes were checked when prepared; prepare again to recheck later edits.</p>
       <ExplanationText text={result.body} isPath={props.isPath} onPath={props.renderPath} />
+      {result.citations?.map((c) => <p key={c.id} className="mt-1 text-xs">[{c.id}] {props.renderPath(c.path)}</p>)}
+      {result.cacheSaved === false && <p className="text-xs">Local cache unavailable; answer was not saved.</p>}
       <div className="mt-3 space-y-0.5 border-t border-line pt-2 text-[10px] text-fg-muted">
         {result.labelled && (
           <p>

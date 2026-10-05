@@ -26,6 +26,8 @@ const MIGRATIONS = [
     usefulness INTEGER NOT NULL CHECK(usefulness BETWEEN 1 AND 5),
     discovered INTEGER NOT NULL CHECK(discovered BETWEEN 0 AND 100000),
     missed INTEGER NOT NULL CHECK(missed BETWEEN 0 AND 100000), application_version TEXT NOT NULL);`,
+  `CREATE TABLE explanation_cache (repository_id TEXT NOT NULL REFERENCES repositories(id) ON DELETE CASCADE,
+    cache_key TEXT NOT NULL, answer TEXT NOT NULL, PRIMARY KEY(repository_id,cache_key));`,
 ];
 export class StorageError extends Error {
   readonly code: "storage_failure" | "incompatible_storage" | "incompatible_snapshot" | "refresh_conflict" | "unknown_repository";
@@ -128,6 +130,17 @@ export class SqliteAnalysisStore implements AnalysisStore {
       if (this.db.prepare("SELECT id FROM jobs WHERE repository_id=? AND state='running'").get(id)) throw new StorageError("refresh_conflict", "Cancel the active refresh before forgetting this repository.");
       this.db.prepare("DELETE FROM repositories WHERE id=?").run(id);
     });
+  }
+  explanationCache(id: string, key: string, answer?: string): string | null {
+    this.repository(id);
+    if (!/^[a-zA-Z0-9_.:-]{1,240}$/.test(key) || (answer !== undefined && Buffer.byteLength(answer) > 10000)) throw new Error("Invalid explanation cache");
+    if (answer !== undefined) this.transaction(() => {
+      this.db.prepare("DELETE FROM explanation_cache WHERE repository_id=? AND cache_key=?").run(id, key);
+      this.db.prepare("INSERT INTO explanation_cache(repository_id,cache_key,answer) VALUES (?,?,?)").run(id, key, answer);
+      this.db.prepare("DELETE FROM explanation_cache WHERE repository_id=? AND rowid NOT IN (SELECT rowid FROM explanation_cache WHERE repository_id=? ORDER BY rowid DESC LIMIT 100)").run(id, id);
+    });
+    const row = this.db.prepare("SELECT answer FROM explanation_cache WHERE repository_id=? AND cache_key=?").get(id, key);
+    return row ? String(row.answer) : null;
   }
   settings(initialTheme: "system" | "dark" | "light" = "system"): { theme: "system" | "dark" | "light" } {
     if (!["system", "dark", "light"].includes(initialTheme)) throw new StorageError("storage_failure", "Invalid initial theme.");

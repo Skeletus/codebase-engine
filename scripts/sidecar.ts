@@ -5,6 +5,7 @@ import { typescriptAdapter } from "../lib/engine/adapters/typescript.ts";
 import { validateSnapshot } from "../lib/engine/contract.ts";
 import type { CodeSnapshot } from "../lib/engine/types.ts";
 import { investigate } from "../lib/engine/investigations.ts";
+import { explanationEvidence } from "../lib/ai/evidence.ts";
 import { SqliteAnalysisStore, StorageError } from "../lib/storage/sqlite.ts";
 import { MAX_REQUEST_BYTES, MAX_EVENT_BYTES, validateRequest, type EngineEvent, type EngineRequest } from "../lib/desktop/protocol.ts";
 
@@ -66,6 +67,11 @@ function handle(request: EngineRequest) {
   } else {
     if (!snapshot || request.jobId !== jobId) throw new Error("Unknown or incomplete analysis job");
     if (request.type === "evidence") emit({ ...base, type: request.type, evidence: readEvidence(snapshot, request.file) });
+    else if (request.type === "explanation") {
+      const result = explanationEvidence(snapshot, request.query);
+      if (result.files.some((file) => readEvidence(snapshot!, file).state !== "current")) throw new Error("Explanation evidence is stale or unavailable");
+      emit({ ...base, type: request.type, result });
+    }
     else if (request.type === "investigation") emit({ ...base, type: request.type, result: investigate(snapshot, request.query) });
     else emit({ ...base, type: request.type, result: queryStructure(snapshot, request.query) });
   }

@@ -13,6 +13,10 @@ fn main() {
         "forget_repository",
         "local_settings",
         "reopen_analysis",
+        "provider_configuration",
+        "prepare_explanation",
+        "send_explanation",
+        "cancel_explanation",
     ]);
     tauri_build::try_build(tauri_build::Attributes::new().app_manifest(manifest))
         .expect("Desktop build configuration failed");
