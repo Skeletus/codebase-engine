@@ -6,6 +6,8 @@
  * preference without a second copy of the palette.
  */
 :root {
+  --font-geist-sans: "Geist Variable", sans-serif;
+  --font-geist-mono: "Geist Mono Variable", monospace;
   color-scheme: light dark;
 
   --canvas: light-dark(#fafafa, #0c0c0d);

@@ -1,18 +1,30 @@
 "use client";
 
-import { useState } from "react";
-import { THEME_COOKIE, THEMES, type Theme } from "@/lib/theme";
+import { useEffect, useSyncExternalStore } from "react";
+import { parseTheme, THEME_STORAGE, THEMES, type Theme } from "@/lib/theme";
 
 function applyTheme(theme: Theme) {
   document.documentElement.dataset.theme = theme;
-  document.cookie = `${THEME_COOKIE}=${theme}; path=/; max-age=31536000; samesite=lax`;
+  try { localStorage.setItem(THEME_STORAGE, theme); } catch { /* A denied settings store must not disable analysis. */ }
+  window.dispatchEvent(new Event("theme-changed"));
+}
+
+function subscribe(listener: () => void) {
+  window.addEventListener("theme-changed", listener);
+  window.addEventListener("storage", listener);
+  return () => { window.removeEventListener("theme-changed", listener); window.removeEventListener("storage", listener); };
+}
+function savedTheme(): Theme {
+  try { return parseTheme(localStorage.getItem(THEME_STORAGE) ?? undefined); } catch { return "system"; }
 }
 
 export function ThemeControl({ initial }: { initial: Theme }) {
-  const [theme, setTheme] = useState<Theme>(initial);
+  const theme = useSyncExternalStore(subscribe, savedTheme, () => initial);
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+  }, [theme]);
 
   function choose(next: Theme) {
-    setTheme(next);
     applyTheme(next);
   }
 

@@ -1,0 +1,10 @@
+{
+  "identifier": "main",
+  "description": "Only app-owned local commands and event subscription; no renderer filesystem, dialog or shell access.",
+  "windows": ["main"],
+  "permissions": [
+    "core:event:allow-listen", "core:event:allow-unlisten",
+    "allow-select-repository", "allow-start-analysis", "allow-cancel-analysis",
+    "allow-read-evidence", "allow-query-structure"
+  ]
+}

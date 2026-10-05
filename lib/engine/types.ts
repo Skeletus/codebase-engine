@@ -59,6 +59,6 @@ export type CodeSnapshot = {
   diagnostics: Diagnostic[];
 };
 
-export type LanguageAdapter = { id: string; analyze: (directory: string) => CodeSnapshot };
+export type LanguageAdapter = { id: string; analyze: (directory: string, onProgress?: (stage: "parse") => void) => CodeSnapshot };
 export type StructuralQuery = { file: string; direction: "dependencies" | "dependents"; depth?: number };
 export type StructuralResult = { steps: string[][]; beyond: number };

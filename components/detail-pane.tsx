@@ -49,6 +49,7 @@ type Props = {
   freshness: ReadonlyMap<string, Freshness>;
   onExplain: (target: ExplainTarget) => void;
   onRerun: () => Promise<{ error: string | null }>;
+  evidence?: (path: string) => ReactNode;
 };
 
 export function DetailPane(props: Props) {
@@ -70,6 +71,7 @@ export function DetailPane(props: Props) {
   // Only a path that is a parsed file on this map becomes a link; anything
   // else the model wrote stays text.
   const explanation = (target: ExplainTarget) => (
+    props.evidence ? (target.kind === "file" ? props.evidence(target.path) : <p className="p-3 text-xs text-fg-muted">Select a file to inspect local source evidence.</p>) :
     <ExplanationPanel
       target={target}
       analysisId={props.analysisId}
@@ -93,6 +95,7 @@ export function DetailPane(props: Props) {
         tab={props.tab}
         onTab={props.onTab}
         explanation={explanation({ kind: "file", path: file.path })}
+        evidence={!!props.evidence}
       >
         <FileStructure
           file={file}
@@ -116,6 +119,7 @@ export function DetailPane(props: Props) {
       tab={props.tab}
       onTab={props.onTab}
       explanation={explanation({ kind: "group", dir: group.dir })}
+      evidence={!!props.evidence}
     >
       <GroupStructure files={group.files} fan={groupFanOf(folding, props.edges, group.dir)} />
     </Selected>
@@ -373,6 +377,7 @@ function Selected(props: {
   tab: Tab;
   onTab: (tab: Tab) => void;
   explanation: ReactNode;
+  evidence?: boolean;
   children: ReactNode;
 }) {
   return (
@@ -382,7 +387,7 @@ function Selected(props: {
         <h2 className="leading-4">{props.title}</h2>
         <div role="tablist" className="mt-2 flex gap-3 text-[11px]">
           <TabButton tab="structure" label="Structure" current={props.tab} onTab={props.onTab} />
-          <TabButton tab="explanation" label="Explanation" current={props.tab} onTab={props.onTab} />
+          <TabButton tab="explanation" label={props.evidence ? "Evidence" : "Explanation"} current={props.tab} onTab={props.onTab} />
         </div>
       </header>
       {props.tab === "structure" ? props.children : props.explanation}

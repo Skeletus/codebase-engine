@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-query-structure"
+description = "Enables the query_structure command without any pre-configured scope."
+commands.allow = ["query_structure"]
+
+[[permission]]
+identifier = "deny-query-structure"
+description = "Denies the query_structure command without any pre-configured scope."
+commands.deny = ["query_structure"]

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Codebase Intelligence",
+  "version": "0.1.0",
+  "identifier": "com.codebaseintelligence.desktop",
+  "build": {
+    "beforeDevCommand": "pnpm desktop:prepare",
+    "beforeBuildCommand": "pnpm desktop:prepare",
+    "frontendDist": "../out"
+  },
+  "app": {
+    "windows": [{ "label": "main", "create": false, "title": "Codebase Intelligence", "width": 1440, "height": 900, "minWidth": 1000, "minHeight": 600 }],
+    "security": {
+      "csp": "default-src 'self'; connect-src ipc: http://ipc.localhost; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "externalBin": ["binaries/code-engine"],
+    "resources": { "resources/generated/engine/": "engine/" },
+    "icon": ["../app/favicon.ico"],
+    "windows": { "webviewInstallMode": { "type": "offlineInstaller" } }
+  }
+}

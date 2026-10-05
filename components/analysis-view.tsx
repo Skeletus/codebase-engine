@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useMemo, useRef, useState, type ReactNode } from "react";
 import type { AnalysisOperations, HeadResult } from "@/lib/analysis/operations";
 import { foldDirectories } from "@/lib/graph/fold";
 import type { Selection } from "@/lib/graph/highlight";
@@ -30,6 +30,7 @@ export function AnalysisView({
   commitSha,
   repository,
   operations,
+  evidence,
 }: {
   files: ParsedFile[];
   edges: Edge[];
@@ -41,6 +42,7 @@ export function AnalysisView({
   commitSha: string;
   repository: Omit<RepositoryFacts, "routes">;
   operations: AnalysisOperations;
+  evidence?: (path: string) => ReactNode;
 }) {
   const folding = useMemo(() => foldDirectories(files), [files]);
   const byPath = useMemo(() => new Map(files.map((f) => [f.path, f])), [files]);
@@ -234,6 +236,7 @@ export function AnalysisView({
           freshness={freshness}
           onExplain={explain}
           onRerun={operations.rerun}
+          evidence={evidence}
         />
       }
     />

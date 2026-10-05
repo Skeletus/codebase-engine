@@ -1,12 +1,14 @@
-import { parseRepository } from "../../parser/index.ts";
+import { parseSelection, selectFiles } from "../../parser/index.ts";
 import { validateParseResult } from "../../parser/contract.ts";
 import { validateSnapshot } from "../contract.ts";
 import { SNAPSHOT_VERSION, type CodeSnapshot, type Evidence, type LanguageAdapter } from "../types.ts";
 
 export const typescriptAdapter: LanguageAdapter = {
   id: "typescript-javascript",
-  analyze(directory) {
-    const parsed = validateParseResult(parseRepository(directory));
+  analyze(directory, onProgress) {
+    const selection = selectFiles(directory);
+    onProgress?.("parse");
+    const parsed = validateParseResult(parseSelection(selection));
     const byPath = new Map(parsed.files.map((f) => [f.path, f]));
     const evidence = (file: string, line: number, extractor: string, description: string): Evidence => {
       const f = byPath.get(file);

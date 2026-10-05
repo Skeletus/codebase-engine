@@ -1,6 +1,5 @@
-// Checked once when the server boots (see next.config.ts). A missing key should
-// stop `next dev` / `next build` immediately, not surface later as a vague
-// Clerk or Supabase error on some unrelated screen.
+// Legacy cloud-script configuration only. The static frontend and packaged
+// local engine neither call assertEnv nor require any of these variables.
 const REQUIRED = [
   "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY",
   "CLERK_SECRET_KEY",
