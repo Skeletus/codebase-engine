@@ -26,26 +26,32 @@ export function parseRepository(directory: string): ParseResult {
 
 // Selecting and parsing are separate calls so a caller can report which one
 // it's in; together they are exactly parseRepository.
-export function selectFiles(directory: string): Selection {
-  const reader = new RepositoryReader(directory);
+export function selectFiles(directory: string, authorizedRoot?: string): Selection {
+  const reader = new RepositoryReader(directory, {}, authorizedRoot);
   const root = reader.root;
   return { root, reader, walk: walkRepository(root, reader) };
 }
 
-export function parseSelection({ root, walk, reader }: Selection, inspect?: (files: { candidate: { path: string; hash: string }; sourceFile: import("ts-morph").SourceFile; framework: string }[], resolver: import("./resolve.ts").Resolver, routes: Route[]) => void): ParseResult {
+export function createSyntaxSession() {
+  return { project: new Project({ useInMemoryFileSystem: true, skipAddingFilesFromTsConfig: true, skipFileDependencyResolution: true, compilerOptions: { allowJs: true, noLib: true, noResolve: true, types: [] } }), hashes: new Map<string, string>(), parsed: 0, reused: 0 };
+}
+
+export function parseSelection({ root, walk, reader }: Selection, inspect?: (files: { candidate: { path: string; hash: string }; sourceFile: import("ts-morph").SourceFile; framework: string }[], resolver: import("./resolve.ts").Resolver, routes: Route[]) => void, session = createSyntaxSession()): ParseResult {
 
   // Parsing only: no lib, no type resolution. Imports are resolved separately
   // so every outcome can be classified rather than left to the compiler.
-  const project = new Project({
-    useInMemoryFileSystem: true,
-    skipAddingFilesFromTsConfig: true,
-    skipFileDependencyResolution: true,
-    compilerOptions: { allowJs: true, noLib: true, noResolve: true, types: [] },
+  const project = session.project;
+  session.parsed = 0; session.reused = 0;
+  const present = new Set(walk.candidates.map((c) => c.absolutePath.replaceAll("\\", "/")));
+  for (const source of project.getSourceFiles()) if (!present.has(source.getFilePath())) { session.hashes.delete(source.getFilePath()); project.removeSourceFile(source); }
+  const sourceFiles = walk.candidates.map((candidate) => {
+    const existing = project.getSourceFile(candidate.absolutePath);
+    const reuse = existing && session.hashes.get(candidate.absolutePath) === candidate.hash;
+    const sourceFile = reuse ? existing : project.createSourceFile(candidate.absolutePath, candidate.content, { overwrite: true });
+    if (reuse) session.reused++; else session.parsed++;
+    session.hashes.set(candidate.absolutePath, candidate.hash);
+    return { candidate, sourceFile };
   });
-  const sourceFiles = walk.candidates.map((candidate) => ({
-    candidate,
-    sourceFile: project.createSourceFile(candidate.absolutePath, candidate.content, { overwrite: true }),
-  }));
   const program = project.getProgram();
 
   const skipped: SkippedFile[] = [...walk.skipped];

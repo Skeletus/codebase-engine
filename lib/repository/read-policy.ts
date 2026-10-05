@@ -1,5 +1,6 @@
 import { closeSync, fstatSync, lstatSync, openSync, readSync, readdirSync, realpathSync } from "node:fs";
 import path from "node:path";
+import { createHash } from "node:crypto";
 
 export const READ_LIMITS = {
   fileBytes: 1024 * 1024,
@@ -46,10 +47,54 @@ export class RepositoryReader {
   private metadata = new Map<string, string>();
   private denied = new Set<string>();
   private excluded = new Set<string>();
+  private rootIdentity: { ino: number; dev: number };
+  private observations = new Map<string, { input: string; kind: "stat" | "list" | "source" | "metadata"; signature: string }>();
+  readonly directories = new Set<string>();
+  private observe(input: string, kind: "stat" | "list" | "source" | "metadata", signature: string): void {
+    const key = `${kind}:${input}`;
+    const previous = this.observations.get(key);
+    if (previous && previous.signature !== signature) throw new RepositoryReadError("unreadable", "Repository changed during analysis");
+    this.observations.set(key, { input, kind, signature });
+  }
+  metadataDigest(): string {
+    return JSON.stringify([...this.observations.values()].filter((o) => o.kind === "metadata").sort((a, b) => a.input.localeCompare(b.input)));
+  }
+  metadataStable(): boolean {
+    try {
+      this.authorize(this.root, "probe");
+      const fresh = new RepositoryReader(this.root);
+      for (const excluded of this.excluded) fresh.exclude(excluded);
+      for (const o of this.observations.values()) if (o.kind === "metadata") {
+        fresh.read(o.input, "metadata");
+        if (fresh.observations.get(`metadata:${o.input}`)?.signature !== o.signature) return false;
+      }
+      return true;
+    } catch { return false; }
+  }
+  /** Replay every successful read and resolution probe, including missing targets.
+   * Watch events are hints; these protected observations establish stability. */
+  stable(): boolean {
+    try {
+      this.authorize(this.root, "probe");
+      if (realpathSync.native(this.root) !== this.root) return false;
+      const fresh = new RepositoryReader(this.root);
+      for (const excluded of this.excluded) fresh.exclude(excluded);
+      for (const o of this.observations.values()) {
+        if (o.kind === "stat") fresh.stat(o.input);
+        else if (o.kind === "list") fresh.list(o.input);
+        else fresh.read(o.input, o.kind);
+        if (fresh.observations.get(`${o.kind}:${o.input}`)?.signature !== o.signature) return false;
+      }
+      return true;
+    } catch { return false; }
+  }
 
-  constructor(directory: string, limits: Partial<ReadLimits> = {}) {
+  constructor(directory: string, limits: Partial<ReadLimits> = {}, authorizedRoot?: string) {
     this.root = realpathSync(path.resolve(directory));
-    if (!lstatSync(this.root).isDirectory()) throw new RepositoryReadError("unreadable", "Repository root is not a directory");
+    if (authorizedRoot && path.toNamespacedPath(this.root) !== path.toNamespacedPath(authorizedRoot)) throw new RepositoryReadError("policy", "Selected root identity changed; select it again");
+    const rootStat = lstatSync(this.root);
+    if (!rootStat.isDirectory() || rootStat.isSymbolicLink()) throw new RepositoryReadError("unreadable", "Repository root is not a directory");
+    this.rootIdentity = { ino: rootStat.ino, dev: rootStat.dev };
     this.limits = { ...READ_LIMITS, ...limits };
     for (const value of Object.values(this.limits)) {
       if (!Number.isSafeInteger(value) || value <= 0) throw new Error("Read limits must be positive safe integers");
@@ -62,6 +107,8 @@ export class RepositoryReader {
   relative(absolute: string): string { return path.relative(this.root, absolute).split(path.sep).join("/"); }
 
   private authorize(input: string, purpose: ReadPurpose): string {
+    const rootStat = lstatSync(this.root);
+    if (!rootStat.isDirectory() || rootStat.isSymbolicLink() || rootStat.ino !== this.rootIdentity.ino || rootStat.dev !== this.rootIdentity.dev) throw new RepositoryReadError("policy", "Selected root changed during analysis");
     const absolute = path.resolve(input);
     if (!inside(this.root, absolute)) throw new RepositoryReadError("policy", "outside selected repository");
     const relative = this.relative(absolute);
@@ -110,7 +157,9 @@ export class RepositoryReader {
   }
 
   stat(input: string) {
-    return this.attempt(input, "probe", (absolute) => lstatSync(absolute, { throwIfNoEntry: false }));
+    const result = this.attempt(input, "probe", (absolute) => lstatSync(absolute, { throwIfNoEntry: false }));
+    this.observe(input, "stat", result ? `${result.isDirectory() ? "dir" : "file"}:${result.size}:${result.mtimeMs}:${result.ino}:${result.dev}` : "absent-or-denied");
+    return result;
   }
 
   canonical(input: string): string {
@@ -127,6 +176,8 @@ export class RepositoryReader {
       const entries = readdirSync(absolute, { withFileTypes: true });
       this.entries += entries.length;
       if (this.entries > this.limits.entries) throw new RepositoryReadError("limit", "Repository entry limit exceeded");
+      this.observe(input, "list", JSON.stringify(entries.map((e) => [e.name, e.isDirectory(), e.isFile(), e.isSymbolicLink()]).sort((a, b) => String(a[0]).localeCompare(String(b[0])))));
+      this.directories.add(absolute);
       return entries.sort((a, b) => a.name.localeCompare(b.name));
     } catch (error) {
       if (error instanceof RepositoryReadError) throw error;
@@ -166,6 +217,8 @@ export class RepositoryReader {
       if (length !== stat.size || after.size !== stat.size || after.mtimeMs !== stat.mtimeMs || pathAfter.ino !== stat.ino || pathAfter.dev !== stat.dev) throw new RepositoryReadError("unreadable", "file changed during read");
       this.bytes += length;
       if (this.bytes > this.limits.totalBytes) throw new RepositoryReadError("limit", "Repository aggregate read limit exceeded");
+      this.observe(input, purpose, createHash("sha256").update(buffer.subarray(0, length)).digest("hex"));
+      this.observe(input, "stat", `file:${after.size}:${after.mtimeMs}:${after.ino}:${after.dev}`);
       return buffer.subarray(0, length);
     } finally { closeSync(fd); }
   }
@@ -174,6 +227,7 @@ export class RepositoryReader {
     const cached = this.metadata.get(input);
     if (cached !== undefined) return cached;
     const value = this.attempt(input, "metadata", (absolute) => this.read(absolute, "metadata").toString("utf8"));
+    if (value === undefined) this.stat(input);
     if (value !== undefined) this.metadata.set(input, value);
     return value;
   }

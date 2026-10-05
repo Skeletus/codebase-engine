@@ -36,7 +36,7 @@ function run(script: "sidecar" | "storage", requests: unknown[], authority: Reco
           const end = buffer.indexOf("\n"), raw: unknown = JSON.parse(buffer.slice(0, end)); buffer = buffer.slice(end + 1);
           let response: unknown;
           if (script === "storage") { const reply = record(raw); assert.equal(reply.ok, true, String(reply.error)); response = reply.result; }
-          else { const event = validateEvent(raw); if (event.type === "progress") continue; assert.notEqual(event.type, "error"); response = event; }
+          else { const event = validateEvent(raw); if (event.type === "progress" || event.type === "watch") continue; assert.notEqual(event.type, "error"); response = event; }
           responses.push(response); index++;
           if (index < requests.length) child.stdin.write(JSON.stringify(requests[index]) + "\n"); else child.stdin.end();
         }
@@ -46,10 +46,39 @@ function run(script: "sidecar" | "storage", requests: unknown[], authority: Reco
     child.stdin.write(JSON.stringify(requests[0]) + "\n");
   });
 }
+async function watchSmoke(authority: Record<string, string>) {
+  const original = readFileSync(path.join(root, "b.ts"), "utf8");
+  try {
+    await new Promise<void>((resolve, reject) => {
+      const child = spawn(executable, ["--disable-warning=ExperimentalWarning", path.join(resources, "scripts/sidecar.ts")], { cwd: resources, env: { NODE_ENV: "production", PATH: "", CODE_INTELLIGENCE_DB: database, ...authority }, stdio: ["pipe", "pipe", "pipe"] });
+      let buffer = "", stage = 0, request = 0;
+      const timer = setTimeout(() => { child.kill(); reject(new Error("Packaged watcher smoke timed out")); }, 20000);
+      function send(action: "start" | "simulate-loss") { child.stdin.write(JSON.stringify({ version: 1, jobId: "watch-smoke", requestId: `watch-${++request}`, type: "watch", action }) + "\n"); }
+      child.on("error", reject); child.stdin.on("error", reject);
+      child.stdout.on("data", (data: Buffer) => {
+        try {
+          buffer += data.toString(); if (Buffer.byteLength(buffer) > MAX_EVENT_BYTES) throw new Error("Watcher event budget");
+          while (buffer.includes("\n")) {
+            const end = buffer.indexOf("\n"), event = validateEvent(JSON.parse(buffer.slice(0, end))); buffer = buffer.slice(end + 1);
+            assert.notEqual(event.type, "error");
+            if (stage === 0 && event.type === "complete") { stage = 1; send("start"); }
+            else if (stage === 1 && event.type === "watch" && event.status.state === "watching") { stage = 2; writeFileSync(path.join(root, "b.ts"), "export function b() { return 2; }\n"); }
+            else if (stage === 2 && event.type === "complete") { assert.equal(event.snapshot.files.length, 3); stage = 3; }
+            else if (stage === 3 && event.type === "watch" && event.status.state === "watching") { assert.equal(event.status.mode, "incremental"); assert.equal(event.status.parsed, 1); assert.equal(event.status.reused, 2); stage = 4; send("simulate-loss"); }
+            else if (stage === 4 && event.type === "watch" && event.status.state === "degraded") { stage = 5; child.stdin.end(); }
+          }
+        } catch (error) { child.kill(); reject(error); }
+      });
+      child.on("exit", (code) => { clearTimeout(timer); if (code === 0 && stage === 5) resolve(); else reject(new Error(`Packaged watcher failed (${code}, stage ${stage})`)); });
+      child.stdin.write(JSON.stringify({ version: 1, jobId: "watch-smoke", requestId: "watch-smoke", type: "analyze", root: authority.CODE_INTELLIGENCE_ROOT }) + "\n");
+    });
+  } finally { writeFileSync(path.join(root, "b.ts"), original); }
+}
 try {
   const [registered] = await run("storage", [{ version: 1, type: "register" }], { CODE_INTELLIGENCE_ROOT: path.toNamespacedPath(root) });
   const repo = record(registered); assert.equal(typeof repo.repositoryId, "string"); assert.equal(typeof repo.root, "string");
   const authority = { CODE_INTELLIGENCE_REPOSITORY: String(repo.repositoryId), CODE_INTELLIGENCE_ROOT: String(repo.root) };
+  await watchSmoke(authority);
   const [analyzed] = await run("sidecar", [{ version: 1, jobId: "initial", requestId: "initial", type: "analyze", root: repo.root }], authority);
   const initial = validateEvent(analyzed); assert(initial.type === "complete");
   assert.equal(initial.snapshot.files.length, 3); assert.equal(initial.snapshot.relationships.length, 2);
@@ -93,7 +122,7 @@ try {
   await run("storage", [{ version: 1, type: "forget", repositoryId: repo.repositoryId }]);
   assert.deepEqual((await run("storage", [{ version: 1, type: "list" }]))[0], []);
   assert(existsSync(path.join(root + " moved", "a.ts")), "forget must never delete source");
-  console.log(`PASS: bundled Node ${runtime.node}; SQLite analyze/restart/historical reopen/stale evidence/impact witnesses/static symbol calls/richer approved AI metadata/numeric measurement/reset/evidence digest/cache/forget; no PATH, cloud configuration or repository dependencies`);
+  console.log(`PASS: bundled Node ${runtime.node}; real watcher/incremental update/loss/shutdown; SQLite analyze/restart/historical reopen/stale evidence/impact witnesses/static symbol calls/richer approved AI metadata/numeric measurement/reset/evidence digest/cache/forget; no PATH, cloud configuration or repository dependencies`);
 } finally {
   assert(path.basename(directory).startsWith("cartograph smoke spaces "));
   rmSync(directory, { recursive: true, force: true });

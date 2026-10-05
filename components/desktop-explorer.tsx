@@ -29,6 +29,9 @@ export function DesktopExplorer() {
   const [ready, setReady] = useState(false), [repository, setRepository] = useState<Repository | null>(null);
   const [snapshot, setSnapshot] = useState<CodeSnapshot | null>(null), [message, setMessage] = useState("Initializing native events and local storage…");
   const [displayJob, setDisplayJob] = useState("");
+  const [revision, setRevision] = useState(0);
+  const [watchState, setWatchState] = useState("paused");
+  const watchingStarted = useRef<string | null>(null);
   const [repositories, setRepositories] = useState<Repository[]>([]);
   const [startupError, setStartupError] = useState(false);
   const [measurementsOpen, setMeasurementsOpen] = useState(false);
@@ -48,15 +51,25 @@ export function DesktopExplorer() {
       try {
         const event = validateEvent(payload);
         if (!belongsToJob(event, job.current)) return;
-        if (event.type === "progress") setMessage(`${event.stage}: analyzing locally…`);
+        if (event.type === "watch") {
+          setWatchState(event.status.state); setBusy(event.status.state === "refreshing");
+          setMessage(`${event.status.message} · ${event.status.mode} · parsed ${event.status.parsed}, reused ${event.status.reused} · ${event.status.elapsedMs}ms · RSS ${Math.round(event.status.memoryBytes / 1048576)}MiB · snapshot ${event.status.snapshotBytes} bytes`);
+          if (event.status.state === "refreshing") { explanationReply.current?.({ ok: false, error: "Snapshot refreshing; prepare again after publication" }); explanationReply.current = null; setExplanation(null); }
+        }
+        else if (event.type === "progress") setMessage(`${event.stage}: analyzing locally…`);
         else if (event.type === "complete") {
           savedSnapshot.current = event.snapshot; setSnapshot(event.snapshot); setDisplayJob(event.jobId); setBusy(false);
+          setRevision((n) => n + 1);
+          if (!recoveryMessage.current && watchingStarted.current !== event.jobId && selectedRepository.current?.available) {
+            watchingStarted.current = event.jobId;
+            void invoke("control_watching", { jobId: event.jobId, action: "start" }).catch((error) => { setWatchState("degraded"); setMessage(`Watcher unavailable: ${String(error)}. Full refresh remains available.`); });
+          }
           setMessage(recoveryMessage.current || (reopening.current ? `Reopened stored analysis (${event.snapshot.files.length} files); source freshness is checked when inspected.` : `Published ${event.snapshot.files.length} files locally.`));
           recoveryMessage.current = "";
           void invoke<Repository[]>("list_repositories").then((list) => { if (!disposed) { setRepositories(list); const current = list.find((r) => r.repositoryId === selectedRepository.current?.repositoryId); if (current) { selectedRepository.current = current; setRepository(current); } } }).catch((error) => setMessage(`Analysis ready; repository list failed: ${String(error)}`));
         }
         else if (event.type === "error") {
-          setMessage(event.message); setBusy(false);
+          setMessage(event.message); setBusy(false); setWatchState("paused");
           void invoke<Repository[]>("list_repositories").then((list) => { if (!disposed) { setRepositories(list); const current = list.find((r) => r.repositoryId === selectedRepository.current?.repositoryId); if (current) { selectedRepository.current = current; setRepository(current); } } }).catch(() => { /* The original operation error remains visible; Reopen retries storage. */ });
           if (!reopening.current && savedSnapshot.current && selectedRepository.current) {
             const next = crypto.randomUUID(); job.current = next; reopening.current = true; recoveryMessage.current = `${event.message} Showing the stored completed analysis.`; setBusy(true);
@@ -123,11 +136,12 @@ export function DesktopExplorer() {
       <strong>Codebase Intelligence</strong>
       <button className="rounded border border-line px-2 py-1 disabled:opacity-40" disabled={!ready || busy || picking} onClick={() => void open()}>Open repository</button>
       {repositories.length > 0 && <select aria-label="Stored repositories" className="max-w-64 rounded border border-line bg-canvas px-2 py-1" value={repository?.repositoryId ?? ""} disabled={!ready || busy || picking} onChange={(event) => { if (event.target.value) void reopen(event.target.value); }}><option value="">Stored repositories…</option>{repositories.map((r) => <option key={r.repositoryId} value={r.repositoryId}>{r.root}{!r.available ? " · root unavailable" : ""}{r.snapshotState === "incompatible" ? " · reanalysis required" : ""}</option>)}</select>}
-      {repository && <><button className="rounded border border-line px-2 py-1 disabled:opacity-40" disabled={busy || picking || !repository.available} onClick={() => void analyze(repository)}>Refresh</button><button className="rounded border border-line px-2 py-1 disabled:opacity-40" disabled={busy || picking} onClick={() => void reopen(repository.repositoryId)}>Reopen</button><button className="rounded border border-line px-2 py-1 disabled:opacity-40" disabled={busy || picking} onClick={() => void forget()}>Forget</button></>}
+      {repository && <><button className="rounded border border-line px-2 py-1 disabled:opacity-40" disabled={busy || picking || !repository.available} onClick={() => void analyze(repository)}>Full refresh</button><button className="rounded border border-line px-2 py-1 disabled:opacity-40" disabled={busy || picking} onClick={() => void reopen(repository.repositoryId)}>Reopen</button><button className="rounded border border-line px-2 py-1 disabled:opacity-40" disabled={busy || picking} onClick={() => void forget()}>Forget</button></>}
+      {snapshot && <><button disabled={busy || picking} onClick={() => void invoke("control_watching", { jobId: job.current, action: watchState === "watching" ? "stop" : "start" }).catch((error) => setMessage(String(error)))}>{watchState === "watching" ? "Pause watching" : "Resume watching"}</button><button disabled={busy || picking} onClick={() => void invoke("control_watching", { jobId: job.current, action: "simulate-loss" }).catch((error) => setMessage(String(error)))}>Simulate watcher loss</button></>}
       {busy && <button className="rounded border border-line px-2 py-1" onClick={() => void invoke("cancel_analysis", { jobId: job.current }).catch((error) => setMessage(String(error)))}>Cancel</button>}
       <span className="min-w-0 flex-1 truncate font-mono text-fg-muted" title={repository?.root}>{repository?.root}</span>
       <ThemeControl initial="system" />
-      <ExternalAi key={`${displayJob}:${explanation ? "approval" : "settings"}`} provider={aiProvider} onProviderChange={setAiProvider} jobId={displayJob} pending={explanation} onResult={finishExplanation} />
+      <ExternalAi key={`${displayJob}:${revision}:${explanation ? "approval" : "settings"}`} provider={aiProvider} onProviderChange={setAiProvider} jobId={displayJob} pending={explanation} onResult={finishExplanation} />
       <button className="text-accent" onClick={() => setMeasurementsOpen(!measurementsOpen)} aria-expanded={measurementsOpen}>Pilot measurements</button>
     </header>
     {repository && <p className="shrink-0 border-b border-line px-3 py-1 text-[11px] text-fg-muted">{repository.updatedAt ? `Stored snapshot: ${repository.updatedAt}` : "No completed snapshot"}{repository.lastJob ? ` · Last refresh: ${repository.lastJob.state}` : ""}{!repository.available ? " · Root missing, moved or inaccessible. Historical graph only; restore the directory at its registered path or open its new location." : " · Source is checked against the snapshot before display."}</p>}
@@ -140,7 +154,7 @@ export function DesktopExplorer() {
     {!ready && <p className="p-4 text-xs text-fg-muted">Repository selection requires the desktop app. Start it with pnpm desktop:dev.</p>}
     {snapshot && !snapshot.files.length && <p className="border-b border-line p-3 text-xs">No supported TypeScript/JavaScript files were parsed. This directory may be empty, contain unsupported languages, or have skipped files; inspect coverage for details.</p>}
     {snapshot && coverage && <CoveragePanel snapshot={snapshot} />}
-    {snapshot && projection && <AnalysisView key={displayJob} {...projection} modelRoles={{}}
+    {snapshot && projection && <AnalysisView key={`${displayJob}:${revision}`} {...projection} modelRoles={{}}
       repository={{ name: repository?.root.split(/[\\/]/).filter(Boolean).at(-1) ?? "Repository", projects: snapshot.projects.map((p) => ({ path: p.path, adapter: p.extractor })), skipped: snapshot.coverage.files.skipped, unresolved: snapshot.coverage.relationships.unresolved }}
       operations={operations} evidence={(file) => <SourceEvidence key={`${displayJob}:${file}`} file={file} jobId={displayJob} snapshot={snapshot} busy={busy} />}
       investigations={(onReveal, selectedFile) => <div className="h-full overflow-auto"><BehaviorTraces snapshot={snapshot} onReveal={onReveal} /><Investigations snapshot={snapshot} jobId={displayJob} busy={busy} selectedFile={selectedFile} onReveal={onReveal} onExplain={operations.explainInvestigation} /></div>} />}

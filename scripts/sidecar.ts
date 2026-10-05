@@ -1,7 +1,8 @@
 import { realpathSync } from "node:fs";
 import path from "node:path";
 import { queryStructure, readEvidence } from "../lib/engine/index.ts";
-import { typescriptAdapter } from "../lib/engine/adapters/typescript.ts";
+import { createTypescriptRefresh } from "../lib/engine/adapters/typescript.ts";
+import { RepositoryRefresh } from "../lib/engine/refresh.ts";
 import { validateSnapshot } from "../lib/engine/contract.ts";
 import type { CodeSnapshot } from "../lib/engine/types.ts";
 import { investigate } from "../lib/engine/investigations.ts";
@@ -32,6 +33,35 @@ console.log = () => { throw new Error("Engine logs cannot use the protocol chann
 let snapshot: CodeSnapshot | null = null;
 let jobId: string | null = null;
 let ownsJob = false;
+let reopened = false;
+const adapter = createTypescriptRefresh();
+let generation = 0;
+let storageJob: string | null = null;
+const refresher = new RepositoryRefresh({
+  begin() {
+    if (!jobId) throw new Error("Missing session");
+    storageJob = generation++ === 0 ? jobId : `refresh-${generation}-${jobId}`;
+    if (store && repositoryId) { store.begin(repositoryId, storageJob); ownsJob = true; }
+    if (generation === 1 && !reopened) emit({ version: 1, requestId: jobId, jobId, type: "progress", stage: "select" });
+  },
+  analyze(full) {
+    if (!jobId) throw new Error("Missing session");
+    emit({ version: 1, requestId: jobId, jobId, type: "progress", stage: "select" });
+    try { return adapter.analyze(root, full, (stage) => emit({ version: 1, requestId: jobId!, jobId: jobId!, type: "progress", stage })); }
+    catch (error) { if (store && storageJob) store.finish(storageJob, "failed"); throw error; }
+  },
+  publish(next) {
+    if (!jobId) throw new Error("Missing session");
+    try { if (store && repositoryId && storageJob) store.publish(repositoryId, storageJob, next); }
+    catch (error) { if (store && storageJob) store.finish(storageJob, "failed"); throw error; }
+    snapshot = validateSnapshot(next);
+    emit({ version: 1, requestId: jobId, jobId, type: "complete", snapshot });
+  },
+  status(status) {
+    if (status.state === "paused" || status.state === "degraded") { if (store && storageJob) store.finish(storageJob, "failed"); }
+    if (jobId) emit({ version: 1, requestId: jobId, jobId, type: "watch", status });
+  },
+});
 const seen = new Set<string>();
 function emit(event: EngineEvent) {
   const line = JSON.stringify(event);
@@ -50,23 +80,23 @@ function handle(request: EngineRequest) {
     snapshot = store.load(repositoryId);
     if (!snapshot) throw new Error("No completed snapshot; analyze this repository first");
     jobId = request.jobId;
+    reopened = true;
     emit({ ...base, type: "complete", snapshot });
+    // Watching is explicitly started by the desktop after a completed response.
   } else if (request.type === "analyze") {
     if (snapshot || jobId) throw new Error("A session accepts one analysis only");
     if (!path.isAbsolute(request.root) || path.toNamespacedPath(request.root) !== path.toNamespacedPath(authority)) throw new Error("Repository root is not authorized");
     jobId = request.jobId;
-    if (store && repositoryId) { store.begin(repositoryId, jobId); ownsJob = true; }
     if (realpathSync.native(request.root) !== root) throw new Error("Repository root changed; select its current location");
-    emit({ ...base, type: "progress", stage: "select" });
     // The adapter remains authoritative; its staged callback reports work
     // without exposing parser-specific types to the native boundary.
-    snapshot = validateSnapshot(typescriptAdapter.analyze(root, (stage) => emit({ ...base, type: "progress", stage })));
-    emit({ ...base, type: "progress", stage: "validate" });
-    if (store && repositoryId) store.publish(repositoryId, jobId, snapshot);
-    emit({ ...base, type: "complete", snapshot });
+    refresher.run(true);
   } else {
     if (!snapshot || request.jobId !== jobId) throw new Error("Unknown or incomplete analysis job");
-    if (request.type === "evidence") emit({ ...base, type: request.type, evidence: readEvidence(snapshot, request.file) });
+    if (request.type === "watch") {
+      if (request.action === "start") refresher.start(); else if (request.action === "stop") refresher.pause(); else refresher.loss();
+    }
+    else if (request.type === "evidence") emit({ ...base, type: request.type, evidence: readEvidence(snapshot, request.file) });
     else if (request.type === "explanation") {
       const result = explanationEvidence(snapshot, request.query);
       if (result.files.some((file) => readEvidence(snapshot!, file).state !== "current")) throw new Error("Explanation evidence is stale or unavailable");
@@ -90,10 +120,10 @@ process.stdin.on("data", (chunk: Buffer) => {
     catch { process.exit(2); }
     try { handle(request); }
     catch (error) {
-      if (store && ownsJob && jobId === request.jobId && request.type === "analyze") store.finish(request.jobId, "failed");
+      if (store && ownsJob && storageJob && jobId === request.jobId && request.type === "analyze") store.finish(storageJob, "failed");
       // Raw errors may contain source/config expressions or machine paths.
       emit({ version: 1, requestId: request.requestId, jobId: request.jobId, type: "error", code: error instanceof StorageError ? error.code : "operation_failed", message: error instanceof StorageError ? error.message : "Local operation failed. Check directory access, coverage policy and analysis limits. The previous completed snapshot is retained." });
     }
   }
 });
-process.stdin.on("end", () => { if (store && ownsJob && jobId) store.finish(jobId, "interrupted"); store?.close(); process.exit(0); });
+process.stdin.on("end", () => { refresher.close(); if (store && ownsJob && storageJob) store.finish(storageJob, "interrupted"); store?.close(); process.exit(0); });

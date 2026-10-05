@@ -25,7 +25,7 @@ export function readEvidence(snapshot: CodeSnapshot, fileId: string): { state: "
   if (!file) throw new Error("Unknown snapshot file");
   try {
     if (path.toNamespacedPath(realpathSync.native(checked.origin.root)) !== path.toNamespacedPath(checked.origin.root)) return { state: "unavailable" };
-    const reader = new RepositoryReader(checked.origin.root);
+    const reader = new RepositoryReader(checked.origin.root, {}, checked.origin.root);
     for (const d of checked.diagnostics) if (d.category === "excluded-directory") reader.exclude(d.path);
     const bytes = reader.read(path.resolve(reader.root, file.path), "source");
     if (createHash("sha256").update(bytes).digest("hex") !== file.hash) return { state: "stale" };

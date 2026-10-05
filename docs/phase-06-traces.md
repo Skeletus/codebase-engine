@@ -2,7 +2,8 @@
 
 Phase 05 Windows acceptance was confirmed by the user before this work. macOS/Linux
 qualification and formal Phase 04 pilot trials remain outstanding. Phase 06 manual
-acceptance is pending; automated results below do not replace it.
+acceptance was confirmed successful by the user on Windows before Phase 07;
+automated results below do not replace the remaining platform/pilot gates.
 
 ## Implemented boundary
 

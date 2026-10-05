@@ -32,7 +32,7 @@ process.stdin.on("data", (chunk: Buffer) => {
       }
       case "lookup": result = store.repository(request.repositoryId); break;
       case "forget": store.forget(request.repositoryId); result = null; break;
-      case "finish": store.finish(request.jobId, request.state, request.ownerPid); result = null; break;
+      case "finish": store.finishSession(request.jobId, request.state, request.ownerPid); result = null; break;
       case "settings": result = store.settings(request.initialTheme); break;
       case "theme": store.setTheme(request.theme); result = store.settings(); break;
       case "measurement": store.recordMeasurement(request.input, request.applicationVersion); result = store.measurements(); break;

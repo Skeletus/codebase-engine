@@ -226,6 +226,9 @@ fn decode_event(bytes: &[u8], expected_job: &str) -> Result<Value, String> {
             vec!["stage"]
         }
         Some("complete") if event["snapshot"].is_object() => vec!["snapshot"],
+        Some("watch") if valid_watch_status(&event["status"]) => {
+            vec!["status"]
+        }
         Some("evidence") if event["evidence"].is_object() => vec!["evidence"],
         Some("query") if event["result"].is_object() => vec!["result"],
         Some("investigation") if event["result"].is_object() => vec!["result"],
@@ -262,6 +265,34 @@ fn stop(session: &mut Session) {
     for (_, sender) in session.pending.drain() {
         let _ = sender.send(Err("Engine stopped; retry analysis".into()));
     }
+}
+fn valid_watch_status(status: &Value) -> bool {
+    let Some(fields) = status.as_object() else {
+        return false;
+    };
+    let names = [
+        "state",
+        "message",
+        "mode",
+        "parsed",
+        "reused",
+        "elapsedMs",
+        "memoryBytes",
+        "snapshotBytes",
+    ];
+    fields.len() == names.len()
+        && names.iter().all(|name| fields.contains_key(*name))
+        && matches!(
+            status["state"].as_str(),
+            Some("watching" | "paused" | "degraded" | "refreshing")
+        )
+        && matches!(status["mode"].as_str(), Some("full" | "incremental"))
+        && status["message"].as_str().is_some_and(|m| m.len() <= 1024)
+        && names[3..].iter().all(|name| {
+            status[*name]
+                .as_u64()
+                .is_some_and(|n| n <= 9007199254740991)
+        })
 }
 fn fail(app: &tauri::AppHandle, job: &str, code: &str, message: &str) {
     explanations::invalidate(app);
@@ -553,6 +584,16 @@ async fn launch_analysis(
                         continue;
                     }
                     let event_type = event["type"].as_str().unwrap_or("");
+                    if event_type == "watch" {
+                        session.running = event["status"]["state"] == "refreshing";
+                        if session.running {
+                            for (_, sender) in session.pending.drain() {
+                                let _ = sender.send(Err(
+                                    "Snapshot refreshing; retry after publication".into(),
+                                ));
+                            }
+                        }
+                    }
                     if event_type == "progress" {
                         diagnostics.stage(event["stage"].as_str().unwrap_or(""));
                     } else if event_type == "complete" {
@@ -636,7 +677,10 @@ async fn launch_analysis(
                         break;
                     }
                     drop(session);
-                    if matches!(event_type, "complete" | "progress") {
+                    if event_type == "watch" && event["status"]["state"] == "refreshing" {
+                        explanations::invalidate(&reader_app);
+                    }
+                    if matches!(event_type, "complete" | "progress" | "watch") {
                         let _ = reader_app.emit_to("main", "engine-event", event);
                     }
                 }
@@ -735,6 +779,36 @@ async fn request(
 #[tauri::command]
 async fn read_evidence(app: tauri::AppHandle, job_id: String, file: String) -> Reply {
     request(app, job_id, file, None, "evidence").await
+}
+#[tauri::command]
+async fn control_watching(
+    app: tauri::AppHandle,
+    job_id: String,
+    action: String,
+) -> Result<(), String> {
+    if !matches!(action.as_str(), "start" | "stop" | "simulate-loss") {
+        return Err("Invalid watcher action".into());
+    }
+    let engine = app.state::<Engine>();
+    let mut session = engine.0.lock().map_err(|_| "Engine state unavailable")?;
+    if session.job_id.as_deref() != Some(&job_id)
+        || session.running
+        || session.choosing
+        || session.opening
+        || session.closing
+    {
+        return Err("Finish the current operation before changing watching".into());
+    }
+    let frame = format!(
+        "{}\n",
+        json!({"version":1,"requestId":id(),"jobId":job_id,"type":"watch","action":action})
+    );
+    session
+        .child
+        .as_mut()
+        .ok_or("Engine unavailable")?
+        .write(frame.as_bytes())
+        .map_err(|_| "Engine pipe unavailable".into())
 }
 #[tauri::command]
 async fn query_structure(
@@ -896,6 +970,7 @@ fn main() {
             start_analysis,
             cancel_analysis,
             read_evidence,
+            control_watching,
             query_structure,
             investigate_snapshot,
             record_measurement,
@@ -1016,6 +1091,14 @@ mod tests {
         }
         assert!(decode_event(&vec![b'x'; MAX_EVENT + 1], "job-1").is_err());
         assert!(decode_event(b"not json", "job-1").is_err());
+        let status = json!({"state":"refreshing","message":"local","mode":"full","parsed":1,"reused":0,"elapsedMs":2,"memoryBytes":300,"snapshotBytes":400});
+        assert!(valid_watch_status(&status));
+        let mut invalid = status.clone();
+        invalid["root"] = json!("C:/private");
+        assert!(!valid_watch_status(&invalid));
+        let mut invalid = status;
+        invalid["parsed"] = json!(-1);
+        assert!(!valid_watch_status(&invalid));
     }
     #[test]
     fn evidence_entities_cannot_escape_roots() {

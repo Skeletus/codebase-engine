@@ -121,6 +121,11 @@ export class SqliteAnalysisStore implements AnalysisStore {
   finish(job: string, state: "failed" | "cancelled" | "interrupted", ownerPid = process.pid): void {
     this.db.prepare("UPDATE jobs SET state=?,finished_at=? WHERE id=? AND state='running' AND owner_pid=?").run(state, new Date().toISOString(), job, ownerPid);
   }
+  finishSession(job: string, state: "cancelled" | "interrupted", ownerPid: number): void {
+    // Native cancellation identifies the private process/session. Its automatic
+    // refresh generations have distinct jobs but share this owner and suffix.
+    this.db.prepare("UPDATE jobs SET state=?,finished_at=? WHERE state='running' AND owner_pid=? AND (id=? OR substr(id,-length(?))=?)").run(state, new Date().toISOString(), ownerPid, job, `-${job}`, `-${job}`);
+  }
   recover(): void {
     for (const job of this.db.prepare("SELECT id,owner_pid FROM jobs WHERE state='running'").all()) if (!live(Number(job.owner_pid))) this.finish(String(job.id), "interrupted", Number(job.owner_pid));
   }

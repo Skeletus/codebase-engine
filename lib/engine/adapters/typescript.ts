@@ -1,17 +1,18 @@
 import { extractBehavior } from "../../parser/behavior.ts";
 import type { Behavior } from "../../model/behavior.ts";
-import { parseSelection, selectFiles } from "../../parser/index.ts";
+import { createSyntaxSession, parseSelection, selectFiles, type Selection } from "../../parser/index.ts";
 import { validateParseResult } from "../../parser/contract.ts";
 import { validateSnapshot } from "../contract.ts";
 import { SNAPSHOT_VERSION, type CodeSnapshot, type Evidence, type LanguageAdapter } from "../types.ts";
 
 export const typescriptAdapter: LanguageAdapter = {
   id: "typescript-javascript",
-  analyze(directory, onProgress) {
-    const selection = selectFiles(directory);
+  analyze: analyzeTypescript,
+};
+function analyzeTypescript(directory: string, onProgress?: (stage: "parse") => void, selection: Selection = selectFiles(directory), session?: ReturnType<typeof createSyntaxSession>): CodeSnapshot {
     onProgress?.("parse");
     let behavior: Behavior | undefined;
-    const parsed = validateParseResult(parseSelection(selection, (sources, resolver, routes) => { behavior = extractBehavior(sources, resolver, routes); }));
+    const parsed = validateParseResult(parseSelection(selection, (sources, resolver, routes) => { behavior = extractBehavior(sources, resolver, routes); }, session));
     if (!behavior) throw new Error("Missing static symbol analysis");
     const byPath = new Map(parsed.files.map((f) => [f.path, f]));
     const evidence = (file: string, line: number, extractor: string, description: string): Evidence => {
@@ -49,5 +50,32 @@ export const typescriptAdapter: LanguageAdapter = {
       ],
     };
     return validateSnapshot(snapshot);
-  },
-};
+}
+
+/** Ephemeral adapter-owned ASTs; shared engine contracts never expose ts-morph. */
+export function createTypescriptRefresh() {
+  let session = createSyntaxSession(), previous: Selection | undefined;
+  let unresolved = "";
+  return {
+    analyze(root: string, forceFull: boolean, progress?: (stage: "parse") => void) {
+      const selection = selectFiles(root, root);
+      const topology = (s: Selection) => JSON.stringify({ paths: s.walk.candidates.map((c) => [c.path, c.project]), skipped: s.walk.skipped, projects: s.walk.projects, excluded: s.walk.excludedDirectories });
+      let full = forceFull || !previous || topology(previous) !== topology(selection);
+      // Resolution-only package/config metadata is also authoritative. Rebuild
+      // globally when it changes, even if no watcher event was delivered.
+      if (previous && !previous.reader.metadataStable()) full = true;
+      if (full) session = createSyntaxSession();
+      let snapshot = analyzeTypescript(root, progress, selection, session);
+      const currentUnresolved = JSON.stringify(snapshot.diagnostics.filter((d) => d.category === "unresolved-import" || d.category === "config"));
+      if (!full && currentUnresolved !== unresolved) {
+        full = true; session = createSyntaxSession();
+        snapshot = analyzeTypescript(root, progress, selection, session);
+      }
+      unresolved = currentUnresolved;
+      const candidate = { snapshot, reader: selection.reader, mode: full ? "full" as const : "incremental" as const, parsed: session.parsed, reused: session.reused };
+      previous = selection;
+      return candidate;
+    },
+    reset() { session = createSyntaxSession(); previous = undefined; unresolved = ""; },
+  };
+}

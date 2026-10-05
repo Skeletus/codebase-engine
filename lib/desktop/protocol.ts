@@ -2,6 +2,7 @@ import { validateSnapshot } from "../engine/contract.ts";
 import { validateSelection, type ExplanationSelection } from "../ai/selection.ts";
 import type { CodeSnapshot, StructuralQuery, StructuralResult } from "../engine/types.ts";
 import { validateInvestigation, validateInvestigationResult, type Investigation, type InvestigationResult } from "../engine/investigations.ts";
+import type { RefreshStatus } from "../engine/refresh.ts";
 
 export const PROTOCOL_VERSION = 1;
 export const MAX_REQUEST_BYTES = 16 * 1024;
@@ -9,9 +10,10 @@ export const MAX_EVENT_BYTES = 32 * 1024 * 1024;
 export type EvidenceResult = { state: "current"; source: string } | { state: "stale" | "unavailable" };
 type Identity = { version: 1; requestId: string; jobId: string };
 export type EngineRequest = Identity & (
-  { type: "analyze"; root: string } | { type: "reopen" } | { type: "evidence"; file: string } | { type: "query"; query: StructuralQuery } | { type: "investigation"; query: Investigation } | { type: "explanation"; query: ExplanationSelection }
+  { type: "analyze"; root: string } | { type: "reopen" } | { type: "watch"; action: "start" | "stop" | "simulate-loss" } | { type: "evidence"; file: string } | { type: "query"; query: StructuralQuery } | { type: "investigation"; query: Investigation } | { type: "explanation"; query: ExplanationSelection }
 );
 export type EngineEvent = Identity & (
+  { type: "watch"; status: RefreshStatus } |
   { type: "progress"; stage: "select" | "parse" | "validate" } |
   { type: "complete"; snapshot: CodeSnapshot } |
   { type: "evidence"; evidence: EvidenceResult } |
@@ -41,6 +43,7 @@ function exact(r: Record<string, unknown>, keys: string[]) {
 }
 export function validateRequest(value: unknown): EngineRequest {
   const r = record(value), base = identity(r);
+  if (r.type === "watch") { exact(r, ["action"]); if (r.action !== "start" && r.action !== "stop" && r.action !== "simulate-loss") throw new Error("Invalid watch action"); return { ...base, type: "watch", action: r.action }; }
   if (r.type === "analyze") { exact(r, ["root"]); return { ...base, type: r.type, root: text(r.root, 4096) }; }
   if (r.type === "reopen") { exact(r, []); return { ...base, type: r.type }; }
   if (r.type === "explanation") { exact(r, ["query"]); return { ...base, type: r.type, query: validateSelection(r.query) }; }
@@ -57,6 +60,12 @@ export function validateRequest(value: unknown): EngineRequest {
 }
 export function validateEvent(value: unknown): EngineEvent {
   const r = record(value), base = identity(r);
+  if (r.type === "watch") {
+    exact(r, ["status"]); const s = record(r.status);
+    const keys = ["state", "message", "mode", "parsed", "reused", "elapsedMs", "memoryBytes", "snapshotBytes"];
+    if (Object.keys(s).length !== keys.length || !keys.every((k) => k in s) || !["watching", "paused", "degraded", "refreshing"].includes(String(s.state)) || !["full", "incremental"].includes(String(s.mode)) || typeof s.message !== "string" || s.message.length > 1024 || !keys.slice(3).every((k) => typeof s[k] === "number" && Number.isSafeInteger(s[k]) && Number(s[k]) >= 0)) throw new Error("Invalid refresh status");
+    return { ...base, type: "watch", status: s as RefreshStatus };
+  }
   if (r.type === "progress") {
     exact(r, ["stage"]);
     if (r.stage !== "select" && r.stage !== "parse" && r.stage !== "validate") throw new Error("Invalid progress");
