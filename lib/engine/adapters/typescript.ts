@@ -1,3 +1,5 @@
+import { extractBehavior } from "../../parser/behavior.ts";
+import type { Behavior } from "../../model/behavior.ts";
 import { parseSelection, selectFiles } from "../../parser/index.ts";
 import { validateParseResult } from "../../parser/contract.ts";
 import { validateSnapshot } from "../contract.ts";
@@ -8,7 +10,9 @@ export const typescriptAdapter: LanguageAdapter = {
   analyze(directory, onProgress) {
     const selection = selectFiles(directory);
     onProgress?.("parse");
-    const parsed = validateParseResult(parseSelection(selection));
+    let behavior: Behavior | undefined;
+    const parsed = validateParseResult(parseSelection(selection, (sources, resolver, routes) => { behavior = extractBehavior(sources, resolver, routes); }));
+    if (!behavior) throw new Error("Missing static symbol analysis");
     const byPath = new Map(parsed.files.map((f) => [f.path, f]));
     const evidence = (file: string, line: number, extractor: string, description: string): Evidence => {
       const f = byPath.get(file);
@@ -16,6 +20,7 @@ export const typescriptAdapter: LanguageAdapter = {
       return { file, line, fileHash: f.hash, extractor, evidenceKind: "verified", occurrence: "first", description };
     };
     const snapshot: CodeSnapshot = {
+      behavior,
       version: SNAPSHOT_VERSION, origin: { kind: "local", root: parsed.root },
       adapter: { id: "typescript-javascript", version: parsed.schemaVersion },
       projects: parsed.projects.map((p) => ({ path: p.path, extractor: p.adapter })),

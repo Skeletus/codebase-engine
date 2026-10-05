@@ -9,7 +9,7 @@
     "lint": "eslint",
     "parse": "node scripts/parse.ts",
     "engine": "node scripts/engine.ts",
-    "test": "node --test tests/phase-01.test.ts tests/phase-02.test.ts tests/phase-03.test.ts tests/phase-04.test.ts tests/phase-05.test.ts",
+    "test": "node --test tests/phase-01.test.ts tests/phase-02.test.ts tests/phase-03.test.ts tests/phase-04.test.ts tests/phase-05.test.ts tests/phase-06.test.ts",
     "desktop:prepare": "node scripts/package-engine.ts && pnpm build && pnpm desktop:verify-assets",
     "desktop:dev": "tauri dev",
     "desktop:build": "tauri build",

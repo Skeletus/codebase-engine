@@ -12,8 +12,11 @@ const executable = path.resolve(release ? `src-tauri/target/release/code-engine$
 const directory = realpathSync(mkdtempSync(path.join(tmpdir(), "cartograph smoke spaces ")));
 const root = path.join(directory, "local repository"), database = path.toNamespacedPath(path.join(directory, "intelligence.sqlite"));
 mkdirSync(root);
-writeFileSync(path.join(root, "a.ts"), 'import { b } from "./b"; export const a = b;\n');
-writeFileSync(path.join(root, "b.ts"), "export const b = 1;\n");
+writeFileSync(path.join(root, "a.ts"), 'import { b as helper } from "./b"; export function a() { return helper(); }\n');
+writeFileSync(path.join(root, "b.ts"), "export function b() { return 1; }\n");
+writeFileSync(path.join(root, "package.json"), JSON.stringify({ name: "static-smoke", dependencies: { next: "16.3.6" } }));
+mkdirSync(path.join(root, "app/api/smoke"), { recursive: true });
+writeFileSync(path.join(root, "app/api/smoke/route.ts"), 'import { a } from "../../../a"; export function GET() { return a(); }\n');
 
 function run(script: "sidecar" | "storage", requests: unknown[], authority: Record<string, string> = {}): Promise<unknown[]> {
   return new Promise((resolve, reject) => {
@@ -49,14 +52,22 @@ try {
   const authority = { CODE_INTELLIGENCE_REPOSITORY: String(repo.repositoryId), CODE_INTELLIGENCE_ROOT: String(repo.root) };
   const [analyzed] = await run("sidecar", [{ version: 1, jobId: "initial", requestId: "initial", type: "analyze", root: repo.root }], authority);
   const initial = validateEvent(analyzed); assert(initial.type === "complete");
-  assert.equal(initial.snapshot.files.length, 2); assert.equal(initial.snapshot.relationships.length, 1);
+  assert.equal(initial.snapshot.files.length, 3); assert.equal(initial.snapshot.relationships.length, 2);
+  assert.equal(initial.snapshot.version, 2);
+  const symbolCall = initial.snapshot.behavior.relations.find((r) => r.relation === "calls"); assert(symbolCall);
+  assert.equal(symbolCall.site.file, "a.ts");
+  assert.equal(initial.snapshot.behavior.declarations.find((d) => d.id === symbolCall.target)?.name, "b");
+  assert.equal(initial.snapshot.routes.length, 1); assert(initial.snapshot.behavior.handlers[0].target);
+  assert.equal(initial.snapshot.behavior.declarations.find((d) => d.id === initial.snapshot.behavior.handlers[0].target)?.name, "GET");
   const prepared = await run("sidecar", [
     { version: 1, jobId: "ai-local", requestId: "ai-local", type: "reopen" },
     { version: 1, jobId: "ai-local", requestId: "ai-prepare", type: "explanation", query: { kind: "file", path: "a.ts" } },
   ], authority);
   const packageEvent = validateEvent(prepared[1]); assert(packageEvent.type === "explanation");
-  const payload = JSON.parse(packageEvent.result.payload); assert.equal(payload.edges.length, 1); assert.equal(payload.files.length, 2);
-  assert.doesNotMatch(packageEvent.result.payload, /export const|origin|root/);
+  const payload = JSON.parse(packageEvent.result.payload); assert.equal(payload.edges.length, 2); assert.equal(payload.files.length, 3);
+  assert.equal(payload.behavior.handlers[0].target.name, "GET");
+  assert.doesNotMatch(packageEvent.result.payload, /export function|return helper|origin|root/);
+  assert.equal(payload.behavior.relations.find((r: { relation: string }) => r.relation === "calls").target, "b");
   const [digest] = await run("storage", [{ version: 1, type: "explanation-digest", input: packageEvent.result.payload }]);
   assert.equal(digest, packageEvent.result.digest);
   const cacheKey = `openai:fake:structural-v1:${digest}`;
@@ -82,7 +93,7 @@ try {
   await run("storage", [{ version: 1, type: "forget", repositoryId: repo.repositoryId }]);
   assert.deepEqual((await run("storage", [{ version: 1, type: "list" }]))[0], []);
   assert(existsSync(path.join(root + " moved", "a.ts")), "forget must never delete source");
-  console.log(`PASS: bundled Node ${runtime.node}; SQLite analyze/restart/historical reopen/stale evidence/impact witnesses/numeric measurement/reset/optional AI evidence digest/cache/forget; no PATH, cloud configuration or repository dependencies`);
+  console.log(`PASS: bundled Node ${runtime.node}; SQLite analyze/restart/historical reopen/stale evidence/impact witnesses/static symbol calls/richer approved AI metadata/numeric measurement/reset/evidence digest/cache/forget; no PATH, cloud configuration or repository dependencies`);
 } finally {
   assert(path.basename(directory).startsWith("cartograph smoke spaces "));
   rmSync(directory, { recursive: true, force: true });

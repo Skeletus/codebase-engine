@@ -247,7 +247,8 @@ macOS and Linux when corresponding hosts are available.
   Final `pnpm desktop:build` passed and regenerated the Windows x64 MSI and
   NSIS installers with the final provider-neutral UI. Source, staged and release
   evidence-module hashes match. Line-ending warnings were not check failures.
-- Windows live-key and manual Phase 05 acceptance: not performed in this session.
+- Windows live-key and manual Phase 05 acceptance: subsequently confirmed successful
+  by the user (Groq, exact preview/approval, grounded citations) before Phase 06.
 - macOS/Linux native storage, packaging and manual acceptance: unavailable here;
   not performed or qualified.
 - Phase 04 macOS/Linux qualification and formal pilot trials: still outstanding.

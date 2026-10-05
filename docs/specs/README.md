@@ -19,6 +19,10 @@ Phase 04 implementation and Windows manual acceptance and explicitly authorized
 Phase 05 while macOS/Linux qualification and formal pilot trials remain open.
 Phase 05 now includes user-authorized OpenAI/Groq BYOK provider support.
 Phase 05 boundaries and acceptance are tracked in [the BYOK guide](../phase-05-byok.md).
+The user accepted Phase 05 manual acceptance on Windows and authorized Phase 06.
+Phase 06 delivery and pending manual acceptance are tracked in
+[the static trace guide](../phase-06-traces.md). This does not close the outstanding
+macOS/Linux qualification or formal pilot trials.
 No pilot-ready
 qualification is implied until every Phase 04 completion criterion passes.
 

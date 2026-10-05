@@ -24,11 +24,34 @@ export function explanationEvidence(snapshot: CodeSnapshot, selection: Explanati
   const edges = relationships.filter((r) => ids.has(r.source) && ids.has(r.target)).slice(0, 24).map((r, i) => ({ id: `E${i + 1}`, source: safeText(r.source), target: safeText(r.target), typeOnly: r.typeOnly, line: r.evidence.line, hash: r.evidence.fileHash, extractor: r.evidence.extractor, occurrence: r.evidence.occurrence }));
   const routes = snapshot.routes.filter((r) => ids.has(r.file));
   const declarations = routes.slice(0, 8).map((r, i) => ({ id: `R${i + 1}`, file: safeText(r.file), method: safeText(r.method), pattern: safeText(r.pattern), line: r.evidence.line, hash: r.evidence.fileHash, extractor: r.evidence.extractor }));
-  const evidence = { version: 1, task: selection.kind, goal: selection.kind === "investigation" ? (selection.query.operation === "ask" ? { intent: selection.query.intent, target: safeText(selection.query.target), depth: selection.query.depth, budget: selection.query.budget } : { scope: selection.query.scope, text: safeText(selection.query.text), budget: selection.query.budget }) : { path: safeText(selection.path) }, adapter: snapshot.adapter, files, edges, routes: declarations,
+  const symbols = new Map(snapshot.behavior.declarations.map((d) => [d.id, d]));
+  const fileIds = new Map(files.map((f) => [f.path, f.id]));
+  const symbolCandidates = snapshot.behavior.declarations.filter((d) => d.callable && ids.has(d.site.file));
+  const relationCandidates = snapshot.behavior.relations.filter((r) => ids.has(r.site.file));
+  const gapCandidates = snapshot.behavior.gaps.filter((g) => ids.has(g.site.file));
+  const handlerCandidates = snapshot.behavior.handlers.filter((h) => ids.has(h.site.file));
+  // Rich facts cite their existing file IDs. Every transmitted site/target is
+  // included in native freshness checks, with no new implicit consent or source.
+  const compactSite = (s: import("../model/behavior.ts").Site) => ({ citation: fileIds.get(s.file)!, file: safeText(s.file), line: s.line, endLine: s.endLine, hash: s.fileHash });
+  const rich = {
+    symbols: symbolCandidates.slice(0, 4).map((d) => ({ name: safeText(d.name), kind: d.kind, ...compactSite(d.site) })),
+    relations: relationCandidates.filter((r) => ids.has(symbols.get(r.target)!.site.file)).slice(0, 4).map((r) => ({ relation: r.relation, source: r.source ? safeText(symbols.get(r.source)!.name) : null, target: safeText(symbols.get(r.target)!.name), targetSite: compactSite(symbols.get(r.target)!.site), conditional: r.conditional, ...compactSite(r.site) })),
+    gaps: gapCandidates.slice(0, 2).map((g) => ({ reason: safeText(g.reason), ...compactSite(g.site) })),
+    handlers: handlerCandidates.filter((h) => !h.target || ids.has(symbols.get(h.target)!.site.file)).slice(0, 2).map((h) => ({ route: { method: safeText(snapshot.routes[h.route].method), pattern: safeText(snapshot.routes[h.route].pattern) }, target: h.target ? { name: safeText(symbols.get(h.target)!.name), ...compactSite(symbols.get(h.target)!.site) } : null, reason: h.reason ? safeText(h.reason) : null, ...compactSite(h.site) })),
+  };
+  const evidence = { version: 2, task: selection.kind, goal: selection.kind === "investigation" ? (selection.query.operation === "ask" ? { intent: selection.query.intent, target: safeText(selection.query.target), depth: selection.query.depth, budget: selection.query.budget } : { scope: selection.query.scope, text: safeText(selection.query.text), budget: selection.query.budget }) : { path: safeText(selection.path) }, adapter: snapshot.adapter, files, edges, routes: declarations, behavior: rich,
     omissions: { files: paths.length - chosen.length, edges: relationships.length - edges.length, routes: routes.length - declarations.length },
     coverage: snapshot.coverage.files, imports: snapshot.coverage.relationships,
     investigation: answer ? { message: answer.message, beyondDepth: answer.beyondDepth, beyondBudget: answer.beyondBudget } : null,
-    limits: "Partial file-dependency evidence, not calls or execution flow. External/excluded/unresolved relationships and truncated context cannot prove absence. No source contents included." };
+    behaviorOmissions: { symbols: 0, relations: 0, gaps: 0, handlers: 0 },
+    limits: "File imports are not calls or execution flow. Included direct calls are verified static possibilities, never temporal order or guaranteed execution. Receiver/DI dispatch is unresolved. External/excluded/unresolved and omitted evidence cannot prove absence. No source contents included." };
+  function omissions() { evidence.behaviorOmissions = { symbols: symbolCandidates.length - rich.symbols.length, relations: relationCandidates.length - rich.relations.length, gaps: gapCandidates.length - rich.gaps.length, handlers: handlerCandidates.length - rich.handlers.length }; }
+  omissions();
+  // Preserve the existing 6KB bound, sacrificing optional metadata explicitly.
+  while (Buffer.byteLength(JSON.stringify(evidence)) > 6000 && (rich.symbols.length || rich.relations.length || rich.gaps.length || rich.handlers.length)) {
+    if (rich.relations.length) rich.relations.pop(); else if (rich.symbols.length) rich.symbols.pop(); else if (rich.gaps.length) rich.gaps.pop(); else rich.handlers.pop();
+    omissions();
+  }
   const payload = JSON.stringify(evidence);
   if (Buffer.byteLength(payload) > 6000) throw new Error("Selected evidence exceeds explanation budget; select a smaller scope");
   return { payload, digest: createHash("sha256").update(payload).digest("hex"), ids: [...files, ...edges, ...declarations].map((e) => e.id), files: files.map((f) => f.path) };

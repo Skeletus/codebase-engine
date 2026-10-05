@@ -14,6 +14,7 @@ import { ThemeControl } from "./theme-control";
 import { Investigations } from "./investigations";
 import { PilotMeasurements } from "./pilot-measurements";
 import { ExternalAi } from "./external-ai";
+import { BehaviorTraces } from "./behavior-traces";
 
 type Repository = StoredRepository;
 export function DesktopExplorer() {
@@ -142,7 +143,7 @@ export function DesktopExplorer() {
     {snapshot && projection && <AnalysisView key={displayJob} {...projection} modelRoles={{}}
       repository={{ name: repository?.root.split(/[\\/]/).filter(Boolean).at(-1) ?? "Repository", projects: snapshot.projects.map((p) => ({ path: p.path, adapter: p.extractor })), skipped: snapshot.coverage.files.skipped, unresolved: snapshot.coverage.relationships.unresolved }}
       operations={operations} evidence={(file) => <SourceEvidence key={`${displayJob}:${file}`} file={file} jobId={displayJob} snapshot={snapshot} busy={busy} />}
-      investigations={(onReveal, selectedFile) => <Investigations snapshot={snapshot} jobId={displayJob} busy={busy} selectedFile={selectedFile} onReveal={onReveal} onExplain={operations.explainInvestigation} />} />}
+      investigations={(onReveal, selectedFile) => <div className="h-full overflow-auto"><BehaviorTraces snapshot={snapshot} onReveal={onReveal} /><Investigations snapshot={snapshot} jobId={displayJob} busy={busy} selectedFile={selectedFile} onReveal={onReveal} onExplain={operations.explainInvestigation} /></div>} />}
     {ready && !snapshot && !busy && <p className="p-4 text-xs text-fg-muted">Choose a local directory or reopen a stored repository. Complete analyses are saved in application-owned SQLite storage; Git metadata, accounts, and network access are unnecessary.</p>}
   </>;
 }
@@ -170,6 +171,9 @@ function SourceEvidence({ file, jobId, snapshot, busy }: { file: string; jobId: 
   }
   const relationships = snapshot.relationships.filter((r) => r.source === file);
   const routes = snapshot.routes.filter((r) => r.file === file);
+  const declarations = snapshot.behavior.declarations.filter((d) => d.site.file === file);
+  const symbolRelations = snapshot.behavior.relations.filter((r) => r.site.file === file);
+  const names = new Map(snapshot.behavior.declarations.map((d) => [d.id, d]));
   const lines = result?.state === "current" ? result.source.split("\n") : [];
   return <section className="p-3 text-[11px]">
     <button className="rounded border border-line px-2 py-1 disabled:opacity-40" disabled={busy} onClick={() => void read()}>Read / recheck source</button>
@@ -181,6 +185,11 @@ function SourceEvidence({ file, jobId, snapshot, busy }: { file: string; jobId: 
     <h3 className="mt-3">Verified relationship provenance</h3>
     {relationships.map((r) => <p key={r.id} className="my-2 break-all font-mono">{r.target} · {r.syntax}{r.typeOnly ? " · type-only" : ""}<br />line {r.evidence.line} · {r.evidence.description}<br />{r.evidence.extractor} · first occurrence</p>)}
     {routes.map((r, i) => <p key={i} className="my-2 break-all font-mono">{r.method} {r.pattern} · line {r.evidence.line}<br />{r.evidence.extractor} · declaration evidence</p>)}
+    <h3 className="mt-3">Symbol declarations ({declarations.length})</h3>
+    {declarations.slice(0, 50).map((d) => <p key={d.id} className="my-2 break-all font-mono">{d.kind} {d.name}{d.callable ? " · callable" : ""} · lines {d.site.line}–{d.site.endLine} · UTF-16 [{d.site.start}, {d.site.end})<br />{d.site.fileHash} · {d.site.extractor}</p>)}
+    <h3 className="mt-3">Verified references / static calls ({symbolRelations.length})</h3>
+    {symbolRelations.slice(0, 50).map((r) => <p key={r.id} className="my-2 break-all font-mono">{r.relation}: {names.get(r.target)?.name} · {names.get(r.target)?.site.file}:{names.get(r.target)?.site.line}<br />Site lines {r.site.line}–{r.site.endLine} · UTF-16 [{r.site.start}, {r.site.end}) · {r.conditional ? "conditional possibility" : "static evidence"}<br />{r.site.fileHash} · {r.site.extractor}</p>)}
+    {(declarations.length > 50 || symbolRelations.length > 50) && <p>Details lists show the first 50 of each kind. Use Static call traces to select a callable and bound its evidence separately.</p>}
     {!relationships.length && !routes.length && <p className="text-fg-muted">No outgoing import or route evidence reported for this file.</p>}
   </section>;
 }

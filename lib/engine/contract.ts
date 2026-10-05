@@ -1,3 +1,4 @@
+import { validateBehavior } from "../model/validate.ts";
 import { SNAPSHOT_VERSION, type CodeSnapshot, type OutcomeCounts, type Evidence } from "./types.ts";
 
 function object(value: unknown): Record<string, unknown> {
@@ -55,6 +56,7 @@ export function validateSnapshot(value: unknown): CodeSnapshot {
   const coverage = object(o.coverage);
   const files = object(coverage.files);
   const snapshot: CodeSnapshot = {
+    behavior: validateBehavior(o.behavior, array(o.files).map((v) => { const f = object(v); return { path: relative(f.path), hash: hash(f.hash), lines: count(f.lines), bytes: count(f.bytes) }; }), array(o.routes).map((v) => relative(object(v).file))),
     version: SNAPSHOT_VERSION,
     origin: { kind: "local", root: string(origin.root) },
     adapter: { id: string(adapter.id), version: count(adapter.version) },

@@ -577,7 +577,7 @@ async fn launch_analysis(
                         let root_matches =
                             snapshot["origin"]["root"].as_str().map(PathBuf::from) == session.root;
                         let files = snapshot["files"].as_array();
-                        if snapshot["version"] != 1
+                        if snapshot["version"] != 2
                             || snapshot["origin"]["kind"] != "local"
                             || !root_matches
                             || files.is_none()

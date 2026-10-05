@@ -32,7 +32,7 @@ export function selectFiles(directory: string): Selection {
   return { root, reader, walk: walkRepository(root, reader) };
 }
 
-export function parseSelection({ root, walk, reader }: Selection): ParseResult {
+export function parseSelection({ root, walk, reader }: Selection, inspect?: (files: { candidate: { path: string; hash: string }; sourceFile: import("ts-morph").SourceFile; framework: string }[], resolver: import("./resolve.ts").Resolver, routes: Route[]) => void): ParseResult {
 
   // Parsing only: no lib, no type resolution. Imports are resolved separately
   // so every outcome can be classified rather than left to the compiler.
@@ -158,6 +158,7 @@ export function parseSelection({ root, walk, reader }: Selection): ParseResult {
     throw new Error(`Coverage doesn't add up: found ${walk.found}, parsed ${files.length}, skipped ${skipped.length}`);
   }
 
+  inspect?.(parsed.map((entry) => ({ ...entry, framework: walk.adapters.get(entry.candidate.project)!.name })), resolver, conventions.routes);
   return {
     schemaVersion: SCHEMA_VERSION,
     root,

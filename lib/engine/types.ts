@@ -1,4 +1,4 @@
-export const SNAPSHOT_VERSION = 1;
+export const SNAPSHOT_VERSION = 2;
 
 export type CodeFile = {
   id: string;
@@ -57,6 +57,7 @@ export type CodeSnapshot = {
     unresolved: Record<string, number>;
   };
   diagnostics: Diagnostic[];
+  behavior: import("../model/behavior.ts").Behavior;
 };
 
 export type LanguageAdapter = { id: string; analyze: (directory: string, onProgress?: (stage: "parse") => void) => CodeSnapshot };
