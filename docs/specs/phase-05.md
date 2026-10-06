@@ -2,6 +2,11 @@
 
 ## Objective
 
+Release extension: the user subsequently authorized installed Codex/Claude Code
+explanation adapters. [The extension contract](local-agent-explanations.md)
+supersedes only the earlier provider-count/non-agent restriction below; all
+evidence, privacy, approval and structural-integrity rules remain active.
+
 Add optional evidence-grounded generative explanations using user-owned credentials sent directly to a configured provider.
 
 ## Why this phase exists

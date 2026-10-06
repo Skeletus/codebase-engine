@@ -52,6 +52,22 @@ export function explanationEvidence(snapshot: CodeSnapshot, selection: Explanati
     if (rich.relations.length) rich.relations.pop(); else if (rich.symbols.length) rich.symbols.pop(); else if (rich.gaps.length) rich.gaps.pop(); else rich.handlers.pop();
     omissions();
   }
+  // Dense files can exceed the budget even without behavioral metadata.
+  // Retain the selected file and report every reduction; never raise the cap.
+  while (Buffer.byteLength(JSON.stringify(evidence)) > 6000) {
+    if (edges.length) edges.pop();
+    else if (declarations.length) declarations.pop();
+    else {
+      const exported = files.findLast((f) => f.exports.length > 0);
+      if (exported) { exported.exports.pop(); exported.exportsOmitted++; }
+      else {
+        const index = files.findLastIndex((f) => selection.kind !== "file" || f.path !== selection.path);
+        if (index < 0 || files.length <= 1) break;
+        files.splice(index, 1);
+      }
+    }
+    evidence.omissions = { files: paths.length - files.length, edges: relationships.length - edges.length, routes: routes.length - declarations.length };
+  }
   const payload = JSON.stringify(evidence);
   if (Buffer.byteLength(payload) > 6000) throw new Error("Selected evidence exceeds explanation budget; select a smaller scope");
   return { payload, digest: createHash("sha256").update(payload).digest("hex"), ids: [...files, ...edges, ...declarations].map((e) => e.id), files: files.map((f) => f.path) };

@@ -1,5 +1,11 @@
 # Phase 05 — Optional direct BYOK explanations
 
+The release extension adds installed Codex/Claude Code as **local agents**,
+separate from remote BYOK. See [local-agent explanations](local-agent-explanations.md)
+for authentication, supported versions, security controls and Windows checks.
+OpenAI/Groq configuration and acceptance below remain unchanged. Agent preview
+shows the exact stdin instructions/context rather than an HTTP JSON request.
+
 Phase 04 implementation and Windows manual acceptance were accepted by the
 user, who explicitly authorized proceeding with Phase 05. The outstanding
 macOS/Linux pilot qualification and formal pilot trials remain outstanding;

@@ -14,12 +14,16 @@ use tauri::Manager;
 enum ProviderId {
     OpenAi,
     Groq,
+    Codex,
+    Claude,
 }
 impl ProviderId {
     fn parse(id: &str) -> Result<Self, String> {
         match id {
             "openai" => Ok(Self::OpenAi),
             "groq" => Ok(Self::Groq),
+            "codex" => Ok(Self::Codex),
+            "claude-code" => Ok(Self::Claude),
             _ => Err("Unsupported provider".into()),
         }
     }
@@ -27,33 +31,52 @@ impl ProviderId {
         match self {
             Self::OpenAi => "openai",
             Self::Groq => "groq",
+            Self::Codex => "codex",
+            Self::Claude => "claude-code",
         }
     }
     fn label(self) -> &'static str {
         match self {
             Self::OpenAi => "OpenAI",
             Self::Groq => "Groq",
+            Self::Codex => "Codex",
+            Self::Claude => "Claude Code",
         }
     }
     fn endpoint(self) -> &'static str {
         match self {
             Self::OpenAi => "https://api.openai.com/v1/chat/completions",
             Self::Groq => "https://api.groq.com/openai/v1/chat/completions",
+            Self::Codex => "Installed Codex CLI (may communicate with OpenAI)",
+            Self::Claude => "Installed Claude Code CLI (may communicate with Anthropic)",
         }
     }
     fn models(self) -> &'static [&'static str] {
         match self {
             Self::OpenAi => &["gpt-4.1-mini", "gpt-4.1", "gpt-4o-mini"],
             Self::Groq => &["openai/gpt-oss-20b", "openai/gpt-oss-120b"],
+            Self::Codex => &["Installed CLI catalog"],
+            Self::Claude => &["sonnet"],
+        }
+    }
+    fn agent(self) -> Option<crate::local_agents::Agent> {
+        match self {
+            Self::Codex => Some(crate::local_agents::Agent::Codex),
+            Self::Claude => Some(crate::local_agents::Agent::Claude),
+            _ => None,
         }
     }
     fn model_valid(self, model: &str) -> bool {
         self.models().contains(&model)
     }
     fn credential_valid(self, key: &str) -> bool {
+        if self.agent().is_some() {
+            return false;
+        }
         key.starts_with(match self {
             Self::OpenAi => "sk-",
             Self::Groq => "gsk_",
+            _ => return false,
         }) && (12..=256).contains(&key.len())
             && key
                 .bytes()
@@ -61,6 +84,9 @@ impl ProviderId {
     }
     // Provider adapters own serialization, not the evidence or explanation UI.
     fn request_body(self, model: &str, payload: &str) -> String {
+        if self.agent().is_some() {
+            return crate::local_agents::input(PROMPT, payload);
+        }
         let mut body = json!({"model":model,"max_completion_tokens":2048,"response_format":{"type":"json_object"},"messages":[{"role":"system","content":PROMPT},{"role":"user","content":payload}]});
         match self {
             Self::OpenAi => {
@@ -70,6 +96,7 @@ impl ProviderId {
                 body["reasoning_effort"] = json!("low");
                 body["include_reasoning"] = json!(false);
             }
+            _ => unreachable!("Local agents use bounded stdin, never HTTP"),
         }
         body.to_string()
     }
@@ -78,8 +105,13 @@ impl ProviderId {
     }
 }
 fn catalog() -> Value {
-    json!([ProviderId::OpenAi, ProviderId::Groq].map(
-        |p| json!({"id":p.id(),"label":p.label(),"endpoint":p.endpoint(),"models":p.models()})
+    json!([ProviderId::OpenAi, ProviderId::Groq, ProviderId::Codex, ProviderId::Claude].map(
+        |p| {
+            let detected = p.agent().map(crate::local_agents::detect);
+            let status = match &detected { None => "Remote BYOK".to_owned(), Some(Ok(v)) => format!("Available · {}",v.version), Some(Err(e)) => e.clone() };
+            let models = match &detected { Some(Ok(v)) => json!([v.model]), _ => json!(p.models()) };
+            json!({"id":p.id(),"label":p.label(),"endpoint":p.endpoint(),"models":models,"kind":if p.agent().is_some() {"local-agent"} else {"remote-byok"},"available":detected.as_ref().is_none_or(|r|r.is_ok()),"status":status})
+        }
     ))
 }
 fn cache_key(provider: ProviderId, model: &str, digest: &str) -> String {
@@ -96,9 +128,34 @@ type ProviderFuture<'a> = Pin<Box<dyn Future<Output = Reply> + Send + 'a>>;
 trait Provider {
     fn explain<'a>(&'a self, body: &'a str, key: &'a str) -> ProviderFuture<'a>;
 }
+// The explanation orchestration consumes one context-only adapter. Credentials
+// belong to the remote adapter; installed agents never receive a BYOK key.
+enum ExplanationAdapter {
+    Remote { provider: ProviderId, key: String },
+    Local(crate::local_agents::Installation),
+}
+impl ExplanationAdapter {
+    async fn explain(&self, context: &str) -> Reply {
+        match self {
+            Self::Remote { provider, key } => {
+                let answer = provider.explain(context, key).await?;
+                if answer.to_string().contains(key) {
+                    return Err("Credential-like provider output rejected".into());
+                }
+                Ok(answer)
+            }
+            Self::Local(installation) => {
+                crate::local_agents::explain(installation.clone(), context.to_owned()).await
+            }
+        }
+    }
+}
 impl Provider for ProviderId {
     fn explain<'a>(&'a self, body: &'a str, key: &'a str) -> ProviderFuture<'a> {
         Box::pin(async move {
+            if self.agent().is_some() {
+                return Err("Local agent requires its detected native adapter".into());
+            }
             let client = reqwest::Client::builder()
                 .https_only(true)
                 .no_proxy()
@@ -250,6 +307,7 @@ fn validate_answer(answer: Value, package: &Value) -> Reply {
         || body.is_empty()
         || body.len() > 6000
         || body.contains('\0')
+        || citations.is_empty()
         || citations.len() > 40
         || citations
             .iter()
@@ -259,7 +317,11 @@ fn validate_answer(answer: Value, package: &Value) -> Reply {
     }
     for part in body.split('[').skip(1) {
         if let Some((reference, _)) = part.split_once(']') {
-            if reference.starts_with(['F', 'E', 'R'])
+            if reference
+                .as_bytes()
+                .first()
+                .is_some_and(u8::is_ascii_alphabetic)
+                && reference.len() > 1
                 && reference[1..].bytes().all(|c| c.is_ascii_digit())
                 && !ids.contains(&json!(reference))
             {
@@ -276,9 +338,10 @@ fn matching_package(expected: &Value, actual: &Value) -> Result<(), String> {
     }
     Ok(())
 }
+#[cfg(test)]
 async fn generate(provider: &impl Provider, body: &str, key: &str, package: &Value) -> Reply {
     let answer = provider.explain(body, key).await?;
-    if answer.to_string().contains(key) {
+    if !key.is_empty() && answer.to_string().contains(key) {
         return Err("Credential-like provider output rejected".into());
     }
     validate_answer(answer, package)
@@ -294,6 +357,7 @@ struct Ticket {
     key: String,
     epoch: u64,
     created: Instant,
+    agent: Option<crate::local_agents::Installation>,
 }
 #[derive(Default)]
 struct State {
@@ -348,6 +412,18 @@ pub async fn provider_configuration(
     remove: bool,
 ) -> Reply {
     let provider = ProviderId::parse(provider.as_deref().unwrap_or(ProviderId::OpenAi.id()))?;
+    if let Some(agent) = provider.agent() {
+        if model.is_some() || key.is_some() || remove {
+            return Err(
+                "Installed agents own authentication; no credential configuration is accepted"
+                    .into(),
+            );
+        }
+        return tauri::async_runtime::spawn_blocking(move || {
+            let detected = crate::local_agents::detect(agent);
+            Ok(json!({"configured":detected.is_ok(),"provider":provider.id(),"model":detected.as_ref().ok().map(|v|v.model.clone()),"catalog":catalog(),"error":detected.err()}))
+        }).await.map_err(|_| "Agent detection interrupted")?;
+    }
     if model.is_some() || key.is_some() || remove {
         {
             let state = app.state::<Explanations>();
@@ -441,8 +517,13 @@ pub async fn prepare_explanation(
         }
         s.epoch
     };
-    let cfg = tauri::async_runtime::spawn_blocking(move || {
-        config(provider, &NativeCredentials(provider))
+    let (cfg, agent) = tauri::async_runtime::spawn_blocking(move || {
+        if let Some(agent) = provider.agent() {
+            let installed = crate::local_agents::detect(agent)?;
+            Ok((json!({"model":installed.model}), Some(installed)))
+        } else {
+            config(provider, &NativeCredentials(provider)).map(|cfg| (cfg, None))
+        }
     })
     .await
     .map_err(|_| "Secure storage operation failed")??;
@@ -467,9 +548,13 @@ pub async fn prepare_explanation(
     let endpoint = provider.endpoint();
     // Hash the exact approved HTTP bytes, endpoint, prompt and all provenance;
     // not just a target path or a template/version label.
+    let adapter_identity = agent
+        .as_ref()
+        .map(|a| format!("local-agent-capabilities-v2:{}:{}", a.version, a.identity))
+        .unwrap_or_default();
     let actual_digest = storage_request(
         &app,
-        json!({"version":1,"type":"explanation-digest","input":format!("{endpoint}\n{body}")}),
+        json!({"version":1,"type":"explanation-digest","input":format!("{endpoint}\n{model}\n{adapter_identity}\n{body}")}),
         None,
     )
     .await?;
@@ -508,7 +593,7 @@ pub async fn prepare_explanation(
             references.push(json!({"id":item["id"],"path":item[path_field]}));
         }
     }
-    let result = json!({"ticket":ticket_id,"provider":provider.label(),"model":model,"endpoint":endpoint,"payload":body,"files":package["files"],"ids":package["ids"],"references":references,"cached":cached});
+    let result = json!({"ticket":ticket_id,"provider":provider.label(),"model":model,"endpoint":endpoint,"kind":if agent.is_some() {"local-agent"} else {"remote-byok"},"payload":body,"files":package["files"],"ids":package["ids"],"references":references,"cached":cached});
     let state = app.state::<Explanations>();
     let mut s = state.0.lock().map_err(|_| "Provider state unavailable")?;
     if s.epoch != epoch || s.disabled.contains(&provider) {
@@ -528,6 +613,7 @@ pub async fn prepare_explanation(
             key,
             epoch,
             created: Instant::now(),
+            agent,
         },
     );
     Ok(result)
@@ -558,11 +644,13 @@ pub async fn send_explanation(app: tauri::AppHandle, ticket: String, approved: b
             json!({"answer":validate_answer(answer, &package)?,"cached":true,"model":ticket.model,"provider":provider.label()}),
         );
     }
-    let cfg = tauri::async_runtime::spawn_blocking(move || {
-        config(provider, &NativeCredentials(provider))
-    })
-    .await
-    .map_err(|_| "Secure storage operation failed")??;
+    let cfg = if ticket.agent.is_some() {
+        json!({"model":ticket.model,"key":""})
+    } else {
+        tauri::async_runtime::spawn_blocking(move || config(provider, &NativeCredentials(provider)))
+            .await
+            .map_err(|_| "Secure storage operation failed")??
+    };
     if cfg["model"] != ticket.model {
         return Err("Provider model changed; prepare again".into());
     }
@@ -582,7 +670,14 @@ pub async fn send_explanation(app: tauri::AppHandle, ticket: String, approved: b
             return Err("Provider configuration changed or request active".into());
         }
         s.active = Some(tauri::async_runtime::spawn(async move {
-            let result = generate(&provider, &ticket.body, &key, &package).await;
+            let adapter = match ticket.agent {
+                Some(agent) => ExplanationAdapter::Local(agent),
+                None => ExplanationAdapter::Remote { provider, key },
+            };
+            let result = adapter
+                .explain(&ticket.body)
+                .await
+                .and_then(|answer| validate_answer(answer, &package));
             let _ = sender.send(result);
         }));
     }
@@ -603,6 +698,17 @@ pub async fn send_explanation(app: tauri::AppHandle, ticket: String, approved: b
         }
     }
     let answer = answer???;
+    // A repository edit during generation cannot turn an old explanation into
+    // a current result, even when automatic watching is paused/unavailable.
+    let current = request(
+        app.clone(),
+        ticket.job.clone(),
+        String::new(),
+        Some(ticket.selection.clone()),
+        "explanation",
+    )
+    .await?;
+    matching_package(&ticket.package, &current)?;
     // Cache failure must not turn a usable generated result into an intelligence failure.
     let saved = storage_request(&app, json!({"version":1,"type":"explanation-cache","repositoryId":ticket.repository,"key":ticket.key,"answer":answer.to_string()}), None).await.is_ok();
     Ok(
@@ -751,6 +857,7 @@ mod tests {
             key: "cache".into(),
             epoch: 0,
             created: Instant::now(),
+            agent: None,
         };
         assert!(ticket_valid(&ticket, 0));
         assert!(!ticket_valid(&ticket, 1));
@@ -768,6 +875,7 @@ mod tests {
             key: "cache".into(),
             epoch: 0,
             created: Instant::now() - Duration::from_secs(301),
+            agent: None,
         };
         assert!(!ticket_valid(&old, 0));
     }
@@ -902,11 +1010,17 @@ mod tests {
             key: cache_key(provider, provider.models()[0], "digest"),
             epoch,
             created: Instant::now(),
+            agent: None,
         }
     }
     #[test]
     fn both_providers_require_one_use_current_approval_and_respect_revocation() {
-        for provider in [ProviderId::OpenAi, ProviderId::Groq] {
+        for provider in [
+            ProviderId::OpenAi,
+            ProviderId::Groq,
+            ProviderId::Codex,
+            ProviderId::Claude,
+        ] {
             let mut state = State::default();
             assert!(state.take_ticket("not-approved").is_err());
             state
@@ -938,6 +1052,58 @@ mod tests {
                 .tickets
                 .insert("other".into(), test_ticket(other, state.epoch));
             assert!(state.take_ticket("other").is_ok());
+        }
+    }
+    #[test]
+    fn local_agents_never_accept_keys_and_share_citations_freshness_and_isolated_caches() {
+        for provider in [ProviderId::Codex, ProviderId::Claude] {
+            assert!(provider.agent().is_some());
+            assert!(!provider.credential_valid("sk-synthetic-secret"));
+            assert!(write_config(
+                provider,
+                provider.models()[0],
+                "gsk_synthetic_key",
+                &MemoryCredentials::default()
+            )
+            .is_err());
+            let body = provider.request_body(
+                provider.models()[0],
+                r#"{"files":[{"id":"F1","path":"entry.ts"}]}"#,
+            );
+            assert!(body.contains(PROMPT));
+            assert!(body.contains("entry.ts"));
+            assert!(!body.contains("Authorization"));
+            let package = json!({"ids":["F1"]});
+            assert!(validate_answer(
+                json!({"body":"Generated [F1]","citations":["F1"]}),
+                &package
+            )
+            .is_ok());
+            assert!(validate_answer(
+                json!({"body":"Generated [F2]","citations":["F1"]}),
+                &package
+            )
+            .is_err());
+            assert!(validate_answer(json!({"body":"Generated","citations":[]}), &package).is_err());
+            assert!(validate_answer(
+                json!({"body":"Generated [F1]","citations":["F1"],"edges":["invented"]}),
+                &package
+            )
+            .is_err());
+            assert!(matching_package(&package, &json!({"ids":["F1"],"digest":"changed"})).is_err());
+            for other in [
+                ProviderId::OpenAi,
+                ProviderId::Groq,
+                ProviderId::Codex,
+                ProviderId::Claude,
+            ] {
+                if other != provider {
+                    assert_ne!(
+                        cache_key(provider, "model", "payload"),
+                        cache_key(other, "model", "payload")
+                    );
+                }
+            }
         }
     }
     #[test]

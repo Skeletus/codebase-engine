@@ -1,0 +1,2142 @@
+{
+  "retrievedUtc": "2026-10-06T21:02:46.111Z",
+  "npm": {
+    "web-tree-sitter": {
+      "source": "https://registry.npmjs.org/web-tree-sitter",
+      "tags": {
+        "latest": "0.27.0"
+      },
+      "selected": [
+        {
+          "version": "0.27.0",
+          "time": "2026-08-30T17:33:53.484Z",
+          "dist": {
+            "shasum": "72ed2c61bfbbec2489f3af6113ece9ecd47252fa",
+            "tarball": "https://registry.npmjs.org/web-tree-sitter/-/web-tree-sitter-0.27.0.tgz",
+            "fileCount": 19,
+            "integrity": "sha512-XK08gj6RwTMQatAG7uVRP8MunqotL/XC19vHgkSPKmELgbGPBj4ECvB8haHOUnyj6ls2B8t42UTro14zxGgAHg==",
+            "signatures": [
+              {
+                "sig": "MEUCIEp2xr+/OUqRM8T9OAwwrt/Kb+GpXGIWlZYqSU9d0VehAiEAtf24glawX3qWNnYkvYwVTjc6zw8dU9IH3ZbjrHVZHNg=",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              },
+              {
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+                "sig": "MEUCIQDB3Dn1jNH9ycBGAIhdixA1lAyaMgWQddKB6EzZlMBPWAIgLBL/B+Pkfh8NjSui6RvRtX/08tSS0BrkaY91HWlugxI="
+              }
+            ],
+            "attestations": {
+              "url": "https://registry.npmjs.org/-/npm/v1/attestations/web-tree-sitter@0.27.0",
+              "provenance": {
+                "predicateType": "https://slsa.dev/provenance/v1"
+              }
+            },
+            "unpackedSize": 4683395
+          },
+          "repository": {
+            "url": "git+https://github.com/tree-sitter/tree-sitter.git",
+            "type": "git",
+            "directory": "lib/binding_web"
+          },
+          "license": "MIT"
+        },
+        {
+          "version": "0.25.10",
+          "time": "2025-09-22T22:23:13.426Z",
+          "peers": {
+            "@types/emscripten": "^1.40.0"
+          },
+          "dist": {
+            "shasum": "b21f1df7aaa87ad235b4c3d07005168349496706",
+            "tarball": "https://registry.npmjs.org/web-tree-sitter/-/web-tree-sitter-0.25.10.tgz",
+            "fileCount": 66,
+            "integrity": "sha512-Y09sF44/13XvgVKgO2cNDw5rGk6s26MgoZPXLESvMXeefBf7i6/73eFurre0IsTW6E14Y0ArIzhUMmjoc7xyzA==",
+            "signatures": [
+              {
+                "sig": "MEUCIQCvP8bBuhHCLS/zhn7IKHbLnuHGnKX/Ce0X0QGoDk+FcgIgdqntUG61ElWZ3pu0/rvcE3YxLL8ZAZNXdd76aToGFCo=",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              }
+            ],
+            "unpackedSize": 5772850
+          },
+          "repository": {
+            "url": "git+https://github.com/tree-sitter/tree-sitter.git",
+            "type": "git",
+            "directory": "lib/binding_web"
+          },
+          "license": "MIT"
+        },
+        {
+          "version": "0.26.13",
+          "time": "2026-08-23T09:11:22.444Z",
+          "dist": {
+            "shasum": "6f0c677b1907f684a221a9d4347763aefc95a7b0",
+            "tarball": "https://registry.npmjs.org/web-tree-sitter/-/web-tree-sitter-0.26.13.tgz",
+            "fileCount": 19,
+            "integrity": "sha512-5bUZ7vbQ1kcondet96wzP974+JfCZDeQ7bTpacICm2nnvHpa5cO0ByRsoMcAhUP+743vpkb4m0BFlVSm+Ye9VA==",
+            "signatures": [
+              {
+                "sig": "MEQCIDpaw8wkPYuBPcfFcIuEZywUjr0QqQcqgKs3dFzpqSEJAiAqnKFYzSnkAa2vfZ/Nx2QhTpqzjkmES1a4Jh20aydMRg==",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              },
+              {
+                "sig": "MEUCIQDK0DfQKFqm7iXwXGisFt4IHe7LwrzrAf4zwd5Un+YueAIgCAXsxbJoODZcVWZ1WULLeNpwXxjOsrPhRcoiTpgqlUM=",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              }
+            ],
+            "attestations": {
+              "url": "https://registry.npmjs.org/-/npm/v1/attestations/web-tree-sitter@0.26.13",
+              "provenance": {
+                "predicateType": "https://slsa.dev/provenance/v1"
+              }
+            },
+            "unpackedSize": 4593773
+          },
+          "repository": {
+            "url": "git+https://github.com/tree-sitter/tree-sitter.git",
+            "type": "git",
+            "directory": "lib/binding_web"
+          },
+          "license": "MIT"
+        }
+      ]
+    },
+    "tree-sitter-python": {
+      "source": "https://registry.npmjs.org/tree-sitter-python",
+      "tags": {
+        "latest": "0.25.0"
+      },
+      "selected": [
+        {
+          "version": "0.25.0",
+          "time": "2025-09-11T06:49:18.276Z",
+          "peers": {
+            "tree-sitter": "^0.25.0"
+          },
+          "dependencies": {
+            "node-addon-api": "^8.5.0",
+            "node-gyp-build": "^4.8.4"
+          },
+          "dist": {
+            "integrity": "sha512-eCmJx6zQa35GxaCtQD+wXHOhYqBxEL+bp71W/s3fcDMu06MrtzkVXR437dRrCrbrDbyLuUDJpAgycs7ncngLXw==",
+            "shasum": "c1c460915cb883feb2d9ecefeb98b3794eba85f5",
+            "tarball": "https://registry.npmjs.org/tree-sitter-python/-/tree-sitter-python-0.25.0.tgz",
+            "fileCount": 26,
+            "unpackedSize": 7513587,
+            "signatures": [
+              {
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+                "sig": "MEUCIGT5eU3W0XueWaC/RjOF9UTjpNccF7+SIsC6PYnPOdekAiEAnfqCfXwxBjM5xyKoJEpbcDhc/crMkV+WVwUAMbMrN4E="
+              }
+            ]
+          },
+          "repository": {
+            "type": "git",
+            "url": "git+https://github.com/tree-sitter/tree-sitter-python.git"
+          },
+          "license": "MIT"
+        }
+      ]
+    },
+    "tree-sitter-java": {
+      "source": "https://registry.npmjs.org/tree-sitter-java",
+      "tags": {
+        "latest": "0.23.5"
+      },
+      "selected": [
+        {
+          "version": "0.23.5",
+          "time": "2024-12-21T18:26:25.436Z",
+          "peers": {
+            "tree-sitter": "^0.21.1"
+          },
+          "dependencies": {
+            "node-addon-api": "^8.2.2",
+            "node-gyp-build": "^4.8.2"
+          },
+          "dist": {
+            "integrity": "sha512-Yju7oQ0Xx7GcUT01mUglPP+bYfvqjNCGdxqigTnew9nLGoII42PNVP3bHrYeMxswiCRM0yubWmN5qk+zsg0zMA==",
+            "shasum": "fb150fdaa9c852b3d71ba3144109008ac6a47ac2",
+            "tarball": "https://registry.npmjs.org/tree-sitter-java/-/tree-sitter-java-0.23.5.tgz",
+            "fileCount": 25,
+            "unpackedSize": 6223115,
+            "signatures": [
+              {
+                "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                "sig": "MEUCIG/v5aKHwdXHGWOscTSuQyXS1yE7hrDmBUzcXEK02hWPAiEAw4KNwrKlLvN4kyvW8R5a54+3k35LIHt/91L0bhm/Rec="
+              }
+            ]
+          },
+          "repository": {
+            "type": "git",
+            "url": "git+https://github.com/tree-sitter/tree-sitter-java.git"
+          },
+          "license": "MIT"
+        }
+      ]
+    },
+    "tree-sitter-kotlin": {
+      "source": "https://registry.npmjs.org/tree-sitter-kotlin",
+      "tags": {
+        "latest": "0.3.8"
+      },
+      "selected": [
+        {
+          "version": "0.3.8",
+          "time": "2024-08-03T00:17:00.262Z",
+          "peers": {
+            "tree-sitter": "^0.21.0"
+          },
+          "dependencies": {
+            "node-addon-api": "^7.1.0",
+            "node-gyp-build": "^4.8.0"
+          },
+          "dist": {
+            "integrity": "sha512-A4obq6bjzmYrA+F0JLLoheFPcofFkctNaZSpnDd+GPn1SfVZLY4/GG4C0cYVBTOShuPBGGAOPLM1JWLZQV4m1g==",
+            "shasum": "9cb3fbc9475ef1645c3282cec3be72fd6325c24e",
+            "tarball": "https://registry.npmjs.org/tree-sitter-kotlin/-/tree-sitter-kotlin-0.3.8.tgz",
+            "fileCount": 16,
+            "unpackedSize": 24055992,
+            "signatures": [
+              {
+                "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                "sig": "MEUCIQCskK0PwakpIRvpFxVQVwKEq8JuGS6gng+UROjw9HB8BgIgJjLwYJ5CyR4wgbZmcyrRsLqgl7quVenttPbH/XDGZSM="
+              }
+            ]
+          },
+          "repository": {
+            "type": "git",
+            "url": "git+https://github.com/fwcd/tree-sitter-kotlin.git"
+          },
+          "license": "MIT"
+        }
+      ]
+    },
+    "tree-sitter-swift": {
+      "source": "https://registry.npmjs.org/tree-sitter-swift",
+      "tags": {
+        "latest": "0.7.1"
+      },
+      "selected": [
+        {
+          "version": "0.7.1",
+          "time": "2025-06-23T05:02:54.301Z",
+          "peers": {
+            "tree-sitter": "^0.22.1"
+          },
+          "dependencies": {
+            "node-addon-api": "^8.0.0",
+            "node-gyp-build": "^4.8.0",
+            "tree-sitter-cli": "^0.23",
+            "which": "2.0.2"
+          },
+          "dist": {
+            "integrity": "sha512-pneKVTuGamaBsqqqfB9BvNQjktzh/0IVPR54jLB5Fq/JTDQwYHd0Wo6pVyZ5jAYpbztzq+rJ/rpL9ruxTmSoKw==",
+            "shasum": "e7b41402dbc29fc3a8741793513e7a0f3e35cc55",
+            "tarball": "https://registry.npmjs.org/tree-sitter-swift/-/tree-sitter-swift-0.7.1.tgz",
+            "fileCount": 40,
+            "unpackedSize": 75905075,
+            "signatures": [
+              {
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+                "sig": "MEQCIClAsspy0PiCcigd/0PfA6onaFFSMmhoAPpViH8OTtilAiADeX9jiXNMewknqL/8DQEgIPLzrCo0IDCyRfLeNDMlyA=="
+              }
+            ]
+          },
+          "repository": {
+            "type": "git",
+            "url": "git+https://github.com/alex-pinkus/tree-sitter-swift.git"
+          },
+          "license": "MIT"
+        }
+      ]
+    },
+    "tree-sitter-objc": {
+      "source": "https://registry.npmjs.org/tree-sitter-objc",
+      "tags": {
+        "latest": "3.0.2"
+      },
+      "selected": [
+        {
+          "version": "3.0.2",
+          "time": "2024-12-16T00:38:12.359Z",
+          "peers": {
+            "tree-sitter": "^0.22.1"
+          },
+          "dependencies": {
+            "node-addon-api": "^8.3.0",
+            "node-gyp-build": "^4.8.4",
+            "tree-sitter-c": "^0.23.4"
+          },
+          "dist": {
+            "integrity": "sha512-Hs0ohmx1u5M+0K7efoW+dv/corhBsfjftfIYLtp7dSGeJ+Zj4c33tDIboBYLs6qijRlz6wtHFxa0YX+FibLulA==",
+            "shasum": "1adaf7e0a20ada70bd1edbcbae50a524700fb530",
+            "tarball": "https://registry.npmjs.org/tree-sitter-objc/-/tree-sitter-objc-3.0.2.tgz",
+            "fileCount": 28,
+            "unpackedSize": 66386672,
+            "signatures": [
+              {
+                "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                "sig": "MEUCICWJmmS2hfiFVdu1x6lVj0kh7I8ZmQaN6D09P/DdAre6AiEAqecNLjan3+UBmPMMYLqGam3/2SB0GTQ9hucDXsrmyqo="
+              }
+            ]
+          },
+          "repository": {
+            "type": "git",
+            "url": "git+https://github.com/tree-sitter-grammars/tree-sitter-objc.git"
+          },
+          "license": "MIT"
+        }
+      ]
+    },
+    "@tree-sitter-grammars/tree-sitter-kotlin": {
+      "source": "https://registry.npmjs.org/%40tree-sitter-grammars%2Ftree-sitter-kotlin",
+      "tags": {
+        "latest": "1.1.0"
+      },
+      "selected": [
+        {
+          "version": "1.1.0",
+          "time": "2025-01-09T19:06:24.768Z",
+          "peers": {
+            "tree-sitter": "^0.22.4"
+          },
+          "dependencies": {
+            "node-addon-api": "^8.3.0",
+            "node-gyp-build": "^4.8.4",
+            "npm-check-updates": "^17.1.13"
+          },
+          "dist": {
+            "shasum": "318b2055314c91b89b999b42c3a57b591df21cb9",
+            "tarball": "https://registry.npmjs.org/@tree-sitter-grammars/tree-sitter-kotlin/-/tree-sitter-kotlin-1.1.0.tgz",
+            "fileCount": 24,
+            "integrity": "sha512-vlVXaxEE8t2kpJgfZpa8XVvxcnKw9AYtRTgy7KWjsDmAsadk06RxAT80IXOgGQnmM9i/orQn1nD84gPNUHu6DQ==",
+            "signatures": [
+              {
+                "sig": "MEUCIQD8lCpqmBi7OpDQG8NRc2hVPBLmw4bdM80qQvJWenn44AIgYLb6/DllpKbz/JLCcOpZS6YX/DC8Rsh5oZRDrekQOwo=",
+                "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+              }
+            ],
+            "unpackedSize": 47161889
+          },
+          "repository": {
+            "url": "git+https://github.com/tree-sitter-grammars/tree-sitter-kotlin.git",
+            "type": "git"
+          },
+          "license": "MIT"
+        }
+      ]
+    },
+    "vite": {
+      "source": "https://registry.npmjs.org/vite",
+      "tags": {
+        "alpha": "6.0.0-alpha.24",
+        "beta": "8.3.0-beta.1",
+        "latest": "8.3.3",
+        "previous": "6.4.4"
+      },
+      "selected": [
+        {
+          "version": "8.3.3",
+          "time": "2026-10-06T04:10:19.326Z",
+          "engines": {
+            "node": "^20.19.0 || >=22.12.0"
+          },
+          "peers": {
+            "tsx": "^4.8.1",
+            "jiti": ">=1.21.0",
+            "less": "^4.0.0",
+            "sass": "^1.70.0",
+            "yaml": "^2.4.2",
+            "stylus": ">=0.54.8",
+            "terser": "^5.16.0",
+            "esbuild": "^0.27.0 || ^0.28.0",
+            "sugarss": "^5.0.0",
+            "@types/node": "^20.19.0 || >=22.12.0",
+            "sass-embedded": "^1.70.0",
+            "@vitejs/devtools": "^0.7.1"
+          },
+          "dependencies": {
+            "postcss": "^8.5.28",
+            "rolldown": "~1.2.11",
+            "picomatch": "^4.0.7",
+            "tinyglobby": "^0.2.17",
+            "lightningcss": "^1.33.0"
+          },
+          "dist": {
+            "shasum": "12651726ab1cca0a9e1e649e3cb4dca5b6b006a9",
+            "tarball": "https://registry.npmjs.org/vite/-/vite-8.3.3.tgz",
+            "fileCount": 37,
+            "integrity": "sha512-cTAldKPImjg6c+gk48U19POPn3GCBzZwpdsN8ZMEEcbpes+6/wvfqUd0C2y3qYY4wsj8PwgFwrZ/1jBPVttMSg==",
+            "signatures": [
+              {
+                "sig": "MEUCIQCoJsvIakHn0hDToU0LxVCxnYmwG8Ws06U2UL6PQmG1zgIgAml/hlBzxRAqrh9k/79IS3jQPhLi9RSpEjGh4sMM7x8=",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              },
+              {
+                "sig": "MEUCIQCiS+ZuRm9tlZPzPGhCqBb7jl5FZ/BOBf2vH2JDf2GgIgIgKgdKWqncxzwU3LTs1PKS9fVUvOAWMnsmSqty+p+7jH0=",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              }
+            ],
+            "attestations": {
+              "url": "https://registry.npmjs.org/-/npm/v1/attestations/vite@8.3.3",
+              "provenance": {
+                "predicateType": "https://slsa.dev/provenance/v1"
+              }
+            },
+            "unpackedSize": 2374102
+          },
+          "repository": {
+            "url": "git+https://github.com/vitejs/vite.git",
+            "type": "git",
+            "directory": "packages/vite"
+          },
+          "license": "MIT"
+        },
+        {
+          "version": "7.3.7",
+          "time": "2026-10-06T05:11:19.017Z",
+          "engines": {
+            "node": "^20.19.0 || >=22.12.0"
+          },
+          "peers": {
+            "tsx": "^4.8.1",
+            "jiti": ">=1.21.0",
+            "less": "^4.0.0",
+            "sass": "^1.70.0",
+            "yaml": "^2.4.2",
+            "stylus": ">=0.54.8",
+            "terser": "^5.16.0",
+            "sugarss": "^5.0.0",
+            "@types/node": "^20.19.0 || >=22.12.0",
+            "lightningcss": "^1.21.0",
+            "sass-embedded": "^1.70.0"
+          },
+          "dependencies": {
+            "fdir": "^6.5.0",
+            "rollup": "^4.43.0",
+            "esbuild": "^0.27.0 || ^0.28.0",
+            "postcss": "^8.5.6",
+            "picomatch": "^4.0.3",
+            "tinyglobby": "^0.2.15"
+          },
+          "dist": {
+            "shasum": "017a80fdce051003a4aa290dddd0b159aa769282",
+            "tarball": "https://registry.npmjs.org/vite/-/vite-7.3.7.tgz",
+            "fileCount": 39,
+            "integrity": "sha512-AHEzTORMbi7/7aXp7w7KZ5+DCUdSeLsJz0grY8xHpc9DHdYb0vQu6DqJfm2tOw3gDExNgPgnJTXxM6syYFHaCA==",
+            "signatures": [
+              {
+                "sig": "MEUCIE7zq1k7RksYq5+WNotYAMAzXHuTUpNTOfagoX21zLsCAiEAipiLz1Jr0Pw0alELJgtnMK8hIUabyDK6dDwr2MP4kyk=",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              },
+              {
+                "sig": "MEQCIAlbWM0p47ihel9W4BGvqJPllTi0cz+dCl0sep5ogYRJAiBmariJbeYJ8lso7O2VocXQQ2EFoDMiORhl6Fl9AzvuPg==",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              }
+            ],
+            "attestations": {
+              "url": "https://registry.npmjs.org/-/npm/v1/attestations/vite@7.3.7",
+              "provenance": {
+                "predicateType": "https://slsa.dev/provenance/v1"
+              }
+            },
+            "unpackedSize": 2244268
+          },
+          "repository": {
+            "url": "git+https://github.com/vitejs/vite.git",
+            "type": "git",
+            "directory": "packages/vite"
+          },
+          "license": "MIT"
+        }
+      ]
+    },
+    "react": {
+      "source": "https://registry.npmjs.org/react",
+      "tags": {
+        "beta": "19.0.0-beta-26f2496093-20240514",
+        "rc": "19.0.0-rc.1",
+        "next": "19.3.0-canary-d5736f09-20260507",
+        "backport": "19.0.8",
+        "latest": "19.3.0",
+        "experimental": "0.0.0-experimental-17eca7b0-20261006",
+        "canary": "19.3.0-canary-17eca7b0-20261006"
+      },
+      "selected": [
+        {
+          "version": "19.3.0",
+          "time": "2026-09-09T17:21:30.071Z",
+          "engines": {
+            "node": ">=0.10.0"
+          },
+          "dist": {
+            "shasum": "e20aa3a14687075ce863351b5878b0608c3fbfb2",
+            "tarball": "https://registry.npmjs.org/react/-/react-19.3.0.tgz",
+            "fileCount": 27,
+            "integrity": "sha512-E8LUcbtBWt20bbl2YoHfx4ZDBdxVTfOKtCZn9cDSJ4l6/nuoApcpIBcj47t2wZoVX8g2ZHuMHbiShgCR1T5Sog==",
+            "signatures": [
+              {
+                "sig": "MEUCIALru2uJjzTwQTeh/ax6FRZSyVBDySuUEr4k+TiaANpDAiEAgJVCX1upjcvo4FzKCrJW9vcVnWVJwMbuM4Wsc4UM61o=",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              },
+              {
+                "sig": "MEYCIQCLRI5uegHedldoJjX7BioMz8AnR5jZmFZB2+1PMyrFagIhAMlHH0dBWncX0Nq4vSqkVKZtP7Jolgae2aodnOtIRrQK",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              }
+            ],
+            "attestations": {
+              "url": "https://registry.npmjs.org/-/npm/v1/attestations/react@19.3.0",
+              "provenance": {
+                "predicateType": "https://slsa.dev/provenance/v1"
+              }
+            },
+            "unpackedSize": 178663
+          },
+          "repository": {
+            "url": "git+https://github.com/react/react.git",
+            "type": "git",
+            "directory": "packages/react"
+          },
+          "license": "MIT"
+        },
+        {
+          "version": "18.3.1",
+          "time": "2024-04-26T16:42:26.496Z",
+          "engines": {
+            "node": ">=0.10.0"
+          },
+          "dependencies": {
+            "loose-envify": "^1.1.0"
+          },
+          "dist": {
+            "shasum": "49ab892009c53933625bd16b2533fc754cab2891",
+            "tarball": "https://registry.npmjs.org/react/-/react-18.3.1.tgz",
+            "fileCount": 20,
+            "integrity": "sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==",
+            "signatures": [
+              {
+                "sig": "MEYCIQD4bKnxwSChEiNXzYZhC0iktGYAxTQK0lT0AU53l29tQwIhAI9uXiqQy53jgncvM8p62DhArQf2fAINw4uzOgxat0xP",
+                "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+              }
+            ],
+            "unpackedSize": 318101
+          },
+          "repository": {
+            "url": "git+https://github.com/facebook/react.git",
+            "type": "git",
+            "directory": "packages/react"
+          },
+          "license": "MIT"
+        },
+        {
+          "version": "19.2.8",
+          "time": "2026-07-21T15:41:28.716Z",
+          "engines": {
+            "node": ">=0.10.0"
+          },
+          "dist": {
+            "shasum": "a80663dbb58d69c6fe3fd291d3cb324e8a7dff2d",
+            "tarball": "https://registry.npmjs.org/react/-/react-19.2.8.tgz",
+            "fileCount": 27,
+            "integrity": "sha512-PWaYA1L/q9u2u7xYQi+Y3L3Yfnie7XyLeaJICV1MGD6LprsBxcAqGjYyr0eY3p+QdsA+x/Irkt4Qif8D63+Sbw==",
+            "signatures": [
+              {
+                "sig": "MEYCIQCCmnis0gzyZIp8pPdpFV387Lljmx4ah4Pjs3dgMujpiwIhAPzEs2mi+AlgkTXXTDLnSQ9wtZK8R7ywMKY/mkKjCwVi",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              }
+            ],
+            "attestations": {
+              "url": "https://registry.npmjs.org/-/npm/v1/attestations/react@19.2.8",
+              "provenance": {
+                "predicateType": "https://slsa.dev/provenance/v1"
+              }
+            },
+            "unpackedSize": 171598
+          },
+          "repository": {
+            "url": "git+https://github.com/react/react.git",
+            "type": "git",
+            "directory": "packages/react"
+          },
+          "license": "MIT"
+        }
+      ]
+    },
+    "react-dom": {
+      "source": "https://registry.npmjs.org/react-dom",
+      "tags": {
+        "beta": "19.0.0-beta-26f2496093-20240514",
+        "rc": "19.0.0-rc.1",
+        "next": "19.3.0-canary-d5736f09-20260507",
+        "backport": "19.0.8",
+        "latest": "19.3.0",
+        "experimental": "0.0.0-experimental-17eca7b0-20261006",
+        "canary": "19.3.0-canary-17eca7b0-20261006"
+      },
+      "selected": [
+        {
+          "version": "19.3.0",
+          "time": "2026-09-09T17:17:39.744Z",
+          "peers": {
+            "react": "^19.3.0"
+          },
+          "dependencies": {
+            "scheduler": "^0.28.0"
+          },
+          "dist": {
+            "shasum": "a0ff19161d7f4e9be5469a07278b0c06e00f9001",
+            "tarball": "https://registry.npmjs.org/react-dom/-/react-dom-19.3.0.tgz",
+            "fileCount": 43,
+            "integrity": "sha512-JDk8dgif51OjFoDE70+OT9ICyYr+69HlmihNwp1+Nsfbna3t5sIiCa9ZJktDmQ4/1b/rn26hIAR2uYXDMr5r0Q==",
+            "signatures": [
+              {
+                "sig": "MEUCIQDl7gfoVlOoqKLgPU325X6EcrNHIYuFJJX0R9PHDs9KygIgAQaRzlBCG57IDn6XBjaOL/adBCuf/oiguaTixpmBBjw=",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              },
+              {
+                "sig": "MEUCIBJlBwP9e+XpqYfXpAJxCFTZ2i9tt8XCm9JYmuFMXsm1AiEAi9g3MN8fg6vModu7alAeUKmJ6iWO6untLGlvHfX1mb4=",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              }
+            ],
+            "attestations": {
+              "url": "https://registry.npmjs.org/-/npm/v1/attestations/react-dom@19.3.0",
+              "provenance": {
+                "predicateType": "https://slsa.dev/provenance/v1"
+              }
+            },
+            "unpackedSize": 8063782
+          },
+          "repository": {
+            "url": "git+https://github.com/react/react.git",
+            "type": "git",
+            "directory": "packages/react-dom"
+          },
+          "license": "MIT"
+        }
+      ]
+    },
+    "next": {
+      "source": "https://registry.npmjs.org/next",
+      "tags": {
+        "next-11": "11.1.4",
+        "next-12-2-6": "12.2.6",
+        "next-14-1": "14.1.1",
+        "rc": "15.0.0-rc.1",
+        "next-13": "13.5.11",
+        "next-12-3-2": "12.3.7",
+        "beta": "16.0.0-beta.0",
+        "next-14": "14.2.35",
+        "next-15-3": "15.3.9",
+        "next-15-2": "15.2.9",
+        "next-15-0": "15.1.12",
+        "next-15-0-0": "15.0.8",
+        "preview": "16.3.0-preview.10",
+        "backport": "15.5.27",
+        "canary": "16.5.0-canary.0",
+        "latest": "16.4.0"
+      },
+      "selected": [
+        {
+          "version": "16.4.0",
+          "time": "2026-10-06T18:35:31.699Z",
+          "engines": {
+            "node": ">=20.9.0"
+          },
+          "peers": {
+            "sass": "^1.3.0",
+            "react": "^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0",
+            "react-dom": "^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0",
+            "@playwright/test": "^1.51.1",
+            "@opentelemetry/api": "^1.1.0",
+            "babel-plugin-react-compiler": "*"
+          },
+          "dependencies": {
+            "postcss": "8.5.23",
+            "@next/env": "16.4.0",
+            "styled-jsx": "5.1.6",
+            "@swc/helpers": "0.5.23",
+            "caniuse-lite": "^1.0.30001579",
+            "baseline-browser-mapping": "^2.9.19"
+          },
+          "dist": {
+            "shasum": "880d9da9d4b2a41bc0010d6f01d659aa24185ec7",
+            "tarball": "https://registry.npmjs.org/next/-/next-16.4.0.tgz",
+            "fileCount": 8688,
+            "integrity": "sha512-N2C+9q89Z/oLrsepSRS4jRMtwmUZAoZuAHU0e9T6+sAB5DdhADmrnOW+zjYijlrYFmVfmQhGVGy9eMFoB7UgKg==",
+            "signatures": [
+              {
+                "sig": "MEUCIQDaUl6e2fGW6bl0kXvNs/uEW7M+O27lRaoQEp6mx3RXBwIgK5jePtqOG7R5yUvNeJxLipM4CoUKAraRW1mlt+gg+y8=",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              },
+              {
+                "sig": "MEYCIQDTptjlCgAnr4gvmvEK07JA4iJOOILcOUFCPRRMPrPuLgIhAOKLH6KSi4K2dSQwEMHlVlXgQYjgqqrFGN4c+cazqBiK",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              }
+            ],
+            "attestations": {
+              "url": "https://registry.npmjs.org/-/npm/v1/attestations/next@16.4.0",
+              "provenance": {
+                "predicateType": "https://slsa.dev/provenance/v1"
+              }
+            },
+            "unpackedSize": 192316094
+          },
+          "repository": {
+            "url": "git+https://github.com/vercel/next.js.git",
+            "type": "git"
+          },
+          "license": "MIT"
+        },
+        {
+          "version": "15.5.27",
+          "time": "2026-09-30T16:19:50.862Z",
+          "engines": {
+            "node": "^18.18.0 || ^19.8.0 || >= 20.0.0"
+          },
+          "peers": {
+            "sass": "^1.3.0",
+            "react": "^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0",
+            "react-dom": "^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0",
+            "@playwright/test": "^1.51.1",
+            "@opentelemetry/api": "^1.1.0",
+            "babel-plugin-react-compiler": "*"
+          },
+          "dependencies": {
+            "postcss": "8.4.31",
+            "@next/env": "15.5.27",
+            "styled-jsx": "5.1.6",
+            "@swc/helpers": "0.5.15",
+            "caniuse-lite": "^1.0.30001579"
+          },
+          "dist": {
+            "shasum": "bd149e4dcc483bfff31fa390842cfb8b7ff9a522",
+            "tarball": "https://registry.npmjs.org/next/-/next-15.5.27.tgz",
+            "fileCount": 7278,
+            "integrity": "sha512-F82CrlPZ8GRxBH9RIIoR3qU1t5RT3dv1K8moe8SjlDEquiFipvEI13R1Om90TaUOEwShkWCMlg8+gvTNzfMhvg==",
+            "signatures": [
+              {
+                "sig": "MEYCIQCyThfy3Nt5zMQQKZdMaYMYYal0jR6tPQa/L/ivxtJvaQIhAM3Yaox9fAamtKXif6KWarbX9eRsbZ9BzVkmOmzyCE85",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              },
+              {
+                "sig": "MEUCIQC2KIdiOhyEG0oUriBPZoIFNvuILQFKO0RLY/mq6kD+sAIgB2j+tomD8ooet4okIGOgpCE/uBHjjQlDb2qwxguiPno=",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              }
+            ],
+            "attestations": {
+              "url": "https://registry.npmjs.org/-/npm/v1/attestations/next@15.5.27",
+              "provenance": {
+                "predicateType": "https://slsa.dev/provenance/v1"
+              }
+            },
+            "unpackedSize": 140875134
+          },
+          "repository": {
+            "url": "git+https://github.com/vercel/next.js.git",
+            "type": "git"
+          },
+          "license": "MIT"
+        },
+        {
+          "version": "16.3.8",
+          "time": "2026-09-30T16:07:21.198Z",
+          "engines": {
+            "node": ">=20.9.0"
+          },
+          "peers": {
+            "sass": "^1.3.0",
+            "react": "^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0",
+            "react-dom": "^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0",
+            "@playwright/test": "^1.51.1",
+            "@opentelemetry/api": "^1.1.0",
+            "babel-plugin-react-compiler": "*"
+          },
+          "dependencies": {
+            "postcss": "8.5.23",
+            "@next/env": "16.3.8",
+            "styled-jsx": "5.1.6",
+            "@swc/helpers": "0.5.23",
+            "caniuse-lite": "^1.0.30001579",
+            "baseline-browser-mapping": "^2.9.19"
+          },
+          "dist": {
+            "shasum": "1c74c9d90029c9c756456bd745c49c248b21050c",
+            "tarball": "https://registry.npmjs.org/next/-/next-16.3.8.tgz",
+            "fileCount": 8539,
+            "integrity": "sha512-U7QEZaTini6wKrb8A8hqLLqYQyCetegKjCpJOyxk642vWoMoU1x5PyZCJFvgYgiptA8xc5j/9xYlZFO7w9Sjmw==",
+            "signatures": [
+              {
+                "sig": "MEQCIDhpsXHjABLHO9qjpuVwMPJ8CSHy1sXZC8iOiq6vZczJAiBz2pZASggMktKwbPmueznDAl+55rctih9HhWzSiUl12A==",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              },
+              {
+                "sig": "MEYCIQDwLzhr8jAcb15I2eB+RswUcY1v+nhpgtXA881zJKWx0AIhAIh3rBvLplQ5YQ+SS52+iQEFZac6hPvZazDBDKr6RUei",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              }
+            ],
+            "attestations": {
+              "url": "https://registry.npmjs.org/-/npm/v1/attestations/next@16.3.8",
+              "provenance": {
+                "predicateType": "https://slsa.dev/provenance/v1"
+              }
+            },
+            "unpackedSize": 185970409
+          },
+          "repository": {
+            "url": "git+https://github.com/vercel/next.js.git",
+            "type": "git"
+          },
+          "license": "MIT"
+        }
+      ]
+    },
+    "react-router": {
+      "source": "https://registry.npmjs.org/react-router",
+      "tags": {
+        "previous": "3.2.6",
+        "classic": "5.3.4",
+        "pre-v6": "6.30.3-pre-v6.0",
+        "nightly": "0.0.0-nightly-4547c8015-20260410",
+        "pre": "8.0.0-pre.1",
+        "version-6": "6.30.6",
+        "latest": "8.4.0",
+        "version-7": "7.18.4",
+        "experimental": "0.0.0-experimental-f20bcf6de"
+      },
+      "selected": [
+        {
+          "version": "8.4.0",
+          "time": "2026-09-15T15:23:42.214Z",
+          "engines": {
+            "node": ">=22.22.0"
+          },
+          "peers": {
+            "react": ">=19.2.7",
+            "react-dom": ">=19.2.7"
+          },
+          "dependencies": {
+            "cookie-es": "^3.1.1",
+            "@remix-run/route-pattern": "^0.22.1"
+          },
+          "dist": {
+            "shasum": "fa3c0ba58555cfb120a9ed8042518e374000fb4b",
+            "tarball": "https://registry.npmjs.org/react-router/-/react-router-8.4.0.tgz",
+            "fileCount": 336,
+            "integrity": "sha512-JtydAkBvU9UTEe5qNC+POhu+ZBNM7rlKY2IegwXc7Idj7xfRG16x5RZrw3mju+XlqBxfvb2ky9P3jUp9WyWC1g==",
+            "signatures": [
+              {
+                "sig": "MEQCIA9xpWfgQPiVmDZUFTlJqsFsH14P0nZwziCduViEUDByAiBTqJrfRJzbSXAcsYSECbw1daUEykQRx6/tW0obd3I06g==",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              },
+              {
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+                "sig": "MEUCIQDMwxkSfM2dfw06CWsT7WorkjpEdMzavv+aygTsslXczQIgG/guMkwc9uuoopELYm24qvUBehE4aTPHWZDzjl+mu+8="
+              }
+            ],
+            "attestations": {
+              "url": "https://registry.npmjs.org/-/npm/v1/attestations/react-router@8.4.0",
+              "provenance": {
+                "predicateType": "https://slsa.dev/provenance/v1"
+              }
+            },
+            "unpackedSize": 2856262
+          },
+          "repository": {
+            "url": "https://github.com/remix-run/react-router",
+            "type": "git",
+            "directory": "packages/react-router"
+          },
+          "license": "MIT"
+        },
+        {
+          "version": "7.18.4",
+          "time": "2026-09-15T15:08:29.127Z",
+          "engines": {
+            "node": ">=20.0.0"
+          },
+          "peers": {
+            "react": ">=18",
+            "react-dom": ">=18"
+          },
+          "dependencies": {
+            "cookie": "^1.0.1",
+            "set-cookie-parser": "^2.6.0"
+          },
+          "dist": {
+            "shasum": "dc30cbb27e936f06d9e1d75ab648b317deb698a4",
+            "tarball": "https://registry.npmjs.org/react-router/-/react-router-7.18.4.tgz",
+            "fileCount": 159,
+            "integrity": "sha512-PUPQcMhMGRAslLcvtlPz/kmzBEWPhLdgLFrL7pLNepBL6dX0lWj4WD2cUYVgYCuT3jxvghYFg81cDTj44DhetQ==",
+            "signatures": [
+              {
+                "sig": "MEYCIQDpbLMRbfsY6a2NrEZ02JjbAFiIk0XD0uU7E6mtB2tcegIhAJ3kpnfk6IxJDm8dKh+/NXfZZj5TzVJwWtYotekL9NZm",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              },
+              {
+                "sig": "MEYCIQDeEKp3z14qQYv8hGTUPtlwDYDcwoiLCbPcBaWuG3c2vgIhAK/g3qTW4Ur/E1M4zsbm5APBoiO8l4ln6L3hFCgtRdTl",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              }
+            ],
+            "attestations": {
+              "url": "https://registry.npmjs.org/-/npm/v1/attestations/react-router@7.18.4",
+              "provenance": {
+                "predicateType": "https://slsa.dev/provenance/v1"
+              }
+            },
+            "unpackedSize": 4794391
+          },
+          "repository": {
+            "url": "git+https://github.com/remix-run/react-router.git",
+            "type": "git",
+            "directory": "packages/react-router"
+          },
+          "license": "MIT"
+        }
+      ]
+    },
+    "react-native": {
+      "source": "https://registry.npmjs.org/react-native",
+      "tags": {
+        "0.67-stable": "0.67.5",
+        "0.66-stable": "0.66.5",
+        "0.65-stable": "0.65.3",
+        "0.64-stable": "0.64.4",
+        "0.63-stable": "0.63.5",
+        "0.68-stable": "0.68.7",
+        "0.70-stable": "0.70.15",
+        "0.71-stable": "0.71.19",
+        "0.72-stable": "0.72.17",
+        "0.73-stable": "0.73.11",
+        "0.74-stable": "0.74.7",
+        "0.75-stable": "0.75.5",
+        "0.76-stable": "0.76.9",
+        "0.78-stable": "0.78.3",
+        "0.77-stable": "0.77.3",
+        "0.79-stable": "0.79.7",
+        "0.80-stable": "0.80.3",
+        "0.81-stable": "0.81.6",
+        "0.83-stable": "0.83.10",
+        "0.86-stable": "0.86.3",
+        "latest": "0.87.1",
+        "next": "0.88.0-rc.3",
+        "nightly": "0.89.0-nightly-20261006-99d327c61"
+      },
+      "selected": [
+        {
+          "version": "0.87.1",
+          "time": "2026-08-26T15:36:54.923Z",
+          "engines": {
+            "node": "^22.13.0 || ^24.3.0 || >= 26.0.0"
+          },
+          "peers": {
+            "react": "^19.2.3",
+            "@types/react": "^19.1.1"
+          },
+          "dependencies": {
+            "ws": "^7.5.10",
+            "anser": "^1.4.9",
+            "yargs": "^17.6.2",
+            "semver": "^7.1.3",
+            "promise": "^8.3.0",
+            "base64-js": "^1.5.1",
+            "commander": "^12.0.0",
+            "invariant": "^2.2.4",
+            "scheduler": "0.27.0",
+            "ansi-regex": "^5.0.0",
+            "nullthrows": "^1.1.1",
+            "tinyglobby": "^0.2.15",
+            "memoize-one": "^5.0.0",
+            "whatwg-fetch": "^3.0.0",
+            "metro-runtime": "^0.87.0",
+            "pretty-format": "^29.7.0",
+            "react-refresh": "^0.14.0",
+            "hermes-compiler": "250829098.0.17",
+            "metro-source-map": "^0.87.0",
+            "stacktrace-parser": "^0.1.10",
+            "flow-enums-runtime": "^0.0.6",
+            "react-devtools-core": "^6.1.5",
+            "regenerator-runtime": "^0.13.2",
+            "@react-native/codegen": "0.87.1",
+            "@react-native/asset-utils": "0.87.1",
+            "@react-native/gradle-plugin": "0.87.1",
+            "@react-native/normalize-colors": "0.87.1",
+            "@react-native/virtualized-lists": "0.87.1",
+            "babel-plugin-syntax-hermes-parser": "0.36.1",
+            "@react-native/community-cli-plugin": "0.87.1"
+          },
+          "dist": {
+            "shasum": "493036a52fb741e0462aee8911653d998e8bc8db",
+            "tarball": "https://registry.npmjs.org/react-native/-/react-native-0.87.1.tgz",
+            "fileCount": 4471,
+            "integrity": "sha512-DJKG6ANoD7BtrE4z9DewiSD7/RxCX73lK5Pu49aUr85P3333Dm2roTiP0rRjQNDZdVizHSOmstWfwF/o9EjCRA==",
+            "signatures": [
+              {
+                "sig": "MEYCIQCTn/RXL+VU92bhVemZuZwvJlld3kod1YRzJt42UMx7vAIhAJ8jy+pCFkknJAzFMD6MxplC1dMyUwvWPXGrp5MSQyrH",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              },
+              {
+                "sig": "MEQCIFkvmOZwLsADwtRUm5q9Lt5yDkOL2t8KHj6LY7ELHgbSAiAeVVK2rn9xiopPJhqk+yakqpaBInWqnxi2nNE5eoGlvg==",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              }
+            ],
+            "attestations": {
+              "url": "https://registry.npmjs.org/-/npm/v1/attestations/react-native@0.87.1",
+              "provenance": {
+                "predicateType": "https://slsa.dev/provenance/v1"
+              }
+            },
+            "unpackedSize": 20474330
+          },
+          "repository": {
+            "url": "git+https://github.com/react/react-native.git",
+            "type": "git",
+            "directory": "packages/react-native"
+          },
+          "license": "MIT"
+        },
+        {
+          "version": "0.83.10",
+          "time": "2026-06-25T14:35:35.312Z",
+          "engines": {
+            "node": ">= 20.19.4"
+          },
+          "peers": {
+            "react": "^19.2.0",
+            "@types/react": "^19.1.1"
+          },
+          "dependencies": {
+            "ws": "^7.5.10",
+            "glob": "^7.1.1",
+            "anser": "^1.4.9",
+            "yargs": "^17.6.2",
+            "semver": "^7.1.3",
+            "promise": "^8.3.0",
+            "base64-js": "^1.5.1",
+            "commander": "^12.0.0",
+            "invariant": "^2.2.4",
+            "scheduler": "0.27.0",
+            "ansi-regex": "^5.0.0",
+            "babel-jest": "^29.7.0",
+            "nullthrows": "^1.1.1",
+            "memoize-one": "^5.0.0",
+            "whatwg-fetch": "^3.0.0",
+            "metro-runtime": "^0.83.6",
+            "pretty-format": "^29.7.0",
+            "react-refresh": "^0.14.0",
+            "hermes-compiler": "0.14.1",
+            "abort-controller": "^3.0.0",
+            "metro-source-map": "^0.83.6",
+            "stacktrace-parser": "^0.1.10",
+            "flow-enums-runtime": "^0.0.6",
+            "react-devtools-core": "^6.1.5",
+            "regenerator-runtime": "^0.13.2",
+            "@react-native/codegen": "0.83.10",
+            "jest-environment-node": "^29.7.0",
+            "@react-native/js-polyfills": "0.83.10",
+            "@react-native/gradle-plugin": "0.83.10",
+            "@react-native/assets-registry": "0.83.10",
+            "@react-native/normalize-colors": "0.83.10",
+            "@jest/create-cache-key-function": "^29.7.0",
+            "@react-native/virtualized-lists": "0.83.10",
+            "babel-plugin-syntax-hermes-parser": "0.32.0",
+            "@react-native/community-cli-plugin": "0.83.10"
+          },
+          "dist": {
+            "shasum": "3c10fe9c17c7baef383547c97082fa1f04a79971",
+            "tarball": "https://registry.npmjs.org/react-native/-/react-native-0.83.10.tgz",
+            "fileCount": 4547,
+            "integrity": "sha512-4gbmtAyfC0F4jU2hl/l/HZbRIfRl0d5RdHNpJLf7sT/0zhYDEhiFcFk7ii2utl7O8BIHRUmGe/anfWP3DNPTZw==",
+            "signatures": [
+              {
+                "sig": "MEUCIQDNm9g5rD+AbW9qSfdvWEOmubuhn+VknDjqgaojiYhFOwIgN3KVQ+xKUd+KWorwxXF1eS+9BQcq9gZENQW5DIwazWQ=",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              }
+            ],
+            "unpackedSize": 21527025
+          },
+          "repository": {
+            "url": "git+https://github.com/react/react-native.git",
+            "type": "git",
+            "directory": "packages/react-native"
+          },
+          "license": "MIT"
+        },
+        {
+          "version": "0.85.3",
+          "time": "2026-05-05T14:54:53.492Z",
+          "engines": {
+            "node": "^20.19.4 || ^22.13.0 || ^24.3.0 || >= 25.0.0"
+          },
+          "peers": {
+            "react": "^19.2.3",
+            "@types/react": "^19.1.1",
+            "@react-native/jest-preset": "0.85.3"
+          },
+          "dependencies": {
+            "ws": "^7.5.10",
+            "anser": "^1.4.9",
+            "yargs": "^17.6.2",
+            "semver": "^7.1.3",
+            "promise": "^8.3.0",
+            "base64-js": "^1.5.1",
+            "commander": "^12.0.0",
+            "invariant": "^2.2.4",
+            "scheduler": "0.27.0",
+            "ansi-regex": "^5.0.0",
+            "nullthrows": "^1.1.1",
+            "tinyglobby": "^0.2.15",
+            "memoize-one": "^5.0.0",
+            "whatwg-fetch": "^3.0.0",
+            "metro-runtime": "^0.84.3",
+            "pretty-format": "^29.7.0",
+            "react-refresh": "^0.14.0",
+            "hermes-compiler": "250829098.0.10",
+            "abort-controller": "^3.0.0",
+            "metro-source-map": "^0.84.3",
+            "stacktrace-parser": "^0.1.10",
+            "flow-enums-runtime": "^0.0.6",
+            "react-devtools-core": "^6.1.5",
+            "regenerator-runtime": "^0.13.2",
+            "@react-native/codegen": "0.85.3",
+            "@react-native/js-polyfills": "0.85.3",
+            "@react-native/gradle-plugin": "0.85.3",
+            "@react-native/assets-registry": "0.85.3",
+            "@react-native/normalize-colors": "0.85.3",
+            "@react-native/virtualized-lists": "0.85.3",
+            "babel-plugin-syntax-hermes-parser": "0.33.3",
+            "@react-native/community-cli-plugin": "0.85.3"
+          },
+          "dist": {
+            "shasum": "4a3d25c63a2fd320ffb093e20269cf47d585d483",
+            "tarball": "https://registry.npmjs.org/react-native/-/react-native-0.85.3.tgz",
+            "fileCount": 4526,
+            "integrity": "sha512-HN/fGC+3nZVcDNcw7gfbM/DuqZAvI9Mz+/SxuhODaua4JY0BPzhfTzWXRyTR4mRgMHmShTPpH2PYMTxvZrsdZA==",
+            "signatures": [
+              {
+                "sig": "MEYCIQCHG8xSm20HXNAlvXaKChkAyfFBw9wHxjXlCAzbqH/nRAIhAJfsLVos0kt63UJnZRTOwzV6TeOeWxy5RvYC3xsx2Iae",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              }
+            ],
+            "unpackedSize": 21494850
+          },
+          "repository": {
+            "url": "git+https://github.com/facebook/react-native.git",
+            "type": "git",
+            "directory": "packages/react-native"
+          },
+          "license": "MIT"
+        }
+      ]
+    },
+    "metro": {
+      "source": "https://registry.npmjs.org/metro",
+      "tags": {
+        "0.76-stable": "0.76.9",
+        "0.80-stable": "0.80.12",
+        "alpha": "0.81.0-alpha.2",
+        "0.81-stable": "0.81.5",
+        "latest": "0.87.1",
+        "0.83-stable": "0.83.8",
+        "0.84-stable": "0.84.6"
+      },
+      "selected": [
+        {
+          "version": "0.87.1",
+          "time": "2026-09-13T10:39:42.562Z",
+          "engines": {
+            "node": "^22.13.0 || ^24.3.0 || >= 26.0.0"
+          },
+          "dependencies": {
+            "ws": "^7.5.10",
+            "debug": "^4.4.0",
+            "yargs": "^17.6.2",
+            "throat": "^5.0.0",
+            "accepts": "^2.0.0",
+            "connect": "^3.6.5",
+            "invariant": "^2.2.4",
+            "metro-core": "0.87.1",
+            "mime-types": "^3.0.1",
+            "nullthrows": "^1.1.1",
+            "source-map": "^0.5.6",
+            "@babel/core": "^7.25.2",
+            "flow-parser": "0.331.0",
+            "graceful-fs": "^4.2.4",
+            "jest-worker": "^29.7.0",
+            "metro-cache": "0.87.1",
+            "@babel/types": "^7.29.0",
+            "jsc-safe-url": "^0.2.2",
+            "metro-config": "0.87.1",
+            "@babel/parser": "^7.29.0",
+            "metro-runtime": "0.87.1",
+            "metro-file-map": "0.87.1",
+            "metro-resolver": "0.87.1",
+            "@babel/template": "^7.28.6",
+            "@babel/traverse": "^7.29.0",
+            "lodash.throttle": "^4.1.1",
+            "metro-cache-key": "0.87.1",
+            "serialize-error": "^2.1.0",
+            "@babel/generator": "^7.29.1",
+            "metro-source-map": "0.87.1",
+            "@babel/code-frame": "^7.29.0",
+            "metro-symbolicate": "0.87.1",
+            "error-stack-parser": "^2.0.6",
+            "flow-enums-runtime": "^0.0.6",
+            "metro-transform-worker": "0.87.1",
+            "metro-babel-transformer": "0.87.1",
+            "metro-transform-plugins": "0.87.1"
+          },
+          "dist": {
+            "shasum": "ae2d24509c6f5c81d8da896e4f514a1f643c0144",
+            "tarball": "https://registry.npmjs.org/metro/-/metro-0.87.1.tgz",
+            "fileCount": 308,
+            "integrity": "sha512-1oyLU9elM7hPAsKIqKooEekwxiuWr27+MZBhUROPhzcbXhMDxK64GPF/hCXwBZVp1F89ODavCrBmJtLx9WtBoQ==",
+            "signatures": [
+              {
+                "sig": "MEUCIFBVOfFHe7hN8tFhPnQocWSBvtjfIbJccDOWuK2BCXbkAiEA9vKSUVqDOGB0ZLjESju1esLTXUOkZM93X2CVHM93S6g=",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              },
+              {
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+                "sig": "MEYCIQCWn67ddx06Z2sUdB6JLZ0EzKDLnAiQjpuyf3BszNNpzwIhAP7T4wMNbw1t6hnUcCstpKdFgpBBxjz/wAKmB+Ly7b/k"
+              }
+            ],
+            "attestations": {
+              "url": "https://registry.npmjs.org/-/npm/v1/attestations/metro@0.87.1",
+              "provenance": {
+                "predicateType": "https://slsa.dev/provenance/v1"
+              }
+            },
+            "unpackedSize": 1002692
+          },
+          "repository": {
+            "url": "git+https://github.com/react/metro.git",
+            "type": "git",
+            "directory": "packages/metro"
+          },
+          "license": "MIT"
+        },
+        {
+          "version": "0.83.8",
+          "time": "2026-08-19T15:29:40.974Z",
+          "engines": {
+            "node": ">=20.19.4"
+          },
+          "dependencies": {
+            "ws": "^7.5.10",
+            "debug": "^4.4.0",
+            "yargs": "^17.6.2",
+            "throat": "^5.0.0",
+            "accepts": "^2.0.0",
+            "ci-info": "^2.0.0",
+            "connect": "^3.6.5",
+            "invariant": "^2.2.4",
+            "metro-core": "0.83.8",
+            "mime-types": "^3.0.1",
+            "nullthrows": "^1.1.1",
+            "source-map": "^0.5.6",
+            "@babel/core": "^7.25.2",
+            "graceful-fs": "^4.2.4",
+            "jest-worker": "^29.7.0",
+            "metro-cache": "0.83.8",
+            "@babel/types": "^7.29.0",
+            "jsc-safe-url": "^0.2.2",
+            "metro-config": "0.83.8",
+            "@babel/parser": "^7.29.0",
+            "hermes-parser": "0.35.0",
+            "metro-runtime": "0.83.8",
+            "metro-file-map": "0.83.8",
+            "metro-resolver": "0.83.8",
+            "@babel/template": "^7.28.6",
+            "@babel/traverse": "^7.29.0",
+            "lodash.throttle": "^4.1.1",
+            "metro-cache-key": "0.83.8",
+            "serialize-error": "^2.1.0",
+            "@babel/generator": "^7.29.1",
+            "metro-source-map": "0.83.8",
+            "@babel/code-frame": "^7.29.0",
+            "metro-symbolicate": "0.83.8",
+            "error-stack-parser": "^2.0.6",
+            "flow-enums-runtime": "^0.0.6",
+            "metro-transform-worker": "0.83.8",
+            "metro-babel-transformer": "0.83.8",
+            "metro-transform-plugins": "0.83.8"
+          },
+          "dist": {
+            "shasum": "4d47a6067f8cefe74b6a7e5ec955a07b81615fca",
+            "tarball": "https://registry.npmjs.org/metro/-/metro-0.83.8.tgz",
+            "fileCount": 400,
+            "integrity": "sha512-ZbJDJCDlvv0O3QHVbhZkyP2/DtebfEoDZ3wVyYHgu6Uoy6DmmE/bis6lIDBYh+kWPuaueJDegyutPjkIBLtZDQ==",
+            "signatures": [
+              {
+                "sig": "MEUCIQDYJ0wVozAZyyIRDJ8Vb25ew27USzY8e8tAjmBKUuOrhwIgCGMpJMOmQyuw4X/07E9E8eG2frbYPqQSJr9RnU48yf4=",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              },
+              {
+                "sig": "MEYCIQCUeTFFGk8194VoO2ZVVnVHwfXoowBDhfCidErb1UCxxAIhAPV2RBaJch/yHBiXI8x7NCHv/EKCm+O5UNNy38mgFg7R",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              }
+            ],
+            "attestations": {
+              "url": "https://registry.npmjs.org/-/npm/v1/attestations/metro@0.83.8",
+              "provenance": {
+                "predicateType": "https://slsa.dev/provenance/v1"
+              }
+            },
+            "unpackedSize": 958323
+          },
+          "repository": {
+            "url": "git+https://github.com/react/metro.git",
+            "type": "git",
+            "directory": "packages/metro"
+          },
+          "license": "MIT"
+        },
+        {
+          "version": "0.84.6",
+          "time": "2026-09-02T15:57:09.302Z",
+          "engines": {
+            "node": "^20.19.4 || ^22.13.0 || ^24.3.0 || >= 25.0.0"
+          },
+          "dependencies": {
+            "ws": "^7.5.10",
+            "debug": "^4.4.0",
+            "yargs": "^17.6.2",
+            "throat": "^5.0.0",
+            "accepts": "^2.0.0",
+            "ci-info": "^2.0.0",
+            "connect": "^3.6.5",
+            "invariant": "^2.2.4",
+            "metro-core": "0.84.6",
+            "mime-types": "^3.0.1",
+            "nullthrows": "^1.1.1",
+            "source-map": "^0.5.6",
+            "@babel/core": "^7.25.2",
+            "graceful-fs": "^4.2.4",
+            "jest-worker": "^29.7.0",
+            "metro-cache": "0.84.6",
+            "@babel/types": "^7.29.0",
+            "jsc-safe-url": "^0.2.2",
+            "metro-config": "0.84.6",
+            "@babel/parser": "^7.29.0",
+            "hermes-parser": "0.35.0",
+            "metro-runtime": "0.84.6",
+            "metro-file-map": "0.84.6",
+            "metro-resolver": "0.84.6",
+            "@babel/template": "^7.28.6",
+            "@babel/traverse": "^7.29.0",
+            "lodash.throttle": "^4.1.1",
+            "metro-cache-key": "0.84.6",
+            "serialize-error": "^2.1.0",
+            "@babel/generator": "^7.29.1",
+            "metro-source-map": "0.84.6",
+            "@babel/code-frame": "^7.29.0",
+            "metro-symbolicate": "0.84.6",
+            "error-stack-parser": "^2.0.6",
+            "flow-enums-runtime": "^0.0.6",
+            "metro-transform-worker": "0.84.6",
+            "metro-babel-transformer": "0.84.6",
+            "metro-transform-plugins": "0.84.6"
+          },
+          "dist": {
+            "shasum": "6b28cba341c1148c4171b97444de3bf06e10ddeb",
+            "tarball": "https://registry.npmjs.org/metro/-/metro-0.84.6.tgz",
+            "fileCount": 400,
+            "integrity": "sha512-ty/tx/imE5Ph2gvPU788Ckim6RAC2tyZxLz2hWRgC9U7/fGKV7qY/slADy0qHPEw9cpUgc4BfmV3oUsYwm7oeg==",
+            "signatures": [
+              {
+                "sig": "MEUCIQDdqhElnRi95+eQAC8aiqZC/xJnOt31g7k/tF0cstry1AIgODwnJH52m4ZzLe5dYogbL7o/6dA74jNAYYKrsrCRTzs=",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              },
+              {
+                "sig": "MEYCIQDChb86fenyNdRgpD7gDBgZf5pLY8z/6Uhhp171XWTOvQIhAIjpUjhoMl2CCIpogKXduY9M5nJV/OKXMkZ/XY6alVY9",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              }
+            ],
+            "attestations": {
+              "url": "https://registry.npmjs.org/-/npm/v1/attestations/metro@0.84.6",
+              "provenance": {
+                "predicateType": "https://slsa.dev/provenance/v1"
+              }
+            },
+            "unpackedSize": 958636
+          },
+          "repository": {
+            "url": "git+https://github.com/react/metro.git",
+            "type": "git",
+            "directory": "packages/metro"
+          },
+          "license": "MIT"
+        }
+      ]
+    },
+    "expo": {
+      "source": "https://registry.npmjs.org/expo",
+      "tags": {
+        "sdk-52": "52.0.49",
+        "sdk-53": "53.0.27",
+        "canary-sdk-55": "55.0.3-canary-20260429-a5e59cf",
+        "canary-sdk-56": "56.0.6-canary-20260701-9100865",
+        "sdk-54": "54.0.37",
+        "sdk-55": "55.0.31",
+        "canary": "58.0.0-canary-20260909-ea7a89a",
+        "sdk-56": "56.0.23",
+        "next": "58.0.6",
+        "sdk-57": "57.0.27",
+        "latest": "57.0.27"
+      },
+      "selected": [
+        {
+          "version": "57.0.27",
+          "time": "2026-10-06T12:10:58.345Z",
+          "peers": {
+            "react": "*",
+            "react-dom": "*",
+            "react-native": "*",
+            "react-native-web": "*",
+            "@expo/dom-webview": "*",
+            "@expo/metro-runtime": "*",
+            "react-native-webview": "*"
+          },
+          "dependencies": {
+            "@expo/cli": "^57.0.28",
+            "expo-font": "~57.0.4",
+            "expo-asset": "~57.0.19",
+            "@expo/metro": "~56.0.2",
+            "@expo/config": "~57.0.10",
+            "@expo/log-box": "^57.0.4",
+            "pretty-format": "^29.7.0",
+            "react-refresh": "^0.14.2",
+            "@babel/runtime": "^7.20.0",
+            "@expo/devtools": "~57.0.1",
+            "expo-constants": "~57.0.21",
+            "expo-keep-awake": "~57.0.2",
+            "expo-file-system": "~57.0.7",
+            "@expo/dom-webview": "~57.0.1",
+            "@expo/fingerprint": "^0.20.13",
+            "babel-preset-expo": "~57.0.14",
+            "expo-modules-core": "~57.0.21",
+            "@expo/metro-config": "~57.0.13",
+            "whatwg-url-minimum": "^0.1.2",
+            "@expo/config-plugins": "~57.0.10",
+            "@ungap/structured-clone": "^1.3.0",
+            "expo-modules-autolinking": "~57.0.14",
+            "@expo/local-build-cache-provider": "^57.0.8"
+          },
+          "dist": {
+            "shasum": "36da9d9c9e58f031d58e506f97225f8e8dc52466",
+            "tarball": "https://registry.npmjs.org/expo/-/expo-57.0.27.tgz",
+            "fileCount": 429,
+            "integrity": "sha512-Jc3nByHsmzjakvIrqV3/3viVj+jFw1OCfMc+WpClemwL3/hSrS7ktkVCACSTI7/j+1uH+eHmBJwe1kujDLMnbQ==",
+            "signatures": [
+              {
+                "sig": "MEUCIHp8FVJHQ3zLZO0ZhV3Mrunz+V4L7tfXnlil1E7qqvo2AiEAvJvJRAkFDZToYNejdr3XkCJ0ezYsA0hc4DvWvCd29yA=",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              },
+              {
+                "sig": "MEUCIAb6POD595tRfkkQjut1wwUorT4XAUXiwyJbUACTn+aqAiEAxTR80J/yCZjhpRVxe1KS90Txh+XnyIaGrbfEC9Y0/pk=",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              }
+            ],
+            "unpackedSize": 957082
+          },
+          "repository": {
+            "url": "git+https://github.com/expo/expo.git",
+            "type": "git",
+            "directory": "packages/expo"
+          },
+          "license": "MIT"
+        },
+        {
+          "version": "55.0.31",
+          "time": "2026-08-31T10:30:46.719Z",
+          "peers": {
+            "react": "*",
+            "react-native": "*",
+            "@expo/dom-webview": "*",
+            "@expo/metro-runtime": "*",
+            "react-native-webview": "*"
+          },
+          "dependencies": {
+            "@expo/cli": "55.0.36",
+            "expo-font": "~55.0.8",
+            "expo-asset": "~55.0.20",
+            "@expo/metro": "~55.1.2",
+            "@expo/config": "~55.0.21",
+            "@expo/log-box": "55.0.13",
+            "pretty-format": "^29.7.0",
+            "react-refresh": "^0.14.2",
+            "@babel/runtime": "^7.20.0",
+            "@expo/devtools": "55.0.3",
+            "expo-constants": "~55.0.17",
+            "expo-keep-awake": "~55.0.8",
+            "expo-file-system": "~55.0.26",
+            "@expo/fingerprint": "0.16.8",
+            "babel-preset-expo": "~55.0.25",
+            "expo-modules-core": "55.0.26",
+            "@expo/metro-config": "55.0.27",
+            "@expo/vector-icons": "^15.0.2",
+            "whatwg-url-minimum": "^0.1.2",
+            "@expo/config-plugins": "~55.0.11",
+            "@ungap/structured-clone": "^1.3.0",
+            "expo-modules-autolinking": "55.0.27",
+            "@expo/local-build-cache-provider": "55.0.16"
+          },
+          "dist": {
+            "shasum": "0f97887c565b60577bb762e3c6288b8d399aa622",
+            "tarball": "https://registry.npmjs.org/expo/-/expo-55.0.31.tgz",
+            "fileCount": 387,
+            "integrity": "sha512-ZqV6jniU7twd18ADh1xP7moVrgP/BO1OTJwF2OzYnfJI9ak5cXDk+8DrV2jlgj33pMrLKqlnUvNz11zxyhwo7w==",
+            "signatures": [
+              {
+                "sig": "MEQCIGUMXKPhU7uqtWTUsaVNRnLJDI8FwZvJyWH4vIXW1JDPAiAqf5kqVIdu+2yjQukly4EAOzSfPRZLGnTepTOGYvH4Ew==",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              },
+              {
+                "sig": "MEUCIHz19ELPFIllzlrXI1BcryQMXDFJKfKtZzPz/qrZi9uqAiEAzwg1W9b5Dh7Ef4OHKkOS2R6FER/k0yRnYIihyjHCE5c=",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              }
+            ],
+            "unpackedSize": 880170
+          },
+          "repository": {
+            "url": "git+https://github.com/expo/expo.git",
+            "type": "git",
+            "directory": "packages/expo"
+          },
+          "license": "MIT"
+        },
+        {
+          "version": "56.0.23",
+          "time": "2026-09-29T11:21:21.278Z",
+          "peers": {
+            "react": "*",
+            "react-dom": "*",
+            "react-native": "*",
+            "react-native-web": "*",
+            "@expo/dom-webview": "*",
+            "@expo/metro-runtime": "*",
+            "react-native-webview": "*"
+          },
+          "dependencies": {
+            "@expo/cli": "^56.1.26",
+            "expo-font": "~56.0.7",
+            "expo-asset": "~56.0.25",
+            "@expo/metro": "~56.0.2",
+            "@expo/config": "~56.0.14",
+            "@expo/log-box": "^56.0.14",
+            "pretty-format": "^29.7.0",
+            "react-refresh": "^0.14.2",
+            "@babel/runtime": "^7.20.0",
+            "@expo/devtools": "~56.0.2",
+            "expo-constants": "~56.0.27",
+            "expo-keep-awake": "~56.0.3",
+            "expo-file-system": "~56.0.11",
+            "@expo/dom-webview": "~56.0.6",
+            "@expo/fingerprint": "^0.19.10",
+            "babel-preset-expo": "~56.0.20",
+            "expo-modules-core": "~56.0.27",
+            "@expo/metro-config": "~56.0.19",
+            "whatwg-url-minimum": "^0.1.2",
+            "@expo/config-plugins": "~56.0.16",
+            "@ungap/structured-clone": "^1.3.0",
+            "expo-modules-autolinking": "~56.0.23",
+            "@expo/local-build-cache-provider": "^56.0.12"
+          },
+          "dist": {
+            "shasum": "89968888569f0259edcd7365ba69172501c4dc1e",
+            "tarball": "https://registry.npmjs.org/expo/-/expo-56.0.23.tgz",
+            "fileCount": 424,
+            "integrity": "sha512-SPPgww/V24xpe+vELAIKOrkwKF8g8o6TLfaIMqdO56PtTvCUvJQPfJfnj/bCsQJFIjoQVHOZZ03B6Zx/VYAPsQ==",
+            "signatures": [
+              {
+                "sig": "MEYCIQCSSmSJ+Ctc8kdS+DyfUOeDhwMIJ7tB97oEiUwNZ/f/7QIhAI0WTRKZ2a5mfLBiFJSFPEZjqJmP2UBzZO14JVn3sMpe",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              },
+              {
+                "sig": "MEUCIQDldIPXkKSrNTYC2CAD2po9+Ouapuk72NOQO1OX91l+MgIgY3+SfFlIjloOEp5GeKzDCHc8mHvkC2lt2mb5AA1WlLI=",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              }
+            ],
+            "unpackedSize": 907656
+          },
+          "repository": {
+            "url": "git+https://github.com/expo/expo.git",
+            "type": "git",
+            "directory": "packages/expo"
+          },
+          "license": "MIT"
+        }
+      ]
+    },
+    "expo-router": {
+      "source": "https://registry.npmjs.org/expo-router",
+      "tags": {
+        "sdk-50": "3.4.8",
+        "sdk-52-router-patches": "5.0.0-sdk-52-router-patches",
+        "sdk-52": "4.0.22",
+        "sdk-53": "5.1.11",
+        "canary-sdk-55": "55.0.3-canary-20260429-a5e59cf",
+        "sdk-54": "6.0.24",
+        "canary-sdk-56": "56.2.8-canary-20260701-9100865",
+        "sdk-55": "55.0.18",
+        "canary": "58.0.0-canary-20260909-ea7a89a",
+        "sdk-56": "56.2.21",
+        "next": "58.0.16",
+        "latest": "57.0.25",
+        "sdk-57": "57.0.25"
+      },
+      "selected": [
+        {
+          "version": "57.0.25",
+          "time": "2026-10-06T12:10:55.270Z",
+          "peers": {
+            "expo": "*",
+            "react": "*",
+            "react-dom": "*",
+            "expo-linking": "^57.0.12",
+            "react-native": "*",
+            "@expo/log-box": "^57.0.4",
+            "expo-constants": "^57.0.21",
+            "react-native-web": "*",
+            "@expo/metro-runtime": "^57.0.16",
+            "react-native-screens": "^4.26.0",
+            "react-native-reanimated": "*",
+            "react-server-dom-webpack": "~19.0.4 || ~19.1.5 || ~19.2.4",
+            "react-native-gesture-handler": "*",
+            "@testing-library/react-native": ">= 13.2.0",
+            "react-native-safe-area-context": ">= 5.4.0"
+          },
+          "dependencies": {
+            "vaul": "^1.1.2",
+            "color": "^4.2.3",
+            "debug": "^4.3.4",
+            "nanoid": "^3.3.18",
+            "@expo/ui": "^57.0.22",
+            "react-is": "^19.1.0",
+            "invariant": "^2.2.4",
+            "client-only": "^0.0.1",
+            "expo-server": "^57.0.3",
+            "server-only": "^0.0.1",
+            "expo-symbols": "^57.0.3",
+            "query-string": "^7.1.3",
+            "shallowequal": "^1.1.0",
+            "@expo/log-box": "^57.0.4",
+            "fast-deep-equal": "^3.1.3",
+            "expo-glass-effect": "^57.0.4",
+            "@expo/schema-utils": "^57.0.2",
+            "react-fast-compare": "^3.2.2",
+            "@expo/metro-runtime": "^57.0.16",
+            "standard-navigation": "^0.0.5",
+            "@radix-ui/react-slot": "^1.2.0",
+            "@radix-ui/react-tabs": "^1.1.12",
+            "escape-string-regexp": "^4.0.0",
+            "react-native-screens": "^4.26.0",
+            "sf-symbols-typescript": "^2.1.0",
+            "react-native-drawer-layout": "^4.2.2",
+            "@react-native-masked-view/masked-view": "^0.3.2"
+          },
+          "dist": {
+            "shasum": "8afc1befef598685006c23cc6b4aaad535cf037c",
+            "tarball": "https://registry.npmjs.org/expo-router/-/expo-router-57.0.25.tgz",
+            "fileCount": 2459,
+            "integrity": "sha512-S/xWUGeVqMozG8gFJT0CHOVErZEbQnsAEAqlBIvHJSUZPH0hBcxy2kduUrV7ZDLNI4xCPIlOJ4SI29X/1z/hxw==",
+            "signatures": [
+              {
+                "sig": "MEQCIHFLdH3P8ECCxV+Ax4SZysTxvY/eai3Q/FDEvLSHLYNJAiARyaWrL1hKKgPo+o6Hp1ESQr/R2lsxrfZjvmkXt2rKUg==",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              },
+              {
+                "sig": "MEUCID4JUaEOtLnhb5rDMuWyNM2mNSctg2VzrReGMsuywmGqAiEAxVd731U4EyreXVogn1u4JWtIeYtgo+qh8IoZjkwLSW4=",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              }
+            ],
+            "unpackedSize": 6194168
+          },
+          "repository": {
+            "url": "git+https://github.com/expo/expo.git",
+            "type": "git",
+            "directory": "packages/expo-router"
+          },
+          "license": "MIT"
+        },
+        {
+          "version": "55.0.18",
+          "time": "2026-08-17T14:16:42.409Z",
+          "peers": {
+            "expo": "*",
+            "react": "*",
+            "react-dom": "*",
+            "expo-linking": "^55.0.17",
+            "react-native": "*",
+            "@expo/log-box": "55.0.13",
+            "expo-constants": "^55.0.17",
+            "react-native-web": "*",
+            "@expo/metro-runtime": "^55.0.12",
+            "react-native-screens": "*",
+            "react-native-reanimated": "*",
+            "@react-navigation/drawer": "^7.9.4",
+            "react-server-dom-webpack": "~19.0.4 || ~19.1.5 || ~19.2.4",
+            "react-native-gesture-handler": "*",
+            "@testing-library/react-native": ">= 13.2.0",
+            "react-native-safe-area-context": ">= 5.4.0"
+          },
+          "dependencies": {
+            "vaul": "^1.1.2",
+            "debug": "^4.3.4",
+            "nanoid": "^3.3.8",
+            "semver": "~7.6.3",
+            "invariant": "^2.2.4",
+            "expo-image": "^55.0.11",
+            "client-only": "^0.0.1",
+            "expo-server": "^55.0.12",
+            "server-only": "^0.0.1",
+            "expo-symbols": "^55.0.9",
+            "query-string": "^7.1.3",
+            "shallowequal": "^1.1.0",
+            "fast-deep-equal": "^3.1.3",
+            "expo-glass-effect": "^55.0.11",
+            "@expo/schema-utils": "^55.0.5",
+            "react-fast-compare": "^3.2.2",
+            "@expo/metro-runtime": "^55.0.12",
+            "use-latest-callback": "^0.2.1",
+            "@radix-ui/react-slot": "^1.2.0",
+            "@radix-ui/react-tabs": "^1.1.12",
+            "escape-string-regexp": "^4.0.0",
+            "sf-symbols-typescript": "^2.1.0",
+            "@react-navigation/native": "^7.1.33",
+            "react-native-is-edge-to-edge": "^1.2.1",
+            "@react-navigation/bottom-tabs": "^7.15.5",
+            "@react-navigation/native-stack": "^7.14.5"
+          },
+          "dist": {
+            "shasum": "8af37dbd0323f39ab7c8694d6b64a79c5fc4f032",
+            "tarball": "https://registry.npmjs.org/expo-router/-/expo-router-55.0.18.tgz",
+            "fileCount": 1171,
+            "integrity": "sha512-KfGkHUgPsstqYD5kEyUtCKIMzPsKeuS+4C+xZ8sj8lEmL1Liy4JYuDoDSEhBVXWoQN82rYAqbBKgr9n+G1mk+g==",
+            "signatures": [
+              {
+                "sig": "MEYCIQDo5kPTaT2BgaJy58EVbVaHbMMlgGyp8jRGxLAV2uRzlwIhAPGiVYW7rXdwvgK5FJdMSYspvLpbFRRUsr+9JCOXSX6o",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              },
+              {
+                "sig": "MEUCIQCQlqqhDBfOsD2OUwWTg06TjEvxWXq97cC4ga0osFyQ9QIgAj0tG1kwn0yJxcbpnXnZk/eiGNL0xaflGpi0xyZIlxM=",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              }
+            ],
+            "unpackedSize": 3028933
+          },
+          "repository": {
+            "url": "git+https://github.com/expo/expo.git",
+            "type": "git",
+            "directory": "packages/expo-router"
+          },
+          "license": "MIT"
+        },
+        {
+          "version": "56.2.21",
+          "time": "2026-09-17T22:09:04.327Z",
+          "peers": {
+            "expo": "*",
+            "react": "*",
+            "react-dom": "*",
+            "expo-linking": "^56.0.18",
+            "react-native": "*",
+            "@expo/log-box": "^56.0.14",
+            "expo-constants": "^56.0.26",
+            "react-native-web": "*",
+            "@expo/metro-runtime": "^56.0.21",
+            "react-native-screens": "^4.26.0",
+            "react-native-reanimated": "*",
+            "react-server-dom-webpack": "~19.0.4 || ~19.1.5 || ~19.2.4",
+            "react-native-gesture-handler": "*",
+            "@testing-library/react-native": ">= 13.2.0",
+            "react-native-safe-area-context": ">= 5.4.0"
+          },
+          "dependencies": {
+            "vaul": "^1.1.2",
+            "color": "^4.2.3",
+            "debug": "^4.3.4",
+            "nanoid": "^3.3.8",
+            "@expo/ui": "^56.0.26",
+            "react-is": "^19.1.0",
+            "invariant": "^2.2.4",
+            "client-only": "^0.0.1",
+            "expo-server": "^56.0.6",
+            "server-only": "^0.0.1",
+            "expo-symbols": "^56.0.7",
+            "query-string": "^7.1.3",
+            "shallowequal": "^1.1.0",
+            "@expo/log-box": "^56.0.14",
+            "fast-deep-equal": "^3.1.3",
+            "expo-glass-effect": "^56.0.4",
+            "@expo/schema-utils": "^56.0.2",
+            "react-fast-compare": "^3.2.2",
+            "@expo/metro-runtime": "^56.0.21",
+            "standard-navigation": "^0.0.5",
+            "@radix-ui/react-slot": "^1.2.0",
+            "@radix-ui/react-tabs": "^1.1.12",
+            "escape-string-regexp": "^4.0.0",
+            "react-native-screens": "^4.26.0",
+            "sf-symbols-typescript": "^2.1.0",
+            "@testing-library/jest-dom": "^6.9.1",
+            "react-native-drawer-layout": "^4.2.2",
+            "@testing-library/user-event": "^14.6.1",
+            "@react-native-masked-view/masked-view": "^0.3.2"
+          },
+          "dist": {
+            "shasum": "2be600ae369e4a9dffa6ed6692bbf7964fd2f446",
+            "tarball": "https://registry.npmjs.org/expo-router/-/expo-router-56.2.21.tgz",
+            "fileCount": 2449,
+            "integrity": "sha512-+18RsH6xu+U2xx758EN2sPIHzSxjJoZz9aCFkgvkUEF1lRERXnIZWYIqgW6kclh+0InL8VopacEYEUNSyNG5sg==",
+            "signatures": [
+              {
+                "sig": "MEYCIQDMBQ+WN3N8cjb+QZPPY96Q1Ko0fdd1vpqYlC5cgvxPkAIhAP6o0dBm1mJzSk7TSuTf/wgwPrJpBoK+MqCSpxj3VxLj",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              },
+              {
+                "sig": "MEUCIQCytKVHLgNFc0TC9rNTB3CkPTph0NLhxHMSC/DjOolCgwIgMcGgB8H4nSiEphkV6RbugTMkZB3xs+1fGoqLIx1OZaM=",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              }
+            ],
+            "unpackedSize": 6163164
+          },
+          "repository": {
+            "url": "git+https://github.com/expo/expo.git",
+            "type": "git",
+            "directory": "packages/expo-router"
+          },
+          "license": "MIT"
+        }
+      ]
+    },
+    "@react-navigation/native": {
+      "source": "https://registry.npmjs.org/%40react-navigation%2Fnative",
+      "tags": {
+        "4.x": "3.8.4",
+        "5.x": "5.9.8",
+        "next": "8.0.0-alpha.50",
+        "latest": "7.5.0"
+      },
+      "selected": [
+        {
+          "version": "7.5.0",
+          "time": "2026-09-29T17:06:38.258Z",
+          "peers": {
+            "react": ">= 18.2.0",
+            "react-native": "*"
+          },
+          "dependencies": {
+            "nanoid": "^3.3.11",
+            "fast-deep-equal": "^3.1.3",
+            "standard-navigation": "^0.0.8",
+            "use-latest-callback": "^0.2.4",
+            "escape-string-regexp": "^4.0.0",
+            "@react-navigation/core": "^7.23.0"
+          },
+          "dist": {
+            "shasum": "55b8d98efce1afdffe416a632badbba9c556a7ad",
+            "tarball": "https://registry.npmjs.org/@react-navigation/native/-/native-7.5.0.tgz",
+            "fileCount": 175,
+            "integrity": "sha512-D4fb1+HWv54re3XgU615pgtdHJa5OsQtypKEbqX10Eopj39tTj4RV/ww9mdzn4X0ZkiHfVos/ysAe5428P0uVA==",
+            "signatures": [
+              {
+                "sig": "MEUCIC8uuBX7xcmiRzqWQmXh9UbKLVjUBt1JqBKvhMAuVoHRAiEAxciGYZ8gNzgCXKvZf5YOCKwik6SAZ1XbAhHn0WlAP+E=",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              },
+              {
+                "sig": "MEUCIQCuIvwZR5cwpSLbdNRyUXbPFdY7AydTcHJy3sASw60zEAIgb0GbNJBgnwqqFfKcbZQM+sr6KKupfqxcXl/mMazi2EM=",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              }
+            ],
+            "unpackedSize": 293040
+          },
+          "repository": {
+            "url": "git+https://github.com/react-navigation/react-navigation.git",
+            "type": "git",
+            "directory": "packages/native"
+          },
+          "license": "MIT"
+        }
+      ]
+    },
+    "@react-navigation/native-stack": {
+      "source": "https://registry.npmjs.org/%40react-navigation%2Fnative-stack",
+      "tags": {
+        "next": "8.0.0-alpha.58",
+        "latest": "7.20.0"
+      },
+      "selected": [
+        {
+          "version": "7.20.0",
+          "time": "2026-09-29T17:06:42.882Z",
+          "peers": {
+            "react": ">= 18.2.0",
+            "react-native": "*",
+            "react-native-screens": ">= 4.0.0",
+            "@react-navigation/native": "^7.5.0",
+            "react-native-safe-area-context": ">= 4.0.0"
+          },
+          "dependencies": {
+            "color": "^4.2.3",
+            "warn-once": "^0.1.1",
+            "sf-symbols-typescript": "^2.1.0",
+            "@react-navigation/elements": "^2.9.44"
+          },
+          "dist": {
+            "shasum": "a638b49c0f414ab14270b3d1987e3307448ce426",
+            "tarball": "https://registry.npmjs.org/@react-navigation/native-stack/-/native-stack-7.20.0.tgz",
+            "fileCount": 75,
+            "integrity": "sha512-iBEABShlkvcQM/ALP+nu7bEtLaan2tQODOWXvYburmLzcXIjSB+6nNfWdY8PhwWDUZCCvU1Xn38YoXmtGJa4/A==",
+            "signatures": [
+              {
+                "sig": "MEUCIHwhzKbqz8lfAaIk5E8aX//t1aPUH8HzWjHYT7Xw+FIqAiEAu1cGaCQWwPaHl7CdfA2PQdpI2XL3gMgu8u1iqNgVeQk=",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              },
+              {
+                "sig": "MEUCIQCuGZTzIRcFJ/MdQLNTs/ROeGdDD8qlI/11ehq6VmVweQIgTG9lbTQd0E90MJ2WRCxXUGvFowTe4dJ7P3BCQVjjGBc=",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              }
+            ],
+            "unpackedSize": 261856
+          },
+          "repository": {
+            "url": "git+https://github.com/react-navigation/react-navigation.git",
+            "type": "git",
+            "directory": "packages/native-stack"
+          },
+          "license": "MIT"
+        }
+      ]
+    },
+    "axios": {
+      "source": "https://registry.npmjs.org/axios",
+      "tags": {
+        "next": "1.7.0-beta.2",
+        "old-version": "0.30.0",
+        "latest": "1.20.0",
+        "v0x": "0.34.0"
+      },
+      "selected": [
+        {
+          "version": "1.20.0",
+          "time": "2026-08-26T08:20:14.517Z",
+          "dependencies": {
+            "form-data": "^4.0.6",
+            "proxy-from-env": "^2.1.0",
+            "follow-redirects": "^1.16.0",
+            "https-proxy-agent": "^5.0.1"
+          },
+          "dist": {
+            "shasum": "515513445aa60e71d04b6521ca6210829ccb4786",
+            "tarball": "https://registry.npmjs.org/axios/-/axios-1.20.0.tgz",
+            "fileCount": 89,
+            "integrity": "sha512-r8aOh8j9cGKpgQAqpzrUHnSIc6a59Y3Xf/cv8sy1DrHCkZHzQGEuoq1tARk6qSyDdtQGSDgpb9kFlruzPvrgwg==",
+            "signatures": [
+              {
+                "sig": "MEUCIBAwdHAi99YUcm6E6onTp5PLQzlwFbq0b5+1BE5K8avQAiEAqYM/GAvBe7lKa12kDtwshPBUo3Qi7I4FvcXFf4dB2bI=",
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+              }
+            ],
+            "attestations": {
+              "url": "https://registry.npmjs.org/-/npm/v1/attestations/axios@1.20.0",
+              "provenance": {
+                "predicateType": "https://slsa.dev/provenance/v1"
+              }
+            },
+            "unpackedSize": 1983343
+          },
+          "repository": {
+            "url": "git+https://github.com/axios/axios.git",
+            "type": "git"
+          },
+          "license": "MIT"
+        }
+      ]
+    },
+    "hermes-parser": {
+      "source": "https://registry.npmjs.org/hermes-parser",
+      "tags": {
+        "latest": "0.37.0"
+      },
+      "selected": [
+        {
+          "version": "0.37.0",
+          "time": "2026-07-14T20:10:08.961Z",
+          "dependencies": {
+            "hermes-estree": "0.37.0"
+          },
+          "dist": {
+            "shasum": "1f739e17fc9eb99341933b102faf4c5f930def8e",
+            "integrity": "sha512-8PuWcyaF6VHQHL2dbU+QEIkbtHYQrTX/6+ep4VcBLJ3f/ehevowr5Zj8LQfYXQQGFG2O+df7hIMtt4PkkhfK3Q==",
+            "tarball": "https://registry.npmjs.org/hermes-parser/-/hermes-parser-0.37.0.tgz",
+            "fileCount": 105,
+            "unpackedSize": 1616588,
+            "signatures": [
+              {
+                "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+                "sig": "MEYCIQCKfy1wu/rbc598W8MM7CpT1K72rpuOt9Tn3SOlUURtfgIhAPdMY/is3Uz81YWGDkBw4SQ45NE4fhZy6FXUm2zkKDjp"
+              }
+            ]
+          },
+          "repository": {
+            "type": "git",
+            "url": "git+https://github.com/facebook/hermes.git",
+            "directory": "tools/hermes-parser/js/hermes-parser"
+          },
+          "license": "MIT"
+        }
+      ]
+    }
+  },
+  "pypi": {
+    "Django": {
+      "source": "https://pypi.org/pypi/Django/json",
+      "selected": [
+        {
+          "version": "6.1.2",
+          "requiresPython": ">=3.12",
+          "requiresDist": [
+            "asgiref>=3.9.1",
+            "sqlparse>=0.5.0",
+            "tzdata; sys_platform == \"win32\"",
+            "argon2-cffi>=23.1.0; extra == \"argon2\"",
+            "bcrypt>=4.1.1; extra == \"bcrypt\""
+          ],
+          "files": [
+            {
+              "filename": "django-6.1.2-py3-none-any.whl",
+              "sha256": "141efee6ec64d1db6db90683bf734c550102450f444fb099063b0be1bd27d991",
+              "uploadTime": "2026-10-06T12:53:17.381365Z",
+              "yanked": false
+            },
+            {
+              "filename": "django-6.1.2.tar.gz",
+              "sha256": "a1e92451ccb8b514e91bbb3b6d186d20b4030558f116b5d9de6535455ff210b7",
+              "uploadTime": "2026-10-06T12:53:29.622597Z",
+              "yanked": false
+            }
+          ]
+        },
+        {
+          "version": "5.2.18",
+          "requiresPython": ">=3.10",
+          "requiresDist": [
+            "asgiref>=3.8.1",
+            "sqlparse>=0.3.1",
+            "tzdata; sys_platform == \"win32\"",
+            "argon2-cffi>=19.1.0; extra == \"argon2\"",
+            "bcrypt; extra == \"bcrypt\""
+          ],
+          "files": [
+            {
+              "filename": "django-5.2.18-py3-none-any.whl",
+              "sha256": "92ed81d500be6408ecd704d7bd1366c534f30427bffcc63c5fefb129561aec7c",
+              "uploadTime": "2026-10-06T13:01:04.413659Z",
+              "yanked": false
+            },
+            {
+              "filename": "django-5.2.18.tar.gz",
+              "sha256": "461c5dd06d2ea16bd5ca37d3f46e4def1d6b0fe7588c6f4e2119517bb0af8b2d",
+              "uploadTime": "2026-10-06T13:01:09.371958Z",
+              "yanked": false
+            }
+          ]
+        },
+        {
+          "version": "6.0.9",
+          "requiresPython": ">=3.12",
+          "requiresDist": [
+            "asgiref>=3.9.1",
+            "sqlparse>=0.5.0",
+            "tzdata; sys_platform == \"win32\"",
+            "argon2-cffi>=23.1.0; extra == \"argon2\"",
+            "bcrypt>=4.1.1; extra == \"bcrypt\""
+          ],
+          "files": [
+            {
+              "filename": "django-6.0.9-py3-none-any.whl",
+              "sha256": "5c6473d05bbea9c43359cc36701b5deec3c925f5311963786e1346544c1a68c0",
+              "uploadTime": "2026-10-06T12:57:52.649734Z",
+              "yanked": false
+            },
+            {
+              "filename": "django-6.0.9.tar.gz",
+              "sha256": "8ce037c971f421cfb47d38c097ca233a8f6dd42d9e9501a37e02dd7d08c5cb3f",
+              "uploadTime": "2026-10-06T12:57:57.479716Z",
+              "yanked": false
+            }
+          ]
+        }
+      ]
+    },
+    "djangorestframework": {
+      "source": "https://pypi.org/pypi/djangorestframework/json",
+      "selected": [
+        {
+          "version": "3.18.2",
+          "requiresPython": ">=3.10",
+          "requiresDist": [
+            "django>=5.2"
+          ],
+          "files": [
+            {
+              "filename": "djangorestframework-3.18.2-py3-none-any.whl",
+              "sha256": "a92d6a4e128a2550bd2fe2e02008a9e47fe52c180e130bb438f5ba70ee933a3f",
+              "uploadTime": "2026-10-06T20:42:13.411517Z",
+              "yanked": false
+            },
+            {
+              "filename": "djangorestframework-3.18.2.tar.gz",
+              "sha256": "8249bad7715eb37274ce5820fc5d9fd786b7579806589565f52a71c02b35f54b",
+              "uploadTime": "2026-10-06T20:42:15.116655Z",
+              "yanked": false
+            }
+          ]
+        },
+        {
+          "version": "3.16.1",
+          "requiresPython": ">=3.9",
+          "requiresDist": [
+            "django>=4.2"
+          ],
+          "files": [
+            {
+              "filename": "djangorestframework-3.16.1-py3-none-any.whl",
+              "sha256": "33a59f47fb9c85ede792cbf88bde71893bcda0667bc573f784649521f1102cec",
+              "uploadTime": "2025-08-06T17:50:50.667293Z",
+              "yanked": false
+            },
+            {
+              "filename": "djangorestframework-3.16.1.tar.gz",
+              "sha256": "166809528b1aced0a17dc66c24492af18049f2c9420dbd0be29422029cfc3ff7",
+              "uploadTime": "2025-08-06T17:50:53.251418Z",
+              "yanked": false
+            }
+          ]
+        },
+        {
+          "version": "3.17.2",
+          "requiresPython": ">=3.10",
+          "requiresDist": [
+            "django>=4.2"
+          ],
+          "files": [
+            {
+              "filename": "djangorestframework-3.17.2-py3-none-any.whl",
+              "sha256": "cb0546a7415d5b46c04e0f4fe0a54b2109f4fdd5e83ca773c8c6183a6493d042",
+              "uploadTime": "2026-08-05T07:47:20.853085Z",
+              "yanked": false
+            },
+            {
+              "filename": "djangorestframework-3.17.2.tar.gz",
+              "sha256": "89ed713b6dc83e1539f214b7d10808ae19bb8511004beba886225da6d5c9dafa",
+              "uploadTime": "2026-08-05T07:47:22.500837Z",
+              "yanked": false
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

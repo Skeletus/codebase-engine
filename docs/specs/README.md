@@ -21,10 +21,16 @@ Phase 05 now includes user-authorized OpenAI/Groq BYOK provider support.
 Phase 05 boundaries and acceptance are tracked in [the BYOK guide](../phase-05-byok.md).
 The user accepted Phase 05 manual acceptance on Windows and authorized Phase 06.
 The user accepted Phase 06 manual acceptance on Windows and authorized Phase 07.
+The user accepted Phase 07 manual acceptance on Windows and authorized Phase 08.
+The user accepted Phase 08 Windows manual acceptance and authorized Phase 09:
+local training, evaluation, packaging and desktop Laya integration.
+Phase 08 delivery and accepted manual acceptance are tracked in
+[the local ranking evaluation guide](../phase-08-ranking.md). Neither this
+delivery nor Windows acceptance closes macOS/Linux qualification or formal pilot trials.
 Phase 06 delivery and acceptance instructions are tracked in
 [the static trace guide](../phase-06-traces.md). This does not close the outstanding
 macOS/Linux qualification or formal pilot trials.
-Phase 07 delivery and pending manual acceptance are tracked in
+Phase 07 delivery and accepted Windows manual checks are tracked in
 [the incremental refresh guide](../phase-07-refresh.md).
 No pilot-ready
 qualification is implied until every Phase 04 completion criterion passes.
@@ -90,6 +96,7 @@ Security gaps to address include unrestricted TypeScript filesystem/config reads
 | [06 — Evidence-backed symbol and behavioral traces](phase-06.md) | Add resolved symbol relationships and conservative handler call traces. | 04; 05 optional |
 | [07 — Incremental local refresh](phase-07.md) | Reduce refresh cost while retaining full-analysis equivalence. | 03, 06; integrate 05 caches when present |
 | [08 — Local ranking boundary and Laya evaluation readiness](phase-08.md) | Establish bounded next-node ranking contracts and local evaluation without a model assumption. | 04, 06; 07 optional |
+| [09 — Trained local Laya navigation and desktop delivery](phase-09.md) | Train a reproducible synthetic ranker, qualify a frozen artifact against deterministic/lexical traversal and package bounded local desktop inference. | Windows-accepted 01–08 |
 
 The ordering is a delivery recommendation; explicit prerequisites govern independent post-pilot work. Each phase is complete only when its checks pass, with no deliberately broken build left for a successor.
 
@@ -105,6 +112,18 @@ Reversible choices include UI projections, layout, provider implementation, and 
 
 ## Verification and deferred decisions
 
+Phase 09 is accepted on Windows. The user-authorized release extension for
+installed Codex/Claude Code explanations is governed by
+[the bounded local-agent explanation contract](local-agent-explanations.md).
+It is an explanation adapter extension, not another intelligence phase or an
+autonomous repository agent. Windows manual checks and capability qualification are
+in [the local-agent guide](../local-agent-explanations.md).
+
+The Phase 09 acceptance presentation update is scoped by the
+[desktop UI redesign companion](ui-redesign.md), with relocated workflows in the
+[Windows UI review guide](../ui-redesign-review.md). It introduces no product phase
+and changes no engine/model/privacy contract.
+
 Every phase requires typecheck, lint, build, and relevant automated/script checks; desktop phases also require Rust and packaged-platform checks. Missing tooling or credentials must be reported, never treated as success. Read the installed version-specific Next.js guides before editing Next code; the [Tauri Next guide](https://v2.tauri.app/start/frontend/nextjs/) targets an older Next version. Consult [sidecar packaging](https://v2.tauri.app/develop/sidecar/) for platform requirements.
 
-No further user decision is required to execute this roadmap's specifications. Package additions require separate approval under CLAUDE.md. Future work requiring a new specification includes commercial/offline licensing policy and Clerk desktop authentication, release signing credentials, additional languages/providers/framework flows, consented Laya dataset generation/training/export/inference packaging, and optional remote telemetry. These are not prerequisites for the deterministic pilot and are not silently assigned implementation scope here.
+No further user decision is required to execute this roadmap's specifications. Package additions require separate approval under CLAUDE.md. Phase 09 explicitly authorizes synthetic Laya training/export/local inference; customer repository learning remains unauthorized. Delivery, results and pending Windows acceptance are tracked in [the Laya guide](../phase-09-laya.md). Future work requiring a new specification includes commercial/offline licensing policy and Clerk desktop authentication, release signing credentials, additional languages/providers/framework flows, consented real-repository training data, and optional remote telemetry. macOS/Linux qualification and formal pilot trials remain outstanding.

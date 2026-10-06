@@ -1,0 +1,35 @@
+{
+  "id": "F01-contract",
+  "license": "project-owned-synthetic",
+  "tuple": {
+    "node": "24.19.0",
+    "typescript": "5.9.3",
+    "tsMorph": "28.0.0",
+    "nextMetadata": "16.3.6"
+  },
+  "profile": "legacy-typescript/4",
+  "variant": "legacy-static",
+  "sources": {
+    "entry.ts": "import type { Kind } from \"./types\"; import { service } from \"./service\"; export function entry(): Kind { return service(); }\r\n",
+    "service.ts": "export function service() { return \"😀é\"; }\r\n",
+    "types.ts": "export type Kind = string;\n",
+    "app/api/example/route.ts": "import { service } from \"../../../service\"; export function GET() { return service(); }\n",
+    "package.json": "{\"dependencies\":{\"next\":\"16.3.6\"}}"
+  },
+  "sourceHashes": {
+    "entry.ts": "e64607a52b862ec48eddaca94c4f0a3e26c549379f93f3cfd490db1e02505dce",
+    "service.ts": "902ec60fa745dad690ef73843fed8ca89206620299da8e87a6a5d323b051f775",
+    "types.ts": "fefa9db64b3b1b35ccbbc60c18ff8cb5da981ed1350350a58d1e06f0b750e04a",
+    "app/api/example/route.ts": "6c0157c3e36303f8eacdd829ef681d486cffd5c774a0ee820ab1a3a94c6e180e",
+    "package.json": "b852a80421c79ab18e61d4c030cf97e20bf12cc851724717159257e5b3511b10"
+  },
+  "oracle": {
+    "kind": "hand-authored-contract-golden + existing parser parity",
+    "outputSha256": "6406ec81971b855584617f59968aaaed1dd84ef0d6b01de5be0acd799e18f18e",
+    "frameworkRuntimeExecuted": false
+  },
+  "budgets": {
+    "maxFileBytes": 1048576
+  },
+  "extractor": "shared-contract/fs-01/1"
+}

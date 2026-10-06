@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-rank-snapshot"
+description = "Enables the rank_snapshot command without any pre-configured scope."
+commands.allow = ["rank_snapshot"]
+
+[[permission]]
+identifier = "deny-rank-snapshot"
+description = "Denies the rank_snapshot command without any pre-configured scope."
+commands.deny = ["rank_snapshot"]

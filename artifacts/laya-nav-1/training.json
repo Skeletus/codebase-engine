@@ -1,0 +1,180 @@
+{
+  "configuration": {
+    "seed": 42,
+    "epochs": 32,
+    "batch": 64,
+    "learningRate": 0.003,
+    "beta1": 0.9,
+    "beta2": 0.999,
+    "epsilon": 1e-8,
+    "l2": 0.0001
+  },
+  "trainingPairs": 14539,
+  "developmentPairs": 4370,
+  "initialLoss": 1.1162802116877077,
+  "bestEpoch": 32,
+  "trace": [
+    {
+      "epoch": 1,
+      "trainingLoss": 0.06678388039782752,
+      "developmentLoss": 0.0724254004258246
+    },
+    {
+      "epoch": 2,
+      "trainingLoss": 0.05529701879244912,
+      "developmentLoss": 0.06059767189360894
+    },
+    {
+      "epoch": 3,
+      "trainingLoss": 0.05215096559196102,
+      "developmentLoss": 0.057146621207356335
+    },
+    {
+      "epoch": 4,
+      "trainingLoss": 0.05029776097261333,
+      "developmentLoss": 0.05503167239603375
+    },
+    {
+      "epoch": 5,
+      "trainingLoss": 0.04880171409015052,
+      "developmentLoss": 0.053239717156982114
+    },
+    {
+      "epoch": 6,
+      "trainingLoss": 0.04730515069665212,
+      "developmentLoss": 0.05143899286191722
+    },
+    {
+      "epoch": 7,
+      "trainingLoss": 0.04583270823875637,
+      "developmentLoss": 0.04965606462972564
+    },
+    {
+      "epoch": 8,
+      "trainingLoss": 0.044199087648538894,
+      "developmentLoss": 0.047712174031128804
+    },
+    {
+      "epoch": 9,
+      "trainingLoss": 0.04254324188380364,
+      "developmentLoss": 0.04574088692798158
+    },
+    {
+      "epoch": 10,
+      "trainingLoss": 0.040955159163216036,
+      "developmentLoss": 0.043860874647137296
+    },
+    {
+      "epoch": 11,
+      "trainingLoss": 0.03935125463430044,
+      "developmentLoss": 0.041904209350340026
+    },
+    {
+      "epoch": 12,
+      "trainingLoss": 0.037851179006502325,
+      "developmentLoss": 0.04019539741856314
+    },
+    {
+      "epoch": 13,
+      "trainingLoss": 0.036526044671435914,
+      "developmentLoss": 0.038680062888129474
+    },
+    {
+      "epoch": 14,
+      "trainingLoss": 0.035361849362575415,
+      "developmentLoss": 0.03734884552986965
+    },
+    {
+      "epoch": 15,
+      "trainingLoss": 0.03429792536663954,
+      "developmentLoss": 0.03615504967457688
+    },
+    {
+      "epoch": 16,
+      "trainingLoss": 0.03329676517592638,
+      "developmentLoss": 0.035057081244029974
+    },
+    {
+      "epoch": 17,
+      "trainingLoss": 0.032604438238172925,
+      "developmentLoss": 0.03427375988085005
+    },
+    {
+      "epoch": 18,
+      "trainingLoss": 0.03204185238371295,
+      "developmentLoss": 0.033637471444164804
+    },
+    {
+      "epoch": 19,
+      "trainingLoss": 0.031110670189139742,
+      "developmentLoss": 0.032596967124366515
+    },
+    {
+      "epoch": 20,
+      "trainingLoss": 0.031111397193681205,
+      "developmentLoss": 0.03245041576757097
+    },
+    {
+      "epoch": 21,
+      "trainingLoss": 0.030409130960380035,
+      "developmentLoss": 0.031824319391432355
+    },
+    {
+      "epoch": 22,
+      "trainingLoss": 0.029754331188222682,
+      "developmentLoss": 0.03107688148404649
+    },
+    {
+      "epoch": 23,
+      "trainingLoss": 0.02969231338411356,
+      "developmentLoss": 0.031015389297578043
+    },
+    {
+      "epoch": 24,
+      "trainingLoss": 0.029462519049717112,
+      "developmentLoss": 0.030760707428393493
+    },
+    {
+      "epoch": 25,
+      "trainingLoss": 0.028878945892462742,
+      "developmentLoss": 0.029921140618296933
+    },
+    {
+      "epoch": 26,
+      "trainingLoss": 0.028660828311797268,
+      "developmentLoss": 0.029720374915966158
+    },
+    {
+      "epoch": 27,
+      "trainingLoss": 0.028555027493506677,
+      "developmentLoss": 0.029470472814202293
+    },
+    {
+      "epoch": 28,
+      "trainingLoss": 0.02855311827163611,
+      "developmentLoss": 0.029304188245717143
+    },
+    {
+      "epoch": 29,
+      "trainingLoss": 0.028207996458174577,
+      "developmentLoss": 0.02908463400506419
+    },
+    {
+      "epoch": 30,
+      "trainingLoss": 0.028145986843750165,
+      "developmentLoss": 0.029065609093620357
+    },
+    {
+      "epoch": 31,
+      "trainingLoss": 0.028148047713858225,
+      "developmentLoss": 0.02878197244613332
+    },
+    {
+      "epoch": 32,
+      "trainingLoss": 0.028014057828635,
+      "developmentLoss": 0.02865407136483301
+    }
+  ],
+  "trainingTraceHash": "2687dbd8e225ba7ebc603156050083c4fcfa480bc52d43077292a2af1eb8a436",
+  "datasetHash": "0d87cb1a41859c869f4cbb0a88275914f3407b40943ba19fa5ff1277e6c400e8"
+}

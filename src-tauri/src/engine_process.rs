@@ -325,7 +325,7 @@ mod tests {
         #[cfg(not(windows))]
         assert_eq!(env_names, ["CODE_INTELLIGENCE_ROOT"]);
         let (mut events, mut child) = command.spawn().unwrap();
-        child.write(format!("{}\n", serde_json::json!({"version":1,"requestId":"native-test","jobId":"native-test","type":"analyze","root":root})).as_bytes()).unwrap();
+        child.write(format!("{}\n", serde_json::json!({"version":1,"requestId":"native-test","jobId":"native-test","type":"analyze","snapshotVersion":3,"root":root})).as_bytes()).unwrap();
         let (completed, completion) = std::sync::mpsc::channel();
         let result = std::thread::spawn(move || {
             tauri::async_runtime::block_on(async move {

@@ -12,6 +12,8 @@ export interface AnalysisStore {
   list(): StoredRepository[];
   repository(id: string): StoredRepository;
   load(id: string): CodeSnapshot | null;
+  /** Historical format copy, never implicitly promoted to current analysis. */
+  loadRetained(id: string, version: 2 | 3): ReturnType<typeof import("../engine/contract.ts").inspectSnapshot> | null;
   begin(id: string, job: string): void;
   publish(id: string, job: string, snapshot: CodeSnapshot): void;
   finish(job: string, state: "failed" | "cancelled" | "interrupted", ownerPid?: number): void;

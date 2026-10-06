@@ -2,6 +2,7 @@ import { cpSync, copyFileSync, mkdirSync, readFileSync, writeFileSync, realpathS
 import { createRequire } from "node:module";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
+import { SNAPSHOT_VERSION } from "../lib/engine/types.ts";
 
 const root = path.resolve(import.meta.dirname, "..");
 const target = execFileSync("rustc", ["--print", "host-tuple"], { encoding: "utf8" }).trim();
@@ -12,10 +13,11 @@ if (!(target.startsWith(process.arch === "x64" ? "x86_64-" : "aarch64-"))) throw
 const resources = path.join(root, "src-tauri/resources/generated/engine");
 mkdirSync(path.join(resources, "scripts"), { recursive: true });
 mkdirSync(path.join(root, "src-tauri/binaries"), { recursive: true });
-for (const dir of ["engine", "parser", "repository", "graph", "desktop", "storage", "ai", "model"]) cpSync(path.join(root, "lib", dir), path.join(resources, "lib", dir), { recursive: true, dereference: true });
+for (const dir of ["engine", "parser", "repository", "graph", "desktop", "storage", "ai", "model", "laya"]) cpSync(path.join(root, "lib", dir), path.join(resources, "lib", dir), { recursive: true, dereference: true });
 copyFileSync(path.join(root, "lib/roles.ts"), path.join(resources, "lib/roles.ts"));
 copyFileSync(path.join(root, "scripts/sidecar.ts"), path.join(resources, "scripts/sidecar.ts"));
 copyFileSync(path.join(root, "scripts/storage.ts"), path.join(resources, "scripts/storage.ts"));
+copyFileSync(path.join(root, "scripts/evaluate-ranking.ts"), path.join(resources, "scripts/evaluate-ranking.ts"));
 writeFileSync(path.join(resources, "package.json"), '{"type":"module"}\n');
 // Copy only ts-morph's installed runtime dependency closure, never .env,
 // application cloud packages, or the repository selected for analysis.
@@ -41,5 +43,5 @@ copyFileSync(process.execPath, binary);
 const license = process.env.CODE_INTELLIGENCE_NODE_LICENSE ?? path.join(path.dirname(process.execPath), "LICENSE");
 if (!existsSync(license)) throw new Error("Set CODE_INTELLIGENCE_NODE_LICENSE to the bundled Node distribution's LICENSE file before packaging");
 copyFileSync(license, path.join(resources, "NODE-LICENSE"));
-writeFileSync(path.join(resources, "runtime.json"), JSON.stringify({ node: process.versions.node, target, protocol: 1 }) + "\n");
+writeFileSync(path.join(resources, "runtime.json"), JSON.stringify({ node: process.versions.node, target, protocol: 1, snapshotVersion: SNAPSHOT_VERSION, historicalSnapshotVersions: [2] }) + "\n");
 console.log(`Packaged Node ${process.versions.node} and TS/JS engine for ${target}`);

@@ -1,0 +1,73 @@
+{
+  "host": "Windows x64",
+  "mechanism": "JOB_OBJECT_LIMIT_PROCESS_MEMORY | JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE",
+  "flags": [
+    "--max-old-space-size=128",
+    "--wasm-num-compilation-tasks=1",
+    "--no-wasm-tier-up",
+    "--no-wasm-dynamic-tiering"
+  ],
+  "runs": [
+    {
+      "declarations": 100,
+      "forcedAllocation": false,
+      "assigned": true,
+      "memoryLimitBytes": 536870912,
+      "peakCommitBytes": 46907392,
+      "elapsedMs": 466.2051999475807,
+      "exitCode": 0,
+      "timedOut": false,
+      "stderr": "",
+      "stdout": "{\"parser\":\"hermes-parser 0.25.1\",\"status\":\"passed\",\"declarations\":100,\"sourceBytes\":4590,\"elapsedMs\":34.579800000000006,\"rss\":57810944,\"utf16Start\":23,\"unicodeCRLFLocation\":true}\n"
+    },
+    {
+      "declarations": 1000,
+      "forcedAllocation": false,
+      "assigned": true,
+      "memoryLimitBytes": 536870912,
+      "peakCommitBytes": 55078912,
+      "elapsedMs": 360.0055000279099,
+      "exitCode": 0,
+      "timedOut": false,
+      "stderr": "",
+      "stdout": "{\"parser\":\"hermes-parser 0.25.1\",\"status\":\"passed\",\"declarations\":1000,\"sourceBytes\":46890,\"elapsedMs\":84.36430000000001,\"rss\":63856640,\"utf16Start\":23,\"unicodeCRLFLocation\":true}\n"
+    },
+    {
+      "declarations": 0,
+      "forcedAllocation": true,
+      "assigned": true,
+      "memoryLimitBytes": 536870912,
+      "peakCommitBytes": 22827008,
+      "elapsedMs": 221.13830014131963,
+      "exitCode": 2,
+      "timedOut": false,
+      "stderr": "RangeError: WebAssembly.Memory(): could not allocate memory\n",
+      "stdout": ""
+    },
+    {
+      "declarations": 100,
+      "forcedAllocation": false,
+      "assigned": true,
+      "memoryLimitBytes": 536870912,
+      "peakCommitBytes": 47415296,
+      "elapsedMs": 298.0645000934601,
+      "exitCode": 0,
+      "timedOut": false,
+      "stderr": "",
+      "stdout": "{\"parser\":\"hermes-parser 0.25.1\",\"status\":\"passed\",\"declarations\":100,\"sourceBytes\":4590,\"elapsedMs\":34.60489999999999,\"rss\":58011648,\"utf16Start\":23,\"unicodeCRLFLocation\":true}\n"
+    },
+    {
+      "declarations": 1000,
+      "forcedAllocation": false,
+      "assigned": true,
+      "memoryLimitBytes": 536870912,
+      "peakCommitBytes": 0,
+      "elapsedMs": 18.204000080004334,
+      "exitCode": 0,
+      "timedOut": true,
+      "stderr": "",
+      "stdout": ""
+    }
+  ],
+  "status": "passed: valid input, stress containment, clean next process, kill-on-close timeout"
+}

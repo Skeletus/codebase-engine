@@ -1,0 +1,248 @@
+{
+  "host": {
+    "node": "v24.19.0",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "runtimeVersion": "0.25.10",
+  "runtimeInitMs": 19.471499999999992,
+  "results": [
+    {
+      "language": "python",
+      "asset": "python/node_modules/tree-sitter-python/tree-sitter-python.wasm",
+      "cases": [
+        {
+          "id": "django",
+          "hasError": false,
+          "root": "module",
+          "tree": "(module (import_from_statement module_name: (dotted_name (identifier) (identifier)) name: (dotted_name (identifier))) (import_from_statement module_name: (relative_import (import_prefix) (dotted_name (identifier))) name: (dotted_name (identifier))) (expression_statement (assignment left: (identifier) right: (list (call function: (identifier) arguments: (argument_list (string (string_start) (string_content) (string_end)) (identifier)))))))"
+        },
+        {
+          "id": "modern",
+          "hasError": false,
+          "root": "module",
+          "tree": "(module (type_alias_statement left: (type (generic_type (identifier) (type_parameter (type (identifier))))) right: (type (generic_type (identifier) (type_parameter (type (identifier)) (type (identifier)))))) (function_definition name: (identifier) parameters: (parameters (identifier)) body: (block (match_statement subject: (identifier) body: (block alternative: (case_clause (case_pattern (dict_pattern key: (string (string_start) (string_content) (string_end)) value: (case_pattern (dotted_name (identifier))))) consequence: (block (return_statement (identifier)))))))))"
+        },
+        {
+          "id": "unicode",
+          "hasError": false,
+          "root": "module",
+          "tree": "(module (expression_statement (assignment left: (identifier) right: (string (string_start) (string_content) (string_end)))) (expression_statement (assignment left: (identifier) right: (integer))))"
+        }
+      ],
+      "loadMs": 8.1811,
+      "abi": 15,
+      "rejectsMalformed": true,
+      "scale": {
+        "sourceBytes": 31780,
+        "declarations": 1000,
+        "warmMs": [
+          31.335199999999986,
+          28.23060000000001,
+          22.60159999999999,
+          21.942800000000034,
+          20.78520000000003
+        ],
+        "rssBytes": 60628992
+      },
+      "incrementalEqualsFull": true,
+      "status": "passed"
+    },
+    {
+      "language": "java",
+      "asset": "java/node_modules/tree-sitter-java/tree-sitter-java.wasm",
+      "cases": [
+        {
+          "id": "bridge",
+          "hasError": false,
+          "root": "program",
+          "tree": "(program (package_declaration (identifier)) (class_declaration name: (identifier) body: (class_body (method_declaration (modifiers) type: (void_type) name: (identifier) parameters: (formal_parameters (formal_parameter type: (integral_type) name: (identifier))) body: (block (expression_statement (method_invocation name: (identifier) arguments: (argument_list (identifier)))))) (method_declaration (modifiers) type: (void_type) name: (identifier) parameters: (formal_parameters (formal_parameter type: (integral_type) name: (identifier))) body: (block)))))"
+        },
+        {
+          "id": "records",
+          "hasError": false,
+          "root": "program",
+          "tree": "(program (record_declaration name: (identifier) parameters: (formal_parameters (formal_parameter type: (integral_type) name: (identifier)) (formal_parameter type: (integral_type) name: (identifier))) body: (class_body)))"
+        }
+      ],
+      "loadMs": 2.8326000000000136,
+      "abi": 14,
+      "rejectsMalformed": true,
+      "scale": {
+        "sourceBytes": 47780,
+        "declarations": 1000,
+        "warmMs": [
+          29.774699999999996,
+          24.14640000000003,
+          23.84190000000001,
+          24.973100000000045,
+          24.7842
+        ],
+        "rssBytes": 62910464
+      },
+      "incrementalEqualsFull": true,
+      "status": "passed"
+    },
+    {
+      "language": "kotlin",
+      "asset": "kotlin/node_modules/@tree-sitter-grammars/tree-sitter-kotlin/tree-sitter-kotlin.wasm",
+      "cases": [
+        {
+          "id": "bridge",
+          "hasError": true,
+          "root": "source_file",
+          "tree": "(source_file (package_header (qualified_identifier (identifier))) (class_declaration name: (identifier) (class_body (function_declaration name: (identifier) (function_value_parameters (parameter (identifier) (user_type (identifier)))) (function_body (block (call_expression (identifier) (value_arguments (value_argument (identifier))))))) (function_declaration (modifiers (visibility_modifier)) name: (identifier) (function_value_parameters (parameter (identifier) (user_type (identifier)))) (function_body (block))) (MISSING _class_member_semi))))"
+        }
+      ],
+      "loadMs": 6.3554000000000315,
+      "abi": 14,
+      "status": "failed",
+      "error": "AssertionError [ERR_ASSERTION]: kotlin:bridge\n\ntrue !== false\n"
+    },
+    {
+      "language": "objc",
+      "asset": "objc/node_modules/tree-sitter-objc/tree-sitter-objc.wasm",
+      "cases": [
+        {
+          "id": "bridge",
+          "hasError": false,
+          "root": "translation_unit",
+          "tree": "(translation_unit (class_interface (identifier) superclass: (identifier) (method_declaration (method_type (type_name (primitive_type))) (identifier) (method_parameter (method_type (type_name (type_identifier))) (identifier)))) (class_implementation (identifier) (implementation_definition (method_definition (method_type (type_name (primitive_type))) (identifier) (method_parameter (method_type (type_name (type_identifier))) (identifier)) (compound_statement (expression_statement (message_expression receiver: (identifier) method: (identifier) (identifier))))))))"
+        }
+      ],
+      "loadMs": 14.051400000000058,
+      "abi": 14,
+      "rejectsMalformed": true,
+      "scale": {
+        "sourceBytes": 42890,
+        "declarations": 1000,
+        "warmMs": [
+          26.878000000000043,
+          22.488200000000006,
+          31.843200000000024,
+          32.249700000000075,
+          60.516899999999964
+        ],
+        "rssBytes": 734040064
+      },
+      "incrementalEqualsFull": true,
+      "status": "passed"
+    }
+  ],
+  "flow": [
+    {
+      "parser": "babel",
+      "version": "7.29.9",
+      "id": "classic",
+      "accepted": true,
+      "topLevel": "TypeAlias"
+    },
+    {
+      "parser": "babel",
+      "version": "7.29.9",
+      "id": "component",
+      "accepted": false,
+      "error": "SyntaxError: Missing semicolon. (2:9)"
+    },
+    {
+      "parser": "babel",
+      "version": "7.29.9",
+      "id": "hook",
+      "accepted": false,
+      "error": "SyntaxError: Missing semicolon. (2:4)"
+    },
+    {
+      "parser": "babel",
+      "version": "7.29.9",
+      "id": "enum",
+      "accepted": true,
+      "topLevel": "EnumDeclaration"
+    },
+    {
+      "parser": "babel",
+      "version": "7.29.9",
+      "id": "invalid",
+      "accepted": false,
+      "error": "SyntaxError: Unexpected token (2:16)"
+    },
+    {
+      "parser": "hermes",
+      "version": "0.25.1",
+      "id": "classic",
+      "accepted": true,
+      "topLevel": "TypeAlias"
+    },
+    {
+      "parser": "hermes",
+      "version": "0.25.1",
+      "id": "component",
+      "accepted": true,
+      "topLevel": "ComponentDeclaration"
+    },
+    {
+      "parser": "hermes",
+      "version": "0.25.1",
+      "id": "hook",
+      "accepted": true,
+      "topLevel": "HookDeclaration"
+    },
+    {
+      "parser": "hermes",
+      "version": "0.25.1",
+      "id": "enum",
+      "accepted": true,
+      "topLevel": "EnumDeclaration"
+    },
+    {
+      "parser": "hermes",
+      "version": "0.25.1",
+      "id": "invalid",
+      "accepted": false,
+      "error": "SyntaxError: identifier, '{' or '[' expected in binding pattern (2:16)\nfunction broken(: {\n                ^"
+    }
+  ],
+  "positions": [
+    {
+      "parser": "web-tree-sitter",
+      "source": "label = \"😀é\"; value = 1\r\n",
+      "index": 15,
+      "column": 15,
+      "utf16Expected": 15,
+      "utf8Expected": 18
+    }
+  ],
+  "assets": [
+    {
+      "path": "python/node_modules/tree-sitter-python/tree-sitter-python.wasm",
+      "bytes": 457883,
+      "sha256": "16108b50df4ee9a30168794252ab55e7c93bfc5765d7fa0aa3e335752c515f47"
+    },
+    {
+      "path": "java/node_modules/tree-sitter-java/tree-sitter-java.wasm",
+      "bytes": 414641,
+      "sha256": "4fdeac4ca6ca089f06c6f7e562abcac1733cd465728cc7031ebb73c2019122c4"
+    },
+    {
+      "path": "kotlin/node_modules/@tree-sitter-grammars/tree-sitter-kotlin/tree-sitter-kotlin.wasm",
+      "bytes": 3441042,
+      "sha256": "7009d69453bc8735e438b2818a633efb21c88f99782769abba60dffedfab73f7"
+    },
+    {
+      "path": "objc/node_modules/tree-sitter-objc/tree-sitter-objc.wasm",
+      "bytes": 5317155,
+      "sha256": "155bf61fc94941fa9d07c86cd46895f14dfb2549fb7f646faeb83765af05c970"
+    }
+  ],
+  "notes": [
+    "Isolated parser feasibility only; no production adapter or semantic qualification."
+  ],
+  "cpython": {
+    "version": "3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]",
+    "column": 18,
+    "utf8Expected": 18
+  },
+  "swift": {
+    "assetPresent": false,
+    "nativePrebuildPresent": true
+  }
+}

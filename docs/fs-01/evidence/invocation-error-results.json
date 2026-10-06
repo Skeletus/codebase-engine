@@ -1,0 +1,130 @@
+﻿[
+    {
+        "id":  "next-typegen",
+        "command":  "node node_modules/next/dist/bin/next typegen",
+        "startedUtc":  "2026-10-06T21:42:55.9044761Z",
+        "elapsedMs":  459,
+        "exitCode":  1,
+        "log":  "next-typegen.log"
+    },
+    {
+        "id":  "typecheck",
+        "command":  "node node_modules/typescript/bin/tsc --noEmit",
+        "startedUtc":  "2026-10-06T21:42:56.4753833Z",
+        "elapsedMs":  138,
+        "exitCode":  1,
+        "log":  "typecheck.log"
+    },
+    {
+        "id":  "lint",
+        "command":  "node node_modules/eslint/bin/eslint.js .",
+        "startedUtc":  "2026-10-06T21:42:56.6248468Z",
+        "elapsedMs":  133,
+        "exitCode":  1,
+        "log":  "lint.log"
+    },
+    {
+        "id":  "tests",
+        "command":  "node --test tests/phase-01.test.ts tests/phase-02.test.ts tests/phase-03.test.ts tests/phase-04.test.ts tests/phase-05.test.ts tests/phase-06.test.ts tests/phase-07.test.ts tests/phase-08.test.ts tests/phase-09.test.ts",
+        "startedUtc":  "2026-10-06T21:42:56.7716897Z",
+        "elapsedMs":  151,
+        "exitCode":  1,
+        "log":  "tests.log"
+    },
+    {
+        "id":  "next-build",
+        "command":  "node node_modules/next/dist/bin/next build",
+        "startedUtc":  "2026-10-06T21:42:56.9336889Z",
+        "elapsedMs":  136,
+        "exitCode":  1,
+        "log":  "next-build.log"
+    },
+    {
+        "id":  "assets",
+        "command":  "node scripts/verify-desktop-assets.ts",
+        "startedUtc":  "2026-10-06T21:42:57.0827651Z",
+        "elapsedMs":  132,
+        "exitCode":  1,
+        "log":  "assets.log"
+    },
+    {
+        "id":  "rust-format",
+        "command":  "cargo fmt --manifest-path src-tauri/Cargo.toml -- --check",
+        "startedUtc":  "2026-10-06T21:42:57.2186976Z",
+        "elapsedMs":  392,
+        "exitCode":  1,
+        "log":  "rust-format.log"
+    },
+    {
+        "id":  "rust-check",
+        "command":  "cargo check --locked --offline --manifest-path src-tauri/Cargo.toml",
+        "startedUtc":  "2026-10-06T21:42:57.6379783Z",
+        "elapsedMs":  160,
+        "exitCode":  101,
+        "log":  "rust-check.log"
+    },
+    {
+        "id":  "rust-tests",
+        "command":  "cargo test --locked --offline --manifest-path src-tauri/Cargo.toml",
+        "startedUtc":  "2026-10-06T21:42:57.8043027Z",
+        "elapsedMs":  172,
+        "exitCode":  101,
+        "log":  "rust-tests.log"
+    },
+    {
+        "id":  "parse",
+        "command":  "node scripts/parse.ts . --out docs/fs-01/evidence/baseline-parse.json",
+        "startedUtc":  "2026-10-06T21:42:57.9917916Z",
+        "elapsedMs":  129,
+        "exitCode":  1,
+        "log":  "parse.log"
+    },
+    {
+        "id":  "map-counts",
+        "command":  "node scripts/map-counts.ts docs/fs-01/evidence/baseline-parse.json",
+        "startedUtc":  "2026-10-06T21:42:58.1324195Z",
+        "elapsedMs":  132,
+        "exitCode":  1,
+        "log":  "map-counts.log"
+    },
+    {
+        "id":  "insights",
+        "command":  "node scripts/insights.ts docs/fs-01/evidence/baseline-parse.json",
+        "startedUtc":  "2026-10-06T21:42:58.2730436Z",
+        "elapsedMs":  131,
+        "exitCode":  1,
+        "log":  "insights.log"
+    },
+    {
+        "id":  "engine",
+        "command":  "node scripts/engine.ts . --out docs/fs-01/evidence/baseline-snapshot.json",
+        "startedUtc":  "2026-10-06T21:42:58.4292935Z",
+        "elapsedMs":  133,
+        "exitCode":  1,
+        "log":  "engine.log"
+    },
+    {
+        "id":  "pilot-benchmark",
+        "command":  "node scripts/benchmark-pilot.ts",
+        "startedUtc":  "2026-10-06T21:42:58.5699156Z",
+        "elapsedMs":  148,
+        "exitCode":  1,
+        "log":  "pilot-benchmark.log"
+    },
+    {
+        "id":  "staged-smoke",
+        "command":  "node scripts/smoke-engine.ts",
+        "startedUtc":  "2026-10-06T21:42:58.7425227Z",
+        "elapsedMs":  144,
+        "exitCode":  1,
+        "log":  "staged-smoke.log"
+    },
+    {
+        "id":  "fs-01-tests",
+        "command":  "node --test tests/framework-support/fs-01.test.ts",
+        "startedUtc":  "2026-10-06T21:42:58.9056134Z",
+        "elapsedMs":  138,
+        "exitCode":  1,
+        "log":  "fs-01-tests.log"
+    }
+]

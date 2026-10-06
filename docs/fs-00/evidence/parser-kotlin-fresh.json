@@ -1,0 +1,29 @@
+{
+  "name": "kotlin",
+  "runtime": "0.25.10",
+  "abi": 14,
+  "coldLoadMs": 194.8132,
+  "sourceBytes": 112,
+  "hasError": false,
+  "tree": "(source_file (package_header (qualified_identifier (identifier))) (class_declaration name: (identifier) (class_body (function_declaration name: (identifier) (function_value_parameters (parameter (identifier) (user_type (identifier)))) (function_body (block (call_expression (identifier) (value_arguments (value_argument (identifier))))))) (function_declaration (modifiers (visibility_modifier)) name: (identifier) (function_value_parameters (parameter (identifier) (user_type (identifier)))) (function_body (block))))))",
+  "rssBefore": 57135104,
+  "rssLoaded": 72515584,
+  "assetBytes": 3441042,
+  "assetSha256": "7009d69453bc8735e438b2818a633efb21c88f99782769abba60dffedfab73f7",
+  "scaleBytes": 56780,
+  "timingsMs": [
+    119.5874,
+    57.37330000000003,
+    41.09910000000002,
+    50.20900000000006,
+    63.25329999999997,
+    53.595699999999965
+  ],
+  "rssAfterScale": 156061696,
+  "incrementalEqualsFull": true,
+  "cooperativeCancel": {
+    "callbacks": 1,
+    "returnedNull": true
+  },
+  "resetRecovery": true
+}

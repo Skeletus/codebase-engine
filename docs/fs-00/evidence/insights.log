@@ -1,0 +1,35 @@
+Imported by nothing 22  (another 16 have no importer but are reached by convention)
+  components/progress/rerun-button.tsx
+  components/state-mark.tsx
+  lib/ai/prompts.ts
+  lib/desktop/startup.js
+  lib/laya/inference-worker.ts
+  lib/time.ts
+  scripts/benchmark-laya.ts
+  scripts/benchmark-pilot.ts
+  scripts/benchmark-refresh.ts
+  scripts/engine.ts
+  scripts/evaluate-ranking.ts
+  scripts/insights.ts
+  scripts/map-counts.ts
+  scripts/package-engine.ts
+  scripts/parse.ts
+  scripts/qualify-laya.ts
+  scripts/reproduce-laya.ts
+  scripts/sidecar.ts
+  scripts/smoke-engine.ts
+  scripts/storage.ts
+  scripts/train-laya.ts
+  scripts/verify-desktop-assets.ts
+
+Heavily imported 3  (fan-in over 17)
+  ←21   lib/engine/types.ts
+  ←19   lib/parser/types.ts
+  ←18   lib/roles.ts
+
+Loops 0
+Loop steps that aren't a runtime edge: 0
+
+Long 0
+
+All four in 2.7ms

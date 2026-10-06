@@ -12,6 +12,7 @@ import type { Edge, ParsedFile, Project } from "@/lib/parser/types";
 import { railLabel, UNCLASSIFIED, type ModelRole } from "@/lib/roles";
 import { ExplanationPanel, targetKey, type ExplainTarget, type ExplanationState } from "./explanation-panel";
 import { CategorySwatch } from "./map/swatch";
+import { UiIcon } from "./workspace-ui";
 
 export type Tab = "structure" | "evidence" | "explanation";
 
@@ -45,6 +46,7 @@ type Props = {
   modelRoles: ReadonlyMap<string, ModelRole>;
   explanations: ReadonlyMap<string, ExplanationState>;
   onExplain: (target: ExplainTarget) => void;
+  explanationSetup?: { provider: string; onConfigure: () => void };
   evidence?: (path: string) => ReactNode;
 };
 
@@ -69,6 +71,7 @@ export function DetailPane(props: Props) {
   const explanation = (target: ExplainTarget) => (
     <ExplanationPanel
       target={target}
+      setup={props.explanationSetup}
       state={props.explanations.get(targetKey(target))}
       onExplain={props.onExplain}
       isPath={(p) => byPath.has(p)}
@@ -138,8 +141,7 @@ function RepositorySummary({
   paths,
 }: Props & { paths: PathActions }) {
   const ranked = useMemo(() => rankRepository(files), [files]);
-  const rootAdapter = repository.projects[0]?.adapter ?? "none";
-  const nested = repository.projects.filter((p) => p.path !== "." && p.adapter !== "none");
+  const signals = useMemo(() => findInsights(files, edges), [files, edges]);
   const byConvention = useMemo(() => files.filter((f) => f.reachedBy !== null).length, [files]);
   // Distinct file-to-file pairs, the unit every file's own counts use, so this
   // is the sum of what the pane says for each file.
@@ -147,17 +149,7 @@ function RepositorySummary({
   return (
     <div className="pb-3">
       <header className="border-b border-line px-3 py-2">
-        <h2 className="font-mono text-[13px] font-semibold break-all">{repository.name}</h2>
-        <p className="mt-0.5 text-[11px] text-fg-muted">
-          Framework{" "}
-          <span className="text-fg">{rootAdapter === "none" ? "none detected" : rootAdapter}</span>
-          {nested.length > 0 && " at the root"}
-        </p>
-        {nested.map((p) => (
-          <p key={p.path} className="text-[11px] text-fg-muted">
-            <span className="text-fg">{p.adapter}</span> in <span className="font-mono">{p.path}/</span>
-          </p>
-        ))}
+        <h2 className="text-center text-[13px] font-semibold">Overview</h2>
       </header>
 
       <dl className="grid grid-cols-3 border-b border-line">
@@ -176,28 +168,27 @@ function RepositorySummary({
         />
       </dl>
 
+      <details open className="key-dependencies mx-3 mt-4"><summary className="overview-section-heading"><svg className="section-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg>Key dependencies</summary><p className="mt-1 text-[11px] text-fg-muted">Files that may be important to review.</p>
       <RankedList
         title="Most depended on"
-        hint="by files importing it"
+        hint={`${ranked.mostDependedOn.total} files with at least one incoming import`}
         ranked={ranked.mostDependedOn}
-        figure={(f) => <span className="text-incoming">←{f.fanIn}</span>}
         paths={paths}
       />
       <RankedList
-        title="Imported by nothing"
-        hint="where reading starts"
+        title="No incoming imports"
+        hint={`${ranked.unimported.total} files not imported by any analyzed file`}
         ranked={ranked.unimported}
-        figure={(f) => <span className="text-outgoing">{f.fanOut}→</span>}
         paths={paths}
       />
 
+      </details>
       <section className="mt-3 px-3">
-        <h3 className="flex items-baseline justify-between text-[11px] text-fg-muted">
-          <span>Unidentified by convention</span>
-          <span className="text-fg tabular-nums">{files.length - byConvention}</span>
+        <h3 className="text-[11px] font-medium text-fg">
+          {byConvention} {byConvention === 1 ? "file matches" : "files match"} known loading conventions
         </h3>
         <p className="mt-0.5 text-[11px] text-fg-muted tabular-nums">
-          {byConvention} matched a framework, tool or test convention; only imports reach the rest.
+          For the remaining {files.length - byConvention}, framework or runtime loading has not been established.
         </p>
       </section>
 
@@ -208,12 +199,20 @@ function RepositorySummary({
           type="button"
           aria-expanded={insightsOpen}
           onClick={() => onInsightsOpen(!insightsOpen)}
-          className="flex w-full items-baseline gap-1.5 px-3 py-2 text-left text-[11px] hover:bg-raised"
+          className="overview-section-heading signals-heading"
         >
-          <span className="w-2 text-fg-muted">{insightsOpen ? "▾" : "▸"}</span>
-          <span className="text-fg">Insights</span>
-          <span className="text-fg-muted">facts from the import graph</span>
+          <svg className={`section-chevron ${insightsOpen ? "expanded" : ""}`} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg>
+          <span className="text-fg font-semibold">Investigation signals</span>
+
         </button>
+        <div className="investigation-signals">
+          {[
+            { label: "No imports or loading", value: signals.unimported.length, icon: "file" as const, tone: "unreached", description: "No incoming imports or recognized loading convention. Not proof of unused code." },
+            { label: "Unusually depended on", value: signals.heavilyImported.files.length, icon: "imports" as const, tone: "popular", description: `More than ${signals.heavilyImported.threshold} importing files; relative to this repository.` },
+            { label: "Import loops", value: signals.cycles.length, icon: "refresh" as const, tone: "loops", description: "Cyclic import components; type-only imports excluded." },
+            { label: "Long files (>1,000 lines)", value: signals.long.length, icon: "file" as const, tone: "long", description: "Analyzed files over 1,000 lines. A size observation, not a quality score." },
+          ].map((signal) => <div key={signal.tone} className={`signal-card ${signal.tone}`} title={signal.description}><div className="signal-value"><UiIcon name={signal.icon} /><strong>{signal.value}</strong></div><p>{signal.label}</p></div>)}
+        </div>
         {insightsOpen && <InsightList files={files} edges={edges} paths={paths} />}
       </section>
     </div>
@@ -321,9 +320,9 @@ function CycleRows({ cycle, paths }: { cycle: Cycle; paths: PathActions }) {
 
 function Count({ label, value, note, title }: { label: string; value: number | null; note: string | null; title?: string }) {
   return (
-    <div className="border-r border-line px-3 py-2 last:border-r-0" title={title}>
+    <div className={`repository-count count-${label.toLowerCase()} border-r border-line px-3 py-3 last:border-r-0`} title={title}>
       <dt className="text-[11px] text-fg-muted">{label}</dt>
-      <dd className="text-[15px] leading-5 tabular-nums">{value ?? <span className="text-fg-muted">—</span>}</dd>
+      <dd className="repository-count-value"><UiIcon name={label === "Files" ? "file" : label === "Imports" ? "imports" : "routes"} />{value ?? <span className="text-fg-muted">—</span>}</dd>
       {note && <dd className="text-[10px] text-fg-muted tabular-nums">{note}</dd>}
     </div>
   );
@@ -333,30 +332,37 @@ function RankedList(props: {
   title: string;
   hint: string;
   ranked: Ranked;
-  figure: (file: ParsedFile) => ReactNode;
   paths: PathActions;
 }) {
   const { files, total } = props.ranked;
+  const incoming = props.title === "Most depended on";
+  const maximum = Math.max(1, ...files.map((file) => incoming ? file.fanIn : file.fanOut));
   return (
-    <section className="mt-3">
-      <h3 className="flex items-baseline gap-1.5 px-3 pb-0.5 text-[11px] text-fg-muted">
-        <span className="text-fg">{props.title}</span>
-        <span>{props.hint}</span>
-        <span className="ml-auto tabular-nums">{total}</span>
-      </h3>
+    <details open className={`dependency-card ${props.title === "Most depended on" ? "incoming" : "outgoing"}`}>
+      <summary>
+        <UiIcon name={props.title === "Most depended on" ? "imports" : "file"} />
+        <span><strong>{props.title}</strong><span className="dependency-hint">{props.hint}</span></span>
+      </summary>
+      <div className="dependency-card-rows">
       {files.length === 0 ? (
         <p className="px-3 text-[11px] text-fg-muted">None.</p>
       ) : (
-        <ul>
-          {files.map((f) => (
-            <PathRow key={f.path} path={f.path} paths={props.paths} trailing={props.figure(f)} />
-          ))}
-        </ul>
+        <table className="dependency-table" aria-label={props.title}>
+          <colgroup><col style={{ width: "24px" }} /><col /><col style={{ width: "24%" }} /><col style={{ width: "32px" }} /></colgroup>
+          <thead className="sr-only"><tr><th scope="col">Rank</th><th scope="col">File</th><th scope="col">Relative import count</th><th scope="col">{incoming ? "Importing files" : "Imported files"}</th></tr></thead>
+          <tbody>{files.map((file, index) => <tr key={file.path}>
+            <td className="dependency-rank">{index + 1}</td>
+            <td className="dependency-filename"><button title={file.path} onClick={() => props.paths.onReveal(file.path)} onMouseEnter={() => props.paths.onHover({ kind: "file", path: file.path })} onMouseLeave={() => props.paths.onHover(null)}>{file.path.slice(file.path.lastIndexOf("/") + 1)}</button></td>
+            <td className="dependency-bar-cell"><span className="dependency-bar" aria-hidden="true"><span style={{ width: `${(incoming ? file.fanIn : file.fanOut) / maximum * 100}%` }} /></span></td>
+            <td className="dependency-import-count" title={incoming ? `${file.fanIn} distinct analyzed files directly import this file` : `This file directly imports ${file.fanOut} distinct local files`}>{incoming ? file.fanIn : file.fanOut}</td>
+          </tr>)}</tbody>
+        </table>
       )}
       {total > files.length && (
         <p className="px-3 pt-0.5 text-[10px] text-fg-muted tabular-nums">{total - files.length} more not listed</p>
       )}
-    </section>
+      </div>
+    </details>
   );
 }
 
@@ -375,8 +381,8 @@ function Selected(props: {
     <div className="pb-3">
       <header className="border-b border-line px-3 pt-2">
         <p className="text-[10px] text-fg-muted">{props.caption}</p>
-        <h2 className="leading-4">{props.title}</h2>
-        <div role="tablist" className="mt-2 flex gap-3 text-[11px]">
+        <h2 className="text-center leading-5">{props.title}</h2>
+        <div role="tablist" className="inspector-tabs mt-2 flex text-[12px]">
           <TabButton tab="structure" label="Structure" current={props.tab} onTab={props.onTab} />
           {props.evidence && <TabButton tab="evidence" label="Evidence" current={props.tab} onTab={props.onTab} />}
           <TabButton tab="explanation" label="Explain" current={props.tab} onTab={props.onTab} />
@@ -395,7 +401,7 @@ function TabButton({ tab, label, current, onTab }: { tab: Tab; label: string; cu
       role="tab"
       aria-selected={active}
       onClick={() => onTab(tab)}
-      className={`-mb-px border-b pb-1.5 ${active ? "border-accent text-fg" : "border-transparent text-fg-muted hover:text-fg"}`}
+      className={`-mb-px flex-1 border-b py-2 text-center ${active ? "border-accent text-fg" : "border-transparent text-fg-muted hover:text-fg"}`}
     >
       {label}
     </button>
@@ -412,9 +418,9 @@ function PathTitle({ path, paths }: { path: string; paths: PathActions }) {
       onClick={() => paths.onReveal(path)}
       onMouseEnter={() => paths.onHover({ kind: "file", path })}
       onMouseLeave={() => paths.onHover(null)}
-      className="text-left font-mono text-[12px] break-all hover:underline"
+      title={path}
+      className="text-center font-mono text-[13px] break-all hover:underline"
     >
-      {slash >= 0 && <span className="text-fg-muted">{path.slice(0, slash + 1)}</span>}
       <span className="font-semibold">{path.slice(slash + 1)}</span>
     </button>
   );
@@ -477,7 +483,7 @@ function FileStructure(props: {
           )}
         </Fact>
       </dl>
-      <div className="flex gap-1.5 border-b border-line px-3 py-2">
+      <div className="traversal-actions">
         <WalkButton direction="dependents" label="Blast radius" walk={walk} onWalk={onWalk} />
         <WalkButton direction="dependencies" label="Dependency chain" walk={walk} onWalk={onWalk} />
       </div>
@@ -505,11 +511,10 @@ function WalkButton(props: {
       type="button"
       aria-pressed={on}
       onClick={() => props.onWalk(on ? null : props.direction)}
-      className={`rounded-[3px] border px-2 py-0.5 text-[11px] ${
-        on ? "border-accent bg-accent/15 text-fg" : "border-line text-fg-muted hover:bg-raised hover:text-fg"
-      }`}
+      className={`traversal-action ${on ? "active" : ""}`}
     >
-      {props.label}
+      <span className="traversal-action-title"><UiIcon name={props.direction === "dependents" ? "impact" : "imports"} />{props.label}</span>
+      <span className="traversal-action-description">{props.direction === "dependents" ? "What depends on this file?" : "What does this file depend on?"}</span>
     </button>
   );
 }
@@ -520,17 +525,19 @@ function ReachList({ file, graph, direction, paths }: { file: string; graph: Adj
   const total = steps.reduce((n, s) => n + s.length, 0);
   const dependents = direction === "dependents";
   return (
-    <section className="mt-3">
-      <h3 className="flex items-baseline gap-1.5 px-3 pb-0.5 text-[11px] text-fg-muted">
-        <span className="text-fg">{dependents ? "Blast radius" : "Dependency chain"}</span>
-        <span>{dependents ? "what imports this, directly or through others" : "what this imports, directly or through others"}</span>
-        <span className={`ml-auto tabular-nums ${dependents ? "text-incoming" : "text-outgoing"}`}>{total}</span>
-      </h3>
+    <section className="reach-results">
+      <div className="reach-heading">
+        <h3>{dependents ? "Blast radius" : "Dependency chain"}</h3>
+        <span className={`tabular-nums ${dependents ? "text-incoming" : "text-outgoing"}`}>{total} {total === 1 ? "file" : "files"}</span>
+      </div>
+      <p className="reach-description">{dependents ? "Files that import this file, directly or through others." : "Files this file imports, directly or through others."}</p>
       {steps.map((list, i) => (
-        <div key={i}>
-          <h4 className="px-3 pt-1 text-[10px] text-fg-muted tabular-nums">
-            {i + 1} {i === 0 ? "step" : "steps"} away · {list.length}
-          </h4>
+        <details open key={i} className="reach-distance">
+          <summary className="overview-section-heading">
+            <svg className="section-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg>
+            {i + 1} {i === 0 ? "step" : "steps"} away
+            <span className="text-fg-muted text-[11px] font-normal">· {list.length} {list.length === 1 ? "file" : "files"}</span>
+          </summary>
           {list.length === 0 ? (
             <p className="px-3 text-[11px] text-fg-muted">None.</p>
           ) : (
@@ -540,7 +547,7 @@ function ReachList({ file, graph, direction, paths }: { file: string; graph: Adj
               ))}
             </ul>
           )}
-        </div>
+        </details>
       ))}
       <p className="px-3 pt-1 text-[10px] text-fg-muted tabular-nums">
         {beyond > 0 ? `${beyond} more further than ${DEFAULT_DEPTH} steps, not listed.` : `Nothing further than ${DEFAULT_DEPTH} steps.`}
@@ -549,10 +556,24 @@ function ReachList({ file, graph, direction, paths }: { file: string; graph: Adj
   );
 }
 
+function FactIcon({ label }: { label: string }) {
+  const icons: Record<string, string> = {
+    Kind: "m8 5-6 7 6 7m8-14 6 7-6 7",
+    Role: "M8 3h8v5H8ZM4 8h16v13H4ZM9 12h6m-6 4h6",
+    Folder: "M3 7V4h6l3 3h9v13H3Z",
+    Length: "M4 5h16M4 10h16M4 15h16M4 20h10",
+    "Depends on": "M3 12h17m-6-6 6 6-6 6",
+    "Depended on by": "M21 12H4m6-6-6 6 6 6",
+    "Reached by": "M12 3v18m-6-6 6 6 6-6M4 3h16",
+    Exports: "M14 3h7v7m0-7L10 14M10 5H3v16h16v-7",
+  };
+  return <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0" aria-hidden="true"><path d={icons[label] ?? "M4 5h16M4 12h16M4 19h16"} /></svg>;
+}
+
 function Fact({ label, children }: { label: string; children: ReactNode }) {
   return (
     <>
-      <dt className="text-fg-muted">{label}</dt>
+      <dt className="flex items-center gap-2 text-fg-muted"><FactIcon label={label} />{label}</dt>
       <dd className="min-w-0 tabular-nums">{children}</dd>
     </>
   );
@@ -560,11 +581,11 @@ function Fact({ label, children }: { label: string; children: ReactNode }) {
 
 function NeighbourList(props: { title: string; count: ReactNode; rows: Neighbour[]; paths: PathActions }) {
   return (
-    <section className="mt-3">
-      <h3 className="flex items-baseline justify-between px-3 pb-0.5 text-[11px]">
+    <details open className="inspector-neighbours mt-3">
+      <summary className="overview-section-heading px-3 py-2"><svg className="section-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg>
         <span>{props.title}</span>
-        <span className="tabular-nums">{props.count}</span>
-      </h3>
+        <span className="ml-auto tabular-nums">{props.count}</span>
+      </summary>
       {props.rows.length === 0 ? (
         <p className="px-3 text-[11px] text-fg-muted">None.</p>
       ) : (
@@ -574,7 +595,7 @@ function NeighbourList(props: { title: string; count: ReactNode; rows: Neighbour
           ))}
         </ul>
       )}
-    </section>
+    </details>
   );
 }
 

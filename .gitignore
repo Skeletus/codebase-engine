@@ -45,3 +45,6 @@ next-env.d.ts
 /src-tauri/resources/
 /src-tauri/binaries/
 /src-tauri/gen/
+
+# Reproducible, local synthetic training intermediates (report/model stay tracked)
+/artifacts/laya-nav-1/generated/

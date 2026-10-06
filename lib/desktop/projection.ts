@@ -19,3 +19,17 @@ export function projectSnapshot(snapshot: CodeSnapshot) {
   };
   return { files, edges, routeCoverage, routes: snapshot.routes.map((r) => ({ file: r.file, method: r.method, pattern: r.pattern, line: r.evidence.line })) };
 }
+
+/** Presentation-only: these records never enter the canvas/import projection. */
+export function projectAnalysis(snapshot: CodeSnapshot) {
+  return {
+    status: snapshot.analysis.status,
+    capabilities: snapshot.analysis.capabilities,
+    variants: snapshot.analysis.variants,
+    registrations: snapshot.analysis.registrations.map(r => ({ id: r.id, kind: r.kind, pattern: r.rawPattern, method: r.methodState === null ? "navigation" : r.methodState.state === "known" ? r.methodState.values.join(", ") : r.methodState.state, matcher: r.matcher.state, variantId: r.variantId, witnesses: r.witnesses, gapIds: r.gapIds })),
+    gaps: snapshot.analysis.gaps,
+    bindings: snapshot.analysis.bindings,
+    candidates: snapshot.analysis.candidates,
+    assumptions: snapshot.analysis.assumptions.map(a => ({ ...a, label: "User assumption" })),
+  };
+}

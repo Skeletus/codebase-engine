@@ -1,0 +1,21 @@
+const fs=require('fs'),path=require('path'),assert=require('assert/strict'),crypto=require('crypto');
+(async()=>{
+const base=path.resolve('docs/fs-00/experiments/generated'),name=process.env.FS00_LANGUAGE;
+const {Parser,Language}=require(path.join(base,'runtime/node_modules/web-tree-sitter/tree-sitter.cjs'));
+const fixtures={
+ kotlin:{asset:'kotlin/node_modules/@tree-sitter-grammars/tree-sitter-kotlin/tree-sitter-kotlin.wasm',source:'package demo\nclass Counter {\n fun increment(value: Int) {\n  save(value)\n }\n private fun save(value: Int) {\n }\n}\n',scale:i=>`class C${i} {\n fun f(x: Int): Int {\n  return x + ${i}\n }\n}\n`},
+ swift:{asset:'swift/tree-sitter-swift.wasm',source:'import Foundation\n@objc(Counter)\nclass Counter: NSObject {\n @objc func increment(_ value: Int) {\n  save(value)\n }\n private func save(_ value: Int) {}\n}\n',scale:i=>`class C${i} { func f(_ x: Int) -> Int { return x + ${i} } }\n`},
+ objc:{asset:'objc/node_modules/tree-sitter-objc/tree-sitter-objc.wasm',source:'@interface Counter : NSObject\n- (void)increment:(NSInteger)value;\n@end\n@implementation Counter\n- (void)increment:(NSInteger)value { [self save:value]; }\n@end\n',scale:i=>`@interface C${i} : NSObject\n- (void)f;\n@end\n`},
+ python:{asset:'python/node_modules/tree-sitter-python/tree-sitter-python.wasm',source:'raise RuntimeError("THIS MUST NEVER EXECUTE")\nfrom django.urls import path\nurlpatterns = [path("orders/", detail)]\n',scale:i=>`def f${i}(x):\n return x + ${i}\n`},
+ java:{asset:'java/node_modules/tree-sitter-java/tree-sitter-java.wasm',source:'class Counter { void increment(int value) { save(value); } void save(int value) {} }',scale:i=>`class C${i} { int f(int x) { return x + ${i}; } }\n`}
+};
+const c=fixtures[name];if(!c)throw Error('Select FS00_LANGUAGE');const before=process.memoryUsage().rss;
+const init=performance.now();await Parser.init({locateFile:()=>path.join(base,'runtime/node_modules/web-tree-sitter/tree-sitter.wasm')});const bytes=fs.readFileSync(path.join(base,c.asset));const language=await Language.load(bytes);const parser=new Parser();parser.setLanguage(language);
+const tree=parser.parse(c.source),result={name,runtime:'0.25.10',abi:language.abiVersion,coldLoadMs:performance.now()-init,sourceBytes:Buffer.byteLength(c.source),hasError:tree.rootNode.hasError,tree:tree.rootNode.toString(),rssBefore:before,rssLoaded:process.memoryUsage().rss,assetBytes:bytes.length,assetSha256:crypto.createHash('sha256').update(bytes).digest('hex')};
+assert(!tree.rootNode.hasError, name+' basic fixture');tree.delete();const declarationCount=Number(process.env.FS00_DECLARATIONS??1000);result.declarations=declarationCount;const large=Array.from({length:declarationCount},(_,i)=>c.scale(i)).join('');result.scaleBytes=Buffer.byteLength(large);result.timingsMs=[];
+for(let i=0;i<6;i++){const start=performance.now(),t=parser.parse(large);assert(!t.rootNode.hasError);result.timingsMs.push(performance.now()-start);t.delete();}
+result.rssAfterScale=process.memoryUsage().rss;
+const original=parser.parse(c.source);original.edit({startIndex:0,oldEndIndex:0,newEndIndex:1,startPosition:{row:0,column:0},oldEndPosition:{row:0,column:0},newEndPosition:{row:0,column:1}});const inc=parser.parse(' '+c.source,original),full=parser.parse(' '+c.source);result.incrementalEqualsFull=inc.rootNode.toString()===full.rootNode.toString();assert(result.incrementalEqualsFull);original.delete();inc.delete();full.delete();
+let count=0;const cancelled=parser.parse(large.repeat(10),null,{progressCallback:()=>{count++;return true;}});result.cooperativeCancel={callbacks:count,returnedNull:cancelled===null};if(cancelled)cancelled.delete();parser.reset();const after=parser.parse(c.source);result.resetRecovery=!after.rootNode.hasError;after.delete();parser.delete();
+fs.writeFileSync('docs/fs-00/evidence/parser-'+name+'-fresh'+(declarationCount===1000?'':'-'+declarationCount)+'.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));
+})().catch(e=>{console.error(e);process.exitCode=1});

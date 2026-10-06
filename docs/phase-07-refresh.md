@@ -1,7 +1,7 @@
 # Phase 07 — Incremental local refresh
 
-Phase 06 Windows manual acceptance was confirmed by the user. Phase 07 Windows
-manual acceptance is pending. macOS/Linux qualification and formal pilot trials
+Phase 06 and Phase 07 Windows manual acceptance were confirmed by the user.
+macOS/Linux qualification and formal pilot trials
 remain outstanding; no automated fixture substitutes for those gates.
 
 ## Implemented boundary
@@ -214,6 +214,6 @@ Verification on Windows x64:
   and NSIS installers. Final engine-only reader updates were restaged and smoke-tested
   before rebundling the already-built native application.
 
-Manual desktop acceptance remains the user's task. macOS/Linux watcher/package qualification and
+Windows manual acceptance was confirmed by the user. macOS/Linux watcher/package qualification and
 formal pilot trials are outstanding. No Phase 08+, new dependencies, commits or
 pushes were made.

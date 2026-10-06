@@ -1,0 +1,41 @@
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto'),{execFileSync}=require('node:child_process');
+(async()=>{
+const base=path.resolve('docs/fs-00/experiments/generated');
+const {Parser,Language}=require(path.join(base,'runtime/node_modules/web-tree-sitter/tree-sitter.cjs'));
+const started=performance.now(); await Parser.init({locateFile:()=>path.join(base,'runtime/node_modules/web-tree-sitter/tree-sitter.wasm')});
+const report={host:{node:process.version,platform:process.platform,arch:process.arch},runtimeVersion:'0.25.10',runtimeInitMs:performance.now()-started,results:[],flow:[],positions:[],assets:[],notes:['Isolated parser feasibility only; no production adapter or semantic qualification.']};
+const cases={
+ python:{asset:'python/node_modules/tree-sitter-python/tree-sitter-python.wasm',valid:[['django','from django.urls import path\nfrom .views import detail\nurlpatterns = [path("orders/<int:id>/", detail)]\n'],['modern','type Pair[T] = tuple[T, T]\nasync def detail(request):\n    match request:\n        case {"id": value}:\n            return value\n'],['unicode','label = "😀é"; value = 1\r\n']],invalid:'def broken(:\n return 1',scale:i=>`def f${i}(x):\n    return x + ${i}\n`},
+ java:{asset:'java/node_modules/tree-sitter-java/tree-sitter-java.wasm',valid:[['bridge','package demo; class Counter { public void increment(int value) { save(value); } private void save(int value) {} }'],['records','record Pair(int left, int right) {}']],invalid:'class Broken { void x( }',scale:i=>`class C${i} { int f(int x) { return x + ${i}; } }\n`},
+ kotlin:{asset:'kotlin/node_modules/@tree-sitter-grammars/tree-sitter-kotlin/tree-sitter-kotlin.wasm',valid:[['bridge','package demo\nclass Counter { fun increment(value: Int) { save(value) }; private fun save(value: Int) {} }'],['modern','data class Pair(val left: Int, val right: Int)\nsuspend fun value(): Int = 1\n']],invalid:'class Broken { fun x( }',scale:i=>`class C${i} { fun f(x: Int): Int = x + ${i} }\n`},
+ objc:{asset:'objc/node_modules/tree-sitter-objc/tree-sitter-objc.wasm',valid:[['bridge','@interface Counter : NSObject\n- (void)increment:(NSInteger)value;\n@end\n@implementation Counter\n- (void)increment:(NSInteger)value { [self save:value]; }\n@end\n']],invalid:'@implementation Broken\n- (void)x:( {\n@end',scale:i=>`@interface C${i} : NSObject\n- (void)f;\n@end\n`}
+};
+for(const [name,c] of Object.entries(cases)){
+ const r={language:name,asset:c.asset,cases:[]};
+ try{
+ const bytes=fs.readFileSync(path.join(base,c.asset)); report.assets.push({path:c.asset,bytes:bytes.length,sha256:crypto.createHash('sha256').update(bytes).digest('hex')});
+ const load=performance.now(),language=await Language.load(bytes);r.loadMs=performance.now()-load;r.abi=language.abiVersion;
+ const parser=new Parser();parser.setLanguage(language);
+ for(const [id,source] of c.valid){const t=parser.parse(source);r.cases.push({id,hasError:t.rootNode.hasError,root:t.rootNode.type,tree:t.rootNode.toString().slice(0,900)});assert.equal(t.rootNode.hasError,false,`${name}:${id}`);t.delete();}
+ const malformed=parser.parse(c.invalid);r.rejectsMalformed=malformed.rootNode.hasError;assert(r.rejectsMalformed);malformed.delete();
+ const large=Array.from({length:1000},(_,i)=>c.scale(i)).join('');const timings=[];
+ for(let i=0;i<6;i++){const s=performance.now(),t=parser.parse(large);assert(!t.rootNode.hasError);timings.push(performance.now()-s);t.delete();}
+ r.scale={sourceBytes:Buffer.byteLength(large),declarations:1000,warmMs:timings.slice(1),rssBytes:process.memoryUsage().rss};
+ const source=c.valid[0][1],tree=parser.parse(source);tree.edit({startIndex:0,oldEndIndex:0,newEndIndex:1,startPosition:{row:0,column:0},oldEndPosition:{row:0,column:0},newEndPosition:{row:0,column:1}});
+ const incremental=parser.parse(' '+source,tree),full=parser.parse(' '+source);r.incrementalEqualsFull=incremental.rootNode.toString()===full.rootNode.toString();assert(r.incrementalEqualsFull);tree.delete();incremental.delete();full.delete();
+ if(name==='python'){const source='label = "😀é"; value = 1\r\n',t=parser.parse(source);const node=t.rootNode.descendantsOfType('identifier').find(n=>n.text==='value');report.positions.push({parser:'web-tree-sitter',source,index:node.startIndex,column:node.startPosition.column,utf16Expected:source.indexOf('value'),utf8Expected:Buffer.byteLength(source.slice(0,source.indexOf('value')))});assert.equal(node.startIndex,source.indexOf('value'));t.delete();}
+ parser.delete();r.status='passed';
+ }catch(e){r.status='failed';r.error=String(e);}
+ report.results.push(r);
+}
+const babel=require(path.resolve('node_modules/.pnpm/@babel+parser@7.29.9/node_modules/@babel/parser'));
+const hermes=require(path.resolve('node_modules/.pnpm/hermes-parser@0.25.1/node_modules/hermes-parser'));
+const flowCases=[['classic','// @flow\ntype Props = {|name: string|};\nfunction View(props: Props): React.Node { return <Text>{props.name}</Text>; }'],['component','// @flow\ncomponent Greeting(name: string) { return <Text>{name}</Text>; }'],['hook','// @flow\nhook useValue(): number { return 1; }'],['enum','// @flow\nenum State { Ready, Waiting }'],['invalid','// @flow\nfunction broken(: {']];
+for(const [name,parser,version] of [['babel',s=>babel.parse(s,{sourceType:'module',plugins:['jsx','flow','flowComments']}),'7.29.9'],['hermes',s=>hermes.parse(s,{flow:'all',sourceType:'module',babel:false}),'0.25.1']]){
+ for(const [id,source] of flowCases){try{const tree=parser(source);report.flow.push({parser:name,version,id,accepted:true,topLevel:tree.body?.[0]?.type??tree.program?.body?.[0]?.type});}catch(e){report.flow.push({parser:name,version,id,accepted:false,error:String(e).slice(0,230)});}}
+}
+const pyScript='import ast,json,sys\ns=\'label = "😀é"; value = 1\\r\\n\'\nn=ast.parse(s).body[1].targets[0]\nprint(json.dumps({"version":sys.version,"column":n.col_offset,"utf8Expected":len(s[:s.index("value")].encode("utf-8"))}))';
+try{report.cpython=JSON.parse(execFileSync('python',['-I','-c',pyScript],{encoding:'utf8',timeout:10000}));}catch(e){report.cpython={error:String(e),stderr:String(e.stderr??'')};}
+report.swift={assetPresent:fs.existsSync(path.join(base,'swift/node_modules/tree-sitter-swift/tree-sitter-swift.wasm')),nativePrebuildPresent:fs.existsSync(path.join(base,'swift/node_modules/tree-sitter-swift/prebuilds/win32-x64/tree-sitter-swift.node'))};
+fs.writeFileSync('docs/fs-00/evidence/parser-results.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
+})().catch(e=>{console.error(e);process.exitCode=1});

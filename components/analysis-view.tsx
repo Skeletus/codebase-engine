@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useMemo, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
 import type { AnalysisOperations } from "@/lib/analysis/operations";
 import { foldDirectories } from "@/lib/graph/fold";
 import type { Selection } from "@/lib/graph/highlight";
@@ -14,6 +14,7 @@ import { targetKey, type ExplainTarget, type ExplanationState } from "./explanat
 import { DependencyMap } from "./map/dependency-map";
 import { RouteTable } from "./route-table";
 import { Shell } from "./shell";
+import type { Workspace } from "./workspace-ui";
 
 // Owns what the map, the rail and the pane share: which folders are open,
 // what's selected, what's hovered, which category is picked, and what the pane
@@ -30,6 +31,11 @@ export function AnalysisView({
   operations,
   evidence,
   investigations,
+  workspace,
+  onWorkspaceChange,
+  workspaceContent,
+  explanationSetup,
+  analysisActivity,
 }: {
   files: ParsedFile[];
   edges: Edge[];
@@ -40,8 +46,19 @@ export function AnalysisView({
   repository: Omit<RepositoryFacts, "routes">;
   operations: AnalysisOperations;
   evidence?: (path: string) => ReactNode;
+  explanationSetup?: { provider: string; onConfigure: () => void };
+  analysisActivity?: { busy: boolean; stage: string; onCancel: () => void };
   investigations?: (onReveal: (path: string) => void, selectedFile: string | null) => ReactNode;
+  workspace?: Workspace;
+  onWorkspaceChange?: (workspace: Workspace) => void;
+  workspaceContent?: (onReveal: (path: string, mode?: "map" | "evidence") => void, selectedFile: string | null) => ReactNode;
 }) {
+  const [revealing, setRevealing] = useState(Boolean(analysisActivity));
+  useEffect(() => {
+    const timer = window.setTimeout(() => setRevealing(false), window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 2200);
+    return () => window.clearTimeout(timer);
+  }, []);
+  const mapLocked = Boolean(analysisActivity?.busy || revealing);
   const folding = useMemo(() => foldDirectories(files), [files]);
   const byPath = useMemo(() => new Map(files.map((f) => [f.path, f])), [files]);
   const [open, setOpen] = useState<ReadonlyMap<string, number>>(() => new Map());
@@ -57,6 +74,7 @@ export function AnalysisView({
   // The centre column shows the map or the route table; the rail and the pane
   // keep working on either.
   const [centre, setCentre] = useState<"map" | "routes" | "investigations">("map");
+  const current = workspace ?? centre;
   // Explanations fetched on this page, by file or folder, so moving the
   // selection away and back finds the answer still there without asking again.
   const [explanations, setExplanations] = useState<ReadonlyMap<string, ExplanationState>>(() => new Map());
@@ -147,22 +165,27 @@ export function AnalysisView({
 
   return (
     <Shell
+      compact={Boolean(workspace)}
+      showDetail={current === "map" || current === "routes"}
       rail={
         <CategoryRail files={files} modelRoles={modelRoles} frameworks={repository.projects.map((p) => p.adapter)} active={category} onToggle={toggleCategory} />
       }
       map={
         <div className="absolute inset-0 flex flex-col">
-          <div role="tablist" className="flex h-7 shrink-0 items-end gap-3 border-b border-line bg-surface px-3 text-[11px]">
+          {!workspace && <div role="tablist" className="flex h-7 shrink-0 items-end gap-3 border-b border-line bg-surface px-3 text-[11px]">
             <CentreTab label="Map" on={centre === "map"} onClick={() => setCentre("map")} />
             <CentreTab label="Routes" count={routes.length} on={centre === "routes"} onClick={() => setCentre("routes")} />
             {investigations && <CentreTab label="Investigations / Ask" on={centre === "investigations"} onClick={() => setCentre("investigations")} />}
-          </div>
+          </div>}
           <div className="relative min-h-0 flex-1">
+            {workspaceContent && <div className={`absolute inset-0 min-h-0 flex-col ${current === "map" || current === "routes" ? "hidden" : "flex"}`}>{workspaceContent((file, mode = "map") => { reveal(file); setTab(mode === "evidence" ? "evidence" : "structure"); onWorkspaceChange?.(mode); }, selection?.kind === "file" ? selection.path : null)}</div>}
             {investigations && <div className={`absolute inset-0 ${centre === "investigations" ? "" : "invisible"}`}>
               {investigations((file) => { reveal(file); setCentre("map"); setTab("structure"); }, selection?.kind === "file" ? selection.path : null)}
             </div>}
-            {/* The map stays mounted under the table, so switching back keeps its viewport. */}
-            <div className={`absolute inset-0 ${centre === "map" ? "" : "invisible"}`}>
+            {/* Display removes the entire canvas from rendering; React Flow nodes
+                explicitly set visibility and can override inherited invisibility.
+                Keep it mounted to preserve the viewport when returning. */}
+            <div className={`absolute inset-0 ${revealing && !analysisActivity?.busy ? "map-revealing" : ""}`} inert={mapLocked} style={{ display: current === "map" ? "block" : "none" }} aria-hidden={current !== "map"}>
               <DependencyMap
                 files={files}
                 edges={edges}
@@ -181,7 +204,8 @@ export function AnalysisView({
                 onDeselect={deselect}
               />
             </div>
-            {centre === "routes" && (
+            {current === "map" && mapLocked && <div className="map-construction-overlay" role="status"><div><h2>{analysisActivity?.busy ? "Analyzing your repository" : "Drawing your verified map"}</h2><p>{analysisActivity?.busy ? analysisActivity.stage : "Analysis complete. Nodes and connections are appearing."}</p><p>Map and Overview unlock when ready.</p>{analysisActivity?.busy && <button className="button-danger" onClick={analysisActivity.onCancel}>Cancel analysis</button>}</div></div>}
+            {current === "routes" && (
               <RouteTable
                 routes={routes}
                 coverage={routeCoverage}
@@ -195,7 +219,7 @@ export function AnalysisView({
         </div>
       }
       detail={
-        <DetailPane
+        <div inert={mapLocked} aria-busy={mapLocked} className={mapLocked ? "opacity-40 pointer-events-none" : ""}><DetailPane
           files={files}
           byPath={byPath}
           edges={edges}
@@ -214,8 +238,9 @@ export function AnalysisView({
           modelRoles={modelRoles}
           explanations={explanations}
           onExplain={explain}
+          explanationSetup={explanationSetup}
           evidence={evidence}
-        />
+        /></div>
       }
     />
   );

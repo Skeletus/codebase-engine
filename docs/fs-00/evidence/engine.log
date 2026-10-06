@@ -1,0 +1,86 @@
+Local snapshot v2: 117 files, 330 relationships, 0 route declarations
+{
+  "files": {
+    "found": 119,
+    "parsed": 117,
+    "skipped": 2
+  },
+  "relationships": {
+    "seen": 516,
+    "internal": 330,
+    "external": 185,
+    "excluded": 1,
+    "unresolved": 0
+  },
+  "bySyntax": {
+    "import": {
+      "seen": 514,
+      "internal": 329,
+      "external": 184,
+      "excluded": 1,
+      "unresolved": 0
+    },
+    "re-export": {
+      "seen": 1,
+      "internal": 1,
+      "external": 0,
+      "excluded": 0,
+      "unresolved": 0
+    },
+    "dynamic-import": {
+      "seen": 1,
+      "internal": 0,
+      "external": 1,
+      "excluded": 0,
+      "unresolved": 0
+    },
+    "require": {
+      "seen": 0,
+      "internal": 0,
+      "external": 0,
+      "excluded": 0,
+      "unresolved": 0
+    }
+  },
+  "external": {
+    "package": 46,
+    "builtin": 139,
+    "outside-root": 0
+  },
+  "excluded": {
+    "non-code-file": 1
+  },
+  "unresolved": {}
+}
+skipped-file: next-env.d.ts declaration-file: types only, no runtime imports
+skipped-file: types/globals.d.ts declaration-file: types only, no runtime imports
+excluded-directory: .agents dot-directory: dot-directory
+excluded-directory: .claude dot-directory: dot-directory
+excluded-directory: .git dot-directory: dot-directory
+excluded-directory: .next dot-directory: dot-directory
+excluded-directory: artifacts/laya-nav-1/generated dependency, build, vendored or generated directory: dependency, build, vendored or generated directory
+excluded-directory: docs/fs-00/experiments/generated dependency, build, vendored or generated directory: dependency, build, vendored or generated directory
+excluded-directory: node_modules dependency, build, vendored or generated directory: dependency, build, vendored or generated directory
+excluded-directory: out dependency, build, vendored or generated directory: dependency, build, vendored or generated directory
+excluded-directory: src-tauri/resources/generated dependency, build, vendored or generated directory: dependency, build, vendored or generated directory
+excluded-directory: src-tauri/target dependency, build, vendored or generated directory: dependency, build, vendored or generated directory
+config: . config-diagnostic: Read policy: <outside-root>: outside selected repository
+config: . config-diagnostic: Read policy: node_modules/@dagrejs/dagre: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/@fontsource-variable/geist-mono: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/@fontsource-variable/geist: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/@tauri-apps/api/core: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/@tauri-apps/api/event: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/@tauri-apps/api: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/@types/react: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/@types/xyflow__react/dist/base.css: dependency, build, vendored or generated directory
+config: . config-diagnostic: Read policy: node_modules/@xyflow/react/dist/base.css: dependency, build, vendored or generated directory
+config: . config-diagnostic: Read policy: node_modules/@xyflow/react/dist: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/@xyflow/react: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/eslint-config-next/core-web-vitals: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/eslint-config-next/typescript: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/eslint-config-next: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/eslint/config: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/eslint: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/next: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/react: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/ts-morph: symbolic link not followed

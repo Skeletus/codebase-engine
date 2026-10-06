@@ -146,7 +146,7 @@ test("offline private engine investigations survive SQLite restart and expose re
         if (event.type === "complete") child.stdin.write(JSON.stringify({ version: 1, jobId: "reopened", requestId: "ask", type: "investigation", query: { operation: "ask", intent: "dependents", target: "common.ts", depth: 64, budget: 200 } }) + "\n");
         if (event.type === "investigation") child.stdin.end();
       } }); child.on("exit", (code) => { clearTimeout(timer); if (code !== 0) reject(new Error("Offline engine failed")); else resolve(received); });
-      child.stdin.write(JSON.stringify({ version: 1, jobId: "reopened", requestId: "reopen", type: "reopen" }) + "\n");
+      child.stdin.write(JSON.stringify({ version: 1, jobId: "reopened", requestId: "reopen", type: "reopen", snapshotVersion: 3 }) + "\n");
     });
     const answer = events.find((e) => e.type === "investigation"); assert(answer?.type === "investigation"); witnesses(f, answer.result, true);
     assert.deepEqual(answer.result, f.ask("dependents", "common.ts"));

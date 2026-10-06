@@ -1,0 +1,24 @@
+Files 117, edges 330, folded at threshold 2
+1. Nodes 16  (one per 7.3 files)
+2. Nodes holding one file: 0
+3. Edges 51, ending on a missing node: 0
+   All open, scrolled to top: 228 row edges, ending on a missing row: 0
+   All open, scrolled to bottom: 226 row edges, ending on a missing row: 0
+
+Groups
+     3  ←0       0→  (root)                       .
+     4  ←0       1→  app                          app
+    18  ←1      24→  components                   components
+     4  ←2       6→  map                          components/map
+     5  ←28      1→  lib                          lib
+     3  ←7       4→  ai                           lib/ai
+     5  ←12      9→  desktop                      lib/desktop
+    10  ←37      7→  engine                       lib/engine
+     8  ←10      1→  graph                        lib/graph
+     6  ←9       3→  laya                         lib/laya
+     2  ←5       0→  model                        lib/model
+     8  ←16      6→  parser                       lib/parser
+     9  ←2       1→  adapters                     lib/parser/adapters
+     4  ←14      3→  storage                      lib/storage
+    19  ←3      28→  scripts                      scripts
+     9  ←0      31→  tests                        tests

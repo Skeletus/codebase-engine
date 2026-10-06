@@ -1,4 +1,4 @@
-export const SNAPSHOT_VERSION = 2;
+export const SNAPSHOT_VERSION = 3;
 
 export type CodeFile = {
   id: string;
@@ -58,7 +58,11 @@ export type CodeSnapshot = {
   };
   diagnostics: Diagnostic[];
   behavior: import("../model/behavior.ts").Behavior;
+  /** Shared facts are deliberately outside file/import adjacency. */
+  analysis: import("../model/framework.ts").AnalysisContracts;
 };
+
+export type LegacySnapshot = Omit<CodeSnapshot, "version" | "analysis"> & { version: 2 };
 
 export type LanguageAdapter = { id: string; analyze: (directory: string, onProgress?: (stage: "parse") => void) => CodeSnapshot };
 export type StructuralQuery = { file: string; direction: "dependencies" | "dependents"; depth?: number };

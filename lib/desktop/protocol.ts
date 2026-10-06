@@ -1,8 +1,9 @@
 import { validateSnapshot } from "../engine/contract.ts";
 import { validateSelection, type ExplanationSelection } from "../ai/selection.ts";
-import type { CodeSnapshot, StructuralQuery, StructuralResult } from "../engine/types.ts";
+import { SNAPSHOT_VERSION, type CodeSnapshot, type StructuralQuery, type StructuralResult } from "../engine/types.ts";
 import { validateInvestigation, validateInvestigationResult, type Investigation, type InvestigationResult } from "../engine/investigations.ts";
 import type { RefreshStatus } from "../engine/refresh.ts";
+import { validateRankingQuery, validateRankingResult, type RankingQuery, type RankingResult } from "./ranking.ts";
 
 export const PROTOCOL_VERSION = 1;
 export const MAX_REQUEST_BYTES = 16 * 1024;
@@ -10,10 +11,12 @@ export const MAX_EVENT_BYTES = 32 * 1024 * 1024;
 export type EvidenceResult = { state: "current"; source: string } | { state: "stale" | "unavailable" };
 type Identity = { version: 1; requestId: string; jobId: string };
 export type EngineRequest = Identity & (
-  { type: "analyze"; root: string } | { type: "reopen" } | { type: "watch"; action: "start" | "stop" | "simulate-loss" } | { type: "evidence"; file: string } | { type: "query"; query: StructuralQuery } | { type: "investigation"; query: Investigation } | { type: "explanation"; query: ExplanationSelection }
+  { type: "analyze"; root: string; snapshotVersion: 3 } | { type: "reopen"; snapshotVersion: 3 } | { type: "watch"; action: "start" | "stop" | "simulate-loss" } | { type: "evidence"; file: string } | { type: "query"; query: StructuralQuery } | { type: "investigation"; query: Investigation } | { type: "explanation"; query: ExplanationSelection } | { type: "ranking"; query: RankingQuery } | { type: "ranking-cancel"; query: Record<string, never> }
 );
 export type EngineEvent = Identity & (
   { type: "watch"; status: RefreshStatus } |
+  { type: "ranking"; result: RankingResult } |
+  { type: "ranking-cancel"; result: { cancelled: boolean } } |
   { type: "progress"; stage: "select" | "parse" | "validate" } |
   { type: "complete"; snapshot: CodeSnapshot } |
   { type: "evidence"; evidence: EvidenceResult } |
@@ -43,9 +46,14 @@ function exact(r: Record<string, unknown>, keys: string[]) {
 }
 export function validateRequest(value: unknown): EngineRequest {
   const r = record(value), base = identity(r);
+  if (r.type === "ranking") { exact(r, ["query"]); return { ...base, type: "ranking", query: validateRankingQuery(r.query) }; }
+  if (r.type === "ranking-cancel") { exact(r, ["query"]); if (Object.keys(record(r.query)).length) throw new Error("Invalid cancellation"); return { ...base, type: "ranking-cancel", query: {} }; }
   if (r.type === "watch") { exact(r, ["action"]); if (r.action !== "start" && r.action !== "stop" && r.action !== "simulate-loss") throw new Error("Invalid watch action"); return { ...base, type: "watch", action: r.action }; }
-  if (r.type === "analyze") { exact(r, ["root"]); return { ...base, type: r.type, root: text(r.root, 4096) }; }
-  if (r.type === "reopen") { exact(r, []); return { ...base, type: r.type }; }
+  if (r.type === "analyze" || r.type === "reopen") {
+    exact(r, r.type === "analyze" ? ["root", "snapshotVersion"] : ["snapshotVersion"]);
+    if (r.snapshotVersion !== SNAPSHOT_VERSION) throw new Error("Snapshot contract handshake requires v3");
+    return r.type === "analyze" ? { ...base, type: r.type, root: text(r.root, 4096), snapshotVersion: SNAPSHOT_VERSION } : { ...base, type: r.type, snapshotVersion: SNAPSHOT_VERSION };
+  }
   if (r.type === "explanation") { exact(r, ["query"]); return { ...base, type: r.type, query: validateSelection(r.query) }; }
   if (r.type === "investigation") { exact(r, ["query"]); return { ...base, type: r.type, query: validateInvestigation(r.query) }; }
   if (r.type === "evidence") { exact(r, ["file"]); return { ...base, type: r.type, file: text(r.file, 4096) }; }
@@ -60,6 +68,8 @@ export function validateRequest(value: unknown): EngineRequest {
 }
 export function validateEvent(value: unknown): EngineEvent {
   const r = record(value), base = identity(r);
+  if (r.type === "ranking") { exact(r, ["result"]); return { ...base, type: "ranking", result: validateRankingResult(r.result) }; }
+  if (r.type === "ranking-cancel") { exact(r, ["result"]); const result = record(r.result); if (Object.keys(result).join() !== "cancelled" || typeof result.cancelled !== "boolean") throw new Error("Invalid cancellation result"); return { ...base, type: "ranking-cancel", result: { cancelled: result.cancelled } }; }
   if (r.type === "watch") {
     exact(r, ["status"]); const s = record(r.status);
     const keys = ["state", "message", "mode", "parsed", "reused", "elapsedMs", "memoryBytes", "snapshotBytes"];

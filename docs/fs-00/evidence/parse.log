@@ -1,0 +1,53 @@
+D:\Repositorios Github\cartograph
+
+Projects  . (Next.js)
+Files     found 119  parsed 117  skipped 2
+  skipped next-env.d.ts — declaration-file: types only, no runtime imports
+  skipped types/globals.d.ts — declaration-file: types only, no runtime imports
+Folders   20 distinct modules
+Reached without an import  16
+  2  Next.js error boundary
+  1  Next.js layout
+  1  Next.js page
+  3  config file, loaded by its tool
+  9  test file, collected by the test runner
+Rail      Page routes 1 · API endpoints 0 · Server actions 0 · Layouts 1 · Loading & error UI 2 · Components 21 · Hooks 0 · Middleware 0 · Metadata files 0 · Instrumentation 0 · Config files 3 · Tests 9 · Unclassified 80
+Not walked  .agents (dot-directory), .claude (dot-directory), .git (dot-directory), .next (dot-directory), artifacts/laya-nav-1/generated (dependency, build, vendored or generated directory), docs/fs-00/experiments/generated (dependency, build, vendored or generated directory), node_modules (dependency, build, vendored or generated directory), out (dependency, build, vendored or generated directory), src-tauri/resources/generated (dependency, build, vendored or generated directory), src-tauri/target (dependency, build, vendored or generated directory)
+
+Imports     seen  internal  external  excluded  unresolved
+  all              516       330       185         1           0
+  import           514       329       184         1           0
+  re-export          1         1         0         0           0
+  dynamic-import     1         0         1         0           0
+  require            0         0         0         0           0
+
+External  package 46  builtin 139  outside-root 0
+Excluded  non-code-file 1
+Edges     330 after removing duplicates (87 type-only)
+
+Routes    0
+
+Config problems (resolution used what it could read)
+  .: Read policy: <outside-root>: outside selected repository
+  .: Read policy: node_modules/@dagrejs/dagre: symbolic link not followed
+  .: Read policy: node_modules/@fontsource-variable/geist-mono: symbolic link not followed
+  .: Read policy: node_modules/@fontsource-variable/geist: symbolic link not followed
+  .: Read policy: node_modules/@tauri-apps/api/core: symbolic link not followed
+  .: Read policy: node_modules/@tauri-apps/api/event: symbolic link not followed
+  .: Read policy: node_modules/@tauri-apps/api: symbolic link not followed
+  .: Read policy: node_modules/@types/react: symbolic link not followed
+  .: Read policy: node_modules/@types/xyflow__react/dist/base.css: dependency, build, vendored or generated directory
+  .: Read policy: node_modules/@xyflow/react/dist/base.css: dependency, build, vendored or generated directory
+  .: Read policy: node_modules/@xyflow/react/dist: symbolic link not followed
+  .: Read policy: node_modules/@xyflow/react: symbolic link not followed
+  .: Read policy: node_modules/eslint-config-next/core-web-vitals: symbolic link not followed
+  .: Read policy: node_modules/eslint-config-next/typescript: symbolic link not followed
+  .: Read policy: node_modules/eslint-config-next: symbolic link not followed
+  .: Read policy: node_modules/eslint/config: symbolic link not followed
+  .: Read policy: node_modules/eslint: symbolic link not followed
+  .: Read policy: node_modules/next: symbolic link not followed
+  .: Read policy: node_modules/react: symbolic link not followed
+  .: Read policy: node_modules/ts-morph: symbolic link not followed
+
+Parsed in 2.8s.
+Wrote docs/fs-00/evidence/baseline-parse.json (116 KB), read it back, contract holds.

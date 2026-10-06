@@ -1,0 +1,29 @@
+{
+  "name": "python",
+  "runtime": "0.25.10",
+  "abi": 15,
+  "coldLoadMs": 162.9771,
+  "sourceBytes": 115,
+  "hasError": false,
+  "tree": "(module (raise_statement (call function: (identifier) arguments: (argument_list (string (string_start) (string_content) (string_end))))) (import_from_statement module_name: (dotted_name (identifier) (identifier)) name: (dotted_name (identifier))) (expression_statement (assignment left: (identifier) right: (list (call function: (identifier) arguments: (argument_list (string (string_start) (string_content) (string_end)) (identifier)))))))",
+  "rssBefore": 57118720,
+  "rssLoaded": 61804544,
+  "assetBytes": 457883,
+  "assetSha256": "16108b50df4ee9a30168794252ab55e7c93bfc5765d7fa0aa3e335752c515f47",
+  "scaleBytes": 28780,
+  "timingsMs": [
+    45.75700000000006,
+    28.489100000000008,
+    24.19240000000002,
+    24.276500000000055,
+    28.25389999999993,
+    23.438800000000015
+  ],
+  "rssAfterScale": 64069632,
+  "incrementalEqualsFull": true,
+  "cooperativeCancel": {
+    "callbacks": 1,
+    "returnedNull": true
+  },
+  "resetRecovery": true
+}

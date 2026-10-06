@@ -1,0 +1,80 @@
+{
+  "status": "passed",
+  "oldSnapshotVersion": 2,
+  "oldRoundTrip": true,
+  "currentValidatorRejectsNewVersion": true,
+  "currentValidatorRejectsUnknownHttpMethod": true,
+  "snapshotSha256": "409741a20f2863bcb6172bbd3411c3623309f73575969d7e388598d81bcaa3e1",
+  "positions": [
+    {
+      "bom": false,
+      "utf16": 27,
+      "utf8": 30,
+      "roundTrip": 27,
+      "line": 1
+    },
+    {
+      "bom": true,
+      "utf16": 28,
+      "utf8": 33,
+      "roundTrip": 28,
+      "line": 1
+    },
+    {
+      "bom": false,
+      "utf16": 26,
+      "utf8": 27,
+      "roundTrip": 26,
+      "line": 1
+    }
+  ],
+  "deploymentDecisionTruthTable": [
+    {
+      "id": "known-browser-origin",
+      "method": "GET",
+      "requestOrigin": "https://example.test",
+      "endpointOrigin": "https://example.test",
+      "path": "/api/orders/1",
+      "backendCount": 1,
+      "expected": "static-binding"
+    },
+    {
+      "id": "mobile-relative-url",
+      "method": "GET",
+      "requestOrigin": null,
+      "endpointOrigin": "https://example.test",
+      "path": "/api/orders/1",
+      "backendCount": 1,
+      "expected": "gap"
+    },
+    {
+      "id": "duplicate-services",
+      "method": "GET",
+      "requestOrigin": "https://example.test",
+      "endpointOrigin": "https://example.test",
+      "path": "/api/orders/1",
+      "backendCount": 2,
+      "expected": "candidate"
+    },
+    {
+      "id": "method-mismatch",
+      "method": "POST",
+      "requestOrigin": "https://example.test",
+      "endpointOrigin": "https://example.test",
+      "path": "/api/orders/1",
+      "backendCount": 1,
+      "expected": "gap"
+    },
+    {
+      "id": "user-origin-assumption",
+      "method": "GET",
+      "requestOrigin": "https://example.test",
+      "endpointOrigin": "https://example.test",
+      "path": "/api/orders/1",
+      "backendCount": 1,
+      "assumed": true,
+      "expected": "assumed-binding"
+    }
+  ],
+  "note": "Isolated contract/normalization decision experiments, not FS-01 production implementation."
+}

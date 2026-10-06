@@ -1,0 +1,19 @@
+const fs=require('fs'),assert=require('assert/strict'),crypto=require('crypto'),path=require('path');
+(async()=>{
+const {validateSnapshot,serializeSnapshot,deserializeSnapshot}=await import(require('url').pathToFileURL(path.resolve('lib/engine/contract.ts')).href);
+const {snapshotJson}=await import(require('url').pathToFileURL(path.resolve('lib/engine/snapshot-identity.ts')).href);
+const snapshotPath='docs/fs-00/evidence/baseline-snapshot.json';
+const snapshotBytes=fs.existsSync(snapshotPath)?fs.readFileSync(snapshotPath):require('zlib').gunzipSync(fs.readFileSync(snapshotPath+'.gz'));
+const ts=require('typescript'),base=JSON.parse(snapshotBytes.toString('utf8'));
+assert(validateSnapshot(base));assert.equal(serializeSnapshot(deserializeSnapshot(serializeSnapshot(base))),serializeSnapshot(base));
+const versionChange=structuredClone(base);versionChange.version=3;assert.throws(()=>validateSnapshot(versionChange));
+const routeChange=structuredClone(base),file=base.files[0];routeChange.routes.push({file:file.id,method:null,pattern:'/example',evidence:{file:file.id,line:1,fileHash:file.hash,extractor:'experiment',evidenceKind:'verified',occurrence:'first',description:'unsupported nullable method'}});assert.throws(()=>validateSnapshot(routeChange));
+const sources=['const label = "😀é"; const value = 1;\r\n','\uFEFFconst label = "😀é"; const value = 1;\r\n','const label = "e\u0301"; const value = 1;\n'];const positions=[];
+for(const source of sources){const ast=ts.createSourceFile('fixture.ts',source,ts.ScriptTarget.Latest,true);let value;function visit(n){if(ts.isIdentifier(n)&&n.text==='value')value=n;ts.forEachChild(n,visit);}visit(ast);const expected=source.indexOf('value');assert.equal(value.getStart(ast),expected);const utf8=Buffer.byteLength(source.slice(0,expected));const normalized=Buffer.from(source).subarray(0,utf8).toString('utf8').length;assert.equal(normalized,expected);positions.push({bom:source.startsWith('\uFEFF'),utf16:expected,utf8,roundTrip:normalized,line:ast.getLineAndCharacterOfPosition(expected).line+1});}
+const deploymentCases=[{id:'known-browser-origin',method:'GET',requestOrigin:'https://example.test',endpointOrigin:'https://example.test',path:'/api/orders/1',backendCount:1,expected:'static-binding'}, {id:'mobile-relative-url',method:'GET',requestOrigin:null,endpointOrigin:'https://example.test',path:'/api/orders/1',backendCount:1,expected:'gap'}, {id:'duplicate-services',method:'GET',requestOrigin:'https://example.test',endpointOrigin:'https://example.test',path:'/api/orders/1',backendCount:2,expected:'candidate'}, {id:'method-mismatch',method:'POST',requestOrigin:'https://example.test',endpointOrigin:'https://example.test',path:'/api/orders/1',backendCount:1,expected:'gap'}, {id:'user-origin-assumption',method:'GET',requestOrigin:'https://example.test',endpointOrigin:'https://example.test',path:'/api/orders/1',backendCount:1,assumed:true,expected:'assumed-binding'}];
+// Decision truth table only: not a request matcher or production linker.
+for(const c of deploymentCases){const result=!c.requestOrigin||c.requestOrigin!==c.endpointOrigin||c.method!=='GET'?'gap':c.backendCount!==1?'candidate':c.assumed?'assumed-binding':'static-binding';assert.equal(result,c.expected);}
+const report={status:'passed',oldSnapshotVersion:base.version,oldRoundTrip:true,currentValidatorRejectsNewVersion:true,currentValidatorRejectsUnknownHttpMethod:true,snapshotSha256:crypto.createHash('sha256').update(snapshotJson(base)).digest('hex'),positions,deploymentDecisionTruthTable:deploymentCases,note:'Isolated contract/normalization decision experiments, not FS-01 production implementation.'};
+fs.writeFileSync('docs/fs-00/evidence/contract-results.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
+})().catch(e=>{console.error(e);process.exitCode=1});
+

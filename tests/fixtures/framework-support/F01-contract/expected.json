@@ -1,0 +1,36 @@
+{
+  "id": "F01-contract",
+  "snapshotVersion": 3,
+  "importFacts": [
+    [
+      "entry.ts",
+      "types.ts",
+      true
+    ],
+    [
+      "entry.ts",
+      "service.ts",
+      false
+    ],
+    [
+      "app/api/example/route.ts",
+      "service.ts",
+      false
+    ]
+  ],
+  "routes": [
+    {
+      "file": "app/api/example/route.ts",
+      "method": "GET",
+      "pattern": "/api/example"
+    }
+  ],
+  "legacyCapability": "partial",
+  "matcher": "unsupported",
+  "forbidden": [
+    "candidate-import-edge",
+    "unknown-method-GET",
+    "qualified-without-ledger",
+    "verified-user-assumption"
+  ]
+}

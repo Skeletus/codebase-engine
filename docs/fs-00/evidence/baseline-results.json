@@ -1,0 +1,130 @@
+[
+  {
+    "id": "next-typegen",
+    "command": "node node_modules/next/dist/bin/next typegen",
+    "startedUtc": "2026-10-06T21:02:00.8753556Z",
+    "elapsedMs": 6876,
+    "exitCode": 0,
+    "log": "next-typegen.log"
+  },
+  {
+    "id": "typecheck",
+    "command": "node node_modules/typescript/bin/tsc --noEmit",
+    "startedUtc": "2026-10-06T21:02:07.8533084Z",
+    "elapsedMs": 9218,
+    "exitCode": 0,
+    "log": "typecheck.log"
+  },
+  {
+    "id": "lint",
+    "command": "node node_modules/eslint/bin/eslint.js .",
+    "startedUtc": "2026-10-06T21:02:17.0912705Z",
+    "elapsedMs": 41519,
+    "exitCode": 0,
+    "log": "lint.log"
+  },
+  {
+    "id": "tests",
+    "command": "node --test tests/phase-01.test.ts tests/phase-02.test.ts tests/phase-03.test.ts tests/phase-04.test.ts tests/phase-05.test.ts tests/phase-06.test.ts tests/phase-07.test.ts tests/phase-08.test.ts tests/phase-09.test.ts",
+    "startedUtc": "2026-10-06T21:02:58.6240167Z",
+    "elapsedMs": 20149,
+    "exitCode": 0,
+    "log": "tests.log"
+  },
+  {
+    "id": "next-build",
+    "command": "node node_modules/next/dist/bin/next build",
+    "startedUtc": "2026-10-06T21:03:18.7870238Z",
+    "elapsedMs": 88083,
+    "exitCode": 0,
+    "log": "next-build.log"
+  },
+  {
+    "id": "assets",
+    "command": "node scripts/verify-desktop-assets.ts",
+    "startedUtc": "2026-10-06T21:04:46.8943709Z",
+    "elapsedMs": 394,
+    "exitCode": 0,
+    "log": "assets.log"
+  },
+  {
+    "id": "rust-format",
+    "command": "cargo fmt --manifest-path src-tauri/Cargo.toml -- --check",
+    "startedUtc": "2026-10-06T21:04:47.306516Z",
+    "elapsedMs": 1334,
+    "exitCode": 0,
+    "log": "rust-format.log"
+  },
+  {
+    "id": "rust-check",
+    "command": "cargo check --locked --offline --manifest-path src-tauri/Cargo.toml",
+    "startedUtc": "2026-10-06T21:04:48.6577852Z",
+    "elapsedMs": 35970,
+    "exitCode": 0,
+    "log": "rust-check.log"
+  },
+  {
+    "id": "rust-tests",
+    "command": "cargo test --locked --offline --manifest-path src-tauri/Cargo.toml",
+    "startedUtc": "2026-10-06T21:05:24.6444685Z",
+    "elapsedMs": 139870,
+    "exitCode": 0,
+    "log": "rust-tests.log"
+  },
+  {
+    "id": "pilot-benchmark",
+    "command": "node scripts/benchmark-pilot.ts",
+    "startedUtc": "2026-10-06T21:08:06.0442253Z",
+    "elapsedMs": 16809,
+    "exitCode": 0,
+    "log": "pilot-benchmark.log"
+  },
+  {
+    "id": "staged-smoke",
+    "command": "node scripts/smoke-engine.ts",
+    "startedUtc": "2026-10-06T21:08:22.8698196Z",
+    "elapsedMs": 22586,
+    "exitCode": 0,
+    "log": "staged-smoke.log"
+  },
+  {
+    "id": "release-smoke",
+    "command": "node scripts/smoke-engine.ts --release",
+    "startedUtc": "2026-10-06T21:08:45.4744617Z",
+    "elapsedMs": 21551,
+    "exitCode": 0,
+    "log": "release-smoke.log"
+  },
+  {
+    "id": "parse",
+    "command": "node scripts/parse.ts . --out docs/fs-00/evidence/baseline-parse.json",
+    "startedUtc": "2026-10-06T21:10:07.8505595Z",
+    "elapsedMs": 3760,
+    "exitCode": 0,
+    "log": "parse.log"
+  },
+  {
+    "id": "map-counts",
+    "command": "node scripts/map-counts.ts docs/fs-00/evidence/baseline-parse.json",
+    "startedUtc": "2026-10-06T21:10:11.6478103Z",
+    "elapsedMs": 286,
+    "exitCode": 0,
+    "log": "map-counts.log"
+  },
+  {
+    "id": "insights",
+    "command": "node scripts/insights.ts docs/fs-00/evidence/baseline-parse.json",
+    "startedUtc": "2026-10-06T21:10:11.9546051Z",
+    "elapsedMs": 274,
+    "exitCode": 0,
+    "log": "insights.log"
+  },
+  {
+    "id": "engine",
+    "command": "node scripts/engine.ts . --out docs/fs-00/evidence/baseline-snapshot.json",
+    "startedUtc": "2026-10-06T21:10:12.2503246Z",
+    "elapsedMs": 13048,
+    "exitCode": 0,
+    "log": "engine.log"
+  }
+]

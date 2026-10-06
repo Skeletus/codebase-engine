@@ -1,0 +1,393 @@
+{
+  "schemaVersion": 1,
+  "prepared": "2026-10-06",
+  "status": "FS-00-decision-baseline; future targets unqualified",
+  "definition": "Support is the intersection of exact tuple, syntax/binding pattern, resolver profile, selected variant, permitted inputs and recorded qualification gates.",
+  "hostBaseline": {
+    "node": "24.19.0",
+    "typescript": "5.9.3",
+    "tsMorph": "28.0.0",
+    "next": "16.3.6",
+    "react": "19.2.8",
+    "reactDom": "19.2.8",
+    "tauri": "2.12.1",
+    "platform": "Windows x64",
+    "status": "existing regression commands passed; GUI and new installers not requalified"
+  },
+  "tuples": [
+    {
+      "id": "vite7-react18",
+      "versions": {
+        "node": "22.23.3",
+        "typescript": "5.9.3",
+        "vite": "7.3.7",
+        "react": "18.3.1",
+        "react-dom": "18.3.1",
+        "react-router": "7.18.4"
+      },
+      "profiles": [
+        "browser-development",
+        "browser-production"
+      ],
+      "phase": "FS-03",
+      "status": "planned-not-qualified",
+      "requiredGates": [
+        "positive-negative-fixtures",
+        "pinned-framework-oracle",
+        "TS-JS-preservation",
+        "Windows-offline-packaged"
+      ],
+      "supportContract": "decisions.md + ../specs/fs-03.md"
+    },
+    {
+      "id": "vite8-react19",
+      "versions": {
+        "node": "24.19.0",
+        "typescript": "5.9.3",
+        "vite": "8.3.3",
+        "react": "19.2.8",
+        "react-dom": "19.2.8",
+        "react-router": "7.18.4"
+      },
+      "profiles": [
+        "browser-development",
+        "browser-production",
+        "ssr"
+      ],
+      "phase": "FS-03",
+      "status": "planned-not-qualified",
+      "requiredGates": [
+        "positive-negative-fixtures",
+        "pinned-framework-oracle",
+        "TS-JS-preservation",
+        "Windows-offline-packaged"
+      ],
+      "supportContract": "decisions.md + ../specs/fs-03.md"
+    },
+    {
+      "id": "next15",
+      "versions": {
+        "node": "22.23.3",
+        "typescript": "5.9.3",
+        "next": "15.5.27",
+        "react": "19.2.8",
+        "react-dom": "19.2.8"
+      },
+      "profiles": [
+        "node-development",
+        "node-production",
+        "browser"
+      ],
+      "phase": "FS-04",
+      "status": "planned-not-qualified",
+      "requiredGates": [
+        "positive-negative-fixtures",
+        "pinned-framework-oracle",
+        "TS-JS-preservation",
+        "Windows-offline-packaged"
+      ],
+      "supportContract": "decisions.md + ../specs/fs-04.md"
+    },
+    {
+      "id": "next16-preservation",
+      "versions": {
+        "node": "24.19.0",
+        "typescript": "5.9.3",
+        "next": "16.3.6",
+        "react": "19.2.8",
+        "react-dom": "19.2.8"
+      },
+      "profiles": [
+        "existing + expanded node",
+        "browser profiles"
+      ],
+      "phase": "FS-04",
+      "status": "planned-not-qualified",
+      "requiredGates": [
+        "positive-negative-fixtures",
+        "pinned-framework-oracle",
+        "TS-JS-preservation",
+        "Windows-offline-packaged"
+      ],
+      "supportContract": "decisions.md + ../specs/fs-04.md"
+    },
+    {
+      "id": "next16-patch",
+      "versions": {
+        "node": "24.19.0",
+        "typescript": "5.9.3",
+        "next": "16.3.8",
+        "react": "19.2.8",
+        "react-dom": "19.2.8"
+      },
+      "profiles": [
+        "node-development",
+        "node-production",
+        "browser"
+      ],
+      "phase": "FS-04",
+      "status": "planned-not-qualified",
+      "requiredGates": [
+        "positive-negative-fixtures",
+        "pinned-framework-oracle",
+        "TS-JS-preservation",
+        "Windows-offline-packaged"
+      ],
+      "supportContract": "decisions.md + ../specs/fs-04.md"
+    },
+    {
+      "id": "django52",
+      "versions": {
+        "python": "3.12.15",
+        "django": "5.2.18",
+        "djangorestframework": "3.16.1"
+      },
+      "profiles": [
+        "static-python-declared-environment"
+      ],
+      "phase": "FS-06",
+      "status": "planned-not-qualified",
+      "requiredGates": [
+        "positive-negative-fixtures",
+        "pinned-framework-oracle",
+        "TS-JS-preservation",
+        "Windows-offline-packaged"
+      ],
+      "supportContract": "decisions.md + ../specs/fs-06.md"
+    },
+    {
+      "id": "django60",
+      "versions": {
+        "python": "3.13.16",
+        "django": "6.0.9",
+        "djangorestframework": "3.17.2"
+      },
+      "profiles": [
+        "static-python-declared-environment"
+      ],
+      "phase": "FS-06",
+      "status": "planned-not-qualified",
+      "requiredGates": [
+        "positive-negative-fixtures",
+        "pinned-framework-oracle",
+        "TS-JS-preservation",
+        "Windows-offline-packaged"
+      ],
+      "supportContract": "decisions.md + ../specs/fs-06.md"
+    },
+    {
+      "id": "rn83-bare",
+      "versions": {
+        "node": "24.19.0",
+        "react": "19.2.0",
+        "react-native": "0.83.10",
+        "metro": "0.83.8",
+        "@react-navigation/native": "7.5.0",
+        "@react-navigation/native-stack": "7.20.0"
+      },
+      "profiles": [
+        "android-development",
+        "ios-development"
+      ],
+      "phase": "FS-07",
+      "status": "planned-not-qualified",
+      "requiredGates": [
+        "positive-negative-fixtures",
+        "pinned-framework-oracle",
+        "TS-JS-preservation",
+        "Windows-offline-packaged"
+      ],
+      "supportContract": "decisions.md + ../specs/fs-07.md"
+    },
+    {
+      "id": "rn85-bare",
+      "versions": {
+        "node": "24.19.0",
+        "react": "19.2.3",
+        "react-native": "0.85.3",
+        "metro": "0.84.6",
+        "@react-navigation/native": "7.5.0",
+        "@react-navigation/native-stack": "7.20.0"
+      },
+      "profiles": [
+        "android-development",
+        "ios-development"
+      ],
+      "phase": "FS-07",
+      "status": "planned-not-qualified",
+      "requiredGates": [
+        "positive-negative-fixtures",
+        "pinned-framework-oracle",
+        "TS-JS-preservation",
+        "Windows-offline-packaged"
+      ],
+      "supportContract": "decisions.md + ../specs/fs-07.md"
+    },
+    {
+      "id": "expo55",
+      "versions": {
+        "node": "24.19.0",
+        "expo": "55.0.31",
+        "react": "19.2.0",
+        "react-native": "0.83.10",
+        "expo-router": "55.0.18",
+        "@expo/metro": "55.1.2",
+        "@expo/metro-config": "55.0.27"
+      },
+      "profiles": [
+        "android-development",
+        "ios-development"
+      ],
+      "phase": "FS-07",
+      "status": "planned-not-qualified",
+      "requiredGates": [
+        "positive-negative-fixtures",
+        "pinned-framework-oracle",
+        "TS-JS-preservation",
+        "Windows-offline-packaged"
+      ],
+      "supportContract": "decisions.md + ../specs/fs-07.md"
+    },
+    {
+      "id": "expo56",
+      "versions": {
+        "node": "24.19.0",
+        "expo": "56.0.23",
+        "react": "19.2.3",
+        "react-native": "0.85.3",
+        "expo-router": "56.2.21",
+        "@expo/metro": "56.0.2",
+        "@expo/metro-config": "56.0.19"
+      },
+      "profiles": [
+        "android-development",
+        "ios-development"
+      ],
+      "phase": "FS-07",
+      "status": "planned-not-qualified",
+      "requiredGates": [
+        "positive-negative-fixtures",
+        "pinned-framework-oracle",
+        "TS-JS-preservation",
+        "Windows-offline-packaged"
+      ],
+      "supportContract": "decisions.md + ../specs/fs-07.md"
+    }
+  ],
+  "syntaxTooling": {
+    "wasmRuntime": {
+      "package": "web-tree-sitter",
+      "version": "0.25.10",
+      "license": "MIT",
+      "status": "isolated Windows feasibility passed"
+    },
+    "grammars": [
+      {
+        "language": "python",
+        "package": "tree-sitter-python",
+        "version": "0.25.0",
+        "abi": 15,
+        "fixtureDialects": [
+          "3.12.15",
+          "3.13.16"
+        ],
+        "oracleObserved": "CPython 3.13.3",
+        "license": "MIT",
+        "status": "isolated syntax feasibility; bounded semantics unimplemented"
+      },
+      {
+        "language": "java",
+        "package": "tree-sitter-java",
+        "version": "0.23.5",
+        "abi": 14,
+        "fixtureDialects": [
+          "Java SE 17"
+        ],
+        "license": "MIT",
+        "status": "isolated syntax feasibility; bounded semantics unimplemented"
+      },
+      {
+        "language": "kotlin",
+        "package": "@tree-sitter-grammars/tree-sitter-kotlin",
+        "version": "1.1.0",
+        "abi": 14,
+        "fixtureDialects": [
+          "2.0.21"
+        ],
+        "knownGap": "valid compact semicolon class rejected; no facts from recovery subtree",
+        "license": "MIT",
+        "status": "isolated syntax feasibility; bounded semantics unimplemented"
+      },
+      {
+        "language": "swift",
+        "package": "tree-sitter-swift",
+        "version": "0.7.1",
+        "abi": 15,
+        "fixtureDialects": [
+          "5.9.2"
+        ],
+        "artifactSource": "https://github.com/alex-pinkus/tree-sitter-swift/releases/download/0.7.1/tree-sitter-swift.wasm",
+        "license": "MIT",
+        "status": "isolated syntax feasibility; bounded semantics unimplemented"
+      },
+      {
+        "language": "objective-c",
+        "package": "tree-sitter-objc",
+        "version": "3.0.2",
+        "abi": 14,
+        "fixtureDialects": [
+          "Clang 18.1.8 Objective-C"
+        ],
+        "knownGap": "no C++/Objective-C++/macro expansion/SDK semantic resolution",
+        "license": "MIT",
+        "status": "isolated syntax feasibility; bounded semantics unimplemented"
+      }
+    ],
+    "flow": {
+      "package": "hermes-parser",
+      "version": "0.25.1",
+      "license": "MIT",
+      "patterns": [
+        "classic types",
+        "enum",
+        "component",
+        "hook"
+      ],
+      "status": "isolated syntax feasibility passed; no typechecker claim"
+    },
+    "existingTsJs": {
+      "package": "ts-morph",
+      "version": "28.0.0",
+      "typescript": "5.9.3",
+      "status": "preserve existing behavior"
+    }
+  },
+  "crossStack": {
+    "requestClients": {
+      "fetch": "qualified Node/browser global per selected profile",
+      "axios": "1.20.0"
+    },
+    "endpointTuples": [
+      "next15",
+      "next16-preservation",
+      "next16-patch",
+      "django52",
+      "django60"
+    ],
+    "origins": "evidenced literal configuration or distinct user assumption; no environment-secret reads",
+    "status": "planned-not-qualified"
+  },
+  "policy": {
+    "unknownVersion": "no qualified badge; partial facts allowed with gaps",
+    "patchUpgrade": "rerun tuple gates",
+    "futureLatest": "not implicitly supported",
+    "customerRuntimeRequirements": "packaged Node and approved WASM/JS only; no Python/JDK/Gradle/Swift/Xcode"
+  },
+  "sources": [
+    "evidence/registry.json",
+    "evidence/registry-supplement.json",
+    "evidence/compatibility.json",
+    "evidence/parser-assets.json"
+  ],
+  "frozenLayaSha256": "aa499934b8197fb12c36eec2b367c523d5a6da77b439ab58dc4b30bb46ea3513"
+}

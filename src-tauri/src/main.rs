@@ -2,6 +2,7 @@
 
 mod engine_process;
 mod explanations;
+mod local_agents;
 use engine_process::{engine_command, storage_command, EngineDiagnostics};
 use explanations::{
     cancel_explanation, prepare_explanation, provider_configuration, send_explanation, Explanations,
@@ -232,6 +233,7 @@ fn decode_event(bytes: &[u8], expected_job: &str) -> Result<Value, String> {
         Some("evidence") if event["evidence"].is_object() => vec!["evidence"],
         Some("query") if event["result"].is_object() => vec!["result"],
         Some("investigation") if event["result"].is_object() => vec!["result"],
+        Some("ranking" | "ranking-cancel") if event["result"].is_object() => vec!["result"],
         Some("explanation") if event["result"].is_object() => vec!["result"],
         Some("error")
             if event["code"]
@@ -540,9 +542,9 @@ async fn launch_analysis(
         .spawn()
         .map_err(|error| EngineDiagnostics::default().transport_error(&error.to_string()))?;
     let request = if reopen {
-        json!({"version":1,"requestId":job_id,"jobId":job_id,"type":"reopen"})
+        json!({"version":1,"requestId":job_id,"jobId":job_id,"type":"reopen","snapshotVersion":3})
     } else {
-        json!({"version":1,"requestId":job_id,"jobId":job_id,"type":"analyze","root":root.to_string_lossy()})
+        json!({"version":1,"requestId":job_id,"jobId":job_id,"type":"analyze","snapshotVersion":3,"root":root.to_string_lossy()})
     };
     let frame = format!("{}\n", request);
     if frame.len() > MAX_REQUEST {
@@ -618,7 +620,7 @@ async fn launch_analysis(
                         let root_matches =
                             snapshot["origin"]["root"].as_str().map(PathBuf::from) == session.root;
                         let files = snapshot["files"].as_array();
-                        if snapshot["version"] != 2
+                        if snapshot["version"] != 3
                             || snapshot["origin"]["kind"] != "local"
                             || !root_matches
                             || files.is_none()
@@ -651,6 +653,16 @@ async fn launch_analysis(
                             );
                             break;
                         }
+                        if let Some(resources) = snapshot["analysis"]["resources"].as_array() {
+                            for resource in resources {
+                                let Some(path) = resource["path"].as_str() else {
+                                    break;
+                                };
+                                if relative_file(path) {
+                                    ids.insert(path.to_owned());
+                                }
+                            }
+                        }
                         session.files = ids;
                         session.running = false;
                     }
@@ -660,7 +672,14 @@ async fn launch_analysis(
                             "evidence" => Ok(event["evidence"].clone()),
                             "query" => Ok(event["result"].clone()),
                             "investigation" => Ok(event["result"].clone()),
+                            "ranking" | "ranking-cancel" => Ok(event["result"].clone()),
                             "explanation" => Ok(event["result"].clone()),
+                            "error" => Err(event["message"]
+                                .as_str()
+                                .unwrap_or("Evidence/query operation failed")
+                                .chars()
+                                .take(500)
+                                .collect()),
                             _ => Err("Evidence/query operation failed".into()),
                         };
                         let _ = sender.send(reply);
@@ -757,7 +776,7 @@ async fn request(
     tauri::async_runtime::spawn_blocking(move || {
         let engine = app.state::<Engine>();
         let mut session = engine.0.lock().map_err(|_| "Engine state unavailable")?;
-        if session.job_id.as_deref() != Some(&job_id) || session.running || (!matches!(operation, "investigation" | "explanation") && !session.files.contains(&file)) { return Err("Unknown or unavailable snapshot file".into()); }
+        if session.job_id.as_deref() != Some(&job_id) || session.running || (!matches!(operation, "investigation" | "explanation" | "ranking-cancel") && !session.files.contains(&file)) { return Err("Unknown or unavailable snapshot file".into()); }
         if session.pending.len() >= 16 { return Err("Too many pending evidence requests".into()); }
         let request_id = id();
         let event = match query {
@@ -827,6 +846,51 @@ async fn query_structure(
         file.clone(),
         Some(json!({"file":file,"direction":direction,"depth":depth})),
         "query",
+    )
+    .await
+}
+fn valid_ranking(query: &Value) -> bool {
+    let Some(q) = query.as_object() else {
+        return false;
+    };
+    let fields = ["goal", "start", "depth", "budget", "mode", "snapshotId"];
+    q.len() == fields.len()
+        && fields.iter().all(|f| q.contains_key(*f))
+        && query["goal"].as_str().is_some_and(|s| {
+            !s.trim().is_empty() && s.encode_utf16().count() <= 256 && !s.contains('\0')
+        })
+        && query["start"].as_str().is_some_and(|s| {
+            !s.is_empty()
+                && s.encode_utf16().count() <= 4096
+                && !s.starts_with('/')
+                && !s.contains(['\\', ':', '\0'])
+                && !s.split('/').any(|p| p == "..")
+        })
+        && query["snapshotId"].as_str().is_some_and(|s| {
+            s.len() == 64
+                && s.bytes()
+                    .all(|b| b.is_ascii_digit() || (b'a'..=b'f').contains(&b))
+        })
+        && query["depth"].as_u64().is_some_and(|d| d <= 16)
+        && query["budget"].as_u64().is_some_and(|b| b > 0 && b <= 50)
+        && matches!(query["mode"].as_str(), Some("baseline" | "laya"))
+}
+#[tauri::command]
+async fn rank_snapshot(app: tauri::AppHandle, job_id: String, query: Value) -> Reply {
+    if !valid_ranking(&query) {
+        return Err("Invalid ranking request".into());
+    }
+    let file = query["start"].as_str().unwrap_or_default().to_string();
+    request(app, job_id, file, Some(query), "ranking").await
+}
+#[tauri::command]
+async fn cancel_ranking(app: tauri::AppHandle, job_id: String) -> Reply {
+    request(
+        app,
+        job_id,
+        String::new(),
+        Some(json!({})),
+        "ranking-cancel",
     )
     .await
 }
@@ -973,6 +1037,8 @@ fn main() {
             control_watching,
             query_structure,
             investigate_snapshot,
+            rank_snapshot,
+            cancel_ranking,
             record_measurement,
             pilot_measurements,
             list_repositories,
@@ -1004,6 +1070,29 @@ fn main() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    #[test]
+    fn local_ranking_commands_reject_unbounded_or_renderer_owned_artifacts() {
+        let query = json!({"goal":"Locate authentication", "start":"entry.ts", "depth":8, "budget":4, "mode":"laya", "snapshotId":"a".repeat(64)});
+        assert!(valid_ranking(&query));
+        for (field, value) in [
+            ("budget", json!(51)),
+            ("depth", json!(17)),
+            ("goal", json!("")),
+            ("start", json!("C:/secret.ts")),
+            ("mode", json!("openai")),
+            ("snapshotId", json!("old")),
+            ("artifact", json!("model.json")),
+        ] {
+            let mut hostile = query.clone();
+            hostile[field] = value;
+            assert!(!valid_ranking(&hostile));
+        }
+        assert!(decode_event(
+            br#"{"version":1,"requestId":"r","jobId":"j","type":"ranking","result":{}}"#,
+            "j"
+        )
+        .is_ok());
+    }
     #[test]
     fn pilot_commands_enforce_query_and_measurement_allowlists() {
         let query =

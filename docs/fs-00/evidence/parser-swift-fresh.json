@@ -1,0 +1,30 @@
+{
+  "name": "swift",
+  "runtime": "0.25.10",
+  "abi": 15,
+  "coldLoadMs": 75.62049999999999,
+  "sourceBytes": 152,
+  "hasError": false,
+  "tree": "(source_file (import_declaration (identifier (simple_identifier))) (class_declaration (modifiers (attribute (user_type (type_identifier)) (simple_identifier))) name: (type_identifier) (inheritance_specifier inherits_from: (user_type (type_identifier))) body: (class_body (function_declaration (modifiers (attribute (user_type (type_identifier)))) name: (simple_identifier) (parameter external_name: (simple_identifier) name: (simple_identifier) name: (user_type (type_identifier))) body: (function_body (statements (call_expression (simple_identifier) (call_suffix (value_arguments (value_argument value: (simple_identifier)))))))) (function_declaration (modifiers (visibility_modifier)) name: (simple_identifier) (parameter external_name: (simple_identifier) name: (simple_identifier) name: (user_type (type_identifier))) body: (function_body)))))",
+  "rssBefore": 50491392,
+  "rssLoaded": 64286720,
+  "assetBytes": 3316692,
+  "assetSha256": "e179468b0f3c30c29d8dd8e57c5a79e67812623046cc18fa593f8563795c0b77",
+  "declarations": 1000,
+  "scaleBytes": 57780,
+  "timingsMs": [
+    97.11370000000002,
+    78.08850000000001,
+    71.28950000000003,
+    75.03039999999999,
+    76.48429999999996,
+    63.224899999999934
+  ],
+  "rssAfterScale": 67948544,
+  "incrementalEqualsFull": true,
+  "cooperativeCancel": {
+    "callbacks": 1,
+    "returnedNull": true
+  },
+  "resetRecovery": true
+}

@@ -1,0 +1,1609 @@
+{
+  "version": 1,
+  "seed": 20261005,
+  "provenance": "synthetic-only-user-authorized",
+  "license": "project-owned",
+  "datasetHash": "0d87cb1a41859c869f4cbb0a88275914f3407b40943ba19fa5ff1277e6c400e8",
+  "cases": [
+    {
+      "repository": "training-0",
+      "task": "training:account:implementation:0",
+      "family": "fork",
+      "split": "training",
+      "opaque": true,
+      "target": "n71805-utility/service.ts"
+    },
+    {
+      "repository": "training-0",
+      "task": "training:account:tests:0",
+      "family": "fork",
+      "split": "training",
+      "opaque": true,
+      "target": "n54895-utility/service.test.ts"
+    },
+    {
+      "repository": "training-1",
+      "task": "training:catalog:implementation:1",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n80876-catalog/service.ts"
+    },
+    {
+      "repository": "training-1",
+      "task": "training:catalog:tests:1",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n23365-catalog/service.test.ts"
+    },
+    {
+      "repository": "training-2",
+      "task": "training:invoice:implementation:2",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n89946-invoice/service.ts"
+    },
+    {
+      "repository": "training-2",
+      "task": "training:invoice:tests:2",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n91836-invoice/service.test.ts"
+    },
+    {
+      "repository": "training-3",
+      "task": "training:profile:implementation:3",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n99016-profile/service.ts"
+    },
+    {
+      "repository": "training-3",
+      "task": "training:profile:tests:3",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n60307-profile/service.test.ts"
+    },
+    {
+      "repository": "training-4",
+      "task": "training:session:implementation:4",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n08087-session/service.ts"
+    },
+    {
+      "repository": "training-4",
+      "task": "training:session:tests:4",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n28778-session/service.test.ts"
+    },
+    {
+      "repository": "training-5",
+      "task": "training:storage:implementation:5",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n17157-storage/service.ts"
+    },
+    {
+      "repository": "training-5",
+      "task": "training:storage:tests:5",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n97249-storage/service.test.ts"
+    },
+    {
+      "repository": "training-6",
+      "task": "training:queue:implementation:6",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n26227-queue/service.ts"
+    },
+    {
+      "repository": "training-6",
+      "task": "training:queue:tests:6",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n65720-queue/service.test.ts"
+    },
+    {
+      "repository": "training-7",
+      "task": "training:audit:implementation:7",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n35298-audit/service.ts"
+    },
+    {
+      "repository": "training-7",
+      "task": "training:audit:tests:7",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n34190-audit/service.test.ts"
+    },
+    {
+      "repository": "training-8",
+      "task": "training:cache:implementation:8",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n44368-cache/service.ts"
+    },
+    {
+      "repository": "training-8",
+      "task": "training:cache:tests:8",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n02661-cache/service.test.ts"
+    },
+    {
+      "repository": "training-9",
+      "task": "training:checkout:implementation:9",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n53439-checkout/service.ts"
+    },
+    {
+      "repository": "training-9",
+      "task": "training:checkout:tests:9",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n71132-checkout/service.test.ts"
+    },
+    {
+      "repository": "training-10",
+      "task": "training:document:implementation:10",
+      "family": "diamond",
+      "split": "training",
+      "opaque": true,
+      "target": "n62509-utility/service.ts"
+    },
+    {
+      "repository": "training-10",
+      "task": "training:document:tests:10",
+      "family": "diamond",
+      "split": "training",
+      "opaque": true,
+      "target": "n39603-utility/service.test.ts"
+    },
+    {
+      "repository": "training-11",
+      "task": "training:image:implementation:11",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n71579-image/service.ts"
+    },
+    {
+      "repository": "training-11",
+      "task": "training:image:tests:11",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n08074-image/service.test.ts"
+    },
+    {
+      "repository": "training-12",
+      "task": "training:payment:implementation:12",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n80650-payment/service.ts"
+    },
+    {
+      "repository": "training-12",
+      "task": "training:payment:tests:12",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n76545-payment/service.test.ts"
+    },
+    {
+      "repository": "training-13",
+      "task": "training:worker:implementation:13",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n89720-worker/service.ts"
+    },
+    {
+      "repository": "training-13",
+      "task": "training:worker:tests:13",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n45015-worker/service.test.ts"
+    },
+    {
+      "repository": "training-14",
+      "task": "training:token:implementation:14",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n98791-token/service.ts"
+    },
+    {
+      "repository": "training-14",
+      "task": "training:token:tests:14",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n13486-token/service.test.ts"
+    },
+    {
+      "repository": "training-15",
+      "task": "training:permission:implementation:15",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n07861-permission/service.ts"
+    },
+    {
+      "repository": "training-15",
+      "task": "training:permission:tests:15",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n81957-permission/service.test.ts"
+    },
+    {
+      "repository": "training-16",
+      "task": "training:logging:implementation:16",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n16931-logging/service.ts"
+    },
+    {
+      "repository": "training-16",
+      "task": "training:logging:tests:16",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n50428-logging/service.test.ts"
+    },
+    {
+      "repository": "training-17",
+      "task": "training:export:implementation:17",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n26002-export/service.ts"
+    },
+    {
+      "repository": "training-17",
+      "task": "training:export:tests:17",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n18899-export/service.test.ts"
+    },
+    {
+      "repository": "training-18",
+      "task": "training:search:implementation:18",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n35072-search/service.ts"
+    },
+    {
+      "repository": "training-18",
+      "task": "training:search:tests:18",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n87370-search/service.test.ts"
+    },
+    {
+      "repository": "training-19",
+      "task": "training:upload:implementation:19",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n44142-upload/service.ts"
+    },
+    {
+      "repository": "training-19",
+      "task": "training:upload:tests:19",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n55840-upload/service.test.ts"
+    },
+    {
+      "repository": "training-20",
+      "task": "training:account:implementation:20",
+      "family": "chain",
+      "split": "training",
+      "opaque": true,
+      "target": "n53213-utility/service.ts"
+    },
+    {
+      "repository": "training-20",
+      "task": "training:account:tests:20",
+      "family": "chain",
+      "split": "training",
+      "opaque": true,
+      "target": "n24311-utility/service.test.ts"
+    },
+    {
+      "repository": "training-21",
+      "task": "training:catalog:implementation:21",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n62283-catalog/service.ts"
+    },
+    {
+      "repository": "training-21",
+      "task": "training:catalog:tests:21",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n92782-catalog/service.test.ts"
+    },
+    {
+      "repository": "training-22",
+      "task": "training:invoice:implementation:22",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n71354-invoice/service.ts"
+    },
+    {
+      "repository": "training-22",
+      "task": "training:invoice:tests:22",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n61253-invoice/service.test.ts"
+    },
+    {
+      "repository": "training-23",
+      "task": "training:profile:implementation:23",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n80424-profile/service.ts"
+    },
+    {
+      "repository": "training-23",
+      "task": "training:profile:tests:23",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n29724-profile/service.test.ts"
+    },
+    {
+      "repository": "training-24",
+      "task": "training:session:implementation:24",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n89494-session/service.ts"
+    },
+    {
+      "repository": "training-24",
+      "task": "training:session:tests:24",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n98194-session/service.test.ts"
+    },
+    {
+      "repository": "training-25",
+      "task": "training:storage:implementation:25",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n98565-storage/service.ts"
+    },
+    {
+      "repository": "training-25",
+      "task": "training:storage:tests:25",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n66665-storage/service.test.ts"
+    },
+    {
+      "repository": "training-26",
+      "task": "training:queue:implementation:26",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n07635-queue/service.ts"
+    },
+    {
+      "repository": "training-26",
+      "task": "training:queue:tests:26",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n35136-queue/service.test.ts"
+    },
+    {
+      "repository": "training-27",
+      "task": "training:audit:implementation:27",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n16705-audit/service.ts"
+    },
+    {
+      "repository": "training-27",
+      "task": "training:audit:tests:27",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n03607-audit/service.test.ts"
+    },
+    {
+      "repository": "training-28",
+      "task": "training:cache:implementation:28",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n25776-cache/service.ts"
+    },
+    {
+      "repository": "training-28",
+      "task": "training:cache:tests:28",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n72078-cache/service.test.ts"
+    },
+    {
+      "repository": "training-29",
+      "task": "training:checkout:implementation:29",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n34846-checkout/service.ts"
+    },
+    {
+      "repository": "training-29",
+      "task": "training:checkout:tests:29",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n40549-checkout/service.test.ts"
+    },
+    {
+      "repository": "training-30",
+      "task": "training:document:implementation:30",
+      "family": "fork",
+      "split": "training",
+      "opaque": true,
+      "target": "n43917-utility/service.ts"
+    },
+    {
+      "repository": "training-30",
+      "task": "training:document:tests:30",
+      "family": "fork",
+      "split": "training",
+      "opaque": true,
+      "target": "n09019-utility/service.test.ts"
+    },
+    {
+      "repository": "training-31",
+      "task": "training:image:implementation:31",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n52987-image/service.ts"
+    },
+    {
+      "repository": "training-31",
+      "task": "training:image:tests:31",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n77490-image/service.test.ts"
+    },
+    {
+      "repository": "training-32",
+      "task": "training:payment:implementation:32",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n62057-payment/service.ts"
+    },
+    {
+      "repository": "training-32",
+      "task": "training:payment:tests:32",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n45961-payment/service.test.ts"
+    },
+    {
+      "repository": "training-33",
+      "task": "training:worker:implementation:33",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n71128-worker/service.ts"
+    },
+    {
+      "repository": "training-33",
+      "task": "training:worker:tests:33",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n14432-worker/service.test.ts"
+    },
+    {
+      "repository": "training-34",
+      "task": "training:token:implementation:34",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n80198-token/service.ts"
+    },
+    {
+      "repository": "training-34",
+      "task": "training:token:tests:34",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n82903-token/service.test.ts"
+    },
+    {
+      "repository": "training-35",
+      "task": "training:permission:implementation:35",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n89268-permission/service.ts"
+    },
+    {
+      "repository": "training-35",
+      "task": "training:permission:tests:35",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n51374-permission/service.test.ts"
+    },
+    {
+      "repository": "training-36",
+      "task": "training:logging:implementation:36",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n98339-logging/service.ts"
+    },
+    {
+      "repository": "training-36",
+      "task": "training:logging:tests:36",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n19844-logging/service.test.ts"
+    },
+    {
+      "repository": "training-37",
+      "task": "training:export:implementation:37",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n07409-export/service.ts"
+    },
+    {
+      "repository": "training-37",
+      "task": "training:export:tests:37",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n88315-export/service.test.ts"
+    },
+    {
+      "repository": "training-38",
+      "task": "training:search:implementation:38",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n16480-search/service.ts"
+    },
+    {
+      "repository": "training-38",
+      "task": "training:search:tests:38",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n56786-search/service.test.ts"
+    },
+    {
+      "repository": "training-39",
+      "task": "training:upload:implementation:39",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n25550-upload/service.ts"
+    },
+    {
+      "repository": "training-39",
+      "task": "training:upload:tests:39",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n25257-upload/service.test.ts"
+    },
+    {
+      "repository": "training-40",
+      "task": "training:account:implementation:40",
+      "family": "diamond",
+      "split": "training",
+      "opaque": true,
+      "target": "n34620-utility/service.ts"
+    },
+    {
+      "repository": "training-40",
+      "task": "training:account:tests:40",
+      "family": "diamond",
+      "split": "training",
+      "opaque": true,
+      "target": "n93728-utility/service.test.ts"
+    },
+    {
+      "repository": "training-41",
+      "task": "training:catalog:implementation:41",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n43691-catalog/service.ts"
+    },
+    {
+      "repository": "training-41",
+      "task": "training:catalog:tests:41",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n62199-catalog/service.test.ts"
+    },
+    {
+      "repository": "training-42",
+      "task": "training:invoice:implementation:42",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n52761-invoice/service.ts"
+    },
+    {
+      "repository": "training-42",
+      "task": "training:invoice:tests:42",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n30669-invoice/service.test.ts"
+    },
+    {
+      "repository": "training-43",
+      "task": "training:profile:implementation:43",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n61831-profile/service.ts"
+    },
+    {
+      "repository": "training-43",
+      "task": "training:profile:tests:43",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n99140-profile/service.test.ts"
+    },
+    {
+      "repository": "training-44",
+      "task": "training:session:implementation:44",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n70902-session/service.ts"
+    },
+    {
+      "repository": "training-44",
+      "task": "training:session:tests:44",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n67611-session/service.test.ts"
+    },
+    {
+      "repository": "training-45",
+      "task": "training:storage:implementation:45",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n79972-storage/service.ts"
+    },
+    {
+      "repository": "training-45",
+      "task": "training:storage:tests:45",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n36082-storage/service.test.ts"
+    },
+    {
+      "repository": "training-46",
+      "task": "training:queue:implementation:46",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n89043-queue/service.ts"
+    },
+    {
+      "repository": "training-46",
+      "task": "training:queue:tests:46",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n04553-queue/service.test.ts"
+    },
+    {
+      "repository": "training-47",
+      "task": "training:audit:implementation:47",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n98113-audit/service.ts"
+    },
+    {
+      "repository": "training-47",
+      "task": "training:audit:tests:47",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n73024-audit/service.test.ts"
+    },
+    {
+      "repository": "training-48",
+      "task": "training:cache:implementation:48",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n07183-cache/service.ts"
+    },
+    {
+      "repository": "training-48",
+      "task": "training:cache:tests:48",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n41494-cache/service.test.ts"
+    },
+    {
+      "repository": "training-49",
+      "task": "training:checkout:implementation:49",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n16254-checkout/service.ts"
+    },
+    {
+      "repository": "training-49",
+      "task": "training:checkout:tests:49",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n09965-checkout/service.test.ts"
+    },
+    {
+      "repository": "training-50",
+      "task": "training:document:implementation:50",
+      "family": "chain",
+      "split": "training",
+      "opaque": true,
+      "target": "n25324-utility/service.ts"
+    },
+    {
+      "repository": "training-50",
+      "task": "training:document:tests:50",
+      "family": "chain",
+      "split": "training",
+      "opaque": true,
+      "target": "n78436-utility/service.test.ts"
+    },
+    {
+      "repository": "training-51",
+      "task": "training:image:implementation:51",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n34394-image/service.ts"
+    },
+    {
+      "repository": "training-51",
+      "task": "training:image:tests:51",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n46907-image/service.test.ts"
+    },
+    {
+      "repository": "training-52",
+      "task": "training:payment:implementation:52",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n43465-payment/service.ts"
+    },
+    {
+      "repository": "training-52",
+      "task": "training:payment:tests:52",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n15378-payment/service.test.ts"
+    },
+    {
+      "repository": "training-53",
+      "task": "training:worker:implementation:53",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n52535-worker/service.ts"
+    },
+    {
+      "repository": "training-53",
+      "task": "training:worker:tests:53",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n83848-worker/service.test.ts"
+    },
+    {
+      "repository": "training-54",
+      "task": "training:token:implementation:54",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n61606-token/service.ts"
+    },
+    {
+      "repository": "training-54",
+      "task": "training:token:tests:54",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n52319-token/service.test.ts"
+    },
+    {
+      "repository": "training-55",
+      "task": "training:permission:implementation:55",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n70676-permission/service.ts"
+    },
+    {
+      "repository": "training-55",
+      "task": "training:permission:tests:55",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n20790-permission/service.test.ts"
+    },
+    {
+      "repository": "training-56",
+      "task": "training:logging:implementation:56",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n79746-logging/service.ts"
+    },
+    {
+      "repository": "training-56",
+      "task": "training:logging:tests:56",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n89261-logging/service.test.ts"
+    },
+    {
+      "repository": "training-57",
+      "task": "training:export:implementation:57",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n88817-export/service.ts"
+    },
+    {
+      "repository": "training-57",
+      "task": "training:export:tests:57",
+      "family": "fork",
+      "split": "training",
+      "opaque": false,
+      "target": "n57732-export/service.test.ts"
+    },
+    {
+      "repository": "training-58",
+      "task": "training:search:implementation:58",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n97887-search/service.ts"
+    },
+    {
+      "repository": "training-58",
+      "task": "training:search:tests:58",
+      "family": "diamond",
+      "split": "training",
+      "opaque": false,
+      "target": "n26203-search/service.test.ts"
+    },
+    {
+      "repository": "training-59",
+      "task": "training:upload:implementation:59",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n06957-upload/service.ts"
+    },
+    {
+      "repository": "training-59",
+      "task": "training:upload:tests:59",
+      "family": "chain",
+      "split": "training",
+      "opaque": false,
+      "target": "n94673-upload/service.test.ts"
+    },
+    {
+      "repository": "development-0",
+      "task": "development:receipt:implementation:0",
+      "family": "dev-hub",
+      "split": "development",
+      "opaque": true,
+      "target": "n75570-utility/service.ts"
+    },
+    {
+      "repository": "development-0",
+      "task": "development:receipt:tests:0",
+      "family": "dev-hub",
+      "split": "development",
+      "opaque": true,
+      "target": "n63167-utility/service.test.ts"
+    },
+    {
+      "repository": "development-1",
+      "task": "development:notification:implementation:1",
+      "family": "dev-branch",
+      "split": "development",
+      "opaque": false,
+      "target": "n84641-notification/service.ts"
+    },
+    {
+      "repository": "development-1",
+      "task": "development:notification:tests:1",
+      "family": "dev-branch",
+      "split": "development",
+      "opaque": false,
+      "target": "n31638-notification/service.test.ts"
+    },
+    {
+      "repository": "development-2",
+      "task": "development:translation:implementation:2",
+      "family": "dev-hub",
+      "split": "development",
+      "opaque": false,
+      "target": "n93711-translation/service.ts"
+    },
+    {
+      "repository": "development-2",
+      "task": "development:translation:tests:2",
+      "family": "dev-hub",
+      "split": "development",
+      "opaque": false,
+      "target": "n00109-translation/service.test.ts"
+    },
+    {
+      "repository": "development-3",
+      "task": "development:favorites:implementation:3",
+      "family": "dev-branch",
+      "split": "development",
+      "opaque": false,
+      "target": "n02782-favorites/service.ts"
+    },
+    {
+      "repository": "development-3",
+      "task": "development:favorites:tests:3",
+      "family": "dev-branch",
+      "split": "development",
+      "opaque": false,
+      "target": "n68579-favorites/service.test.ts"
+    },
+    {
+      "repository": "development-4",
+      "task": "development:project:implementation:4",
+      "family": "dev-hub",
+      "split": "development",
+      "opaque": false,
+      "target": "n11852-project/service.ts"
+    },
+    {
+      "repository": "development-4",
+      "task": "development:project:tests:4",
+      "family": "dev-hub",
+      "split": "development",
+      "opaque": false,
+      "target": "n37050-project/service.test.ts"
+    },
+    {
+      "repository": "development-5",
+      "task": "development:organization:implementation:5",
+      "family": "dev-branch",
+      "split": "development",
+      "opaque": false,
+      "target": "n20922-organization/service.ts"
+    },
+    {
+      "repository": "development-5",
+      "task": "development:organization:tests:5",
+      "family": "dev-branch",
+      "split": "development",
+      "opaque": false,
+      "target": "n05521-organization/service.test.ts"
+    },
+    {
+      "repository": "development-6",
+      "task": "development:metrics:implementation:6",
+      "family": "dev-hub",
+      "split": "development",
+      "opaque": false,
+      "target": "n29993-metrics/service.ts"
+    },
+    {
+      "repository": "development-6",
+      "task": "development:metrics:tests:6",
+      "family": "dev-hub",
+      "split": "development",
+      "opaque": false,
+      "target": "n73992-metrics/service.test.ts"
+    },
+    {
+      "repository": "development-7",
+      "task": "development:calendar:implementation:7",
+      "family": "dev-branch",
+      "split": "development",
+      "opaque": false,
+      "target": "n39063-calendar/service.ts"
+    },
+    {
+      "repository": "development-7",
+      "task": "development:calendar:tests:7",
+      "family": "dev-branch",
+      "split": "development",
+      "opaque": false,
+      "target": "n42463-calendar/service.test.ts"
+    },
+    {
+      "repository": "development-8",
+      "task": "development:address:implementation:8",
+      "family": "dev-hub",
+      "split": "development",
+      "opaque": false,
+      "target": "n48133-address/service.ts"
+    },
+    {
+      "repository": "development-8",
+      "task": "development:address:tests:8",
+      "family": "dev-hub",
+      "split": "development",
+      "opaque": false,
+      "target": "n10934-address/service.test.ts"
+    },
+    {
+      "repository": "development-9",
+      "task": "development:comment:implementation:9",
+      "family": "dev-branch",
+      "split": "development",
+      "opaque": false,
+      "target": "n57204-comment/service.ts"
+    },
+    {
+      "repository": "development-9",
+      "task": "development:comment:tests:9",
+      "family": "dev-branch",
+      "split": "development",
+      "opaque": false,
+      "target": "n79404-comment/service.test.ts"
+    },
+    {
+      "repository": "development-10",
+      "task": "development:analytics:implementation:10",
+      "family": "dev-hub",
+      "split": "development",
+      "opaque": true,
+      "target": "n66274-utility/service.ts"
+    },
+    {
+      "repository": "development-10",
+      "task": "development:analytics:tests:10",
+      "family": "dev-hub",
+      "split": "development",
+      "opaque": true,
+      "target": "n47875-utility/service.test.ts"
+    },
+    {
+      "repository": "development-11",
+      "task": "development:archive:implementation:11",
+      "family": "dev-branch",
+      "split": "development",
+      "opaque": false,
+      "target": "n75345-archive/service.ts"
+    },
+    {
+      "repository": "development-11",
+      "task": "development:archive:tests:11",
+      "family": "dev-branch",
+      "split": "development",
+      "opaque": false,
+      "target": "n16346-archive/service.test.ts"
+    },
+    {
+      "repository": "development-12",
+      "task": "development:download:implementation:12",
+      "family": "dev-hub",
+      "split": "development",
+      "opaque": false,
+      "target": "n84415-download/service.ts"
+    },
+    {
+      "repository": "development-12",
+      "task": "development:download:tests:12",
+      "family": "dev-hub",
+      "split": "development",
+      "opaque": false,
+      "target": "n84817-download/service.test.ts"
+    },
+    {
+      "repository": "development-13",
+      "task": "development:delivery:implementation:13",
+      "family": "dev-branch",
+      "split": "development",
+      "opaque": false,
+      "target": "n93485-delivery/service.ts"
+    },
+    {
+      "repository": "development-13",
+      "task": "development:delivery:tests:13",
+      "family": "dev-branch",
+      "split": "development",
+      "opaque": false,
+      "target": "n53288-delivery/service.test.ts"
+    },
+    {
+      "repository": "development-14",
+      "task": "development:discount:implementation:14",
+      "family": "dev-hub",
+      "split": "development",
+      "opaque": false,
+      "target": "n02556-discount/service.ts"
+    },
+    {
+      "repository": "development-14",
+      "task": "development:discount:tests:14",
+      "family": "dev-hub",
+      "split": "development",
+      "opaque": false,
+      "target": "n21759-discount/service.test.ts"
+    },
+    {
+      "repository": "development-15",
+      "task": "development:itinerary:implementation:15",
+      "family": "dev-branch",
+      "split": "development",
+      "opaque": false,
+      "target": "n11626-itinerary/service.ts"
+    },
+    {
+      "repository": "development-15",
+      "task": "development:itinerary:tests:15",
+      "family": "dev-branch",
+      "split": "development",
+      "opaque": false,
+      "target": "n90229-itinerary/service.test.ts"
+    },
+    {
+      "repository": "development-16",
+      "task": "development:event:implementation:16",
+      "family": "dev-hub",
+      "split": "development",
+      "opaque": false,
+      "target": "n20696-event/service.ts"
+    },
+    {
+      "repository": "development-16",
+      "task": "development:event:tests:16",
+      "family": "dev-hub",
+      "split": "development",
+      "opaque": false,
+      "target": "n58700-event/service.test.ts"
+    },
+    {
+      "repository": "development-17",
+      "task": "development:inventory:implementation:17",
+      "family": "dev-branch",
+      "split": "development",
+      "opaque": false,
+      "target": "n29767-inventory/service.ts"
+    },
+    {
+      "repository": "development-17",
+      "task": "development:inventory:tests:17",
+      "family": "dev-branch",
+      "split": "development",
+      "opaque": false,
+      "target": "n27171-inventory/service.test.ts"
+    },
+    {
+      "repository": "development-18",
+      "task": "development:location:implementation:18",
+      "family": "dev-hub",
+      "split": "development",
+      "opaque": false,
+      "target": "n38837-location/service.ts"
+    },
+    {
+      "repository": "development-18",
+      "task": "development:location:tests:18",
+      "family": "dev-hub",
+      "split": "development",
+      "opaque": false,
+      "target": "n95642-location/service.test.ts"
+    },
+    {
+      "repository": "development-19",
+      "task": "development:feature:implementation:19",
+      "family": "dev-branch",
+      "split": "development",
+      "opaque": false,
+      "target": "n47908-feature/service.ts"
+    },
+    {
+      "repository": "development-19",
+      "task": "development:feature:tests:19",
+      "family": "dev-branch",
+      "split": "development",
+      "opaque": false,
+      "target": "n64113-feature/service.test.ts"
+    },
+    {
+      "repository": "held-out-0",
+      "task": "held-out:booking:implementation:0",
+      "family": "held-cycle",
+      "split": "held-out",
+      "opaque": true,
+      "target": "n79336-utility/service.ts"
+    },
+    {
+      "repository": "held-out-0",
+      "task": "held-out:booking:tests:0",
+      "family": "held-cycle",
+      "split": "held-out",
+      "opaque": true,
+      "target": "n71439-utility/service.test.ts"
+    },
+    {
+      "repository": "held-out-1",
+      "task": "held-out:shipment:implementation:1",
+      "family": "held-layer",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n88406-shipment/service.ts"
+    },
+    {
+      "repository": "held-out-1",
+      "task": "held-out:shipment:tests:1",
+      "family": "held-layer",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n39910-shipment/service.test.ts"
+    },
+    {
+      "repository": "held-out-2",
+      "task": "held-out:billing:implementation:2",
+      "family": "held-wide",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n18955-billing/service.ts"
+    },
+    {
+      "repository": "held-out-2",
+      "task": "held-out:billing:tests:2",
+      "family": "held-wide",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n97476-billing/service.test.ts"
+    },
+    {
+      "repository": "held-out-3",
+      "task": "held-out:subscription:implementation:3",
+      "family": "held-cycle",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n06547-subscription/service.ts"
+    },
+    {
+      "repository": "held-out-3",
+      "task": "held-out:subscription:tests:3",
+      "family": "held-cycle",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n76852-subscription/service.test.ts"
+    },
+    {
+      "repository": "held-out-4",
+      "task": "held-out:identity:implementation:4",
+      "family": "held-layer",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n15617-identity/service.ts"
+    },
+    {
+      "repository": "held-out-4",
+      "task": "held-out:identity:tests:4",
+      "family": "held-layer",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n45323-identity/service.test.ts"
+    },
+    {
+      "repository": "held-out-5",
+      "task": "held-out:authentication:implementation:5",
+      "family": "held-wide",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n19071-authentication/service.ts"
+    },
+    {
+      "repository": "held-out-5",
+      "task": "held-out:authentication:tests:5",
+      "family": "held-wide",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n24687-authentication/service.test.ts"
+    },
+    {
+      "repository": "held-out-6",
+      "task": "held-out:authorization:implementation:6",
+      "family": "held-cycle",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n33758-authorization/service.ts"
+    },
+    {
+      "repository": "held-out-6",
+      "task": "held-out:authorization:tests:6",
+      "family": "held-cycle",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n82264-authorization/service.test.ts"
+    },
+    {
+      "repository": "held-out-7",
+      "task": "held-out:messaging:implementation:7",
+      "family": "held-layer",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n42828-messaging/service.ts"
+    },
+    {
+      "repository": "held-out-7",
+      "task": "held-out:messaging:tests:7",
+      "family": "held-layer",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n50735-messaging/service.test.ts"
+    },
+    {
+      "repository": "held-out-8",
+      "task": "held-out:synchronization:implementation:8",
+      "family": "held-wide",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n19188-synchronization/service.ts"
+    },
+    {
+      "repository": "held-out-8",
+      "task": "held-out:synchronization:tests:8",
+      "family": "held-wide",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n51899-synchronization/service.test.ts"
+    },
+    {
+      "repository": "held-out-9",
+      "task": "held-out:reservation:implementation:9",
+      "family": "held-cycle",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n60969-reservation/service.ts"
+    },
+    {
+      "repository": "held-out-9",
+      "task": "held-out:reservation:tests:9",
+      "family": "held-cycle",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n87677-reservation/service.test.ts"
+    },
+    {
+      "repository": "held-out-10",
+      "task": "held-out:purchase:implementation:10",
+      "family": "held-layer",
+      "split": "held-out",
+      "opaque": true,
+      "target": "n70039-utility/service.ts"
+    },
+    {
+      "repository": "held-out-10",
+      "task": "held-out:purchase:tests:10",
+      "family": "held-layer",
+      "split": "held-out",
+      "opaque": true,
+      "target": "n56148-utility/service.test.ts"
+    },
+    {
+      "repository": "held-out-11",
+      "task": "held-out:enrollment:implementation:11",
+      "family": "held-wide",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n19304-enrollment/service.ts"
+    },
+    {
+      "repository": "held-out-11",
+      "task": "held-out:enrollment:tests:11",
+      "family": "held-wide",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n79110-enrollment/service.test.ts"
+    },
+    {
+      "repository": "held-out-12",
+      "task": "held-out:encryption:implementation:12",
+      "family": "held-cycle",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n88180-encryption/service.ts"
+    },
+    {
+      "repository": "held-out-12",
+      "task": "held-out:encryption:tests:12",
+      "family": "held-cycle",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n93089-encryption/service.test.ts"
+    },
+    {
+      "repository": "held-out-13",
+      "task": "held-out:localization:implementation:13",
+      "family": "held-layer",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n97250-localization/service.ts"
+    },
+    {
+      "repository": "held-out-13",
+      "task": "held-out:localization:tests:13",
+      "family": "held-layer",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n61560-localization/service.test.ts"
+    },
+    {
+      "repository": "held-out-14",
+      "task": "held-out:recommendation:implementation:14",
+      "family": "held-wide",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n19420-recommendation/service.ts"
+    },
+    {
+      "repository": "held-out-14",
+      "task": "held-out:recommendation:tests:14",
+      "family": "held-wide",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n06321-recommendation/service.test.ts"
+    },
+    {
+      "repository": "held-out-15",
+      "task": "held-out:moderation:implementation:15",
+      "family": "held-cycle",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n15391-moderation/service.ts"
+    },
+    {
+      "repository": "held-out-15",
+      "task": "held-out:moderation:tests:15",
+      "family": "held-cycle",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n98502-moderation/service.test.ts"
+    },
+    {
+      "repository": "held-out-16",
+      "task": "held-out:fulfillment:implementation:16",
+      "family": "held-layer",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n24462-fulfillment/service.ts"
+    },
+    {
+      "repository": "held-out-16",
+      "task": "held-out:fulfillment:tests:16",
+      "family": "held-layer",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n66973-fulfillment/service.test.ts"
+    },
+    {
+      "repository": "held-out-17",
+      "task": "held-out:scheduling:implementation:17",
+      "family": "held-wide",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n19536-scheduling/service.ts"
+    },
+    {
+      "repository": "held-out-17",
+      "task": "held-out:scheduling:tests:17",
+      "family": "held-wide",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n33532-scheduling/service.test.ts"
+    },
+    {
+      "repository": "held-out-18",
+      "task": "held-out:attachment:implementation:18",
+      "family": "held-cycle",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n42602-attachment/service.ts"
+    },
+    {
+      "repository": "held-out-18",
+      "task": "held-out:attachment:tests:18",
+      "family": "held-cycle",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n03914-attachment/service.test.ts"
+    },
+    {
+      "repository": "held-out-19",
+      "task": "held-out:validation:implementation:19",
+      "family": "held-layer",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n51673-validation/service.ts"
+    },
+    {
+      "repository": "held-out-19",
+      "task": "held-out:validation:tests:19",
+      "family": "held-layer",
+      "split": "held-out",
+      "opaque": false,
+      "target": "n72385-validation/service.test.ts"
+    }
+  ]
+}

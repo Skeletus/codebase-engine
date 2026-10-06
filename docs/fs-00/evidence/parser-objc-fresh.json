@@ -1,0 +1,29 @@
+{
+  "name": "objc",
+  "runtime": "0.25.10",
+  "abi": 14,
+  "coldLoadMs": 276.20140000000004,
+  "sourceBytes": 158,
+  "hasError": false,
+  "tree": "(translation_unit (class_interface (identifier) superclass: (identifier) (method_declaration (method_type (type_name (primitive_type))) (identifier) (method_parameter (method_type (type_name (type_identifier))) (identifier)))) (class_implementation (identifier) (implementation_definition (method_definition (method_type (type_name (primitive_type))) (identifier) (method_parameter (method_type (type_name (type_identifier))) (identifier)) (compound_statement (expression_statement (message_expression receiver: (identifier) method: (identifier) (identifier))))))))",
+  "rssBefore": 57110528,
+  "rssLoaded": 77606912,
+  "assetBytes": 5317155,
+  "assetSha256": "155bf61fc94941fa9d07c86cd46895f14dfb2549fb7f646faeb83765af05c970",
+  "scaleBytes": 42890,
+  "timingsMs": [
+    38.17969999999997,
+    52.803200000000004,
+    38.40719999999999,
+    26.13220000000001,
+    18.19629999999995,
+    21.146299999999997
+  ],
+  "rssAfterScale": 194596864,
+  "incrementalEqualsFull": true,
+  "cooperativeCancel": {
+    "callbacks": 1,
+    "returnedNull": true
+  },
+  "resetRecovery": true
+}

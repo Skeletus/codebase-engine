@@ -3,6 +3,8 @@ import type { Behavior } from "../../model/behavior.ts";
 import { createSyntaxSession, parseSelection, selectFiles, type Selection } from "../../parser/index.ts";
 import { validateParseResult } from "../../parser/contract.ts";
 import { validateSnapshot } from "../contract.ts";
+import { legacyObservations } from "../compatibility.ts";
+import type { LegacySnapshot } from "../types.ts";
 import { SNAPSHOT_VERSION, type CodeSnapshot, type Evidence, type LanguageAdapter } from "../types.ts";
 
 export const typescriptAdapter: LanguageAdapter = {
@@ -20,9 +22,9 @@ function analyzeTypescript(directory: string, onProgress?: (stage: "parse") => v
       if (!f) throw new Error("Extractor evidence names an unknown file");
       return { file, line, fileHash: f.hash, extractor, evidenceKind: "verified", occurrence: "first", description };
     };
-    const snapshot: CodeSnapshot = {
+    const snapshot: LegacySnapshot = {
       behavior,
-      version: SNAPSHOT_VERSION, origin: { kind: "local", root: parsed.root },
+      version: 2, origin: { kind: "local", root: parsed.root },
       adapter: { id: "typescript-javascript", version: parsed.schemaVersion },
       projects: parsed.projects.map((p) => ({ path: p.path, extractor: p.adapter })),
       files: parsed.files.map((f) => ({ id: f.path, ...f })),
@@ -49,7 +51,9 @@ function analyzeTypescript(directory: string, onProgress?: (stage: "parse") => v
         ...parsed.configs.flatMap((c) => c.errors.map((error) => ({ path: c.path, category: "config", reason: "config-diagnostic", detail: error }))),
       ],
     };
-    return validateSnapshot(snapshot);
+    const candidatesByPath = new Map(selection.walk.candidates.map(c => [c.path, c]));
+    const resources = snapshot.files.map(f => { const candidate = candidatesByPath.get(f.path)!; return { path: f.path, hash: f.hash, bytes: f.bytes, lines: f.lines, utf16Length: candidate.content.length, encoding: "legacy-decoded" as const, purpose: "source" as const }; });
+    return validateSnapshot({ ...snapshot, version: SNAPSHOT_VERSION, analysis: legacyObservations(snapshot, resources) });
 }
 
 /** Ephemeral adapter-owned ASTs; shared engine contracts never expose ts-morph. */

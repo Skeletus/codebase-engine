@@ -98,3 +98,45 @@ test("provider choice survives the approval dialog and citations do not depend o
   assert(ui.includes("provider, model: remove"));
   assert(ui.includes("directly to {prepared.provider}"));
 });
+
+test("installed agents have bounded native adapters, no renderer CLI/root/key authority or structural writes", () => {
+  const native = readFileSync("src-tauri/src/local_agents.rs", "utf8"), explanations = readFileSync("src-tauri/src/explanations.rs", "utf8"), ui = readFileSync("components/external-ai.tsx", "utf8");
+  const production = native.split("#[cfg(test)]\nmod tests")[0];
+  assert(production.includes("command.env_clear()"));
+  assert(production.includes("Command::new(exe)"));
+  assert(production.includes("--ignore-user-config"));
+  assert(production.includes("--safe-mode")); assert(production.includes("--restricted"));
+  assert(production.includes("AssignProcessToJobObject")); assert(production.includes("CloseHandle(self.job)"));
+  assert(production.includes("switches_disabled"));
+  assert(production.includes("missing_options")); assert(production.includes("empty_input_validated"));
+  assert(production.includes("model_from_catalog")); assert(production.includes("process_failure"));
+  assert.doesNotMatch(production, /version\.trim\(\)\s*==\s*"codex-cli|285\.\.=/);
+  assert(!production.includes('"tools.view_image=false"'));
+  assert(!production.includes('"gpt-5.4"'));
+  assert.doesNotMatch(production, /crate::(?:request|storage_request)|CODE_INTELLIGENCE_ROOT|OPENAI_API_KEY|ANTHROPIC_API_KEY|\.arg\("(?:cmd|powershell)"\)/);
+  assert(explanations.includes("enum ExplanationAdapter"));
+  assert(explanations.includes("Installed agents own authentication"));
+  assert(explanations.includes("matching_package(&ticket.package, &current)"));
+  assert(ui.includes('optgroup label="Remote providers"')); assert(ui.includes('optgroup label="Local agents"'));
+  assert(ui.includes("not guaranteed offline"));
+  assert(readFileSync("components/explanation-panel.tsx", "utf8").includes("Generated explanation — not structural evidence"));
+});
+
+test("dense long-path evidence fits the unchanged budget without losing the selected file", () => {
+  const f = fixture();
+  try {
+    const snapshot = structuredClone(f.snapshot);
+    const selected = snapshot.files[0];
+    snapshot.files = Array.from({ length: 8 }, (_, i) => ({ ...selected, id: `src/${"long-folder/".repeat(15)}file-${i}.ts`, path: `src/${"long-folder/".repeat(15)}file-${i}.ts`, exports: Array.from({ length: 20 }, (_, j) => `ExportedSymbol${j}${"X".repeat(50)}`) }));
+    snapshot.relationships = Array.from({ length: 24 }, (_, i) => ({ ...snapshot.relationships[0], id: `dense-${i}`, source: snapshot.files[0].path, target: snapshot.files[1 + i % 7].path }));
+    const before = JSON.stringify(snapshot);
+    const result = explanationEvidence(snapshot, { kind: "file", path: snapshot.files[0].path });
+    const payload = JSON.parse(result.payload);
+    assert(Buffer.byteLength(result.payload) <= 6000);
+    assert(result.files.includes(snapshot.files[0].path));
+    assert(payload.omissions.edges > 0);
+    assert.equal(payload.omissions.files, 8 - result.files.length);
+    assert.equal(JSON.stringify(snapshot), before);
+    assert.equal(result.digest, explanationEvidence(snapshot, { kind: "file", path: snapshot.files[0].path }).digest);
+  } finally { f.cleanup(); }
+});

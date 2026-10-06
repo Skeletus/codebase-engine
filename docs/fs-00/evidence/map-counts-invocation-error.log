@@ -1,0 +1,16 @@
+node:fs:484
+    return binding.readFileUtf8(path, stringToFlags(options.flag));
+                   ^
+
+Error: EISDIR: illegal operation on a directory, read
+    at readFileSync (node:fs:484:20)
+    at file:///D:/Repositorios%20Github/cartograph/scripts/map-counts.ts:18:49
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  errno: -4068,
+  code: 'EISDIR',
+  syscall: 'read'
+}
+
+Node.js v24.19.0

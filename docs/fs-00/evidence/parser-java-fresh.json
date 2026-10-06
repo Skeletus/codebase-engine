@@ -1,0 +1,29 @@
+{
+  "name": "java",
+  "runtime": "0.25.10",
+  "abi": 14,
+  "coldLoadMs": 277.2374,
+  "sourceBytes": 84,
+  "hasError": false,
+  "tree": "(program (class_declaration name: (identifier) body: (class_body (method_declaration type: (void_type) name: (identifier) parameters: (formal_parameters (formal_parameter type: (integral_type) name: (identifier))) body: (block (expression_statement (method_invocation name: (identifier) arguments: (argument_list (identifier)))))) (method_declaration type: (void_type) name: (identifier) parameters: (formal_parameters (formal_parameter type: (integral_type) name: (identifier))) body: (block)))))",
+  "rssBefore": 57147392,
+  "rssLoaded": 61259776,
+  "assetBytes": 414641,
+  "assetSha256": "4fdeac4ca6ca089f06c6f7e562abcac1733cd465728cc7031ebb73c2019122c4",
+  "scaleBytes": 47780,
+  "timingsMs": [
+    68.99580000000003,
+    51.421599999999955,
+    38.196799999999996,
+    35.93119999999999,
+    22.342399999999998,
+    33.24189999999999
+  ],
+  "rssAfterScale": 64761856,
+  "incrementalEqualsFull": true,
+  "cooperativeCancel": {
+    "callbacks": 1,
+    "returnedNull": true
+  },
+  "resetRecovery": true
+}

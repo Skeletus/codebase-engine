@@ -1,0 +1,14 @@
+{
+  "manualAcceptance": "pending",
+  "tests": 87,
+  "modelHash": "aa499934b8197fb12c36eec2b367c523d5a6da77b439ab58dc4b30bb46ea3513",
+  "installerHashes": {
+    "Codebase Intelligence_0.1.0_x64-setup.exe": "52e8f5d579c80a06d8dc81ef42d2b81f62d89fd21656307d3d0852d91f511bed",
+    "Codebase Intelligence_0.1.0_x64_en-US.msi": "2bd56c9ce58096b32f524f1783e3fea8b61d2b989579a1f4ad73a6536c683e3d"
+  },
+  "otherPlatforms": "macOS/Linux qualification outstanding",
+  "pilotTrials": "formal trials outstanding",
+  "platform": "Windows x64",
+  "node": "24.19.0",
+  "rustTests": 26
+}

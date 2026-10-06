@@ -2,7 +2,7 @@ import { DatabaseSync } from "node:sqlite";
 import { randomUUID } from "node:crypto";
 import { accessSync, constants, chmodSync, lstatSync, realpathSync, statSync } from "node:fs";
 import path from "node:path";
-import { validateSnapshot } from "../engine/contract.ts";
+import { validateSnapshot, inspectSnapshot } from "../engine/contract.ts";
 import { SNAPSHOT_VERSION, type CodeSnapshot } from "../engine/types.ts";
 import type { AnalysisStore, JobState, StoredRepository } from "./types.ts";
 import { validateMeasurement, validateApplicationVersion, type MeasurementInput, type Measurement } from "./measurements.ts";
@@ -98,6 +98,15 @@ export class SqliteAnalysisStore implements AnalysisStore {
     this.opened(id);
     return validateSnapshot(JSON.parse(String(this.db.prepare("SELECT payload FROM snapshots WHERE repository_id=?").get(id)!.payload)));
   }
+  loadRetained(id: string, version: 2 | 3): ReturnType<typeof inspectSnapshot> | null {
+    const repository = this.repository(id);
+    if (version !== 2 && version !== 3) throw new Error("Unsupported retained snapshot format");
+    const row = this.db.prepare("SELECT value FROM repository_settings WHERE repository_id=? AND key=?").get(id, `retained-snapshot-v${version}`);
+    if (!row) return null;
+    const inspected = inspectSnapshot(JSON.parse(String(row.value)));
+    if (inspected.snapshot.version !== version || inspected.snapshot.origin.root !== repository.root) throw new StorageError("incompatible_snapshot", "Retained snapshot format or root disagrees with its record.");
+    return inspected;
+  }
   begin(id: string, job: string): void {
     this.repository(id);
     this.transaction(() => {
@@ -113,6 +122,16 @@ export class SqliteAnalysisStore implements AnalysisStore {
       const owner = this.db.prepare("SELECT id FROM jobs WHERE id=? AND repository_id=? AND state='running' AND owner_pid=?").get(job, id, process.pid);
       const repo = this.repository(id);
       if (!owner || checked.origin.root !== repo.root) throw new StorageError("refresh_conflict", "Refresh ownership was cancelled or replaced; the previous analysis is retained.");
+      const retained = this.db.prepare("SELECT version,payload FROM snapshots WHERE repository_id=?").get(id);
+      if (retained && Number(retained.version) > SNAPSHOT_VERSION) throw new StorageError("incompatible_snapshot", "A newer snapshot is retained. Use the matching application version; this version cannot overwrite it.");
+      const saveFormat = (version: number, value: string) => {
+        if (Buffer.byteLength(value) > 31 * 1024 * 1024) throw new StorageError("storage_failure", "Retained analysis exceeds the snapshot budget; previous data has been preserved.");
+        this.db.prepare("INSERT INTO repository_settings(repository_id,key,value) VALUES (?,?,?) ON CONFLICT(repository_id,key) DO UPDATE SET value=excluded.value").run(id, `retained-snapshot-v${version}`, value);
+      };
+      if (retained && Number(retained.version) === 2) saveFormat(2, String(retained.payload));
+      // The last v3 copy survives a v2 writer replacing the primary slot.
+      // Both writes roll back if publication or job completion fails.
+      saveFormat(SNAPSHOT_VERSION, payload);
       const now = new Date().toISOString();
       this.db.prepare("INSERT INTO snapshots(repository_id,version,payload,updated_at) VALUES (?,?,?,?) ON CONFLICT(repository_id) DO UPDATE SET version=excluded.version,payload=excluded.payload,updated_at=excluded.updated_at").run(id, checked.version, payload, now);
       this.db.prepare("UPDATE jobs SET state='complete',finished_at=? WHERE id=?").run(now, job);

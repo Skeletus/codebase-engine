@@ -1,0 +1,3 @@
+{"category":"checkout","found":119,"parsed":117,"sourceBytes":678255,"edges":330,"skipped":2,"analyzeMs":11481,"queryMs":2,"engineFirstAnswerMs":11484,"resultFiles":56,"beyondDepth":0,"beyondBudget":0}
+{"category":"synthetic-chain","found":500,"parsed":500,"sourceBytes":24149,"edges":499,"skipped":0,"analyzeMs":1848,"queryMs":2,"engineFirstAnswerMs":1850,"resultFiles":64,"beyondDepth":435,"beyondBudget":0}
+{"enforcedReadLimits":{"fileBytes":1048576,"totalBytes":134217728,"files":20000,"entries":200000,"depth":64},"note":"Terminal engine timings only, not installed-UI pilot trials or performance guarantees"}

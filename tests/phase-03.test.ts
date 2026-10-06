@@ -141,7 +141,7 @@ async function sidecar(f: ReturnType<typeof fixture>, reopen: boolean, identity:
     if (event.type === "complete" || event.type === "error") { complete = event; child.stdin.end(); }
   } });
   const timeout = setTimeout(() => child.kill(), 20000), exit = once(child, "exit");
-  child.stdin.write(JSON.stringify({ version: 1, requestId: identity, jobId: identity, ...(reopen ? { type: "reopen" } : { type: "analyze", root: f.repo.root }) }) + "\n");
+  child.stdin.write(JSON.stringify({ version: 1, requestId: identity, jobId: identity, ...(reopen ? { type: "reopen", snapshotVersion: 3 } : { type: "analyze", snapshotVersion: 3, root: f.repo.root }) }) + "\n");
   const [code] = await exit; clearTimeout(timeout);
   assert.equal(code, 0); assert(complete?.type === "complete", JSON.stringify(complete));
   return complete.snapshot;
@@ -169,7 +169,7 @@ test("cancelling the actual persistent engine preserves its previous complete sn
     const ownerPid = child.pid; assert.equal(typeof ownerPid, "number");
     assert(child.stdout && child.stdin);
     const progress = once(child.stdout, "data"), exit = once(child, "exit");
-    child.stdin.write(JSON.stringify({ version: 1, requestId: "cancel", jobId: "cancel", type: "analyze", root: f.repo.root }) + "\n");
+    child.stdin.write(JSON.stringify({ version: 1, requestId: "cancel", jobId: "cancel", type: "analyze", snapshotVersion: 3, root: f.repo.root }) + "\n");
     const watchdog = setTimeout(() => child?.kill(), 15000);
     try {
       const [bytes] = await progress;

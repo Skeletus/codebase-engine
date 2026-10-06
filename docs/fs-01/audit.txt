@@ -1,0 +1,21 @@
+const fs=require('fs'),path=require('path'),crypto=require('crypto'),assert=require('assert/strict'),cp=require('child_process');
+const readLog=p=>{const b=fs.readFileSync(p);return b[0]===255&&b[1]===254?b.subarray(2).toString('utf16le'):b.toString('utf8');};
+const hash=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+const before=JSON.parse(fs.readFileSync('docs/fs-01/evidence/preservation-before.json','utf8'));
+const allowed=new Set(['lib/engine/types.ts','lib/engine/contract.ts','lib/engine/adapters/typescript.ts','lib/engine/index.ts','lib/desktop/protocol.ts','lib/desktop/projection.ts','lib/storage/types.ts','lib/storage/sqlite.ts','components/desktop-explorer.tsx','src-tauri/src/main.rs','src-tauri/src/engine_process.rs','scripts/package-engine.ts','scripts/smoke-engine.ts','tests/phase-02.test.ts','tests/phase-03.test.ts','tests/phase-04.test.ts','docs/specs/fs-01.md']);
+const changed=[],unexpected=[],missing=[];
+for(const f of before){if(!fs.existsSync(f.path)){missing.push(f.path);continue;}if(hash(f.path)!==f.sha256.toLowerCase()){changed.push(f.path);if(!allowed.has(f.path))unexpected.push(f.path);}}
+const inventory=cp.execFileSync('git',['ls-files','--cached','--others','--exclude-standard','-z'],{encoding:'utf8'}).split('\0').filter(x=>x&&fs.existsSync(x)&&fs.statSync(x).isFile());
+const old=new Set(before.map(f=>f.path)),added=inventory.filter(p=>!old.has(p));
+const ledger=JSON.parse(fs.readFileSync('docs/fs-01/evidence/baseline-results.json','utf8').replace(/^\uFEFF/,''));assert.equal(ledger.length,16);assert(ledger.every(r=>r.exitCode===0));
+assert.match(readLog('docs/fs-01/evidence/tests.log'),/pass 91/);assert.match(readLog('docs/fs-01/evidence/fs-01-tests.log'),/pass 33/);assert.match(readLog('docs/fs-01/evidence/rust-tests.log'),/36 passed; 0 failed; 1 ignored/);
+const interop=JSON.parse(fs.readFileSync('docs/fs-01/evidence/historical-release-compatibility.json','utf8'));assert.equal(interop.status,'passed');assert(interop.actualV2WriterPreservesRetainedV3);
+let localLinks=0;const broken=[];for(const p of ['docs/fs-01/README.md','docs/fs-01/contract.md','docs/specs/fs-01.md'])for(const m of fs.readFileSync(p,'utf8').matchAll(/\[[^\]]*\]\(([^)]+)\)/g)){if(/^(https?:|#)/.test(m[1]))continue;localLinks++;if(!fs.existsSync(path.resolve(path.dirname(p),m[1].split('#')[0])))broken.push({file:p,link:m[1]});}
+const protectedPaths=['package.json','pnpm-lock.yaml','src-tauri/Cargo.toml','src-tauri/Cargo.lock','next.config.ts','AGENTS.md','CLAUDE.md'];
+const protectedUnchanged=protectedPaths.filter(p=>old.has(p)).every(p=>!changed.includes(p));
+const laya=hash('lib/laya/laya-nav-1.json');assert.equal(laya,'aa499934b8197fb12c36eec2b367c523d5a6da77b439ab58dc4b30bb46ea3513');
+const graphFiles=before.filter(f=>f.path.startsWith('lib/graph/')||f.path.startsWith('lib/laya/')||f.path.startsWith('lib/ai/')||f.path.startsWith('artifacts/'));assert(graphFiles.every(f=>!changed.includes(f.path)));
+const productionAdded=added.filter(p=>/^(lib|components|scripts|src-tauri)\//.test(p));
+const sourceSnapshot=inventory.filter(p=>/^(lib|components|scripts|tests|src-tauri\/src)\//.test(p)&&/\.(ts|tsx|rs)$/.test(p)).map(p=>({path:p,sha256:hash(p)}));
+const result={status:unexpected.length||missing.length||broken.length?'failed':'passed',head:cp.execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),checkedExistingFiles:before.length,changedExistingFiles:changed,unexpectedChangedFiles:unexpected,missingExistingFiles:missing,createdFiles:added,productionCreatedFiles:productionAdded,protectedManifestsAndConfigurationUnchanged:protectedUnchanged,graphLayaAiAndArtifactsUnchanged:true,layaSha256:laya,baselineChecksPassed:ledger.length,jsTests:91,fs01Tests:33,rustTests:36,existingIgnoredLiveRustTests:1,historicalInterop:'passed including actual v2 writer',localLinks,brokenLinks:broken,sourceSnapshot};
+fs.writeFileSync('docs/fs-01/evidence/preservation-results.json',JSON.stringify(result,null,2)+'\n');fs.writeFileSync('docs/fs-01/evidence/git-status-after.txt',cp.execFileSync('git',['status','--porcelain=v1','--untracked-files=all'],{encoding:'utf8'}));console.log(JSON.stringify({...result,createdFiles:added.length,sourceSnapshot:sourceSnapshot.length},null,2));assert.equal(result.status,'passed');assert(protectedUnchanged);

@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "actualV2WriterPreservesRetainedV3": true,
+  "legacyScriptSha256": "a8503b59d808b6482f4d69fc7efb8108ebc744f0de399a4472b117b85b5090a5",
+  "oldDefaultSnapshot": 2,
+  "newPinnedSnapshot": 3,
+  "oldWorkerRejectsV3PinBeforeAnalysis": true,
+  "newWorkerRejectsUnpinnedBeforeAnalysis": true,
+  "legacySnapshotRequiresReanalysis": true,
+  "oldReleaseResourcesModified": false,
+  "installerRebuilt": false
+}

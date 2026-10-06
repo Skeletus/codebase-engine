@@ -8,6 +8,7 @@ import type { CodeSnapshot } from "../lib/engine/types.ts";
 import { investigate } from "../lib/engine/investigations.ts";
 import { explanationEvidence } from "../lib/ai/evidence.ts";
 import { SqliteAnalysisStore, StorageError } from "../lib/storage/sqlite.ts";
+import { rankedInvestigation } from "../lib/laya/investigation.ts";
 import { MAX_REQUEST_BYTES, MAX_EVENT_BYTES, validateRequest, type EngineEvent, type EngineRequest } from "../lib/desktop/protocol.ts";
 
 // Root authorization is supplied by native code on a private pipe, never by
@@ -31,6 +32,7 @@ delete process.env.CODE_INTELLIGENCE_REPOSITORY;
 globalThis.fetch = () => { throw new Error("Local engine network access denied"); };
 console.log = () => { throw new Error("Engine logs cannot use the protocol channel"); };
 let snapshot: CodeSnapshot | null = null;
+let activeRanking: AbortController | null = null;
 let jobId: string | null = null;
 let ownsJob = false;
 let reopened = false;
@@ -39,6 +41,7 @@ let generation = 0;
 let storageJob: string | null = null;
 const refresher = new RepositoryRefresh({
   begin() {
+    activeRanking?.abort();
     if (!jobId) throw new Error("Missing session");
     storageJob = generation++ === 0 ? jobId : `refresh-${generation}-${jobId}`;
     if (store && repositoryId) { store.begin(repositoryId, storageJob); ownsJob = true; }
@@ -93,7 +96,17 @@ function handle(request: EngineRequest) {
     refresher.run(true);
   } else {
     if (!snapshot || request.jobId !== jobId) throw new Error("Unknown or incomplete analysis job");
-    if (request.type === "watch") {
+    if (request.type === "ranking-cancel") { const cancelled = activeRanking !== null; activeRanking?.abort(); emit({ ...base, type: "ranking-cancel", result: { cancelled } }); }
+    else if (request.type === "ranking") {
+      if (activeRanking) throw new Error("An investigation is already running");
+      const captured = snapshot, controller = new AbortController(); activeRanking = controller;
+      void rankedInvestigation(captured, request.query, controller.signal).then((result) => {
+        if (captured !== snapshot) throw new Error("stale_snapshot");
+        emit({ ...base, type: "ranking", result });
+      }).catch(() => emit({ ...base, type: "error", code: "ranking_unavailable", message: "Ranking unavailable or snapshot changed. Use deterministic investigations or retry with the current snapshot." }))
+        .finally(() => { if (activeRanking === controller) activeRanking = null; });
+    }
+    else if (request.type === "watch") {
       if (request.action === "start") refresher.start(); else if (request.action === "stop") refresher.pause(); else refresher.loss();
     }
     else if (request.type === "evidence") emit({ ...base, type: request.type, evidence: readEvidence(snapshot, request.file) });
@@ -122,8 +135,10 @@ process.stdin.on("data", (chunk: Buffer) => {
     catch (error) {
       if (store && ownsJob && storageJob && jobId === request.jobId && request.type === "analyze") store.finish(storageJob, "failed");
       // Raw errors may contain source/config expressions or machine paths.
-      emit({ version: 1, requestId: request.requestId, jobId: request.jobId, type: "error", code: error instanceof StorageError ? error.code : "operation_failed", message: error instanceof StorageError ? error.message : "Local operation failed. Check directory access, coverage policy and analysis limits. The previous completed snapshot is retained." });
+      const safeExplanationErrors = ["Explanation evidence is stale or unavailable", "Selected evidence exceeds explanation budget; select a smaller scope", "Sensitive-looking evidence excluded", "No snapshot evidence selected", "Choose an unambiguous supported investigation first"];
+      const explanationError = request.type === "explanation" && error instanceof Error && safeExplanationErrors.includes(error.message) ? error.message : null;
+      emit({ version: 1, requestId: request.requestId, jobId: request.jobId, type: "error", code: error instanceof StorageError ? error.code : "operation_failed", message: error instanceof StorageError ? error.message : explanationError ?? "Local operation failed. Check directory access, coverage policy and analysis limits. The previous completed snapshot is retained." });
     }
   }
 });
-process.stdin.on("end", () => { refresher.close(); if (store && ownsJob && storageJob) store.finish(storageJob, "interrupted"); store?.close(); process.exit(0); });
+process.stdin.on("end", () => { activeRanking?.abort(); refresher.close(); if (store && ownsJob && storageJob) store.finish(storageJob, "interrupted"); store?.close(); process.exit(0); });

@@ -1,0 +1,17 @@
+{
+  "id": "F00-position",
+  "license": "project-owned-synthetic",
+  "coordinateContract": "original-text/utf16/half-open",
+  "cases": [
+    "emoji",
+    "combining-mark",
+    "CRLF",
+    "UTF8-BOM",
+    "split-surrogate-rejected",
+    "interior-UTF8-byte-rejected",
+    "non-UTF8-cookie-rejected",
+    "invalid-UTF8-rejected"
+  ],
+  "oracle": "original string slice and UTF-8 prefix byte length",
+  "qualification": "shared normalization only; no Python parser installed"
+}

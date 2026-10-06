@@ -1,0 +1,528 @@
+{
+  "hostNode": "v24.19.0",
+  "runtime": "web-tree-sitter 0.25.10",
+  "artifacts": [
+    {
+      "path": "java/node_modules/node-gyp-build/LICENSE",
+      "bytes": 1079,
+      "sha256": "7b3638496004b2daed183a91c4ba45d3ef6331db6c9d0eb1dd882a505630c172"
+    },
+    {
+      "path": "java/node_modules/tree-sitter-java/LICENSE",
+      "bytes": 1069,
+      "sha256": "52ed137b039cd9c46409bc22e89938af911c95b157feae2d040b51e6084369a7"
+    },
+    {
+      "path": "java/node_modules/tree-sitter-java/tree-sitter-java.wasm",
+      "bytes": 414641,
+      "sha256": "4fdeac4ca6ca089f06c6f7e562abcac1733cd465728cc7031ebb73c2019122c4"
+    },
+    {
+      "path": "java/package-lock.json",
+      "bytes": 1614,
+      "sha256": "e29a2bca89f595737301da3543377b57b853543032ae9696fc2ca16d87f76102"
+    },
+    {
+      "path": "kotlin/node_modules/@tree-sitter-grammars/tree-sitter-kotlin/LICENSE",
+      "bytes": 1101,
+      "sha256": "0eea8dc45e89deeb03c7799bbbc7b4688f365fb274562f4540ecfebdea82e727"
+    },
+    {
+      "path": "kotlin/node_modules/@tree-sitter-grammars/tree-sitter-kotlin/tree-sitter-kotlin.wasm",
+      "bytes": 3441042,
+      "sha256": "7009d69453bc8735e438b2818a633efb21c88f99782769abba60dffedfab73f7"
+    },
+    {
+      "path": "kotlin/node_modules/node-gyp-build/LICENSE",
+      "bytes": 1079,
+      "sha256": "7b3638496004b2daed183a91c4ba45d3ef6331db6c9d0eb1dd882a505630c172"
+    },
+    {
+      "path": "kotlin/node_modules/npm-check-updates/LICENSE",
+      "bytes": 555,
+      "sha256": "04561d4e2c55f3b3c1be29fcf6cb0f300c9e8fa81346cd4aed3a01059f5dfb8b"
+    },
+    {
+      "path": "kotlin/package-lock.json",
+      "bytes": 2242,
+      "sha256": "61dac09332cd0dba464e9e249a4d1277cad3b2d0573a9a8cc962b6a47ea17526"
+    },
+    {
+      "path": "kotlin-alternative/node_modules/node-gyp-build/LICENSE",
+      "bytes": 1079,
+      "sha256": "7b3638496004b2daed183a91c4ba45d3ef6331db6c9d0eb1dd882a505630c172"
+    },
+    {
+      "path": "kotlin-alternative/node_modules/tree-sitter/LICENSE",
+      "bytes": 1078,
+      "sha256": "d39420a108609f487bece31800015cccabdb531fee4d543d66595459b3812d9a"
+    },
+    {
+      "path": "kotlin-alternative/node_modules/tree-sitter/vendor/tree-sitter/lib/src/unicode/LICENSE",
+      "bytes": 21001,
+      "sha256": "6a18c5fac70d7860b57f5b72b4e2c9a1ba6b3d2741eef7ff9767c5379364f10d"
+    },
+    {
+      "path": "kotlin-alternative/node_modules/tree-sitter/vendor/tree-sitter/LICENSE",
+      "bytes": 1085,
+      "sha256": "5f9cf9fb6acb1972b35ae29119ce563bb60ec097656bc4b69b9bac2d04c7a147"
+    },
+    {
+      "path": "kotlin-alternative/node_modules/tree-sitter-kotlin/LICENSE",
+      "bytes": 1071,
+      "sha256": "948495f61768f7de26bcc61113d8cd95f50bbc15adb678c28c941c6c8fcd5903"
+    },
+    {
+      "path": "kotlin-alternative/package-lock.json",
+      "bytes": 2436,
+      "sha256": "66b414c10f5c3d1fdaf57e4e4f3e12e809a25b5694103a9914e6007d91922af0"
+    },
+    {
+      "path": "objc/node_modules/node-gyp-build/LICENSE",
+      "bytes": 1079,
+      "sha256": "7b3638496004b2daed183a91c4ba45d3ef6331db6c9d0eb1dd882a505630c172"
+    },
+    {
+      "path": "objc/node_modules/tree-sitter-c/LICENSE",
+      "bytes": 1080,
+      "sha256": "2e0110e07abef7c2548b26ec9d6969775617ca539a0dc8dbeeb14d6452c711d1"
+    },
+    {
+      "path": "objc/node_modules/tree-sitter-c/tree-sitter-c.wasm",
+      "bytes": 620090,
+      "sha256": "146f85977800935f18b06940518b16ded13cf4007ef0e3190573b969a98b9adc"
+    },
+    {
+      "path": "objc/node_modules/tree-sitter-objc/LICENSE",
+      "bytes": 1101,
+      "sha256": "099c44248f8cf353123211318680e93465587c005a4b3730ce8cb5334de043d6"
+    },
+    {
+      "path": "objc/node_modules/tree-sitter-objc/tree-sitter-objc.wasm",
+      "bytes": 5317155,
+      "sha256": "155bf61fc94941fa9d07c86cd46895f14dfb2549fb7f646faeb83765af05c970"
+    },
+    {
+      "path": "objc/package-lock.json",
+      "bytes": 2256,
+      "sha256": "9c32362f93eb5fb56a442c501165dbf206fd413af3e4073f15a8708589ac2e1b"
+    },
+    {
+      "path": "python/node_modules/node-gyp-build/LICENSE",
+      "bytes": 1079,
+      "sha256": "7b3638496004b2daed183a91c4ba45d3ef6331db6c9d0eb1dd882a505630c172"
+    },
+    {
+      "path": "python/node_modules/tree-sitter-python/LICENSE",
+      "bytes": 1080,
+      "sha256": "d724405ce238a22c0d35769c5a36b386ad5958192efe8bbb304fb2896254575f"
+    },
+    {
+      "path": "python/node_modules/tree-sitter-python/tree-sitter-python.wasm",
+      "bytes": 457883,
+      "sha256": "16108b50df4ee9a30168794252ab55e7c93bfc5765d7fa0aa3e335752c515f47"
+    },
+    {
+      "path": "python/package-lock.json",
+      "bytes": 1624,
+      "sha256": "7a023b103e7cc6a3419ef15ce18e768c8dd9c39b509e5f44e7594e7ddda06015"
+    },
+    {
+      "path": "runtime/node_modules/web-tree-sitter/debug/tree-sitter.wasm",
+      "bytes": 1092569,
+      "sha256": "2b8b96e0f0f4624c4f885d40d76e25a25d9c58d40fe8ff4ab9563ee0297eed5e"
+    },
+    {
+      "path": "runtime/node_modules/web-tree-sitter/lib/tree-sitter.wasm",
+      "bytes": 1092569,
+      "sha256": "2b8b96e0f0f4624c4f885d40d76e25a25d9c58d40fe8ff4ab9563ee0297eed5e"
+    },
+    {
+      "path": "runtime/node_modules/web-tree-sitter/LICENSE",
+      "bytes": 1085,
+      "sha256": "5f9cf9fb6acb1972b35ae29119ce563bb60ec097656bc4b69b9bac2d04c7a147"
+    },
+    {
+      "path": "runtime/node_modules/web-tree-sitter/tree-sitter.wasm",
+      "bytes": 205488,
+      "sha256": "f38dcc4b43b818f9a0785bc1c6d5611a75ac4cdd428ff3f02757c34ca4e46d7f"
+    },
+    {
+      "path": "runtime/package-lock.json",
+      "bytes": 667,
+      "sha256": "7a442235d9af58c28747bc6eb4c686efde39612cd9ece14f442bac05ebd2358c"
+    },
+    {
+      "path": "swift/node_modules/isexe/LICENSE",
+      "bytes": 765,
+      "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+    },
+    {
+      "path": "swift/node_modules/node-gyp-build/LICENSE",
+      "bytes": 1079,
+      "sha256": "7b3638496004b2daed183a91c4ba45d3ef6331db6c9d0eb1dd882a505630c172"
+    },
+    {
+      "path": "swift/node_modules/tree-sitter/LICENSE",
+      "bytes": 1078,
+      "sha256": "d39420a108609f487bece31800015cccabdb531fee4d543d66595459b3812d9a"
+    },
+    {
+      "path": "swift/node_modules/tree-sitter/vendor/tree-sitter/lib/src/unicode/LICENSE",
+      "bytes": 21001,
+      "sha256": "6a18c5fac70d7860b57f5b72b4e2c9a1ba6b3d2741eef7ff9767c5379364f10d"
+    },
+    {
+      "path": "swift/node_modules/tree-sitter-cli/LICENSE",
+      "bytes": 1085,
+      "sha256": "5f9cf9fb6acb1972b35ae29119ce563bb60ec097656bc4b69b9bac2d04c7a147"
+    },
+    {
+      "path": "swift/node_modules/tree-sitter-swift/LICENSE",
+      "bytes": 1068,
+      "sha256": "3533cec129bb4bba015c0d61d86dd7c3b7e82110e4d2ff7837a01eff5bad5ccc"
+    },
+    {
+      "path": "swift/node_modules/which/LICENSE",
+      "bytes": 765,
+      "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+    },
+    {
+      "path": "swift/package-lock.json",
+      "bytes": 3298,
+      "sha256": "ff91e8c1e7a8ee63bba9e85baf3e3b5a9c75d6e17fe72a1c7d96ce6b100caa6f"
+    },
+    {
+      "path": "swift/tree-sitter-swift.wasm",
+      "bytes": 3316692,
+      "sha256": "e179468b0f3c30c29d8dd8e57c5a79e67812623046cc18fa593f8563795c0b77"
+    },
+    {
+      "path": "node_modules/.pnpm/hermes-parser@0.25.1/node_modules/hermes-parser/package.json",
+      "package": "hermes-parser",
+      "version": "0.25.1",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/.pnpm/hermes-parser@0.25.1/node_modules/hermes-parser/dist/HermesParser.js",
+      "bytes": 4092,
+      "sha256": "47b474588d4f5a0a9aca17d2beea3264b8c5f741818dfe8a3295f41c7cf64cdb"
+    },
+    {
+      "path": "node_modules/.pnpm/hermes-parser@0.25.1/node_modules/hermes-parser/dist/HermesParser.js.flow",
+      "bytes": 4279,
+      "sha256": "28557e28488e8132bfa24b31ba1d518cebe9581c30f93a2312997f7f629822ae"
+    },
+    {
+      "path": "node_modules/.pnpm/hermes-parser@0.25.1/node_modules/hermes-parser/dist/HermesParserDecodeUTF8String.js",
+      "bytes": 1904,
+      "sha256": "53e9f60f0e9a16913525ba6861015af451f4677c1fe69a4af3434292a7f07c45"
+    },
+    {
+      "path": "node_modules/.pnpm/hermes-parser@0.25.1/node_modules/hermes-parser/dist/HermesParserDecodeUTF8String.js.flow",
+      "bytes": 1882,
+      "sha256": "5ebc7d829b554830e2048018d8f032f4ea143790911d97f1755faae7eeac5ac1"
+    },
+    {
+      "path": "node_modules/.pnpm/hermes-parser@0.25.1/node_modules/hermes-parser/dist/HermesParserDeserializer.js",
+      "bytes": 6569,
+      "sha256": "8a15fab5f9e9e5d62dd8130faabcc9f23e8969a8819926297dfa34ee900a68f7"
+    },
+    {
+      "path": "node_modules/.pnpm/hermes-parser@0.25.1/node_modules/hermes-parser/dist/HermesParserDeserializer.js.flow",
+      "bytes": 6915,
+      "sha256": "f350e71a6427b8b889f6bac594c99be0b4dfb60b370b1f51a66a560a5a654ac1"
+    },
+    {
+      "path": "node_modules/.pnpm/hermes-parser@0.25.1/node_modules/hermes-parser/dist/HermesParserNodeDeserializers.js",
+      "bytes": 58931,
+      "sha256": "8faa336ccc9505ccdfda8977127bfac41dd223997a183e73e0fa4876bf7cca66"
+    },
+    {
+      "path": "node_modules/.pnpm/hermes-parser@0.25.1/node_modules/hermes-parser/dist/HermesParserNodeDeserializers.js.flow",
+      "bytes": 433,
+      "sha256": "764618572fabe9e66eaba82161d07544eb012d1e95b7103f9cf10d42001c5fe6"
+    },
+    {
+      "path": "node_modules/.pnpm/hermes-parser@0.25.1/node_modules/hermes-parser/dist/HermesParserWASM.js",
+      "bytes": 678244,
+      "sha256": "391b062f8e48418ca8f04df9e2d56eb15d90c32a6edc1c169b92f619ccdec3d9"
+    },
+    {
+      "path": "node_modules/.pnpm/hermes-parser@0.25.1/node_modules/hermes-parser/dist/HermesParserWASM.js.flow",
+      "bytes": 2043,
+      "sha256": "a66a16fc393bd8b92a661c9ba9296e3c971835f0c6eb77163ac83775303e200e"
+    },
+    {
+      "path": "node_modules/.pnpm/hermes-parser@0.25.1/node_modules/hermes-estree/package.json",
+      "package": "hermes-estree",
+      "version": "0.25.1",
+      "license": "MIT"
+    }
+  ],
+  "locks": [
+    {
+      "experiment": "java",
+      "lockfileVersion": 3,
+      "packages": [
+        {
+          "path": ""
+        },
+        {
+          "path": "node_modules/node-addon-api",
+          "version": "8.9.2",
+          "resolved": "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.9.2.tgz",
+          "integrity": "sha512-VijLXbi3UACN69I0JVXJsX4tjACjNoQDgv2gTF6sx2wWEi8tkSg2eX8p5gSIFi8z2+DL3oHmY6OyKce38SDolg==",
+          "license": "MIT"
+        },
+        {
+          "path": "node_modules/node-gyp-build",
+          "version": "4.8.4",
+          "resolved": "https://registry.npmjs.org/node-gyp-build/-/node-gyp-build-4.8.4.tgz",
+          "integrity": "sha512-LA4ZjwlnUblHVgq0oBF3Jl/6h/Nvs5fzBLwdEF4nuxnFdsfajde4WfxtJr3CaiH+F6ewcIB/q4jQ4UzPyid+CQ==",
+          "license": "MIT"
+        },
+        {
+          "path": "node_modules/tree-sitter-java",
+          "version": "0.23.5",
+          "resolved": "https://registry.npmjs.org/tree-sitter-java/-/tree-sitter-java-0.23.5.tgz",
+          "integrity": "sha512-Yju7oQ0Xx7GcUT01mUglPP+bYfvqjNCGdxqigTnew9nLGoII42PNVP3bHrYeMxswiCRM0yubWmN5qk+zsg0zMA==",
+          "license": "MIT",
+          "hasInstallScript": true
+        }
+      ]
+    },
+    {
+      "experiment": "kotlin",
+      "lockfileVersion": 3,
+      "packages": [
+        {
+          "path": ""
+        },
+        {
+          "path": "node_modules/@tree-sitter-grammars/tree-sitter-kotlin",
+          "version": "1.1.0",
+          "resolved": "https://registry.npmjs.org/@tree-sitter-grammars/tree-sitter-kotlin/-/tree-sitter-kotlin-1.1.0.tgz",
+          "integrity": "sha512-vlVXaxEE8t2kpJgfZpa8XVvxcnKw9AYtRTgy7KWjsDmAsadk06RxAT80IXOgGQnmM9i/orQn1nD84gPNUHu6DQ==",
+          "license": "MIT",
+          "hasInstallScript": true
+        },
+        {
+          "path": "node_modules/node-addon-api",
+          "version": "8.9.2",
+          "resolved": "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.9.2.tgz",
+          "integrity": "sha512-VijLXbi3UACN69I0JVXJsX4tjACjNoQDgv2gTF6sx2wWEi8tkSg2eX8p5gSIFi8z2+DL3oHmY6OyKce38SDolg==",
+          "license": "MIT"
+        },
+        {
+          "path": "node_modules/node-gyp-build",
+          "version": "4.8.4",
+          "resolved": "https://registry.npmjs.org/node-gyp-build/-/node-gyp-build-4.8.4.tgz",
+          "integrity": "sha512-LA4ZjwlnUblHVgq0oBF3Jl/6h/Nvs5fzBLwdEF4nuxnFdsfajde4WfxtJr3CaiH+F6ewcIB/q4jQ4UzPyid+CQ==",
+          "license": "MIT"
+        },
+        {
+          "path": "node_modules/npm-check-updates",
+          "version": "17.1.18",
+          "resolved": "https://registry.npmjs.org/npm-check-updates/-/npm-check-updates-17.1.18.tgz",
+          "integrity": "sha512-bkUy2g4v1i+3FeUf5fXMLbxmV95eG4/sS7lYE32GrUeVgQRfQEk39gpskksFunyaxQgTIdrvYbnuNbO/pSUSqw==",
+          "license": "Apache-2.0"
+        }
+      ]
+    },
+    {
+      "experiment": "kotlin-alternative",
+      "lockfileVersion": 3,
+      "packages": [
+        {
+          "path": ""
+        },
+        {
+          "path": "node_modules/node-addon-api",
+          "version": "8.9.2",
+          "resolved": "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.9.2.tgz",
+          "integrity": "sha512-VijLXbi3UACN69I0JVXJsX4tjACjNoQDgv2gTF6sx2wWEi8tkSg2eX8p5gSIFi8z2+DL3oHmY6OyKce38SDolg==",
+          "license": "MIT"
+        },
+        {
+          "path": "node_modules/node-gyp-build",
+          "version": "4.8.4",
+          "resolved": "https://registry.npmjs.org/node-gyp-build/-/node-gyp-build-4.8.4.tgz",
+          "integrity": "sha512-LA4ZjwlnUblHVgq0oBF3Jl/6h/Nvs5fzBLwdEF4nuxnFdsfajde4WfxtJr3CaiH+F6ewcIB/q4jQ4UzPyid+CQ==",
+          "license": "MIT"
+        },
+        {
+          "path": "node_modules/tree-sitter",
+          "version": "0.21.1",
+          "resolved": "https://registry.npmjs.org/tree-sitter/-/tree-sitter-0.21.1.tgz",
+          "integrity": "sha512-7dxoA6kYvtgWw80265MyqJlkRl4yawIjO7S5MigytjELkX43fV2WsAXzsNfO7sBpPPCF5Gp0+XzHk0DwLCq3xQ==",
+          "license": "MIT",
+          "hasInstallScript": true
+        },
+        {
+          "path": "node_modules/tree-sitter-kotlin",
+          "version": "0.3.8",
+          "resolved": "https://registry.npmjs.org/tree-sitter-kotlin/-/tree-sitter-kotlin-0.3.8.tgz",
+          "integrity": "sha512-A4obq6bjzmYrA+F0JLLoheFPcofFkctNaZSpnDd+GPn1SfVZLY4/GG4C0cYVBTOShuPBGGAOPLM1JWLZQV4m1g==",
+          "license": "MIT",
+          "hasInstallScript": true
+        },
+        {
+          "path": "node_modules/tree-sitter-kotlin/node_modules/node-addon-api",
+          "version": "7.1.1",
+          "resolved": "https://registry.npmjs.org/node-addon-api/-/node-addon-api-7.1.1.tgz",
+          "integrity": "sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ==",
+          "license": "MIT"
+        }
+      ]
+    },
+    {
+      "experiment": "objc",
+      "lockfileVersion": 3,
+      "packages": [
+        {
+          "path": ""
+        },
+        {
+          "path": "node_modules/node-addon-api",
+          "version": "8.9.2",
+          "resolved": "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.9.2.tgz",
+          "integrity": "sha512-VijLXbi3UACN69I0JVXJsX4tjACjNoQDgv2gTF6sx2wWEi8tkSg2eX8p5gSIFi8z2+DL3oHmY6OyKce38SDolg==",
+          "license": "MIT"
+        },
+        {
+          "path": "node_modules/node-gyp-build",
+          "version": "4.8.4",
+          "resolved": "https://registry.npmjs.org/node-gyp-build/-/node-gyp-build-4.8.4.tgz",
+          "integrity": "sha512-LA4ZjwlnUblHVgq0oBF3Jl/6h/Nvs5fzBLwdEF4nuxnFdsfajde4WfxtJr3CaiH+F6ewcIB/q4jQ4UzPyid+CQ==",
+          "license": "MIT"
+        },
+        {
+          "path": "node_modules/tree-sitter-c",
+          "version": "0.23.6",
+          "resolved": "https://registry.npmjs.org/tree-sitter-c/-/tree-sitter-c-0.23.6.tgz",
+          "integrity": "sha512-0dxXKznVyUA0s6PjNolJNs2yF87O5aL538A/eR6njA5oqX3C3vH4vnx3QdOKwuUdpKEcFdHuiDpRKLLCA/tjvQ==",
+          "license": "MIT",
+          "hasInstallScript": true
+        },
+        {
+          "path": "node_modules/tree-sitter-objc",
+          "version": "3.0.2",
+          "resolved": "https://registry.npmjs.org/tree-sitter-objc/-/tree-sitter-objc-3.0.2.tgz",
+          "integrity": "sha512-Hs0ohmx1u5M+0K7efoW+dv/corhBsfjftfIYLtp7dSGeJ+Zj4c33tDIboBYLs6qijRlz6wtHFxa0YX+FibLulA==",
+          "license": "MIT",
+          "hasInstallScript": true
+        }
+      ]
+    },
+    {
+      "experiment": "python",
+      "lockfileVersion": 3,
+      "packages": [
+        {
+          "path": ""
+        },
+        {
+          "path": "node_modules/node-addon-api",
+          "version": "8.9.2",
+          "resolved": "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.9.2.tgz",
+          "integrity": "sha512-VijLXbi3UACN69I0JVXJsX4tjACjNoQDgv2gTF6sx2wWEi8tkSg2eX8p5gSIFi8z2+DL3oHmY6OyKce38SDolg==",
+          "license": "MIT"
+        },
+        {
+          "path": "node_modules/node-gyp-build",
+          "version": "4.8.4",
+          "resolved": "https://registry.npmjs.org/node-gyp-build/-/node-gyp-build-4.8.4.tgz",
+          "integrity": "sha512-LA4ZjwlnUblHVgq0oBF3Jl/6h/Nvs5fzBLwdEF4nuxnFdsfajde4WfxtJr3CaiH+F6ewcIB/q4jQ4UzPyid+CQ==",
+          "license": "MIT"
+        },
+        {
+          "path": "node_modules/tree-sitter-python",
+          "version": "0.25.0",
+          "resolved": "https://registry.npmjs.org/tree-sitter-python/-/tree-sitter-python-0.25.0.tgz",
+          "integrity": "sha512-eCmJx6zQa35GxaCtQD+wXHOhYqBxEL+bp71W/s3fcDMu06MrtzkVXR437dRrCrbrDbyLuUDJpAgycs7ncngLXw==",
+          "license": "MIT",
+          "hasInstallScript": true
+        }
+      ]
+    },
+    {
+      "experiment": "runtime",
+      "lockfileVersion": 3,
+      "packages": [
+        {
+          "path": ""
+        },
+        {
+          "path": "node_modules/web-tree-sitter",
+          "version": "0.25.10",
+          "resolved": "https://registry.npmjs.org/web-tree-sitter/-/web-tree-sitter-0.25.10.tgz",
+          "integrity": "sha512-Y09sF44/13XvgVKgO2cNDw5rGk6s26MgoZPXLESvMXeefBf7i6/73eFurre0IsTW6E14Y0ArIzhUMmjoc7xyzA==",
+          "license": "MIT"
+        }
+      ]
+    },
+    {
+      "experiment": "swift",
+      "lockfileVersion": 3,
+      "packages": [
+        {
+          "path": ""
+        },
+        {
+          "path": "node_modules/isexe",
+          "version": "2.0.0",
+          "resolved": "https://registry.npmjs.org/isexe/-/isexe-2.0.0.tgz",
+          "integrity": "sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==",
+          "license": "ISC"
+        },
+        {
+          "path": "node_modules/node-addon-api",
+          "version": "8.9.2",
+          "resolved": "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.9.2.tgz",
+          "integrity": "sha512-VijLXbi3UACN69I0JVXJsX4tjACjNoQDgv2gTF6sx2wWEi8tkSg2eX8p5gSIFi8z2+DL3oHmY6OyKce38SDolg==",
+          "license": "MIT"
+        },
+        {
+          "path": "node_modules/node-gyp-build",
+          "version": "4.8.4",
+          "resolved": "https://registry.npmjs.org/node-gyp-build/-/node-gyp-build-4.8.4.tgz",
+          "integrity": "sha512-LA4ZjwlnUblHVgq0oBF3Jl/6h/Nvs5fzBLwdEF4nuxnFdsfajde4WfxtJr3CaiH+F6ewcIB/q4jQ4UzPyid+CQ==",
+          "license": "MIT"
+        },
+        {
+          "path": "node_modules/tree-sitter",
+          "version": "0.22.4",
+          "resolved": "https://registry.npmjs.org/tree-sitter/-/tree-sitter-0.22.4.tgz",
+          "integrity": "sha512-usbHZP9/oxNsUY65MQUsduGRqDHQOou1cagUSwjhoSYAmSahjQDAVsh9s+SlZkn8X8+O1FULRGwHu7AFP3kjzg==",
+          "license": "MIT",
+          "hasInstallScript": true
+        },
+        {
+          "path": "node_modules/tree-sitter-cli",
+          "version": "0.23.2",
+          "resolved": "https://registry.npmjs.org/tree-sitter-cli/-/tree-sitter-cli-0.23.2.tgz",
+          "integrity": "sha512-kPPXprOqREX+C/FgUp2Qpt9jd0vSwn+hOgjzVv/7hapdoWpa+VeWId53rf4oNNd29ikheF12BYtGD/W90feMbA==",
+          "license": "MIT",
+          "hasInstallScript": true
+        },
+        {
+          "path": "node_modules/tree-sitter-swift",
+          "version": "0.7.1",
+          "resolved": "https://registry.npmjs.org/tree-sitter-swift/-/tree-sitter-swift-0.7.1.tgz",
+          "integrity": "sha512-pneKVTuGamaBsqqqfB9BvNQjktzh/0IVPR54jLB5Fq/JTDQwYHd0Wo6pVyZ5jAYpbztzq+rJ/rpL9ruxTmSoKw==",
+          "license": "MIT",
+          "hasInstallScript": true
+        },
+        {
+          "path": "node_modules/which",
+          "version": "2.0.2",
+          "resolved": "https://registry.npmjs.org/which/-/which-2.0.2.tgz",
+          "integrity": "sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==",
+          "license": "ISC"
+        }
+      ]
+    }
+  ],
+  "note": "Experiment installed packages removed after inventory. No native install scripts executed; production dependency approval remains separate."
+}

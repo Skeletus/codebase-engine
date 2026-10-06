@@ -1,0 +1,73 @@
+{
+  "host": "Windows x64",
+  "mechanism": "JOB_OBJECT_LIMIT_PROCESS_MEMORY | JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE",
+  "flags": [
+    "--max-old-space-size=128",
+    "--wasm-num-compilation-tasks=1",
+    "--no-wasm-tier-up",
+    "--no-wasm-dynamic-tiering"
+  ],
+  "runs": [
+    {
+      "declarations": 100,
+      "forcedAllocation": false,
+      "assigned": true,
+      "memoryLimitBytes": 536870912,
+      "peakCommitBytes": 75251712,
+      "elapsedMs": 414.14169990457594,
+      "exitCode": 0,
+      "timedOut": false,
+      "stderr": "",
+      "stdout": "{\"name\":\"swift\",\"runtime\":\"0.25.10\",\"abi\":15,\"coldLoadMs\":72.2162,\"sourceBytes\":152,\"hasError\":false,\"tree\":\"(source_file (import_declaration (identifier (simple_identifier))) (class_declaration (modifiers (attribute (user_type (type_identifier)) (simple_identifier))) name: (type_identifier) (inheri"
+    },
+    {
+      "declarations": 1000,
+      "forcedAllocation": false,
+      "assigned": true,
+      "memoryLimitBytes": 536870912,
+      "peakCommitBytes": 75694080,
+      "elapsedMs": 913.4811998810619,
+      "exitCode": 0,
+      "timedOut": false,
+      "stderr": "",
+      "stdout": "{\"name\":\"swift\",\"runtime\":\"0.25.10\",\"abi\":15,\"coldLoadMs\":75.62049999999999,\"sourceBytes\":152,\"hasError\":false,\"tree\":\"(source_file (import_declaration (identifier (simple_identifier))) (class_declaration (modifiers (attribute (user_type (type_identifier)) (simple_identifier))) name: (type_identifie"
+    },
+    {
+      "declarations": 0,
+      "forcedAllocation": true,
+      "assigned": true,
+      "memoryLimitBytes": 536870912,
+      "peakCommitBytes": 22925312,
+      "elapsedMs": 203.78250000067055,
+      "exitCode": 2,
+      "timedOut": false,
+      "stderr": "RangeError: WebAssembly.Memory(): could not allocate memory\n",
+      "stdout": ""
+    },
+    {
+      "declarations": 100,
+      "forcedAllocation": false,
+      "assigned": true,
+      "memoryLimitBytes": 536870912,
+      "peakCommitBytes": 75444224,
+      "elapsedMs": 315.0704000145197,
+      "exitCode": 0,
+      "timedOut": false,
+      "stderr": "",
+      "stdout": "{\"name\":\"swift\",\"runtime\":\"0.25.10\",\"abi\":15,\"coldLoadMs\":53.550399999999996,\"sourceBytes\":152,\"hasError\":false,\"tree\":\"(source_file (import_declaration (identifier (simple_identifier))) (class_declaration (modifiers (attribute (user_type (type_identifier)) (simple_identifier))) name: (type_identifi"
+    },
+    {
+      "declarations": 1000,
+      "forcedAllocation": false,
+      "assigned": true,
+      "memoryLimitBytes": 536870912,
+      "peakCommitBytes": 0,
+      "elapsedMs": 14.568200102075934,
+      "exitCode": 0,
+      "timedOut": true,
+      "stderr": "",
+      "stdout": ""
+    }
+  ],
+  "status": "passed: valid input, stress containment, clean next process, kill-on-close timeout"
+}

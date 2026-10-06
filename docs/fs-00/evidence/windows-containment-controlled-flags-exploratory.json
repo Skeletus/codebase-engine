@@ -1,0 +1,50 @@
+{
+  "host": "Windows x64",
+  "mechanism": "JOB_OBJECT_LIMIT_PROCESS_MEMORY | JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE",
+  "runs": [
+    {
+      "declarations": 100,
+      "assigned": true,
+      "memoryLimitBytes": 536870912,
+      "peakCommitBytes": 75378688,
+      "elapsedMs": 372.63539992272854,
+      "exitCode": 0,
+      "timedOut": false,
+      "stderr": "",
+      "stdout": "{\"name\":\"swift\",\"runtime\":\"0.25.10\",\"abi\":15,\"coldLoadMs\":65.6778,\"sourceBytes\":152,\"hasError\":false,\"tree\":\"(source_file (import_declaration (identifier (simple_identifier))) (class_declaration (modifiers (attribute (user_type (type_identifier)) (simple_identifier))) name: (type_identifier) (inheri"
+    },
+    {
+      "declarations": 1000,
+      "assigned": true,
+      "memoryLimitBytes": 536870912,
+      "peakCommitBytes": 75075584,
+      "elapsedMs": 954.5923001132905,
+      "exitCode": 0,
+      "timedOut": false,
+      "stderr": "",
+      "stdout": "{\"name\":\"swift\",\"runtime\":\"0.25.10\",\"abi\":15,\"coldLoadMs\":91.947,\"sourceBytes\":152,\"hasError\":false,\"tree\":\"(source_file (import_declaration (identifier (simple_identifier))) (class_declaration (modifiers (attribute (user_type (type_identifier)) (simple_identifier))) name: (type_identifier) (inherit"
+    },
+    {
+      "declarations": 100,
+      "assigned": true,
+      "memoryLimitBytes": 536870912,
+      "peakCommitBytes": 75059200,
+      "elapsedMs": 421.479000011459,
+      "exitCode": 0,
+      "timedOut": false,
+      "stderr": "",
+      "stdout": "{\"name\":\"swift\",\"runtime\":\"0.25.10\",\"abi\":15,\"coldLoadMs\":70.05740000000002,\"sourceBytes\":152,\"hasError\":false,\"tree\":\"(source_file (import_declaration (identifier (simple_identifier))) (class_declaration (modifiers (attribute (user_type (type_identifier)) (simple_identifier))) name: (type_identifie"
+    },
+    {
+      "declarations": 1000,
+      "assigned": true,
+      "memoryLimitBytes": 536870912,
+      "peakCommitBytes": 0,
+      "elapsedMs": 22.046299884095788,
+      "exitCode": 0,
+      "timedOut": true,
+      "stderr": "",
+      "stdout": ""
+    }
+  ]
+}

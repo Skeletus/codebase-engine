@@ -50,7 +50,7 @@ function session(root: string, executable = process.execPath, entry = path.resol
 const base = { version: 1, requestId: "job-1", jobId: "job-1" };
 
 test("desktop protocol rejects malformed versions, arbitrary commands, fields and query budgets", () => {
-  for (const request of [null, {}, { ...base, version: 2, type: "analyze", root: "x" }, { ...base, type: "shell", command: "run" }, { ...base, type: "analyze", root: "x", executable: "x" }, { ...base, type: "evidence", file: "x\0" }, { ...base, type: "query", query: { file: "x", direction: "guess" } }, { ...base, type: "query", query: { file: "x", direction: "dependents", depth: 65 } }]) assert.throws(() => validateRequest(request));
+  for (const request of [null, {}, { ...base, version: 2, type: "analyze", snapshotVersion: 3, root: "x" }, { ...base, type: "shell", command: "run" }, { ...base, type: "analyze", snapshotVersion: 3, root: "x", executable: "x" }, { ...base, type: "evidence", file: "x\0" }, { ...base, type: "query", query: { file: "x", direction: "guess" } }, { ...base, type: "query", query: { file: "x", direction: "dependents", depth: 65 } }]) assert.throws(() => validateRequest(request));
   assert.throws(() => validateEvent({ ...base, type: "progress", stage: "invent" }));
   assert.throws(() => validateEvent({ ...base, type: "evidence", evidence: { state: "current", source: "x".repeat(1024 * 1024 + 1) } }));
   assert(!belongsToJob({ jobId: "old" }, "current"));
@@ -61,7 +61,7 @@ test("sidecar analyzes a non-Git directory, reports stages, scopes queries and d
   const root = fixture(), nativeRoot = path.toNamespacedPath(root), engine = session(nativeRoot);
   try {
     // Match Rust canonicalize() on Windows, including its extended prefix.
-    engine.send({ ...base, type: "analyze", root: nativeRoot });
+    engine.send({ ...base, type: "analyze", snapshotVersion: 3, root: nativeRoot });
     const selected = await engine.event((e) => e.type === "progress" && e.stage === "select");
     assert.equal(selected.jobId, "job-1");
     await engine.event((e) => e.type === "progress" && e.stage === "parse");
@@ -90,10 +90,10 @@ test("sidecar refuses an unselected root and bounded framing rejects oversized o
   const root = fixture();
   try {
     const engine = session(root);
-    engine.send({ ...base, type: "analyze", root: path.dirname(root) });
+    engine.send({ ...base, type: "analyze", snapshotVersion: 3, root: path.dirname(root) });
     assert.equal((await engine.event((e) => e.type === "error")).type, "error");
     await engine.close();
-    for (const input of ["x".repeat(MAX_REQUEST_BYTES + 1), JSON.stringify({ ...base, version: 99, type: "analyze", root }) + "\n", "not-json\n"]) {
+    for (const input of ["x".repeat(MAX_REQUEST_BYTES + 1), JSON.stringify({ ...base, version: 99, type: "analyze", snapshotVersion: 3, root }) + "\n", "not-json\n"]) {
       const bad = session(root); const done = once(bad.child, "exit"); bad.child.stdin.write(input);
       const [code] = await done; assert.equal(code, 2);
     }
@@ -107,12 +107,12 @@ test("cancel and crash can terminate a busy process and a fresh engine can retry
     // underway. Wait for progress, not a timing guess, before killing it.
     for (let i = 0; i < 500; i++) writeFileSync(path.join(root, `src/file-${i}.ts`), "export const x = 1;\n");
     for (const signal of ["SIGTERM", "SIGKILL"] as const) {
-      const engine = session(root); engine.send({ ...base, type: "analyze", root });
+      const engine = session(root); engine.send({ ...base, type: "analyze", snapshotVersion: 3, root });
       await engine.event((e) => e.type === "progress");
       const done = once(engine.child, "exit"); engine.child.kill(signal); await done;
       assert(engine.child.exitCode !== null || engine.child.signalCode !== null);
     }
-    const retry = session(root); retry.send({ ...base, jobId: "retry", requestId: "retry", type: "analyze", root });
+    const retry = session(root); retry.send({ ...base, jobId: "retry", requestId: "retry", type: "analyze", snapshotVersion: 3, root });
     const result = await retry.event((e) => e.type === "complete"); assert.equal(result.jobId, "retry"); await retry.close();
   } finally { assert(path.basename(root).startsWith("cartograph-desktop-test-")); rmSync(root, { recursive: true, force: true }); }
 });
@@ -128,7 +128,7 @@ test("empty directory produces an honest empty snapshot and projection does not 
 
 test("desktop capability/config prevents broad renderer native access and cloud frontend startup", () => {
   const capability = JSON.parse(readFileSync("src-tauri/capabilities/main.json", "utf8"));
-  assert.deepEqual(capability.permissions, ["core:event:allow-listen", "core:event:allow-unlisten", "allow-select-repository", "allow-start-analysis", "allow-cancel-analysis", "allow-read-evidence", "allow-query-structure", "allow-list-repositories", "allow-open-repository", "allow-forget-repository", "allow-local-settings", "allow-reopen-analysis", "allow-investigate-snapshot", "allow-record-measurement", "allow-pilot-measurements", "allow-provider-configuration", "allow-prepare-explanation", "allow-send-explanation", "allow-cancel-explanation"]);
+  assert.deepEqual(capability.permissions, ["core:event:allow-listen", "core:event:allow-unlisten", "allow-select-repository", "allow-start-analysis", "allow-cancel-analysis", "allow-control-watching", "allow-rank-snapshot", "allow-cancel-ranking", "allow-read-evidence", "allow-query-structure", "allow-list-repositories", "allow-open-repository", "allow-forget-repository", "allow-local-settings", "allow-reopen-analysis", "allow-investigate-snapshot", "allow-record-measurement", "allow-pilot-measurements", "allow-provider-configuration", "allow-prepare-explanation", "allow-send-explanation", "allow-cancel-explanation"]);
   const config = JSON.parse(readFileSync("src-tauri/tauri.conf.json", "utf8"));
   assert(!config.build.devUrl, "desktop runs packaged static assets, not a Next server");
   assert.deepEqual(config.bundle.resources, { "resources/generated/engine/": "engine/" }, "packaged engine copies stay in an excluded generated directory");

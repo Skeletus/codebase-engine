@@ -1,0 +1,10 @@
+const assert=require('assert/strict'),fs=require('fs'),path=require('path');
+const hermes=require(path.resolve('node_modules/.pnpm/hermes-parser@0.25.1/node_modules/hermes-parser'));
+const source='const label = "😀e\u0301";\r\ncomponent Example(value: string) { return null; }\r\n';
+const start=performance.now(),tree=hermes.parse(source,{flow:'all',sourceType:'module',babel:false});
+assert.equal(tree.body[1].range[0],source.indexOf('component'));
+assert.equal(tree.body[1].loc.start.line,2);
+const large=Array.from({length:Number(process.env.FS00_DECLARATIONS??1000)},(_,i)=>`component C${i}(value: string) { return null; }\n`).join('');
+const result=hermes.parse(large,{flow:'all',sourceType:'module',babel:false});assert.equal(result.body.length,Number(process.env.FS00_DECLARATIONS??1000));
+assert.throws(()=>hermes.parse('component Broken( {',{flow:'all'}));
+console.log(JSON.stringify({parser:'hermes-parser 0.25.1',status:'passed',declarations:result.body.length,sourceBytes:Buffer.byteLength(large),elapsedMs:performance.now()-start,rss:process.memoryUsage().rss,utf16Start:tree.body[1].range[0],unicodeCRLFLocation:true}));
