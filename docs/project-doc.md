@@ -1852,3 +1852,8 @@ When a cloud feature is proposed, ask:
 If the answer is no, keep it local.
 
 That is the product.
+### FS-04: source-backed Node and Next profiles
+
+Node runtime resolution and Next bundler resolution use separate composable profiles. Native Node never inherits TypeScript path aliases, and a Next package can also own a native custom server. Resolution reads the protected source inventory and literal metadata; it does not inspect installed dependency implementations or invoke configuration, plugins or application code.
+
+Next route ownership, action references, client/server boundaries and generated-method rules are framework bindings and registrations in snapshot v3. They remain distinct from lexical calls and raw structural Impact. A Client Component label permits server prerendering; an action reference does not supply a generated public URL. Version-specific Middleware/Proxy declarations retain their runtime conditions, while unqualified Edge implementation behavior remains a boundary. Existing TS/JS projections and the frozen Laya artifact are preserved. The bounded qualifications and retained verification are documented in `docs/fs-04/README.md` and `docs/fs-04/acceptance.md`.

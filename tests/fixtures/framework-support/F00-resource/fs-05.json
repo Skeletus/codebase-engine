@@ -1,0 +1,14 @@
+{
+  "id": "F00-resource-python",
+  "phase": "FS-05",
+  "license": "project-owned-synthetic",
+  "tuples": ["python31215", "python31316"],
+  "profile": "static-python-declared-environment",
+  "extractorVersion": "fs-05/1",
+  "budgets": {"sourceBytes": 1048576, "facts": 20000, "nodes": 100000, "outputBytes": 8388608, "diagnosticBytes": 65536, "startupMs": 5000, "fileMs": 2000, "generationMs": 120000, "processCommitBytes": 536870912, "oldSpaceMiB": 128},
+  "cases": {"sourceBytes": [1048575, 1048576, 1048577], "parentFacts": [19999, 20000, 20001], "parentNodes": [100000, 100001], "lifecycle": ["pre-abort", "active-abort", "single-worker lease", "Windows allocation refusal", "host kill reaps worker", "fresh recovery", "late publication refusal"]},
+  "oracle": "Exact boundary assertions in FS-05 tests and application-owned Windows containment probe",
+  "forbidden": ["partial generation publication", "silent truncation", "uncontained Windows parser", "inspected repository execution"],
+  "qualificationEvidence": ["docs/fs-05/evidence/extractor-limits.json", "docs/fs-05/evidence/parent-faults.json", "docs/fs-05/evidence/containment.json", "docs/fs-05/evidence/parser-host-tests.log"]
+}
+

@@ -1,0 +1,16 @@
+import assert from "node:assert/strict";
+import path from "node:path";
+import { readFileSync, writeFileSync } from "node:fs";
+import { createHash } from "node:crypto";
+import { createComposedRefresh } from "../lib/engine/adapters/composed.ts";
+if (!process.argv.includes("--run")) throw new Error("Explicit --run required");
+const commit = "d44436997f26cb2890ff3c094352540473c69777";
+const root = path.resolve("node_modules/.fs05-experiments", "click-" + commit);
+globalThis.fetch = async () => { throw new Error("Supplementary analysis egress denied"); };
+const driver = createComposedRefresh({ host: path.resolve("src-tauri/target/release/parser-host.exe"), moduleRoots: { ".": ["src"] } });
+const started = performance.now(), first = (await driver.analyze(root, true)).snapshot;
+assert(first.files.some(f => f.path === "src/click/core.py"));
+assert.deepEqual((await driver.analyze(root,false)).snapshot, first);
+const report = { repository: "https://github.com/pallets/click", commit, archiveHash: createHash("sha256").update(readFileSync("node_modules/.fs05-experiments/click-d444369.tar.gz")).digest("hex"), licenseHash: createHash("sha256").update(readFileSync(path.join(root,"LICENSE.txt"))).digest("hex"), inventoryHash: createHash("sha256").update(JSON.stringify(first.files.map(f=>[f.path,f.hash]))).digest("hex"), files:first.files.length,imports:first.relationships.length,declarations:first.behavior.declarations.length,calls:first.behavior.relations.filter(r=>r.relation==="calls").length,gaps:Object.fromEntries([...new Set(first.behavior.gaps.map(g=>g.reason))].sort().map(reason=>[reason,first.behavior.gaps.filter(g=>g.reason===reason).length])),elapsedMs:performance.now()-started,unsupportedPatterns:["Decorator-produced callables are wrappers; original bodies are not direct-call targets","Attribute dispatch, descriptors and monkey patching remain boundaries","Comprehensions, match capture and with/except/loop bindings conservatively withhold affected module calls","Version ranges do not establish an exact qualified Python tuple"],policy:"Source archive only; no repository imports, installation, tests, plugins or configuration executed",status:"PASS supplementary validation; not acceptance oracle" };
+writeFileSync("docs/fs-05/evidence/supplementary.json",JSON.stringify(report,null,2)+"\n");
+process.stdout.write(JSON.stringify(report)+"\n");

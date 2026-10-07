@@ -1,0 +1,197 @@
+{
+  "id": "F05-python-semantics",
+  "phase": "FS-05",
+  "profile": "static-python-declared-environment",
+  "tuples": [
+    "python31215",
+    "python31316"
+  ],
+  "cases": [
+    {
+      "id": "direct",
+      "source": "def target():\n    pass\ndef caller():\n    target()\n",
+      "calls": [
+        "target"
+      ],
+      "gap": false
+    },
+    {
+      "id": "forward-module-call",
+      "source": "target()\ndef target():\n    pass\n",
+      "calls": [],
+      "gap": true
+    },
+    {
+      "id": "unicode-canonical-binding",
+      "source": "def K():\n    pass\nK()\n",
+      "calls": [
+        "K"
+      ],
+      "gap": false
+    },
+    {
+      "id": "unicode-collision",
+      "source": "def K():\n    pass\ndef K():\n    pass\nK()\n",
+      "calls": [],
+      "gap": true
+    },
+    {
+      "id": "immutable-alias",
+      "source": "def target():\n    pass\nrun = target\nrun()\n",
+      "calls": [
+        "target"
+      ],
+      "gap": false
+    },
+    {
+      "id": "closure",
+      "source": "def outer():\n    def inner():\n        pass\n    inner()\n",
+      "calls": [
+        "inner"
+      ],
+      "gap": false
+    },
+    {
+      "id": "shadowed-parameter",
+      "source": "def target():\n    pass\ndef caller(target):\n    target()\n",
+      "calls": [],
+      "gap": true
+    },
+    {
+      "id": "reassigned",
+      "source": "def target():\n    pass\ntarget = other\ntarget()\n",
+      "calls": [],
+      "gap": true
+    },
+    {
+      "id": "decorator",
+      "source": "@wrapper\ndef target():\n    pass\ntarget()\n",
+      "calls": [],
+      "gap": true
+    },
+    {
+      "id": "attribute",
+      "source": "class Service:\n    def run(self):\n        pass\nservice.run()\n",
+      "calls": [],
+      "gap": true
+    },
+    {
+      "id": "global-mutation",
+      "source": "def target():\n    pass\ndef caller():\n    global target\n    target()\n",
+      "calls": [],
+      "gap": true
+    },
+    {
+      "id": "reflection",
+      "source": "def target():\n    pass\ngetattr(value, name)()\n",
+      "calls": [],
+      "gap": true
+    },
+    {
+      "id": "exec",
+      "source": "def target():\n    pass\nexec(source)\ntarget()\n",
+      "calls": [],
+      "gap": true
+    },
+    {
+      "id": "star",
+      "source": "def target():\n    pass\nfrom unknown import *\ntarget()\n",
+      "calls": [],
+      "gap": true
+    },
+    {
+      "id": "all-literal",
+      "source": "def target():\n    pass\n__all__ = ['target']\n",
+      "calls": [],
+      "gap": false,
+      "all": [
+        "target"
+      ]
+    },
+    {
+      "id": "all-dynamic",
+      "source": "def target():\n    pass\n__all__ = names\n",
+      "calls": [],
+      "gap": true,
+      "all": null
+    },
+    {
+      "id": "all-mutated",
+      "source": "def target():\n    pass\n__all__ = ['target']\n__all__.append(name)\n",
+      "calls": [],
+      "gap": true,
+      "all": null
+    },
+    {
+      "id": "all-triple-quote",
+      "source": "def target():\n    pass\n__all__ = [\"\"\"target\"\"\"]\n",
+      "calls": [],
+      "gap": true,
+      "all": null
+    },
+    {
+      "id": "all-empty-name",
+      "source": "__all__ = ['']\n",
+      "calls": [],
+      "gap": true,
+      "all": null
+    },
+    {
+      "id": "parameter-default-expression",
+      "source": "def caller(value=unresolved_factory()):\n    pass\n",
+      "calls": [],
+      "gap": true
+    },
+    {
+      "id": "return-annotation-before-binding",
+      "source": "def target() -> target():\n    pass\n",
+      "calls": [],
+      "gap": true
+    },
+    {
+      "id": "global-sibling-mutation",
+      "source": "def target():\n    pass\ndef mutate():\n    global target\n    target = other\nmutate()\ntarget()\n",
+      "calls": [],
+      "gap": true
+    },
+    {
+      "id": "reflection-invalidates-mro-and-all",
+      "source": "class A:\n    pass\nclass B(A):\n    pass\n__all__ = ['B']\nexec(source)\n",
+      "calls": [],
+      "gap": true,
+      "mro": null,
+      "all": null
+    },
+    {
+      "id": "local-diamond",
+      "source": "class A:\n    pass\nclass B(A):\n    pass\nclass C(A):\n    pass\nclass D(B, C):\n    pass\n",
+      "calls": [],
+      "gap": false,
+      "mro": [
+        "D",
+        "B",
+        "C",
+        "A"
+      ]
+    },
+    {
+      "id": "conflicting-mro",
+      "source": "class A:\n    pass\nclass B:\n    pass\nclass C(A, B):\n    pass\nclass D(B, A):\n    pass\nclass E(C, D):\n    pass\n",
+      "calls": [],
+      "gap": true,
+      "mro": null
+    },
+    {
+      "id": "reflection-local-alias",
+      "source": "def target():\n    pass\nexecute = exec\nexecute(text)\ntarget()\n",
+      "calls": [],
+      "gap": true
+    },
+    {
+      "id": "reflection-import-alias",
+      "source": "from builtins import exec as execute\ndef target():\n    pass\nexecute(text)\ntarget()\n",
+      "calls": [],
+      "gap": true
+    }
+  ]
+}

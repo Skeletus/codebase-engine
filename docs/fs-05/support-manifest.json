@@ -1,0 +1,102 @@
+{
+  "phase": "FS-05",
+  "phaseStatus": "complete",
+  "runtime": {
+    "node": "24.19.0",
+    "parser": "web-tree-sitter@0.25.10",
+    "grammar": "tree-sitter-python@0.25.0",
+    "abi": 15,
+    "platform": "Windows x64",
+    "userPythonRequired": false,
+    "nativeNpmBuildRequired": false
+  },
+  "tuples": [
+    {
+      "id": "python31215",
+      "python": "3.12.15",
+      "baselineParent": "django52",
+      "profile": "static-python-declared-environment",
+      "syntaxOracle": "PASS",
+      "controlledSemantics": "PASS",
+      "frameworkQualification": "none; Django/DRF deferred to FS-06"
+    },
+    {
+      "id": "python31316",
+      "python": "3.13.16",
+      "baselineParent": "django60",
+      "profile": "static-python-declared-environment",
+      "syntaxOracle": "PASS",
+      "controlledSemantics": "PASS",
+      "frameworkQualification": "none; Django/DRF deferred to FS-06"
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "syntax",
+      "state": "qualified",
+      "scope": "Controlled functions/async, classes/methods, generic aliases, match syntax, decorators, malformed rejection, Unicode/CRLF/BOM and execution sentinel",
+      "evidence": "evidence/syntax-oracles.json"
+    },
+    {
+      "id": "static-bindings",
+      "state": "partial",
+      "scope": "Lexical declarations, parameters, ownership, closures, immutable aliases, unique local/imported direct calls and source-backed references",
+      "evidence": "evidence/qualification.json"
+    },
+    {
+      "id": "imports",
+      "state": "partial",
+      "scope": "Literal root-local absolute/relative imports, explicit namespace/src roots, unique aliases/re-exports, bounded immutable literal __all__; external/missing/stub/excluded outcomes distinct",
+      "evidence": "evidence/fs-05-tests-final.log"
+    },
+    {
+      "id": "inheritance",
+      "state": "partial",
+      "scope": "Module-local unique undecorated class bases and bounded C3 MRO; no dynamic receiver dispatch",
+      "evidence": "evidence/qualification.json"
+    },
+    {
+      "id": "encoding",
+      "state": "qualified",
+      "scope": "Strict UTF-8/ASCII and optional UTF-8 BOM; original-byte SHA256, original UTF-16 half-open ranges; other encodings rejected",
+      "evidence": "evidence/syntax-oracles.json"
+    },
+    {
+      "id": "runtime-semantics",
+      "state": "unsupported",
+      "scope": "Repository execution/imports, monkey patching, reflection, dynamic imports, descriptor/attribute dispatch, arbitrary decorator targets, runtime path/environment discovery"
+    },
+    {
+      "id": "complex-binding-scopes",
+      "state": "partial",
+      "scope": "Comprehension/lambda/loop/with/except/match binding scopes are explicit gaps and conservatively suppress module direct-call/export verification"
+    },
+    {
+      "id": "definition-time-expressions",
+      "state": "partial",
+      "scope": "Default/annotation expressions remain explicit boundaries; no guessed body-execution relationships"
+    },
+    {
+      "id": "module-priority",
+      "state": "partial",
+      "scope": "Conservative union of pinned Windows builtin/frozen inventories remains external; runtime finder/cache changes and disabling frozen modules are unqualified",
+      "evidence": "parser-decision-evidence.md"
+    }
+  ],
+  "qualificationPolicy": "Pinned oracle versions qualify controlled syntax/static patterns only. Runtime repository capabilities remain python-unqualified/partial because the adapter does not infer an installed interpreter or exact environment from ranges. No language-wide, Django or model-domain badge is granted.",
+  "sourceRoots": "One declared static environment per project; default project root, or explicit bounded root-local moduleRoots adapter input. No machine sys.path, .pth, editable-install hooks or setup.py execution.",
+  "limits": {
+    "sourceBytes": 1048576,
+    "facts": 20000,
+    "nodes": 100000,
+    "outputBytes": 8388608,
+    "diagnosticBytes": 65536,
+    "startupMs": 5000,
+    "fileMs": 2000,
+    "generationMs": 120000,
+    "processCommitBytes": 536870912,
+    "oldSpaceMiB": 128
+  },
+  "resources": "resource-budget.md",
+  "acceptance": "acceptance.md"
+}

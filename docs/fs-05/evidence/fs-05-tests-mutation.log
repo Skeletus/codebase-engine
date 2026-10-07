@@ -1,0 +1,24 @@
+✔ FS05 original bytes, BOM, CRLF and Unicode ranges (4.6071ms)
+✔ FS05 Windows contained parser accepts controlled syntax without executing it (1150.0178ms)
+✔ FS05 unsupported encodings fail closed without replacement (2.6376ms)
+✔ FS05 Python composes with TS/JS through shared v3 snapshots (787.6676ms)
+✔ FS05 decorators, reassignment, attributes and dynamic binding never guess calls (477.364ms)
+✔ FS05 cancellation refuses worker work and supports a fresh session (462.9421ms)
+✔ FS05 controlled semantic fixture verifies exact calls and forbidden guesses (524.9348ms)
+✔ FS05 namespace/src roots, re-exports and shadowed import sites remain distinct (2013.9058ms)
+✔ FS05 protected exclusions and failed parser retain TS/JS (54.0553ms)
+✔ FS05 async refresh preserves previous publication after failure or pause (18.1307ms)
+✔ FS05 active cancellation releases the single-worker lease and source byte limits recover (1836.7139ms)
+✔ FS05 a paused asynchronous generation cannot publish late (20.0139ms)
+✔ FS05 Python import exclusions, stubs, external packages and root escapes stay separate (564.1233ms)
+✔ FS05 neutral output rejects AST leakage, wrong hashes and fact/node budget overflow (112.5327ms)
+✔ FS05 reopened Python generation is retained when parser startup fails (522.5228ms)
+✔ FS05 Python edits are watched through the shared protected refresh scheduler (1083.6869ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11018.724

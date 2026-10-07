@@ -1,0 +1,3 @@
+tests/framework-support/fs-05.test.ts(305,21): error TS2339: Property 'imports' does not exist on type 'CodeSnapshot'.
+tests/framework-support/fs-05.test.ts(305,36): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+tests/framework-support/fs-05.test.ts(305,75): error TS7006: Parameter 'entry' implicitly has an 'any' type.

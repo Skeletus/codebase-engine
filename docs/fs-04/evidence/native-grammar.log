@@ -1,0 +1,30 @@
+✖ F04 native profiles cannot qualify JSX or typed JavaScript accepted by a bundler parser (279.1752ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1499.8541
+
+✖ failing tests:
+
+test at tests\framework-support\fs-04.test.ts:133:1
+✖ F04 native profiles cannot qualify JSX or typed JavaScript accepted by a bundler parser (279.1752ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert(s.analysis.gaps.some(g=>g.occurrence.file==="server.mjs"&&["unsupported-syntax","parse-error"].includes(g.reason)))
+  
+      at TestContext.<anonymous> (file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-04.test.ts:134:280)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

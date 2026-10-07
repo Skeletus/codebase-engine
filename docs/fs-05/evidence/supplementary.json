@@ -1,0 +1,33 @@
+{
+  "repository": "https://github.com/pallets/click",
+  "commit": "d44436997f26cb2890ff3c094352540473c69777",
+  "archiveHash": "64a709e4acab7f68e870f24d1c35e2bc700547d62d0b141d4d27d5f346c4d147",
+  "licenseHash": "9a8ad106a394e853bfe21f42f4e72d592819a22805d991b5f3275029292b658d",
+  "inventoryHash": "28d53295f965a180c3e6a5cf1970f4faa659554fda0505e8ef59bc838ae7294c",
+  "files": 61,
+  "imports": 103,
+  "declarations": 5138,
+  "calls": 0,
+  "gaps": {
+    "ambiguous-call-target": 4,
+    "ambiguous-mro-boundary": 122,
+    "annotation-expression-boundary": 545,
+    "decorator-wrapper-boundary": 531,
+    "dynamic-attribute-dispatch": 118,
+    "dynamic-binding-boundary": 3754,
+    "dynamic-write-boundary": 440,
+    "inheritance-boundary": 122,
+    "mutable-binding-boundary": 9,
+    "parameter-expression-boundary": 1005,
+    "unsupported-binding-scope": 386
+  },
+  "elapsedMs": 10574.1646,
+  "unsupportedPatterns": [
+    "Decorator-produced callables are wrappers; original bodies are not direct-call targets",
+    "Attribute dispatch, descriptors and monkey patching remain boundaries",
+    "Comprehensions, match capture and with/except/loop bindings conservatively withhold affected module calls",
+    "Version ranges do not establish an exact qualified Python tuple"
+  ],
+  "policy": "Source archive only; no repository imports, installation, tests, plugins or configuration executed",
+  "status": "PASS supplementary validation; not acceptance oracle"
+}

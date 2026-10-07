@@ -1,0 +1,90 @@
+{
+  "scope": "Parent lifecycle/IPC negative checks with an application-owned fault executable; separate from real Windows job qualification",
+  "sourceHash": "baaf12654ec0ecbe06875217bb9aff779d0615130ec3b4b732d4176fa194b4e9",
+  "records": [
+    {
+      "mode": "startup",
+      "reason": "parser-unavailable",
+      "startup": true,
+      "status": "PASS",
+      "elapsedMs": 5526.3829000000005
+    },
+    {
+      "mode": "wrong-abi",
+      "reason": "parser-unavailable",
+      "startup": true,
+      "status": "PASS",
+      "elapsedMs": 573.6943000000001
+    },
+    {
+      "mode": "exit-during-frame",
+      "reason": "resource-limit|parser-unavailable",
+      "startup": false,
+      "status": "PASS",
+      "elapsedMs": 525.8437000000004
+    },
+    {
+      "mode": "output-below",
+      "reason": "parser-unavailable",
+      "startup": false,
+      "status": "PASS",
+      "elapsedMs": 791.4092
+    },
+    {
+      "mode": "output-at",
+      "reason": "parser-unavailable",
+      "startup": false,
+      "status": "PASS",
+      "elapsedMs": 754.3252999999986
+    },
+    {
+      "mode": "output",
+      "reason": "resource-limit",
+      "startup": false,
+      "status": "PASS",
+      "elapsedMs": 810.9242000000013
+    },
+    {
+      "mode": "diagnostics-below",
+      "reason": null,
+      "startup": false,
+      "status": "PASS",
+      "elapsedMs": 772.8852999999999
+    },
+    {
+      "mode": "diagnostics-at",
+      "reason": null,
+      "startup": false,
+      "status": "PASS",
+      "elapsedMs": 513.9634999999998
+    },
+    {
+      "mode": "diagnostics",
+      "reason": "resource-limit",
+      "startup": false,
+      "status": "PASS",
+      "elapsedMs": 828.154199999999
+    },
+    {
+      "mode": "parse-timeout",
+      "reason": "resource-limit",
+      "startup": false,
+      "status": "PASS",
+      "elapsedMs": 2576.028400000001
+    },
+    {
+      "mode": "invalid-result",
+      "reason": "parser-unavailable",
+      "startup": false,
+      "status": "PASS",
+      "elapsedMs": 516.0199000000011
+    },
+    {
+      "mode": "invalid-result-retains-reopened-generation",
+      "reason": "parser-unavailable",
+      "startup": false,
+      "status": "PASS",
+      "elapsedMs": 0
+    }
+  ]
+}

@@ -1,0 +1,1458 @@
+﻿{
+    "recordedAt":  "2026-10-07T03:45:04.1748397Z",
+    "platform":  "Windows x64",
+    "processor":  "AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",
+    "policy":  "Five fresh processes and twenty retained-session runs after one warmup per tuple; 50ms Windows counter sampling; no inspected code execution",
+    "results":  [
+                    {
+                        "tuple":  "next15",
+                        "group":  "cold-0",
+                        "peakCommittedBytes":  111345664,
+                        "peakRSSBytes":  131792896,
+                        "sample":  {
+                                       "tuple":  "next15",
+                                       "node":  "v22.23.3",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "ff3ddf592c89e3400a2cddd4f7a6ecf9e6b54938578864b4baa35e14572eecf1",
+                                       "fixtureHash":  "89354b94f45e8672d6ca6c2ae3bc2847d00368f9e505e3f1fd70986513064478",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  678.9360999999999,
+                                                                "rssBytes":  132767744,
+                                                                "snapshotBytes":  674234,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    },
+                    {
+                        "tuple":  "next15",
+                        "group":  "cold-1",
+                        "peakCommittedBytes":  113434624,
+                        "peakRSSBytes":  134070272,
+                        "sample":  {
+                                       "tuple":  "next15",
+                                       "node":  "v22.23.3",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "ff3ddf592c89e3400a2cddd4f7a6ecf9e6b54938578864b4baa35e14572eecf1",
+                                       "fixtureHash":  "89354b94f45e8672d6ca6c2ae3bc2847d00368f9e505e3f1fd70986513064478",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  447.3815000000001,
+                                                                "rssBytes":  132104192,
+                                                                "snapshotBytes":  674234,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    },
+                    {
+                        "tuple":  "next15",
+                        "group":  "cold-2",
+                        "peakCommittedBytes":  112852992,
+                        "peakRSSBytes":  133591040,
+                        "sample":  {
+                                       "tuple":  "next15",
+                                       "node":  "v22.23.3",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "ff3ddf592c89e3400a2cddd4f7a6ecf9e6b54938578864b4baa35e14572eecf1",
+                                       "fixtureHash":  "89354b94f45e8672d6ca6c2ae3bc2847d00368f9e505e3f1fd70986513064478",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  446.5130999999999,
+                                                                "rssBytes":  133185536,
+                                                                "snapshotBytes":  674234,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    },
+                    {
+                        "tuple":  "next15",
+                        "group":  "cold-3",
+                        "peakCommittedBytes":  114642944,
+                        "peakRSSBytes":  136331264,
+                        "sample":  {
+                                       "tuple":  "next15",
+                                       "node":  "v22.23.3",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "ff3ddf592c89e3400a2cddd4f7a6ecf9e6b54938578864b4baa35e14572eecf1",
+                                       "fixtureHash":  "89354b94f45e8672d6ca6c2ae3bc2847d00368f9e505e3f1fd70986513064478",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  596.6222,
+                                                                "rssBytes":  134443008,
+                                                                "snapshotBytes":  674234,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    },
+                    {
+                        "tuple":  "next15",
+                        "group":  "cold-4",
+                        "peakCommittedBytes":  111898624,
+                        "peakRSSBytes":  132894720,
+                        "sample":  {
+                                       "tuple":  "next15",
+                                       "node":  "v22.23.3",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "ff3ddf592c89e3400a2cddd4f7a6ecf9e6b54938578864b4baa35e14572eecf1",
+                                       "fixtureHash":  "89354b94f45e8672d6ca6c2ae3bc2847d00368f9e505e3f1fd70986513064478",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  566.5766999999998,
+                                                                "rssBytes":  131915776,
+                                                                "snapshotBytes":  674234,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    },
+                    {
+                        "tuple":  "next15",
+                        "group":  "warm",
+                        "peakCommittedBytes":  155623424,
+                        "peakRSSBytes":  175505408,
+                        "sample":  {
+                                       "tuple":  "next15",
+                                       "node":  "v22.23.3",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "ff3ddf592c89e3400a2cddd4f7a6ecf9e6b54938578864b4baa35e14572eecf1",
+                                       "fixtureHash":  "89354b94f45e8672d6ca6c2ae3bc2847d00368f9e505e3f1fd70986513064478",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  210.3549999999998,
+                                                                "rssBytes":  133238784,
+                                                                "snapshotBytes":  674234,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  186.25060000000008,
+                                                                "rssBytes":  140632064,
+                                                                "snapshotBytes":  674234,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  169.06269999999995,
+                                                                "rssBytes":  143052800,
+                                                                "snapshotBytes":  674234,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  151.3375000000001,
+                                                                "rssBytes":  138752000,
+                                                                "snapshotBytes":  674234,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  158.8793999999998,
+                                                                "rssBytes":  140431360,
+                                                                "snapshotBytes":  674234,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  200.29500000000007,
+                                                                "rssBytes":  143929344,
+                                                                "snapshotBytes":  674234,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  257.02009999999973,
+                                                                "rssBytes":  146829312,
+                                                                "snapshotBytes":  674234,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  198.2184000000002,
+                                                                "rssBytes":  155074560,
+                                                                "snapshotBytes":  674234,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  173.58770000000004,
+                                                                "rssBytes":  161497088,
+                                                                "snapshotBytes":  674234,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  187.9411,
+                                                                "rssBytes":  149454848,
+                                                                "snapshotBytes":  674234,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  227.57619999999997,
+                                                                "rssBytes":  145338368,
+                                                                "snapshotBytes":  674234,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  187.04050000000007,
+                                                                "rssBytes":  146292736,
+                                                                "snapshotBytes":  674234,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  150.36320000000023,
+                                                                "rssBytes":  144826368,
+                                                                "snapshotBytes":  674234,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  174.21119999999974,
+                                                                "rssBytes":  147419136,
+                                                                "snapshotBytes":  674234,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  165.77469999999994,
+                                                                "rssBytes":  152481792,
+                                                                "snapshotBytes":  674234,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  218.73859999999968,
+                                                                "rssBytes":  147505152,
+                                                                "snapshotBytes":  674234,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  222.23750000000018,
+                                                                "rssBytes":  149159936,
+                                                                "snapshotBytes":  674234,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  174.90039999999954,
+                                                                "rssBytes":  149868544,
+                                                                "snapshotBytes":  674234,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  196.7474000000002,
+                                                                "rssBytes":  160378880,
+                                                                "snapshotBytes":  674234,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  217.45499999999993,
+                                                                "rssBytes":  167575552,
+                                                                "snapshotBytes":  674234,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    },
+                    {
+                        "tuple":  "next16-preservation",
+                        "group":  "cold-0",
+                        "peakCommittedBytes":  120721408,
+                        "peakRSSBytes":  149938176,
+                        "sample":  {
+                                       "tuple":  "next16-preservation",
+                                       "node":  "v24.19.0",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "ec1122c4952c5d6917cae8c6795f48e168f5425ad333fcfb1114eccec9fee036",
+                                       "fixtureHash":  "89354b94f45e8672d6ca6c2ae3bc2847d00368f9e505e3f1fd70986513064478",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  446.86660000000006,
+                                                                "rssBytes":  149454848,
+                                                                "snapshotBytes":  676297,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    },
+                    {
+                        "tuple":  "next16-preservation",
+                        "group":  "cold-1",
+                        "peakCommittedBytes":  119787520,
+                        "peakRSSBytes":  149082112,
+                        "sample":  {
+                                       "tuple":  "next16-preservation",
+                                       "node":  "v24.19.0",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "ec1122c4952c5d6917cae8c6795f48e168f5425ad333fcfb1114eccec9fee036",
+                                       "fixtureHash":  "89354b94f45e8672d6ca6c2ae3bc2847d00368f9e505e3f1fd70986513064478",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  569.9283999999999,
+                                                                "rssBytes":  149192704,
+                                                                "snapshotBytes":  676297,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    },
+                    {
+                        "tuple":  "next16-preservation",
+                        "group":  "cold-2",
+                        "peakCommittedBytes":  120848384,
+                        "peakRSSBytes":  149037056,
+                        "sample":  {
+                                       "tuple":  "next16-preservation",
+                                       "node":  "v24.19.0",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "ec1122c4952c5d6917cae8c6795f48e168f5425ad333fcfb1114eccec9fee036",
+                                       "fixtureHash":  "89354b94f45e8672d6ca6c2ae3bc2847d00368f9e505e3f1fd70986513064478",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  417.64070000000015,
+                                                                "rssBytes":  148873216,
+                                                                "snapshotBytes":  676297,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    },
+                    {
+                        "tuple":  "next16-preservation",
+                        "group":  "cold-3",
+                        "peakCommittedBytes":  120303616,
+                        "peakRSSBytes":  149286912,
+                        "sample":  {
+                                       "tuple":  "next16-preservation",
+                                       "node":  "v24.19.0",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "ec1122c4952c5d6917cae8c6795f48e168f5425ad333fcfb1114eccec9fee036",
+                                       "fixtureHash":  "89354b94f45e8672d6ca6c2ae3bc2847d00368f9e505e3f1fd70986513064478",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  575.8967,
+                                                                "rssBytes":  148303872,
+                                                                "snapshotBytes":  676297,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    },
+                    {
+                        "tuple":  "next16-preservation",
+                        "group":  "cold-4",
+                        "peakCommittedBytes":  121446400,
+                        "peakRSSBytes":  150732800,
+                        "sample":  {
+                                       "tuple":  "next16-preservation",
+                                       "node":  "v24.19.0",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "ec1122c4952c5d6917cae8c6795f48e168f5425ad333fcfb1114eccec9fee036",
+                                       "fixtureHash":  "89354b94f45e8672d6ca6c2ae3bc2847d00368f9e505e3f1fd70986513064478",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  459.0122,
+                                                                "rssBytes":  149934080,
+                                                                "snapshotBytes":  676297,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    },
+                    {
+                        "tuple":  "next16-preservation",
+                        "group":  "warm",
+                        "peakCommittedBytes":  189345792,
+                        "peakRSSBytes":  215588864,
+                        "sample":  {
+                                       "tuple":  "next16-preservation",
+                                       "node":  "v24.19.0",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "ec1122c4952c5d6917cae8c6795f48e168f5425ad333fcfb1114eccec9fee036",
+                                       "fixtureHash":  "89354b94f45e8672d6ca6c2ae3bc2847d00368f9e505e3f1fd70986513064478",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  222.06130000000007,
+                                                                "rssBytes":  158498816,
+                                                                "snapshotBytes":  676297,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  184.60910000000013,
+                                                                "rssBytes":  152997888,
+                                                                "snapshotBytes":  676297,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  164.15499999999997,
+                                                                "rssBytes":  154816512,
+                                                                "snapshotBytes":  676297,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  152.99659999999994,
+                                                                "rssBytes":  156454912,
+                                                                "snapshotBytes":  676297,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  165.8098,
+                                                                "rssBytes":  159199232,
+                                                                "snapshotBytes":  676297,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  193.8402000000001,
+                                                                "rssBytes":  184307712,
+                                                                "snapshotBytes":  676297,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  154.33489999999983,
+                                                                "rssBytes":  194658304,
+                                                                "snapshotBytes":  676297,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  136.25,
+                                                                "rssBytes":  195952640,
+                                                                "snapshotBytes":  676297,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  141.75900000000001,
+                                                                "rssBytes":  198676480,
+                                                                "snapshotBytes":  676297,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  174.82850000000008,
+                                                                "rssBytes":  199024640,
+                                                                "snapshotBytes":  676297,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  156.79489999999987,
+                                                                "rssBytes":  200929280,
+                                                                "snapshotBytes":  676297,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  170.60000000000036,
+                                                                "rssBytes":  202072064,
+                                                                "snapshotBytes":  676297,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  130.1884,
+                                                                "rssBytes":  203997184,
+                                                                "snapshotBytes":  676297,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  123.35840000000007,
+                                                                "rssBytes":  205197312,
+                                                                "snapshotBytes":  676297,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  132.54050000000007,
+                                                                "rssBytes":  212975616,
+                                                                "snapshotBytes":  676297,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  137.59510000000046,
+                                                                "rssBytes":  207073280,
+                                                                "snapshotBytes":  676297,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  131.58439999999973,
+                                                                "rssBytes":  213299200,
+                                                                "snapshotBytes":  676297,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  139.42519999999968,
+                                                                "rssBytes":  209612800,
+                                                                "snapshotBytes":  676297,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  133.32300000000032,
+                                                                "rssBytes":  214294528,
+                                                                "snapshotBytes":  676297,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  127.70949999999993,
+                                                                "rssBytes":  213069824,
+                                                                "snapshotBytes":  676297,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    },
+                    {
+                        "tuple":  "next16-patch",
+                        "group":  "cold-0",
+                        "peakCommittedBytes":  119762944,
+                        "peakRSSBytes":  148987904,
+                        "sample":  {
+                                       "tuple":  "next16-patch",
+                                       "node":  "v24.19.0",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "ee1daa1668890771fa8e696161c718ba790d9ad081d8c5162ca2487139dd640b",
+                                       "fixtureHash":  "89354b94f45e8672d6ca6c2ae3bc2847d00368f9e505e3f1fd70986513064478",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  411.79690000000005,
+                                                                "rssBytes":  148963328,
+                                                                "snapshotBytes":  675184,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    },
+                    {
+                        "tuple":  "next16-patch",
+                        "group":  "cold-1",
+                        "peakCommittedBytes":  120356864,
+                        "peakRSSBytes":  149504000,
+                        "sample":  {
+                                       "tuple":  "next16-patch",
+                                       "node":  "v24.19.0",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "ee1daa1668890771fa8e696161c718ba790d9ad081d8c5162ca2487139dd640b",
+                                       "fixtureHash":  "89354b94f45e8672d6ca6c2ae3bc2847d00368f9e505e3f1fd70986513064478",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  465.9022,
+                                                                "rssBytes":  149303296,
+                                                                "snapshotBytes":  675184,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    },
+                    {
+                        "tuple":  "next16-patch",
+                        "group":  "cold-2",
+                        "peakCommittedBytes":  120524800,
+                        "peakRSSBytes":  149315584,
+                        "sample":  {
+                                       "tuple":  "next16-patch",
+                                       "node":  "v24.19.0",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "ee1daa1668890771fa8e696161c718ba790d9ad081d8c5162ca2487139dd640b",
+                                       "fixtureHash":  "89354b94f45e8672d6ca6c2ae3bc2847d00368f9e505e3f1fd70986513064478",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  487.5109,
+                                                                "rssBytes":  147894272,
+                                                                "snapshotBytes":  675184,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    },
+                    {
+                        "tuple":  "next16-patch",
+                        "group":  "cold-3",
+                        "peakCommittedBytes":  119914496,
+                        "peakRSSBytes":  149295104,
+                        "sample":  {
+                                       "tuple":  "next16-patch",
+                                       "node":  "v24.19.0",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "ee1daa1668890771fa8e696161c718ba790d9ad081d8c5162ca2487139dd640b",
+                                       "fixtureHash":  "89354b94f45e8672d6ca6c2ae3bc2847d00368f9e505e3f1fd70986513064478",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  448.25829999999996,
+                                                                "rssBytes":  149315584,
+                                                                "snapshotBytes":  675184,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    },
+                    {
+                        "tuple":  "next16-patch",
+                        "group":  "cold-4",
+                        "peakCommittedBytes":  120188928,
+                        "peakRSSBytes":  149385216,
+                        "sample":  {
+                                       "tuple":  "next16-patch",
+                                       "node":  "v24.19.0",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "ee1daa1668890771fa8e696161c718ba790d9ad081d8c5162ca2487139dd640b",
+                                       "fixtureHash":  "89354b94f45e8672d6ca6c2ae3bc2847d00368f9e505e3f1fd70986513064478",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  421.28829999999994,
+                                                                "rssBytes":  147853312,
+                                                                "snapshotBytes":  675184,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    },
+                    {
+                        "tuple":  "next16-patch",
+                        "group":  "warm",
+                        "peakCommittedBytes":  194097152,
+                        "peakRSSBytes":  220221440,
+                        "sample":  {
+                                       "tuple":  "next16-patch",
+                                       "node":  "v24.19.0",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "ee1daa1668890771fa8e696161c718ba790d9ad081d8c5162ca2487139dd640b",
+                                       "fixtureHash":  "89354b94f45e8672d6ca6c2ae3bc2847d00368f9e505e3f1fd70986513064478",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  225.2539999999999,
+                                                                "rssBytes":  150163456,
+                                                                "snapshotBytes":  675184,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  275.34870000000024,
+                                                                "rssBytes":  151404544,
+                                                                "snapshotBytes":  675184,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  215.84169999999995,
+                                                                "rssBytes":  154243072,
+                                                                "snapshotBytes":  675184,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  149.3149000000003,
+                                                                "rssBytes":  155959296,
+                                                                "snapshotBytes":  675184,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  151.51310000000012,
+                                                                "rssBytes":  158965760,
+                                                                "snapshotBytes":  675184,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  155.45049999999992,
+                                                                "rssBytes":  184823808,
+                                                                "snapshotBytes":  675184,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  149.6196,
+                                                                "rssBytes":  195313664,
+                                                                "snapshotBytes":  675184,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  146.5018,
+                                                                "rssBytes":  195969024,
+                                                                "snapshotBytes":  675184,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  153.1900999999998,
+                                                                "rssBytes":  199946240,
+                                                                "snapshotBytes":  675184,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  152.55220000000008,
+                                                                "rssBytes":  198565888,
+                                                                "snapshotBytes":  675184,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  164.33920000000035,
+                                                                "rssBytes":  200425472,
+                                                                "snapshotBytes":  675184,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  194.23480000000018,
+                                                                "rssBytes":  201097216,
+                                                                "snapshotBytes":  675184,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  133.9970000000003,
+                                                                "rssBytes":  203071488,
+                                                                "snapshotBytes":  675184,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  140.6262999999999,
+                                                                "rssBytes":  204517376,
+                                                                "snapshotBytes":  675184,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  136.64329999999973,
+                                                                "rssBytes":  212946944,
+                                                                "snapshotBytes":  675184,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  140.04120000000057,
+                                                                "rssBytes":  206729216,
+                                                                "snapshotBytes":  675184,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  123.18459999999959,
+                                                                "rssBytes":  213123072,
+                                                                "snapshotBytes":  675184,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  135.4484999999995,
+                                                                "rssBytes":  209338368,
+                                                                "snapshotBytes":  675184,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  133.50990000000002,
+                                                                "rssBytes":  213102592,
+                                                                "snapshotBytes":  675184,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  146.9416999999994,
+                                                                "rssBytes":  211902464,
+                                                                "snapshotBytes":  675184,
+                                                                "facts":  205,
+                                                                "files":  15,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    },
+                    {
+                        "tuple":  "node22",
+                        "group":  "cold-0",
+                        "peakCommittedBytes":  104042496,
+                        "peakRSSBytes":  117211136,
+                        "sample":  {
+                                       "tuple":  "node22",
+                                       "node":  "v22.23.3",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "9e95a3574e8141b9b55e965a6b163f137005a8bffe9430804ecd9dcaa978e6e0",
+                                       "fixtureHash":  "90cec5e75f555236dcdaeaeffe8d47666d0c510a52b3b42002c94855ec4c0af7",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  340.64530000000013,
+                                                                "rssBytes":  115347456,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    },
+                    {
+                        "tuple":  "node22",
+                        "group":  "cold-1",
+                        "peakCommittedBytes":  104353792,
+                        "peakRSSBytes":  117366784,
+                        "sample":  {
+                                       "tuple":  "node22",
+                                       "node":  "v22.23.3",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "9e95a3574e8141b9b55e965a6b163f137005a8bffe9430804ecd9dcaa978e6e0",
+                                       "fixtureHash":  "90cec5e75f555236dcdaeaeffe8d47666d0c510a52b3b42002c94855ec4c0af7",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  303.43859999999995,
+                                                                "rssBytes":  115314688,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    },
+                    {
+                        "tuple":  "node22",
+                        "group":  "cold-2",
+                        "peakCommittedBytes":  104730624,
+                        "peakRSSBytes":  117456896,
+                        "sample":  {
+                                       "tuple":  "node22",
+                                       "node":  "v22.23.3",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "9e95a3574e8141b9b55e965a6b163f137005a8bffe9430804ecd9dcaa978e6e0",
+                                       "fixtureHash":  "90cec5e75f555236dcdaeaeffe8d47666d0c510a52b3b42002c94855ec4c0af7",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  324.24739999999997,
+                                                                "rssBytes":  115499008,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    },
+                    {
+                        "tuple":  "node22",
+                        "group":  "cold-3",
+                        "peakCommittedBytes":  108011520,
+                        "peakRSSBytes":  120483840,
+                        "sample":  {
+                                       "tuple":  "node22",
+                                       "node":  "v22.23.3",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "9e95a3574e8141b9b55e965a6b163f137005a8bffe9430804ecd9dcaa978e6e0",
+                                       "fixtureHash":  "90cec5e75f555236dcdaeaeffe8d47666d0c510a52b3b42002c94855ec4c0af7",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  296.8659,
+                                                                "rssBytes":  115245056,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    },
+                    {
+                        "tuple":  "node22",
+                        "group":  "cold-4",
+                        "peakCommittedBytes":  103739392,
+                        "peakRSSBytes":  116588544,
+                        "sample":  {
+                                       "tuple":  "node22",
+                                       "node":  "v22.23.3",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "9e95a3574e8141b9b55e965a6b163f137005a8bffe9430804ecd9dcaa978e6e0",
+                                       "fixtureHash":  "90cec5e75f555236dcdaeaeffe8d47666d0c510a52b3b42002c94855ec4c0af7",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  337.38110000000006,
+                                                                "rssBytes":  115224576,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    },
+                    {
+                        "tuple":  "node22",
+                        "group":  "warm",
+                        "peakCommittedBytes":  124895232,
+                        "peakRSSBytes":  143646720,
+                        "sample":  {
+                                       "tuple":  "node22",
+                                       "node":  "v22.23.3",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "9e95a3574e8141b9b55e965a6b163f137005a8bffe9430804ecd9dcaa978e6e0",
+                                       "fixtureHash":  "90cec5e75f555236dcdaeaeffe8d47666d0c510a52b3b42002c94855ec4c0af7",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  78.76589999999987,
+                                                                "rssBytes":  121835520,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  74.56700000000001,
+                                                                "rssBytes":  127467520,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  72.35979999999995,
+                                                                "rssBytes":  131371008,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  89.33760000000007,
+                                                                "rssBytes":  131600384,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  63.702200000000175,
+                                                                "rssBytes":  133865472,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  56.97939999999994,
+                                                                "rssBytes":  132075520,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  63.68509999999969,
+                                                                "rssBytes":  132980736,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  58.38130000000001,
+                                                                "rssBytes":  131608576,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  65.83100000000013,
+                                                                "rssBytes":  131977216,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  62.12130000000025,
+                                                                "rssBytes":  132210688,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  57.57940000000008,
+                                                                "rssBytes":  133300224,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  59.49980000000005,
+                                                                "rssBytes":  132403200,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  49.76369999999997,
+                                                                "rssBytes":  132833280,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  56.23789999999963,
+                                                                "rssBytes":  136101888,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  65.23670000000038,
+                                                                "rssBytes":  140062720,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  54.909599999999955,
+                                                                "rssBytes":  138416128,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  73.58800000000019,
+                                                                "rssBytes":  143179776,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  57.134700000000066,
+                                                                "rssBytes":  133177344,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  58.045100000000275,
+                                                                "rssBytes":  133705728,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  55.30799999999999,
+                                                                "rssBytes":  132927488,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    },
+                    {
+                        "tuple":  "node24",
+                        "group":  "cold-0",
+                        "peakCommittedBytes":  116609024,
+                        "peakRSSBytes":  126918656,
+                        "sample":  {
+                                       "tuple":  "node24",
+                                       "node":  "v24.19.0",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "820f5545150aea315cc8f67308eb139333282e39ba6625b729607096f3cbbb40",
+                                       "fixtureHash":  "90cec5e75f555236dcdaeaeffe8d47666d0c510a52b3b42002c94855ec4c0af7",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  267.8456,
+                                                                "rssBytes":  124702720,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    },
+                    {
+                        "tuple":  "node24",
+                        "group":  "cold-1",
+                        "peakCommittedBytes":  116928512,
+                        "peakRSSBytes":  127590400,
+                        "sample":  {
+                                       "tuple":  "node24",
+                                       "node":  "v24.19.0",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "820f5545150aea315cc8f67308eb139333282e39ba6625b729607096f3cbbb40",
+                                       "fixtureHash":  "90cec5e75f555236dcdaeaeffe8d47666d0c510a52b3b42002c94855ec4c0af7",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  283.2736,
+                                                                "rssBytes":  125509632,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    },
+                    {
+                        "tuple":  "node24",
+                        "group":  "cold-2",
+                        "peakCommittedBytes":  117256192,
+                        "peakRSSBytes":  126820352,
+                        "sample":  {
+                                       "tuple":  "node24",
+                                       "node":  "v24.19.0",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "820f5545150aea315cc8f67308eb139333282e39ba6625b729607096f3cbbb40",
+                                       "fixtureHash":  "90cec5e75f555236dcdaeaeffe8d47666d0c510a52b3b42002c94855ec4c0af7",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  268.20130000000006,
+                                                                "rssBytes":  124829696,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    },
+                    {
+                        "tuple":  "node24",
+                        "group":  "cold-3",
+                        "peakCommittedBytes":  116629504,
+                        "peakRSSBytes":  123269120,
+                        "sample":  {
+                                       "tuple":  "node24",
+                                       "node":  "v24.19.0",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "820f5545150aea315cc8f67308eb139333282e39ba6625b729607096f3cbbb40",
+                                       "fixtureHash":  "90cec5e75f555236dcdaeaeffe8d47666d0c510a52b3b42002c94855ec4c0af7",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  291.37800000000004,
+                                                                "rssBytes":  124522496,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    },
+                    {
+                        "tuple":  "node24",
+                        "group":  "cold-4",
+                        "peakCommittedBytes":  117047296,
+                        "peakRSSBytes":  122843136,
+                        "sample":  {
+                                       "tuple":  "node24",
+                                       "node":  "v24.19.0",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "820f5545150aea315cc8f67308eb139333282e39ba6625b729607096f3cbbb40",
+                                       "fixtureHash":  "90cec5e75f555236dcdaeaeffe8d47666d0c510a52b3b42002c94855ec4c0af7",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  262.4306,
+                                                                "rssBytes":  124583936,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    },
+                    {
+                        "tuple":  "node24",
+                        "group":  "warm",
+                        "peakCommittedBytes":  125435904,
+                        "peakRSSBytes":  153100288,
+                        "sample":  {
+                                       "tuple":  "node24",
+                                       "node":  "v24.19.0",
+                                       "extractorVersion":  "fs-04/1",
+                                       "sourceHash":  "820f5545150aea315cc8f67308eb139333282e39ba6625b729607096f3cbbb40",
+                                       "fixtureHash":  "90cec5e75f555236dcdaeaeffe8d47666d0c510a52b3b42002c94855ec4c0af7",
+                                       "measurements":  [
+                                                            {
+                                                                "elapsedMs":  70.42969999999991,
+                                                                "rssBytes":  132739072,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  58.105800000000045,
+                                                                "rssBytes":  139644928,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  58.69180000000006,
+                                                                "rssBytes":  148492288,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  56.5320999999999,
+                                                                "rssBytes":  155656192,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  78.96079999999984,
+                                                                "rssBytes":  148267008,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  65.35680000000002,
+                                                                "rssBytes":  148672512,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  50.785699999999906,
+                                                                "rssBytes":  148574208,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  49.86110000000008,
+                                                                "rssBytes":  149843968,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  49.29140000000007,
+                                                                "rssBytes":  149053440,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  52.071899999999914,
+                                                                "rssBytes":  149094400,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  40.73479999999995,
+                                                                "rssBytes":  149164032,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  40.68309999999997,
+                                                                "rssBytes":  148889600,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  37.30939999999987,
+                                                                "rssBytes":  149319680,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  35.53890000000001,
+                                                                "rssBytes":  149467136,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  36.56510000000003,
+                                                                "rssBytes":  149458944,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  34.52070000000003,
+                                                                "rssBytes":  150220800,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  41.405500000000075,
+                                                                "rssBytes":  149880832,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  38.58670000000029,
+                                                                "rssBytes":  149614592,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  41.7799,
+                                                                "rssBytes":  149483520,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            },
+                                                            {
+                                                                "elapsedMs":  35.15189999999984,
+                                                                "rssBytes":  149667840,
+                                                                "snapshotBytes":  84002,
+                                                                "facts":  30,
+                                                                "files":  7,
+                                                                "deadlineHits":  0
+                                                            }
+                                                        ]
+                                   }
+                    }
+                ]
+}

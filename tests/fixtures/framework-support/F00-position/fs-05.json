@@ -1,0 +1,15 @@
+{
+  "id": "F00-position-python",
+  "phase": "FS-05",
+  "license": "project-owned-synthetic",
+  "tuples": ["python31215", "python31316"],
+  "profile": "static-python-declared-environment",
+  "extractorVersion": "fs-05/1",
+  "sourceFixture": "../F05-python/syntax.json",
+  "cases": ["unicode-crlf", "bom-comment", "bom-definition", "bad-cookie"],
+  "oracle": "Pinned CPython ast.parse byte columns mapped to original UTF-16; original byte SHA256 and exact source slices",
+  "additionalAssertions": ["combining marks preserved", "split surrogate rejected", "invalid UTF-8 rejected", "non-UTF8 cookie rejected", "ASCII with non-ASCII rejected"],
+  "tests": "tests/framework-support/fs-05.test.ts",
+  "qualificationEvidence": "docs/fs-05/evidence/syntax-oracles.json"
+}
+

@@ -1,0 +1,192 @@
+[
+  {
+    "tuple": "python31215",
+    "python": "3.12.15",
+    "profile": "static-python-declared-environment",
+    "parser": "web-tree-sitter@0.25.10",
+    "grammar": "tree-sitter-python@0.25.0",
+    "abi": 15,
+    "executableHash": "4b8cf6a848749369033dde65540c0c1c4ee53872037b836c8e64e74650ed3f11",
+    "fixtureHash": "c88e0b90275668526e5e09354c7d28f728923fc42fc3008031b9fa7773a2fce0",
+    "oracleOutputHash": "9468766b80fc31e152b1a868dfd9b77ba0e79b498e8078dd0251360344567134",
+    "records": [
+      {
+        "id": "functions-async",
+        "status": "PASS",
+        "sourceHash": "d14c5b2090464e9e8915b1628eb3468ca45bb89b78c35953e88bf6ca506ec65b",
+        "outputHash": "4f6f59431d9a223df7f302898bd8d38fd03aa123433e61ad1bbd09576b8f42e8",
+        "declarations": 2
+      },
+      {
+        "id": "generic-alias",
+        "status": "PASS",
+        "sourceHash": "736d57c9dd1f06a5fd73a802945c3b18cada7eb7d56bbcb78667a31973ea3bd8",
+        "outputHash": "bd0ec28e89c77f555efb13c08669e1ff734a673ae1fc2587b17a8f787197cd59",
+        "declarations": 1
+      },
+      {
+        "id": "match",
+        "status": "PASS",
+        "sourceHash": "72e07bf07ef4c529263b9953fd3ec2bcdc519b7ecf5ba44f7b3246e5e4b4a6fc",
+        "outputHash": "193b9e468afbbc25bb346d8e5d4f3d1b2dd4d0e1f910f81acbea1d1739afca7f",
+        "declarations": 1
+      },
+      {
+        "id": "classes",
+        "status": "PASS",
+        "sourceHash": "c5806cabc6c847dbf1e89351de360422fbefdcb7a7572553373881d018b183b5",
+        "outputHash": "9dc4669f05357c528356c78686143ba1eb9023e190c3a7a30f9c9d4c351c1b8d",
+        "declarations": 3
+      },
+      {
+        "id": "closure",
+        "status": "PASS",
+        "sourceHash": "d35013733eb6cf73fd73e0eab6dc8f6c95592848f727b0af974fd93f4abf6e7a",
+        "outputHash": "7ab6d137108624f640972beea0c81b12d1b93101b84aff3aeef90d8c0af1d0c6",
+        "declarations": 2
+      },
+      {
+        "id": "decorated",
+        "status": "PASS",
+        "sourceHash": "c25f60e59bfae22037c25924c2279604ff71fa865a15ca8904b44efe05d37957",
+        "outputHash": "968b5096fa0ad8fc7e6c66642eb2f5af6d05455b7f9e1ad68925fcbc76d74853",
+        "declarations": 1
+      },
+      {
+        "id": "unicode-crlf",
+        "status": "PASS",
+        "sourceHash": "878c5d3eed831a9b7ede2a96d975d65ff7763b7ca6623905df33cdfb02da95fd",
+        "outputHash": "9624ba6cc7a3f1973edf4d0820965ab5d0c8899a719714b08fea4d49ab2f8ab3",
+        "declarations": 1
+      },
+      {
+        "id": "bom-comment",
+        "status": "PASS",
+        "sourceHash": "82c5b606b51ef2025f02306f231b75116e2a1ebc6c017f98be84cf63cc63f51c",
+        "outputHash": "1287c9013214875cf11f3f19a22b9640dfb11b34e678f7fbb3bbb38d75bbbd9e",
+        "declarations": 1
+      },
+      {
+        "id": "bom-definition",
+        "status": "PASS",
+        "sourceHash": "ee34b0d73d605504c81a870c2439bd9e532bfe48138f862e0ddaaef1d9ed6852",
+        "outputHash": "fcb4c5e29f07760ddd1403b43bbf1fa2baa6b71a23c8c5dd8805a5fd43ff63f2",
+        "declarations": 1
+      },
+      {
+        "id": "malformed",
+        "status": "PASS",
+        "sourceHash": "e6938fd8f563665fcaefec05805213a62ed5a1fa7a136aa6aad7c16602ca1da8",
+        "outputHash": "5d7d253397f3518ec6d9c4316d6dcea4c2af8a1e6c338c0ba58848ce9d15e9bc",
+        "declarations": 0
+      },
+      {
+        "id": "bad-cookie",
+        "status": "PASS",
+        "boundary": "unsupported-encoding"
+      },
+      {
+        "id": "execution-sentinel",
+        "status": "PASS",
+        "sourceHash": "746c973f952c15831e7b599e93af7e33b3098dc0e43acf1a9d478c1aac264194",
+        "outputHash": "c575e5e22a0d1bb9273dedb4412b18de2cc4dd6543f13faa757f1b3754e86ee1",
+        "declarations": 1
+      }
+    ]
+  },
+  {
+    "tuple": "python31316",
+    "python": "3.13.16",
+    "profile": "static-python-declared-environment",
+    "parser": "web-tree-sitter@0.25.10",
+    "grammar": "tree-sitter-python@0.25.0",
+    "abi": 15,
+    "executableHash": "31fe10b4ed82a2f960af0ef9931f46a4b84ff286f8b6ffd9dee098cf4f10f17f",
+    "fixtureHash": "c88e0b90275668526e5e09354c7d28f728923fc42fc3008031b9fa7773a2fce0",
+    "oracleOutputHash": "f166a4acc753bd6dfb8f96b08bdaac6cc5b59ef845d76bf2594cb24d79f205fb",
+    "records": [
+      {
+        "id": "functions-async",
+        "status": "PASS",
+        "sourceHash": "d14c5b2090464e9e8915b1628eb3468ca45bb89b78c35953e88bf6ca506ec65b",
+        "outputHash": "4f6f59431d9a223df7f302898bd8d38fd03aa123433e61ad1bbd09576b8f42e8",
+        "declarations": 2
+      },
+      {
+        "id": "generic-alias",
+        "status": "PASS",
+        "sourceHash": "736d57c9dd1f06a5fd73a802945c3b18cada7eb7d56bbcb78667a31973ea3bd8",
+        "outputHash": "bd0ec28e89c77f555efb13c08669e1ff734a673ae1fc2587b17a8f787197cd59",
+        "declarations": 1
+      },
+      {
+        "id": "match",
+        "status": "PASS",
+        "sourceHash": "72e07bf07ef4c529263b9953fd3ec2bcdc519b7ecf5ba44f7b3246e5e4b4a6fc",
+        "outputHash": "193b9e468afbbc25bb346d8e5d4f3d1b2dd4d0e1f910f81acbea1d1739afca7f",
+        "declarations": 1
+      },
+      {
+        "id": "classes",
+        "status": "PASS",
+        "sourceHash": "c5806cabc6c847dbf1e89351de360422fbefdcb7a7572553373881d018b183b5",
+        "outputHash": "9dc4669f05357c528356c78686143ba1eb9023e190c3a7a30f9c9d4c351c1b8d",
+        "declarations": 3
+      },
+      {
+        "id": "closure",
+        "status": "PASS",
+        "sourceHash": "d35013733eb6cf73fd73e0eab6dc8f6c95592848f727b0af974fd93f4abf6e7a",
+        "outputHash": "7ab6d137108624f640972beea0c81b12d1b93101b84aff3aeef90d8c0af1d0c6",
+        "declarations": 2
+      },
+      {
+        "id": "decorated",
+        "status": "PASS",
+        "sourceHash": "c25f60e59bfae22037c25924c2279604ff71fa865a15ca8904b44efe05d37957",
+        "outputHash": "968b5096fa0ad8fc7e6c66642eb2f5af6d05455b7f9e1ad68925fcbc76d74853",
+        "declarations": 1
+      },
+      {
+        "id": "unicode-crlf",
+        "status": "PASS",
+        "sourceHash": "878c5d3eed831a9b7ede2a96d975d65ff7763b7ca6623905df33cdfb02da95fd",
+        "outputHash": "9624ba6cc7a3f1973edf4d0820965ab5d0c8899a719714b08fea4d49ab2f8ab3",
+        "declarations": 1
+      },
+      {
+        "id": "bom-comment",
+        "status": "PASS",
+        "sourceHash": "82c5b606b51ef2025f02306f231b75116e2a1ebc6c017f98be84cf63cc63f51c",
+        "outputHash": "1287c9013214875cf11f3f19a22b9640dfb11b34e678f7fbb3bbb38d75bbbd9e",
+        "declarations": 1
+      },
+      {
+        "id": "bom-definition",
+        "status": "PASS",
+        "sourceHash": "ee34b0d73d605504c81a870c2439bd9e532bfe48138f862e0ddaaef1d9ed6852",
+        "outputHash": "fcb4c5e29f07760ddd1403b43bbf1fa2baa6b71a23c8c5dd8805a5fd43ff63f2",
+        "declarations": 1
+      },
+      {
+        "id": "malformed",
+        "status": "PASS",
+        "sourceHash": "e6938fd8f563665fcaefec05805213a62ed5a1fa7a136aa6aad7c16602ca1da8",
+        "outputHash": "5d7d253397f3518ec6d9c4316d6dcea4c2af8a1e6c338c0ba58848ce9d15e9bc",
+        "declarations": 0
+      },
+      {
+        "id": "bad-cookie",
+        "status": "PASS",
+        "boundary": "unsupported-encoding"
+      },
+      {
+        "id": "execution-sentinel",
+        "status": "PASS",
+        "sourceHash": "746c973f952c15831e7b599e93af7e33b3098dc0e43acf1a9d478c1aac264194",
+        "outputHash": "c575e5e22a0d1bb9273dedb4412b18de2cc4dd6543f13faa757f1b3754e86ee1",
+        "declarations": 1
+      }
+    ]
+  }
+]

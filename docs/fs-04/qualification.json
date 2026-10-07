@@ -1,0 +1,368 @@
+{
+  "phase": "FS-04",
+  "status": "complete",
+  "acceptanceSatisfied": true,
+  "gates": {
+    "fixture": true,
+    "oracles": true,
+    "profiles": true,
+    "regression": true,
+    "build": true,
+    "windows": true,
+    "baseline": true,
+    "performance": true,
+    "preservation": true
+  },
+  "criteria": [
+    {
+      "id": "04-01",
+      "criterion": "Explicit package scopes, import/require extensions, ordered conditions, self/imports and external/workspace boundaries",
+      "status": "PASS",
+      "gates": [
+        "fixture",
+        "oracles",
+        "profiles"
+      ]
+    },
+    {
+      "id": "04-02",
+      "criterion": "CJS exports/re-exports, mutation negatives, built-ins, type/runtime divergence",
+      "status": "PASS",
+      "gates": [
+        "fixture",
+        "oracles"
+      ]
+    },
+    {
+      "id": "04-03",
+      "criterion": "Script/bin declarations, stable first-party HTTP/listen, EventEmitter and Worker associations",
+      "status": "PASS",
+      "gates": [
+        "fixture"
+      ]
+    },
+    {
+      "id": "04-04",
+      "criterion": "App conventions/ownership, dynamic/catch-all paths, groups/private folders, slots/interceptions",
+      "status": "PASS",
+      "gates": [
+        "fixture",
+        "oracles"
+      ]
+    },
+    {
+      "id": "04-05",
+      "criterion": "Static pageExtensions/basePath, source-root ownership and unsupported configuration",
+      "status": "PASS",
+      "gates": [
+        "fixture"
+      ]
+    },
+    {
+      "id": "04-06",
+      "criterion": "Exported HTTP handlers/aliases/re-exports and distinct qualified derived HEAD/OPTIONS",
+      "status": "PASS",
+      "gates": [
+        "fixture",
+        "oracles"
+      ]
+    },
+    {
+      "id": "04-07",
+      "criterion": "Pages API explicit comparisons/switches; unknown/mutable dispatch never guessed",
+      "status": "PASS",
+      "gates": [
+        "fixture"
+      ]
+    },
+    {
+      "id": "04-08",
+      "criterion": "Client/server composition, directives/markers, prerendering and runtime conditions",
+      "status": "PASS",
+      "gates": [
+        "fixture"
+      ]
+    },
+    {
+      "id": "04-09",
+      "criterion": "Module/inline actions, stable aliases/forms, client boundary/server calls; no invented action URL",
+      "status": "PASS",
+      "gates": [
+        "fixture"
+      ]
+    },
+    {
+      "id": "04-10",
+      "criterion": "Version-specific Middleware/Proxy declarations and Edge execution boundary",
+      "status": "PASS",
+      "gates": [
+        "fixture",
+        "oracles"
+      ]
+    },
+    {
+      "id": "04-11",
+      "criterion": "Ordered static redirects/rewrites, conditions, destinations and environment evidence",
+      "status": "PASS",
+      "gates": [
+        "fixture",
+        "oracles"
+      ]
+    },
+    {
+      "id": "04-12",
+      "criterion": "Lifecycle/data exports and literal navigation/cache declarations",
+      "status": "PASS",
+      "gates": [
+        "fixture"
+      ]
+    },
+    {
+      "id": "04-13",
+      "criterion": "UI-to-action and endpoint-to-service investigations retain boundary labels and witnesses",
+      "status": "PASS",
+      "gates": [
+        "fixture",
+        "windows"
+      ]
+    },
+    {
+      "id": "04-14",
+      "criterion": "Determinism, full/incremental, snapshot v3 validation, storage/refresh and stale evidence",
+      "status": "PASS",
+      "gates": [
+        "fixture",
+        "regression",
+        "windows"
+      ]
+    },
+    {
+      "id": "04-15",
+      "criterion": "Read-policy/security, no inspected code/config/plugins executed, cancellation/recovery",
+      "status": "PASS",
+      "gates": [
+        "fixture",
+        "regression",
+        "windows"
+      ]
+    },
+    {
+      "id": "04-16",
+      "criterion": "Existing TS/JS, Next/Nest/Express/Docusaurus, Vite/React, exact Impact preserved",
+      "status": "PASS",
+      "gates": [
+        "regression",
+        "baseline",
+        "windows"
+      ]
+    },
+    {
+      "id": "04-17",
+      "criterion": "Frozen Laya, completed UI, production dependencies and optional AI consent preserved",
+      "status": "PASS",
+      "gates": [
+        "preservation",
+        "regression"
+      ]
+    },
+    {
+      "id": "04-18",
+      "criterion": "Typegen/typecheck/lint/build and asset/Rust/package verification",
+      "status": "PASS",
+      "gates": [
+        "build",
+        "windows"
+      ]
+    },
+    {
+      "id": "04-19",
+      "criterion": "Cold/warm resource qualification and equivalent historical performance comparison",
+      "status": "PASS",
+      "gates": [
+        "performance"
+      ]
+    },
+    {
+      "id": "04-20",
+      "criterion": "Per-pattern exact tuple/profile/hash ledger and recorded unsupported boundaries",
+      "status": "PASS",
+      "gates": [
+        "fixture",
+        "oracles",
+        "profiles",
+        "baseline"
+      ]
+    }
+  ],
+  "targets": [
+    {
+      "tuple": "next15",
+      "profile": "node-development",
+      "status": "PASS",
+      "log": "qualification-next15-node-development.log"
+    },
+    {
+      "tuple": "next15",
+      "profile": "node-production",
+      "status": "PASS",
+      "log": "qualification-next15-node-production.log"
+    },
+    {
+      "tuple": "next15",
+      "profile": "browser",
+      "status": "PASS",
+      "log": "qualification-next15-browser.log"
+    },
+    {
+      "tuple": "next16-preservation",
+      "profile": "node-development",
+      "status": "PASS",
+      "log": "qualification-next16-preservation-node-development.log"
+    },
+    {
+      "tuple": "next16-preservation",
+      "profile": "node-production",
+      "status": "PASS",
+      "log": "qualification-next16-preservation-node-production.log"
+    },
+    {
+      "tuple": "next16-preservation",
+      "profile": "browser",
+      "status": "PASS",
+      "log": "qualification-next16-preservation-browser.log"
+    },
+    {
+      "tuple": "next16-patch",
+      "profile": "node-development",
+      "status": "PASS",
+      "log": "qualification-next16-patch-node-development.log"
+    },
+    {
+      "tuple": "next16-patch",
+      "profile": "node-production",
+      "status": "PASS",
+      "log": "qualification-next16-patch-node-production.log"
+    },
+    {
+      "tuple": "next16-patch",
+      "profile": "browser",
+      "status": "PASS",
+      "log": "qualification-next16-patch-browser.log"
+    },
+    {
+      "tuple": "node22",
+      "profile": "node-development",
+      "status": "PASS",
+      "log": "qualification-node22-node-development.log"
+    },
+    {
+      "tuple": "node22",
+      "profile": "node-production",
+      "status": "PASS",
+      "log": "qualification-node22-node-production.log"
+    },
+    {
+      "tuple": "node24",
+      "profile": "node-development",
+      "status": "PASS",
+      "log": "qualification-node24-node-development.log"
+    },
+    {
+      "tuple": "node24",
+      "profile": "node-production",
+      "status": "PASS",
+      "log": "qualification-node24-node-production.log"
+    }
+  ],
+  "extractorVersion": "fs-04/1",
+  "testSourceHash": "a77b4a2bd5342e381e6a05f72ef813f3c35eda75733a97b46cb81b5ce2822828",
+  "fixtureHashes": [
+    "89354b94f45e8672d6ca6c2ae3bc2847d00368f9e505e3f1fd70986513064478",
+    "90cec5e75f555236dcdaeaeffe8d47666d0c510a52b3b42002c94855ec4c0af7"
+  ],
+  "oracleHashes": [
+    "076e1552753495a5b62279ae20d4a696b188bdb62b8c1126aefce2f2a8a2fd9d",
+    "7bb0c20aaae79f78039b5cd53d174cc04ae0a002e6bf23578c8a239c0836e05f"
+  ],
+  "packageHash": "f8c466248beaf2b9cbc4e536faf0d880e7814fd26be6eae213044cfae74ef616",
+  "patterns": [
+    {
+      "id": "04-01",
+      "scope": "Explicit package scopes, import/require extensions, ordered conditions, self/imports and external/workspace boundaries",
+      "state": "qualified",
+      "record": "dc82afe0d7662a5b4943dc36fc924be7cdba7f0fe16c60143016f92281824051"
+    },
+    {
+      "id": "04-02",
+      "scope": "CJS exports/re-exports, mutation negatives, built-ins, type/runtime divergence",
+      "state": "qualified",
+      "record": "dc82afe0d7662a5b4943dc36fc924be7cdba7f0fe16c60143016f92281824051"
+    },
+    {
+      "id": "04-03",
+      "scope": "Script/bin declarations, stable first-party HTTP/listen, EventEmitter and Worker associations",
+      "state": "qualified",
+      "record": "dc82afe0d7662a5b4943dc36fc924be7cdba7f0fe16c60143016f92281824051"
+    },
+    {
+      "id": "04-04",
+      "scope": "App conventions/ownership, dynamic/catch-all paths, groups/private folders, slots/interceptions",
+      "state": "qualified",
+      "record": "dc82afe0d7662a5b4943dc36fc924be7cdba7f0fe16c60143016f92281824051"
+    },
+    {
+      "id": "04-05",
+      "scope": "Static pageExtensions/basePath, source-root ownership and unsupported configuration",
+      "state": "qualified",
+      "record": "dc82afe0d7662a5b4943dc36fc924be7cdba7f0fe16c60143016f92281824051"
+    },
+    {
+      "id": "04-06",
+      "scope": "Exported HTTP handlers/aliases/re-exports and distinct qualified derived HEAD/OPTIONS",
+      "state": "qualified",
+      "record": "dc82afe0d7662a5b4943dc36fc924be7cdba7f0fe16c60143016f92281824051"
+    },
+    {
+      "id": "04-07",
+      "scope": "Pages API explicit comparisons/switches; unknown/mutable dispatch never guessed",
+      "state": "qualified",
+      "record": "dc82afe0d7662a5b4943dc36fc924be7cdba7f0fe16c60143016f92281824051"
+    },
+    {
+      "id": "04-08",
+      "scope": "Client/server composition, directives/markers, prerendering and runtime conditions",
+      "state": "qualified",
+      "record": "dc82afe0d7662a5b4943dc36fc924be7cdba7f0fe16c60143016f92281824051"
+    },
+    {
+      "id": "04-09",
+      "scope": "Module/inline actions, stable aliases/forms, client boundary/server calls; no invented action URL",
+      "state": "qualified",
+      "record": "dc82afe0d7662a5b4943dc36fc924be7cdba7f0fe16c60143016f92281824051"
+    },
+    {
+      "id": "04-10",
+      "scope": "Version-specific Middleware/Proxy declarations and Edge execution boundary",
+      "state": "qualified",
+      "record": "dc82afe0d7662a5b4943dc36fc924be7cdba7f0fe16c60143016f92281824051"
+    },
+    {
+      "id": "04-11",
+      "scope": "Ordered static redirects/rewrites, conditions, destinations and environment evidence",
+      "state": "qualified",
+      "record": "dc82afe0d7662a5b4943dc36fc924be7cdba7f0fe16c60143016f92281824051"
+    },
+    {
+      "id": "04-12",
+      "scope": "Lifecycle/data exports and literal navigation/cache declarations",
+      "state": "qualified",
+      "record": "dc82afe0d7662a5b4943dc36fc924be7cdba7f0fe16c60143016f92281824051"
+    }
+  ],
+  "blockedTargets": [
+    "Native Node browser execution",
+    "unknown/range framework tuples",
+    "Edge runtime and custom loaders"
+  ],
+  "policy": "Qualifications cover named bounded patterns; aggregate capability remains partial. Missing/dynamic implementation evidence is a typed boundary, not a verified edge."
+}

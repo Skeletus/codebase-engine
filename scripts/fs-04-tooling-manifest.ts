@@ -1,0 +1,8 @@
+import assert from "node:assert/strict";
+import {readFileSync,writeFileSync} from "node:fs";
+import {createHash} from "node:crypto";
+const hash=(file:string)=>createHash("sha256").update(readFileSync(file)).digest("hex");
+const tools=[];
+for(const [tuple,root,expected] of [["next15","node_modules/.fs04-experiments/next15/node_modules","15.5.27"],["next16-patch","node_modules/.fs04-experiments/next16/node_modules","16.3.8"],["next16-preservation","node_modules","16.3.6"]])for(const name of ["next","react","react-dom","typescript"]){const file=root+"/"+name+"/package.json",pkg=JSON.parse(readFileSync(file,"utf8"));assert.equal(pkg.version,name==="next" ? expected : name==="typescript" ? "5.9.3" : "19.2.8");tools.push({tuple,name,version:pkg.version,license:pkg.license,packageHash:hash(file),scope:tuple==="next16-preservation" ? "accepted existing production tool; no dependency modification" : "approved isolated developer oracle only"});}
+const references=["docs/fs-04/evidence/next15-middleware.mdx","docs/fs-04/evidence/next15-use-server.mdx","docs/fs-04/evidence/next15-parallel-routes.mdx","node_modules/next/dist/docs/01-app/03-api-reference/03-file-conventions/proxy.md","node_modules/.fs04-experiments/next16/node_modules/next/dist/docs/01-app/03-api-reference/03-file-conventions/proxy.md"];
+writeFileSync("docs/fs-04/evidence/tooling-manifest.json",JSON.stringify({tools,documentation:references.map(file=>({file,hash:hash(file)})),policy:"Only approved isolated package installs; ignore-scripts; framework utilities with controlled data, no inspected application/config/plugin execution. Production manifests and lockfiles unchanged."},null,2)+"\n");

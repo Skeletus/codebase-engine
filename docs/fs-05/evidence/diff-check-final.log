@@ -1,0 +1,36 @@
+warning: LF will be replaced by CRLF in docs/project-doc.md.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in lib/engine/adapters/typescript.ts.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in lib/engine/coordinator.ts.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in lib/engine/refresh.ts.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in lib/model/framework-validate.ts.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in lib/model/framework.ts.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in lib/parser/adapters/vite-react.ts.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in lib/parser/adapters/vite.ts.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in lib/parser/framework-bindings.ts.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in lib/parser/framework-budget.ts.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in lib/repository/read-policy.ts.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in package.json.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in pnpm-lock.yaml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in scripts/engine.ts.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in scripts/package-engine.ts.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in scripts/sidecar.ts.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src-tauri/Cargo.toml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src-tauri/src/engine_process.rs.
+The file will have its original line endings in your working directory

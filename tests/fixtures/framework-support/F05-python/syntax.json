@@ -1,0 +1,22 @@
+{
+  "id": "F05-python-syntax",
+  "phase": "FS-05",
+  "license": "first-party controlled test data",
+  "tuples": ["python31215", "python31316"],
+  "profile": "static-python-declared-environment",
+  "cases": [
+    {"id":"functions-async", "valid":true, "source":"def target(x):\n    return x\nasync def caller():\n    return target(1)\n"},
+    {"id":"generic-alias", "valid":true, "source":"type Pair[T] = tuple[T, T]\ndef pair(x: Pair[int]):\n    return x\n"},
+    {"id":"match", "valid":true, "source":"def read(value):\n    match value:\n        case {'id': result}:\n            return result\n"},
+    {"id":"classes", "valid":true, "source":"class Base:\n    def method(self, value):\n        return value\nclass Child(Base):\n    pass\n"},
+    {"id":"closure", "valid":true, "source":"def outer(value):\n    def inner():\n        return value\n    return inner()\n"},
+    {"id":"decorated", "valid":true, "source":"@wrapper\ndef decorated(value):\n    return value\ndecorated(1)\n"},
+    {"id":"unicode-crlf", "valid":true, "source":"label = '😀éé'\r\ndef café(δ):\r\n    return δ\r\n"},
+    {"id":"bom-comment", "valid":true, "source":"﻿# coding: utf-8\r\ndef value():\r\n    pass\r\n"},
+    {"id":"bom-definition", "valid":true, "source":"﻿def value():\n    pass\n"},
+    {"id":"malformed", "valid":false, "source":"def broken(:\n    return 1\n"},
+    {"id":"bad-cookie", "valid":false, "source":"# coding: ascii\nlabel = 'é'\n"},
+    {"id":"execution-sentinel", "valid":true, "source":"raise RuntimeError('MUST NEVER EXECUTE')\nimport never_import_this\ndef safe():\n    pass\n"}
+  ]
+}
+

@@ -1,0 +1,1487 @@
+[
+  {
+    "tuple": "next15",
+    "version": "15.5.27",
+    "node": "22.23.3",
+    "profile": "node-development",
+    "fixtureHash": "89354b94f45e8672d6ca6c2ae3bc2847d00368f9e505e3f1fd70986513064478",
+    "routes": [
+      {
+        "file": "app/page.tsx",
+        "pattern": "/base"
+      },
+      {
+        "file": "app/api/items/[id]/route.ts",
+        "pattern": "/base/api/items/[id]"
+      },
+      {
+        "file": "app/(shop)/products/[...slug]/page.tsx",
+        "pattern": "/base/products/[...slug]"
+      }
+    ],
+    "interceptions": [
+      {
+        "input": "/feed/@modal/(..)photo/[id]",
+        "interceptingRoute": "/feed",
+        "interceptedRoute": "/photo/[id]"
+      },
+      {
+        "input": "/feed/@modal/(.)photo/[id]",
+        "interceptingRoute": "/feed",
+        "interceptedRoute": "/feed/photo/[id]"
+      },
+      {
+        "input": "/feed/@modal/(...)photo/[id]",
+        "interceptingRoute": "/feed",
+        "interceptedRoute": "/photo/[id]"
+      }
+    ],
+    "matcherCases": [
+      {
+        "pattern": "/base/api/items/[id]",
+        "tests": [
+          {
+            "destination": "/base/api/items/7",
+            "matches": true
+          },
+          {
+            "destination": "/base/api/items/7/",
+            "matches": true
+          },
+          {
+            "destination": "/BASE/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/products/a/b",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop/a",
+            "matches": false
+          }
+        ]
+      },
+      {
+        "pattern": "/base/products/[...slug]",
+        "tests": [
+          {
+            "destination": "/base/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/api/items/7/",
+            "matches": false
+          },
+          {
+            "destination": "/BASE/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/products/a/b",
+            "matches": true
+          },
+          {
+            "destination": "/base/shop",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop/a",
+            "matches": false
+          }
+        ]
+      },
+      {
+        "pattern": "/base/shop/[[...slug]]",
+        "tests": [
+          {
+            "destination": "/base/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/api/items/7/",
+            "matches": false
+          },
+          {
+            "destination": "/BASE/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/products/a/b",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop",
+            "matches": true
+          },
+          {
+            "destination": "/base/shop/a",
+            "matches": true
+          }
+        ]
+      }
+    ],
+    "rewriteCases": [
+      {
+        "pattern": "/base/old/:path*",
+        "tests": [
+          {
+            "destination": "/base/old",
+            "matches": true
+          },
+          {
+            "destination": "/base/old/a/b",
+            "matches": true
+          },
+          {
+            "destination": "/BASE/old/a",
+            "matches": true
+          },
+          {
+            "destination": "/base/other",
+            "matches": false
+          }
+        ]
+      }
+    ],
+    "derived": {
+      "HEAD": "GET",
+      "OPTIONS": "function"
+    },
+    "utilityHashes": [
+      "c95e8764d11f5c60ad03de1e04756bf90d162f32a905bf92c3b81775c19aa37e",
+      "9223147c5edbc610a215a19133cbe9fbae8622b4c094f49a0021c9bf651156e2",
+      "3f024a8aa4e6fc1e8f1fa2da6a1bc467320e7111256f69d7502bf4f96cd4ca70",
+      "2710df7cb3b406e68e36e5119cd489f0b703e122f76a2c79237d84b68c607304",
+      "c1e2a1772de031c2834448054b3419080a1168ffe4e141bc251ad11c587cf9f1",
+      "34fe7956067e5515a9fc8db052386f7ba45802c23cd409f2fa7ae8dbc710d5e2"
+    ],
+    "license": "MIT",
+    "policy": "Pinned framework utilities over literal strings/inert sentinels; no application/config/plugin loaded",
+    "outputHash": "7e1dee14681365ce967cecc3a6aa216206c114387f216226522b630c82ae7001"
+  },
+  {
+    "tuple": "next15",
+    "version": "15.5.27",
+    "node": "22.23.3",
+    "profile": "node-production",
+    "fixtureHash": "89354b94f45e8672d6ca6c2ae3bc2847d00368f9e505e3f1fd70986513064478",
+    "routes": [
+      {
+        "file": "app/page.tsx",
+        "pattern": "/base"
+      },
+      {
+        "file": "app/api/items/[id]/route.ts",
+        "pattern": "/base/api/items/[id]"
+      },
+      {
+        "file": "app/(shop)/products/[...slug]/page.tsx",
+        "pattern": "/base/products/[...slug]"
+      }
+    ],
+    "interceptions": [
+      {
+        "input": "/feed/@modal/(..)photo/[id]",
+        "interceptingRoute": "/feed",
+        "interceptedRoute": "/photo/[id]"
+      },
+      {
+        "input": "/feed/@modal/(.)photo/[id]",
+        "interceptingRoute": "/feed",
+        "interceptedRoute": "/feed/photo/[id]"
+      },
+      {
+        "input": "/feed/@modal/(...)photo/[id]",
+        "interceptingRoute": "/feed",
+        "interceptedRoute": "/photo/[id]"
+      }
+    ],
+    "matcherCases": [
+      {
+        "pattern": "/base/api/items/[id]",
+        "tests": [
+          {
+            "destination": "/base/api/items/7",
+            "matches": true
+          },
+          {
+            "destination": "/base/api/items/7/",
+            "matches": true
+          },
+          {
+            "destination": "/BASE/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/products/a/b",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop/a",
+            "matches": false
+          }
+        ]
+      },
+      {
+        "pattern": "/base/products/[...slug]",
+        "tests": [
+          {
+            "destination": "/base/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/api/items/7/",
+            "matches": false
+          },
+          {
+            "destination": "/BASE/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/products/a/b",
+            "matches": true
+          },
+          {
+            "destination": "/base/shop",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop/a",
+            "matches": false
+          }
+        ]
+      },
+      {
+        "pattern": "/base/shop/[[...slug]]",
+        "tests": [
+          {
+            "destination": "/base/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/api/items/7/",
+            "matches": false
+          },
+          {
+            "destination": "/BASE/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/products/a/b",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop",
+            "matches": true
+          },
+          {
+            "destination": "/base/shop/a",
+            "matches": true
+          }
+        ]
+      }
+    ],
+    "rewriteCases": [
+      {
+        "pattern": "/base/old/:path*",
+        "tests": [
+          {
+            "destination": "/base/old",
+            "matches": true
+          },
+          {
+            "destination": "/base/old/a/b",
+            "matches": true
+          },
+          {
+            "destination": "/BASE/old/a",
+            "matches": true
+          },
+          {
+            "destination": "/base/other",
+            "matches": false
+          }
+        ]
+      }
+    ],
+    "derived": {
+      "HEAD": "GET",
+      "OPTIONS": "function"
+    },
+    "utilityHashes": [
+      "c95e8764d11f5c60ad03de1e04756bf90d162f32a905bf92c3b81775c19aa37e",
+      "9223147c5edbc610a215a19133cbe9fbae8622b4c094f49a0021c9bf651156e2",
+      "3f024a8aa4e6fc1e8f1fa2da6a1bc467320e7111256f69d7502bf4f96cd4ca70",
+      "2710df7cb3b406e68e36e5119cd489f0b703e122f76a2c79237d84b68c607304",
+      "c1e2a1772de031c2834448054b3419080a1168ffe4e141bc251ad11c587cf9f1",
+      "34fe7956067e5515a9fc8db052386f7ba45802c23cd409f2fa7ae8dbc710d5e2"
+    ],
+    "license": "MIT",
+    "policy": "Pinned framework utilities over literal strings/inert sentinels; no application/config/plugin loaded",
+    "outputHash": "7e1dee14681365ce967cecc3a6aa216206c114387f216226522b630c82ae7001"
+  },
+  {
+    "tuple": "next15",
+    "version": "15.5.27",
+    "node": "22.23.3",
+    "profile": "browser",
+    "fixtureHash": "89354b94f45e8672d6ca6c2ae3bc2847d00368f9e505e3f1fd70986513064478",
+    "routes": [
+      {
+        "file": "app/page.tsx",
+        "pattern": "/base"
+      },
+      {
+        "file": "app/api/items/[id]/route.ts",
+        "pattern": "/base/api/items/[id]"
+      },
+      {
+        "file": "app/(shop)/products/[...slug]/page.tsx",
+        "pattern": "/base/products/[...slug]"
+      }
+    ],
+    "interceptions": [
+      {
+        "input": "/feed/@modal/(..)photo/[id]",
+        "interceptingRoute": "/feed",
+        "interceptedRoute": "/photo/[id]"
+      },
+      {
+        "input": "/feed/@modal/(.)photo/[id]",
+        "interceptingRoute": "/feed",
+        "interceptedRoute": "/feed/photo/[id]"
+      },
+      {
+        "input": "/feed/@modal/(...)photo/[id]",
+        "interceptingRoute": "/feed",
+        "interceptedRoute": "/photo/[id]"
+      }
+    ],
+    "matcherCases": [
+      {
+        "pattern": "/base/api/items/[id]",
+        "tests": [
+          {
+            "destination": "/base/api/items/7",
+            "matches": true
+          },
+          {
+            "destination": "/base/api/items/7/",
+            "matches": true
+          },
+          {
+            "destination": "/BASE/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/products/a/b",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop/a",
+            "matches": false
+          }
+        ]
+      },
+      {
+        "pattern": "/base/products/[...slug]",
+        "tests": [
+          {
+            "destination": "/base/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/api/items/7/",
+            "matches": false
+          },
+          {
+            "destination": "/BASE/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/products/a/b",
+            "matches": true
+          },
+          {
+            "destination": "/base/shop",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop/a",
+            "matches": false
+          }
+        ]
+      },
+      {
+        "pattern": "/base/shop/[[...slug]]",
+        "tests": [
+          {
+            "destination": "/base/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/api/items/7/",
+            "matches": false
+          },
+          {
+            "destination": "/BASE/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/products/a/b",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop",
+            "matches": true
+          },
+          {
+            "destination": "/base/shop/a",
+            "matches": true
+          }
+        ]
+      }
+    ],
+    "rewriteCases": [
+      {
+        "pattern": "/base/old/:path*",
+        "tests": [
+          {
+            "destination": "/base/old",
+            "matches": true
+          },
+          {
+            "destination": "/base/old/a/b",
+            "matches": true
+          },
+          {
+            "destination": "/BASE/old/a",
+            "matches": true
+          },
+          {
+            "destination": "/base/other",
+            "matches": false
+          }
+        ]
+      }
+    ],
+    "derived": {
+      "HEAD": "GET",
+      "OPTIONS": "function"
+    },
+    "utilityHashes": [
+      "c95e8764d11f5c60ad03de1e04756bf90d162f32a905bf92c3b81775c19aa37e",
+      "9223147c5edbc610a215a19133cbe9fbae8622b4c094f49a0021c9bf651156e2",
+      "3f024a8aa4e6fc1e8f1fa2da6a1bc467320e7111256f69d7502bf4f96cd4ca70",
+      "2710df7cb3b406e68e36e5119cd489f0b703e122f76a2c79237d84b68c607304",
+      "c1e2a1772de031c2834448054b3419080a1168ffe4e141bc251ad11c587cf9f1",
+      "34fe7956067e5515a9fc8db052386f7ba45802c23cd409f2fa7ae8dbc710d5e2"
+    ],
+    "license": "MIT",
+    "policy": "Pinned framework utilities over literal strings/inert sentinels; no application/config/plugin loaded",
+    "outputHash": "7e1dee14681365ce967cecc3a6aa216206c114387f216226522b630c82ae7001"
+  },
+  {
+    "tuple": "next16-preservation",
+    "version": "16.3.6",
+    "node": "24.19.0",
+    "profile": "node-development",
+    "fixtureHash": "89354b94f45e8672d6ca6c2ae3bc2847d00368f9e505e3f1fd70986513064478",
+    "routes": [
+      {
+        "file": "app/page.tsx",
+        "pattern": "/base"
+      },
+      {
+        "file": "app/api/items/[id]/route.ts",
+        "pattern": "/base/api/items/[id]"
+      },
+      {
+        "file": "app/(shop)/products/[...slug]/page.tsx",
+        "pattern": "/base/products/[...slug]"
+      }
+    ],
+    "interceptions": [
+      {
+        "input": "/feed/@modal/(..)photo/[id]",
+        "interceptingRoute": "/feed",
+        "interceptedRoute": "/photo/[id]"
+      },
+      {
+        "input": "/feed/@modal/(.)photo/[id]",
+        "interceptingRoute": "/feed",
+        "interceptedRoute": "/feed/photo/[id]"
+      },
+      {
+        "input": "/feed/@modal/(...)photo/[id]",
+        "interceptingRoute": "/feed",
+        "interceptedRoute": "/photo/[id]"
+      }
+    ],
+    "matcherCases": [
+      {
+        "pattern": "/base/api/items/[id]",
+        "tests": [
+          {
+            "destination": "/base/api/items/7",
+            "matches": true
+          },
+          {
+            "destination": "/base/api/items/7/",
+            "matches": true
+          },
+          {
+            "destination": "/BASE/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/products/a/b",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop/a",
+            "matches": false
+          }
+        ]
+      },
+      {
+        "pattern": "/base/products/[...slug]",
+        "tests": [
+          {
+            "destination": "/base/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/api/items/7/",
+            "matches": false
+          },
+          {
+            "destination": "/BASE/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/products/a/b",
+            "matches": true
+          },
+          {
+            "destination": "/base/shop",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop/a",
+            "matches": false
+          }
+        ]
+      },
+      {
+        "pattern": "/base/shop/[[...slug]]",
+        "tests": [
+          {
+            "destination": "/base/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/api/items/7/",
+            "matches": false
+          },
+          {
+            "destination": "/BASE/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/products/a/b",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop",
+            "matches": true
+          },
+          {
+            "destination": "/base/shop/a",
+            "matches": true
+          }
+        ]
+      }
+    ],
+    "rewriteCases": [
+      {
+        "pattern": "/base/old/:path*",
+        "tests": [
+          {
+            "destination": "/base/old",
+            "matches": true
+          },
+          {
+            "destination": "/base/old/a/b",
+            "matches": true
+          },
+          {
+            "destination": "/BASE/old/a",
+            "matches": true
+          },
+          {
+            "destination": "/base/other",
+            "matches": false
+          }
+        ]
+      }
+    ],
+    "derived": {
+      "HEAD": "GET",
+      "OPTIONS": "function"
+    },
+    "utilityHashes": [
+      "a7477c3776af700dca2d70d5787028ac73aa0e6b7cdfb907ae5ff5ce536626ed",
+      "95413b15825fde492f23eb6563621d394e617ba8231082071e80f6011694cda7",
+      "e8a6452768381bca145fe5687381be55964db0b2057bd3c5bf2af1a8fa81bad5",
+      "5cf0f8a95b65c41aee690a2eebfd430b0ab7a0d135b1d9b0f0b7d363ecdd4f14",
+      "9c323ea3f5ae37ff0de3bef02360f5a64182c69c36e20dfced0488159500c808",
+      "34fe7956067e5515a9fc8db052386f7ba45802c23cd409f2fa7ae8dbc710d5e2"
+    ],
+    "license": "MIT",
+    "policy": "Pinned framework utilities over literal strings/inert sentinels; no application/config/plugin loaded",
+    "outputHash": "7e1dee14681365ce967cecc3a6aa216206c114387f216226522b630c82ae7001"
+  },
+  {
+    "tuple": "next16-preservation",
+    "version": "16.3.6",
+    "node": "24.19.0",
+    "profile": "node-production",
+    "fixtureHash": "89354b94f45e8672d6ca6c2ae3bc2847d00368f9e505e3f1fd70986513064478",
+    "routes": [
+      {
+        "file": "app/page.tsx",
+        "pattern": "/base"
+      },
+      {
+        "file": "app/api/items/[id]/route.ts",
+        "pattern": "/base/api/items/[id]"
+      },
+      {
+        "file": "app/(shop)/products/[...slug]/page.tsx",
+        "pattern": "/base/products/[...slug]"
+      }
+    ],
+    "interceptions": [
+      {
+        "input": "/feed/@modal/(..)photo/[id]",
+        "interceptingRoute": "/feed",
+        "interceptedRoute": "/photo/[id]"
+      },
+      {
+        "input": "/feed/@modal/(.)photo/[id]",
+        "interceptingRoute": "/feed",
+        "interceptedRoute": "/feed/photo/[id]"
+      },
+      {
+        "input": "/feed/@modal/(...)photo/[id]",
+        "interceptingRoute": "/feed",
+        "interceptedRoute": "/photo/[id]"
+      }
+    ],
+    "matcherCases": [
+      {
+        "pattern": "/base/api/items/[id]",
+        "tests": [
+          {
+            "destination": "/base/api/items/7",
+            "matches": true
+          },
+          {
+            "destination": "/base/api/items/7/",
+            "matches": true
+          },
+          {
+            "destination": "/BASE/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/products/a/b",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop/a",
+            "matches": false
+          }
+        ]
+      },
+      {
+        "pattern": "/base/products/[...slug]",
+        "tests": [
+          {
+            "destination": "/base/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/api/items/7/",
+            "matches": false
+          },
+          {
+            "destination": "/BASE/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/products/a/b",
+            "matches": true
+          },
+          {
+            "destination": "/base/shop",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop/a",
+            "matches": false
+          }
+        ]
+      },
+      {
+        "pattern": "/base/shop/[[...slug]]",
+        "tests": [
+          {
+            "destination": "/base/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/api/items/7/",
+            "matches": false
+          },
+          {
+            "destination": "/BASE/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/products/a/b",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop",
+            "matches": true
+          },
+          {
+            "destination": "/base/shop/a",
+            "matches": true
+          }
+        ]
+      }
+    ],
+    "rewriteCases": [
+      {
+        "pattern": "/base/old/:path*",
+        "tests": [
+          {
+            "destination": "/base/old",
+            "matches": true
+          },
+          {
+            "destination": "/base/old/a/b",
+            "matches": true
+          },
+          {
+            "destination": "/BASE/old/a",
+            "matches": true
+          },
+          {
+            "destination": "/base/other",
+            "matches": false
+          }
+        ]
+      }
+    ],
+    "derived": {
+      "HEAD": "GET",
+      "OPTIONS": "function"
+    },
+    "utilityHashes": [
+      "a7477c3776af700dca2d70d5787028ac73aa0e6b7cdfb907ae5ff5ce536626ed",
+      "95413b15825fde492f23eb6563621d394e617ba8231082071e80f6011694cda7",
+      "e8a6452768381bca145fe5687381be55964db0b2057bd3c5bf2af1a8fa81bad5",
+      "5cf0f8a95b65c41aee690a2eebfd430b0ab7a0d135b1d9b0f0b7d363ecdd4f14",
+      "9c323ea3f5ae37ff0de3bef02360f5a64182c69c36e20dfced0488159500c808",
+      "34fe7956067e5515a9fc8db052386f7ba45802c23cd409f2fa7ae8dbc710d5e2"
+    ],
+    "license": "MIT",
+    "policy": "Pinned framework utilities over literal strings/inert sentinels; no application/config/plugin loaded",
+    "outputHash": "7e1dee14681365ce967cecc3a6aa216206c114387f216226522b630c82ae7001"
+  },
+  {
+    "tuple": "next16-preservation",
+    "version": "16.3.6",
+    "node": "24.19.0",
+    "profile": "browser",
+    "fixtureHash": "89354b94f45e8672d6ca6c2ae3bc2847d00368f9e505e3f1fd70986513064478",
+    "routes": [
+      {
+        "file": "app/page.tsx",
+        "pattern": "/base"
+      },
+      {
+        "file": "app/api/items/[id]/route.ts",
+        "pattern": "/base/api/items/[id]"
+      },
+      {
+        "file": "app/(shop)/products/[...slug]/page.tsx",
+        "pattern": "/base/products/[...slug]"
+      }
+    ],
+    "interceptions": [
+      {
+        "input": "/feed/@modal/(..)photo/[id]",
+        "interceptingRoute": "/feed",
+        "interceptedRoute": "/photo/[id]"
+      },
+      {
+        "input": "/feed/@modal/(.)photo/[id]",
+        "interceptingRoute": "/feed",
+        "interceptedRoute": "/feed/photo/[id]"
+      },
+      {
+        "input": "/feed/@modal/(...)photo/[id]",
+        "interceptingRoute": "/feed",
+        "interceptedRoute": "/photo/[id]"
+      }
+    ],
+    "matcherCases": [
+      {
+        "pattern": "/base/api/items/[id]",
+        "tests": [
+          {
+            "destination": "/base/api/items/7",
+            "matches": true
+          },
+          {
+            "destination": "/base/api/items/7/",
+            "matches": true
+          },
+          {
+            "destination": "/BASE/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/products/a/b",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop/a",
+            "matches": false
+          }
+        ]
+      },
+      {
+        "pattern": "/base/products/[...slug]",
+        "tests": [
+          {
+            "destination": "/base/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/api/items/7/",
+            "matches": false
+          },
+          {
+            "destination": "/BASE/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/products/a/b",
+            "matches": true
+          },
+          {
+            "destination": "/base/shop",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop/a",
+            "matches": false
+          }
+        ]
+      },
+      {
+        "pattern": "/base/shop/[[...slug]]",
+        "tests": [
+          {
+            "destination": "/base/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/api/items/7/",
+            "matches": false
+          },
+          {
+            "destination": "/BASE/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/products/a/b",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop",
+            "matches": true
+          },
+          {
+            "destination": "/base/shop/a",
+            "matches": true
+          }
+        ]
+      }
+    ],
+    "rewriteCases": [
+      {
+        "pattern": "/base/old/:path*",
+        "tests": [
+          {
+            "destination": "/base/old",
+            "matches": true
+          },
+          {
+            "destination": "/base/old/a/b",
+            "matches": true
+          },
+          {
+            "destination": "/BASE/old/a",
+            "matches": true
+          },
+          {
+            "destination": "/base/other",
+            "matches": false
+          }
+        ]
+      }
+    ],
+    "derived": {
+      "HEAD": "GET",
+      "OPTIONS": "function"
+    },
+    "utilityHashes": [
+      "a7477c3776af700dca2d70d5787028ac73aa0e6b7cdfb907ae5ff5ce536626ed",
+      "95413b15825fde492f23eb6563621d394e617ba8231082071e80f6011694cda7",
+      "e8a6452768381bca145fe5687381be55964db0b2057bd3c5bf2af1a8fa81bad5",
+      "5cf0f8a95b65c41aee690a2eebfd430b0ab7a0d135b1d9b0f0b7d363ecdd4f14",
+      "9c323ea3f5ae37ff0de3bef02360f5a64182c69c36e20dfced0488159500c808",
+      "34fe7956067e5515a9fc8db052386f7ba45802c23cd409f2fa7ae8dbc710d5e2"
+    ],
+    "license": "MIT",
+    "policy": "Pinned framework utilities over literal strings/inert sentinels; no application/config/plugin loaded",
+    "outputHash": "7e1dee14681365ce967cecc3a6aa216206c114387f216226522b630c82ae7001"
+  },
+  {
+    "tuple": "next16-patch",
+    "version": "16.3.8",
+    "node": "24.19.0",
+    "profile": "node-development",
+    "fixtureHash": "89354b94f45e8672d6ca6c2ae3bc2847d00368f9e505e3f1fd70986513064478",
+    "routes": [
+      {
+        "file": "app/page.tsx",
+        "pattern": "/base"
+      },
+      {
+        "file": "app/api/items/[id]/route.ts",
+        "pattern": "/base/api/items/[id]"
+      },
+      {
+        "file": "app/(shop)/products/[...slug]/page.tsx",
+        "pattern": "/base/products/[...slug]"
+      }
+    ],
+    "interceptions": [
+      {
+        "input": "/feed/@modal/(..)photo/[id]",
+        "interceptingRoute": "/feed",
+        "interceptedRoute": "/photo/[id]"
+      },
+      {
+        "input": "/feed/@modal/(.)photo/[id]",
+        "interceptingRoute": "/feed",
+        "interceptedRoute": "/feed/photo/[id]"
+      },
+      {
+        "input": "/feed/@modal/(...)photo/[id]",
+        "interceptingRoute": "/feed",
+        "interceptedRoute": "/photo/[id]"
+      }
+    ],
+    "matcherCases": [
+      {
+        "pattern": "/base/api/items/[id]",
+        "tests": [
+          {
+            "destination": "/base/api/items/7",
+            "matches": true
+          },
+          {
+            "destination": "/base/api/items/7/",
+            "matches": true
+          },
+          {
+            "destination": "/BASE/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/products/a/b",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop/a",
+            "matches": false
+          }
+        ]
+      },
+      {
+        "pattern": "/base/products/[...slug]",
+        "tests": [
+          {
+            "destination": "/base/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/api/items/7/",
+            "matches": false
+          },
+          {
+            "destination": "/BASE/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/products/a/b",
+            "matches": true
+          },
+          {
+            "destination": "/base/shop",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop/a",
+            "matches": false
+          }
+        ]
+      },
+      {
+        "pattern": "/base/shop/[[...slug]]",
+        "tests": [
+          {
+            "destination": "/base/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/api/items/7/",
+            "matches": false
+          },
+          {
+            "destination": "/BASE/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/products/a/b",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop",
+            "matches": true
+          },
+          {
+            "destination": "/base/shop/a",
+            "matches": true
+          }
+        ]
+      }
+    ],
+    "rewriteCases": [
+      {
+        "pattern": "/base/old/:path*",
+        "tests": [
+          {
+            "destination": "/base/old",
+            "matches": true
+          },
+          {
+            "destination": "/base/old/a/b",
+            "matches": true
+          },
+          {
+            "destination": "/BASE/old/a",
+            "matches": true
+          },
+          {
+            "destination": "/base/other",
+            "matches": false
+          }
+        ]
+      }
+    ],
+    "derived": {
+      "HEAD": "GET",
+      "OPTIONS": "function"
+    },
+    "utilityHashes": [
+      "99da0972bacee30972716bb8dd81878ffd057cfb2b94a06bed05f9333abbda68",
+      "95413b15825fde492f23eb6563621d394e617ba8231082071e80f6011694cda7",
+      "e8a6452768381bca145fe5687381be55964db0b2057bd3c5bf2af1a8fa81bad5",
+      "5cf0f8a95b65c41aee690a2eebfd430b0ab7a0d135b1d9b0f0b7d363ecdd4f14",
+      "9c323ea3f5ae37ff0de3bef02360f5a64182c69c36e20dfced0488159500c808",
+      "34fe7956067e5515a9fc8db052386f7ba45802c23cd409f2fa7ae8dbc710d5e2"
+    ],
+    "license": "MIT",
+    "policy": "Pinned framework utilities over literal strings/inert sentinels; no application/config/plugin loaded",
+    "outputHash": "7e1dee14681365ce967cecc3a6aa216206c114387f216226522b630c82ae7001"
+  },
+  {
+    "tuple": "next16-patch",
+    "version": "16.3.8",
+    "node": "24.19.0",
+    "profile": "node-production",
+    "fixtureHash": "89354b94f45e8672d6ca6c2ae3bc2847d00368f9e505e3f1fd70986513064478",
+    "routes": [
+      {
+        "file": "app/page.tsx",
+        "pattern": "/base"
+      },
+      {
+        "file": "app/api/items/[id]/route.ts",
+        "pattern": "/base/api/items/[id]"
+      },
+      {
+        "file": "app/(shop)/products/[...slug]/page.tsx",
+        "pattern": "/base/products/[...slug]"
+      }
+    ],
+    "interceptions": [
+      {
+        "input": "/feed/@modal/(..)photo/[id]",
+        "interceptingRoute": "/feed",
+        "interceptedRoute": "/photo/[id]"
+      },
+      {
+        "input": "/feed/@modal/(.)photo/[id]",
+        "interceptingRoute": "/feed",
+        "interceptedRoute": "/feed/photo/[id]"
+      },
+      {
+        "input": "/feed/@modal/(...)photo/[id]",
+        "interceptingRoute": "/feed",
+        "interceptedRoute": "/photo/[id]"
+      }
+    ],
+    "matcherCases": [
+      {
+        "pattern": "/base/api/items/[id]",
+        "tests": [
+          {
+            "destination": "/base/api/items/7",
+            "matches": true
+          },
+          {
+            "destination": "/base/api/items/7/",
+            "matches": true
+          },
+          {
+            "destination": "/BASE/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/products/a/b",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop/a",
+            "matches": false
+          }
+        ]
+      },
+      {
+        "pattern": "/base/products/[...slug]",
+        "tests": [
+          {
+            "destination": "/base/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/api/items/7/",
+            "matches": false
+          },
+          {
+            "destination": "/BASE/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/products/a/b",
+            "matches": true
+          },
+          {
+            "destination": "/base/shop",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop/a",
+            "matches": false
+          }
+        ]
+      },
+      {
+        "pattern": "/base/shop/[[...slug]]",
+        "tests": [
+          {
+            "destination": "/base/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/api/items/7/",
+            "matches": false
+          },
+          {
+            "destination": "/BASE/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/products/a/b",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop",
+            "matches": true
+          },
+          {
+            "destination": "/base/shop/a",
+            "matches": true
+          }
+        ]
+      }
+    ],
+    "rewriteCases": [
+      {
+        "pattern": "/base/old/:path*",
+        "tests": [
+          {
+            "destination": "/base/old",
+            "matches": true
+          },
+          {
+            "destination": "/base/old/a/b",
+            "matches": true
+          },
+          {
+            "destination": "/BASE/old/a",
+            "matches": true
+          },
+          {
+            "destination": "/base/other",
+            "matches": false
+          }
+        ]
+      }
+    ],
+    "derived": {
+      "HEAD": "GET",
+      "OPTIONS": "function"
+    },
+    "utilityHashes": [
+      "99da0972bacee30972716bb8dd81878ffd057cfb2b94a06bed05f9333abbda68",
+      "95413b15825fde492f23eb6563621d394e617ba8231082071e80f6011694cda7",
+      "e8a6452768381bca145fe5687381be55964db0b2057bd3c5bf2af1a8fa81bad5",
+      "5cf0f8a95b65c41aee690a2eebfd430b0ab7a0d135b1d9b0f0b7d363ecdd4f14",
+      "9c323ea3f5ae37ff0de3bef02360f5a64182c69c36e20dfced0488159500c808",
+      "34fe7956067e5515a9fc8db052386f7ba45802c23cd409f2fa7ae8dbc710d5e2"
+    ],
+    "license": "MIT",
+    "policy": "Pinned framework utilities over literal strings/inert sentinels; no application/config/plugin loaded",
+    "outputHash": "7e1dee14681365ce967cecc3a6aa216206c114387f216226522b630c82ae7001"
+  },
+  {
+    "tuple": "next16-patch",
+    "version": "16.3.8",
+    "node": "24.19.0",
+    "profile": "browser",
+    "fixtureHash": "89354b94f45e8672d6ca6c2ae3bc2847d00368f9e505e3f1fd70986513064478",
+    "routes": [
+      {
+        "file": "app/page.tsx",
+        "pattern": "/base"
+      },
+      {
+        "file": "app/api/items/[id]/route.ts",
+        "pattern": "/base/api/items/[id]"
+      },
+      {
+        "file": "app/(shop)/products/[...slug]/page.tsx",
+        "pattern": "/base/products/[...slug]"
+      }
+    ],
+    "interceptions": [
+      {
+        "input": "/feed/@modal/(..)photo/[id]",
+        "interceptingRoute": "/feed",
+        "interceptedRoute": "/photo/[id]"
+      },
+      {
+        "input": "/feed/@modal/(.)photo/[id]",
+        "interceptingRoute": "/feed",
+        "interceptedRoute": "/feed/photo/[id]"
+      },
+      {
+        "input": "/feed/@modal/(...)photo/[id]",
+        "interceptingRoute": "/feed",
+        "interceptedRoute": "/photo/[id]"
+      }
+    ],
+    "matcherCases": [
+      {
+        "pattern": "/base/api/items/[id]",
+        "tests": [
+          {
+            "destination": "/base/api/items/7",
+            "matches": true
+          },
+          {
+            "destination": "/base/api/items/7/",
+            "matches": true
+          },
+          {
+            "destination": "/BASE/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/products/a/b",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop/a",
+            "matches": false
+          }
+        ]
+      },
+      {
+        "pattern": "/base/products/[...slug]",
+        "tests": [
+          {
+            "destination": "/base/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/api/items/7/",
+            "matches": false
+          },
+          {
+            "destination": "/BASE/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/products/a/b",
+            "matches": true
+          },
+          {
+            "destination": "/base/shop",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop/a",
+            "matches": false
+          }
+        ]
+      },
+      {
+        "pattern": "/base/shop/[[...slug]]",
+        "tests": [
+          {
+            "destination": "/base/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/api/items/7/",
+            "matches": false
+          },
+          {
+            "destination": "/BASE/api/items/7",
+            "matches": false
+          },
+          {
+            "destination": "/base/products/a/b",
+            "matches": false
+          },
+          {
+            "destination": "/base/shop",
+            "matches": true
+          },
+          {
+            "destination": "/base/shop/a",
+            "matches": true
+          }
+        ]
+      }
+    ],
+    "rewriteCases": [
+      {
+        "pattern": "/base/old/:path*",
+        "tests": [
+          {
+            "destination": "/base/old",
+            "matches": true
+          },
+          {
+            "destination": "/base/old/a/b",
+            "matches": true
+          },
+          {
+            "destination": "/BASE/old/a",
+            "matches": true
+          },
+          {
+            "destination": "/base/other",
+            "matches": false
+          }
+        ]
+      }
+    ],
+    "derived": {
+      "HEAD": "GET",
+      "OPTIONS": "function"
+    },
+    "utilityHashes": [
+      "99da0972bacee30972716bb8dd81878ffd057cfb2b94a06bed05f9333abbda68",
+      "95413b15825fde492f23eb6563621d394e617ba8231082071e80f6011694cda7",
+      "e8a6452768381bca145fe5687381be55964db0b2057bd3c5bf2af1a8fa81bad5",
+      "5cf0f8a95b65c41aee690a2eebfd430b0ab7a0d135b1d9b0f0b7d363ecdd4f14",
+      "9c323ea3f5ae37ff0de3bef02360f5a64182c69c36e20dfced0488159500c808",
+      "34fe7956067e5515a9fc8db052386f7ba45802c23cd409f2fa7ae8dbc710d5e2"
+    ],
+    "license": "MIT",
+    "policy": "Pinned framework utilities over literal strings/inert sentinels; no application/config/plugin loaded",
+    "outputHash": "7e1dee14681365ce967cecc3a6aa216206c114387f216226522b630c82ae7001"
+  }
+]

@@ -1,0 +1,79 @@
+{
+  "platform": "win32",
+  "checks": "Typed Python refusal, no Python facts and usable TS/JS under empty PATH",
+  "records": [
+    {
+      "file": "python-runtime.json",
+      "failure": "missing",
+      "status": "PASS",
+      "originalHash": "4414442f7d034ec256d50166174162e01282b6cfe05a9818d7a54093ad38f5b1"
+    },
+    {
+      "file": "python-runtime.json",
+      "failure": "corrupt",
+      "status": "PASS",
+      "originalHash": "4414442f7d034ec256d50166174162e01282b6cfe05a9818d7a54093ad38f5b1"
+    },
+    {
+      "file": "lib/engine/assets/python/tree-sitter-python.wasm",
+      "failure": "missing",
+      "status": "PASS",
+      "originalHash": "16108b50df4ee9a30168794252ab55e7c93bfc5765d7fa0aa3e335752c515f47"
+    },
+    {
+      "file": "lib/engine/assets/python/tree-sitter-python.wasm",
+      "failure": "corrupt",
+      "status": "PASS",
+      "originalHash": "16108b50df4ee9a30168794252ab55e7c93bfc5765d7fa0aa3e335752c515f47"
+    },
+    {
+      "file": "node_modules/web-tree-sitter/tree-sitter.wasm",
+      "failure": "missing",
+      "status": "PASS",
+      "originalHash": "f38dcc4b43b818f9a0785bc1c6d5611a75ac4cdd428ff3f02757c34ca4e46d7f"
+    },
+    {
+      "file": "node_modules/web-tree-sitter/tree-sitter.wasm",
+      "failure": "corrupt",
+      "status": "PASS",
+      "originalHash": "f38dcc4b43b818f9a0785bc1c6d5611a75ac4cdd428ff3f02757c34ca4e46d7f"
+    },
+    {
+      "file": "node_modules/web-tree-sitter/tree-sitter.js",
+      "failure": "missing",
+      "status": "PASS",
+      "originalHash": "d4fc466df6358055253bc4cdaab23cdf84fe00741fa5a4ff56506c06c533da42"
+    },
+    {
+      "file": "node_modules/web-tree-sitter/tree-sitter.js",
+      "failure": "corrupt",
+      "status": "PASS",
+      "originalHash": "d4fc466df6358055253bc4cdaab23cdf84fe00741fa5a4ff56506c06c533da42"
+    },
+    {
+      "file": "node_modules/web-tree-sitter/package.json",
+      "failure": "missing",
+      "status": "PASS",
+      "originalHash": "6636903505f3a3739fa8f11d6de7264cf3cc0ae6e0c2e2aec0f079656899cc06"
+    },
+    {
+      "file": "node_modules/web-tree-sitter/package.json",
+      "failure": "corrupt",
+      "status": "PASS",
+      "originalHash": "6636903505f3a3739fa8f11d6de7264cf3cc0ae6e0c2e2aec0f079656899cc06"
+    },
+    {
+      "file": "bin/parser-host.exe",
+      "failure": "missing",
+      "status": "PASS",
+      "originalHash": "b1c181aec85a53b5e67a2716cb151a9967d1f1994ccccff6120fb519b11bdcd3"
+    },
+    {
+      "file": "bin/parser-host.exe",
+      "failure": "corrupt",
+      "status": "PASS",
+      "originalHash": "b1c181aec85a53b5e67a2716cb151a9967d1f1994ccccff6120fb519b11bdcd3"
+    }
+  ],
+  "harnessHash": "96800292c00c595cba66a4355f75b5cdea86ca02eae453e93924f0c14b61b3c1"
+}

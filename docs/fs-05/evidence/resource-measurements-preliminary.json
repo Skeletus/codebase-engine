@@ -1,0 +1,700 @@
+﻿{
+    "recordedAt":  "2026-10-07T05:08:59.0042817Z",
+    "platform":  "Windows x64",
+    "processor":  "AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",
+    "policy":  "Five fresh processes and twenty retained-session runs after one warmup per tuple; 50ms Windows counter sampling; no inspected code execution",
+    "results":  [
+                    {
+                        "tuple":  "python31215",
+                        "group":  "cold-0",
+                        "peakCommittedBytes":  114110464,
+                        "peakRSSBytes":  123875328,
+                        "sample":  {
+                                       "tuple":  "python31215",
+                                       "profile":  "static-declared-roots",
+                                       "fixtureHash":  "404199c936ba46a2280582baf7a7878172d67e051a879ecdddd286d47a391364",
+                                       "node":  "v24.19.0",
+                                       "samples":  [
+                                                       {
+                                                           "elapsedMs":  991.2017000000001,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  20,
+                                                           "reused":  0
+                                                       }
+                                                   ],
+                                       "deadlineFailures":  0,
+                                       "scope":  "Parent engine counters; separately retained Windows job probe supplies parser commit ceiling"
+                                   }
+                    },
+                    {
+                        "tuple":  "python31215",
+                        "group":  "cold-1",
+                        "peakCommittedBytes":  113639424,
+                        "peakRSSBytes":  123953152,
+                        "sample":  {
+                                       "tuple":  "python31215",
+                                       "profile":  "static-declared-roots",
+                                       "fixtureHash":  "404199c936ba46a2280582baf7a7878172d67e051a879ecdddd286d47a391364",
+                                       "node":  "v24.19.0",
+                                       "samples":  [
+                                                       {
+                                                           "elapsedMs":  690.7212,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  20,
+                                                           "reused":  0
+                                                       }
+                                                   ],
+                                       "deadlineFailures":  0,
+                                       "scope":  "Parent engine counters; separately retained Windows job probe supplies parser commit ceiling"
+                                   }
+                    },
+                    {
+                        "tuple":  "python31215",
+                        "group":  "cold-2",
+                        "peakCommittedBytes":  114298880,
+                        "peakRSSBytes":  124092416,
+                        "sample":  {
+                                       "tuple":  "python31215",
+                                       "profile":  "static-declared-roots",
+                                       "fixtureHash":  "404199c936ba46a2280582baf7a7878172d67e051a879ecdddd286d47a391364",
+                                       "node":  "v24.19.0",
+                                       "samples":  [
+                                                       {
+                                                           "elapsedMs":  605.9024,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  20,
+                                                           "reused":  0
+                                                       }
+                                                   ],
+                                       "deadlineFailures":  0,
+                                       "scope":  "Parent engine counters; separately retained Windows job probe supplies parser commit ceiling"
+                                   }
+                    },
+                    {
+                        "tuple":  "python31215",
+                        "group":  "cold-3",
+                        "peakCommittedBytes":  114053120,
+                        "peakRSSBytes":  123731968,
+                        "sample":  {
+                                       "tuple":  "python31215",
+                                       "profile":  "static-declared-roots",
+                                       "fixtureHash":  "404199c936ba46a2280582baf7a7878172d67e051a879ecdddd286d47a391364",
+                                       "node":  "v24.19.0",
+                                       "samples":  [
+                                                       {
+                                                           "elapsedMs":  642.7489,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  20,
+                                                           "reused":  0
+                                                       }
+                                                   ],
+                                       "deadlineFailures":  0,
+                                       "scope":  "Parent engine counters; separately retained Windows job probe supplies parser commit ceiling"
+                                   }
+                    },
+                    {
+                        "tuple":  "python31215",
+                        "group":  "cold-4",
+                        "peakCommittedBytes":  114929664,
+                        "peakRSSBytes":  124358656,
+                        "sample":  {
+                                       "tuple":  "python31215",
+                                       "profile":  "static-declared-roots",
+                                       "fixtureHash":  "404199c936ba46a2280582baf7a7878172d67e051a879ecdddd286d47a391364",
+                                       "node":  "v24.19.0",
+                                       "samples":  [
+                                                       {
+                                                           "elapsedMs":  715.9436000000001,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  20,
+                                                           "reused":  0
+                                                       }
+                                                   ],
+                                       "deadlineFailures":  0,
+                                       "scope":  "Parent engine counters; separately retained Windows job probe supplies parser commit ceiling"
+                                   }
+                    },
+                    {
+                        "tuple":  "python31215",
+                        "group":  "warm",
+                        "peakCommittedBytes":  118677504,
+                        "peakRSSBytes":  149835776,
+                        "sample":  {
+                                       "tuple":  "python31215",
+                                       "profile":  "static-declared-roots",
+                                       "fixtureHash":  "404199c936ba46a2280582baf7a7878172d67e051a879ecdddd286d47a391364",
+                                       "node":  "v24.19.0",
+                                       "samples":  [
+                                                       {
+                                                           "elapsedMs":  55.05020000000013,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  55.32159999999999,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  90.83249999999998,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  83.16839999999979,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  63.19550000000004,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  63.24369999999999,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  71.84810000000016,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  81.42699999999968,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  88.49229999999989,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  71.21459999999979,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  66.35739999999987,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  69.86449999999968,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  56.5947000000001,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  53.26110000000017,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  54.07900000000018,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  51.80569999999989,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  50.646799999999985,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  58.05839999999989,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  49.39260000000013,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  52.214100000000144,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       }
+                                                   ],
+                                       "deadlineFailures":  0,
+                                       "scope":  "Parent engine counters; separately retained Windows job probe supplies parser commit ceiling"
+                                   }
+                    },
+                    {
+                        "tuple":  "python31316",
+                        "group":  "cold-0",
+                        "peakCommittedBytes":  114126848,
+                        "peakRSSBytes":  124379136,
+                        "sample":  {
+                                       "tuple":  "python31316",
+                                       "profile":  "static-declared-roots",
+                                       "fixtureHash":  "404199c936ba46a2280582baf7a7878172d67e051a879ecdddd286d47a391364",
+                                       "node":  "v24.19.0",
+                                       "samples":  [
+                                                       {
+                                                           "elapsedMs":  871.7123999999999,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  20,
+                                                           "reused":  0
+                                                       }
+                                                   ],
+                                       "deadlineFailures":  0,
+                                       "scope":  "Parent engine counters; separately retained Windows job probe supplies parser commit ceiling"
+                                   }
+                    },
+                    {
+                        "tuple":  "python31316",
+                        "group":  "cold-1",
+                        "peakCommittedBytes":  114282496,
+                        "peakRSSBytes":  125632512,
+                        "sample":  {
+                                       "tuple":  "python31316",
+                                       "profile":  "static-declared-roots",
+                                       "fixtureHash":  "404199c936ba46a2280582baf7a7878172d67e051a879ecdddd286d47a391364",
+                                       "node":  "v24.19.0",
+                                       "samples":  [
+                                                       {
+                                                           "elapsedMs":  726.0119,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  20,
+                                                           "reused":  0
+                                                       }
+                                                   ],
+                                       "deadlineFailures":  0,
+                                       "scope":  "Parent engine counters; separately retained Windows job probe supplies parser commit ceiling"
+                                   }
+                    },
+                    {
+                        "tuple":  "python31316",
+                        "group":  "cold-2",
+                        "peakCommittedBytes":  115408896,
+                        "peakRSSBytes":  124141568,
+                        "sample":  {
+                                       "tuple":  "python31316",
+                                       "profile":  "static-declared-roots",
+                                       "fixtureHash":  "404199c936ba46a2280582baf7a7878172d67e051a879ecdddd286d47a391364",
+                                       "node":  "v24.19.0",
+                                       "samples":  [
+                                                       {
+                                                           "elapsedMs":  676.5949,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  20,
+                                                           "reused":  0
+                                                       }
+                                                   ],
+                                       "deadlineFailures":  0,
+                                       "scope":  "Parent engine counters; separately retained Windows job probe supplies parser commit ceiling"
+                                   }
+                    },
+                    {
+                        "tuple":  "python31316",
+                        "group":  "cold-3",
+                        "peakCommittedBytes":  114708480,
+                        "peakRSSBytes":  124723200,
+                        "sample":  {
+                                       "tuple":  "python31316",
+                                       "profile":  "static-declared-roots",
+                                       "fixtureHash":  "404199c936ba46a2280582baf7a7878172d67e051a879ecdddd286d47a391364",
+                                       "node":  "v24.19.0",
+                                       "samples":  [
+                                                       {
+                                                           "elapsedMs":  709.5189999999999,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  20,
+                                                           "reused":  0
+                                                       }
+                                                   ],
+                                       "deadlineFailures":  0,
+                                       "scope":  "Parent engine counters; separately retained Windows job probe supplies parser commit ceiling"
+                                   }
+                    },
+                    {
+                        "tuple":  "python31316",
+                        "group":  "cold-4",
+                        "peakCommittedBytes":  114593792,
+                        "peakRSSBytes":  123920384,
+                        "sample":  {
+                                       "tuple":  "python31316",
+                                       "profile":  "static-declared-roots",
+                                       "fixtureHash":  "404199c936ba46a2280582baf7a7878172d67e051a879ecdddd286d47a391364",
+                                       "node":  "v24.19.0",
+                                       "samples":  [
+                                                       {
+                                                           "elapsedMs":  621.6571999999999,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  20,
+                                                           "reused":  0
+                                                       }
+                                                   ],
+                                       "deadlineFailures":  0,
+                                       "scope":  "Parent engine counters; separately retained Windows job probe supplies parser commit ceiling"
+                                   }
+                    },
+                    {
+                        "tuple":  "python31316",
+                        "group":  "warm",
+                        "peakCommittedBytes":  119857152,
+                        "peakRSSBytes":  150724608,
+                        "sample":  {
+                                       "tuple":  "python31316",
+                                       "profile":  "static-declared-roots",
+                                       "fixtureHash":  "404199c936ba46a2280582baf7a7878172d67e051a879ecdddd286d47a391364",
+                                       "node":  "v24.19.0",
+                                       "samples":  [
+                                                       {
+                                                           "elapsedMs":  87.03729999999996,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  91.04179999999997,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  76.42989999999986,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  88.55089999999996,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  108.37049999999999,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  65.33120000000008,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  60.574699999999666,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  62.18069999999989,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  67.7162000000003,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  101.28499999999985,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  68.17440000000033,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  61.48919999999998,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  60.23180000000002,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  55.16349999999966,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  49.641200000000026,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  51.85059999999976,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  49.578899999999976,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  53.977100000000064,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  50.608900000000176,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       },
+                                                       {
+                                                           "elapsedMs":  58.76940000000013,
+                                                           "sourceBytes":  1005,
+                                                           "snapshotBytes":  66153,
+                                                           "declarations":  39,
+                                                           "relations":  15,
+                                                           "gaps":  19,
+                                                           "parsed":  0,
+                                                           "reused":  20
+                                                       }
+                                                   ],
+                                       "deadlineFailures":  0,
+                                       "scope":  "Parent engine counters; separately retained Windows job probe supplies parser commit ceiling"
+                                   }
+                    }
+                ]
+}

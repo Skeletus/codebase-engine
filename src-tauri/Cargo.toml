@@ -2,6 +2,7 @@
 name = "codebase-intelligence-desktop"
 version = "0.1.0"
 edition = "2021"
+default-run = "codebase-intelligence-desktop"
 
 [build-dependencies]
 tauri-build = { version = "2", features = [] }

@@ -1,0 +1,20 @@
+{
+  "records": [
+    {
+      "mode": "missing-oracle",
+      "status": "PASS",
+      "exitCode": 1
+    },
+    {
+      "mode": "wrong-version",
+      "status": "PASS",
+      "exitCode": 1
+    },
+    {
+      "mode": "unknown-profile",
+      "status": "PASS",
+      "exitCode": 1
+    }
+  ],
+  "policy": "Original retained positive oracle/qualification bytes restored exactly"
+}

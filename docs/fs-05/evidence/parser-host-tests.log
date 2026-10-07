@@ -1,0 +1,10 @@
+   Compiling codebase-intelligence-desktop v0.1.0 (D:\Repositorios Github\cartograph\src-tauri)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 6.88s
+     Running unittests src\bin\parser-host.rs (src-tauri\target\debug\deps\parser_host-02aeaf10e4d4bdcc.exe)
+
+running 2 tests
+test windows::tests::windows_job_layout_and_fail_closed_assignment ... ok
+test windows::tests::failed_assignment_reaps_child_before_bootstrap_gate ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+

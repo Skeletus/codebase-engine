@@ -1,0 +1,152 @@
+[
+  {
+    "id": "next-typegen",
+    "command": "node node_modules/next/dist/bin/next typegen",
+    "startedUtc": "2026-10-07T06:37:08.3732950Z",
+    "elapsedMs": 6031,
+    "exitCode": 0,
+    "log": "next-typegen-final.log"
+  },
+  {
+    "id": "typecheck",
+    "command": "node node_modules/typescript/bin/tsc --noEmit",
+    "startedUtc": "2026-10-07T06:37:14.5683300Z",
+    "elapsedMs": 11353,
+    "exitCode": 0,
+    "log": "typecheck-final.log",
+    "previousFailure": {
+      "exitCode": 2,
+      "log": "typecheck-assertion-failure.log",
+      "reason": "New test referenced nonexistent snapshot.imports; corrected to coverage.external; clean full262 and strict tsc now pass"
+    },
+    "correctedVerificationUtc": "2026-10-07T06:44:32.903Z"
+  },
+  {
+    "id": "lint",
+    "command": "node node_modules/eslint/bin/eslint.js .",
+    "startedUtc": "2026-10-07T06:37:25.9552873Z",
+    "elapsedMs": 30240,
+    "exitCode": 0,
+    "log": "lint-final.log"
+  },
+  {
+    "id": "next-build",
+    "command": "node node_modules/next/dist/bin/next build",
+    "startedUtc": "2026-10-07T06:37:56.2083559Z",
+    "elapsedMs": 61657,
+    "exitCode": 0,
+    "log": "next-build-final.log"
+  },
+  {
+    "id": "assets",
+    "command": "node scripts/verify-desktop-assets.ts",
+    "startedUtc": "2026-10-07T06:38:57.8807560Z",
+    "elapsedMs": 247,
+    "exitCode": 0,
+    "log": "assets-final.log"
+  },
+  {
+    "id": "rust-format",
+    "command": "cargo fmt --manifest-path src-tauri/Cargo.toml -- --check",
+    "startedUtc": "2026-10-07T06:38:58.1408199Z",
+    "elapsedMs": 807,
+    "exitCode": 0,
+    "log": "rust-format-final.log"
+  },
+  {
+    "id": "rust-check",
+    "command": "cargo check --locked --offline --manifest-path src-tauri/Cargo.toml",
+    "startedUtc": "2026-10-07T06:38:58.9619008Z",
+    "elapsedMs": 28005,
+    "exitCode": 0,
+    "log": "rust-check-final.log"
+  },
+  {
+    "id": "rust-tests",
+    "command": "cargo test --locked --offline --manifest-path src-tauri/Cargo.toml",
+    "startedUtc": "2026-10-07T06:39:26.9839015Z",
+    "elapsedMs": 132704,
+    "exitCode": 0,
+    "log": "rust-tests-final.log"
+  },
+  {
+    "id": "engine",
+    "command": "node scripts/engine.ts . --out docs/fs-05/evidence/baseline-snapshot.json",
+    "startedUtc": "2026-10-07T06:41:39.7011281Z",
+    "elapsedMs": 26257,
+    "exitCode": 0,
+    "log": "engine-final.log"
+  },
+  {
+    "id": "staged-smoke",
+    "command": "node scripts/smoke-engine.ts",
+    "startedUtc": "2026-10-07T06:42:05.9732655Z",
+    "elapsedMs": 22246,
+    "exitCode": 0,
+    "log": "staged-smoke-final.log"
+  },
+  {
+    "id": "fs-03-packaged",
+    "command": "node scripts/fs-05-vite-preservation.ts",
+    "startedUtc": "2026-10-07T06:42:28.2373522Z",
+    "elapsedMs": 34831,
+    "exitCode": 0,
+    "log": "fs-03-packaged-final.log"
+  },
+  {
+    "id": "fs-04-packaged",
+    "command": "node scripts/fs-05-node-preservation.ts",
+    "startedUtc": "2026-10-07T06:43:03.1064086Z",
+    "elapsedMs": 28497,
+    "exitCode": 0,
+    "log": "fs-04-packaged-final.log"
+  },
+  {
+    "id": "fs-05-packaged",
+    "command": "node scripts/fs-05-packaged.ts",
+    "startedUtc": "2026-10-07T06:43:31.6186615Z",
+    "elapsedMs": 3832,
+    "exitCode": 0,
+    "log": "fs-05-packaged-final.log"
+  },
+  {
+    "id": "fs-05-packaged-failures",
+    "command": "node scripts/fs-05-packaged-failures.ts",
+    "startedUtc": "2026-10-07T06:43:35.4648135Z",
+    "elapsedMs": 18393,
+    "exitCode": 0,
+    "log": "fs-05-packaged-failures-final.log"
+  },
+  {
+    "id": "python-qualification",
+    "command": "node scripts/fs-05-qualification.ts --all",
+    "startedUtc": "2026-10-07T06:43:53.8761802Z",
+    "elapsedMs": 1904,
+    "exitCode": 0,
+    "log": "python-qualification-final.log"
+  },
+  {
+    "id": "qualification-negative",
+    "command": "node scripts/fs-05-qualification-negative.ts",
+    "startedUtc": "2026-10-07T06:43:55.7978597Z",
+    "elapsedMs": 1224,
+    "exitCode": 0,
+    "log": "qualification-negative-final.log"
+  },
+  {
+    "id": "scope-audit",
+    "command": "node scripts/fs-05-audit.ts",
+    "startedUtc": "2026-10-07T06:43:57.0389869Z",
+    "elapsedMs": 5492,
+    "exitCode": 0,
+    "log": "scope-audit-final.log"
+  },
+  {
+    "id": "diff-check",
+    "command": "git diff --check",
+    "startedUtc": "2026-10-07T06:44:02.5458950Z",
+    "elapsedMs": 363,
+    "exitCode": 0,
+    "log": "diff-check-final.log"
+  }
+]

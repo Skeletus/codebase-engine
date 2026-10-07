@@ -1,0 +1,123 @@
+{
+  "tools": [
+    {
+      "tuple": "next15",
+      "name": "next",
+      "version": "15.5.27",
+      "license": "MIT",
+      "packageHash": "547305a02acf9b1700e8210e511deefe616d415f3fc06c9f7551187430b7ee54",
+      "scope": "approved isolated developer oracle only"
+    },
+    {
+      "tuple": "next15",
+      "name": "react",
+      "version": "19.2.8",
+      "license": "MIT",
+      "packageHash": "e40c3ed9b633c9ecf188e09a4be309780a1ea0a9c068278a30ff6a27e7b2dbb6",
+      "scope": "approved isolated developer oracle only"
+    },
+    {
+      "tuple": "next15",
+      "name": "react-dom",
+      "version": "19.2.8",
+      "license": "MIT",
+      "packageHash": "7c82f0967114d4b5d38b1f07e543af87c9919e8d3243f9604004819319cb2200",
+      "scope": "approved isolated developer oracle only"
+    },
+    {
+      "tuple": "next15",
+      "name": "typescript",
+      "version": "5.9.3",
+      "license": "Apache-2.0",
+      "packageHash": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6",
+      "scope": "approved isolated developer oracle only"
+    },
+    {
+      "tuple": "next16-patch",
+      "name": "next",
+      "version": "16.3.8",
+      "license": "MIT",
+      "packageHash": "6da8fc4823b66b8f2906d150002618e3f3e0d2446ebf3823b2a2f7efe73a46a4",
+      "scope": "approved isolated developer oracle only"
+    },
+    {
+      "tuple": "next16-patch",
+      "name": "react",
+      "version": "19.2.8",
+      "license": "MIT",
+      "packageHash": "e40c3ed9b633c9ecf188e09a4be309780a1ea0a9c068278a30ff6a27e7b2dbb6",
+      "scope": "approved isolated developer oracle only"
+    },
+    {
+      "tuple": "next16-patch",
+      "name": "react-dom",
+      "version": "19.2.8",
+      "license": "MIT",
+      "packageHash": "7c82f0967114d4b5d38b1f07e543af87c9919e8d3243f9604004819319cb2200",
+      "scope": "approved isolated developer oracle only"
+    },
+    {
+      "tuple": "next16-patch",
+      "name": "typescript",
+      "version": "5.9.3",
+      "license": "Apache-2.0",
+      "packageHash": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6",
+      "scope": "approved isolated developer oracle only"
+    },
+    {
+      "tuple": "next16-preservation",
+      "name": "next",
+      "version": "16.3.6",
+      "license": "MIT",
+      "packageHash": "906602ce9cbbc4d57b1d5bc8b99b6e74b23ff8eecba57e3c47b680b61823ec0c",
+      "scope": "accepted existing production tool; no dependency modification"
+    },
+    {
+      "tuple": "next16-preservation",
+      "name": "react",
+      "version": "19.2.8",
+      "license": "MIT",
+      "packageHash": "e40c3ed9b633c9ecf188e09a4be309780a1ea0a9c068278a30ff6a27e7b2dbb6",
+      "scope": "accepted existing production tool; no dependency modification"
+    },
+    {
+      "tuple": "next16-preservation",
+      "name": "react-dom",
+      "version": "19.2.8",
+      "license": "MIT",
+      "packageHash": "7c82f0967114d4b5d38b1f07e543af87c9919e8d3243f9604004819319cb2200",
+      "scope": "accepted existing production tool; no dependency modification"
+    },
+    {
+      "tuple": "next16-preservation",
+      "name": "typescript",
+      "version": "5.9.3",
+      "license": "Apache-2.0",
+      "packageHash": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6",
+      "scope": "accepted existing production tool; no dependency modification"
+    }
+  ],
+  "documentation": [
+    {
+      "file": "docs/fs-04/evidence/next15-middleware.mdx",
+      "hash": "89411bf622ab38ca6e9e4ccb2ee769cfd878f25032daaf70071185a132b83926"
+    },
+    {
+      "file": "docs/fs-04/evidence/next15-use-server.mdx",
+      "hash": "1d961096db45adb128ccc424daf218506351b7377041264c9ded9064f43a1c64"
+    },
+    {
+      "file": "docs/fs-04/evidence/next15-parallel-routes.mdx",
+      "hash": "6558aa74d0f760a3b6a981578fb4ac1238efb7405c6a2ca11e57065a0f2d8c58"
+    },
+    {
+      "file": "node_modules/next/dist/docs/01-app/03-api-reference/03-file-conventions/proxy.md",
+      "hash": "79c6a5e4d8a3badc09969c2658558326367b30268967e47f3c09ca2d2d8b776d"
+    },
+    {
+      "file": "node_modules/.fs04-experiments/next16/node_modules/next/dist/docs/01-app/03-api-reference/03-file-conventions/proxy.md",
+      "hash": "79c6a5e4d8a3badc09969c2658558326367b30268967e47f3c09ca2d2d8b776d"
+    }
+  ],
+  "policy": "Only approved isolated package installs; ignore-scripts; framework utilities with controlled data, no inspected application/config/plugin execution. Production manifests and lockfiles unchanged."
+}

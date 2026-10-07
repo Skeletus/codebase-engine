@@ -1,0 +1,48 @@
+[
+  {
+    "node": "22.23.3",
+    "importTargets": [
+      "node.js",
+      "node.js",
+      "node.js"
+    ],
+    "requireTargets": [
+      {
+        "specifier": "./cjs",
+        "error": "MODULE_NOT_FOUND"
+      },
+      {
+        "specifier": "./cjs.cjs",
+        "target": "cjs.cjs"
+      }
+    ],
+    "fixtureHash": "90cec5e75f555236dcdaeaeffe8d47666d0c510a52b3b42002c94855ec4c0af7",
+    "sourceHash": "820f5545150aea315cc8f67308eb139333282e39ba6625b729607096f3cbbb40",
+    "scriptHash": "c10a72de2df264176ece3963be10cf706325ae81d884068e856c99539cf69d81",
+    "outputHash": "610ac9738571fb309dcfdb98f26535d40473f81f49ca171b6ebca8833c5821ec",
+    "policy": "Resolve names only; target modules never loaded or evaluated"
+  },
+  {
+    "node": "24.19.0",
+    "importTargets": [
+      "node.js",
+      "node.js",
+      "node.js"
+    ],
+    "requireTargets": [
+      {
+        "specifier": "./cjs",
+        "error": "MODULE_NOT_FOUND"
+      },
+      {
+        "specifier": "./cjs.cjs",
+        "target": "cjs.cjs"
+      }
+    ],
+    "fixtureHash": "90cec5e75f555236dcdaeaeffe8d47666d0c510a52b3b42002c94855ec4c0af7",
+    "sourceHash": "820f5545150aea315cc8f67308eb139333282e39ba6625b729607096f3cbbb40",
+    "scriptHash": "c10a72de2df264176ece3963be10cf706325ae81d884068e856c99539cf69d81",
+    "outputHash": "72e59d9cad123e53b16aad0cd7ca04cc23547e0f20a6f420ed082768f6e124da",
+    "policy": "Resolve names only; target modules never loaded or evaluated"
+  }
+]

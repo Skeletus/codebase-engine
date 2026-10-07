@@ -1,0 +1,22 @@
+{
+  "phase": "FS-04",
+  "extractorVersion": "fs-04/1",
+  "snapshotVersion": 3,
+  "qualificationHost": "Windows x64",
+  "typescript": "5.9.3",
+  "tuples": [
+    {"id":"node22","node":"22.23.3","profiles":["node-development","node-production"]},
+    {"id":"node24","node":"24.19.0","profiles":["node-development","node-production"]},
+    {"id":"next15","next":"15.5.27","react":"19.2.8","reactDom":"19.2.8","oracleNode":"22.23.3","profiles":["node-development","node-production","browser"]},
+    {"id":"next16-preservation","next":"16.3.6","react":"19.2.8","reactDom":"19.2.8","oracleNode":"24.19.0","profiles":["node-development","node-production","browser"]},
+    {"id":"next16-patch","next":"16.3.8","react":"19.2.8","reactDom":"19.2.8","oracleNode":"24.19.0","profiles":["node-development","node-production","browser"]}
+  ],
+  "packagedAnalyzerNode": "24.19.0",
+  "nativeConditions": ["node","node-addons","module-sync","import-or-require","default"],
+  "nextConditions": {"node-development":["node","development","import","default"],"node-production":["node","production","import","default"],"browser":["browser","development","import","default"]},
+  "qualifiedScope": "Named bounded source patterns and controlled runtime/route utility parity; qualification.json is the per-pattern acceptance ledger",
+  "aggregateAssessment": "partial",
+  "unsupportedBoundaries": ["unknown/range tuples","native browser execution","default-type syntax detection","installed/workspace runtime links without authorized source proof","custom loaders and compiler transforms","mutable/computed dispatch","wildcard/array exports","unselected RSC layers","Edge implementation execution","regex matchers and ambiguous precedence","complete cache/request execution","generated action URLs"],
+  "evidence": ["evidence/qualification-targets.json","evidence/node-oracles.json","evidence/node-erasure-oracles.json","evidence/next-oracles.json","evidence/packaged.json","evidence/tooling-manifest.json"],
+  "policy": "Framework associations, lexical calls, route declarations, gaps and generated-method rules stay distinct. Oracle tools never run during customer analysis. No universal badge or successful execution claim."
+}

@@ -1,0 +1,13 @@
+{
+  "license": "Synthetic controlled fixture; project-owned",
+  "sources": {
+    "package.json": "{\"name\":\"oracle-node\",\"type\":\"module\",\"engines\":{\"node\":\"24.19.0\"},\"exports\":{\"./selected\":{\"node\":\"./node.js\",\"default\":\"./default.js\"}},\"imports\":{\"#selected\":\"./node.js\"},\"bin\":{\"cli\":\"./server.mjs\"}}",
+    "main.mjs": "import x from './node.js';import y from 'oracle-node/selected';import z from '#selected';import missing from './node';",
+    "main.cjs": "const x=require('./cjs');const y=require('./cjs.cjs');",
+    "node.js": "export default 1;",
+    "default.js": "export default 2;",
+    "cjs.cjs": "function handler(){}module.exports={handler};",
+    "server.mjs": "import {createServer} from 'node:http';import {EventEmitter} from 'node:events';import {Worker} from 'node:worker_threads';function handler(){}const server=createServer(handler);server.listen(3000);const events=new EventEmitter();events.on('ready',handler);new Worker(new URL('./worker.mjs',import.meta.url));",
+    "worker.mjs": "export const answer=42;"
+  }
+}

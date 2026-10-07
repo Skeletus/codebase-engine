@@ -1,0 +1,274 @@
+
+  _freeze_module.vcxproj -> D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\win32\_freeze_module.exe
+  Regenerate Global Objects
+  # not changed: D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\Include\internal\pycore_global_strings.h
+  # not changed: D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\Include\internal\pycore_runtime_init_generated.h
+  # not changed: D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\Include\internal\pycore_unicodeobject_generated.h
+  # not changed: D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\Include\internal\pycore_global_objects_fini_generated.h
+  Generated sources are up to date
+  Getting build info from git
+  Building heads/main-dirty:70e39f2 main
+  getpath.c
+  _abc.c
+  _bisectmodule.c
+  blake2module.c
+  blake2b_impl.c
+  blake2s_impl.c
+  _codecsmodule.c
+  _collectionsmodule.c
+  _contextvarsmodule.c
+  _csv.c
+  _functoolsmodule.c
+  Hacl_Hash_MD5.c
+  Hacl_Hash_SHA1.c
+  Hacl_Hash_SHA2.c
+  Hacl_Hash_SHA3.c
+  _heapqmodule.c
+  _json.c
+  _localemodule.c
+  _lsprof.c
+  _pickle.c
+  _randommodule.c
+  sre.c
+  _stat.c
+  _struct.c
+  _weakref.c
+  arraymodule.c
+  atexitmodule.c
+  audioop.c
+  cmathmodule.c
+  _datetimemodule.c
+  errnomodule.c
+  faulthandler.c
+  gcmodule.c
+  itertoolsmodule.c
+  main.c
+  mathmodule.c
+  md5module.c
+  mmapmodule.c
+  _opcode.c
+  _operator.c
+  posixmodule.c
+  rotatingtree.c
+  sha1module.c
+  sha2module.c
+  sha3module.c
+  signalmodule.c
+  _statisticsmodule.c
+  symtablemodule.c
+  _threadmodule.c
+  _tracemalloc.c
+  _typingmodule.c
+  timemodule.c
+  xxsubtype.c
+  _xxsubinterpretersmodule.c
+  _xxinterpchannelsmodule.c
+  fileio.c
+  bytesio.c
+  stringio.c
+  bufferedio.c
+  iobase.c
+  textio.c
+  winconsoleio.c
+  _iomodule.c
+  _codecs_cn.c
+  _codecs_hk.c
+  _codecs_iso2022.c
+  _codecs_jp.c
+  _codecs_kr.c
+  _codecs_tw.c
+  multibytecodec.c
+  _winapi.c
+  abstract.c
+  boolobject.c
+  bytearrayobject.c
+  bytes_methods.c
+  bytesobject.c
+  call.c
+  capsule.c
+  cellobject.c
+  classobject.c
+  codeobject.c
+  complexobject.c
+  descrobject.c
+  dictobject.c
+  enumobject.c
+  exceptions.c
+  fileobject.c
+  floatobject.c
+  frameobject.c
+  funcobject.c
+  genericaliasobject.c
+  genobject.c
+  interpreteridobject.c
+  iterobject.c
+  listobject.c
+  longobject.c
+  memoryobject.c
+  methodobject.c
+  moduleobject.c
+  namespaceobject.c
+  object.c
+  obmalloc.c
+  odictobject.c
+  picklebufobject.c
+  rangeobject.c
+  setobject.c
+  sliceobject.c
+  structseq.c
+  tupleobject.c
+  typeobject.c
+  typevarobject.c
+  unicodectype.c
+  unicodeobject.c
+  unionobject.c
+  weakrefobject.c
+  myreadline.c
+  tokenizer.c
+  token.c
+  pegen.c
+  pegen_errors.c
+  action_helpers.c
+  parser.c
+  string_parser.c
+  peg_api.c
+  invalid_parameter_handler.c
+  winreg.c
+  config.c
+  msvcrtmodule.c
+  pyhash.c
+  _warnings.c
+  asdl.c
+  assemble.c
+  ast.c
+  ast_opt.c
+  ast_unparse.c
+  bltinmodule.c
+  bootstrap_hash.c
+  ceval.c
+  codecs.c
+  compile.c
+  context.c
+  dynamic_annotations.c
+  dynload_win.c
+  errors.c
+  fileutils.c
+  flowgraph.c
+  formatter_unicode.c
+  frame.c
+  frozen.c
+  future.c
+  getargs.c
+  getcompiler.c
+  getcopyright.c
+  getopt.c
+  getplatform.c
+  getversion.c
+  ceval_gil.c
+  hamt.c
+  hashtable.c
+  import.c
+  importdl.c
+  initconfig.c
+  intrinsics.c
+  instrumentation.c
+  legacy_tracing.c
+  marshal.c
+  modsupport.c
+  mysnprintf.c
+  mystrtoul.c
+  pathconfig.c
+  perf_trampoline.c
+  preconfig.c
+  pyarena.c
+  pyctype.c
+  pyfpe.c
+  pylifecycle.c
+  pymath.c
+  pytime.c
+  pystate.c
+  pystrcmp.c
+  pystrhex.c
+  pystrtod.c
+  dtoa.c
+  Python-ast.c
+  Python-tokenize.c
+  pythonrun.c
+  specialize.c
+  suggestions.c
+  structmember.c
+  symtable.c
+  thread.c
+  traceback.c
+  tracemalloc.c
+  deepfreeze.c
+  zlibmodule.c
+  adler32.c
+  compress.c
+  crc32.c
+  infback.c
+  inffast.c
+  inflate.c
+  inftrees.c
+  trees.c
+  uncompr.c
+  zutil.c
+  dl_nt.c
+  binascii.c
+  getbuildinfo.c
+  sysmodule.c
+  deflate.c
+     Creando biblioteca D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\amd64\python312.lib y objeto D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\amd64\python312.exp
+  Generando código
+  Generación de código finalizada
+  pythoncore.vcxproj -> D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\amd64\python312.dll
+  python3dll.c
+     Creando biblioteca D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\amd64\python3.lib y objeto D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\amd64\python3.exp
+  Generando código
+  Generación de código finalizada
+  launcher2.c
+  launcher2.c
+  pyshellext.cpp
+  launcher.c
+  launcher.c
+  python3dll.vcxproj -> D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\amd64\python3.dll
+  Generando código
+  Generando código
+  Generando código
+  Generando código
+  Generación de código finalizada
+  Generación de código finalizada
+  Generación de código finalizada
+  Generación de código finalizada
+     Creando biblioteca D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\amd64\pyshellext.lib y objeto D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\amd64\pyshellext.exp
+  Generando código
+  pywlauncher.vcxproj -> D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\amd64\pyw.exe
+  venvwlauncher.vcxproj -> D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\amd64\venvwlauncher.exe
+  venvlauncher.vcxproj -> D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\amd64\venvlauncher.exe
+  Generación de código finalizada
+  pylauncher.vcxproj -> D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\amd64\py.exe
+  pyshellext.vcxproj -> D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\amd64\pyshellext.dll
+  python.c
+  Generando código
+  Generación de código finalizada
+  python.vcxproj -> D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\amd64\python.exe
+  Traceback (most recent call last):
+    File "D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PC\validate_ucrtbase.py", line 8, in <module>
+      from ctypes import (c_buffer, POINTER, byref, create_unicode_buffer,
+    File "D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\Lib\ctypes\__init__.py", line 8, in <module>
+      from _ctypes import Union, Structure, Array
+  ModuleNotFoundError: No module named '_ctypes'
+D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\python.vcxproj(131,5): warning MSB3073: El comando "setlocal
+D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\python.vcxproj(131,5): warning MSB3073: set PYTHONPATH=D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\Lib
+D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\python.vcxproj(131,5): warning MSB3073: "D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\amd64\python.exe" "D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PC\validate_ucrtbase.py" ucrtbase" salió con el código 1.
+D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\regen.targets(143,5): warning : License file D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\externals\bzip2-1.0.8\LICENSE is missing [D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\python.vcxproj]
+D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\regen.targets(143,5): warning : License file D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\externals\libffi-3.4.4\LICENSE is missing [D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\python.vcxproj]
+D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\regen.targets(143,5): warning : License file D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\externals\openssl-bin-3.0.16.2\amd64\LICENSE is missing [D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\python.vcxproj]
+D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\regen.targets(143,5): warning : License file D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\externals\tcltk-8.6.15.2\amd64\tcllicense.terms is missing [D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\python.vcxproj]
+D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\regen.targets(143,5): warning : License file D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\externals\tcltk-8.6.15.2\amd64\tklicense.terms is missing [D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\python.vcxproj]
+D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\regen.targets(143,5): warning : License file D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\externals\tcltk-8.6.15.2\amd64\tixlicense.terms is missing [D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\python.vcxproj]
+  Wrote D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\amd64\LICENSE.txt
+  WinMain.c
+  Generando código
+  Generación de código finalizada
+  pythonw.vcxproj -> D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\amd64\pythonw.exe

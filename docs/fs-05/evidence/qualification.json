@@ -1,0 +1,960 @@
+[
+  {
+    "tuple": "python31215",
+    "python": "3.12.15",
+    "baselineParent": "django52",
+    "profile": "static-python-declared-environment",
+    "status": "PASS controlled syntax/semantic patterns",
+    "syntax": [
+      {
+        "id": "functions-async",
+        "status": "PASS",
+        "sourceHash": "d14c5b2090464e9e8915b1628eb3468ca45bb89b78c35953e88bf6ca506ec65b",
+        "outputHash": "4f6f59431d9a223df7f302898bd8d38fd03aa123433e61ad1bbd09576b8f42e8",
+        "declarations": 2
+      },
+      {
+        "id": "generic-alias",
+        "status": "PASS",
+        "sourceHash": "736d57c9dd1f06a5fd73a802945c3b18cada7eb7d56bbcb78667a31973ea3bd8",
+        "outputHash": "bd0ec28e89c77f555efb13c08669e1ff734a673ae1fc2587b17a8f787197cd59",
+        "declarations": 1
+      },
+      {
+        "id": "match",
+        "status": "PASS",
+        "sourceHash": "72e07bf07ef4c529263b9953fd3ec2bcdc519b7ecf5ba44f7b3246e5e4b4a6fc",
+        "outputHash": "193b9e468afbbc25bb346d8e5d4f3d1b2dd4d0e1f910f81acbea1d1739afca7f",
+        "declarations": 1
+      },
+      {
+        "id": "classes",
+        "status": "PASS",
+        "sourceHash": "c5806cabc6c847dbf1e89351de360422fbefdcb7a7572553373881d018b183b5",
+        "outputHash": "9dc4669f05357c528356c78686143ba1eb9023e190c3a7a30f9c9d4c351c1b8d",
+        "declarations": 3
+      },
+      {
+        "id": "closure",
+        "status": "PASS",
+        "sourceHash": "d35013733eb6cf73fd73e0eab6dc8f6c95592848f727b0af974fd93f4abf6e7a",
+        "outputHash": "7ab6d137108624f640972beea0c81b12d1b93101b84aff3aeef90d8c0af1d0c6",
+        "declarations": 2
+      },
+      {
+        "id": "decorated",
+        "status": "PASS",
+        "sourceHash": "c25f60e59bfae22037c25924c2279604ff71fa865a15ca8904b44efe05d37957",
+        "outputHash": "968b5096fa0ad8fc7e6c66642eb2f5af6d05455b7f9e1ad68925fcbc76d74853",
+        "declarations": 1
+      },
+      {
+        "id": "unicode-crlf",
+        "status": "PASS",
+        "sourceHash": "878c5d3eed831a9b7ede2a96d975d65ff7763b7ca6623905df33cdfb02da95fd",
+        "outputHash": "9624ba6cc7a3f1973edf4d0820965ab5d0c8899a719714b08fea4d49ab2f8ab3",
+        "declarations": 1
+      },
+      {
+        "id": "bom-comment",
+        "status": "PASS",
+        "sourceHash": "82c5b606b51ef2025f02306f231b75116e2a1ebc6c017f98be84cf63cc63f51c",
+        "outputHash": "1287c9013214875cf11f3f19a22b9640dfb11b34e678f7fbb3bbb38d75bbbd9e",
+        "declarations": 1
+      },
+      {
+        "id": "bom-definition",
+        "status": "PASS",
+        "sourceHash": "ee34b0d73d605504c81a870c2439bd9e532bfe48138f862e0ddaaef1d9ed6852",
+        "outputHash": "fcb4c5e29f07760ddd1403b43bbf1fa2baa6b71a23c8c5dd8805a5fd43ff63f2",
+        "declarations": 1
+      },
+      {
+        "id": "malformed",
+        "status": "PASS",
+        "sourceHash": "e6938fd8f563665fcaefec05805213a62ed5a1fa7a136aa6aad7c16602ca1da8",
+        "outputHash": "5d7d253397f3518ec6d9c4316d6dcea4c2af8a1e6c338c0ba58848ce9d15e9bc",
+        "declarations": 0
+      },
+      {
+        "id": "bad-cookie",
+        "status": "PASS",
+        "boundary": "unsupported-encoding"
+      },
+      {
+        "id": "execution-sentinel",
+        "status": "PASS",
+        "sourceHash": "746c973f952c15831e7b599e93af7e33b3098dc0e43acf1a9d478c1aac264194",
+        "outputHash": "c575e5e22a0d1bb9273dedb4412b18de2cc4dd6543f13faa757f1b3754e86ee1",
+        "declarations": 1
+      }
+    ],
+    "patterns": [
+      {
+        "id": "direct",
+        "status": "PASS",
+        "sourceHash": "b7b1ada24bb41d9fc9036bb091e15f27be6491317c7d21c641164ce2032a6aa5",
+        "outputHash": "cace34402ba871b4aea07f66da67dc65a5878c46c36df1e70e271c95e9e48896",
+        "verifiedCalls": [
+          "target"
+        ],
+        "typedGaps": [],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 14,
+        "facts": 3
+      },
+      {
+        "id": "forward-module-call",
+        "status": "PASS",
+        "sourceHash": "84c7e35464bd25c30ec8f7ecd151558f1bce29c97897c70806bf1f9ec4473605",
+        "outputHash": "d95368ba60036a54f63470844704971cd180a72fdcd816a8237bc017918d3b01",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "ambiguous-call-target"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 10,
+        "facts": 2
+      },
+      {
+        "id": "unicode-canonical-binding",
+        "status": "PASS",
+        "sourceHash": "2055553838e35b4c19bbb3a002b247771da63803b73c50aa6852537986e0613a",
+        "outputHash": "2eaed0f5f2c1e1424bae886f76240ff4af38b689375c0724d61af64057c6121d",
+        "verifiedCalls": [
+          "K"
+        ],
+        "typedGaps": [],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 10,
+        "facts": 2
+      },
+      {
+        "id": "unicode-collision",
+        "status": "PASS",
+        "sourceHash": "366ab78fe243ef8d99060b4ff0d15cb8c64db2c2403173d3f0021a2cc5ff53df",
+        "outputHash": "6240961adbb2cf5f9dd09146d16fcbe55be0282588658f9c3ea79f36bce92ede",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "ambiguous-call-target"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 15,
+        "facts": 3
+      },
+      {
+        "id": "immutable-alias",
+        "status": "PASS",
+        "sourceHash": "993de1f9fb4822ab641637685b2583b791c39af9280480ea0a90d7093d9bffbb",
+        "outputHash": "fc82f8029d62cdf7772737643e4cce8d3d328ef8c40c332f56a150f1cc12f3d5",
+        "verifiedCalls": [
+          "target"
+        ],
+        "typedGaps": [],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 14,
+        "facts": 4
+      },
+      {
+        "id": "closure",
+        "status": "PASS",
+        "sourceHash": "3a4f5216991bd55729febbe01db5049ab5d22a5bfb0c8d6730bca244cce77591",
+        "outputHash": "fdfffb1f748553f224e95570e33e868fe7ca21224ceb62744c53e049b7afc2fb",
+        "verifiedCalls": [
+          "inner"
+        ],
+        "typedGaps": [],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 14,
+        "facts": 3
+      },
+      {
+        "id": "shadowed-parameter",
+        "status": "PASS",
+        "sourceHash": "a13e913e7521de0993fb281cf16fa31dcbce81e190b58f58718d612266388f0f",
+        "outputHash": "b1ffb5a73b8c5bf1e5bc8061e6fef1380c6ff3382b943ca57f7bee1e312cd983",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "ambiguous-call-target"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 15,
+        "facts": 4
+      },
+      {
+        "id": "reassigned",
+        "status": "PASS",
+        "sourceHash": "4abb3231557c8de688c5eaf95ac5c8354dd1e675c5b238bc7d18f0cdad78f7f7",
+        "outputHash": "4d9e4b6be423aeb4041812320d2fd119e87c8344f9a0001a6f4b034a05ae9bdb",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "ambiguous-call-target"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 14,
+        "facts": 3
+      },
+      {
+        "id": "decorator",
+        "status": "PASS",
+        "sourceHash": "a140cda0909ee97335bfe654c7f5ba5c0026fb97b6ecaa397eed68e109d01660",
+        "outputHash": "a1244e80983c096e391ec41a8a3fc1b4e4d71319398c9233d56005a205f40b4f",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "decorator-wrapper-boundary",
+          "ambiguous-call-target"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 13,
+        "facts": 3
+      },
+      {
+        "id": "attribute",
+        "status": "PASS",
+        "sourceHash": "ea5344a414a2af8ee01f828e49779bd8e21fda5bf64739c4d82d54f6f6a96165",
+        "outputHash": "06632ec820c8252fc6668ad7bd5977205aa2fa352dca8fc99a7361d6b6725b7b",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "dynamic-attribute-dispatch"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 16,
+        "facts": 4
+      },
+      {
+        "id": "global-mutation",
+        "status": "PASS",
+        "sourceHash": "18a556062bba458aa57b247896cced616581a8ec87ca0ddbe5b4a246d0b9b061",
+        "outputHash": "b408dacc49efce4da527333249aa83b931beac58c172a40b875021488cf27ec4",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "mutable-binding-boundary",
+          "dynamic-binding-boundary"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 16,
+        "facts": 4
+      },
+      {
+        "id": "reflection",
+        "status": "PASS",
+        "sourceHash": "601129247f250ad7906d01ea567e238cfbbd6d8f314fa11820ea3b948fc8f472",
+        "outputHash": "428d46e2fa714134d204093d2c3b733a06640c62a817b5936ae5b8f642fc8e00",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "dynamic-attribute-dispatch",
+          "ambiguous-call-target"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 14,
+        "facts": 3
+      },
+      {
+        "id": "exec",
+        "status": "PASS",
+        "sourceHash": "dc30d70c1356197a631164118d3bd76d0baab573f2bfd8480fa5f91c80f2e4f8",
+        "outputHash": "c35b04c89ff3f43008c454fcb8882a43f0a64689f3545a2cbc596a145d552905",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "dynamic-binding-boundary"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 15,
+        "facts": 3
+      },
+      {
+        "id": "star",
+        "status": "PASS",
+        "sourceHash": "d69f7571ee0f3c4d7a0379e40eba03bdfd7b528f2986c1683b119a85fcca65cc",
+        "outputHash": "b9a006865faf5108f8f7e42b1db62c7ea2ff0a2c7225d7c8d371395484cc0f40",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "star-import-boundary",
+          "dynamic-binding-boundary"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 14,
+        "facts": 4
+      },
+      {
+        "id": "all-literal",
+        "status": "PASS",
+        "sourceHash": "8fb4d5e7f6ee63f0528168e52846fc847ba727a68a1c1660156536475b61fbb8",
+        "outputHash": "5561f582767c939bff6f7fd7767909c3892f2b66d3bbf49bf56220eccc5f59a6",
+        "verifiedCalls": [],
+        "typedGaps": [],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 14,
+        "facts": 2
+      },
+      {
+        "id": "all-dynamic",
+        "status": "PASS",
+        "sourceHash": "2e02c630625ab391ba6e3a6175afd6f990420840940ec3dd1863239336423316",
+        "outputHash": "d87291e0fe1a4ee11eefcdf40c7dc5c329872385f1598afe712329846d6121eb",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "dynamic-export-list-boundary"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 10,
+        "facts": 3
+      },
+      {
+        "id": "all-mutated",
+        "status": "PASS",
+        "sourceHash": "7077fb91d34e8bef07e8042e9fcb5008ae261af9f5a9fc07f573071042522324",
+        "outputHash": "f1a27d2f202f5b1e8ce11c79f38017efebedf3489d04729cf9a1d849f5139bc0",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "dynamic-export-list-boundary",
+          "dynamic-attribute-dispatch"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 21,
+        "facts": 4
+      },
+      {
+        "id": "all-triple-quote",
+        "status": "PASS",
+        "sourceHash": "2eebe3d530e1ff0fce19f51f371dae24c112ad0e79dc914dddf84a222ec58842",
+        "outputHash": "592527677ea276ab41f09e4d6f643a30360031787ff779db18c8a40d9d0079f5",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "dynamic-export-list-boundary"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 14,
+        "facts": 3
+      },
+      {
+        "id": "all-empty-name",
+        "status": "PASS",
+        "sourceHash": "4660a91d3cb52cc0d5aaebcd442a6a0d7a16a1a1ee0b40577f90521ace8e3daf",
+        "outputHash": "991fc345ac3756f8688c89a4b9d77d6aa692b30b956ec1e36458b2be66b05877",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "dynamic-export-list-boundary"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 8,
+        "facts": 2
+      },
+      {
+        "id": "parameter-default-expression",
+        "status": "PASS",
+        "sourceHash": "7110d236e565c095582783ce5c0031bce25e7621d011d44979097d130bfddc89",
+        "outputHash": "a4c5eda9037c49208fd4ef2a722eda44bdc2ace13f53659c35db4fbc486d002e",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "parameter-expression-boundary"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 11,
+        "facts": 3
+      },
+      {
+        "id": "return-annotation-before-binding",
+        "status": "PASS",
+        "sourceHash": "7c5a44721d56b57b850409c0232859a5e9e59f3dcbf1f64b14a7b4ea897a50d8",
+        "outputHash": "46ddc38c58a67d2b08d908171e862a774889b16a75c5d64a86e20903f26a5e31",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "annotation-expression-boundary"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 10,
+        "facts": 2
+      },
+      {
+        "id": "global-sibling-mutation",
+        "status": "PASS",
+        "sourceHash": "0e78ec8f8760eebb8341dc4692a49d1cb8ff6edc14cfbf8b5507dce8cc8daaba",
+        "outputHash": "9ef89bea175f56cda1574cca2c30af33e6d6c494a6adfece4425eda4f1f0240d",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "mutable-binding-boundary",
+          "dynamic-binding-boundary"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 24,
+        "facts": 6
+      },
+      {
+        "id": "reflection-invalidates-mro-and-all",
+        "status": "PASS",
+        "sourceHash": "ce723048a672310bf46b2658316a366d2f7d82b19e92b82d82e85d6fd44217bc",
+        "outputHash": "e7a7c08eac1ef5d4274229d089a3a1b707f1f5e895472c4e153e2bb3e07861bb",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "dynamic-export-list-boundary",
+          "inheritance-boundary",
+          "ambiguous-mro-boundary",
+          "dynamic-binding-boundary"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 24,
+        "facts": 9
+      },
+      {
+        "id": "local-diamond",
+        "status": "PASS",
+        "sourceHash": "2b7c36747fbabc334119cb113bcc983de8b4b3eda930e347b30d39f0d2e2de11",
+        "outputHash": "91b6becc33d118757fe10722a609a1d20463b257f986d040fde0f09016e83e63",
+        "verifiedCalls": [],
+        "typedGaps": [],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 24,
+        "facts": 8
+      },
+      {
+        "id": "conflicting-mro",
+        "status": "PASS",
+        "sourceHash": "8e571c042823c474ad0a87040ed29330e3ed6fb9d1ae6667ec4d258f9360aa8a",
+        "outputHash": "e7ef33c454848c41c73bf8bb41925594398d7d1fdda651bfe7c29598df296211",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "ambiguous-mro-boundary"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 30,
+        "facts": 12
+      },
+      {
+        "id": "reflection-local-alias",
+        "status": "PASS",
+        "sourceHash": "1c3fd78293bb981aca22976beee9774c9f2e3b37f0494bc769dab7ec874f4971",
+        "outputHash": "b7a38a9d545895e6ae4165fc508991a4d50ee2f2890666abc72546b0aaa8e8a0",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "dynamic-binding-boundary"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 19,
+        "facts": 4
+      },
+      {
+        "id": "reflection-import-alias",
+        "status": "PASS",
+        "sourceHash": "44e7d8c89be8bf932c113a27b3d39961fc76d394d5db844d73b7bef805433ea0",
+        "outputHash": "eed37cc886d62100e0243e7fd91f96f04d98cbb1904e4c12ff7e288b809b472a",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "dynamic-binding-boundary"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 22,
+        "facts": 4
+      }
+    ],
+    "semanticFixtureHash": "29150abb776c097486fbd6b2d5a492e51830c85cdead0e5899d0175b94930841",
+    "extractorHash": "afbb1534517cf3b5fb2b9d743b77dd7e8f461b39e8db2a971ad49a313bd787ad",
+    "scope": "Language foundation only; no Django/DRF qualification or overall-phase completion"
+  },
+  {
+    "tuple": "python31316",
+    "python": "3.13.16",
+    "baselineParent": "django60",
+    "profile": "static-python-declared-environment",
+    "status": "PASS controlled syntax/semantic patterns",
+    "syntax": [
+      {
+        "id": "functions-async",
+        "status": "PASS",
+        "sourceHash": "d14c5b2090464e9e8915b1628eb3468ca45bb89b78c35953e88bf6ca506ec65b",
+        "outputHash": "4f6f59431d9a223df7f302898bd8d38fd03aa123433e61ad1bbd09576b8f42e8",
+        "declarations": 2
+      },
+      {
+        "id": "generic-alias",
+        "status": "PASS",
+        "sourceHash": "736d57c9dd1f06a5fd73a802945c3b18cada7eb7d56bbcb78667a31973ea3bd8",
+        "outputHash": "bd0ec28e89c77f555efb13c08669e1ff734a673ae1fc2587b17a8f787197cd59",
+        "declarations": 1
+      },
+      {
+        "id": "match",
+        "status": "PASS",
+        "sourceHash": "72e07bf07ef4c529263b9953fd3ec2bcdc519b7ecf5ba44f7b3246e5e4b4a6fc",
+        "outputHash": "193b9e468afbbc25bb346d8e5d4f3d1b2dd4d0e1f910f81acbea1d1739afca7f",
+        "declarations": 1
+      },
+      {
+        "id": "classes",
+        "status": "PASS",
+        "sourceHash": "c5806cabc6c847dbf1e89351de360422fbefdcb7a7572553373881d018b183b5",
+        "outputHash": "9dc4669f05357c528356c78686143ba1eb9023e190c3a7a30f9c9d4c351c1b8d",
+        "declarations": 3
+      },
+      {
+        "id": "closure",
+        "status": "PASS",
+        "sourceHash": "d35013733eb6cf73fd73e0eab6dc8f6c95592848f727b0af974fd93f4abf6e7a",
+        "outputHash": "7ab6d137108624f640972beea0c81b12d1b93101b84aff3aeef90d8c0af1d0c6",
+        "declarations": 2
+      },
+      {
+        "id": "decorated",
+        "status": "PASS",
+        "sourceHash": "c25f60e59bfae22037c25924c2279604ff71fa865a15ca8904b44efe05d37957",
+        "outputHash": "968b5096fa0ad8fc7e6c66642eb2f5af6d05455b7f9e1ad68925fcbc76d74853",
+        "declarations": 1
+      },
+      {
+        "id": "unicode-crlf",
+        "status": "PASS",
+        "sourceHash": "878c5d3eed831a9b7ede2a96d975d65ff7763b7ca6623905df33cdfb02da95fd",
+        "outputHash": "9624ba6cc7a3f1973edf4d0820965ab5d0c8899a719714b08fea4d49ab2f8ab3",
+        "declarations": 1
+      },
+      {
+        "id": "bom-comment",
+        "status": "PASS",
+        "sourceHash": "82c5b606b51ef2025f02306f231b75116e2a1ebc6c017f98be84cf63cc63f51c",
+        "outputHash": "1287c9013214875cf11f3f19a22b9640dfb11b34e678f7fbb3bbb38d75bbbd9e",
+        "declarations": 1
+      },
+      {
+        "id": "bom-definition",
+        "status": "PASS",
+        "sourceHash": "ee34b0d73d605504c81a870c2439bd9e532bfe48138f862e0ddaaef1d9ed6852",
+        "outputHash": "fcb4c5e29f07760ddd1403b43bbf1fa2baa6b71a23c8c5dd8805a5fd43ff63f2",
+        "declarations": 1
+      },
+      {
+        "id": "malformed",
+        "status": "PASS",
+        "sourceHash": "e6938fd8f563665fcaefec05805213a62ed5a1fa7a136aa6aad7c16602ca1da8",
+        "outputHash": "5d7d253397f3518ec6d9c4316d6dcea4c2af8a1e6c338c0ba58848ce9d15e9bc",
+        "declarations": 0
+      },
+      {
+        "id": "bad-cookie",
+        "status": "PASS",
+        "boundary": "unsupported-encoding"
+      },
+      {
+        "id": "execution-sentinel",
+        "status": "PASS",
+        "sourceHash": "746c973f952c15831e7b599e93af7e33b3098dc0e43acf1a9d478c1aac264194",
+        "outputHash": "c575e5e22a0d1bb9273dedb4412b18de2cc4dd6543f13faa757f1b3754e86ee1",
+        "declarations": 1
+      }
+    ],
+    "patterns": [
+      {
+        "id": "direct",
+        "status": "PASS",
+        "sourceHash": "b7b1ada24bb41d9fc9036bb091e15f27be6491317c7d21c641164ce2032a6aa5",
+        "outputHash": "cace34402ba871b4aea07f66da67dc65a5878c46c36df1e70e271c95e9e48896",
+        "verifiedCalls": [
+          "target"
+        ],
+        "typedGaps": [],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 14,
+        "facts": 3
+      },
+      {
+        "id": "forward-module-call",
+        "status": "PASS",
+        "sourceHash": "84c7e35464bd25c30ec8f7ecd151558f1bce29c97897c70806bf1f9ec4473605",
+        "outputHash": "d95368ba60036a54f63470844704971cd180a72fdcd816a8237bc017918d3b01",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "ambiguous-call-target"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 10,
+        "facts": 2
+      },
+      {
+        "id": "unicode-canonical-binding",
+        "status": "PASS",
+        "sourceHash": "2055553838e35b4c19bbb3a002b247771da63803b73c50aa6852537986e0613a",
+        "outputHash": "2eaed0f5f2c1e1424bae886f76240ff4af38b689375c0724d61af64057c6121d",
+        "verifiedCalls": [
+          "K"
+        ],
+        "typedGaps": [],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 10,
+        "facts": 2
+      },
+      {
+        "id": "unicode-collision",
+        "status": "PASS",
+        "sourceHash": "366ab78fe243ef8d99060b4ff0d15cb8c64db2c2403173d3f0021a2cc5ff53df",
+        "outputHash": "6240961adbb2cf5f9dd09146d16fcbe55be0282588658f9c3ea79f36bce92ede",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "ambiguous-call-target"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 15,
+        "facts": 3
+      },
+      {
+        "id": "immutable-alias",
+        "status": "PASS",
+        "sourceHash": "993de1f9fb4822ab641637685b2583b791c39af9280480ea0a90d7093d9bffbb",
+        "outputHash": "fc82f8029d62cdf7772737643e4cce8d3d328ef8c40c332f56a150f1cc12f3d5",
+        "verifiedCalls": [
+          "target"
+        ],
+        "typedGaps": [],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 14,
+        "facts": 4
+      },
+      {
+        "id": "closure",
+        "status": "PASS",
+        "sourceHash": "3a4f5216991bd55729febbe01db5049ab5d22a5bfb0c8d6730bca244cce77591",
+        "outputHash": "fdfffb1f748553f224e95570e33e868fe7ca21224ceb62744c53e049b7afc2fb",
+        "verifiedCalls": [
+          "inner"
+        ],
+        "typedGaps": [],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 14,
+        "facts": 3
+      },
+      {
+        "id": "shadowed-parameter",
+        "status": "PASS",
+        "sourceHash": "a13e913e7521de0993fb281cf16fa31dcbce81e190b58f58718d612266388f0f",
+        "outputHash": "b1ffb5a73b8c5bf1e5bc8061e6fef1380c6ff3382b943ca57f7bee1e312cd983",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "ambiguous-call-target"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 15,
+        "facts": 4
+      },
+      {
+        "id": "reassigned",
+        "status": "PASS",
+        "sourceHash": "4abb3231557c8de688c5eaf95ac5c8354dd1e675c5b238bc7d18f0cdad78f7f7",
+        "outputHash": "4d9e4b6be423aeb4041812320d2fd119e87c8344f9a0001a6f4b034a05ae9bdb",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "ambiguous-call-target"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 14,
+        "facts": 3
+      },
+      {
+        "id": "decorator",
+        "status": "PASS",
+        "sourceHash": "a140cda0909ee97335bfe654c7f5ba5c0026fb97b6ecaa397eed68e109d01660",
+        "outputHash": "a1244e80983c096e391ec41a8a3fc1b4e4d71319398c9233d56005a205f40b4f",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "decorator-wrapper-boundary",
+          "ambiguous-call-target"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 13,
+        "facts": 3
+      },
+      {
+        "id": "attribute",
+        "status": "PASS",
+        "sourceHash": "ea5344a414a2af8ee01f828e49779bd8e21fda5bf64739c4d82d54f6f6a96165",
+        "outputHash": "06632ec820c8252fc6668ad7bd5977205aa2fa352dca8fc99a7361d6b6725b7b",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "dynamic-attribute-dispatch"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 16,
+        "facts": 4
+      },
+      {
+        "id": "global-mutation",
+        "status": "PASS",
+        "sourceHash": "18a556062bba458aa57b247896cced616581a8ec87ca0ddbe5b4a246d0b9b061",
+        "outputHash": "b408dacc49efce4da527333249aa83b931beac58c172a40b875021488cf27ec4",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "mutable-binding-boundary",
+          "dynamic-binding-boundary"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 16,
+        "facts": 4
+      },
+      {
+        "id": "reflection",
+        "status": "PASS",
+        "sourceHash": "601129247f250ad7906d01ea567e238cfbbd6d8f314fa11820ea3b948fc8f472",
+        "outputHash": "428d46e2fa714134d204093d2c3b733a06640c62a817b5936ae5b8f642fc8e00",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "dynamic-attribute-dispatch",
+          "ambiguous-call-target"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 14,
+        "facts": 3
+      },
+      {
+        "id": "exec",
+        "status": "PASS",
+        "sourceHash": "dc30d70c1356197a631164118d3bd76d0baab573f2bfd8480fa5f91c80f2e4f8",
+        "outputHash": "c35b04c89ff3f43008c454fcb8882a43f0a64689f3545a2cbc596a145d552905",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "dynamic-binding-boundary"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 15,
+        "facts": 3
+      },
+      {
+        "id": "star",
+        "status": "PASS",
+        "sourceHash": "d69f7571ee0f3c4d7a0379e40eba03bdfd7b528f2986c1683b119a85fcca65cc",
+        "outputHash": "b9a006865faf5108f8f7e42b1db62c7ea2ff0a2c7225d7c8d371395484cc0f40",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "star-import-boundary",
+          "dynamic-binding-boundary"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 14,
+        "facts": 4
+      },
+      {
+        "id": "all-literal",
+        "status": "PASS",
+        "sourceHash": "8fb4d5e7f6ee63f0528168e52846fc847ba727a68a1c1660156536475b61fbb8",
+        "outputHash": "5561f582767c939bff6f7fd7767909c3892f2b66d3bbf49bf56220eccc5f59a6",
+        "verifiedCalls": [],
+        "typedGaps": [],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 14,
+        "facts": 2
+      },
+      {
+        "id": "all-dynamic",
+        "status": "PASS",
+        "sourceHash": "2e02c630625ab391ba6e3a6175afd6f990420840940ec3dd1863239336423316",
+        "outputHash": "d87291e0fe1a4ee11eefcdf40c7dc5c329872385f1598afe712329846d6121eb",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "dynamic-export-list-boundary"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 10,
+        "facts": 3
+      },
+      {
+        "id": "all-mutated",
+        "status": "PASS",
+        "sourceHash": "7077fb91d34e8bef07e8042e9fcb5008ae261af9f5a9fc07f573071042522324",
+        "outputHash": "f1a27d2f202f5b1e8ce11c79f38017efebedf3489d04729cf9a1d849f5139bc0",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "dynamic-export-list-boundary",
+          "dynamic-attribute-dispatch"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 21,
+        "facts": 4
+      },
+      {
+        "id": "all-triple-quote",
+        "status": "PASS",
+        "sourceHash": "2eebe3d530e1ff0fce19f51f371dae24c112ad0e79dc914dddf84a222ec58842",
+        "outputHash": "592527677ea276ab41f09e4d6f643a30360031787ff779db18c8a40d9d0079f5",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "dynamic-export-list-boundary"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 14,
+        "facts": 3
+      },
+      {
+        "id": "all-empty-name",
+        "status": "PASS",
+        "sourceHash": "4660a91d3cb52cc0d5aaebcd442a6a0d7a16a1a1ee0b40577f90521ace8e3daf",
+        "outputHash": "991fc345ac3756f8688c89a4b9d77d6aa692b30b956ec1e36458b2be66b05877",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "dynamic-export-list-boundary"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 8,
+        "facts": 2
+      },
+      {
+        "id": "parameter-default-expression",
+        "status": "PASS",
+        "sourceHash": "7110d236e565c095582783ce5c0031bce25e7621d011d44979097d130bfddc89",
+        "outputHash": "a4c5eda9037c49208fd4ef2a722eda44bdc2ace13f53659c35db4fbc486d002e",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "parameter-expression-boundary"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 11,
+        "facts": 3
+      },
+      {
+        "id": "return-annotation-before-binding",
+        "status": "PASS",
+        "sourceHash": "7c5a44721d56b57b850409c0232859a5e9e59f3dcbf1f64b14a7b4ea897a50d8",
+        "outputHash": "46ddc38c58a67d2b08d908171e862a774889b16a75c5d64a86e20903f26a5e31",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "annotation-expression-boundary"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 10,
+        "facts": 2
+      },
+      {
+        "id": "global-sibling-mutation",
+        "status": "PASS",
+        "sourceHash": "0e78ec8f8760eebb8341dc4692a49d1cb8ff6edc14cfbf8b5507dce8cc8daaba",
+        "outputHash": "9ef89bea175f56cda1574cca2c30af33e6d6c494a6adfece4425eda4f1f0240d",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "mutable-binding-boundary",
+          "dynamic-binding-boundary"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 24,
+        "facts": 6
+      },
+      {
+        "id": "reflection-invalidates-mro-and-all",
+        "status": "PASS",
+        "sourceHash": "ce723048a672310bf46b2658316a366d2f7d82b19e92b82d82e85d6fd44217bc",
+        "outputHash": "e7a7c08eac1ef5d4274229d089a3a1b707f1f5e895472c4e153e2bb3e07861bb",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "dynamic-export-list-boundary",
+          "inheritance-boundary",
+          "ambiguous-mro-boundary",
+          "dynamic-binding-boundary"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 24,
+        "facts": 9
+      },
+      {
+        "id": "local-diamond",
+        "status": "PASS",
+        "sourceHash": "2b7c36747fbabc334119cb113bcc983de8b4b3eda930e347b30d39f0d2e2de11",
+        "outputHash": "91b6becc33d118757fe10722a609a1d20463b257f986d040fde0f09016e83e63",
+        "verifiedCalls": [],
+        "typedGaps": [],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 24,
+        "facts": 8
+      },
+      {
+        "id": "conflicting-mro",
+        "status": "PASS",
+        "sourceHash": "8e571c042823c474ad0a87040ed29330e3ed6fb9d1ae6667ec4d258f9360aa8a",
+        "outputHash": "e7ef33c454848c41c73bf8bb41925594398d7d1fdda651bfe7c29598df296211",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "ambiguous-mro-boundary"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 30,
+        "facts": 12
+      },
+      {
+        "id": "reflection-local-alias",
+        "status": "PASS",
+        "sourceHash": "1c3fd78293bb981aca22976beee9774c9f2e3b37f0494bc769dab7ec874f4971",
+        "outputHash": "b7a38a9d545895e6ae4165fc508991a4d50ee2f2890666abc72546b0aaa8e8a0",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "dynamic-binding-boundary"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 19,
+        "facts": 4
+      },
+      {
+        "id": "reflection-import-alias",
+        "status": "PASS",
+        "sourceHash": "44e7d8c89be8bf932c113a27b3d39961fc76d394d5db844d73b7bef805433ea0",
+        "outputHash": "eed37cc886d62100e0243e7fd91f96f04d98cbb1904e4c12ff7e288b809b472a",
+        "verifiedCalls": [],
+        "typedGaps": [
+          "dynamic-binding-boundary"
+        ],
+        "forbidden": "Every call beyond the exact controlled oracle; every repeated output difference",
+        "extractorVersion": "fs-05/1",
+        "visitedNodes": 22,
+        "facts": 4
+      }
+    ],
+    "semanticFixtureHash": "29150abb776c097486fbd6b2d5a492e51830c85cdead0e5899d0175b94930841",
+    "extractorHash": "afbb1534517cf3b5fb2b9d743b77dd7e8f461b39e8db2a971ad49a313bd787ad",
+    "scope": "Language foundation only; no Django/DRF qualification or overall-phase completion"
+  }
+]

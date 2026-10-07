@@ -1,0 +1,69 @@
+{
+  "platform": "win32",
+  "arch": "x64",
+  "runtime": {
+    "node": "24.19.0",
+    "target": "x86_64-pc-windows-msvc",
+    "protocol": 1,
+    "snapshotVersion": 3,
+    "historicalSnapshotVersions": [
+      2
+    ]
+  },
+  "fixtureHash": "4a243dc353ff5ea74b105c8a0d44ce4a7cc196b231a45b375508fa0158042ace",
+  "results": [
+    {
+      "tuple": "vite7-react18",
+      "controlledProbeHash": "294af2fb322ea02f3fe986ef4892b8c989f7fbf02bc5416afed94deb9cd35987",
+      "node": "v24.19.0",
+      "variants": [
+        "browser-development",
+        "browser-production"
+      ],
+      "files": 17,
+      "bindings": 166,
+      "registrations": 10,
+      "distinctWitnessCount": 332,
+      "snapshotHash": "8b166d97016b9098b1f5d4dff928e23fa7b0d0d6eedc94080223796f7b32ac98",
+      "checks": [
+        "offline",
+        "empty PATH",
+        "conditional exports all selected profiles",
+        "public assets/workers",
+        "namespace/context/hooks/class/imperative router",
+        "all distinct witnesses current",
+        "entry-event-call trace",
+        "full/incremental",
+        "SQLite reopen",
+        "stale HTML witness"
+      ]
+    },
+    {
+      "tuple": "vite8-react19",
+      "controlledProbeHash": "81f995d6d581ad3362ea01a1ebc350cf94f03961dc3cc27bbadd86f8417b6226",
+      "node": "v24.19.0",
+      "variants": [
+        "browser-development",
+        "browser-production",
+        "ssr-production"
+      ],
+      "files": 17,
+      "bindings": 244,
+      "registrations": 15,
+      "distinctWitnessCount": 494,
+      "snapshotHash": "e39684df1143a65391036afe5182e645fddbe91b761c84c4bd144a53d2b8eb48",
+      "checks": [
+        "offline",
+        "empty PATH",
+        "conditional exports all selected profiles",
+        "public assets/workers",
+        "namespace/context/hooks/class/imperative router",
+        "all distinct witnesses current",
+        "entry-event-call trace",
+        "full/incremental",
+        "SQLite reopen",
+        "stale HTML witness"
+      ]
+    }
+  ]
+}

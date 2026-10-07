@@ -4,14 +4,14 @@ import { directoryExclusion, RepositoryReader } from "../repository/read-policy.
 import type { CodeSnapshot } from "./types.ts";
 import { publicMetadataName } from "../repository/metadata-policy.ts";
 
-export function refreshInputClass(filename: string): "source" | "metadata" | "topology" {
+export function refreshInputClass(filename: string, adapterExtensions: readonly string[] = []): "source" | "metadata" | "topology" {
   if (publicMetadataName(filename)) return "metadata";
-  return /\.(?:[cm]?[jt]sx?)$/.test(filename) ? "source" : "topology";
+  return /\.(?:[cm]?[jt]sx?)$/.test(filename) || adapterExtensions.includes(path.extname(filename)) ? "source" : "topology";
 }
 
 export type RefreshCandidate = { snapshot: CodeSnapshot; reader: RepositoryReader; mode: "full" | "incremental"; parsed: number; reused: number };
 export type RefreshStatus = { state: "watching" | "paused" | "degraded" | "refreshing"; message: string; mode: "full" | "incremental"; parsed: number; reused: number; elapsedMs: number; memoryBytes: number; snapshotBytes: number };
-type Options = { begin?: () => void; analyze: (full: boolean) => RefreshCandidate; publish: (snapshot: CodeSnapshot) => void; status: (status: RefreshStatus) => void; debounceMs?: number; auditMs?: number };
+type Options = { begin?: () => void; analyze: (full: boolean) => RefreshCandidate; analyzeAsync?: (full: boolean) => Promise<RefreshCandidate>; publish: (snapshot: CodeSnapshot) => void; status: (status: RefreshStatus) => void; debounceMs?: number; auditMs?: number };
 
 /** One selected-root scheduler. ASTs belong to its adapter; SQLite owns publication.
  * Directory events are never used to construct evidence. */
@@ -27,6 +27,7 @@ export class RepositoryRefresh {
   private events = 0;
   private full = false;
   private retries = 0;
+  private asyncRunning = false;
   private metrics = { mode: "full" as "full" | "incremental", parsed: 0, reused: 0, elapsedMs: 0, memoryBytes: 0, snapshotBytes: 0 };
   constructor(options: Options) { this.options = options; }
   private report(state: RefreshStatus["state"], message: string) { this.options.status({ state, message, ...this.metrics }); }
@@ -42,6 +43,22 @@ export class RepositoryRefresh {
     this.retries = 0;
     if (this.active) this.attach();
     return next.snapshot;
+  }
+  async runAsync(full: boolean): Promise<CodeSnapshot> {
+    if (!this.options.analyzeAsync) return this.run(full);
+    if (this.asyncRunning) throw new Error("analysis_active");
+    this.asyncRunning = true;
+    try {
+    const generation = ++this.epoch, started = performance.now();
+    this.options.begin?.();
+    this.report("refreshing", full ? "Full rebuild; previous snapshot retained" : "Incremental refresh; recomputing all resolution and framework evidence");
+    const next = await this.options.analyzeAsync(full);
+    if (this.stopped || generation !== this.epoch || !next.reader.stable()) throw new Error("unstable_generation");
+    this.options.publish(next.snapshot); this.candidate = next;
+    this.metrics = { mode: next.mode, parsed: next.parsed, reused: next.reused, elapsedMs: Math.round(performance.now() - started), memoryBytes: process.memoryUsage().rss, snapshotBytes: Buffer.byteLength(JSON.stringify(next.snapshot)) };
+    this.retries = 0; if (this.active) this.attach();
+    return next.snapshot;
+    } finally { this.asyncRunning = false; }
   }
   start() {
     if (this.stopped) return;
@@ -74,7 +91,8 @@ export class RepositoryRefresh {
             const absolute = path.join(directory, filename);
             const stat = new RepositoryReader(reader.root).stat(absolute);
             if (stat?.isSymbolicLink()) { this.enqueue(true); return; }
-            this.enqueue(kind !== "change" || refreshInputClass(filename) !== "source");
+            const extensions = [...new Set(this.candidate?.snapshot.files.map(file => path.extname(file.path)))];
+            this.enqueue(kind !== "change" || refreshInputClass(filename, extensions) !== "source");
           } catch { this.loss(); }
         });
         handle.on("error", () => this.loss());
@@ -91,6 +109,13 @@ export class RepositoryRefresh {
     if (this.timer) clearTimeout(this.timer);
     this.timer = setTimeout(() => {
       this.timer = undefined; const force = this.full; this.full = false; this.events = 0;
+      if (this.asyncRunning) { this.enqueue(force); return; }
+      if (this.options.analyzeAsync) {
+        void this.runAsync(force).then(() => { if (this.active) this.report("watching", "Refresh published; watching selected root"); }).catch(() => {
+          if (++this.retries <= 2 && this.active) { this.report("paused", "Refresh unstable or failed; prior complete snapshot retained, retrying full analysis"); this.enqueue(true); } else this.loss();
+        });
+        return;
+      }
       try { this.run(force); if (this.active) this.report("watching", "Refresh published; watching selected root"); }
       catch {
         if (++this.retries <= 2 && this.active) {

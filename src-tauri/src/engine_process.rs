@@ -292,6 +292,8 @@ mod tests {
         )
         .unwrap();
         std::fs::write(scratch.join("b.ts"), "export const b = 1;").unwrap();
+        #[cfg(windows)]
+        std::fs::write(scratch.join("controlled.py"), "raise RuntimeError('MUST NEVER EXECUTE')\ndef target():\n    pass\ndef caller():\n    target()\n").unwrap();
         let root = scratch.canonicalize().unwrap();
         // Optional, explicit read-only reproduction against a real local root.
         // This exists only in tests and never adds a renderer command.
@@ -346,6 +348,17 @@ mod tests {
                                 .unwrap();
                                 assert_eq!(returned_root, root);
                                 if actual_root.is_none() {
+                                    #[cfg(windows)]
+                                    {
+                                        assert_eq!((files, edges), (3, 1));
+                                        assert!(event["snapshot"]["behavior"]["relations"]
+                                            .as_array()
+                                            .unwrap()
+                                            .iter()
+                                            .any(|relation| relation["relation"] == "calls"
+                                                && relation["site"]["file"] == "controlled.py"));
+                                    }
+                                    #[cfg(not(windows))]
                                     assert_eq!((files, edges), (2, 1));
                                 } else {
                                     println!("Native shell launch completed: {files} files, {edges} verified import edges");
@@ -382,6 +395,8 @@ mod tests {
         // Exact, fixed child of target; no recursive deletion of a computed root.
         std::fs::remove_file(scratch.join("a.ts")).unwrap();
         std::fs::remove_file(scratch.join("b.ts")).unwrap();
+        #[cfg(windows)]
+        std::fs::remove_file(scratch.join("controlled.py")).unwrap();
         std::fs::remove_dir(&scratch).unwrap();
         assert!(passed, "{diagnostic}");
     }

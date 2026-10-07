@@ -6,6 +6,8 @@ import { validateSnapshot } from "../contract.ts";
 import { legacyObservations } from "../compatibility.ts";
 import { AnalysisCoordinator } from "../coordinator.ts";
 import { extractVite } from "../../parser/adapters/vite.ts";
+import { extractNodeNext } from "../../parser/adapters/node-next.ts";
+import type { NodeMode } from "../../parser/adapters/node-profile.ts";
 import type { ViteMode } from "../../parser/adapters/vite.ts";
 import type { FrameworkSource } from "../../parser/framework-bindings.ts";
 import type { LegacySnapshot } from "../types.ts";
@@ -19,7 +21,8 @@ function analyzeTypescript(directory: string, onProgress?: (stage: "parse") => v
     onProgress?.("parse");
     let behavior: Behavior | undefined;
     const parsed = validateParseResult(parseSelection(selection, (sources, resolver, routes) => {
-      const projects = selection.walk.discovery.projects.filter(p => p.versions.vite === "7.3.7" && p.versions.react === "18.3.1" || p.versions.vite === "8.3.3" && p.versions.react === "19.2.8");
+      const nativeProjects=new Set(selection.walk.discovery.metadata.all().filter(r=>r.resource.path.endsWith("package.json")&&r.config.value.kind==="object"&&r.config.value.properties.engines?.kind==="object"&&r.config.value.properties.engines.properties.node?.kind==="literal"&&["22.23.3","24.19.0"].includes(String(r.config.value.properties.engines.properties.node.value))).map(r=>r.resource.path==="package.json" ? "." : r.resource.path.slice(0,-"/package.json".length)));
+      const projects = selection.walk.discovery.projects.filter(p => p.versions.vite === "7.3.7" && p.versions.react === "18.3.1" || p.versions.vite === "8.3.3" && p.versions.react === "19.2.8" || ["15.5.27","16.3.6","16.3.8"].includes(p.versions.next) || nativeProjects.has(p.path));
       const eligible=new Set(projects.length ? sources.filter(s=>s.sourceFile.getDescendants().length<=100000).map(s=>s.candidate.path) : []);
       const callbacks = new Set(selection.walk.discovery.inventory.filter(f => eligible.has(f.path) && projects.some(p => p.path === f.owner) && selection.walk.candidates.find(c=>c.path===f.path)?.validUtf8 !== false).map(f => f.path));
       behavior = extractBehavior(sources, resolver, routes, callbacks); capture?.(sources);
@@ -66,11 +69,11 @@ function analyzeTypescript(directory: string, onProgress?: (stage: "parse") => v
 }
 
 /** Ephemeral adapter-owned ASTs; shared engine contracts never expose ts-morph. */
-export function createTypescriptRefresh(options: { signal?: AbortSignal; viteModes?: readonly ViteMode[] } = {}) {
-  return new AnalysisCoordinator(typescriptDriver(options.viteModes), options);
+export function createTypescriptRefresh(options: { signal?: AbortSignal; viteModes?: readonly ViteMode[]; nodeModes?:readonly NodeMode[] } = {}) {
+  return new AnalysisCoordinator(typescriptDriver(options.viteModes,options.nodeModes), options);
 }
 
-function typescriptDriver(modes?: readonly ViteMode[]) {
+export function typescriptDriver(modes?: readonly ViteMode[],nodeModes?:readonly NodeMode[]) {
   let inputs: FrameworkSource[] = [];
   let session = createSyntaxSession();
   let unresolved = "";
@@ -90,7 +93,7 @@ function typescriptDriver(modes?: readonly ViteMode[]) {
       const candidate = { snapshot, mode: full ? "full" as const : "incremental" as const, parsed: session.parsed, reused: session.reused };
       return candidate;
     },
-    project(snapshot: CodeSnapshot, selection: Selection) { return extractVite(snapshot, selection, inputs, modes); },
+    project(snapshot: CodeSnapshot, selection: Selection) { return extractNodeNext(extractVite(snapshot, selection, inputs, modes),selection,inputs,nodeModes); },
     reset() { session = createSyntaxSession(); unresolved = ""; inputs = []; },
   };
 }

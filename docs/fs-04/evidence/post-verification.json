@@ -1,0 +1,182 @@
+[
+  {
+    "value": [
+      {
+        "id": "typecheck",
+        "command": "node node_modules/typescript/bin/tsc --noEmit",
+        "startedUtc": "2026-10-07T03:06:34.9642061Z",
+        "elapsedMs": 6067,
+        "exitCode": 2,
+        "log": "typecheck-final.log"
+      },
+      {
+        "id": "lint",
+        "command": "node node_modules/eslint/bin/eslint.js .",
+        "startedUtc": "2026-10-07T03:06:41.1001862Z",
+        "elapsedMs": 16578,
+        "exitCode": 0,
+        "log": "lint-final.log"
+      },
+      {
+        "id": "tests",
+        "command": "node --test tests/phase-01.test.ts tests/phase-02.test.ts tests/phase-03.test.ts tests/phase-04.test.ts tests/phase-05.test.ts tests/phase-06.test.ts tests/phase-07.test.ts tests/phase-08.test.ts tests/phase-09.test.ts",
+        "startedUtc": "2026-10-07T03:06:57.6898187Z",
+        "elapsedMs": 18987,
+        "exitCode": 0,
+        "log": "tests-final.log"
+      },
+      {
+        "id": "next-build",
+        "command": "node node_modules/next/dist/bin/next build",
+        "startedUtc": "2026-10-07T03:07:16.6905718Z",
+        "elapsedMs": 18899,
+        "exitCode": 0,
+        "log": "next-build-final.log"
+      },
+      {
+        "id": "package-engine",
+        "command": "node scripts/package-engine.ts",
+        "startedUtc": "2026-10-07T03:07:35.6038778Z",
+        "elapsedMs": 1345,
+        "exitCode": 0,
+        "log": "package-engine-final.log"
+      },
+      {
+        "id": "assets",
+        "command": "node scripts/verify-desktop-assets.ts",
+        "startedUtc": "2026-10-07T03:07:37.0347884Z",
+        "elapsedMs": 260,
+        "exitCode": 0,
+        "log": "assets-final.log"
+      },
+      {
+        "id": "staged-smoke",
+        "command": "node scripts/smoke-engine.ts",
+        "startedUtc": "2026-10-07T03:07:37.3207978Z",
+        "elapsedMs": 17748,
+        "exitCode": 0,
+        "log": "staged-smoke-final.log"
+      },
+      {
+        "id": "fs-03-packaged",
+        "command": "node scripts/fs-04-vite-preservation.ts",
+        "startedUtc": "2026-10-07T03:07:55.0829299Z",
+        "elapsedMs": 28298,
+        "exitCode": 0,
+        "log": "fs-03-packaged-final.log"
+      },
+      {
+        "id": "fs-04-tests",
+        "command": "node --test tests/framework-support/fs-04.test.ts",
+        "startedUtc": "2026-10-07T03:08:23.3946Z",
+        "elapsedMs": 37493,
+        "exitCode": 0,
+        "log": "fs-04-tests-final.log"
+      },
+      {
+        "id": "fs-04-packaged",
+        "command": "node scripts/fs-04-packaged.ts",
+        "startedUtc": "2026-10-07T03:09:00.9020883Z",
+        "elapsedMs": 24238,
+        "exitCode": 0,
+        "log": "fs-04-packaged-final.log"
+      },
+      {
+        "id": "qualification",
+        "command": "node scripts/fs-04-qualification-runner.ts --all",
+        "startedUtc": "2026-10-07T03:09:25.1595506Z",
+        "elapsedMs": 49911,
+        "exitCode": 0,
+        "log": "qualification-final.log"
+      },
+      {
+        "id": "diff-check",
+        "command": "git diff --check",
+        "startedUtc": "2026-10-07T03:10:15.0841289Z",
+        "elapsedMs": 227,
+        "exitCode": 0,
+        "log": "diff-check-final.log"
+      }
+    ],
+    "Count": 12
+  },
+  {
+    "id": "typecheck",
+    "command": "node node_modules/typescript/bin/tsc --noEmit",
+    "startedUtc": "2026-10-07T03:11:57.9177856Z",
+    "elapsedMs": 4469,
+    "exitCode": 0,
+    "log": "typecheck-qualified.log"
+  },
+  {
+    "id": "lint",
+    "command": "node node_modules/eslint/bin/eslint.js .",
+    "startedUtc": "2026-10-07T03:12:02.4548273Z",
+    "elapsedMs": 17524,
+    "exitCode": 0,
+    "log": "lint-qualified.log"
+  },
+  {
+    "id": "fs-04-tests",
+    "command": "node --test tests/framework-support/fs-04.test.ts",
+    "startedUtc": "2026-10-07T03:12:20.0013318Z",
+    "elapsedMs": 35282,
+    "exitCode": 0,
+    "log": "fs-04-tests-qualified.log"
+  },
+  {
+    "id": "qualification",
+    "command": "node scripts/fs-04-qualification-runner.ts --all",
+    "startedUtc": "2026-10-07T03:12:55.3008602Z",
+    "elapsedMs": 44710,
+    "exitCode": 0,
+    "log": "qualification-qualified.log"
+  },
+  {
+    "id": "parse",
+    "command": "node scripts/parse.ts . --out docs/fs-04/evidence/baseline-parse.json",
+    "startedUtc": "2026-10-07T03:13:40.023885Z",
+    "elapsedMs": 4720,
+    "exitCode": 0,
+    "log": "parse-qualified.log"
+  },
+  {
+    "id": "map-counts",
+    "command": "node scripts/map-counts.ts docs/fs-04/evidence/baseline-parse.json",
+    "startedUtc": "2026-10-07T03:13:44.7655608Z",
+    "elapsedMs": 307,
+    "exitCode": 0,
+    "log": "map-counts-qualified.log"
+  },
+  {
+    "id": "insights",
+    "command": "node scripts/insights.ts docs/fs-04/evidence/baseline-parse.json",
+    "startedUtc": "2026-10-07T03:13:45.0906937Z",
+    "elapsedMs": 287,
+    "exitCode": 0,
+    "log": "insights-qualified.log"
+  },
+  {
+    "id": "engine",
+    "command": "node scripts/engine.ts . --out docs/fs-04/evidence/baseline-snapshot.json",
+    "startedUtc": "2026-10-07T03:13:45.3904458Z",
+    "elapsedMs": 19279,
+    "exitCode": 0,
+    "log": "engine-qualified.log"
+  },
+  {
+    "id": "diff-check",
+    "command": "git diff --check",
+    "startedUtc": "2026-10-07T03:14:04.6808069Z",
+    "elapsedMs": 155,
+    "exitCode": 0,
+    "log": "diff-check-qualified.log"
+  },
+  {
+    "id": "fs-04-packaged",
+    "command": "node scripts/fs-04-packaged.ts",
+    "exitCode": 0,
+    "log": "packaged-erasure-final.log",
+    "scope": "Final isolated runtime/harness hashes; native TS erasure and duplicate CJS aliases"
+  }
+]

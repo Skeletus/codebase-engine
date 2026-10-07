@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "node": "v24.19.0",
+  "files": 4,
+  "imports": 1,
+  "bindings": 3,
+  "checks": [
+    "offline",
+    "empty PATH",
+    "no Python or development tooling",
+    "execution sentinel",
+    "Python/TS composition",
+    "metadata/source deduplication",
+    "direct calls",
+    "structural dependencies",
+    "snapshot round trip",
+    "full/incremental",
+    "SQLite persistence",
+    "evidence staleness"
+  ],
+  "fixtureHash": "727342bedef8169768447a178de8db9be269f5cf1aa8a4c71f288d42770884f6",
+  "runtimeManifest": {
+    "version": 1,
+    "runtime": "web-tree-sitter@0.25.10",
+    "grammar": "tree-sitter-python@0.25.0",
+    "abi": 15,
+    "assets": [
+      {
+        "file": "lib/engine/assets/python/tree-sitter-python.wasm",
+        "sha256": "16108b50df4ee9a30168794252ab55e7c93bfc5765d7fa0aa3e335752c515f47"
+      },
+      {
+        "file": "lib/engine/assets/python/LICENSE",
+        "sha256": "d724405ce238a22c0d35769c5a36b386ad5958192efe8bbb304fb2896254575f"
+      },
+      {
+        "file": "node_modules/web-tree-sitter/tree-sitter.wasm",
+        "sha256": "f38dcc4b43b818f9a0785bc1c6d5611a75ac4cdd428ff3f02757c34ca4e46d7f"
+      },
+      {
+        "file": "node_modules/web-tree-sitter/tree-sitter.js",
+        "sha256": "d4fc466df6358055253bc4cdaab23cdf84fe00741fa5a4ff56506c06c533da42"
+      },
+      {
+        "file": "node_modules/web-tree-sitter/LICENSE",
+        "sha256": "5f9cf9fb6acb1972b35ae29119ce563bb60ec097656bc4b69b9bac2d04c7a147"
+      },
+      {
+        "file": "node_modules/web-tree-sitter/package.json",
+        "sha256": "6636903505f3a3739fa8f11d6de7264cf3cc0ae6e0c2e2aec0f079656899cc06"
+      },
+      {
+        "file": "bin/parser-host.exe",
+        "sha256": "b1c181aec85a53b5e67a2716cb151a9967d1f1994ccccff6120fb519b11bdcd3"
+      }
+    ],
+    "memoryBytes": 536870912,
+    "oldSpaceMiB": 128,
+    "startupMs": 5000,
+    "fileMs": 2000
+  },
+  "harnessHash": "3bea875ef47f275ef9186c5238254c259849569ffb1df60cadde806bdb55d6f1"
+}

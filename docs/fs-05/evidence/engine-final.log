@@ -1,0 +1,108 @@
+Local snapshot v3: 197 files, 578 relationships, 0 route declarations
+{
+  "files": {
+    "found": 199,
+    "parsed": 197,
+    "skipped": 2
+  },
+  "relationships": {
+    "seen": 1029,
+    "internal": 583,
+    "external": 433,
+    "excluded": 1,
+    "unresolved": 12
+  },
+  "bySyntax": {
+    "import": {
+      "seen": 1013,
+      "internal": 580,
+      "external": 432,
+      "excluded": 1,
+      "unresolved": 0
+    },
+    "re-export": {
+      "seen": 3,
+      "internal": 3,
+      "external": 0,
+      "excluded": 0,
+      "unresolved": 0
+    },
+    "dynamic-import": {
+      "seen": 5,
+      "internal": 0,
+      "external": 1,
+      "excluded": 0,
+      "unresolved": 4
+    },
+    "require": {
+      "seen": 8,
+      "internal": 0,
+      "external": 0,
+      "excluded": 0,
+      "unresolved": 8
+    }
+  },
+  "external": {
+    "package": 67,
+    "builtin": 366,
+    "outside-root": 0
+  },
+  "excluded": {
+    "non-code-file": 1
+  },
+  "unresolved": {
+    "non-literal-dynamic-import": 4,
+    "non-literal-require": 8
+  }
+}
+skipped-file: next-env.d.ts declaration-file: types only, no runtime imports
+skipped-file: types/globals.d.ts declaration-file: types only, no runtime imports
+excluded-directory: .agents dot-directory: dot-directory
+excluded-directory: .claude dot-directory: dot-directory
+excluded-directory: .git dot-directory: dot-directory
+excluded-directory: .next dot-directory: dot-directory
+excluded-directory: artifacts/laya-nav-1/generated dependency, build, vendored or generated directory: dependency, build, vendored or generated directory
+excluded-directory: node_modules dependency, build, vendored or generated directory: dependency, build, vendored or generated directory
+excluded-directory: out dependency, build, vendored or generated directory: dependency, build, vendored or generated directory
+excluded-directory: src-tauri/resources/generated dependency, build, vendored or generated directory: dependency, build, vendored or generated directory
+excluded-directory: src-tauri/src/bin dependency, build, vendored or generated directory: dependency, build, vendored or generated directory
+excluded-directory: src-tauri/target dependency, build, vendored or generated directory: dependency, build, vendored or generated directory
+unresolved-import: lib/engine/adapters/python-worker.ts non-literal-dynamic-import: dynamic-import pathToFileURL(path.join(path.dirname(runtime), "tree-sitter.js")).href: the path is computed at runtime
+unresolved-import: scripts/fs-03-oracles.mjs non-literal-dynamic-import: dynamic-import pathToFileURL(path.join(root,"node_modules/vite/dist/node/index.js")).href: the path is computed at runtime
+unresolved-import: scripts/fs-03-oracles.mjs non-literal-dynamic-import: dynamic-import pathToFileURL(path.join(root,"node_modules/@vitejs/plugin-react/dist/index.js")).href: the path is computed at runtime
+unresolved-import: scripts/fs-03-router-oracle.mjs non-literal-dynamic-import: dynamic-import pathToFileURL(path.join(root,'dist/development/index.mjs')).href: the path is computed at runtime
+unresolved-import: scripts/fs-04-oracles.mjs non-literal-require: require path.resolve(root+'/dist/shared/lib/router/utils/app-paths.js'): the path is computed at runtime
+unresolved-import: scripts/fs-04-oracles.mjs non-literal-require: require path.resolve(root+'/dist/server/route-modules/app-route/helpers/auto-implement-methods.js'): the path is computed at runtime
+unresolved-import: scripts/fs-04-oracles.mjs non-literal-require: require path.resolve(root+'/dist/shared/lib/router/utils/interception-routes.js'): the path is computed at runtime
+unresolved-import: scripts/fs-04-oracles.mjs non-literal-require: require path.resolve(root+'/dist/shared/lib/router/utils/route-regex.js'): the path is computed at runtime
+unresolved-import: scripts/fs-04-oracles.mjs non-literal-require: require path.resolve(root+'/dist/shared/lib/router/utils/route-matcher.js'): the path is computed at runtime
+unresolved-import: scripts/fs-04-oracles.mjs non-literal-require: require path.resolve(root+'/dist/shared/lib/router/utils/path-match.js'): the path is computed at runtime
+unresolved-import: tests/framework-support/fs-01.test.ts non-literal-require: require path.resolve(name.replace("@/", "") + ".ts"): the path is computed at runtime
+unresolved-import: tests/framework-support/fs-01.test.ts non-literal-require: require name: the path is computed at runtime
+config: . config-diagnostic: Read policy: <outside-root>: outside selected repository
+config: . config-diagnostic: Read policy: node_modules/@dagrejs/dagre: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/@fontsource-variable/geist-mono: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/@fontsource-variable/geist: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/@tauri-apps/api/core: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/@tauri-apps/api/event: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/@tauri-apps/api: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/@types/react-dom/server: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/@types/react-dom: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/@types/react: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/@types/xyflow__react/dist/base.css: dependency, build, vendored or generated directory
+config: . config-diagnostic: Read policy: node_modules/@xyflow/react/dist/base.css: dependency, build, vendored or generated directory
+config: . config-diagnostic: Read policy: node_modules/@xyflow/react/dist: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/@xyflow/react: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/eslint-config-next/core-web-vitals: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/eslint-config-next/typescript: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/eslint-config-next: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/eslint/config: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/eslint: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/next: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/react-dom/server: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/react-dom: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/react: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/ts-morph: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/typescript: symbolic link not followed
+config: . config-diagnostic: Read policy: node_modules/web-tree-sitter: symbolic link not followed
+config-discovery: pnpm-lock.yaml unsupported-syntax: metadata recorded; stack-specific interpretation deferred

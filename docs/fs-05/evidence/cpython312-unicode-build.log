@@ -1,0 +1,15 @@
+
+  Regenerate Global Objects
+  # not changed: D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\Include\internal\pycore_global_strings.h
+  # not changed: D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\Include\internal\pycore_runtime_init_generated.h
+  # not changed: D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\Include\internal\pycore_unicodeobject_generated.h
+  # not changed: D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\Include\internal\pycore_global_objects_fini_generated.h
+  Generated sources are up to date
+  Getting build info from git
+  Building heads/main-dirty:70e39f2 main
+  pythoncore.vcxproj -> D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\amd64\python312.dll
+  unicodedata.c
+     Creando biblioteca D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\amd64\unicodedata.lib y objeto D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\amd64\unicodedata.exp
+  Generando código
+  Generación de código finalizada
+  unicodedata.vcxproj -> D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\amd64\unicodedata.pyd

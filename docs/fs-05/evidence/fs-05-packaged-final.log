@@ -1,0 +1,1 @@
+{"status":"PASS","node":"v24.19.0","files":4,"imports":1,"bindings":3,"checks":["offline","empty PATH","no Python or development tooling","execution sentinel","Python/TS composition","metadata/source deduplication","direct calls","structural dependencies","snapshot round trip","full/incremental","SQLite persistence","evidence staleness"]}

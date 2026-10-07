@@ -1,0 +1,202 @@
+﻿[
+    {
+        "id":  "next-typegen",
+        "command":  "node node_modules/next/dist/bin/next typegen",
+        "startedUtc":  "2026-10-07T05:07:32.5704549Z",
+        "elapsedMs":  5555,
+        "exitCode":  0,
+        "log":  "next-typegen.log"
+    },
+    {
+        "id":  "typecheck",
+        "command":  "node node_modules/typescript/bin/tsc --noEmit",
+        "startedUtc":  "2026-10-07T05:07:38.1693535Z",
+        "elapsedMs":  4473,
+        "exitCode":  0,
+        "log":  "typecheck.log"
+    },
+    {
+        "id":  "lint",
+        "command":  "node node_modules/eslint/bin/eslint.js .",
+        "startedUtc":  "2026-10-07T05:07:42.6643588Z",
+        "elapsedMs":  18744,
+        "exitCode":  1,
+        "log":  "lint.log"
+    },
+    {
+        "id":  "tests",
+        "command":  "node --test tests/phase-01.test.ts tests/phase-02.test.ts tests/phase-03.test.ts tests/phase-04.test.ts tests/phase-05.test.ts tests/phase-06.test.ts tests/phase-07.test.ts tests/phase-08.test.ts tests/phase-09.test.ts",
+        "startedUtc":  "2026-10-07T05:08:01.4235281Z",
+        "elapsedMs":  21616,
+        "exitCode":  0,
+        "log":  "tests.log"
+    },
+    {
+        "id":  "next-build",
+        "command":  "node node_modules/next/dist/bin/next build",
+        "startedUtc":  "2026-10-07T05:08:23.0551970Z",
+        "elapsedMs":  98655,
+        "exitCode":  0,
+        "log":  "next-build.log"
+    },
+    {
+        "id":  "package-engine",
+        "command":  "node scripts/package-engine.ts",
+        "startedUtc":  "2026-10-07T05:10:01.7234978Z",
+        "elapsedMs":  9362,
+        "exitCode":  0,
+        "log":  "package-engine.log"
+    },
+    {
+        "id":  "assets",
+        "command":  "node scripts/verify-desktop-assets.ts",
+        "startedUtc":  "2026-10-07T05:10:11.0983744Z",
+        "elapsedMs":  263,
+        "exitCode":  0,
+        "log":  "assets.log"
+    },
+    {
+        "id":  "rust-format",
+        "command":  "cargo fmt --manifest-path src-tauri/Cargo.toml -- --check",
+        "startedUtc":  "2026-10-07T05:10:11.3756261Z",
+        "elapsedMs":  692,
+        "exitCode":  0,
+        "log":  "rust-format.log"
+    },
+    {
+        "id":  "rust-check",
+        "command":  "cargo check --locked --offline --manifest-path src-tauri/Cargo.toml",
+        "startedUtc":  "2026-10-07T05:10:12.0816305Z",
+        "elapsedMs":  22912,
+        "exitCode":  0,
+        "log":  "rust-check.log"
+    },
+    {
+        "id":  "rust-tests",
+        "command":  "cargo test --locked --offline --manifest-path src-tauri/Cargo.toml",
+        "startedUtc":  "2026-10-07T05:10:35.0061272Z",
+        "elapsedMs":  146136,
+        "exitCode":  0,
+        "log":  "rust-tests.log"
+    },
+    {
+        "id":  "parse",
+        "command":  "node scripts/parse.ts . --out docs/fs-05/evidence/baseline-parse.json",
+        "startedUtc":  "2026-10-07T05:13:01.1560514Z",
+        "elapsedMs":  9991,
+        "exitCode":  0,
+        "log":  "parse.log"
+    },
+    {
+        "id":  "map-counts",
+        "command":  "node scripts/map-counts.ts docs/fs-05/evidence/baseline-parse.json",
+        "startedUtc":  "2026-10-07T05:13:11.1756247Z",
+        "elapsedMs":  281,
+        "exitCode":  0,
+        "log":  "map-counts.log"
+    },
+    {
+        "id":  "insights",
+        "command":  "node scripts/insights.ts docs/fs-05/evidence/baseline-parse.json",
+        "startedUtc":  "2026-10-07T05:13:11.4726315Z",
+        "elapsedMs":  349,
+        "exitCode":  0,
+        "log":  "insights.log"
+    },
+    {
+        "id":  "engine",
+        "command":  "node scripts/engine.ts . --out docs/fs-05/evidence/baseline-snapshot.json",
+        "startedUtc":  "2026-10-07T05:13:11.8382256Z",
+        "elapsedMs":  24513,
+        "exitCode":  0,
+        "log":  "engine.log"
+    },
+    {
+        "id":  "pilot-benchmark",
+        "command":  "node scripts/benchmark-pilot.ts",
+        "startedUtc":  "2026-10-07T05:13:36.3662047Z",
+        "elapsedMs":  26493,
+        "exitCode":  0,
+        "log":  "pilot-benchmark.log"
+    },
+    {
+        "id":  "staged-smoke",
+        "command":  "node scripts/smoke-engine.ts",
+        "startedUtc":  "2026-10-07T05:14:02.8763309Z",
+        "elapsedMs":  20533,
+        "exitCode":  0,
+        "log":  "staged-smoke.log"
+    },
+    {
+        "id":  "fs-01-tests",
+        "command":  "node --test tests/framework-support/fs-01.test.ts",
+        "startedUtc":  "2026-10-07T05:14:23.4269692Z",
+        "elapsedMs":  7599,
+        "exitCode":  0,
+        "log":  "fs-01-tests.log"
+    },
+    {
+        "id":  "fs-02-tests",
+        "command":  "node --test tests/framework-support/fs-02.test.ts",
+        "startedUtc":  "2026-10-07T05:14:31.0451725Z",
+        "elapsedMs":  3783,
+        "exitCode":  1,
+        "log":  "fs-02-tests.log"
+    },
+    {
+        "id":  "fs-03-tests",
+        "command":  "node --test tests/framework-support/fs-03.test.ts",
+        "startedUtc":  "2026-10-07T05:14:34.8460280Z",
+        "elapsedMs":  181630,
+        "exitCode":  0,
+        "log":  "fs-03-tests.log"
+    },
+    {
+        "id":  "fs-03-packaged",
+        "command":  "node scripts/fs-05-vite-preservation.ts",
+        "startedUtc":  "2026-10-07T05:17:36.5007220Z",
+        "elapsedMs":  34134,
+        "exitCode":  0,
+        "log":  "fs-03-packaged.log"
+    },
+    {
+        "id":  "diff-check",
+        "command":  "git diff --check",
+        "startedUtc":  "2026-10-07T05:18:10.6506513Z",
+        "elapsedMs":  904,
+        "exitCode":  2,
+        "log":  "diff-check.log"
+    },
+    {
+        "id":  "fs-04-tests",
+        "command":  "node --test tests/framework-support/fs-04.test.ts",
+        "startedUtc":  "2026-10-07T05:18:11.5705775Z",
+        "elapsedMs":  39115,
+        "exitCode":  0,
+        "log":  "fs-04-tests.log"
+    },
+    {
+        "id":  "fs-04-packaged",
+        "command":  "node scripts/fs-05-node-preservation.ts",
+        "startedUtc":  "2026-10-07T05:18:50.6913050Z",
+        "elapsedMs":  30373,
+        "exitCode":  0,
+        "log":  "fs-04-packaged.log"
+    },
+    {
+        "id":  "qualification",
+        "command":  "node scripts/fs-05-node-qualification.ts --all",
+        "startedUtc":  "2026-10-07T05:19:21.0978170Z",
+        "elapsedMs":  50293,
+        "exitCode":  0,
+        "log":  "qualification.log"
+    },
+    {
+        "id":  "fs-05-tests",
+        "command":  "node --test tests/framework-support/fs-05.test.ts",
+        "startedUtc":  "2026-10-07T05:20:11.4033082Z",
+        "elapsedMs":  10975,
+        "exitCode":  0,
+        "log":  "fs-05-tests.log"
+    }
+]

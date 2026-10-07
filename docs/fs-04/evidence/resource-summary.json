@@ -1,0 +1,75 @@
+{
+  "stats": [
+    {
+      "tuple": "next15",
+      "coldMedianMs": 566.5766999999998,
+      "coldP95Ms": 678.9360999999999,
+      "warmMedianMs": 187.04050000000007,
+      "warmP95Ms": 227.57619999999997,
+      "peakCommittedBytes": 155623424,
+      "peakRSSBytes": 175505408,
+      "snapshotBytes": 674234,
+      "maxFacts": 205,
+      "deadlineHits": 0
+    },
+    {
+      "tuple": "next16-preservation",
+      "coldMedianMs": 459.0122,
+      "coldP95Ms": 575.8967,
+      "warmMedianMs": 141.75900000000001,
+      "warmP95Ms": 193.8402000000001,
+      "peakCommittedBytes": 189345792,
+      "peakRSSBytes": 215588864,
+      "snapshotBytes": 676297,
+      "maxFacts": 205,
+      "deadlineHits": 0
+    },
+    {
+      "tuple": "next16-patch",
+      "coldMedianMs": 448.25829999999996,
+      "coldP95Ms": 487.5109,
+      "warmMedianMs": 149.3149000000003,
+      "warmP95Ms": 225.2539999999999,
+      "peakCommittedBytes": 194097152,
+      "peakRSSBytes": 220221440,
+      "snapshotBytes": 675184,
+      "maxFacts": 205,
+      "deadlineHits": 0
+    },
+    {
+      "tuple": "node22",
+      "coldMedianMs": 324.24739999999997,
+      "coldP95Ms": 340.64530000000013,
+      "warmMedianMs": 59.49980000000005,
+      "warmP95Ms": 78.76589999999987,
+      "peakCommittedBytes": 124895232,
+      "peakRSSBytes": 143646720,
+      "snapshotBytes": 84002,
+      "maxFacts": 30,
+      "deadlineHits": 0
+    },
+    {
+      "tuple": "node24",
+      "coldMedianMs": 268.20130000000006,
+      "coldP95Ms": 291.37800000000004,
+      "warmMedianMs": 41.7799,
+      "warmP95Ms": 70.42969999999991,
+      "peakCommittedBytes": 125435904,
+      "peakRSSBytes": 153100288,
+      "snapshotBytes": 84002,
+      "maxFacts": 30,
+      "deadlineHits": 0
+    }
+  ],
+  "comparison": {
+    "fs02FreshRatio": 0.5516024755806719,
+    "fs02WarmRatio": 0.823346971474352,
+    "fs03FreshRatio": 0.7335609528982587,
+    "fs03WarmRatio": 1.0403985625140129
+  },
+  "protocol": "Historical FS02: five fresh syntax sessions in one process; full warm-up then twenty retained-session runs; three repeats on unchanged source bytes",
+  "limitations": [
+    "50 ms counter sampling can miss transient peaks",
+    "Small controlled fixtures do not establish worst-case whole-engine memory"
+  ]
+}

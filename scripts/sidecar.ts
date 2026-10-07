@@ -2,6 +2,7 @@ import { realpathSync } from "node:fs";
 import path from "node:path";
 import { queryStructure, readEvidence } from "../lib/engine/index.ts";
 import { createTypescriptRefresh } from "../lib/engine/adapters/typescript.ts";
+import { createComposedRefresh } from "../lib/engine/adapters/composed.ts";
 import { RepositoryRefresh } from "../lib/engine/refresh.ts";
 import { validateSnapshot } from "../lib/engine/contract.ts";
 import type { CodeSnapshot } from "../lib/engine/types.ts";
@@ -37,6 +38,8 @@ let jobId: string | null = null;
 let ownsJob = false;
 let reopened = false;
 const adapter = createTypescriptRefresh();
+const parserCancellation = new AbortController();
+const composedAdapter = createComposedRefresh({ host: path.resolve(import.meta.dirname, "../bin/parser-host.exe"), signal: parserCancellation.signal, previousSnapshot: () => snapshot });
 let generation = 0;
 let storageJob: string | null = null;
 const refresher = new RepositoryRefresh({
@@ -51,6 +54,12 @@ const refresher = new RepositoryRefresh({
     if (!jobId) throw new Error("Missing session");
     emit({ version: 1, requestId: jobId, jobId, type: "progress", stage: "select" });
     try { return adapter.analyze(root, full, (stage) => emit({ version: 1, requestId: jobId!, jobId: jobId!, type: "progress", stage })); }
+    catch (error) { if (store && storageJob) store.finish(storageJob, "failed"); throw error; }
+  },
+  async analyzeAsync(full) {
+    if (!jobId) throw new Error("Missing session");
+    emit({ version: 1, requestId: jobId, jobId, type: "progress", stage: "select" });
+    try { return await composedAdapter.analyze(root, full, stage => emit({ version: 1, requestId: jobId!, jobId: jobId!, type: "progress", stage })); }
     catch (error) { if (store && storageJob) store.finish(storageJob, "failed"); throw error; }
   },
   publish(next) {
@@ -74,7 +83,7 @@ function emit(event: EngineEvent) {
   }
   process.stdout.write(line + "\n");
 }
-function handle(request: EngineRequest) {
+async function handle(request: EngineRequest) {
   const base = { version: 1 as const, requestId: request.requestId, jobId: request.jobId };
   if (seen.has(request.requestId) || seen.size >= 10000) throw new Error("Duplicate request or session request limit");
   seen.add(request.requestId);
@@ -93,7 +102,7 @@ function handle(request: EngineRequest) {
     if (realpathSync.native(request.root) !== root) throw new Error("Repository root changed; select its current location");
     // The adapter remains authoritative; its staged callback reports work
     // without exposing parser-specific types to the native boundary.
-    refresher.run(true);
+    await refresher.runAsync(true);
   } else {
     if (!snapshot || request.jobId !== jobId) throw new Error("Unknown or incomplete analysis job");
     if (request.type === "ranking-cancel") { const cancelled = activeRanking !== null; activeRanking?.abort(); emit({ ...base, type: "ranking-cancel", result: { cancelled } }); }
@@ -121,6 +130,8 @@ function handle(request: EngineRequest) {
 }
 // Buffer bytes before JSON parsing, including unterminated/malicious frames.
 let buffered = Buffer.alloc(0);
+let requests = Promise.resolve();
+let queuedRequests = 0;
 process.stdin.on("data", (chunk: Buffer) => {
   buffered = Buffer.concat([buffered, chunk]);
   for (;;) {
@@ -131,14 +142,14 @@ process.stdin.on("data", (chunk: Buffer) => {
     let request: EngineRequest;
     try { request = validateRequest(JSON.parse(line)); }
     catch { process.exit(2); }
-    try { handle(request); }
-    catch (error) {
+    if (++queuedRequests > 10000) process.exit(2);
+    requests = requests.then(() => handle(request)).catch(error => {
       if (store && ownsJob && storageJob && jobId === request.jobId && request.type === "analyze") store.finish(storageJob, "failed");
       // Raw errors may contain source/config expressions or machine paths.
       const safeExplanationErrors = ["Explanation evidence is stale or unavailable", "Selected evidence exceeds explanation budget; select a smaller scope", "Sensitive-looking evidence excluded", "No snapshot evidence selected", "Choose an unambiguous supported investigation first"];
       const explanationError = request.type === "explanation" && error instanceof Error && safeExplanationErrors.includes(error.message) ? error.message : null;
       emit({ version: 1, requestId: request.requestId, jobId: request.jobId, type: "error", code: error instanceof StorageError ? error.code : "operation_failed", message: error instanceof StorageError ? error.message : explanationError ?? "Local operation failed. Check directory access, coverage policy and analysis limits. The previous completed snapshot is retained." });
-    }
+    }).finally(() => { queuedRequests--; });
   }
 });
-process.stdin.on("end", () => { activeRanking?.abort(); refresher.close(); if (store && ownsJob && storageJob) store.finish(storageJob, "interrupted"); store?.close(); process.exit(0); });
+process.stdin.on("end", () => { parserCancellation.abort(); activeRanking?.abort(); refresher.close(); if (store && ownsJob && storageJob) store.finish(storageJob, "interrupted"); store?.close(); process.exit(0); });

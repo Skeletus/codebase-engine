@@ -14,7 +14,7 @@ export const READ_LIMITS = {
 export type ReadLimits = { [K in keyof typeof READ_LIMITS]: number };
 export type ReadPurpose = "source" | "metadata" | "probe";
 
-const OUTPUTS = new Set(["node_modules", "dist", "build", "out", "coverage", "target", "bin", "obj", "vendor", "generated", "__generated__", "venv", "__pycache__", "site-packages"]);
+const OUTPUTS = new Set(["node_modules", "dist", "build", "out", "coverage", "target", "bin", "obj", "vendor", "generated", "__generated__", "venv", "__pycache__", "site-packages", "__pypackages__"]);
 const SENSITIVE = /^(?:\.env(?:\..*)?|credentials(?:\..*)?|secrets?(?:\..*)?|id_(?:rsa|dsa|ecdsa|ed25519)(?:\..*)?|.*\.(?:pem|key|p12|pfx|keystore))$/i;
 
 export class RepositoryReadError extends Error {

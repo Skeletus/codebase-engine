@@ -11,7 +11,7 @@ import { validateSnapshot } from "../../engine/contract.ts";
 import { interpretConfig } from "../../engine/static-config.ts";
 import { htmlModuleScripts } from "./vite-html.ts";
 import { qualifyViteCalls } from "./vite-calls.ts";
-import { frameworkFact } from "../framework-budget.ts";
+import { seedFrameworkCallbacks } from "../framework-budget.ts";
 
 export type ViteMode = "browser-development" | "browser-production" | "ssr-production";
 export function extractVite(snapshot: CodeSnapshot, selection: Selection, inputs: FrameworkSource[], modes: readonly ViteMode[] = ["browser-development"]) {
@@ -21,7 +21,7 @@ export function extractVite(snapshot: CodeSnapshot, selection: Selection, inputs
   const auxiliaryText = new Map<string,string>();
   // Callback declarations share the new per-file fact ceiling with all
   // framework projections; do not allocate independent 20k allowances.
-  for (const declaration of snapshot.behavior.declarations.filter(d=>d.name==="<callback>" && d.kind==="function")) frameworkFact(snapshot,declaration.site.file);
+  seedFrameworkCallbacks(snapshot);
   for (const project of discovery.projects.filter(p => p.composition.frameworks.includes("vite"))) for (const mode of [...new Set(modes)]) {
     discovery.boundary.check();
     const profile = viteProfile(snapshot, discovery, project, mode, auxiliaryText);

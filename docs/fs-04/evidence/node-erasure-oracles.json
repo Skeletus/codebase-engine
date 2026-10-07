@@ -1,0 +1,54 @@
+[
+  {
+    "node": "22.23.3",
+    "cases": [
+      {
+        "source": "import type {X} from \"./types.ts\";export function f(value:number):number{return value}",
+        "expected": true,
+        "accepted": true,
+        "output": "                                  export function f(value       )       {return value}"
+      },
+      {
+        "source": "export enum Color {Red,Blue}",
+        "expected": false,
+        "accepted": false,
+        "error": "ERR_UNSUPPORTED_TYPESCRIPT_SYNTAX"
+      },
+      {
+        "source": "class Item {constructor(public value:number){}}",
+        "expected": false,
+        "accepted": false,
+        "error": "ERR_UNSUPPORTED_TYPESCRIPT_SYNTAX"
+      }
+    ],
+    "scriptHash": "8e34bc131f775bba00f0771b4c52de6c818d76c1799378968c38137306f49d2b",
+    "outputHash": "d80b553475467bd1bb3eccdb62c8039bb57c3b58abb4226e0c71d7ff48521dcf",
+    "policy": "Pinned Node strip utility parses controlled strings; stripped application text is never executed"
+  },
+  {
+    "node": "24.19.0",
+    "cases": [
+      {
+        "source": "import type {X} from \"./types.ts\";export function f(value:number):number{return value}",
+        "expected": true,
+        "accepted": true,
+        "output": "                                  export function f(value       )       {return value}"
+      },
+      {
+        "source": "export enum Color {Red,Blue}",
+        "expected": false,
+        "accepted": false,
+        "error": "ERR_UNSUPPORTED_TYPESCRIPT_SYNTAX"
+      },
+      {
+        "source": "class Item {constructor(public value:number){}}",
+        "expected": false,
+        "accepted": false,
+        "error": "ERR_UNSUPPORTED_TYPESCRIPT_SYNTAX"
+      }
+    ],
+    "scriptHash": "8e34bc131f775bba00f0771b4c52de6c818d76c1799378968c38137306f49d2b",
+    "outputHash": "7d75f9acda63792121cc630bb7bcdfe01d47c4a4c9c8f49f88805e7cbc79c256",
+    "policy": "Pinned Node strip utility parses controlled strings; stripped application text is never executed"
+  }
+]

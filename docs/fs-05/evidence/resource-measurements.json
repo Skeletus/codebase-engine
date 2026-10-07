@@ -1,0 +1,886 @@
+{
+  "recordedAt": "2026-10-07T06:45:05.4384156Z",
+  "platform": "Windows x64",
+  "processor": "AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",
+  "policy": "Five fresh processes and twenty retained-session runs after one warmup per tuple; Windows counter sampling with CIM descendant discovery plus 50ms pause; parent and parser commit/RSS separate; warm cache may need no parser; no inspected code execution",
+  "results": [
+    {
+      "tuple": "python31215",
+      "group": "cold-0",
+      "peakCommittedBytes": 112656384,
+      "peakRSSBytes": 121331712,
+      "parserObserved": true,
+      "parserPeakCommittedBytes": 35987456,
+      "parserPeakRSSBytes": 64794624,
+      "sample": {
+        "tuple": "python31215",
+        "profile": "static-python-declared-environment",
+        "fixtureHash": "29150abb776c097486fbd6b2d5a492e51830c85cdead0e5899d0175b94930841",
+        "node": "v24.19.0",
+        "samples": [
+          {
+            "elapsedMs": 731.7820999999999,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 28,
+            "reused": 0
+          }
+        ],
+        "deadlineFailures": 0,
+        "scope": "Parent engine counters; separately retained Windows job probe supplies parser commit ceiling"
+      }
+    },
+    {
+      "tuple": "python31215",
+      "group": "cold-1",
+      "peakCommittedBytes": 113557504,
+      "peakRSSBytes": 120856576,
+      "parserObserved": true,
+      "parserPeakCommittedBytes": 36286464,
+      "parserPeakRSSBytes": 64962560,
+      "sample": {
+        "tuple": "python31215",
+        "profile": "static-python-declared-environment",
+        "fixtureHash": "29150abb776c097486fbd6b2d5a492e51830c85cdead0e5899d0175b94930841",
+        "node": "v24.19.0",
+        "samples": [
+          {
+            "elapsedMs": 855.7884000000001,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 28,
+            "reused": 0
+          }
+        ],
+        "deadlineFailures": 0,
+        "scope": "Parent engine counters; separately retained Windows job probe supplies parser commit ceiling"
+      }
+    },
+    {
+      "tuple": "python31215",
+      "group": "cold-2",
+      "peakCommittedBytes": 113119232,
+      "peakRSSBytes": 119824384,
+      "parserObserved": true,
+      "parserPeakCommittedBytes": 76382208,
+      "parserPeakRSSBytes": 72163328,
+      "sample": {
+        "tuple": "python31215",
+        "profile": "static-python-declared-environment",
+        "fixtureHash": "29150abb776c097486fbd6b2d5a492e51830c85cdead0e5899d0175b94930841",
+        "node": "v24.19.0",
+        "samples": [
+          {
+            "elapsedMs": 887.7539000000002,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 28,
+            "reused": 0
+          }
+        ],
+        "deadlineFailures": 0,
+        "scope": "Parent engine counters; separately retained Windows job probe supplies parser commit ceiling"
+      }
+    },
+    {
+      "tuple": "python31215",
+      "group": "cold-3",
+      "peakCommittedBytes": 112308224,
+      "peakRSSBytes": 120188928,
+      "parserObserved": true,
+      "parserPeakCommittedBytes": 37113856,
+      "parserPeakRSSBytes": 66052096,
+      "sample": {
+        "tuple": "python31215",
+        "profile": "static-python-declared-environment",
+        "fixtureHash": "29150abb776c097486fbd6b2d5a492e51830c85cdead0e5899d0175b94930841",
+        "node": "v24.19.0",
+        "samples": [
+          {
+            "elapsedMs": 768.7496000000001,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 28,
+            "reused": 0
+          }
+        ],
+        "deadlineFailures": 0,
+        "scope": "Parent engine counters; separately retained Windows job probe supplies parser commit ceiling"
+      }
+    },
+    {
+      "tuple": "python31215",
+      "group": "cold-4",
+      "peakCommittedBytes": 113897472,
+      "peakRSSBytes": 121966592,
+      "parserObserved": true,
+      "parserPeakCommittedBytes": 75624448,
+      "parserPeakRSSBytes": 71598080,
+      "sample": {
+        "tuple": "python31215",
+        "profile": "static-python-declared-environment",
+        "fixtureHash": "29150abb776c097486fbd6b2d5a492e51830c85cdead0e5899d0175b94930841",
+        "node": "v24.19.0",
+        "samples": [
+          {
+            "elapsedMs": 706.9005,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 28,
+            "reused": 0
+          }
+        ],
+        "deadlineFailures": 0,
+        "scope": "Parent engine counters; separately retained Windows job probe supplies parser commit ceiling"
+      }
+    },
+    {
+      "tuple": "python31215",
+      "group": "warm",
+      "peakCommittedBytes": 119013376,
+      "peakRSSBytes": 147656704,
+      "parserObserved": true,
+      "parserPeakCommittedBytes": 76357632,
+      "parserPeakRSSBytes": 71839744,
+      "sample": {
+        "tuple": "python31215",
+        "profile": "static-python-declared-environment",
+        "fixtureHash": "29150abb776c097486fbd6b2d5a492e51830c85cdead0e5899d0175b94930841",
+        "node": "v24.19.0",
+        "samples": [
+          {
+            "elapsedMs": 80.94119999999998,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 69.17990000000009,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 82.40639999999985,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 77.0911000000001,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 95.58899999999994,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 80.63459999999986,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 71.70080000000007,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 82.13110000000006,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 105.18589999999995,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 85.78700000000026,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 118.08400000000029,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 116.98669999999993,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 87.96109999999999,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 80.1559000000002,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 79.8710000000001,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 80.6568000000002,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 71.90800000000036,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 74.88239999999996,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 86.37339999999995,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 107.32179999999971,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          }
+        ],
+        "deadlineFailures": 0,
+        "scope": "Parent engine counters; separately retained Windows job probe supplies parser commit ceiling"
+      }
+    },
+    {
+      "tuple": "python31316",
+      "group": "cold-0",
+      "peakCommittedBytes": 113287168,
+      "peakRSSBytes": 123580416,
+      "parserObserved": true,
+      "parserPeakCommittedBytes": 75718656,
+      "parserPeakRSSBytes": 71766016,
+      "sample": {
+        "tuple": "python31316",
+        "profile": "static-python-declared-environment",
+        "fixtureHash": "29150abb776c097486fbd6b2d5a492e51830c85cdead0e5899d0175b94930841",
+        "node": "v24.19.0",
+        "samples": [
+          {
+            "elapsedMs": 876.1020000000001,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 28,
+            "reused": 0
+          }
+        ],
+        "deadlineFailures": 0,
+        "scope": "Parent engine counters; separately retained Windows job probe supplies parser commit ceiling"
+      }
+    },
+    {
+      "tuple": "python31316",
+      "group": "cold-1",
+      "peakCommittedBytes": 112988160,
+      "peakRSSBytes": 120016896,
+      "parserObserved": true,
+      "parserPeakCommittedBytes": 36139008,
+      "parserPeakRSSBytes": 65003520,
+      "sample": {
+        "tuple": "python31316",
+        "profile": "static-python-declared-environment",
+        "fixtureHash": "29150abb776c097486fbd6b2d5a492e51830c85cdead0e5899d0175b94930841",
+        "node": "v24.19.0",
+        "samples": [
+          {
+            "elapsedMs": 752.5174000000002,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 28,
+            "reused": 0
+          }
+        ],
+        "deadlineFailures": 0,
+        "scope": "Parent engine counters; separately retained Windows job probe supplies parser commit ceiling"
+      }
+    },
+    {
+      "tuple": "python31316",
+      "group": "cold-2",
+      "peakCommittedBytes": 114917376,
+      "peakRSSBytes": 122744832,
+      "parserObserved": true,
+      "parserPeakCommittedBytes": 75583488,
+      "parserPeakRSSBytes": 71852032,
+      "sample": {
+        "tuple": "python31316",
+        "profile": "static-python-declared-environment",
+        "fixtureHash": "29150abb776c097486fbd6b2d5a492e51830c85cdead0e5899d0175b94930841",
+        "node": "v24.19.0",
+        "samples": [
+          {
+            "elapsedMs": 865.7744999999998,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 28,
+            "reused": 0
+          }
+        ],
+        "deadlineFailures": 0,
+        "scope": "Parent engine counters; separately retained Windows job probe supplies parser commit ceiling"
+      }
+    },
+    {
+      "tuple": "python31316",
+      "group": "cold-3",
+      "peakCommittedBytes": 113668096,
+      "peakRSSBytes": 122933248,
+      "parserObserved": true,
+      "parserPeakCommittedBytes": 75825152,
+      "parserPeakRSSBytes": 71880704,
+      "sample": {
+        "tuple": "python31316",
+        "profile": "static-python-declared-environment",
+        "fixtureHash": "29150abb776c097486fbd6b2d5a492e51830c85cdead0e5899d0175b94930841",
+        "node": "v24.19.0",
+        "samples": [
+          {
+            "elapsedMs": 684.1941999999999,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 28,
+            "reused": 0
+          }
+        ],
+        "deadlineFailures": 0,
+        "scope": "Parent engine counters; separately retained Windows job probe supplies parser commit ceiling"
+      }
+    },
+    {
+      "tuple": "python31316",
+      "group": "cold-4",
+      "peakCommittedBytes": 114937856,
+      "peakRSSBytes": 122470400,
+      "parserObserved": true,
+      "parserPeakCommittedBytes": 75730944,
+      "parserPeakRSSBytes": 72142848,
+      "sample": {
+        "tuple": "python31316",
+        "profile": "static-python-declared-environment",
+        "fixtureHash": "29150abb776c097486fbd6b2d5a492e51830c85cdead0e5899d0175b94930841",
+        "node": "v24.19.0",
+        "samples": [
+          {
+            "elapsedMs": 886.6214,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 28,
+            "reused": 0
+          }
+        ],
+        "deadlineFailures": 0,
+        "scope": "Parent engine counters; separately retained Windows job probe supplies parser commit ceiling"
+      }
+    },
+    {
+      "tuple": "python31316",
+      "group": "warm",
+      "peakCommittedBytes": 119521280,
+      "peakRSSBytes": 148496384,
+      "parserObserved": true,
+      "parserPeakCommittedBytes": 76050432,
+      "parserPeakRSSBytes": 72241152,
+      "sample": {
+        "tuple": "python31316",
+        "profile": "static-python-declared-environment",
+        "fixtureHash": "29150abb776c097486fbd6b2d5a492e51830c85cdead0e5899d0175b94930841",
+        "node": "v24.19.0",
+        "samples": [
+          {
+            "elapsedMs": 148.1821,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 148.39090000000033,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 133.8098,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 99.20420000000013,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 105.69830000000002,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 112.41589999999997,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 114.97730000000001,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 120.67689999999993,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 123.38860000000022,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 124.23109999999997,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 116.3480999999997,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 99.11749999999984,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 92.07829999999967,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 96.42309999999998,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 95.0577000000003,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 102.3418999999999,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 93.375,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 96.38840000000027,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 83.33860000000004,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          },
+          {
+            "elapsedMs": 89.20100000000002,
+            "files": 28,
+            "parserNodes": 426,
+            "facts": 143,
+            "sourceBytes": 1456,
+            "snapshotBytes": 102492,
+            "declarations": 54,
+            "relations": 15,
+            "gaps": 36,
+            "parsed": 0,
+            "reused": 28
+          }
+        ],
+        "deadlineFailures": 0,
+        "scope": "Parent engine counters; separately retained Windows job probe supplies parser commit ceiling"
+      }
+    }
+  ]
+}

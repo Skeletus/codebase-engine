@@ -1,0 +1,16 @@
+{
+  "baselineHead": "70e39f2abde1f2790b6ce7cf141bfbf2b8e71181",
+  "changed": [
+    "docs/project-doc.md",
+    "lib/engine/adapters/typescript.ts",
+    "lib/model/framework-validate.ts",
+    "lib/model/framework.ts",
+    "lib/parser/adapters/vite-react.ts",
+    "lib/parser/adapters/vite.ts",
+    "lib/parser/framework-bindings.ts",
+    "lib/parser/framework-budget.ts"
+  ],
+  "removed": [],
+  "frozenChanges": [],
+  "layaHash": "aa499934b8197fb12c36eec2b367c523d5a6da77b439ab58dc4b30bb46ea3513"
+}

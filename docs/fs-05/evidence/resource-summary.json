@@ -1,0 +1,76 @@
+{
+  "status": "PASS",
+  "recordedAt": "2026-10-07T06:45:05.4384156Z",
+  "processor": "AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",
+  "summaries": [
+    {
+      "tuple": "python31215",
+      "kind": "cold",
+      "runs": 5,
+      "medianMs": 768.7496000000001,
+      "p95Ms": 887.7539000000002,
+      "parentCommit": 113897472,
+      "parentRSS": 121966592,
+      "parserCommit": 76382208,
+      "parserRSS": 72163328,
+      "sourceBytes": 1456,
+      "parserNodes": 426,
+      "facts": 143,
+      "files": 28,
+      "deadlineFailures": 0
+    },
+    {
+      "tuple": "python31215",
+      "kind": "warm",
+      "runs": 20,
+      "medianMs": 80.94119999999998,
+      "p95Ms": 116.98669999999993,
+      "parentCommit": 119013376,
+      "parentRSS": 147656704,
+      "parserCommit": 76357632,
+      "parserRSS": 71839744,
+      "sourceBytes": 1456,
+      "parserNodes": 426,
+      "facts": 143,
+      "files": 28,
+      "deadlineFailures": 0
+    },
+    {
+      "tuple": "python31316",
+      "kind": "cold",
+      "runs": 5,
+      "medianMs": 865.7744999999998,
+      "p95Ms": 886.6214,
+      "parentCommit": 114937856,
+      "parentRSS": 123580416,
+      "parserCommit": 75825152,
+      "parserRSS": 72142848,
+      "sourceBytes": 1456,
+      "parserNodes": 426,
+      "facts": 143,
+      "files": 28,
+      "deadlineFailures": 0
+    },
+    {
+      "tuple": "python31316",
+      "kind": "warm",
+      "runs": 20,
+      "medianMs": 102.3418999999999,
+      "p95Ms": 148.1821,
+      "parentCommit": 119521280,
+      "parentRSS": 148496384,
+      "parserCommit": 76050432,
+      "parserRSS": 72241152,
+      "sourceBytes": 1456,
+      "parserNodes": 426,
+      "facts": 143,
+      "files": 28,
+      "deadlineFailures": 0
+    }
+  ],
+  "historical": {
+    "freshRatio": 0.8670950826814368,
+    "warmRatio": 1.0676032159308713,
+    "investigation": "No repeated median regression above 20%"
+  }
+}

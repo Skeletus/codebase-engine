@@ -1,0 +1,89 @@
+{
+  "results": [
+    {
+      "tuple": "next15",
+      "profile": "node-development",
+      "status": "PASS",
+      "log": "qualification-next15-node-development.log"
+    },
+    {
+      "tuple": "next15",
+      "profile": "node-production",
+      "status": "PASS",
+      "log": "qualification-next15-node-production.log"
+    },
+    {
+      "tuple": "next15",
+      "profile": "browser",
+      "status": "PASS",
+      "log": "qualification-next15-browser.log"
+    },
+    {
+      "tuple": "next16-preservation",
+      "profile": "node-development",
+      "status": "PASS",
+      "log": "qualification-next16-preservation-node-development.log"
+    },
+    {
+      "tuple": "next16-preservation",
+      "profile": "node-production",
+      "status": "PASS",
+      "log": "qualification-next16-preservation-node-production.log"
+    },
+    {
+      "tuple": "next16-preservation",
+      "profile": "browser",
+      "status": "PASS",
+      "log": "qualification-next16-preservation-browser.log"
+    },
+    {
+      "tuple": "next16-patch",
+      "profile": "node-development",
+      "status": "PASS",
+      "log": "qualification-next16-patch-node-development.log"
+    },
+    {
+      "tuple": "next16-patch",
+      "profile": "node-production",
+      "status": "PASS",
+      "log": "qualification-next16-patch-node-production.log"
+    },
+    {
+      "tuple": "next16-patch",
+      "profile": "browser",
+      "status": "PASS",
+      "log": "qualification-next16-patch-browser.log"
+    },
+    {
+      "tuple": "node22",
+      "profile": "node-development",
+      "status": "PASS",
+      "log": "qualification-node22-node-development.log"
+    },
+    {
+      "tuple": "node22",
+      "profile": "node-production",
+      "status": "PASS",
+      "log": "qualification-node22-node-production.log"
+    },
+    {
+      "tuple": "node24",
+      "profile": "node-development",
+      "status": "PASS",
+      "log": "qualification-node24-node-development.log"
+    },
+    {
+      "tuple": "node24",
+      "profile": "node-production",
+      "status": "PASS",
+      "log": "qualification-node24-node-production.log"
+    }
+  ],
+  "testHash": "a77b4a2bd5342e381e6a05f72ef813f3c35eda75733a97b46cb81b5ce2822828",
+  "blocked": [
+    "Native Node browser execution",
+    "unknown/range framework tuples",
+    "Edge runtime and custom loaders"
+  ],
+  "policy": "Explicit controlled targets; unavailable/missing/unknown targets fail"
+}

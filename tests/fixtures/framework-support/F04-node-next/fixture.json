@@ -1,0 +1,21 @@
+{
+  "license": "Synthetic controlled fixture; project-owned",
+  "sources": {
+    "package.json": "{\"name\":\"fixture-next\",\"type\":\"module\",\"engines\":{\"node\":\"24.19.0\"},\"dependencies\":{\"next\":\"16.3.8\",\"react\":\"19.2.8\",\"react-dom\":\"19.2.8\"},\"exports\":{\"./service\":{\"node\":\"./lib/service.ts\",\"default\":\"./lib/other.ts\"}},\"imports\":{\"#service\":\"./lib/service.ts\"},\"scripts\":{\"start\":\"node server.mjs\"}}",
+    "next.config.ts": "export default {basePath:'/base'};",
+    "app/layout.tsx": "export default function Layout({children}) { return <html><body>{children}</body></html> }",
+    "app/page.tsx": "import {save} from './actions';import Button from './Button';export default function Page(){return <><form action={save}><button>Save</button></form><Button/></>}",
+    "app/Button.tsx": "'use client';import {save as submit} from './actions';export default function Button(){function click(){return submit()}return <button onClick={click}>Save</button>}",
+    "app/actions.ts": "'use server';import {persist} from '../lib/service';export async function save(){return persist()}",
+    "app/api/items/[id]/route.ts": "import {persist} from '../../../../lib/service';export async function GET(){return persist()}",
+    "app/(shop)/products/[...slug]/page.tsx": "export default function Product(){return <div/>}",
+    "app/@modal/default.tsx": "export default function Modal(){return <div/>}",
+    "app/@modal/(.)photo/[id]/page.tsx": "export default function Photo(){return <div/>}",
+    "app/_private/page.tsx": "export default function Private(){return <div/>}",
+    "pages/api/legacy.ts": "import {persist} from '../../lib/service';export default function handler(req,res){if(req.method==='POST'){return persist()}return res.end()}",
+    "pages/blog/[slug].tsx": "export default function Blog(){return <div/>}export async function getServerSideProps(){return {props:{}}}",
+    "lib/service.ts": "export function persist(){return 1}",
+    "lib/other.ts": "export function persist(){return 2}",
+    "server.mjs": "import {createServer} from 'node:http';function handler(req,res){res.end('ok')}const server=createServer(handler);server.listen(3000);"
+  }
+}
