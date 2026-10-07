@@ -1,0 +1,11 @@
+✔ qualification: namespace components, context consumers, hook callbacks and class lifecycle are associations (3469.7792ms)
+✔ F03: unsupported callback props, inline effects and dynamic navigation stay explicit (629.7205ms)
+✔ F03: Vite 8 opt-in TS paths resolve separately; Vite 7 never assumes the plugin (834.821ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5995.5542

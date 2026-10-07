@@ -1,0 +1,11 @@
+✔ qualification: imperative navigation requires one proved router, callbacks remain framework bindings (1506.8981ms)
+✔ qualification: retained pinned matcher oracle maps to supported neutral registrations (289.7399ms)
+✔ qualification: state/reducer initialization and React 19 callbacks are version-qualified (427.8438ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3269.8613

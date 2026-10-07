@@ -1,0 +1,437 @@
+{
+  "phase": "FS-03",
+  "acceptanceSatisfied": true,
+  "status": "complete",
+  "gates": {
+    "baseline": true,
+    "completeFixtureSuite": true,
+    "explicitProfiles": true,
+    "windows": true,
+    "historical": true,
+    "resources": true
+  },
+  "tuples": [
+    {
+      "tuple": "vite7-react18",
+      "versions": {
+        "node": "22.23.3",
+        "vite": "7.3.7",
+        "react": "18.3.1",
+        "react-dom": "18.3.1",
+        "react-router": "7.18.4",
+        "typescript": "5.9.3",
+        "@vitejs/plugin-react": "5.2.0"
+      },
+      "extractorVersion": "fs-03/1",
+      "legacyOracle": {
+        "fixtureHash": "72c94b0186ac841d491a575a8b8092c0bd98dd9b1a38d2ba03e7c9b33e36046a",
+        "materializedHash": "7350f5344ebd09eab5e36d999bf3a4771a94fa42e5b7b94ea7c4fa3626966714",
+        "outputHash": "9c71235f0847fc2c50fdf82513c361460ceffd19d08aee59be9ee53ba8688f9d"
+      },
+      "selectedProfiles": [
+        "browser-development",
+        "browser-production"
+      ],
+      "profilesEvidence": [
+        {
+          "profile": "browser-development",
+          "versions": {
+            "node": "22.23.3",
+            "vite": "7.3.7",
+            "react": "18.3.1",
+            "react-dom": "18.3.1",
+            "react-router": "7.18.4",
+            "typescript": "5.9.3",
+            "@vitejs/plugin-react": "5.2.0"
+          },
+          "sourceHash": "4a243dc353ff5ea74b105c8a0d44ce4a7cc196b231a45b375508fa0158042ace",
+          "materializedHash": "6a6201179bfad8a6093cc5dae8e4569e34ee506d2cfecb19db5c081799084fb3",
+          "outputHash": "ac33822d394867432bba689278c840101190040b1ed74e7cc3c27ba9544be56a",
+          "workerHash": "650e9f9556dd3a3ce0aeb7f8575a8fb6f04d0afcfc09c3740c962ea484ef6ac5",
+          "bundleHash": "bae2b245bc4c9ca6c4f22de49af637acdb09e27ea5b0a9165e0bb6a1dde45d9e",
+          "recordHash": "e85447b3fd9c8d367ab14771334bf1d3dbcd2e6f454e65816171b065b89a99de"
+        },
+        {
+          "profile": "browser-production",
+          "versions": {
+            "node": "22.23.3",
+            "vite": "7.3.7",
+            "react": "18.3.1",
+            "react-dom": "18.3.1",
+            "react-router": "7.18.4",
+            "typescript": "5.9.3",
+            "@vitejs/plugin-react": "5.2.0"
+          },
+          "sourceHash": "4a243dc353ff5ea74b105c8a0d44ce4a7cc196b231a45b375508fa0158042ace",
+          "materializedHash": "6a6201179bfad8a6093cc5dae8e4569e34ee506d2cfecb19db5c081799084fb3",
+          "outputHash": "e51410a7aa4504cd8f7c4bb1a149da8be2e42b38bc22a7107fe7146cf4774b07",
+          "workerHash": "650e9f9556dd3a3ce0aeb7f8575a8fb6f04d0afcfc09c3740c962ea484ef6ac5",
+          "bundleHash": "bae2b245bc4c9ca6c4f22de49af637acdb09e27ea5b0a9165e0bb6a1dde45d9e",
+          "recordHash": "7c431a9d2fbd9d4a1fb9d947dcedd9c34a1cebd208375fb50e80e7836611c686"
+        }
+      ],
+      "patterns": [
+        {
+          "capability": "html-literal-first-party-dependencies",
+          "scope": "Literal module scripts; bounded multipage production inputs; browser/SSR separation",
+          "state": "qualified",
+          "qualificationRecord": "5d6fc018523d2697c4b8d760db3986881478129ca2ac3fb291e957ecf1814581",
+          "gates": {
+            "positive": true,
+            "negative": true,
+            "windows": true
+          },
+          "positiveSuite": "tests/framework-support/fs-03.test.ts",
+          "negativeSuite": "tests/framework-support/fs-03.test.ts",
+          "windowsEvidence": "evidence/packaged-fs-03.json",
+          "oracleProfiles": [
+            "browser-development",
+            "browser-production"
+          ]
+        },
+        {
+          "capability": "runtime-alias-tsconfig-conditions",
+          "scope": "Literal aliases; approved conditions; package self-reference exact exports; Vite 8 one-target TS paths",
+          "state": "qualified",
+          "qualificationRecord": "2b4c24a5539d25c0f2537cbee84fbfbaf17e76d8fc271ee8f0eecfd59d6c1e0a",
+          "gates": {
+            "positive": true,
+            "negative": true,
+            "windows": true
+          },
+          "positiveSuite": "tests/framework-support/fs-03.test.ts",
+          "negativeSuite": "tests/framework-support/fs-03.test.ts",
+          "windowsEvidence": "evidence/packaged-fs-03.json",
+          "oracleProfiles": [
+            "browser-development",
+            "browser-production"
+          ]
+        },
+        {
+          "capability": "glob-options-assets-workers",
+          "scope": "Literal include/exclude, eager/lazy, import selection, raw/url query, CSS/public/static URL and worker source inputs; no transformed implementation claims",
+          "state": "qualified",
+          "qualificationRecord": "1b7d984308062fecde29a40eff6968d04218302b1f28640f8de7aa7fdd24b89b",
+          "gates": {
+            "positive": true,
+            "negative": true,
+            "windows": true
+          },
+          "positiveSuite": "tests/framework-support/fs-03.test.ts",
+          "negativeSuite": "tests/framework-support/fs-03.test.ts",
+          "windowsEvidence": "evidence/packaged-fs-03.json",
+          "oracleProfiles": [
+            "browser-development",
+            "browser-production"
+          ]
+        },
+        {
+          "capability": "jsx-events-wrappers",
+          "scope": "Lexical JSX/classes/namespaces/fragments/memo/forwardRef/lazy/aliases; intrinsic events to verified direct calls",
+          "state": "qualified",
+          "qualificationRecord": "35ec2e29014c234952a326bf5d4e4a1b7d857ce6b3c0a70e6c59d5c16894262c",
+          "gates": {
+            "positive": true,
+            "negative": true,
+            "windows": true
+          },
+          "positiveSuite": "tests/framework-support/fs-03.test.ts",
+          "negativeSuite": "tests/framework-support/fs-03.test.ts",
+          "windowsEvidence": "evidence/packaged-fs-03.json",
+          "oracleProfiles": [
+            "browser-development",
+            "browser-production"
+          ]
+        },
+        {
+          "capability": "hooks-effects-context",
+          "scope": "Effect/cleanup and qualified callback slots; class lifecycle associations; Consumer/Provider/useContext; React 19 shorthand/use(context)",
+          "state": "qualified",
+          "qualificationRecord": "9e28a3b6005974b1591292b3f26077f0834d68a64500039617908820e81f3d45",
+          "gates": {
+            "positive": true,
+            "negative": true,
+            "windows": true
+          },
+          "positiveSuite": "tests/framework-support/fs-03.test.ts",
+          "negativeSuite": "tests/framework-support/fs-03.test.ts",
+          "windowsEvidence": "evidence/packaged-fs-03.json",
+          "oracleProfiles": [
+            "browser-development",
+            "browser-production"
+          ]
+        },
+        {
+          "capability": "router-registration-navigation",
+          "scope": "Literal JSX/data/nested/index registrations and callbacks; unique proved router ownership; pinned matcher-compatible literal navigation without precedence guesses",
+          "state": "qualified",
+          "qualificationRecord": "8a5655282c917636062a23aeb151fb5db9f03e05acbddfdda7d428170e910afb",
+          "gates": {
+            "positive": true,
+            "negative": true,
+            "windows": true
+          },
+          "positiveSuite": "tests/framework-support/fs-03.test.ts",
+          "negativeSuite": "tests/framework-support/fs-03.test.ts",
+          "windowsEvidence": "evidence/packaged-fs-03.json",
+          "oracleProfiles": [
+            "browser-development",
+            "browser-production"
+          ]
+        },
+        {
+          "capability": "development-proxy",
+          "scope": "Development-only literal origin/prefix and supported rewrite facts; no production deployment identity",
+          "state": "qualified",
+          "qualificationRecord": "9b143cf335c3556499f4aa9f02e90519da5b619ef6c5b5b6913220ec0f21b177",
+          "gates": {
+            "positive": true,
+            "negative": true,
+            "windows": true
+          },
+          "positiveSuite": "tests/framework-support/fs-03.test.ts",
+          "negativeSuite": "tests/framework-support/fs-03.test.ts",
+          "windowsEvidence": "evidence/packaged-fs-03.json",
+          "oracleProfiles": [
+            "browser-development",
+            "browser-production"
+          ]
+        }
+      ]
+    },
+    {
+      "tuple": "vite8-react19",
+      "versions": {
+        "node": "24.19.0",
+        "vite": "8.3.3",
+        "react": "19.2.8",
+        "react-dom": "19.2.8",
+        "react-router": "7.18.4",
+        "typescript": "5.9.3",
+        "@vitejs/plugin-react": "6.1.2"
+      },
+      "extractorVersion": "fs-03/1",
+      "legacyOracle": {
+        "fixtureHash": "72c94b0186ac841d491a575a8b8092c0bd98dd9b1a38d2ba03e7c9b33e36046a",
+        "materializedHash": "d742b93697b048101eb478fe39caece9927159aa1d3b7df669107ded4bf1f319",
+        "outputHash": "b46dba07a5421424fd2eb9a5e8800f5141d0c5468f05eae6b04d228a51ecffd9"
+      },
+      "selectedProfiles": [
+        "browser-development",
+        "browser-production",
+        "ssr-production"
+      ],
+      "profilesEvidence": [
+        {
+          "profile": "browser-development",
+          "versions": {
+            "node": "24.19.0",
+            "vite": "8.3.3",
+            "react": "19.2.8",
+            "react-dom": "19.2.8",
+            "react-router": "7.18.4",
+            "typescript": "5.9.3",
+            "@vitejs/plugin-react": "6.1.2"
+          },
+          "sourceHash": "4a243dc353ff5ea74b105c8a0d44ce4a7cc196b231a45b375508fa0158042ace",
+          "materializedHash": "df26fca1e0b042d838db8483ac089e46e97c923ac666519e52467cb0d83329bb",
+          "outputHash": "023c76cf94dcb457ac1f24630650fdac8ef703550b1483df539cd09cf8c97d2f",
+          "workerHash": "650e9f9556dd3a3ce0aeb7f8575a8fb6f04d0afcfc09c3740c962ea484ef6ac5",
+          "bundleHash": "07172c508fc0c63d29ca2f8293137d5f264b5c3ec3da373491311efaa1860679",
+          "recordHash": "e75b56c6ae9047554b308fcb5ae4e9b7eba874f4372ca8539f75bb3f8a54bd73"
+        },
+        {
+          "profile": "browser-production",
+          "versions": {
+            "node": "24.19.0",
+            "vite": "8.3.3",
+            "react": "19.2.8",
+            "react-dom": "19.2.8",
+            "react-router": "7.18.4",
+            "typescript": "5.9.3",
+            "@vitejs/plugin-react": "6.1.2"
+          },
+          "sourceHash": "4a243dc353ff5ea74b105c8a0d44ce4a7cc196b231a45b375508fa0158042ace",
+          "materializedHash": "df26fca1e0b042d838db8483ac089e46e97c923ac666519e52467cb0d83329bb",
+          "outputHash": "26067ffa984f8d45422d757ba1276d276001357ff31b401254ff603c75844d5e",
+          "workerHash": "650e9f9556dd3a3ce0aeb7f8575a8fb6f04d0afcfc09c3740c962ea484ef6ac5",
+          "bundleHash": "07172c508fc0c63d29ca2f8293137d5f264b5c3ec3da373491311efaa1860679",
+          "recordHash": "d506631b6fa8e83f28b656be087e1d9e5d20c60fba2947956eab6b6c013c484c"
+        },
+        {
+          "profile": "ssr-production",
+          "versions": {
+            "node": "24.19.0",
+            "vite": "8.3.3",
+            "react": "19.2.8",
+            "react-dom": "19.2.8",
+            "react-router": "7.18.4",
+            "typescript": "5.9.3",
+            "@vitejs/plugin-react": "6.1.2"
+          },
+          "sourceHash": "4a243dc353ff5ea74b105c8a0d44ce4a7cc196b231a45b375508fa0158042ace",
+          "materializedHash": "df26fca1e0b042d838db8483ac089e46e97c923ac666519e52467cb0d83329bb",
+          "outputHash": "f6cd80fb0586d04142407299f89b0f478a176c95e572d4f79e0c2fe86cb1220b",
+          "workerHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "bundleHash": "c383976a296f3d0f925523ceaaafc791e50f239d7a11eb2672150bd3727aa77c",
+          "recordHash": "34cdcef6d70ba036b224dbe57b3eadf7e23c35c5aedc3a879072f86ab8c45dce"
+        }
+      ],
+      "patterns": [
+        {
+          "capability": "html-literal-first-party-dependencies",
+          "scope": "Literal module scripts; bounded multipage production inputs; browser/SSR separation",
+          "state": "qualified",
+          "qualificationRecord": "b43a1bddcf07ecce6d1ffdc8520c9b46df2eff38eee52b5601496fb0b2c64f3f",
+          "gates": {
+            "positive": true,
+            "negative": true,
+            "windows": true
+          },
+          "positiveSuite": "tests/framework-support/fs-03.test.ts",
+          "negativeSuite": "tests/framework-support/fs-03.test.ts",
+          "windowsEvidence": "evidence/packaged-fs-03.json",
+          "oracleProfiles": [
+            "browser-development",
+            "browser-production",
+            "ssr-production"
+          ]
+        },
+        {
+          "capability": "runtime-alias-tsconfig-conditions",
+          "scope": "Literal aliases; approved conditions; package self-reference exact exports; Vite 8 one-target TS paths",
+          "state": "qualified",
+          "qualificationRecord": "eb9d0dc39728ebd1336a3900abcb04764659689ee72b050a5472b623d91c0284",
+          "gates": {
+            "positive": true,
+            "negative": true,
+            "windows": true
+          },
+          "positiveSuite": "tests/framework-support/fs-03.test.ts",
+          "negativeSuite": "tests/framework-support/fs-03.test.ts",
+          "windowsEvidence": "evidence/packaged-fs-03.json",
+          "oracleProfiles": [
+            "browser-development",
+            "browser-production",
+            "ssr-production"
+          ]
+        },
+        {
+          "capability": "glob-options-assets-workers",
+          "scope": "Literal include/exclude, eager/lazy, import selection, raw/url query, CSS/public/static URL and worker source inputs; no transformed implementation claims",
+          "state": "qualified",
+          "qualificationRecord": "1b4287316c5b30a3def190590e5b342da13edc4c7033a9ba79a139960c85ddb7",
+          "gates": {
+            "positive": true,
+            "negative": true,
+            "windows": true
+          },
+          "positiveSuite": "tests/framework-support/fs-03.test.ts",
+          "negativeSuite": "tests/framework-support/fs-03.test.ts",
+          "windowsEvidence": "evidence/packaged-fs-03.json",
+          "oracleProfiles": [
+            "browser-development",
+            "browser-production",
+            "ssr-production"
+          ]
+        },
+        {
+          "capability": "jsx-events-wrappers",
+          "scope": "Lexical JSX/classes/namespaces/fragments/memo/forwardRef/lazy/aliases; intrinsic events to verified direct calls",
+          "state": "qualified",
+          "qualificationRecord": "5a682b68057a6b353d02f7ff823e6444701d18c72aacbfc41ef84c70da01c990",
+          "gates": {
+            "positive": true,
+            "negative": true,
+            "windows": true
+          },
+          "positiveSuite": "tests/framework-support/fs-03.test.ts",
+          "negativeSuite": "tests/framework-support/fs-03.test.ts",
+          "windowsEvidence": "evidence/packaged-fs-03.json",
+          "oracleProfiles": [
+            "browser-development",
+            "browser-production",
+            "ssr-production"
+          ]
+        },
+        {
+          "capability": "hooks-effects-context",
+          "scope": "Effect/cleanup and qualified callback slots; class lifecycle associations; Consumer/Provider/useContext; React 19 shorthand/use(context)",
+          "state": "qualified",
+          "qualificationRecord": "797cebe3367557554b915fe81d3e1036262ec90b902f2b40800e8d56a2195cd0",
+          "gates": {
+            "positive": true,
+            "negative": true,
+            "windows": true
+          },
+          "positiveSuite": "tests/framework-support/fs-03.test.ts",
+          "negativeSuite": "tests/framework-support/fs-03.test.ts",
+          "windowsEvidence": "evidence/packaged-fs-03.json",
+          "oracleProfiles": [
+            "browser-development",
+            "browser-production",
+            "ssr-production"
+          ]
+        },
+        {
+          "capability": "router-registration-navigation",
+          "scope": "Literal JSX/data/nested/index registrations and callbacks; unique proved router ownership; pinned matcher-compatible literal navigation without precedence guesses",
+          "state": "qualified",
+          "qualificationRecord": "416210bd97c0f16d6810aee1b00a270e990fb90dc9c51ef0ad5bead61fad367e",
+          "gates": {
+            "positive": true,
+            "negative": true,
+            "windows": true
+          },
+          "positiveSuite": "tests/framework-support/fs-03.test.ts",
+          "negativeSuite": "tests/framework-support/fs-03.test.ts",
+          "windowsEvidence": "evidence/packaged-fs-03.json",
+          "oracleProfiles": [
+            "browser-development",
+            "browser-production",
+            "ssr-production"
+          ]
+        },
+        {
+          "capability": "development-proxy",
+          "scope": "Development-only literal origin/prefix and supported rewrite facts; no production deployment identity",
+          "state": "qualified",
+          "qualificationRecord": "edb2b7180fda95b1141d6a2f91b3be17e12c887ed4c2b3095bbe2eeef84cad40",
+          "gates": {
+            "positive": true,
+            "negative": true,
+            "windows": true
+          },
+          "positiveSuite": "tests/framework-support/fs-03.test.ts",
+          "negativeSuite": "tests/framework-support/fs-03.test.ts",
+          "windowsEvidence": "evidence/packaged-fs-03.json",
+          "oracleProfiles": [
+            "browser-development",
+            "browser-production",
+            "ssr-production"
+          ]
+        }
+      ]
+    }
+  ],
+  "blockedTargets": [
+    {
+      "tuple": "vite7-react18",
+      "profile": "ssr-production",
+      "status": "BLOCKED",
+      "reason": "Outside approved matrix"
+    },
+    {
+      "tuple": "nonexact/range/workspace",
+      "profile": "any",
+      "status": "BLOCKED",
+      "reason": "Exact qualification metadata required"
+    }
+  ],
+  "testSourceHash": "04d1e5211ea2a9a79400491868441cee17901b926bc7a587dfe3658635ad956b",
+  "fixtureSourceHash": "4a243dc353ff5ea74b105c8a0d44ce4a7cc196b231a45b375508fa0158042ace",
+  "matcherOracleHash": "1543f77083134b545c75fd0616a37c3b204a1ecb8bd4a78ede7e443e9bd8c968",
+  "historicalRecordHash": "7428ff6eb1e498dc634951390fa7505355eb2a1976f8e40cbd6b2d466a6540a9",
+  "missingPhaseGates": [],
+  "policy": "Qualifications cover named bounded patterns. Aggregate runtime capability stays partial for unqualified/dynamic repository behavior; no universal badge. Public repositories supplement deterministic fixtures."
+}

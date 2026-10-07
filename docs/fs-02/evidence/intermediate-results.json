@@ -1,0 +1,154 @@
+﻿[
+    {
+        "id":  "next-typegen",
+        "command":  "node node_modules/next/dist/bin/next typegen",
+        "startedUtc":  "2026-10-06T22:41:12.7899034Z",
+        "elapsedMs":  1166,
+        "exitCode":  0,
+        "log":  "next-typegen.log"
+    },
+    {
+        "id":  "typecheck",
+        "command":  "node node_modules/typescript/bin/tsc --noEmit",
+        "startedUtc":  "2026-10-06T22:41:14.0292500Z",
+        "elapsedMs":  5325,
+        "exitCode":  0,
+        "log":  "typecheck.log"
+    },
+    {
+        "id":  "lint",
+        "command":  "node node_modules/eslint/bin/eslint.js .",
+        "startedUtc":  "2026-10-06T22:41:19.3706558Z",
+        "elapsedMs":  12815,
+        "exitCode":  0,
+        "log":  "lint.log"
+    },
+    {
+        "id":  "tests",
+        "command":  "node --test tests/phase-01.test.ts tests/phase-02.test.ts tests/phase-03.test.ts tests/phase-04.test.ts tests/phase-05.test.ts tests/phase-06.test.ts tests/phase-07.test.ts tests/phase-08.test.ts tests/phase-09.test.ts",
+        "startedUtc":  "2026-10-06T22:41:32.1969422Z",
+        "elapsedMs":  16319,
+        "exitCode":  0,
+        "log":  "tests.log"
+    },
+    {
+        "id":  "next-build",
+        "command":  "node node_modules/next/dist/bin/next build",
+        "startedUtc":  "2026-10-06T22:41:48.5308767Z",
+        "elapsedMs":  18363,
+        "exitCode":  0,
+        "log":  "next-build.log"
+    },
+    {
+        "id":  "package-engine",
+        "command":  "node scripts/package-engine.ts",
+        "startedUtc":  "2026-10-06T22:42:06.9069821Z",
+        "elapsedMs":  1155,
+        "exitCode":  0,
+        "log":  "package-engine.log"
+    },
+    {
+        "id":  "assets",
+        "command":  "node scripts/verify-desktop-assets.ts",
+        "startedUtc":  "2026-10-06T22:42:08.0761196Z",
+        "elapsedMs":  237,
+        "exitCode":  0,
+        "log":  "assets.log"
+    },
+    {
+        "id":  "rust-format",
+        "command":  "cargo fmt --manifest-path src-tauri/Cargo.toml -- --check",
+        "startedUtc":  "2026-10-06T22:42:08.3291113Z",
+        "elapsedMs":  591,
+        "exitCode":  0,
+        "log":  "rust-format.log"
+    },
+    {
+        "id":  "rust-check",
+        "command":  "cargo check --locked --offline --manifest-path src-tauri/Cargo.toml",
+        "startedUtc":  "2026-10-06T22:42:08.9356379Z",
+        "elapsedMs":  5739,
+        "exitCode":  0,
+        "log":  "rust-check.log"
+    },
+    {
+        "id":  "rust-tests",
+        "command":  "cargo test --locked --offline --manifest-path src-tauri/Cargo.toml",
+        "startedUtc":  "2026-10-06T22:42:14.6887004Z",
+        "elapsedMs":  42087,
+        "exitCode":  0,
+        "log":  "rust-tests.log"
+    },
+    {
+        "id":  "parse",
+        "command":  "node scripts/parse.ts . --out docs/fs-02/evidence/baseline-parse.json",
+        "startedUtc":  "2026-10-06T22:42:56.7910973Z",
+        "elapsedMs":  4319,
+        "exitCode":  0,
+        "log":  "parse.log"
+    },
+    {
+        "id":  "map-counts",
+        "command":  "node scripts/map-counts.ts docs/fs-02/evidence/baseline-parse.json",
+        "startedUtc":  "2026-10-06T22:43:01.1307457Z",
+        "elapsedMs":  284,
+        "exitCode":  0,
+        "log":  "map-counts.log"
+    },
+    {
+        "id":  "insights",
+        "command":  "node scripts/insights.ts docs/fs-02/evidence/baseline-parse.json",
+        "startedUtc":  "2026-10-06T22:43:01.4275552Z",
+        "elapsedMs":  281,
+        "exitCode":  0,
+        "log":  "insights.log"
+    },
+    {
+        "id":  "engine",
+        "command":  "node scripts/engine.ts . --out docs/fs-02/evidence/baseline-snapshot.json",
+        "startedUtc":  "2026-10-06T22:43:01.7225638Z",
+        "elapsedMs":  11993,
+        "exitCode":  0,
+        "log":  "engine.log"
+    },
+    {
+        "id":  "pilot-benchmark",
+        "command":  "node scripts/benchmark-pilot.ts",
+        "startedUtc":  "2026-10-06T22:43:13.7231046Z",
+        "elapsedMs":  13954,
+        "exitCode":  0,
+        "log":  "pilot-benchmark.log"
+    },
+    {
+        "id":  "staged-smoke",
+        "command":  "node scripts/smoke-engine.ts",
+        "startedUtc":  "2026-10-06T22:43:27.6949788Z",
+        "elapsedMs":  16079,
+        "exitCode":  0,
+        "log":  "staged-smoke.log"
+    },
+    {
+        "id":  "fs-01-tests",
+        "command":  "node --test tests/framework-support/fs-01.test.ts",
+        "startedUtc":  "2026-10-06T22:43:43.7940558Z",
+        "elapsedMs":  4765,
+        "exitCode":  0,
+        "log":  "fs-01-tests.log"
+    },
+    {
+        "id":  "fs-02-tests",
+        "command":  "node --test tests/framework-support/fs-02.test.ts",
+        "startedUtc":  "2026-10-06T22:43:48.5693564Z",
+        "elapsedMs":  3212,
+        "exitCode":  0,
+        "log":  "fs-02-tests.log"
+    },
+    {
+        "id":  "diff-check",
+        "command":  "git diff --check",
+        "startedUtc":  "2026-10-06T22:43:51.8040104Z",
+        "elapsedMs":  138,
+        "exitCode":  0,
+        "log":  "diff-check.log"
+    }
+]

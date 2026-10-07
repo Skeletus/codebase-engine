@@ -1,0 +1,56 @@
+{
+  "fixture": "F03-qualification",
+  "stats": [
+    {
+      "tuple": "vite7-react18",
+      "coldCount": 5,
+      "warmCount": 20,
+      "coldMedianMs": 668.2781,
+      "coldP95Ms": 837.6001999999999,
+      "warmMedianMs": 239.77900000000045,
+      "warmP95Ms": 301.72509999999966,
+      "peakCommittedBytes": 140759040,
+      "peakRSSBytes": 162025472,
+      "maxSnapshotBytes": 420774,
+      "deadlineHits": 0
+    },
+    {
+      "tuple": "vite8-react19",
+      "coldCount": 5,
+      "warmCount": 20,
+      "coldMedianMs": 584.0493,
+      "coldP95Ms": 875.8523,
+      "warmMedianMs": 283.1412,
+      "warmP95Ms": 437.29240000000027,
+      "peakCommittedBytes": 183443456,
+      "peakRSSBytes": 210288640,
+      "maxSnapshotBytes": 589510,
+      "deadlineHits": 0
+    },
+    {
+      "tuple": "typescript-baseline",
+      "coldCount": 5,
+      "warmCount": 20,
+      "coldMedianMs": 380.3907999999999,
+      "coldP95Ms": 392.8771999999999,
+      "warmMedianMs": 112.86460000000034,
+      "warmP95Ms": 204.0559999999998,
+      "peakCommittedBytes": 129658880,
+      "peakRSSBytes": 158773248,
+      "maxSnapshotBytes": 43133,
+      "deadlineHits": 0
+    }
+  ],
+  "historicalComparison": {
+    "fixture": "F02-profile",
+    "freshRatio": 0.7519517954183917,
+    "warmRatio": 0.7913764985265082,
+    "record": "historical-performance.json"
+  },
+  "limitations": [
+    "50ms process-counter sampling can miss a transient peak",
+    "Twenty warm runs follow an unreported full warm-up analysis",
+    "Historical comparison uses the identical retained F02-profile corpus and session protocol, not the changed repository pilot",
+    "Whole-engine worst-case memory is not qualified; the 512 MiB parser job applies to subsequent new-language workers"
+  ]
+}

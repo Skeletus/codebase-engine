@@ -2,11 +2,12 @@ import { Node, SyntaxKind, type SourceFile, type Identifier } from "ts-morph";
 import type { Resolver } from "./resolve.ts";
 import type { Route } from "./types.ts";
 import type { Behavior, Declaration, Site } from "../model/behavior.ts";
+import { AnalysisBoundaryError } from "../engine/boundary.ts";
 
 type Input = { candidate: { path: string; hash: string }; sourceFile: SourceFile; framework: string };
 // The compiler binds lexical names only. Repository imports are resolved by the
 // existing protected resolver, never by compiler filesystem/type discovery.
-export function extractBehavior(inputs: Input[], resolver: Resolver, routes: Route[]): Behavior {
+export function extractBehavior(inputs: Input[], resolver: Resolver, routes: Route[], frameworkCallbacks: ReadonlySet<string> = new Set()): Behavior {
   const result: Behavior = { declarations: [], relations: [], gaps: [], handlers: [] };
   const bySource = new Map(inputs.map((i) => [i.sourceFile.getFilePath(), i]));
   const byPath = new Map(inputs.map((i) => [i.candidate.path, i.sourceFile]));
@@ -25,7 +26,8 @@ export function extractBehavior(inputs: Input[], resolver: Resolver, routes: Rou
     if (body) entities.set(nodeKey(body), entity);
     result.declarations.push(entity);
   }
-  for (const { nodes } of descendants) {
+  for (const { nodes, candidate } of descendants) {
+    let callbackCount=0;
     for (const n of nodes) {
       if (Node.isFunctionDeclaration(n)) add(n, n.getName() ?? "default", "function", !!n.getBody());
       else if (Node.isClassDeclaration(n)) add(n, n.getName() ?? "default class", "class", false);
@@ -39,8 +41,13 @@ export function extractBehavior(inputs: Input[], resolver: Resolver, routes: Rou
         const callable = n.getVariableStatement()?.getDeclarationKind() === "const" && !!init && (Node.isArrowFunction(init) || Node.isFunctionExpression(init));
         add(n, n.getName(), "value", callable, callable ? init : undefined);
       } else if (Node.isParameterDeclaration(n) && Node.isIdentifier(n.getNameNode())) add(n, n.getName(), "parameter", false);
+      else if (frameworkCallbacks.has(candidate.path) && (Node.isArrowFunction(n) || Node.isFunctionExpression(n)) && !lookupCallback(n)) {
+        if (++callbackCount>20000) throw new AnalysisBoundaryError("resource-limit");
+        add(n, "<callback>", "function", true);
+      }
     }
   }
+  function lookupCallback(n: Node): boolean { return entities.has(nodeKey(n)); }
   const lookup = (n: Node) => entities.get(nodeKey(n));
   function module(from: SourceFile, specifier: string, kind: "import" | "re-export") {
     const outcome = resolver.resolve(from.getFilePath(), specifier, kind);

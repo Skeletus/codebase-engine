@@ -1,0 +1,15 @@
+{
+  "package.json": "{\"name\":\"f03\",\"dependencies\":{\"vite\":\"8.3.3\",\"react\":\"19.2.8\",\"react-dom\":\"19.2.8\",\"react-router\":\"7.18.4\"}}",
+  "vite.config.ts": "import {defineConfig} from 'vite'; export default defineConfig({root:'.', resolve:{conditions:['module','browser','development']}});\n",
+  "index.html": "<!doctype html><html><body><div id=\"root\"></div><script type=\"module\" src=\"/src/main.tsx\"></script></body></html>\n",
+  "admin.html": "<script type=\"module\" src=\"/src/admin.tsx\"></script>\n",
+  "src/main.tsx": "import React from 'react'; import {createRoot as root} from 'react-dom/client'; import {App} from './App'; import './style.module.css'; const pages=import.meta.glob(['./pages/*.tsx','!./pages/Excluded.tsx'], {eager:true, import:'default'}); const lazyPages=import.meta.glob('./pages/*.tsx'); const logo=new URL('./logo.svg',import.meta.url); const worker=new Worker(new URL('./worker.ts',import.meta.url), {type:'module'}); root(document.getElementById('root')).render(<App/>); export {pages,lazyPages,logo,worker};\n",
+  "src/admin.tsx": "import React from 'react'; import {hydrateRoot} from 'react-dom/client'; import {App} from './App'; hydrateRoot(document.getElementById('root'),<App/>);\n",
+  "src/App.tsx": "import React,{memo as cache,lazy,useEffect as effect,createContext,useContext} from 'react'; import {BrowserRouter,Link,Route,Routes,createBrowserRouter} from 'react-router'; import {View as Alias} from './View'; export const Theme=createContext('light'); function cleanup(){release();} function release(){} function installed(){return cleanup;} export function save(){persist();} function persist(){} export function useTheme(){return useContext(Theme);} const Cached=cache(Alias); const Lazy=lazy(()=>import('./pages/Page')); export function App(){effect(installed,[]); useTheme(); return <BrowserRouter><Theme.Provider value='dark'><Cached/><Lazy/><button onClick={save}>Save</button><Link to='/home'>Home</Link><Routes><Route path='/home' element={<Alias/>}/></Routes></Theme.Provider></BrowserRouter>;} function load(){return 'data';} function act(){save();} export const router=createBrowserRouter([{path:'/data',Component:Alias,loader:load,action:act,children:[{index:true,Component:Alias}]}]); export function UppercaseHelper(){return 42;} export function Shadow(){function effect(cb){return cb;} effect(save); return <div/>;}\n",
+  "src/View.tsx": "import React from 'react'; export function View(){return <section/>;}\n",
+  "src/pages/Page.tsx": "import React from 'react'; export default function Page(){return <main/>;}\n",
+  "src/pages/Excluded.tsx": "import React from 'react'; export default function Excluded(){return <aside/>;}\n",
+  "src/style.module.css": ".button{color:red}\n",
+  "src/logo.svg": "<svg xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 0\"/></svg>\n",
+  "src/worker.ts": "export const workerValue=1;\n"
+}

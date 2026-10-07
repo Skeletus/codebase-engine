@@ -2,6 +2,12 @@ import { watch, type FSWatcher } from "node:fs";
 import path from "node:path";
 import { directoryExclusion, RepositoryReader } from "../repository/read-policy.ts";
 import type { CodeSnapshot } from "./types.ts";
+import { publicMetadataName } from "../repository/metadata-policy.ts";
+
+export function refreshInputClass(filename: string): "source" | "metadata" | "topology" {
+  if (publicMetadataName(filename)) return "metadata";
+  return /\.(?:[cm]?[jt]sx?)$/.test(filename) ? "source" : "topology";
+}
 
 export type RefreshCandidate = { snapshot: CodeSnapshot; reader: RepositoryReader; mode: "full" | "incremental"; parsed: number; reused: number };
 export type RefreshStatus = { state: "watching" | "paused" | "degraded" | "refreshing"; message: string; mode: "full" | "incremental"; parsed: number; reused: number; elapsedMs: number; memoryBytes: number; snapshotBytes: number };
@@ -68,7 +74,7 @@ export class RepositoryRefresh {
             const absolute = path.join(directory, filename);
             const stat = new RepositoryReader(reader.root).stat(absolute);
             if (stat?.isSymbolicLink()) { this.enqueue(true); return; }
-            this.enqueue(kind !== "change" || !/\.(?:[cm]?[jt]sx?)$/.test(filename));
+            this.enqueue(kind !== "change" || refreshInputClass(filename) !== "source");
           } catch { this.loss(); }
         });
         handle.on("error", () => this.loss());

@@ -1,0 +1,10 @@
+✔ qualification: imperative navigation requires one proved router, callbacks remain framework bindings (1687.1807ms)
+✔ qualification: nested router and plugin syntax depth/size limits fail explicitly (2460.4625ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5195.1865

@@ -1,0 +1,77 @@
+{
+  "tuple": "vite8-react19",
+  "versions": {
+    "node": "24.19.0",
+    "vite": "8.3.3",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-router": "7.18.4",
+    "typescript": "5.9.3",
+    "@vitejs/plugin-react": "6.1.2"
+  },
+  "profile": "ssr-production",
+  "workerModules": [],
+  "bundles": [
+    {
+      "file": "assets/Page-CPdb9fd-.mjs",
+      "type": "chunk",
+      "hash": "1120f1dc7a3e888e4c56422704a6568f6047e65754f3d6e46080b19af76a419d"
+    },
+    {
+      "file": "ssr.mjs",
+      "type": "chunk",
+      "hash": "b11447a7641f72ff000bcbac3b47bf225c64c47f990d00b915e8172ccb8694ba"
+    }
+  ],
+  "workerHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "bundleHash": "c383976a296f3d0f925523ceaaafc791e50f239d7a11eb2672150bd3727aa77c",
+  "configPolicy": "configFile:false/environment-files-disabled/application-owned collector; no fixture app execution",
+  "fixtureHash": "4a243dc353ff5ea74b105c8a0d44ce4a7cc196b231a45b375508fa0158042ace",
+  "materializedHash": "df26fca1e0b042d838db8483ac089e46e97c923ac666519e52467cb0d83329bb",
+  "modules": [
+    {
+      "id": "src/App.tsx",
+      "imports": [
+        "react",
+        "react-router",
+        "react/jsx-runtime",
+        "src/View.tsx"
+      ],
+      "dynamic": [
+        "src/pages/Page.tsx"
+      ]
+    },
+    {
+      "id": "src/pages/Page.tsx",
+      "imports": [
+        "react",
+        "react/jsx-runtime"
+      ],
+      "dynamic": []
+    },
+    {
+      "id": "src/server.ts",
+      "imports": [],
+      "dynamic": []
+    },
+    {
+      "id": "src/ssr.tsx",
+      "imports": [
+        "react-dom/server",
+        "react/jsx-runtime",
+        "src/App.tsx",
+        "src/server.ts"
+      ],
+      "dynamic": []
+    },
+    {
+      "id": "src/View.tsx",
+      "imports": [
+        "react",
+        "react/jsx-runtime"
+      ],
+      "dynamic": []
+    }
+  ],
+  "outputHash": "f6cd80fb0586d04142407299f89b0f478a176c95e572d4f79e0c2fe86cb1220b"
+}

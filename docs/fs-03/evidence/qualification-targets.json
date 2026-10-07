@@ -1,0 +1,53 @@
+{
+  "results": [
+    {
+      "tuple": "vite7-react18",
+      "profile": "browser-development",
+      "status": "PASS",
+      "oracleRecordHash": "e85447b3fd9c8d367ab14771334bf1d3dbcd2e6f454e65816171b065b89a99de",
+      "log": "qualification-vite7-react18-browser-development.log"
+    },
+    {
+      "tuple": "vite7-react18",
+      "profile": "browser-production",
+      "status": "PASS",
+      "oracleRecordHash": "7c431a9d2fbd9d4a1fb9d947dcedd9c34a1cebd208375fb50e80e7836611c686",
+      "log": "qualification-vite7-react18-browser-production.log"
+    },
+    {
+      "tuple": "vite8-react19",
+      "profile": "browser-development",
+      "status": "PASS",
+      "oracleRecordHash": "e75b56c6ae9047554b308fcb5ae4e9b7eba874f4372ca8539f75bb3f8a54bd73",
+      "log": "qualification-vite8-react19-browser-development.log"
+    },
+    {
+      "tuple": "vite8-react19",
+      "profile": "browser-production",
+      "status": "PASS",
+      "oracleRecordHash": "d506631b6fa8e83f28b656be087e1d9e5d20c60fba2947956eab6b6c013c484c",
+      "log": "qualification-vite8-react19-browser-production.log"
+    },
+    {
+      "tuple": "vite8-react19",
+      "profile": "ssr-production",
+      "status": "PASS",
+      "oracleRecordHash": "34cdcef6d70ba036b224dbe57b3eadf7e23c35c5aedc3a879072f86ab8c45dce",
+      "log": "qualification-vite8-react19-ssr-production.log"
+    }
+  ],
+  "blocked": [
+    {
+      "tuple": "vite7-react18",
+      "profile": "ssr-production",
+      "status": "BLOCKED",
+      "reason": "Outside approved matrix"
+    },
+    {
+      "tuple": "nonexact/range/workspace",
+      "profile": "any",
+      "status": "BLOCKED",
+      "reason": "Exact qualification metadata required"
+    }
+  ]
+}

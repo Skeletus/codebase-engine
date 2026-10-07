@@ -1,0 +1,29 @@
+✔ qualification vite7-react18/browser-development: pinned expanded module oracle and source witnesses (3138.6229ms)
+ℹ {"tuple":"vite7-react18","profile":"browser-development","facts":51,"registrations":3,"candidates":0,"gaps":19,"forbiddenGuessedFacts":0}
+✔ qualification vite7-react18/browser-production: pinned expanded module oracle and source witnesses (2603.2097ms)
+ℹ {"tuple":"vite7-react18","profile":"browser-production","facts":51,"registrations":3,"candidates":0,"gaps":19,"forbiddenGuessedFacts":0}
+✔ qualification vite8-react19/browser-development: pinned expanded module oracle and source witnesses (3172.3195ms)
+ℹ {"tuple":"vite8-react19","profile":"browser-development","facts":51,"registrations":3,"candidates":0,"gaps":19,"forbiddenGuessedFacts":0}
+✔ qualification vite8-react19/browser-production: pinned expanded module oracle and source witnesses (2914.027ms)
+ℹ {"tuple":"vite8-react19","profile":"browser-production","facts":51,"registrations":3,"candidates":0,"gaps":19,"forbiddenGuessedFacts":0}
+✔ qualification vite8-react19/ssr-production: pinned expanded module oracle and source witnesses (2620.2022ms)
+ℹ {"tuple":"vite8-react19","profile":"ssr-production","facts":47,"registrations":3,"candidates":0,"gaps":23,"forbiddenGuessedFacts":0}
+✔ qualification: Vite 8 native TS paths browser-development agrees with controlled compiler (417.7572ms)
+✔ qualification: Vite 8 native TS paths browser-production agrees with controlled compiler (394.0017ms)
+✔ qualification: Vite 8 native TS paths ssr-production agrees with controlled compiler (384.097ms)
+✔ qualification: pinned React plugins reject transforms, shadowing, mutation and version drift (1235.1198ms)
+✔ qualification: publicDir disable/custom and unsafe exports retain explicit boundaries (1310.0231ms)
+✔ qualification: namespace components, context consumers, hook callbacks and class lifecycle are associations (2974.997ms)
+✔ qualification: imperative navigation requires one proved router, callbacks remain framework bindings (761.1914ms)
+✔ qualification: active framework cancellation/deadline preserves persisted generation and recovers (1817.8924ms)
+✔ qualification: metadata and glob limits pass at ceiling and reject above without guessed facts (1155.547ms)
+✔ qualification: retained pinned matcher oracle maps to supported neutral registrations (260.962ms)
+✔ qualification: actual syntax below/at/above 100k nodes and generation fact ceiling (46703.1488ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 73053.5731

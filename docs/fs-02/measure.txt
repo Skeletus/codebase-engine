@@ -1,0 +1,16 @@
+const fs=require('fs'),path=require('path'),os=require('os'),crypto=require('crypto'),assert=require('assert/strict');
+(async()=>{
+const {typescriptAdapter,createTypescriptRefresh}=await import(require('url').pathToFileURL(path.resolve('lib/engine/adapters/typescript.ts')).href);
+const record=JSON.parse(fs.readFileSync('tests/fixtures/framework-support/F02-profile/fixture.json','utf8'));
+const root=fs.realpathSync.native(fs.mkdtempSync(path.join(os.tmpdir(),'cartograph FS-02 measurement ')));
+try {
+for(const [file,text]of Object.entries(record.sources)){const destination=path.join(root,file);fs.mkdirSync(path.dirname(destination),{recursive:true});fs.writeFileSync(destination,text);}
+const cold=[],warm=[],rss=[];let snapshot;
+for(let i=0;i<5;i++){const start=performance.now();snapshot=typescriptAdapter.analyze(root);cold.push(performance.now()-start);rss.push(process.memoryUsage().rss);}
+const driver=createTypescriptRefresh();driver.analyze(root,true);
+for(let i=0;i<20;i++){const start=performance.now();const next=driver.analyze(root,false);warm.push(performance.now()-start);rss.push(process.memoryUsage().rss);assert.deepEqual(next.snapshot,snapshot);}
+const stats=a=>{const sorted=[...a].sort((x,y)=>x-y);return {runs:a.length,medianMs:sorted[Math.floor(sorted.length/2)],p95Ms:sorted[Math.ceil(sorted.length*.95)-1],samplesMs:a};};
+const result={fixture:'F02-profile',fixtureSha256:crypto.createHash('sha256').update(fs.readFileSync('tests/fixtures/framework-support/F02-profile/fixture.json')).digest('hex'),tuple:record.tuple,extractorVersion:'fs-02/1',platform:process.platform,architecture:process.arch,cpu:os.cpus()[0]?.model,freshSessions:stats(cold),warm:stats(warm),sourceBytes:Object.values(record.sources).reduce((sum,text)=>sum+Buffer.byteLength(text),0),found:snapshot.coverage.files.found,parsed:snapshot.coverage.files.parsed,skipped:snapshot.coverage.files.skipped,imports:snapshot.relationships.length,resources:snapshot.analysis.resources.length,snapshotBytes:Buffer.byteLength(JSON.stringify(snapshot)),maxSampledProcessRssBytes:Math.max(...rss),peakCommittedMemoryBytes:null,measurementLimit:'Five fresh sessions within one process, not cold processes; RSS samples after runs, not peak committed memory or isolated parser measurements; no framework throughput qualification',evidenceMismatches:0,modelSha256:crypto.createHash('sha256').update(fs.readFileSync('lib/laya/laya-nav-1.json')).digest('hex')};
+fs.writeFileSync('docs/fs-02/evidence/resource-measurements.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result,null,2));
+}finally{assert(path.basename(root).startsWith('cartograph FS-02 measurement '));fs.rmSync(root,{recursive:true,force:true});}
+})().catch(e=>{console.error(e);process.exitCode=1});

@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "retainedFs01V3Bytes": 15116084,
+  "retainedFs01V3Sha256": "675708da6bdbaa8bfb0ffe00f41216cf2a5cdc9f3c3fd81935648b5ad31e288b",
+  "retainedFs01V3ReadsAsCurrent": true,
+  "retainedFs01V3RoundTripUnchanged": true,
+  "retainedFs00V2RequiresReanalysis": true,
+  "snapshotVersion": 3,
+  "sourceFreshnessClaim": "not claimed: historical payload compatibility only; evidence requires a current hash check"
+}

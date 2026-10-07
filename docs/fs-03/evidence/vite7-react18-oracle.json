@@ -1,0 +1,95 @@
+{
+  "tuple": "vite7-react18",
+  "versions": {
+    "node": "22.23.3",
+    "vite": "7.3.7",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-router": "7.18.4",
+    "typescript": "5.9.3"
+  },
+  "configPolicy": "configFile:false/environment-files-disabled/application-owned collector; no fixture app execution",
+  "fixtureHash": "72c94b0186ac841d491a575a8b8092c0bd98dd9b1a38d2ba03e7c9b33e36046a",
+  "materializedHash": "7350f5344ebd09eab5e36d999bf3a4771a94fa42e5b7b94ea7c4fa3626966714",
+  "modules": [
+    {
+      "id": "admin.html",
+      "imports": [
+        "\u0000vite/modulepreload-polyfill.js",
+        "src/admin.tsx"
+      ],
+      "dynamic": []
+    },
+    {
+      "id": "index.html",
+      "imports": [
+        "\u0000vite/modulepreload-polyfill.js",
+        "src/main.tsx"
+      ],
+      "dynamic": []
+    },
+    {
+      "id": "src/admin.tsx",
+      "imports": [
+        "react",
+        "react-dom/client",
+        "src/App.tsx"
+      ],
+      "dynamic": []
+    },
+    {
+      "id": "src/App.tsx",
+      "imports": [
+        "\u0000vite/preload-helper.js",
+        "react",
+        "react-router",
+        "src/View.tsx"
+      ],
+      "dynamic": [
+        "src/pages/Page.tsx"
+      ]
+    },
+    {
+      "id": "src/main.tsx",
+      "imports": [
+        "\u0000vite/preload-helper.js",
+        "react",
+        "react-dom/client",
+        "src/App.tsx",
+        "src/pages/Page.tsx",
+        "src/style.module.css"
+      ],
+      "dynamic": [
+        "src/pages/Excluded.tsx",
+        "src/pages/Page.tsx"
+      ]
+    },
+    {
+      "id": "src/pages/Excluded.tsx",
+      "imports": [
+        "react"
+      ],
+      "dynamic": []
+    },
+    {
+      "id": "src/pages/Page.tsx",
+      "imports": [
+        "react"
+      ],
+      "dynamic": []
+    },
+    {
+      "id": "src/style.module.css",
+      "imports": [],
+      "dynamic": []
+    },
+    {
+      "id": "src/View.tsx",
+      "imports": [
+        "react"
+      ],
+      "dynamic": []
+    }
+  ],
+  "outputHash": "9c71235f0847fc2c50fdf82513c361460ceffd19d08aee59be9ee53ba8688f9d"
+}

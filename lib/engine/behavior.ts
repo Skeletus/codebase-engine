@@ -1,5 +1,29 @@
 import type { CodeSnapshot } from "./types.ts";
 import type { SymbolRelation } from "../model/behavior.ts";
+import type { FrameworkBinding } from "../model/framework.ts";
+
+/** Composition/registration and lexical calls remain different witnessed steps. */
+export function traceFramework(snapshot: CodeSnapshot, entry: string, variantId: string, depth = 8, budget = 100) {
+  if (!snapshot.analysis.variants.some(v => v.id === variantId) || !snapshot.analysis.resources.some(r => r.path === entry)) throw new Error("Unknown entry/variant");
+  if (!Number.isInteger(depth) || depth < 0 || depth > 32 || !Number.isInteger(budget) || budget < 1 || budget > 200) throw new Error("Invalid framework trace limits");
+  type Step = { kind: "framework-binding"; binding: FrameworkBinding } | { kind: "verified-call"; call: SymbolRelation };
+  const outgoing = new Map<string, {target:string;step:Step}[]>();
+  const add = (source:string,target:string,step:Step) => { const edges=outgoing.get(source) ?? []; edges.push({target,step}); outgoing.set(source,edges); };
+  for (const b of snapshot.analysis.bindings) if (b.variantId === variantId) add(b.sourceId,b.targetId,{kind:"framework-binding",binding:b});
+  const withheld=new Set(snapshot.analysis.gaps.filter(g=>g.variantId === variantId).map(g=>JSON.stringify([g.occurrence.file,g.occurrence.start,g.occurrence.end])));
+  for (const call of snapshot.behavior.relations) if (call.source && call.relation === "calls" && !withheld.has(JSON.stringify([call.site.file,call.site.start,call.site.end]))) add(call.source,call.target,{kind:"verified-call",call});
+  const distance = new Map([[entry,0]]), queue=[entry], steps:Step[]=[];
+  let beyondDepth=0,beyondBudget=0;
+  for (let i=0;i<queue.length;i++) for (const edge of outgoing.get(queue[i]) ?? []) {
+    if (distance.get(queue[i])! >= depth) {beyondDepth++;continue;}
+    if (steps.length >= budget || !distance.has(edge.target) && queue.length >= budget) {beyondBudget++;continue;}
+    steps.push(edge.step);
+    if (!distance.has(edge.target)) {distance.set(edge.target,distance.get(queue[i])!+1);queue.push(edge.target);}
+  }
+  const files=new Set([entry,...steps.map(step=>step.kind === "framework-binding" ? step.binding.occurrence.file : step.call.site.file)]);
+  const gaps=snapshot.analysis.gaps.filter(g=>g.variantId === variantId && files.has(g.occurrence.file));
+  return {entry,variantId,steps,beyondDepth,beyondBudget,gaps:gaps.slice(0,budget),gapsOmitted:Math.max(0,gaps.length-budget),meaning:"Static associations and call possibilities; no rendering, scheduling or temporal execution order is asserted."};
+}
 
 /** Static reachability, never execution order. All returned edges are canonical. */
 export function traceCalls(snapshot: CodeSnapshot, target: string, depth = 8, budget = 100) {

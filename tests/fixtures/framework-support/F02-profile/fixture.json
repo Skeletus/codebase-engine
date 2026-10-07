@@ -1,0 +1,59 @@
+{
+  "id": "F02-profile",
+  "phase": "FS-02",
+  "license": "synthetic first-party fixture; repository license",
+  "tuple": {
+    "node": "24.19.0",
+    "typescript": "5.9.3",
+    "tsMorph": "28.0.0"
+  },
+  "extractorVersion": "fs-02/1",
+  "variants": [
+    "node-development",
+    "static-python"
+  ],
+  "qualification": "infrastructure-only; all framework/runtime profiles partial",
+  "sources": {
+    "entry.ts": "import { value } from \"./value\"; export const entry = value;\n",
+    "value.ts": "export const value = 1;\n",
+    "server/pyproject.toml": "[project]\nname = \"backend\"\n",
+    "server/manage.py": "raise RuntimeError(\"NEVER EXECUTE\")\n"
+  },
+  "sourceHashes": {
+    "entry.ts": "e330d9b2ff26cfea5ee7f8deee7367bbb586231c254cb24802604bade86ab75b",
+    "value.ts": "5d8f65d2774e206bc9f7a7a4ad39ca2dc563b5c31e46ab57ef4874961237ce29",
+    "server/pyproject.toml": "7f2f86d628c8d594b98a5fda71c03c2c82d7d3b1895ff10112453fa5638fbad5",
+    "server/manage.py": "6869189550367d96d2e989a2d25b87307d29fe093f1e8c6fcc185c2ae3fef2a4"
+  },
+  "expected": {
+    "projects": [
+      ".",
+      "server"
+    ],
+    "parsed": 2,
+    "skipped": 1,
+    "imports": [
+      [
+        "entry.ts",
+        "value.ts"
+      ]
+    ],
+    "profile": [
+      "static-python"
+    ],
+    "qualified": 0,
+    "forbiddenBindings": 0
+  },
+  "oracle": {
+    "kind": "independent hand-authored semantic inventory; no framework runtime semantics claimed",
+    "outputSha256": "f8cc32937b27660183affefbd24386f126ad1022803a4f2be722bc7b564fa2d9",
+    "command": "node --test tests/framework-support/fs-02.test.ts",
+    "optInRuntimeOracle": "none; runtime/profile resolution deferred to stack phases"
+  },
+  "forbidden": [
+    "repository execution",
+    "framework bindings",
+    "qualified framework badge",
+    "guessed runtime extension resolution"
+  ]
+}

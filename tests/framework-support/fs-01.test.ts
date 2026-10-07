@@ -43,6 +43,9 @@ function assessed(base: CodeSnapshot) {
   if (!a.gaps.some(g => g.id === gap.id)) a.gaps.push(gap); capability.gapIds.push(gap.id);
   const registration = { ...route, id: factId("registration:http", route.occurrence, variant.id, "/synthetic"), rawPattern: "/synthetic", legacyRouteIndex: null, methodState: { state: "unknown" as const, values: [] as [] }, gapIds: [...new Set([...route.gapIds, gap.id])] }; a.registrations.push(registration);
   const bytes = readFileSync(path.join(s.origin.root, "package.json")), hash = createHash("sha256").update(bytes).digest("hex"), source = bytes.toString("utf8");
+  // FS-02 discovery already tracks package metadata; replace rather than duplicate
+  // the same fixture witness while retaining the original contract assertions.
+  a.resources = a.resources.filter(r => r.path !== "package.json");
   a.resources.push({ path: "package.json", hash, bytes: bytes.length, utf16Length: source.length, lines: 1, encoding: "utf8", purpose: "metadata" });
   const configuration: Witness = { site: { file: "package.json", ...normalizeRange(source, 0, source.length, "utf16"), fileHash: hash, extractor: "synthetic/config", evidenceKind: "verified" }, role: "configuration", extractorVersion: "fs-01/1", variantId: variant.id };
   registration.witnesses.push(configuration);

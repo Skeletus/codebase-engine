@@ -1,0 +1,10 @@
+✔ qualification vite7-react18/browser-production: pinned expanded module oracle and source witnesses (3266.1945ms)
+ℹ {"tuple":"vite7-react18","profile":"browser-production","facts":51,"registrations":3,"candidates":0,"gaps":19,"forbiddenGuessedFacts":0}
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4248.3447

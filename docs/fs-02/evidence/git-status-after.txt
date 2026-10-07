@@ -1,0 +1,62 @@
+ M docs/specs/fs-02.md
+ M lib/engine/adapters/typescript.ts
+ M lib/engine/refresh.ts
+ M lib/model/framework-validate.ts
+ M lib/parser/adapters/index.ts
+ M lib/parser/adapters/types.ts
+ M lib/parser/index.ts
+ M lib/parser/walk.ts
+ M lib/repository/read-policy.ts
+ M tests/framework-support/fs-01.test.ts
+?? docs/fs-02/README.md
+?? docs/fs-02/architecture.md
+?? docs/fs-02/audit.txt
+?? docs/fs-02/compatibility.txt
+?? docs/fs-02/evidence/assets.log
+?? docs/fs-02/evidence/baseline-parse.json
+?? docs/fs-02/evidence/baseline-results.json
+?? docs/fs-02/evidence/baseline-snapshot.json.gz
+?? docs/fs-02/evidence/diff-check.log
+?? docs/fs-02/evidence/engine.log
+?? docs/fs-02/evidence/first-run-results.json
+?? docs/fs-02/evidence/first-run-tests.log
+?? docs/fs-02/evidence/fs-01-tests.log
+?? docs/fs-02/evidence/fs-02-tests.log
+?? docs/fs-02/evidence/git-status-after.txt
+?? docs/fs-02/evidence/git-status-before.txt
+?? docs/fs-02/evidence/historical-snapshot-compatibility.json
+?? docs/fs-02/evidence/insights.log
+?? docs/fs-02/evidence/intermediate-results.json
+?? docs/fs-02/evidence/lint.log
+?? docs/fs-02/evidence/map-counts.log
+?? docs/fs-02/evidence/next-build.log
+?? docs/fs-02/evidence/next-typegen.log
+?? docs/fs-02/evidence/package-engine.log
+?? docs/fs-02/evidence/parse.log
+?? docs/fs-02/evidence/pilot-benchmark.log
+?? docs/fs-02/evidence/preservation-before.json
+?? docs/fs-02/evidence/preservation-results.json
+?? docs/fs-02/evidence/resource-measurements.json
+?? docs/fs-02/evidence/rust-check.log
+?? docs/fs-02/evidence/rust-format.log
+?? docs/fs-02/evidence/rust-tests.log
+?? docs/fs-02/evidence/snapshot-artifact.json
+?? docs/fs-02/evidence/staged-smoke.log
+?? docs/fs-02/evidence/tests.log
+?? docs/fs-02/evidence/typecheck.log
+?? docs/fs-02/measure.txt
+?? docs/fs-02/qualification.json
+?? docs/fs-02/verify.ps1
+?? lib/engine/boundary.ts
+?? lib/engine/composition.ts
+?? lib/engine/coordinator.ts
+?? lib/engine/declarative-metadata.ts
+?? lib/engine/discovery.ts
+?? lib/engine/metadata.ts
+?? lib/engine/profiles.ts
+?? lib/engine/registry.ts
+?? lib/engine/static-config.ts
+?? lib/repository/metadata-policy.ts
+?? tests/fixtures/framework-support/F00-resource/fixture.json
+?? tests/fixtures/framework-support/F02-profile/fixture.json
+?? tests/framework-support/fs-02.test.ts

@@ -17,6 +17,7 @@ import {
 import type { Role } from "../roles.ts";
 import type { AdapterFile } from "./adapters/types.ts";
 import { walkRepository, withinProject, type WalkResult } from "./walk.ts";
+import { GenerationBoundary } from "../engine/boundary.ts";
 
 export type Selection = { root: string; walk: WalkResult; reader: RepositoryReader };
 
@@ -26,10 +27,10 @@ export function parseRepository(directory: string): ParseResult {
 
 // Selecting and parsing are separate calls so a caller can report which one
 // it's in; together they are exactly parseRepository.
-export function selectFiles(directory: string, authorizedRoot?: string): Selection {
+export function selectFiles(directory: string, authorizedRoot?: string, boundary = new GenerationBoundary()): Selection {
   const reader = new RepositoryReader(directory, {}, authorizedRoot);
   const root = reader.root;
-  return { root, reader, walk: walkRepository(root, reader) };
+  return { root, reader, walk: walkRepository(root, reader, boundary) };
 }
 
 export function createSyntaxSession() {
@@ -45,6 +46,7 @@ export function parseSelection({ root, walk, reader }: Selection, inspect?: (fil
   const present = new Set(walk.candidates.map((c) => c.absolutePath.replaceAll("\\", "/")));
   for (const source of project.getSourceFiles()) if (!present.has(source.getFilePath())) { session.hashes.delete(source.getFilePath()); project.removeSourceFile(source); }
   const sourceFiles = walk.candidates.map((candidate) => {
+    walk.discovery.boundary.checkCancellation();
     const existing = project.getSourceFile(candidate.absolutePath);
     const reuse = existing && session.hashes.get(candidate.absolutePath) === candidate.hash;
     const sourceFile = reuse ? existing : project.createSourceFile(candidate.absolutePath, candidate.content, { overwrite: true });
@@ -57,6 +59,7 @@ export function parseSelection({ root, walk, reader }: Selection, inspect?: (fil
   const skipped: SkippedFile[] = [...walk.skipped];
   const parsed: typeof sourceFiles = [];
   for (const entry of sourceFiles) {
+    walk.discovery.boundary.checkCancellation();
     const [first, ...rest] = program.getSyntacticDiagnostics(entry.sourceFile);
     if (!first) {
       parsed.push(entry);
@@ -93,6 +96,7 @@ export function parseSelection({ root, walk, reader }: Selection, inspect?: (fil
   const exportsOf = new Map<string, string[]>();
 
   for (const { candidate, sourceFile } of parsed) {
+    walk.discovery.boundary.checkCancellation();
     exportsOf.set(candidate.path, extractExports(sourceFile));
     for (const found of extractImports(sourceFile)) {
       const specifier = found.literal ? found.specifier : found.expression;

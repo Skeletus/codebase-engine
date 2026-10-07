@@ -1,6 +1,7 @@
 import { closeSync, fstatSync, lstatSync, openSync, readSync, readdirSync, realpathSync } from "node:fs";
 import path from "node:path";
 import { createHash } from "node:crypto";
+import { publicMetadataName } from "./metadata-policy.ts";
 
 export const READ_LIMITS = {
   fileBytes: 1024 * 1024,
@@ -13,7 +14,7 @@ export const READ_LIMITS = {
 export type ReadLimits = { [K in keyof typeof READ_LIMITS]: number };
 export type ReadPurpose = "source" | "metadata" | "probe";
 
-const OUTPUTS = new Set(["node_modules", "dist", "build", "out", "coverage", "target", "bin", "obj", "vendor", "generated", "__generated__"]);
+const OUTPUTS = new Set(["node_modules", "dist", "build", "out", "coverage", "target", "bin", "obj", "vendor", "generated", "__generated__", "venv", "__pycache__", "site-packages"]);
 const SENSITIVE = /^(?:\.env(?:\..*)?|credentials(?:\..*)?|secrets?(?:\..*)?|id_(?:rsa|dsa|ecdsa|ed25519)(?:\..*)?|.*\.(?:pem|key|p12|pfx|keystore))$/i;
 
 export class RepositoryReadError extends Error {
@@ -44,7 +45,7 @@ export class RepositoryReader {
   private bytes = 0;
   private entries = 0;
   private files = 0;
-  private metadata = new Map<string, string>();
+  private metadata = new Map<string, Buffer>();
   private denied = new Set<string>();
   private excluded = new Set<string>();
   private rootIdentity: { ino: number; dev: number };
@@ -129,8 +130,8 @@ export class RepositoryReader {
         throw new RepositoryReadError("policy", "excluded directory");
       }
     }
-    if (purpose === "metadata" && path.extname(absolute).toLowerCase() !== ".json") {
-      throw new RepositoryReadError("policy", "only JSON metadata may be read by resolution");
+    if (purpose === "metadata" && path.extname(absolute).toLowerCase() !== ".json" && !(publicMetadataName(path.basename(absolute)) && !dependency)) {
+      throw new RepositoryReadError("policy", "only JSON resolution metadata or named first-party public metadata may be read");
     }
     let current = this.root;
     for (const part of parts) {
@@ -224,9 +225,23 @@ export class RepositoryReader {
   }
 
   readMetadata(input: string): string | undefined {
+    return this.readMetadataBytes(input)?.toString("utf8");
+  }
+
+  /** Strict first-party public metadata. Legacy dependency JSON resolution stays
+   * on readMetadata; the new discovery service never gains that exception. */
+  readPublicMetadata(input: string): Buffer {
+    const absolute = this.authorize(input, "source");
+    if (!publicMetadataName(path.basename(absolute))) throw new RepositoryReadError("policy", "unapproved public metadata name");
+    const cached = this.metadata.get(absolute);
+    if (cached !== undefined) return cached;
+    const bytes = this.read(absolute, "metadata"); this.metadata.set(absolute, bytes); return bytes;
+  }
+
+  readMetadataBytes(input: string): Buffer | undefined {
     const cached = this.metadata.get(input);
     if (cached !== undefined) return cached;
-    const value = this.attempt(input, "metadata", (absolute) => this.read(absolute, "metadata").toString("utf8"));
+    const value = this.attempt(input, "metadata", (absolute) => this.read(absolute, "metadata"));
     if (value === undefined) this.stat(input);
     if (value !== undefined) this.metadata.set(input, value);
     return value;

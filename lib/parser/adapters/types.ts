@@ -14,6 +14,8 @@ export type ProjectInfo = {
   dir: string;
   /** Every name in the project's dependencies and devDependencies. */
   dependencies: ReadonlySet<string>;
+  /** Discovery-owned dependency families; compatibility callers may omit them. */
+  languageDependencies?: Readonly<Record<string, ReadonlySet<string>>>;
 };
 
 /** A file that parsed cleanly, with its syntax tree. */

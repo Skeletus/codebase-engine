@@ -1,0 +1,62 @@
+{
+  "version": "7.18.4",
+  "policy": "Pinned trusted matchRoutes API; application-owned route data only; no inspected handlers/configuration run",
+  "records": [
+    {
+      "path": "/home",
+      "url": "/HOME/",
+      "params": {},
+      "matched": true
+    },
+    {
+      "path": "/users/:id",
+      "url": "/users/42",
+      "params": {
+        "id": "42"
+      },
+      "matched": true
+    },
+    {
+      "path": "/users/:id",
+      "url": "/users/a%2Fb",
+      "params": {
+        "id": "a/b"
+      },
+      "matched": true
+    },
+    {
+      "path": "/files/*",
+      "url": "/files/a/b",
+      "params": {
+        "*": "a/b"
+      },
+      "matched": true
+    },
+    {
+      "path": "/files/*",
+      "url": "/files",
+      "params": {
+        "*": ""
+      },
+      "matched": true
+    },
+    {
+      "path": "/café",
+      "url": "/caf%C3%A9",
+      "params": {},
+      "matched": true
+    }
+  ],
+  "outputHash": "b57c68a89f0d2dc6e70d683ee10eb25a64ad6f8fb7c88c23e0c51dae9f41c4b4",
+  "precedence": {
+    "oracleWinner": "literal",
+    "analysisPolicy": "precedence remains null; never infer winners from partial route sets"
+  },
+  "unsupported": [
+    "optional segments",
+    "computed paths",
+    "custom factories",
+    "ambiguous router ownership",
+    "basename/options"
+  ]
+}

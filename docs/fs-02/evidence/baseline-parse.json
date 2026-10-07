@@ -1,0 +1,5672 @@
+{
+  "schemaVersion": 4,
+  "root": "D:\\Repositorios Github\\cartograph",
+  "projects": [
+    {
+      "path": ".",
+      "adapter": "Next.js"
+    }
+  ],
+  "files": [
+    {
+      "path": "app/error.tsx",
+      "module": "app",
+      "lines": 9,
+      "bytes": 446,
+      "hash": "5683e1fd16e3c41b6809124607f07de6106e8ca2b4e27ced7530e317e870bfb0",
+      "fanIn": 0,
+      "fanOut": 0,
+      "reachedBy": "Next.js error boundary",
+      "role": "route-ui",
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "path": "app/global-error.tsx",
+      "module": "app",
+      "lines": 12,
+      "bytes": 570,
+      "hash": "4cb35ca4791afe56950551c33c90ca9d44bcfe4b4a4e8de74984d27f50ceb8d0",
+      "fanIn": 0,
+      "fanOut": 0,
+      "reachedBy": "Next.js error boundary",
+      "role": "route-ui",
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "path": "app/layout.tsx",
+      "module": "app",
+      "lines": 23,
+      "bytes": 615,
+      "hash": "211c53c9a429d843a4eec7ddcc6f1ac53d3c898b31cb077be79e95e47b6b3192",
+      "fanIn": 0,
+      "fanOut": 0,
+      "reachedBy": "Next.js layout",
+      "role": "layout",
+      "exports": [
+        "metadata",
+        "default"
+      ]
+    },
+    {
+      "path": "app/page.tsx",
+      "module": "app",
+      "lines": 2,
+      "bytes": 128,
+      "hash": "d4a18416522fd97a20efd203a80a75164e98ec7c30107e341bd11d427accfca5",
+      "fanIn": 0,
+      "fanOut": 1,
+      "reachedBy": "Next.js page",
+      "role": "page-route",
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "path": "components/analysis-contracts.tsx",
+      "module": "components",
+      "lines": 41,
+      "bytes": 4928,
+      "hash": "140b261ae32c917b6a472c0e5cb1a78da73f9ecf17f5c3c119cdfb0c8c0a91b9",
+      "fanIn": 1,
+      "fanOut": 5,
+      "reachedBy": null,
+      "role": "component",
+      "exports": [
+        "AnalysisContractsPanel"
+      ]
+    },
+    {
+      "path": "components/analysis-view.tsx",
+      "module": "components",
+      "lines": 262,
+      "bytes": 12354,
+      "hash": "3b1be410a6686746ca8c1eeed971e0635f327a4c38c4aca754cf79e9e52a781e",
+      "fanIn": 1,
+      "fanOut": 14,
+      "reachedBy": null,
+      "role": "component",
+      "exports": [
+        "AnalysisView"
+      ]
+    },
+    {
+      "path": "components/behavior-traces.tsx",
+      "module": "components",
+      "lines": 47,
+      "bytes": 7448,
+      "hash": "65f49cdadd56f5c54b7b1aa04d03d1783d40393d90a7b8c239ca835e1d3628de",
+      "fanIn": 1,
+      "fanOut": 3,
+      "reachedBy": null,
+      "role": "component",
+      "exports": [
+        "BehaviorTraces"
+      ]
+    },
+    {
+      "path": "components/category-rail.tsx",
+      "module": "components",
+      "lines": 56,
+      "bytes": 2149,
+      "hash": "3d6779cdadd772a0f14e31f34aec1a829a57de1018168b544008e24239013237",
+      "fanIn": 1,
+      "fanOut": 2,
+      "reachedBy": null,
+      "role": "component",
+      "exports": [
+        "CategoryRail"
+      ]
+    },
+    {
+      "path": "components/desktop-explorer.tsx",
+      "module": "components",
+      "lines": 242,
+      "bytes": 32477,
+      "hash": "d3eca274576185182a243c7e266a9b79607cc27ed7922de3b46ba137d59c4b72",
+      "fanIn": 1,
+      "fanOut": 15,
+      "reachedBy": null,
+      "role": "component",
+      "exports": [
+        "DesktopExplorer"
+      ]
+    },
+    {
+      "path": "components/detail-pane.tsx",
+      "module": "components",
+      "lines": 690,
+      "bytes": 30965,
+      "hash": "0daa472fa3b330645b4d1668af612918cdaae9bbd4c968525a0bacc277845eba",
+      "fanIn": 1,
+      "fanOut": 12,
+      "reachedBy": null,
+      "role": "component",
+      "exports": [
+        "Tab",
+        "RepositoryFacts",
+        "DetailPane"
+      ]
+    },
+    {
+      "path": "components/explanation-panel.tsx",
+      "module": "components",
+      "lines": 125,
+      "bytes": 7096,
+      "hash": "fb35bcc2cec69006f3940a8c9864f6387b4f31a0e1f2b895b078784197ebd429",
+      "fanIn": 2,
+      "fanOut": 3,
+      "reachedBy": null,
+      "role": "component",
+      "exports": [
+        "ExplainTarget",
+        "targetKey",
+        "ExplanationState",
+        "ExplanationPanel"
+      ]
+    },
+    {
+      "path": "components/explanation-text.tsx",
+      "module": "components",
+      "lines": 127,
+      "bytes": 4546,
+      "hash": "f876ee98758c4fa34a521631a888908b0525d2fa94ca503ca401bff76cb62e2a",
+      "fanIn": 2,
+      "fanOut": 0,
+      "reachedBy": null,
+      "role": "component",
+      "exports": [
+        "ExplanationText"
+      ]
+    },
+    {
+      "path": "components/external-ai.tsx",
+      "module": "components",
+      "lines": 105,
+      "bytes": 12637,
+      "hash": "9414b8b3e19d74219f4c5036c4ad5b9e22e9d3bb39f9effbbd68fe58fb145030",
+      "fanIn": 1,
+      "fanOut": 4,
+      "reachedBy": null,
+      "role": "component",
+      "exports": [
+        "ExternalAi"
+      ]
+    },
+    {
+      "path": "components/investigations.tsx",
+      "module": "components",
+      "lines": 82,
+      "bytes": 10275,
+      "hash": "3ef7fc17d273f48db59d157271067127b2c855595de1c323b7f105b78ec5911e",
+      "fanIn": 1,
+      "fanOut": 4,
+      "reachedBy": null,
+      "role": "component",
+      "exports": [
+        "Investigations"
+      ]
+    },
+    {
+      "path": "components/map/dependency-map.tsx",
+      "module": "components/map",
+      "lines": 209,
+      "bytes": 7478,
+      "hash": "a153baed2bb2615fc2ea2770eee2703388b44bdbbba6eb92b89db085be8df130",
+      "fanIn": 1,
+      "fanOut": 7,
+      "reachedBy": null,
+      "role": "component",
+      "exports": [
+        "MapControl",
+        "DependencyMap"
+      ]
+    },
+    {
+      "path": "components/map/layout.ts",
+      "module": "components/map",
+      "lines": 68,
+      "bytes": 3124,
+      "hash": "de4c1455d2b40932c853f5ed7a5d92951dec4ffff6d9c5ab6ae75bf389665d32",
+      "fanIn": 2,
+      "fanOut": 1,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "CHAR_WIDTH",
+        "PAD_X",
+        "FOLDED_MIN_HEIGHT",
+        "FOLDED_MIN_WIDTH",
+        "PANEL_HEADER_HEIGHT",
+        "ROW_HEIGHT",
+        "Box",
+        "sizeOf",
+        "layout"
+      ]
+    },
+    {
+      "path": "components/map/nodes.tsx",
+      "module": "components/map",
+      "lines": 257,
+      "bytes": 11650,
+      "hash": "5665a8e67f8d06220bfddb6a7e42d1c20410550de2d2b688d102cce2d339654c",
+      "fanIn": 1,
+      "fanOut": 5,
+      "reachedBy": null,
+      "role": "component",
+      "exports": [
+        "FoldedNode",
+        "PanelNode",
+        "MapActions",
+        "MapSelection",
+        "FoldedNodeView",
+        "PanelNodeView"
+      ]
+    },
+    {
+      "path": "components/map/swatch.tsx",
+      "module": "components/map",
+      "lines": 18,
+      "bytes": 552,
+      "hash": "910880ed06341989496aa6211178a46128b60f1129ac4f147d8c8f24d774cbd8",
+      "fanIn": 2,
+      "fanOut": 0,
+      "reachedBy": null,
+      "role": "component",
+      "exports": [
+        "CategorySwatch"
+      ]
+    },
+    {
+      "path": "components/payload-preview.tsx",
+      "module": "components",
+      "lines": 20,
+      "bytes": 1552,
+      "hash": "bd0cc1c5f5c7f0197b8257d1be95e3f936161c04e091adc53e82a15b197c0fb5",
+      "fanIn": 1,
+      "fanOut": 0,
+      "reachedBy": null,
+      "role": "component",
+      "exports": [
+        "PayloadPreview"
+      ]
+    },
+    {
+      "path": "components/pilot-measurements.tsx",
+      "module": "components",
+      "lines": 46,
+      "bytes": 5035,
+      "hash": "ce8845e3f403b9a3c53d340e109fe8cf66ac42878d3675767883168d8aacfd23",
+      "fanIn": 1,
+      "fanOut": 1,
+      "reachedBy": null,
+      "role": "component",
+      "exports": [
+        "PilotMeasurements"
+      ]
+    },
+    {
+      "path": "components/progress/rerun-button.tsx",
+      "module": "components/progress",
+      "lines": 27,
+      "bytes": 953,
+      "hash": "3f0eec223f3a0056b08304afc4b00d9bd0dad5f44ac7a52d2fe0b068511329cd",
+      "fanIn": 0,
+      "fanOut": 0,
+      "reachedBy": null,
+      "role": "component",
+      "exports": [
+        "RerunButton"
+      ]
+    },
+    {
+      "path": "components/ranked-investigation.tsx",
+      "module": "components",
+      "lines": 62,
+      "bytes": 10109,
+      "hash": "fc2bbe98c2051415a6e1407921b32200c5ebcff722246755f2d1851ec99b0586",
+      "fanIn": 1,
+      "fanOut": 4,
+      "reachedBy": null,
+      "role": "component",
+      "exports": [
+        "RankedInvestigation"
+      ]
+    },
+    {
+      "path": "components/route-table.tsx",
+      "module": "components",
+      "lines": 116,
+      "bytes": 4806,
+      "hash": "eeb963f11c4c223dd0c675293b2bd9cccc03f2c45f6b64460e7c21f453e991f8",
+      "fanIn": 1,
+      "fanOut": 2,
+      "reachedBy": null,
+      "role": "component",
+      "exports": [
+        "RouteTable"
+      ]
+    },
+    {
+      "path": "components/shell.tsx",
+      "module": "components",
+      "lines": 47,
+      "bytes": 3344,
+      "hash": "723bf0b78874bec06bf02c3f6c59ea6f433fcf9c7a15aa6d363dc13ff7c30263",
+      "fanIn": 1,
+      "fanOut": 0,
+      "reachedBy": null,
+      "role": "component",
+      "exports": [
+        "Shell"
+      ]
+    },
+    {
+      "path": "components/state-mark.tsx",
+      "module": "components",
+      "lines": 27,
+      "bytes": 1107,
+      "hash": "7220458dde7957c98987b672845b91129533137d7033494dceeb983374c3e43b",
+      "fanIn": 0,
+      "fanOut": 1,
+      "reachedBy": null,
+      "role": "component",
+      "exports": [
+        "StateMark"
+      ]
+    },
+    {
+      "path": "components/theme-control.tsx",
+      "module": "components",
+      "lines": 70,
+      "bytes": 2720,
+      "hash": "a56670f8c5d57cd75a1bfc31b9ad1f88462e87c4bce33697cb8b8fdb468c025d",
+      "fanIn": 1,
+      "fanOut": 1,
+      "reachedBy": null,
+      "role": "component",
+      "exports": [
+        "ThemeControl"
+      ]
+    },
+    {
+      "path": "components/workspace-ui.tsx",
+      "module": "components",
+      "lines": 80,
+      "bytes": 9871,
+      "hash": "93e8f854f9f02be5ec46bd90bc4d850708864fcf5457de901b7d54b33444e2f5",
+      "fanIn": 5,
+      "fanOut": 0,
+      "reachedBy": null,
+      "role": "component",
+      "exports": [
+        "RepositoryPicker",
+        "Workspace",
+        "WORKSPACE_LABELS",
+        "Sidebar",
+        "PageHeading",
+        "StatusBadge",
+        "UiIcon",
+        "WarningBanner",
+        "FileSelector"
+      ]
+    },
+    {
+      "path": "eslint.config.mjs",
+      "module": ".",
+      "lines": 21,
+      "bytes": 563,
+      "hash": "28961145e71a825a5e1378e496a63c7fdbf2e2453d110881439c2e3caf0e2f56",
+      "fanIn": 0,
+      "fanOut": 0,
+      "reachedBy": "config file, loaded by its tool",
+      "role": "config",
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "path": "lib/ai/evidence.ts",
+      "module": "lib/ai",
+      "lines": 75,
+      "bytes": 7841,
+      "hash": "400e1659ee9fd1fe656af4eba5b26e2e71c65aed7514c6bc5c1e21d86da63dca",
+      "fanIn": 4,
+      "fanOut": 3,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "explanationEvidence"
+      ]
+    },
+    {
+      "path": "lib/ai/prompts.ts",
+      "module": "lib/ai",
+      "lines": 152,
+      "bytes": 7648,
+      "hash": "d2a215c2be5afffe20636d1fb3499b674a69c994f697370e0b1809a6d16f82ad",
+      "fanIn": 0,
+      "fanOut": 2,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "PROMPT_VERSION",
+        "NeighbourFacts",
+        "FileInput",
+        "FolderFile",
+        "FolderInput",
+        "ClassifyInput",
+        "EXPLAIN_FILE_SYSTEM",
+        "EXPLAIN_FOLDER_SYSTEM",
+        "CLASSIFY_SYSTEM",
+        "explainFileMessage",
+        "explainFolderMessage",
+        "classifyMessage"
+      ]
+    },
+    {
+      "path": "lib/ai/selection.ts",
+      "module": "lib/ai",
+      "lines": 10,
+      "bytes": 936,
+      "hash": "9eb1788f985dc5a19a5e3366e88456f6d4d668f4185981a3733622e0d1a5c917",
+      "fanIn": 5,
+      "fanOut": 1,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "ExplanationSelection",
+        "validateSelection"
+      ]
+    },
+    {
+      "path": "lib/analysis/operations.ts",
+      "module": "lib/analysis",
+      "lines": 13,
+      "bytes": 696,
+      "hash": "57829febd2bac823b62875aebb29e53234ff01a54d034ce62903e763090a3bc5",
+      "fanIn": 5,
+      "fanOut": 2,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "ExplainResult",
+        "AnalysisOperations"
+      ]
+    },
+    {
+      "path": "lib/desktop/projection.ts",
+      "module": "lib/desktop",
+      "lines": 35,
+      "bytes": 2343,
+      "hash": "d14a3799aa7bd2312630446c4f0946bb6ddb011e2cffef19ec808648e641b8b9",
+      "fanIn": 4,
+      "fanOut": 3,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "projectSnapshot",
+        "projectAnalysis"
+      ]
+    },
+    {
+      "path": "lib/desktop/protocol.ts",
+      "module": "lib/desktop",
+      "lines": 105,
+      "bytes": 9263,
+      "hash": "8ca87c7b1c99f0af1306fa7c8d38164eb373e5fd542db74e39929403df882aa7",
+      "fanIn": 13,
+      "fanOut": 6,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "PROTOCOL_VERSION",
+        "MAX_REQUEST_BYTES",
+        "MAX_EVENT_BYTES",
+        "EvidenceResult",
+        "EngineRequest",
+        "EngineEvent",
+        "record",
+        "identifier",
+        "validateRequest",
+        "validateEvent",
+        "belongsToJob"
+      ]
+    },
+    {
+      "path": "lib/desktop/ranking.ts",
+      "module": "lib/desktop",
+      "lines": 38,
+      "bytes": 4703,
+      "hash": "07901f06133e6d6f94b6d949975d378806ea831b29bfa7107b5d4a9c42817ba9",
+      "fanIn": 5,
+      "fanOut": 2,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "RankingQuery",
+        "RankingResult",
+        "validateRankingQuery",
+        "validateRankingResult",
+        "verifyRanking"
+      ]
+    },
+    {
+      "path": "lib/desktop/startup.js",
+      "module": "lib/desktop",
+      "lines": 26,
+      "bytes": 1253,
+      "hash": "1097b1486e7a08d986161172e286c6bae86109bab90cfd5f509864e7afe173d3",
+      "fanIn": 0,
+      "fanOut": 0,
+      "reachedBy": null,
+      "role": null,
+      "exports": []
+    },
+    {
+      "path": "lib/desktop/storage-protocol.ts",
+      "module": "lib/desktop",
+      "lines": 30,
+      "bytes": 3292,
+      "hash": "aef5792f54d144048e07c0a3ba0d24b07bb6f191a06a07173eb6be791ce79ef4",
+      "fanIn": 4,
+      "fanOut": 2,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "StorageRequest",
+        "validateStorageRequest"
+      ]
+    },
+    {
+      "path": "lib/engine/adapters/typescript.ts",
+      "module": "lib/engine/adapters",
+      "lines": 86,
+      "bytes": 5957,
+      "hash": "0a08f0cf7fbd8566ee4f1b62464750aefa03ee938530f7fd6e0ff24c3e23135c",
+      "fanIn": 17,
+      "fanOut": 8,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "typescriptAdapter",
+        "createTypescriptRefresh"
+      ]
+    },
+    {
+      "path": "lib/engine/behavior.ts",
+      "module": "lib/engine",
+      "lines": 52,
+      "bytes": 3867,
+      "hash": "fde7b64829dfe488d754b7db37ec262a1fa408cf1af04178e54ffd38bc174889",
+      "fanIn": 2,
+      "fanOut": 2,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "traceCalls"
+      ]
+    },
+    {
+      "path": "lib/engine/boundary.ts",
+      "module": "lib/engine",
+      "lines": 21,
+      "bytes": 983,
+      "hash": "7184689361a9c886b33528504ebe642288372718866911307c13deef7e296253",
+      "fanIn": 8,
+      "fanOut": 0,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "AnalysisBoundaryError",
+        "GenerationBoundary"
+      ]
+    },
+    {
+      "path": "lib/engine/compatibility.ts",
+      "module": "lib/engine",
+      "lines": 26,
+      "bytes": 3663,
+      "hash": "018996498643ce60a90f395127f9c22349b889d6051f3dda2a7fa4e5512be4cd",
+      "fanIn": 1,
+      "fanOut": 2,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "legacyObservations"
+      ]
+    },
+    {
+      "path": "lib/engine/composition.ts",
+      "module": "lib/engine",
+      "lines": 62,
+      "bytes": 6670,
+      "hash": "690d85aab5b9a7b1d23aeebc3f04d654dfbb3cad54f121eeb92ce708c58a69fa",
+      "fanIn": 1,
+      "fanOut": 6,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "coordinateSnapshot"
+      ]
+    },
+    {
+      "path": "lib/engine/contract.ts",
+      "module": "lib/engine",
+      "lines": 21,
+      "bytes": 1781,
+      "hash": "139693b17e9a2aaa83dd94babd162e170d27c56171202b184a4bca0fd81b895b",
+      "fanIn": 13,
+      "fanOut": 3,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "validateLegacySnapshot",
+        "validateSnapshot",
+        "inspectSnapshot",
+        "serializeSnapshot",
+        "deserializeSnapshot"
+      ]
+    },
+    {
+      "path": "lib/engine/coordinator.ts",
+      "module": "lib/engine",
+      "lines": 27,
+      "bytes": 2006,
+      "hash": "67f6c956cc7d8009c8393df25952732ae30a234b97b427271b935d9cc260639e",
+      "fanIn": 2,
+      "fanOut": 5,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "coordinateSnapshot",
+        "LanguageDriver",
+        "AnalysisCoordinator"
+      ]
+    },
+    {
+      "path": "lib/engine/declarative-metadata.ts",
+      "module": "lib/engine",
+      "lines": 33,
+      "bytes": 2774,
+      "hash": "2b74068f803049c29660d195fc4489a11df492fb76e553978b50f600527f1c07",
+      "fanIn": 1,
+      "fanOut": 2,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "interpretDeclarativeMetadata"
+      ]
+    },
+    {
+      "path": "lib/engine/discovery.ts",
+      "module": "lib/engine",
+      "lines": 128,
+      "bytes": 11090,
+      "hash": "b1fa7c9a4ebc79ea9397f16c5c2fa239f1c02d6865d79227d3fad3d14c3617f1",
+      "fanIn": 3,
+      "fanOut": 6,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "DiscoveredProject",
+        "InventoryFile",
+        "Discovery",
+        "languageOf",
+        "ProjectDiscovery",
+        "expandInventoryGlobs"
+      ]
+    },
+    {
+      "path": "lib/engine/evaluation.ts",
+      "module": "lib/engine",
+      "lines": 56,
+      "bytes": 5465,
+      "hash": "cd81860bc096dc194ad914f960aa1ab2314c568986952e58266ef8d452fd0a6a",
+      "fanIn": 6,
+      "fanOut": 3,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "EvaluationCase",
+        "validateEvaluationCase",
+        "meanReciprocalRank",
+        "metrics",
+        "evaluate"
+      ]
+    },
+    {
+      "path": "lib/engine/index.ts",
+      "module": "lib/engine",
+      "lines": 54,
+      "bytes": 4077,
+      "hash": "a0e6575933ce069a533df091895b7080429f246d731c838c49dbfe2f3fa6a417",
+      "fanIn": 11,
+      "fanOut": 6,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "analyzeLocalRepository",
+        "queryStructure",
+        "readEvidence",
+        "readWitnessEvidence"
+      ]
+    },
+    {
+      "path": "lib/engine/investigations.ts",
+      "module": "lib/engine",
+      "lines": 139,
+      "bytes": 10572,
+      "hash": "388a3fe3fc3429fd0d8b71d7007672066c516ef86cc9a505ec4b1355a247b48b",
+      "fanIn": 12,
+      "fanOut": 1,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "INTENTS",
+        "Intent",
+        "Investigation",
+        "InvestigationResult",
+        "validateInvestigation",
+        "validateInvestigationResult",
+        "investigate",
+        "verifyInvestigation"
+      ]
+    },
+    {
+      "path": "lib/engine/legacy-contract.ts",
+      "module": "lib/engine",
+      "lines": 111,
+      "bytes": 7216,
+      "hash": "1a271fcf8455fc435c3b01751ff9d3c7cb62ad781ff71064edf9ad95e6a5b684",
+      "fanIn": 2,
+      "fanOut": 2,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "validateLegacySnapshot",
+        "serializeLegacySnapshot",
+        "deserializeLegacySnapshot"
+      ]
+    },
+    {
+      "path": "lib/engine/metadata.ts",
+      "module": "lib/engine",
+      "lines": 73,
+      "bytes": 6533,
+      "hash": "40cda0df3a7c5da8a89e3524d90ff46168a83ec65776cb7ea0f3743eeabbe362",
+      "fanIn": 3,
+      "fanOut": 7,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "MetadataRecord",
+        "MetadataIssue",
+        "ProtectedMetadataIndex",
+        "literalProperty"
+      ]
+    },
+    {
+      "path": "lib/engine/profiles.ts",
+      "module": "lib/engine",
+      "lines": 79,
+      "bytes": 8281,
+      "hash": "000579f0bb75d75a4f6e0de4b1e811ac5c6e955c21e9489d66dbbdc23b34032a",
+      "fanIn": 2,
+      "fanOut": 5,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "PROFILE_NAMES",
+        "ProfileName",
+        "ResolutionOutcome",
+        "ProfileContext",
+        "metadataWitness",
+        "createResolutionProfile"
+      ]
+    },
+    {
+      "path": "lib/engine/ranking.ts",
+      "module": "lib/engine",
+      "lines": 111,
+      "bytes": 8996,
+      "hash": "f7b4bff1b8cef68aa3d2eeb771d4042e230961358cf184d252b24ef27f9789a7",
+      "fanIn": 13,
+      "fanOut": 2,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "Candidate",
+        "RankInput",
+        "RankOutput",
+        "Ranker",
+        "RankingOptions",
+        "RankingRun",
+        "snapshotIdentity",
+        "validateRankingOptions",
+        "orderCandidates",
+        "rankInvestigation",
+        "testRankers"
+      ]
+    },
+    {
+      "path": "lib/engine/refresh.ts",
+      "module": "lib/engine",
+      "lines": 114,
+      "bytes": 6392,
+      "hash": "8bdc1b3ca437cebb142c311a0e02365014bb8808fa945919bcce1fa4f7e7a191",
+      "fanIn": 6,
+      "fanOut": 3,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "refreshInputClass",
+        "RefreshCandidate",
+        "RefreshStatus",
+        "RepositoryRefresh"
+      ]
+    },
+    {
+      "path": "lib/engine/registry.ts",
+      "module": "lib/engine",
+      "lines": 38,
+      "bytes": 3410,
+      "hash": "2375a00a5546de4874e81ae657b56e4869925bbaf815dd87e7d02aa2db27868b",
+      "fanIn": 2,
+      "fanOut": 2,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "ExtractorRegistration",
+        "Composition",
+        "ExtractorRegistry",
+        "defaultRegistry"
+      ]
+    },
+    {
+      "path": "lib/engine/snapshot-identity.ts",
+      "module": "lib/engine",
+      "lines": 14,
+      "bytes": 655,
+      "hash": "fbe43b095e46d4c927a6615d32ba0531b357e3ce965a864349bb657b76ceb980",
+      "fanIn": 6,
+      "fanOut": 1,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "snapshotJson"
+      ]
+    },
+    {
+      "path": "lib/engine/static-config.ts",
+      "module": "lib/engine",
+      "lines": 115,
+      "bytes": 11259,
+      "hash": "c0886ee67e3990a630d946fc3417a895cb9a963b8ea98ece105cb47ac580e25d",
+      "fanIn": 3,
+      "fanOut": 2,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "StaticValue",
+        "ConfigGap",
+        "ConfigResult",
+        "CONFIG_LIMITS",
+        "interpretConfig"
+      ]
+    },
+    {
+      "path": "lib/engine/types.ts",
+      "module": "lib/engine",
+      "lines": 69,
+      "bytes": 2358,
+      "hash": "2723742b23dd021df58d406dadd88c37ffee2ce45ba58adafc3b3c9b720b0a91",
+      "fanIn": 29,
+      "fanOut": 0,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "SNAPSHOT_VERSION",
+        "CodeFile",
+        "Evidence",
+        "Relationship",
+        "RouteDeclaration",
+        "Diagnostic",
+        "OutcomeCounts",
+        "CodeSnapshot",
+        "LegacySnapshot",
+        "LanguageAdapter",
+        "StructuralQuery",
+        "StructuralResult"
+      ]
+    },
+    {
+      "path": "lib/graph/categories.ts",
+      "module": "lib/graph",
+      "lines": 23,
+      "bytes": 1028,
+      "hash": "580f36aa5fae2a93b270f362d118ce50a29efab9e3dc0e888732d0559bde475a",
+      "fanIn": 2,
+      "fanOut": 0,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "categoryOf",
+        "categoryLabel",
+        "countByCategory"
+      ]
+    },
+    {
+      "path": "lib/graph/detail.ts",
+      "module": "lib/graph",
+      "lines": 66,
+      "bytes": 2588,
+      "hash": "3586bde6fc121c0d051174bcc6773175187cb326e9db0d92a053f332a273ff6b",
+      "fanIn": 1,
+      "fanOut": 1,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "SUMMARY_LIMIT",
+        "Neighbour",
+        "Neighbours",
+        "neighboursOf",
+        "Ranked",
+        "RepositoryRankings",
+        "rankRepository"
+      ]
+    },
+    {
+      "path": "lib/graph/fold.ts",
+      "module": "lib/graph",
+      "lines": 80,
+      "bytes": 2842,
+      "hash": "93304f5a82081b2a4c2242e7fb92d2e056f11382e8a9370201fbe3ceb7a29155",
+      "fanIn": 5,
+      "fanOut": 0,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "MAX_GROUPS",
+        "Group",
+        "Folding",
+        "foldDirectories"
+      ]
+    },
+    {
+      "path": "lib/graph/highlight.ts",
+      "module": "lib/graph",
+      "lines": 103,
+      "bytes": 4023,
+      "hash": "97694b4a00669c372d2b070f159c279156a8eab1a81ed6bc858cbb72d35ee850",
+      "fanIn": 5,
+      "fanOut": 2,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "Selection",
+        "Highlight",
+        "endpointKey",
+        "highlight",
+        "hoverEndpoint",
+        "CategoryFocus",
+        "categoryFocus"
+      ]
+    },
+    {
+      "path": "lib/graph/insights.ts",
+      "module": "lib/graph",
+      "lines": 170,
+      "bytes": 6585,
+      "hash": "52690a87d4b0fff23360958403a354169f956d92332d50d31149919ea495e05d",
+      "fanIn": 3,
+      "fanOut": 1,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "LONG_FILE_LINES",
+        "INSIGHT_SENTENCES",
+        "Cycle",
+        "Insights",
+        "findInsights",
+        "findCycles"
+      ]
+    },
+    {
+      "path": "lib/graph/labels.ts",
+      "module": "lib/graph",
+      "lines": 16,
+      "bytes": 716,
+      "hash": "40b2fafa88b2ebbd7dbd168b6abdfbd3cb51365bce267c384ea5461b839982f9",
+      "fanIn": 1,
+      "fanOut": 0,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "shortestUniqueLabels"
+      ]
+    },
+    {
+      "path": "lib/graph/reach.ts",
+      "module": "lib/graph",
+      "lines": 73,
+      "bytes": 2958,
+      "hash": "e83cbe20d13368f2ac9a37967b113a4aaf28b3669191825373af8b2d67954660",
+      "fanIn": 5,
+      "fanOut": 0,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "Direction",
+        "DEFAULT_DEPTH",
+        "Adjacency",
+        "adjacency",
+        "Reach",
+        "reach"
+      ]
+    },
+    {
+      "path": "lib/graph/view.ts",
+      "module": "lib/graph",
+      "lines": 187,
+      "bytes": 7209,
+      "hash": "07d272ba438188f4a2f4cf9f69dc81bd19ac5151f17b8680b60d2036fa77d16d",
+      "fanIn": 7,
+      "fanOut": 3,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "MAX_ROWS",
+        "ABOVE_HANDLE",
+        "BELOW_HANDLE",
+        "Row",
+        "FoldedObject",
+        "PanelObject",
+        "MapObject",
+        "MapEdge",
+        "Endpoint",
+        "MapView",
+        "groupId",
+        "buildView",
+        "rankGroupFiles",
+        "clampOffset",
+        "groupFan"
+      ]
+    },
+    {
+      "path": "lib/laya/artifact.ts",
+      "module": "lib/laya",
+      "lines": 2,
+      "bytes": 270,
+      "hash": "f1c6b44cbeb4938dbbdda988a3dec4e4c7196290c1a3618e3604ee820edfc8f9",
+      "fanIn": 4,
+      "fanOut": 0,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "LAYA_ARTIFACT"
+      ]
+    },
+    {
+      "path": "lib/laya/inference-worker.ts",
+      "module": "lib/laya",
+      "lines": 18,
+      "bytes": 884,
+      "hash": "1a035b070adbc8ad955c37a4cf9bef2f86a6a5342890732fb70c41bb458e7ce5",
+      "fanIn": 0,
+      "fanOut": 2,
+      "reachedBy": null,
+      "role": null,
+      "exports": []
+    },
+    {
+      "path": "lib/laya/input.ts",
+      "module": "lib/laya",
+      "lines": 14,
+      "bytes": 1792,
+      "hash": "435fadfaa4062d5fff34dc02e75e24cd95901555d1e8072e328eaec2727c7a5c",
+      "fanIn": 3,
+      "fanOut": 1,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "validateLayaInput"
+      ]
+    },
+    {
+      "path": "lib/laya/investigation.ts",
+      "module": "lib/laya",
+      "lines": 21,
+      "bytes": 1736,
+      "hash": "f22c93f49cec6d4834c1ee376b2fb4d0dcc7d457d561ae68bb6e6dd4c93cb958",
+      "fanIn": 2,
+      "fanOut": 5,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "rankedInvestigation"
+      ]
+    },
+    {
+      "path": "lib/laya/model.ts",
+      "module": "lib/laya",
+      "lines": 65,
+      "bytes": 4962,
+      "hash": "1e77912857693b48f37f58ab26a5feee116fb5478c85363a83f20bb22faa936a",
+      "fanIn": 7,
+      "fanOut": 1,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "FEATURE_VERSION",
+        "INPUTS",
+        "HIDDEN",
+        "PARAMETERS",
+        "Model",
+        "tokens",
+        "features",
+        "validateModel",
+        "forward",
+        "scoreGradient",
+        "infer",
+        "random"
+      ]
+    },
+    {
+      "path": "lib/laya/runtime.ts",
+      "module": "lib/laya",
+      "lines": 94,
+      "bytes": 6234,
+      "hash": "9ec2b3ea72a41ef57bcd0d11c5c5dcdf2030f418c0278c68a40f8d0e7987d420",
+      "fanIn": 4,
+      "fanOut": 3,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "Artifact",
+        "LocalLaya"
+      ]
+    },
+    {
+      "path": "lib/model/behavior.ts",
+      "module": "lib/model",
+      "lines": 7,
+      "bytes": 862,
+      "hash": "d530f278a4280a55bca8a3785805bc19bb4ce0a916d7734462ff2cda90cfc0c6",
+      "fanIn": 7,
+      "fanOut": 0,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "Site",
+        "Declaration",
+        "SymbolRelation",
+        "CallGap",
+        "HandlerBinding",
+        "Behavior"
+      ]
+    },
+    {
+      "path": "lib/model/framework-validate.ts",
+      "module": "lib/model",
+      "lines": 73,
+      "bytes": 20442,
+      "hash": "908c32ee497ee45a8ba4a70e3978f046fa0b6b650d1bd39275682eb8f66f58d1",
+      "fanIn": 1,
+      "fanOut": 4,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "validateAnalysis"
+      ]
+    },
+    {
+      "path": "lib/model/framework.ts",
+      "module": "lib/model",
+      "lines": 24,
+      "bytes": 4852,
+      "hash": "f14ae24907547a6ae9efc997ce82950248de9b4c92921a449ab3cc1f5691dfe9",
+      "fanIn": 10,
+      "fanOut": 1,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "GAP_REASONS",
+        "GapReason",
+        "Resource",
+        "Witness",
+        "Profile",
+        "Variant",
+        "QualificationRecord",
+        "CapabilityAssessment",
+        "MethodState",
+        "Matcher",
+        "FrameworkBinding",
+        "Registration",
+        "Candidate",
+        "Gap",
+        "Assumption",
+        "AnalysisContracts",
+        "factId",
+        "profileId",
+        "variantId",
+        "capabilityId"
+      ]
+    },
+    {
+      "path": "lib/model/positions.ts",
+      "module": "lib/model",
+      "lines": 21,
+      "bytes": 2233,
+      "hash": "c39a72bca98681c9420eeab3b41f2a8d59b23af379ba837635646cb32546e168",
+      "fanIn": 6,
+      "fanOut": 0,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "normalizeRange",
+        "decodeSource"
+      ]
+    },
+    {
+      "path": "lib/model/validate.ts",
+      "module": "lib/model",
+      "lines": 49,
+      "bytes": 4832,
+      "hash": "01a2fd1acea479fcede5d5c5094434f4d5083bb8bbd3cf96e1192dedc895207b",
+      "fanIn": 1,
+      "fanOut": 1,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "validateBehavior"
+      ]
+    },
+    {
+      "path": "lib/parser/adapters/conventions.ts",
+      "module": "lib/parser/adapters",
+      "lines": 45,
+      "bytes": 1480,
+      "hash": "cfaa13be8b57a9d6357c9f1104a456f56cb10b411d5518b5d9d1daedead811ce",
+      "fanIn": 6,
+      "fanOut": 0,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "toolConventions",
+        "toolRole"
+      ]
+    },
+    {
+      "path": "lib/parser/adapters/docusaurus.ts",
+      "module": "lib/parser/adapters",
+      "lines": 27,
+      "bytes": 1449,
+      "hash": "640c4693c9e3fad15ea2028fe9831995997b67bcefba1a30ccbd4fab0ab75e62",
+      "fanIn": 1,
+      "fanOut": 4,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "docusaurusAdapter"
+      ]
+    },
+    {
+      "path": "lib/parser/adapters/express.ts",
+      "module": "lib/parser/adapters",
+      "lines": 49,
+      "bytes": 1799,
+      "hash": "4d0b579a4c44cf7d1923a01b216bc581d41b931dda69d014d0f957663409cd8b",
+      "fanIn": 1,
+      "fanOut": 3,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "expressAdapter"
+      ]
+    },
+    {
+      "path": "lib/parser/adapters/fallback.ts",
+      "module": "lib/parser/adapters",
+      "lines": 14,
+      "bytes": 565,
+      "hash": "805740ad31d34c4e31a756a45e16096909e4884dec7bdab8f89c7d60b7b4005e",
+      "fanIn": 2,
+      "fanOut": 2,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "fallbackAdapter"
+      ]
+    },
+    {
+      "path": "lib/parser/adapters/index.ts",
+      "module": "lib/parser/adapters",
+      "lines": 31,
+      "bytes": 1265,
+      "hash": "d25bcb3927a2d0d63c74f51bb31ffddc6712843666ed56b911cfcf37733aa09c",
+      "fanIn": 2,
+      "fanOut": 7,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "selectAdapter",
+        "compatibleAdapters",
+        "FrameworkAdapter",
+        "ProjectInfo"
+      ]
+    },
+    {
+      "path": "lib/parser/adapters/nestjs.ts",
+      "module": "lib/parser/adapters",
+      "lines": 178,
+      "bytes": 7991,
+      "hash": "08fcf6088a4709cfefe9e2ef1d9084ef5a12af4e76abf50c82a23cfcc641a61c",
+      "fanIn": 1,
+      "fanOut": 3,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "nestjsAdapter"
+      ]
+    },
+    {
+      "path": "lib/parser/adapters/nextjs.ts",
+      "module": "lib/parser/adapters",
+      "lines": 222,
+      "bytes": 11201,
+      "hash": "fe4855a0fbfba9dbedfe098f82cce2fd601ecb68347da0adf7d57afd1f6bc917",
+      "fanIn": 1,
+      "fanOut": 4,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "nextjsAdapter"
+      ]
+    },
+    {
+      "path": "lib/parser/adapters/react.ts",
+      "module": "lib/parser/adapters",
+      "lines": 34,
+      "bytes": 1382,
+      "hash": "e4a9c9a3c72c984291852bdf06a8aa3c6369f1c03df198d251202086a7217c0c",
+      "fanIn": 3,
+      "fanOut": 3,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "reactRole",
+        "reactAdapter"
+      ]
+    },
+    {
+      "path": "lib/parser/adapters/types.ts",
+      "module": "lib/parser/adapters",
+      "lines": 70,
+      "bytes": 3071,
+      "hash": "51ae2cf468c23fb68f217fd65542b814eb22588a8da2e47c1f3755221487284d",
+      "fanIn": 9,
+      "fanOut": 1,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "ProjectInfo",
+        "AdapterFile",
+        "ProjectFiles",
+        "AdapterRoute",
+        "RouteReport",
+        "NO_ROUTES",
+        "FrameworkAdapter"
+      ]
+    },
+    {
+      "path": "lib/parser/behavior.ts",
+      "module": "lib/parser",
+      "lines": 189,
+      "bytes": 14265,
+      "hash": "a1280d4c90467aa9f949b507e1ae50d0d8e186bd4fa1d438423de77cfb20dc05",
+      "fanIn": 1,
+      "fanOut": 3,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "extractBehavior"
+      ]
+    },
+    {
+      "path": "lib/parser/contract.ts",
+      "module": "lib/parser",
+      "lines": 259,
+      "bytes": 10936,
+      "hash": "fb6949a41794a0de9ff4ab359de8880f8cbf83e53050c455941a66166e28c9fe",
+      "fanIn": 5,
+      "fanOut": 2,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "serializeParseResult",
+        "deserializeParseResult",
+        "validateParseResult",
+        "ContractError"
+      ]
+    },
+    {
+      "path": "lib/parser/extract.ts",
+      "module": "lib/parser",
+      "lines": 207,
+      "bytes": 9119,
+      "hash": "6a9be62ad6bb53cc4eda0c08430807ab3670bddd1c7b56d1bac095b718569c87",
+      "fanIn": 1,
+      "fanOut": 1,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "RawImport",
+        "extractImports",
+        "WHOLE_MODULE",
+        "extractExports"
+      ]
+    },
+    {
+      "path": "lib/parser/graph.ts",
+      "module": "lib/parser",
+      "lines": 42,
+      "bytes": 1720,
+      "hash": "2041a96e914882663c058d6bb7c8832c0397ad3ee7a3d5b3e7b1f14001f82b1d",
+      "fanIn": 1,
+      "fanOut": 1,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "dedupeEdges",
+        "fanCounts"
+      ]
+    },
+    {
+      "path": "lib/parser/index.ts",
+      "module": "lib/parser",
+      "lines": 249,
+      "bytes": 10474,
+      "hash": "c88f88f86e56d53211594a87f8de3ef04e90c629048aff81c4715f99ed81ffe6",
+      "fanIn": 7,
+      "fanOut": 9,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "Selection",
+        "parseRepository",
+        "selectFiles",
+        "createSyntaxSession",
+        "parseSelection"
+      ]
+    },
+    {
+      "path": "lib/parser/resolve.ts",
+      "module": "lib/parser",
+      "lines": 325,
+      "bytes": 14606,
+      "hash": "d4ab13efc022742cfc49a424028beb997b7e964d45f9c95928395760da6fa3dc",
+      "fanIn": 2,
+      "fanOut": 3,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "RepositoryIndex",
+        "Resolver",
+        "createResolver"
+      ]
+    },
+    {
+      "path": "lib/parser/types.ts",
+      "module": "lib/parser",
+      "lines": 179,
+      "bytes": 5350,
+      "hash": "ec3670f0db85dba7fa189ba09b42cda6fbcdfea98febd63e9028b5628b91b6d2",
+      "fanIn": 19,
+      "fanOut": 1,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "SCHEMA_VERSION",
+        "EdgeKind",
+        "EDGE_KINDS",
+        "ParsedFile",
+        "Project",
+        "Edge",
+        "Route",
+        "OmittedRoute",
+        "WithheldRoutes",
+        "SkipReason",
+        "SkippedFile",
+        "ExcludedDirectory",
+        "ExternalKind",
+        "ExcludedReason",
+        "UnresolvedReason",
+        "ImportStatus",
+        "UnresolvedImport",
+        "StatusCounts",
+        "Coverage",
+        "ConfigReport",
+        "ParseResult"
+      ]
+    },
+    {
+      "path": "lib/parser/walk.ts",
+      "module": "lib/parser",
+      "lines": 223,
+      "bytes": 8979,
+      "hash": "3969f8cc87fc970ba2a8ca8ba1b6e6c87f307b95b77584476667659da615ef00",
+      "fanIn": 3,
+      "fanOut": 6,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "CODE_EXTENSIONS",
+        "MAX_FILE_BYTES",
+        "CandidateFile",
+        "WalkResult",
+        "withinProject",
+        "toPosix",
+        "isCodeFile",
+        "isDeclarationFile",
+        "moduleOf",
+        "walkRepository"
+      ]
+    },
+    {
+      "path": "lib/repository/metadata-policy.ts",
+      "module": "lib/repository",
+      "lines": 4,
+      "bytes": 434,
+      "hash": "65c0961dc9c8756071a47c4a2575e731c221bd1532b2ced184ebed36ce24c514",
+      "fanIn": 5,
+      "fanOut": 0,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "publicMetadataName"
+      ]
+    },
+    {
+      "path": "lib/repository/read-policy.ts",
+      "module": "lib/repository",
+      "lines": 249,
+      "bytes": 12778,
+      "hash": "e033243b2d5d7999a2cbca7dc843f8de6c225dac51ab70bc4159e3b23f16ad54",
+      "fanIn": 12,
+      "fanOut": 1,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "READ_LIMITS",
+        "ReadLimits",
+        "ReadPurpose",
+        "RepositoryReadError",
+        "inside",
+        "directoryExclusion",
+        "RepositoryReader"
+      ]
+    },
+    {
+      "path": "lib/roles.ts",
+      "module": "lib",
+      "lines": 126,
+      "bytes": 5236,
+      "hash": "3476a3c1b50a7a54d5dfe25da6330830d387b21a17073dfcb4ec7ab6e90f4393",
+      "fanIn": 18,
+      "fanOut": 0,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "ROLES",
+        "Role",
+        "ROLE_IDS",
+        "MODEL_ROLES",
+        "ModelRole",
+        "isModelRole",
+        "FRAMEWORK_ROLES",
+        "Framework",
+        "UNCLASSIFIED",
+        "RailKey",
+        "railLabel",
+        "railCategories"
+      ]
+    },
+    {
+      "path": "lib/storage/evaluations.ts",
+      "module": "lib/storage",
+      "lines": 37,
+      "bytes": 2480,
+      "hash": "a726c62c3ba3a2b703cfb4fae55c150dd1ad2f6fe7b5eb3107f54bb47c1fd00c",
+      "fanIn": 2,
+      "fanOut": 2,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "EvaluationStore"
+      ]
+    },
+    {
+      "path": "lib/storage/measurements.ts",
+      "module": "lib/storage",
+      "lines": 18,
+      "bytes": 1542,
+      "hash": "4e6eb88c823f0e0f84984cb8dd6f0b5ba3ad3c32473e76992b12270b50f1346a",
+      "fanIn": 5,
+      "fanOut": 0,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "TASK_CATEGORIES",
+        "MeasurementInput",
+        "Measurement",
+        "validateMeasurement",
+        "validateApplicationVersion"
+      ]
+    },
+    {
+      "path": "lib/storage/sqlite.ts",
+      "module": "lib/storage",
+      "lines": 194,
+      "bytes": 15022,
+      "hash": "50ce8b8f53d7f655bf11f2b407f78496bc5aa353e63e20b7012c9fbf0d04dc08",
+      "fanIn": 10,
+      "fanOut": 4,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "StorageError",
+        "migrate",
+        "SqliteAnalysisStore"
+      ]
+    },
+    {
+      "path": "lib/storage/types.ts",
+      "module": "lib/storage",
+      "lines": 28,
+      "bytes": 1423,
+      "hash": "609ee149fdcda19a7716546db6ab7890e68ece342f177d267e6e263bf9462f3e",
+      "fanIn": 3,
+      "fanOut": 2,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "JobState",
+        "StoredRepository",
+        "AnalysisStore"
+      ]
+    },
+    {
+      "path": "lib/theme.ts",
+      "module": "lib",
+      "lines": 9,
+      "bytes": 371,
+      "hash": "84a8dd7a93de7bd40bd28b28cf2c184ad2ba40ef491daf060dc25ca043520d6f",
+      "fanIn": 1,
+      "fanOut": 0,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "THEMES",
+        "Theme",
+        "THEME_STORAGE",
+        "parseTheme"
+      ]
+    },
+    {
+      "path": "lib/time.ts",
+      "module": "lib",
+      "lines": 11,
+      "bytes": 565,
+      "hash": "fbd56cb604584b3cdf63dfdfdbd999d9f7d4569572bbe73200f5ca4198a595f5",
+      "fanIn": 0,
+      "fanOut": 0,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "ago"
+      ]
+    },
+    {
+      "path": "next.config.ts",
+      "module": ".",
+      "lines": 4,
+      "bytes": 145,
+      "hash": "2e323e44cd9406f1421bf7dcfa978b0f6324e55e9eadbc711a0b76bd0cfe23ba",
+      "fanIn": 0,
+      "fanOut": 0,
+      "reachedBy": "config file, loaded by its tool",
+      "role": "config",
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "path": "postcss.config.mjs",
+      "module": ".",
+      "lines": 7,
+      "bytes": 101,
+      "hash": "7b299d3d3b16699ddda397c0b2373b3af4f25f8fc9ccc9b3d9e64ef083bc1c21",
+      "fanIn": 0,
+      "fanOut": 0,
+      "reachedBy": "config file, loaded by its tool",
+      "role": "config",
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "path": "scripts/benchmark-laya.ts",
+      "module": "scripts",
+      "lines": 22,
+      "bytes": 1964,
+      "hash": "53bb24bd3cc5e12ee84834c4f92ca2fad1c37a506f5fb26bec72d47511e07196",
+      "fanIn": 0,
+      "fanOut": 2,
+      "reachedBy": null,
+      "role": null,
+      "exports": []
+    },
+    {
+      "path": "scripts/benchmark-pilot.ts",
+      "module": "scripts",
+      "lines": 24,
+      "bytes": 2216,
+      "hash": "c9ba7ecc38369a92ec398246bbe788a6db3adb3677fd70c46127761ffee8f5c4",
+      "fanIn": 0,
+      "fanOut": 3,
+      "reachedBy": null,
+      "role": null,
+      "exports": []
+    },
+    {
+      "path": "scripts/benchmark-refresh.ts",
+      "module": "scripts",
+      "lines": 35,
+      "bytes": 2971,
+      "hash": "a0e59e89e09d766d0ec88dc5867e181b9d5f6af27b8b8f4228e0dc3ae3457793",
+      "fanIn": 0,
+      "fanOut": 3,
+      "reachedBy": null,
+      "role": null,
+      "exports": []
+    },
+    {
+      "path": "scripts/engine.ts",
+      "module": "scripts",
+      "lines": 27,
+      "bytes": 1687,
+      "hash": "e2859abc2a20c12757e9a798959fc7d32ecdcfe1f437cb0297e22ee2c36908d1",
+      "fanIn": 0,
+      "fanOut": 3,
+      "reachedBy": null,
+      "role": null,
+      "exports": []
+    },
+    {
+      "path": "scripts/evaluate-ranking.ts",
+      "module": "scripts",
+      "lines": 65,
+      "bytes": 4791,
+      "hash": "d8ad9f355f09d9f1bfb0eb4bfed5244171a4c404067450c917972d230f191b70",
+      "fanIn": 0,
+      "fanOut": 4,
+      "reachedBy": null,
+      "role": null,
+      "exports": []
+    },
+    {
+      "path": "scripts/insights.ts",
+      "module": "scripts",
+      "lines": 52,
+      "bytes": 2629,
+      "hash": "e02a3fbb6db4839dbb6b0cca50d29bc0e90754f4362e9a4be904c9b766821777",
+      "fanIn": 0,
+      "fanOut": 3,
+      "reachedBy": null,
+      "role": null,
+      "exports": []
+    },
+    {
+      "path": "scripts/laya-dataset.ts",
+      "module": "scripts",
+      "lines": 77,
+      "bytes": 6840,
+      "hash": "73cd1b30fd065b58687ee337291d7f7f8c5731b6d792cda8a0a7cdbd922ea7da",
+      "fanIn": 5,
+      "fanOut": 4,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "DatasetCase",
+        "Dataset",
+        "datasetHash",
+        "buildDataset",
+        "verifySplits"
+      ]
+    },
+    {
+      "path": "scripts/laya-training.ts",
+      "module": "scripts",
+      "lines": 66,
+      "bytes": 5178,
+      "hash": "a0c65cb4d88923619aef28785b651c1b9eba57b9e551ebaa693e62d5198b8966",
+      "fanIn": 4,
+      "fanOut": 3,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "Pair",
+        "TRAINING",
+        "pairs",
+        "pairLoss",
+        "train"
+      ]
+    },
+    {
+      "path": "scripts/map-counts.ts",
+      "module": "scripts",
+      "lines": 50,
+      "bytes": 2622,
+      "hash": "f81547721da14966b95c9c09322e90a8fde120d71ac2f1acea489bd78b26df19",
+      "fanIn": 0,
+      "fanOut": 3,
+      "reachedBy": null,
+      "role": null,
+      "exports": []
+    },
+    {
+      "path": "scripts/package-engine.ts",
+      "module": "scripts",
+      "lines": 47,
+      "bytes": 3962,
+      "hash": "ae14cc5402f42fe8fbcaae31cadad18cfcaf0029d2c8bbbdadbee6c236e19df7",
+      "fanIn": 0,
+      "fanOut": 1,
+      "reachedBy": null,
+      "role": null,
+      "exports": []
+    },
+    {
+      "path": "scripts/parse.ts",
+      "module": "scripts",
+      "lines": 147,
+      "bytes": 7861,
+      "hash": "516e8a47c5766e2f70a3e07af6616951c7482593557c4bcfb361ff2b900710c1",
+      "fanIn": 0,
+      "fanOut": 4,
+      "reachedBy": null,
+      "role": null,
+      "exports": []
+    },
+    {
+      "path": "scripts/phase06-fixture.ts",
+      "module": "scripts",
+      "lines": 38,
+      "bytes": 3647,
+      "hash": "044fabec55802b086d5b1cbff918e353413ebc8bd9d39616f39346877c614d5d",
+      "fanIn": 2,
+      "fanOut": 0,
+      "reachedBy": null,
+      "role": null,
+      "exports": [
+        "createBehaviorFixture"
+      ]
+    },
+    {
+      "path": "scripts/qualify-laya.ts",
+      "module": "scripts",
+      "lines": 65,
+      "bytes": 7832,
+      "hash": "6d618b7475553b0da48e1c396a169f2ebc99cecaf2c73e5c34ed8df0344569e6",
+      "fanIn": 0,
+      "fanOut": 7,
+      "reachedBy": null,
+      "role": null,
+      "exports": []
+    },
+    {
+      "path": "scripts/reproduce-laya.ts",
+      "module": "scripts",
+      "lines": 18,
+      "bytes": 1154,
+      "hash": "7a491d85c1a03bd14181343c7a310c02a823ccac109ddba6ac81a26f0a350d11",
+      "fanIn": 0,
+      "fanOut": 3,
+      "reachedBy": null,
+      "role": null,
+      "exports": []
+    },
+    {
+      "path": "scripts/sidecar.ts",
+      "module": "scripts",
+      "lines": 144,
+      "bytes": 9482,
+      "hash": "a8503b59d808b6482f4d69fc7efb8108ebc744f0de399a4472b117b85b5090a5",
+      "fanIn": 0,
+      "fanOut": 10,
+      "reachedBy": null,
+      "role": null,
+      "exports": []
+    },
+    {
+      "path": "scripts/smoke-engine.ts",
+      "module": "scripts",
+      "lines": 211,
+      "bytes": 19851,
+      "hash": "afea6dba152acf0c7bba76d1c6e9c2f31945361404554574f242cb5b2285a09a",
+      "fanIn": 0,
+      "fanOut": 5,
+      "reachedBy": null,
+      "role": null,
+      "exports": []
+    },
+    {
+      "path": "scripts/storage.ts",
+      "module": "scripts",
+      "lines": 51,
+      "bytes": 3055,
+      "hash": "c12748be3144b7bd73724bcefd7f832332d580af9e8615af954d4788bffe7126",
+      "fanIn": 0,
+      "fanOut": 3,
+      "reachedBy": null,
+      "role": null,
+      "exports": []
+    },
+    {
+      "path": "scripts/train-laya.ts",
+      "module": "scripts",
+      "lines": 28,
+      "bytes": 2836,
+      "hash": "e654bb46d988fc4e81eee51561ecd1cf82c181446526e82364c8a98e14b6dfb0",
+      "fanIn": 0,
+      "fanOut": 5,
+      "reachedBy": null,
+      "role": null,
+      "exports": []
+    },
+    {
+      "path": "scripts/verify-desktop-assets.ts",
+      "module": "scripts",
+      "lines": 21,
+      "bytes": 1292,
+      "hash": "261c93e3003ce09beb8b7ec1ffe6652ed6d4380c4da0f5a9984ba53887eeb1eb",
+      "fanIn": 0,
+      "fanOut": 0,
+      "reachedBy": null,
+      "role": null,
+      "exports": []
+    },
+    {
+      "path": "tests/framework-support/fs-01.test.ts",
+      "module": "tests/framework-support",
+      "lines": 156,
+      "bytes": 23617,
+      "hash": "5ab02c0f1c8a5406c7c85af24e3934bfcb36313d2afce20a218338f8c64b2891",
+      "fanIn": 0,
+      "fanOut": 13,
+      "reachedBy": "test file, collected by the test runner",
+      "role": "test",
+      "exports": []
+    },
+    {
+      "path": "tests/framework-support/fs-02.test.ts",
+      "module": "tests/framework-support",
+      "lines": 225,
+      "bytes": 32616,
+      "hash": "876c0eac7c87211473980ffa0cf29b7640c8de9cb2bd4db02e54753aab4fb7b6",
+      "fanIn": 0,
+      "fanOut": 15,
+      "reachedBy": "test file, collected by the test runner",
+      "role": "test",
+      "exports": []
+    },
+    {
+      "path": "tests/phase-01.test.ts",
+      "module": "tests",
+      "lines": 327,
+      "bytes": 19997,
+      "hash": "e14ce12788895f2cf078857e947fc245791f22cedf5f9982c1d0e0b16eacd6f5",
+      "fanIn": 0,
+      "fanOut": 8,
+      "reachedBy": "test file, collected by the test runner",
+      "role": "test",
+      "exports": []
+    },
+    {
+      "path": "tests/phase-02.test.ts",
+      "module": "tests",
+      "lines": 140,
+      "bytes": 10443,
+      "hash": "a2d4ec27ea5e1cc659f500b5bc2b5299ebc806785b4d37a124631ee9e7ac4149",
+      "fanIn": 0,
+      "fanOut": 4,
+      "reachedBy": "test file, collected by the test runner",
+      "role": "test",
+      "exports": []
+    },
+    {
+      "path": "tests/phase-03.test.ts",
+      "module": "tests",
+      "lines": 217,
+      "bytes": 14961,
+      "hash": "970caba81db174cab80ca90c9a2cd2f79cd1dd3ec2f5b2cb6b758852dea418b7",
+      "fanIn": 0,
+      "fanOut": 5,
+      "reachedBy": "test file, collected by the test runner",
+      "role": "test",
+      "exports": []
+    },
+    {
+      "path": "tests/phase-04.test.ts",
+      "module": "tests",
+      "lines": 159,
+      "bytes": 13435,
+      "hash": "d1210c5e9a2a52b64c40242942616359b089524a15b582911514ca6fa9cecf4c",
+      "fanIn": 0,
+      "fanOut": 7,
+      "reachedBy": "test file, collected by the test runner",
+      "role": "test",
+      "exports": []
+    },
+    {
+      "path": "tests/phase-05.test.ts",
+      "module": "tests",
+      "lines": 142,
+      "bytes": 11983,
+      "hash": "6f121729437b3d7d78fd91a633bd5efe7c4014b521727ef2e1bf2dd3c945ec80",
+      "fanIn": 0,
+      "fanOut": 6,
+      "reachedBy": "test file, collected by the test runner",
+      "role": "test",
+      "exports": []
+    },
+    {
+      "path": "tests/phase-06.test.ts",
+      "module": "tests",
+      "lines": 172,
+      "bytes": 15056,
+      "hash": "8456cc307a89bc39483ba5025ac4aaeee0cf05814d7144ee6c795e6a7a9f587c",
+      "fanIn": 0,
+      "fanOut": 7,
+      "reachedBy": "test file, collected by the test runner",
+      "role": "test",
+      "exports": []
+    },
+    {
+      "path": "tests/phase-07.test.ts",
+      "module": "tests",
+      "lines": 139,
+      "bytes": 10741,
+      "hash": "edcabe2635a34e38d6a9d1ded4c68f8a4a109a34b771449e9bc7c62869670b4e",
+      "fanIn": 0,
+      "fanOut": 7,
+      "reachedBy": "test file, collected by the test runner",
+      "role": "test",
+      "exports": []
+    },
+    {
+      "path": "tests/phase-08.test.ts",
+      "module": "tests",
+      "lines": 122,
+      "bytes": 9986,
+      "hash": "cd0ee406d00b8dd91b41557568cc4f5d73b1e431d73555610dbdbcdee5bf4135",
+      "fanIn": 0,
+      "fanOut": 5,
+      "reachedBy": "test file, collected by the test runner",
+      "role": "test",
+      "exports": []
+    },
+    {
+      "path": "tests/phase-09.test.ts",
+      "module": "tests",
+      "lines": 166,
+      "bytes": 15369,
+      "hash": "9a7c42f71b1636b3b72ff2a2df37f01e352b3856fa43205e0793c86c5eaca8e2",
+      "fanIn": 0,
+      "fanOut": 14,
+      "reachedBy": "test file, collected by the test runner",
+      "role": "test",
+      "exports": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "app/page.tsx",
+      "target": "components/desktop-explorer.tsx",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "@/components/desktop-explorer",
+      "line": 1
+    },
+    {
+      "source": "components/analysis-contracts.tsx",
+      "target": "lib/desktop/projection.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "@/lib/desktop/projection",
+      "line": 4
+    },
+    {
+      "source": "components/analysis-contracts.tsx",
+      "target": "lib/desktop/protocol.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "@/lib/desktop/protocol",
+      "line": 7
+    },
+    {
+      "source": "components/analysis-contracts.tsx",
+      "target": "lib/engine/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "@/lib/engine/types",
+      "line": 3
+    },
+    {
+      "source": "components/analysis-contracts.tsx",
+      "target": "lib/model/framework.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "@/lib/model/framework",
+      "line": 9
+    },
+    {
+      "source": "components/analysis-contracts.tsx",
+      "target": "lib/model/positions.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "@/lib/model/positions",
+      "line": 8
+    },
+    {
+      "source": "components/analysis-view.tsx",
+      "target": "components/category-rail.tsx",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./category-rail",
+      "line": 11
+    },
+    {
+      "source": "components/analysis-view.tsx",
+      "target": "components/detail-pane.tsx",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./detail-pane",
+      "line": 12
+    },
+    {
+      "source": "components/analysis-view.tsx",
+      "target": "components/explanation-panel.tsx",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./explanation-panel",
+      "line": 13
+    },
+    {
+      "source": "components/analysis-view.tsx",
+      "target": "components/map/dependency-map.tsx",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./map/dependency-map",
+      "line": 14
+    },
+    {
+      "source": "components/analysis-view.tsx",
+      "target": "components/route-table.tsx",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./route-table",
+      "line": 15
+    },
+    {
+      "source": "components/analysis-view.tsx",
+      "target": "components/shell.tsx",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./shell",
+      "line": 16
+    },
+    {
+      "source": "components/analysis-view.tsx",
+      "target": "components/workspace-ui.tsx",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./workspace-ui",
+      "line": 17
+    },
+    {
+      "source": "components/analysis-view.tsx",
+      "target": "lib/analysis/operations.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "@/lib/analysis/operations",
+      "line": 4
+    },
+    {
+      "source": "components/analysis-view.tsx",
+      "target": "lib/graph/fold.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "@/lib/graph/fold",
+      "line": 5
+    },
+    {
+      "source": "components/analysis-view.tsx",
+      "target": "lib/graph/highlight.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "@/lib/graph/highlight",
+      "line": 6
+    },
+    {
+      "source": "components/analysis-view.tsx",
+      "target": "lib/graph/reach.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "@/lib/graph/reach",
+      "line": 7
+    },
+    {
+      "source": "components/analysis-view.tsx",
+      "target": "lib/graph/view.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "@/lib/graph/view",
+      "line": 8
+    },
+    {
+      "source": "components/analysis-view.tsx",
+      "target": "lib/parser/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "@/lib/parser/types",
+      "line": 9
+    },
+    {
+      "source": "components/analysis-view.tsx",
+      "target": "lib/roles.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "@/lib/roles",
+      "line": 10
+    },
+    {
+      "source": "components/behavior-traces.tsx",
+      "target": "lib/engine/behavior.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "@/lib/engine/behavior",
+      "line": 5
+    },
+    {
+      "source": "components/behavior-traces.tsx",
+      "target": "lib/engine/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "@/lib/engine/types",
+      "line": 3
+    },
+    {
+      "source": "components/behavior-traces.tsx",
+      "target": "lib/model/behavior.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "@/lib/model/behavior",
+      "line": 4
+    },
+    {
+      "source": "components/category-rail.tsx",
+      "target": "lib/parser/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "@/lib/parser/types",
+      "line": 2
+    },
+    {
+      "source": "components/category-rail.tsx",
+      "target": "lib/roles.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "@/lib/roles",
+      "line": 1
+    },
+    {
+      "source": "components/desktop-explorer.tsx",
+      "target": "components/analysis-contracts.tsx",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./analysis-contracts",
+      "line": 8
+    },
+    {
+      "source": "components/desktop-explorer.tsx",
+      "target": "components/analysis-view.tsx",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./analysis-view",
+      "line": 13
+    },
+    {
+      "source": "components/desktop-explorer.tsx",
+      "target": "components/behavior-traces.tsx",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./behavior-traces",
+      "line": 19
+    },
+    {
+      "source": "components/desktop-explorer.tsx",
+      "target": "components/external-ai.tsx",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./external-ai",
+      "line": 18
+    },
+    {
+      "source": "components/desktop-explorer.tsx",
+      "target": "components/investigations.tsx",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./investigations",
+      "line": 15
+    },
+    {
+      "source": "components/desktop-explorer.tsx",
+      "target": "components/pilot-measurements.tsx",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./pilot-measurements",
+      "line": 17
+    },
+    {
+      "source": "components/desktop-explorer.tsx",
+      "target": "components/ranked-investigation.tsx",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./ranked-investigation",
+      "line": 16
+    },
+    {
+      "source": "components/desktop-explorer.tsx",
+      "target": "components/theme-control.tsx",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./theme-control",
+      "line": 14
+    },
+    {
+      "source": "components/desktop-explorer.tsx",
+      "target": "components/workspace-ui.tsx",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./workspace-ui",
+      "line": 20
+    },
+    {
+      "source": "components/desktop-explorer.tsx",
+      "target": "lib/ai/selection.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "@/lib/ai/selection",
+      "line": 11
+    },
+    {
+      "source": "components/desktop-explorer.tsx",
+      "target": "lib/analysis/operations.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "@/lib/analysis/operations",
+      "line": 10
+    },
+    {
+      "source": "components/desktop-explorer.tsx",
+      "target": "lib/desktop/projection.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "@/lib/desktop/projection",
+      "line": 7
+    },
+    {
+      "source": "components/desktop-explorer.tsx",
+      "target": "lib/desktop/protocol.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "@/lib/desktop/protocol",
+      "line": 6
+    },
+    {
+      "source": "components/desktop-explorer.tsx",
+      "target": "lib/engine/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "@/lib/engine/types",
+      "line": 9
+    },
+    {
+      "source": "components/desktop-explorer.tsx",
+      "target": "lib/storage/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "@/lib/storage/types",
+      "line": 12
+    },
+    {
+      "source": "components/detail-pane.tsx",
+      "target": "components/explanation-panel.tsx",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./explanation-panel",
+      "line": 13
+    },
+    {
+      "source": "components/detail-pane.tsx",
+      "target": "components/map/swatch.tsx",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./map/swatch",
+      "line": 14
+    },
+    {
+      "source": "components/detail-pane.tsx",
+      "target": "components/workspace-ui.tsx",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./workspace-ui",
+      "line": 15
+    },
+    {
+      "source": "components/detail-pane.tsx",
+      "target": "lib/graph/categories.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "@/lib/graph/categories",
+      "line": 4
+    },
+    {
+      "source": "components/detail-pane.tsx",
+      "target": "lib/graph/detail.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "@/lib/graph/detail",
+      "line": 5
+    },
+    {
+      "source": "components/detail-pane.tsx",
+      "target": "lib/graph/fold.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "@/lib/graph/fold",
+      "line": 6
+    },
+    {
+      "source": "components/detail-pane.tsx",
+      "target": "lib/graph/highlight.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "@/lib/graph/highlight",
+      "line": 7
+    },
+    {
+      "source": "components/detail-pane.tsx",
+      "target": "lib/graph/insights.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "@/lib/graph/insights",
+      "line": 8
+    },
+    {
+      "source": "components/detail-pane.tsx",
+      "target": "lib/graph/reach.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "@/lib/graph/reach",
+      "line": 9
+    },
+    {
+      "source": "components/detail-pane.tsx",
+      "target": "lib/graph/view.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "@/lib/graph/view",
+      "line": 10
+    },
+    {
+      "source": "components/detail-pane.tsx",
+      "target": "lib/parser/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "@/lib/parser/types",
+      "line": 11
+    },
+    {
+      "source": "components/detail-pane.tsx",
+      "target": "lib/roles.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "@/lib/roles",
+      "line": 12
+    },
+    {
+      "source": "components/explanation-panel.tsx",
+      "target": "components/explanation-text.tsx",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./explanation-text",
+      "line": 7
+    },
+    {
+      "source": "components/explanation-panel.tsx",
+      "target": "lib/analysis/operations.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "@/lib/analysis/operations",
+      "line": 5
+    },
+    {
+      "source": "components/explanation-panel.tsx",
+      "target": "lib/roles.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "@/lib/roles",
+      "line": 6
+    },
+    {
+      "source": "components/external-ai.tsx",
+      "target": "components/payload-preview.tsx",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./payload-preview",
+      "line": 6
+    },
+    {
+      "source": "components/external-ai.tsx",
+      "target": "components/workspace-ui.tsx",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./workspace-ui",
+      "line": 7
+    },
+    {
+      "source": "components/external-ai.tsx",
+      "target": "lib/ai/selection.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "@/lib/ai/selection",
+      "line": 5
+    },
+    {
+      "source": "components/external-ai.tsx",
+      "target": "lib/analysis/operations.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "@/lib/analysis/operations",
+      "line": 8
+    },
+    {
+      "source": "components/investigations.tsx",
+      "target": "components/explanation-text.tsx",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./explanation-text",
+      "line": 8
+    },
+    {
+      "source": "components/investigations.tsx",
+      "target": "lib/analysis/operations.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "@/lib/analysis/operations",
+      "line": 7
+    },
+    {
+      "source": "components/investigations.tsx",
+      "target": "lib/engine/investigations.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "@/lib/engine/investigations",
+      "line": 6
+    },
+    {
+      "source": "components/investigations.tsx",
+      "target": "lib/engine/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "@/lib/engine/types",
+      "line": 5
+    },
+    {
+      "source": "components/map/dependency-map.tsx",
+      "target": "components/map/layout.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./layout",
+      "line": 25
+    },
+    {
+      "source": "components/map/dependency-map.tsx",
+      "target": "components/map/nodes.tsx",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./nodes",
+      "line": 26
+    },
+    {
+      "source": "components/map/dependency-map.tsx",
+      "target": "lib/graph/fold.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "@/lib/graph/fold",
+      "line": 14
+    },
+    {
+      "source": "components/map/dependency-map.tsx",
+      "target": "lib/graph/highlight.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "@/lib/graph/highlight",
+      "line": 15
+    },
+    {
+      "source": "components/map/dependency-map.tsx",
+      "target": "lib/graph/view.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "@/lib/graph/view",
+      "line": 22
+    },
+    {
+      "source": "components/map/dependency-map.tsx",
+      "target": "lib/parser/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "@/lib/parser/types",
+      "line": 24
+    },
+    {
+      "source": "components/map/dependency-map.tsx",
+      "target": "lib/roles.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "@/lib/roles",
+      "line": 23
+    },
+    {
+      "source": "components/map/layout.ts",
+      "target": "lib/graph/view.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "@/lib/graph/view",
+      "line": 2
+    },
+    {
+      "source": "components/map/nodes.tsx",
+      "target": "components/map/layout.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./layout",
+      "line": 8
+    },
+    {
+      "source": "components/map/nodes.tsx",
+      "target": "components/map/swatch.tsx",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./swatch",
+      "line": 9
+    },
+    {
+      "source": "components/map/nodes.tsx",
+      "target": "lib/graph/categories.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "@/lib/graph/categories",
+      "line": 5
+    },
+    {
+      "source": "components/map/nodes.tsx",
+      "target": "lib/graph/highlight.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "@/lib/graph/highlight",
+      "line": 6
+    },
+    {
+      "source": "components/map/nodes.tsx",
+      "target": "lib/graph/view.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "@/lib/graph/view",
+      "line": 7
+    },
+    {
+      "source": "components/pilot-measurements.tsx",
+      "target": "lib/storage/measurements.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "@/lib/storage/measurements",
+      "line": 5
+    },
+    {
+      "source": "components/ranked-investigation.tsx",
+      "target": "components/workspace-ui.tsx",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./workspace-ui",
+      "line": 7
+    },
+    {
+      "source": "components/ranked-investigation.tsx",
+      "target": "lib/desktop/ranking.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "@/lib/desktop/ranking",
+      "line": 8
+    },
+    {
+      "source": "components/ranked-investigation.tsx",
+      "target": "lib/engine/snapshot-identity.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "@/lib/engine/snapshot-identity",
+      "line": 6
+    },
+    {
+      "source": "components/ranked-investigation.tsx",
+      "target": "lib/engine/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "@/lib/engine/types",
+      "line": 5
+    },
+    {
+      "source": "components/route-table.tsx",
+      "target": "lib/graph/highlight.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "@/lib/graph/highlight",
+      "line": 4
+    },
+    {
+      "source": "components/route-table.tsx",
+      "target": "lib/parser/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "@/lib/parser/types",
+      "line": 5
+    },
+    {
+      "source": "components/state-mark.tsx",
+      "target": "lib/storage/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "@/lib/storage/types",
+      "line": 1
+    },
+    {
+      "source": "components/theme-control.tsx",
+      "target": "lib/theme.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "@/lib/theme",
+      "line": 5
+    },
+    {
+      "source": "lib/ai/evidence.ts",
+      "target": "lib/ai/selection.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./selection.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/ai/evidence.ts",
+      "target": "lib/engine/investigations.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../engine/investigations.ts",
+      "line": 4
+    },
+    {
+      "source": "lib/ai/evidence.ts",
+      "target": "lib/engine/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../engine/types.ts",
+      "line": 3
+    },
+    {
+      "source": "lib/ai/prompts.ts",
+      "target": "lib/parser/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../parser/types.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/ai/prompts.ts",
+      "target": "lib/roles.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../roles.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/ai/selection.ts",
+      "target": "lib/engine/investigations.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../engine/investigations.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/analysis/operations.ts",
+      "target": "lib/engine/investigations.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../engine/investigations.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/analysis/operations.ts",
+      "target": "lib/roles.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../roles.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/desktop/projection.ts",
+      "target": "lib/engine/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../engine/types.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/desktop/projection.ts",
+      "target": "lib/parser/types.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../parser/types.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/desktop/projection.ts",
+      "target": "lib/roles.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../roles.ts",
+      "line": 3
+    },
+    {
+      "source": "lib/desktop/protocol.ts",
+      "target": "lib/ai/selection.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../ai/selection.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/desktop/protocol.ts",
+      "target": "lib/desktop/ranking.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./ranking.ts",
+      "line": 6
+    },
+    {
+      "source": "lib/desktop/protocol.ts",
+      "target": "lib/engine/contract.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../engine/contract.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/desktop/protocol.ts",
+      "target": "lib/engine/investigations.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../engine/investigations.ts",
+      "line": 4
+    },
+    {
+      "source": "lib/desktop/protocol.ts",
+      "target": "lib/engine/refresh.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../engine/refresh.ts",
+      "line": 5
+    },
+    {
+      "source": "lib/desktop/protocol.ts",
+      "target": "lib/engine/types.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../engine/types.ts",
+      "line": 3
+    },
+    {
+      "source": "lib/desktop/ranking.ts",
+      "target": "lib/engine/ranking.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../engine/ranking.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/desktop/ranking.ts",
+      "target": "lib/engine/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../engine/types.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/desktop/storage-protocol.ts",
+      "target": "lib/desktop/protocol.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./protocol.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/desktop/storage-protocol.ts",
+      "target": "lib/storage/measurements.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../storage/measurements.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/engine/adapters/typescript.ts",
+      "target": "lib/engine/compatibility.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../compatibility.ts",
+      "line": 6
+    },
+    {
+      "source": "lib/engine/adapters/typescript.ts",
+      "target": "lib/engine/contract.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../contract.ts",
+      "line": 5
+    },
+    {
+      "source": "lib/engine/adapters/typescript.ts",
+      "target": "lib/engine/coordinator.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../coordinator.ts",
+      "line": 7
+    },
+    {
+      "source": "lib/engine/adapters/typescript.ts",
+      "target": "lib/engine/types.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../types.ts",
+      "line": 8
+    },
+    {
+      "source": "lib/engine/adapters/typescript.ts",
+      "target": "lib/model/behavior.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../../model/behavior.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/engine/adapters/typescript.ts",
+      "target": "lib/parser/behavior.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../parser/behavior.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/engine/adapters/typescript.ts",
+      "target": "lib/parser/contract.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../parser/contract.ts",
+      "line": 4
+    },
+    {
+      "source": "lib/engine/adapters/typescript.ts",
+      "target": "lib/parser/index.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../parser/index.ts",
+      "line": 3
+    },
+    {
+      "source": "lib/engine/behavior.ts",
+      "target": "lib/engine/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./types.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/engine/behavior.ts",
+      "target": "lib/model/behavior.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../model/behavior.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/engine/compatibility.ts",
+      "target": "lib/engine/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./types.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/engine/compatibility.ts",
+      "target": "lib/model/framework.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../model/framework.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/engine/composition.ts",
+      "target": "lib/engine/contract.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./contract.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/engine/composition.ts",
+      "target": "lib/engine/profiles.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./profiles.ts",
+      "line": 4
+    },
+    {
+      "source": "lib/engine/composition.ts",
+      "target": "lib/engine/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./types.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/engine/composition.ts",
+      "target": "lib/model/framework.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../model/framework.ts",
+      "line": 5
+    },
+    {
+      "source": "lib/engine/composition.ts",
+      "target": "lib/model/positions.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../model/positions.ts",
+      "line": 6
+    },
+    {
+      "source": "lib/engine/composition.ts",
+      "target": "lib/parser/index.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../parser/index.ts",
+      "line": 3
+    },
+    {
+      "source": "lib/engine/contract.ts",
+      "target": "lib/engine/legacy-contract.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./legacy-contract.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/engine/contract.ts",
+      "target": "lib/engine/legacy-contract.ts",
+      "kind": "re-export",
+      "typeOnly": false,
+      "specifier": "./legacy-contract.ts",
+      "line": 5
+    },
+    {
+      "source": "lib/engine/contract.ts",
+      "target": "lib/engine/types.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./types.ts",
+      "line": 3
+    },
+    {
+      "source": "lib/engine/contract.ts",
+      "target": "lib/model/framework-validate.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../model/framework-validate.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/engine/coordinator.ts",
+      "target": "lib/engine/boundary.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./boundary.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/engine/coordinator.ts",
+      "target": "lib/engine/composition.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./composition.ts",
+      "line": 3
+    },
+    {
+      "source": "lib/engine/coordinator.ts",
+      "target": "lib/engine/composition.ts",
+      "kind": "re-export",
+      "typeOnly": false,
+      "specifier": "./composition.ts",
+      "line": 7
+    },
+    {
+      "source": "lib/engine/coordinator.ts",
+      "target": "lib/engine/refresh.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./refresh.ts",
+      "line": 5
+    },
+    {
+      "source": "lib/engine/coordinator.ts",
+      "target": "lib/engine/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./types.ts",
+      "line": 4
+    },
+    {
+      "source": "lib/engine/coordinator.ts",
+      "target": "lib/parser/index.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../parser/index.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/engine/declarative-metadata.ts",
+      "target": "lib/engine/boundary.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./boundary.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/engine/declarative-metadata.ts",
+      "target": "lib/engine/static-config.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./static-config.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/engine/discovery.ts",
+      "target": "lib/engine/boundary.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./boundary.ts",
+      "line": 7
+    },
+    {
+      "source": "lib/engine/discovery.ts",
+      "target": "lib/engine/metadata.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./metadata.ts",
+      "line": 5
+    },
+    {
+      "source": "lib/engine/discovery.ts",
+      "target": "lib/engine/registry.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./registry.ts",
+      "line": 6
+    },
+    {
+      "source": "lib/engine/discovery.ts",
+      "target": "lib/model/framework.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../model/framework.ts",
+      "line": 8
+    },
+    {
+      "source": "lib/engine/discovery.ts",
+      "target": "lib/repository/metadata-policy.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../repository/metadata-policy.ts",
+      "line": 3
+    },
+    {
+      "source": "lib/engine/discovery.ts",
+      "target": "lib/repository/read-policy.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../repository/read-policy.ts",
+      "line": 4
+    },
+    {
+      "source": "lib/engine/evaluation.ts",
+      "target": "lib/engine/investigations.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./investigations.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/engine/evaluation.ts",
+      "target": "lib/engine/ranking.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./ranking.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/engine/evaluation.ts",
+      "target": "lib/engine/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./types.ts",
+      "line": 3
+    },
+    {
+      "source": "lib/engine/index.ts",
+      "target": "lib/engine/contract.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./contract.ts",
+      "line": 6
+    },
+    {
+      "source": "lib/engine/index.ts",
+      "target": "lib/engine/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./types.ts",
+      "line": 7
+    },
+    {
+      "source": "lib/engine/index.ts",
+      "target": "lib/graph/reach.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../graph/reach.ts",
+      "line": 4
+    },
+    {
+      "source": "lib/engine/index.ts",
+      "target": "lib/model/framework.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../model/framework.ts",
+      "line": 8
+    },
+    {
+      "source": "lib/engine/index.ts",
+      "target": "lib/model/positions.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../model/positions.ts",
+      "line": 9
+    },
+    {
+      "source": "lib/engine/index.ts",
+      "target": "lib/repository/read-policy.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../repository/read-policy.ts",
+      "line": 5
+    },
+    {
+      "source": "lib/engine/investigations.ts",
+      "target": "lib/engine/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./types.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/engine/legacy-contract.ts",
+      "target": "lib/engine/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./types.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/engine/legacy-contract.ts",
+      "target": "lib/model/validate.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../model/validate.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/engine/metadata.ts",
+      "target": "lib/engine/boundary.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./boundary.ts",
+      "line": 8
+    },
+    {
+      "source": "lib/engine/metadata.ts",
+      "target": "lib/engine/declarative-metadata.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./declarative-metadata.ts",
+      "line": 9
+    },
+    {
+      "source": "lib/engine/metadata.ts",
+      "target": "lib/engine/static-config.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./static-config.ts",
+      "line": 7
+    },
+    {
+      "source": "lib/engine/metadata.ts",
+      "target": "lib/model/framework.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../model/framework.ts",
+      "line": 6
+    },
+    {
+      "source": "lib/engine/metadata.ts",
+      "target": "lib/model/positions.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../model/positions.ts",
+      "line": 5
+    },
+    {
+      "source": "lib/engine/metadata.ts",
+      "target": "lib/repository/metadata-policy.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../repository/metadata-policy.ts",
+      "line": 4
+    },
+    {
+      "source": "lib/engine/metadata.ts",
+      "target": "lib/repository/read-policy.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../repository/read-policy.ts",
+      "line": 3
+    },
+    {
+      "source": "lib/engine/profiles.ts",
+      "target": "lib/engine/discovery.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./discovery.ts",
+      "line": 4
+    },
+    {
+      "source": "lib/engine/profiles.ts",
+      "target": "lib/engine/metadata.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./metadata.ts",
+      "line": 5
+    },
+    {
+      "source": "lib/engine/profiles.ts",
+      "target": "lib/model/framework.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../model/framework.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/engine/profiles.ts",
+      "target": "lib/model/positions.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../model/positions.ts",
+      "line": 3
+    },
+    {
+      "source": "lib/engine/profiles.ts",
+      "target": "lib/repository/read-policy.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../repository/read-policy.ts",
+      "line": 6
+    },
+    {
+      "source": "lib/engine/ranking.ts",
+      "target": "lib/engine/snapshot-identity.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./snapshot-identity.ts",
+      "line": 3
+    },
+    {
+      "source": "lib/engine/ranking.ts",
+      "target": "lib/engine/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./types.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/engine/refresh.ts",
+      "target": "lib/engine/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./types.ts",
+      "line": 4
+    },
+    {
+      "source": "lib/engine/refresh.ts",
+      "target": "lib/repository/metadata-policy.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../repository/metadata-policy.ts",
+      "line": 5
+    },
+    {
+      "source": "lib/engine/refresh.ts",
+      "target": "lib/repository/read-policy.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../repository/read-policy.ts",
+      "line": 3
+    },
+    {
+      "source": "lib/engine/registry.ts",
+      "target": "lib/parser/adapters/index.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../parser/adapters/index.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/engine/registry.ts",
+      "target": "lib/parser/adapters/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../parser/adapters/types.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/engine/snapshot-identity.ts",
+      "target": "lib/engine/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./types.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/engine/static-config.ts",
+      "target": "lib/engine/boundary.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./boundary.ts",
+      "line": 3
+    },
+    {
+      "source": "lib/engine/static-config.ts",
+      "target": "lib/model/framework.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../model/framework.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/graph/detail.ts",
+      "target": "lib/parser/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../parser/types.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/graph/highlight.ts",
+      "target": "lib/graph/view.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./view.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/graph/highlight.ts",
+      "target": "lib/parser/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../parser/types.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/graph/insights.ts",
+      "target": "lib/parser/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../parser/types.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/graph/view.ts",
+      "target": "lib/graph/fold.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./fold.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/graph/view.ts",
+      "target": "lib/graph/labels.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./labels.ts",
+      "line": 3
+    },
+    {
+      "source": "lib/graph/view.ts",
+      "target": "lib/parser/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../parser/types.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/laya/inference-worker.ts",
+      "target": "lib/laya/input.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./input.ts",
+      "line": 3
+    },
+    {
+      "source": "lib/laya/inference-worker.ts",
+      "target": "lib/laya/model.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./model.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/laya/input.ts",
+      "target": "lib/engine/ranking.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../engine/ranking.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/laya/investigation.ts",
+      "target": "lib/desktop/ranking.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../desktop/ranking.ts",
+      "line": 5
+    },
+    {
+      "source": "lib/laya/investigation.ts",
+      "target": "lib/engine/ranking.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../engine/ranking.ts",
+      "line": 3
+    },
+    {
+      "source": "lib/laya/investigation.ts",
+      "target": "lib/engine/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../engine/types.ts",
+      "line": 4
+    },
+    {
+      "source": "lib/laya/investigation.ts",
+      "target": "lib/laya/artifact.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./artifact.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/laya/investigation.ts",
+      "target": "lib/laya/runtime.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./runtime.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/laya/model.ts",
+      "target": "lib/engine/ranking.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../engine/ranking.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/laya/runtime.ts",
+      "target": "lib/engine/ranking.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../engine/ranking.ts",
+      "line": 6
+    },
+    {
+      "source": "lib/laya/runtime.ts",
+      "target": "lib/laya/input.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./input.ts",
+      "line": 5
+    },
+    {
+      "source": "lib/laya/runtime.ts",
+      "target": "lib/laya/model.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./model.ts",
+      "line": 4
+    },
+    {
+      "source": "lib/model/framework-validate.ts",
+      "target": "lib/engine/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../engine/types.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/model/framework-validate.ts",
+      "target": "lib/model/behavior.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./behavior.ts",
+      "line": 3
+    },
+    {
+      "source": "lib/model/framework-validate.ts",
+      "target": "lib/model/framework.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./framework.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/model/framework-validate.ts",
+      "target": "lib/repository/metadata-policy.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../repository/metadata-policy.ts",
+      "line": 4
+    },
+    {
+      "source": "lib/model/framework.ts",
+      "target": "lib/model/behavior.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./behavior.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/model/validate.ts",
+      "target": "lib/model/behavior.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./behavior.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/parser/adapters/docusaurus.ts",
+      "target": "lib/parser/adapters/conventions.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./conventions.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/parser/adapters/docusaurus.ts",
+      "target": "lib/parser/adapters/react.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./react.ts",
+      "line": 3
+    },
+    {
+      "source": "lib/parser/adapters/docusaurus.ts",
+      "target": "lib/parser/adapters/types.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./types.ts",
+      "line": 4
+    },
+    {
+      "source": "lib/parser/adapters/docusaurus.ts",
+      "target": "lib/roles.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../../roles.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/parser/adapters/express.ts",
+      "target": "lib/parser/adapters/conventions.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./conventions.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/parser/adapters/express.ts",
+      "target": "lib/parser/adapters/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./types.ts",
+      "line": 3
+    },
+    {
+      "source": "lib/parser/adapters/express.ts",
+      "target": "lib/roles.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../../roles.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/parser/adapters/fallback.ts",
+      "target": "lib/parser/adapters/conventions.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./conventions.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/parser/adapters/fallback.ts",
+      "target": "lib/parser/adapters/types.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./types.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/parser/adapters/index.ts",
+      "target": "lib/parser/adapters/docusaurus.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./docusaurus.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/parser/adapters/index.ts",
+      "target": "lib/parser/adapters/express.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./express.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/parser/adapters/index.ts",
+      "target": "lib/parser/adapters/fallback.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./fallback.ts",
+      "line": 3
+    },
+    {
+      "source": "lib/parser/adapters/index.ts",
+      "target": "lib/parser/adapters/nestjs.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./nestjs.ts",
+      "line": 4
+    },
+    {
+      "source": "lib/parser/adapters/index.ts",
+      "target": "lib/parser/adapters/nextjs.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./nextjs.ts",
+      "line": 5
+    },
+    {
+      "source": "lib/parser/adapters/index.ts",
+      "target": "lib/parser/adapters/react.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./react.ts",
+      "line": 6
+    },
+    {
+      "source": "lib/parser/adapters/index.ts",
+      "target": "lib/parser/adapters/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./types.ts",
+      "line": 7
+    },
+    {
+      "source": "lib/parser/adapters/nestjs.ts",
+      "target": "lib/parser/adapters/conventions.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./conventions.ts",
+      "line": 3
+    },
+    {
+      "source": "lib/parser/adapters/nestjs.ts",
+      "target": "lib/parser/adapters/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./types.ts",
+      "line": 4
+    },
+    {
+      "source": "lib/parser/adapters/nestjs.ts",
+      "target": "lib/roles.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../../roles.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/parser/adapters/nextjs.ts",
+      "target": "lib/parser/adapters/conventions.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./conventions.ts",
+      "line": 3
+    },
+    {
+      "source": "lib/parser/adapters/nextjs.ts",
+      "target": "lib/parser/adapters/react.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./react.ts",
+      "line": 4
+    },
+    {
+      "source": "lib/parser/adapters/nextjs.ts",
+      "target": "lib/parser/adapters/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./types.ts",
+      "line": 5
+    },
+    {
+      "source": "lib/parser/adapters/nextjs.ts",
+      "target": "lib/roles.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../../roles.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/parser/adapters/react.ts",
+      "target": "lib/parser/adapters/conventions.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./conventions.ts",
+      "line": 3
+    },
+    {
+      "source": "lib/parser/adapters/react.ts",
+      "target": "lib/parser/adapters/types.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./types.ts",
+      "line": 4
+    },
+    {
+      "source": "lib/parser/adapters/react.ts",
+      "target": "lib/roles.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../../roles.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/parser/adapters/types.ts",
+      "target": "lib/roles.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../../roles.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/parser/behavior.ts",
+      "target": "lib/model/behavior.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../model/behavior.ts",
+      "line": 4
+    },
+    {
+      "source": "lib/parser/behavior.ts",
+      "target": "lib/parser/resolve.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./resolve.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/parser/behavior.ts",
+      "target": "lib/parser/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./types.ts",
+      "line": 3
+    },
+    {
+      "source": "lib/parser/contract.ts",
+      "target": "lib/parser/types.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./types.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/parser/contract.ts",
+      "target": "lib/roles.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../roles.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/parser/extract.ts",
+      "target": "lib/parser/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./types.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/parser/graph.ts",
+      "target": "lib/parser/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./types.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/parser/index.ts",
+      "target": "lib/engine/boundary.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../engine/boundary.ts",
+      "line": 20
+    },
+    {
+      "source": "lib/parser/index.ts",
+      "target": "lib/parser/adapters/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./adapters/types.ts",
+      "line": 18
+    },
+    {
+      "source": "lib/parser/index.ts",
+      "target": "lib/parser/extract.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./extract.ts",
+      "line": 3
+    },
+    {
+      "source": "lib/parser/index.ts",
+      "target": "lib/parser/graph.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./graph.ts",
+      "line": 4
+    },
+    {
+      "source": "lib/parser/index.ts",
+      "target": "lib/parser/resolve.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./resolve.ts",
+      "line": 5
+    },
+    {
+      "source": "lib/parser/index.ts",
+      "target": "lib/parser/types.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./types.ts",
+      "line": 6
+    },
+    {
+      "source": "lib/parser/index.ts",
+      "target": "lib/parser/types.ts",
+      "kind": "re-export",
+      "typeOnly": true,
+      "specifier": "./types.ts",
+      "line": 249
+    },
+    {
+      "source": "lib/parser/index.ts",
+      "target": "lib/parser/walk.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./walk.ts",
+      "line": 19
+    },
+    {
+      "source": "lib/parser/index.ts",
+      "target": "lib/repository/read-policy.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../repository/read-policy.ts",
+      "line": 2
+    },
+    {
+      "source": "lib/parser/index.ts",
+      "target": "lib/roles.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../roles.ts",
+      "line": 17
+    },
+    {
+      "source": "lib/parser/resolve.ts",
+      "target": "lib/parser/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./types.ts",
+      "line": 4
+    },
+    {
+      "source": "lib/parser/resolve.ts",
+      "target": "lib/parser/walk.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./walk.ts",
+      "line": 5
+    },
+    {
+      "source": "lib/parser/resolve.ts",
+      "target": "lib/repository/read-policy.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../repository/read-policy.ts",
+      "line": 6
+    },
+    {
+      "source": "lib/parser/types.ts",
+      "target": "lib/roles.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../roles.ts",
+      "line": 4
+    },
+    {
+      "source": "lib/parser/walk.ts",
+      "target": "lib/engine/boundary.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../engine/boundary.ts",
+      "line": 8
+    },
+    {
+      "source": "lib/parser/walk.ts",
+      "target": "lib/engine/discovery.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../engine/discovery.ts",
+      "line": 7
+    },
+    {
+      "source": "lib/parser/walk.ts",
+      "target": "lib/parser/adapters/fallback.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./adapters/fallback.ts",
+      "line": 4
+    },
+    {
+      "source": "lib/parser/walk.ts",
+      "target": "lib/parser/adapters/index.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./adapters/index.ts",
+      "line": 5
+    },
+    {
+      "source": "lib/parser/walk.ts",
+      "target": "lib/parser/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./types.ts",
+      "line": 6
+    },
+    {
+      "source": "lib/parser/walk.ts",
+      "target": "lib/repository/read-policy.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../repository/read-policy.ts",
+      "line": 3
+    },
+    {
+      "source": "lib/repository/read-policy.ts",
+      "target": "lib/repository/metadata-policy.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./metadata-policy.ts",
+      "line": 4
+    },
+    {
+      "source": "lib/storage/evaluations.ts",
+      "target": "lib/engine/contract.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../engine/contract.ts",
+      "line": 5
+    },
+    {
+      "source": "lib/storage/evaluations.ts",
+      "target": "lib/engine/evaluation.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../engine/evaluation.ts",
+      "line": 6
+    },
+    {
+      "source": "lib/storage/sqlite.ts",
+      "target": "lib/engine/contract.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../engine/contract.ts",
+      "line": 5
+    },
+    {
+      "source": "lib/storage/sqlite.ts",
+      "target": "lib/engine/types.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../engine/types.ts",
+      "line": 6
+    },
+    {
+      "source": "lib/storage/sqlite.ts",
+      "target": "lib/storage/measurements.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./measurements.ts",
+      "line": 8
+    },
+    {
+      "source": "lib/storage/sqlite.ts",
+      "target": "lib/storage/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./types.ts",
+      "line": 7
+    },
+    {
+      "source": "lib/storage/types.ts",
+      "target": "lib/engine/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../engine/types.ts",
+      "line": 1
+    },
+    {
+      "source": "lib/storage/types.ts",
+      "target": "lib/storage/measurements.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./measurements.ts",
+      "line": 2
+    },
+    {
+      "source": "scripts/benchmark-laya.ts",
+      "target": "lib/engine/ranking.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../lib/engine/ranking.ts",
+      "line": 6
+    },
+    {
+      "source": "scripts/benchmark-laya.ts",
+      "target": "lib/laya/runtime.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/laya/runtime.ts",
+      "line": 5
+    },
+    {
+      "source": "scripts/benchmark-pilot.ts",
+      "target": "lib/engine/adapters/typescript.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/adapters/typescript.ts",
+      "line": 6
+    },
+    {
+      "source": "scripts/benchmark-pilot.ts",
+      "target": "lib/engine/investigations.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/investigations.ts",
+      "line": 7
+    },
+    {
+      "source": "scripts/benchmark-pilot.ts",
+      "target": "lib/repository/read-policy.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/repository/read-policy.ts",
+      "line": 8
+    },
+    {
+      "source": "scripts/benchmark-refresh.ts",
+      "target": "lib/engine/adapters/typescript.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/adapters/typescript.ts",
+      "line": 5
+    },
+    {
+      "source": "scripts/benchmark-refresh.ts",
+      "target": "lib/engine/index.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/index.ts",
+      "line": 6
+    },
+    {
+      "source": "scripts/benchmark-refresh.ts",
+      "target": "lib/storage/sqlite.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/storage/sqlite.ts",
+      "line": 7
+    },
+    {
+      "source": "scripts/engine.ts",
+      "target": "lib/engine/adapters/typescript.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/adapters/typescript.ts",
+      "line": 3
+    },
+    {
+      "source": "scripts/engine.ts",
+      "target": "lib/engine/contract.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/contract.ts",
+      "line": 4
+    },
+    {
+      "source": "scripts/engine.ts",
+      "target": "lib/engine/index.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/index.ts",
+      "line": 2
+    },
+    {
+      "source": "scripts/evaluate-ranking.ts",
+      "target": "lib/engine/adapters/typescript.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/adapters/typescript.ts",
+      "line": 5
+    },
+    {
+      "source": "scripts/evaluate-ranking.ts",
+      "target": "lib/engine/evaluation.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/evaluation.ts",
+      "line": 6
+    },
+    {
+      "source": "scripts/evaluate-ranking.ts",
+      "target": "lib/engine/index.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/index.ts",
+      "line": 4
+    },
+    {
+      "source": "scripts/evaluate-ranking.ts",
+      "target": "lib/storage/evaluations.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/storage/evaluations.ts",
+      "line": 7
+    },
+    {
+      "source": "scripts/insights.ts",
+      "target": "lib/graph/insights.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/graph/insights.ts",
+      "line": 7
+    },
+    {
+      "source": "scripts/insights.ts",
+      "target": "lib/graph/reach.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/graph/reach.ts",
+      "line": 8
+    },
+    {
+      "source": "scripts/insights.ts",
+      "target": "lib/parser/contract.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/parser/contract.ts",
+      "line": 9
+    },
+    {
+      "source": "scripts/laya-dataset.ts",
+      "target": "lib/engine/adapters/typescript.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/adapters/typescript.ts",
+      "line": 5
+    },
+    {
+      "source": "scripts/laya-dataset.ts",
+      "target": "lib/engine/contract.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/contract.ts",
+      "line": 6
+    },
+    {
+      "source": "scripts/laya-dataset.ts",
+      "target": "lib/engine/evaluation.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../lib/engine/evaluation.ts",
+      "line": 8
+    },
+    {
+      "source": "scripts/laya-dataset.ts",
+      "target": "lib/laya/model.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/laya/model.ts",
+      "line": 7
+    },
+    {
+      "source": "scripts/laya-training.ts",
+      "target": "lib/engine/ranking.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/ranking.ts",
+      "line": 3
+    },
+    {
+      "source": "scripts/laya-training.ts",
+      "target": "lib/laya/model.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/laya/model.ts",
+      "line": 2
+    },
+    {
+      "source": "scripts/laya-training.ts",
+      "target": "scripts/laya-dataset.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "./laya-dataset.ts",
+      "line": 4
+    },
+    {
+      "source": "scripts/map-counts.ts",
+      "target": "lib/graph/fold.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/graph/fold.ts",
+      "line": 8
+    },
+    {
+      "source": "scripts/map-counts.ts",
+      "target": "lib/graph/view.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/graph/view.ts",
+      "line": 9
+    },
+    {
+      "source": "scripts/map-counts.ts",
+      "target": "lib/parser/contract.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/parser/contract.ts",
+      "line": 10
+    },
+    {
+      "source": "scripts/package-engine.ts",
+      "target": "lib/engine/types.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/types.ts",
+      "line": 5
+    },
+    {
+      "source": "scripts/parse.ts",
+      "target": "lib/parser/contract.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/parser/contract.ts",
+      "line": 11
+    },
+    {
+      "source": "scripts/parse.ts",
+      "target": "lib/parser/index.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/parser/index.ts",
+      "line": 12
+    },
+    {
+      "source": "scripts/parse.ts",
+      "target": "lib/parser/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../lib/parser/types.ts",
+      "line": 13
+    },
+    {
+      "source": "scripts/parse.ts",
+      "target": "lib/roles.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/roles.ts",
+      "line": 14
+    },
+    {
+      "source": "scripts/qualify-laya.ts",
+      "target": "lib/engine/evaluation.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/evaluation.ts",
+      "line": 8
+    },
+    {
+      "source": "scripts/qualify-laya.ts",
+      "target": "lib/engine/investigations.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/investigations.ts",
+      "line": 9
+    },
+    {
+      "source": "scripts/qualify-laya.ts",
+      "target": "lib/engine/ranking.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/ranking.ts",
+      "line": 7
+    },
+    {
+      "source": "scripts/qualify-laya.ts",
+      "target": "lib/laya/model.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/laya/model.ts",
+      "line": 6
+    },
+    {
+      "source": "scripts/qualify-laya.ts",
+      "target": "lib/laya/runtime.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/laya/runtime.ts",
+      "line": 5
+    },
+    {
+      "source": "scripts/qualify-laya.ts",
+      "target": "scripts/laya-dataset.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./laya-dataset.ts",
+      "line": 4
+    },
+    {
+      "source": "scripts/qualify-laya.ts",
+      "target": "scripts/laya-training.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./laya-training.ts",
+      "line": 10
+    },
+    {
+      "source": "scripts/reproduce-laya.ts",
+      "target": "lib/laya/artifact.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/laya/artifact.ts",
+      "line": 6
+    },
+    {
+      "source": "scripts/reproduce-laya.ts",
+      "target": "scripts/laya-dataset.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./laya-dataset.ts",
+      "line": 4
+    },
+    {
+      "source": "scripts/reproduce-laya.ts",
+      "target": "scripts/laya-training.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./laya-training.ts",
+      "line": 5
+    },
+    {
+      "source": "scripts/sidecar.ts",
+      "target": "lib/ai/evidence.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/ai/evidence.ts",
+      "line": 9
+    },
+    {
+      "source": "scripts/sidecar.ts",
+      "target": "lib/desktop/protocol.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/desktop/protocol.ts",
+      "line": 12
+    },
+    {
+      "source": "scripts/sidecar.ts",
+      "target": "lib/engine/adapters/typescript.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/adapters/typescript.ts",
+      "line": 4
+    },
+    {
+      "source": "scripts/sidecar.ts",
+      "target": "lib/engine/contract.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/contract.ts",
+      "line": 6
+    },
+    {
+      "source": "scripts/sidecar.ts",
+      "target": "lib/engine/index.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/index.ts",
+      "line": 3
+    },
+    {
+      "source": "scripts/sidecar.ts",
+      "target": "lib/engine/investigations.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/investigations.ts",
+      "line": 8
+    },
+    {
+      "source": "scripts/sidecar.ts",
+      "target": "lib/engine/refresh.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/refresh.ts",
+      "line": 5
+    },
+    {
+      "source": "scripts/sidecar.ts",
+      "target": "lib/engine/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../lib/engine/types.ts",
+      "line": 7
+    },
+    {
+      "source": "scripts/sidecar.ts",
+      "target": "lib/laya/investigation.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/laya/investigation.ts",
+      "line": 11
+    },
+    {
+      "source": "scripts/sidecar.ts",
+      "target": "lib/storage/sqlite.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/storage/sqlite.ts",
+      "line": 10
+    },
+    {
+      "source": "scripts/smoke-engine.ts",
+      "target": "lib/desktop/protocol.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/desktop/protocol.ts",
+      "line": 6
+    },
+    {
+      "source": "scripts/smoke-engine.ts",
+      "target": "lib/desktop/ranking.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/desktop/ranking.ts",
+      "line": 9
+    },
+    {
+      "source": "scripts/smoke-engine.ts",
+      "target": "lib/engine/ranking.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/ranking.ts",
+      "line": 7
+    },
+    {
+      "source": "scripts/smoke-engine.ts",
+      "target": "lib/engine/snapshot-identity.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/snapshot-identity.ts",
+      "line": 8
+    },
+    {
+      "source": "scripts/smoke-engine.ts",
+      "target": "lib/laya/artifact.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/laya/artifact.ts",
+      "line": 10
+    },
+    {
+      "source": "scripts/storage.ts",
+      "target": "lib/desktop/protocol.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/desktop/protocol.ts",
+      "line": 4
+    },
+    {
+      "source": "scripts/storage.ts",
+      "target": "lib/desktop/storage-protocol.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/desktop/storage-protocol.ts",
+      "line": 3
+    },
+    {
+      "source": "scripts/storage.ts",
+      "target": "lib/storage/sqlite.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/storage/sqlite.ts",
+      "line": 1
+    },
+    {
+      "source": "scripts/train-laya.ts",
+      "target": "lib/engine/evaluation.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/evaluation.ts",
+      "line": 8
+    },
+    {
+      "source": "scripts/train-laya.ts",
+      "target": "lib/engine/ranking.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/ranking.ts",
+      "line": 7
+    },
+    {
+      "source": "scripts/train-laya.ts",
+      "target": "lib/laya/model.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/laya/model.ts",
+      "line": 6
+    },
+    {
+      "source": "scripts/train-laya.ts",
+      "target": "scripts/laya-dataset.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./laya-dataset.ts",
+      "line": 4
+    },
+    {
+      "source": "scripts/train-laya.ts",
+      "target": "scripts/laya-training.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "./laya-training.ts",
+      "line": 5
+    },
+    {
+      "source": "tests/framework-support/fs-01.test.ts",
+      "target": "lib/desktop/projection.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../lib/desktop/projection.ts",
+      "line": 14
+    },
+    {
+      "source": "tests/framework-support/fs-01.test.ts",
+      "target": "lib/desktop/protocol.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../lib/desktop/protocol.ts",
+      "line": 15
+    },
+    {
+      "source": "tests/framework-support/fs-01.test.ts",
+      "target": "lib/engine/adapters/typescript.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../lib/engine/adapters/typescript.ts",
+      "line": 9
+    },
+    {
+      "source": "tests/framework-support/fs-01.test.ts",
+      "target": "lib/engine/contract.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../lib/engine/contract.ts",
+      "line": 10
+    },
+    {
+      "source": "tests/framework-support/fs-01.test.ts",
+      "target": "lib/engine/index.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../lib/engine/index.ts",
+      "line": 13
+    },
+    {
+      "source": "tests/framework-support/fs-01.test.ts",
+      "target": "lib/engine/legacy-contract.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../lib/engine/legacy-contract.ts",
+      "line": 11
+    },
+    {
+      "source": "tests/framework-support/fs-01.test.ts",
+      "target": "lib/engine/snapshot-identity.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../lib/engine/snapshot-identity.ts",
+      "line": 12
+    },
+    {
+      "source": "tests/framework-support/fs-01.test.ts",
+      "target": "lib/engine/types.ts",
+      "kind": "import",
+      "typeOnly": true,
+      "specifier": "../../lib/engine/types.ts",
+      "line": 19
+    },
+    {
+      "source": "tests/framework-support/fs-01.test.ts",
+      "target": "lib/graph/reach.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../lib/graph/reach.ts",
+      "line": 21
+    },
+    {
+      "source": "tests/framework-support/fs-01.test.ts",
+      "target": "lib/model/framework.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../lib/model/framework.ts",
+      "line": 17
+    },
+    {
+      "source": "tests/framework-support/fs-01.test.ts",
+      "target": "lib/model/positions.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../lib/model/positions.ts",
+      "line": 18
+    },
+    {
+      "source": "tests/framework-support/fs-01.test.ts",
+      "target": "lib/parser/index.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../lib/parser/index.ts",
+      "line": 20
+    },
+    {
+      "source": "tests/framework-support/fs-01.test.ts",
+      "target": "lib/storage/sqlite.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../lib/storage/sqlite.ts",
+      "line": 16
+    },
+    {
+      "source": "tests/framework-support/fs-02.test.ts",
+      "target": "lib/engine/adapters/typescript.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../lib/engine/adapters/typescript.ts",
+      "line": 9
+    },
+    {
+      "source": "tests/framework-support/fs-02.test.ts",
+      "target": "lib/engine/boundary.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../lib/engine/boundary.ts",
+      "line": 13
+    },
+    {
+      "source": "tests/framework-support/fs-02.test.ts",
+      "target": "lib/engine/contract.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../lib/engine/contract.ts",
+      "line": 18
+    },
+    {
+      "source": "tests/framework-support/fs-02.test.ts",
+      "target": "lib/engine/coordinator.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../lib/engine/coordinator.ts",
+      "line": 16
+    },
+    {
+      "source": "tests/framework-support/fs-02.test.ts",
+      "target": "lib/engine/discovery.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../lib/engine/discovery.ts",
+      "line": 14
+    },
+    {
+      "source": "tests/framework-support/fs-02.test.ts",
+      "target": "lib/engine/index.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../lib/engine/index.ts",
+      "line": 17
+    },
+    {
+      "source": "tests/framework-support/fs-02.test.ts",
+      "target": "lib/engine/metadata.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../lib/engine/metadata.ts",
+      "line": 12
+    },
+    {
+      "source": "tests/framework-support/fs-02.test.ts",
+      "target": "lib/engine/profiles.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../lib/engine/profiles.ts",
+      "line": 15
+    },
+    {
+      "source": "tests/framework-support/fs-02.test.ts",
+      "target": "lib/engine/refresh.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../lib/engine/refresh.ts",
+      "line": 20
+    },
+    {
+      "source": "tests/framework-support/fs-02.test.ts",
+      "target": "lib/engine/registry.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../lib/engine/registry.ts",
+      "line": 10
+    },
+    {
+      "source": "tests/framework-support/fs-02.test.ts",
+      "target": "lib/engine/snapshot-identity.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../lib/engine/snapshot-identity.ts",
+      "line": 19
+    },
+    {
+      "source": "tests/framework-support/fs-02.test.ts",
+      "target": "lib/engine/static-config.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../lib/engine/static-config.ts",
+      "line": 11
+    },
+    {
+      "source": "tests/framework-support/fs-02.test.ts",
+      "target": "lib/parser/index.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../lib/parser/index.ts",
+      "line": 8
+    },
+    {
+      "source": "tests/framework-support/fs-02.test.ts",
+      "target": "lib/repository/read-policy.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../lib/repository/read-policy.ts",
+      "line": 7
+    },
+    {
+      "source": "tests/framework-support/fs-02.test.ts",
+      "target": "lib/storage/sqlite.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../../lib/storage/sqlite.ts",
+      "line": 21
+    },
+    {
+      "source": "tests/phase-01.test.ts",
+      "target": "lib/engine/adapters/typescript.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/adapters/typescript.ts",
+      "line": 8
+    },
+    {
+      "source": "tests/phase-01.test.ts",
+      "target": "lib/engine/contract.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/contract.ts",
+      "line": 9
+    },
+    {
+      "source": "tests/phase-01.test.ts",
+      "target": "lib/engine/index.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/index.ts",
+      "line": 7
+    },
+    {
+      "source": "tests/phase-01.test.ts",
+      "target": "lib/graph/insights.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/graph/insights.ts",
+      "line": 14
+    },
+    {
+      "source": "tests/phase-01.test.ts",
+      "target": "lib/parser/contract.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/parser/contract.ts",
+      "line": 11
+    },
+    {
+      "source": "tests/phase-01.test.ts",
+      "target": "lib/parser/index.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/parser/index.ts",
+      "line": 10
+    },
+    {
+      "source": "tests/phase-01.test.ts",
+      "target": "lib/parser/walk.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/parser/walk.ts",
+      "line": 13
+    },
+    {
+      "source": "tests/phase-01.test.ts",
+      "target": "lib/repository/read-policy.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/repository/read-policy.ts",
+      "line": 12
+    },
+    {
+      "source": "tests/phase-02.test.ts",
+      "target": "lib/desktop/projection.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/desktop/projection.ts",
+      "line": 11
+    },
+    {
+      "source": "tests/phase-02.test.ts",
+      "target": "lib/desktop/protocol.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/desktop/protocol.ts",
+      "line": 8
+    },
+    {
+      "source": "tests/phase-02.test.ts",
+      "target": "lib/engine/adapters/typescript.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/adapters/typescript.ts",
+      "line": 10
+    },
+    {
+      "source": "tests/phase-02.test.ts",
+      "target": "lib/engine/index.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/index.ts",
+      "line": 9
+    },
+    {
+      "source": "tests/phase-03.test.ts",
+      "target": "lib/desktop/protocol.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/desktop/protocol.ts",
+      "line": 12
+    },
+    {
+      "source": "tests/phase-03.test.ts",
+      "target": "lib/desktop/storage-protocol.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/desktop/storage-protocol.ts",
+      "line": 13
+    },
+    {
+      "source": "tests/phase-03.test.ts",
+      "target": "lib/engine/adapters/typescript.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/adapters/typescript.ts",
+      "line": 11
+    },
+    {
+      "source": "tests/phase-03.test.ts",
+      "target": "lib/engine/index.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/index.ts",
+      "line": 10
+    },
+    {
+      "source": "tests/phase-03.test.ts",
+      "target": "lib/storage/sqlite.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/storage/sqlite.ts",
+      "line": 9
+    },
+    {
+      "source": "tests/phase-04.test.ts",
+      "target": "lib/desktop/protocol.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/desktop/protocol.ts",
+      "line": 14
+    },
+    {
+      "source": "tests/phase-04.test.ts",
+      "target": "lib/desktop/storage-protocol.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/desktop/storage-protocol.ts",
+      "line": 13
+    },
+    {
+      "source": "tests/phase-04.test.ts",
+      "target": "lib/engine/adapters/typescript.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/adapters/typescript.ts",
+      "line": 8
+    },
+    {
+      "source": "tests/phase-04.test.ts",
+      "target": "lib/engine/index.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/index.ts",
+      "line": 9
+    },
+    {
+      "source": "tests/phase-04.test.ts",
+      "target": "lib/engine/investigations.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/investigations.ts",
+      "line": 10
+    },
+    {
+      "source": "tests/phase-04.test.ts",
+      "target": "lib/storage/measurements.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/storage/measurements.ts",
+      "line": 11
+    },
+    {
+      "source": "tests/phase-04.test.ts",
+      "target": "lib/storage/sqlite.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/storage/sqlite.ts",
+      "line": 12
+    },
+    {
+      "source": "tests/phase-05.test.ts",
+      "target": "lib/ai/evidence.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/ai/evidence.ts",
+      "line": 8
+    },
+    {
+      "source": "tests/phase-05.test.ts",
+      "target": "lib/ai/selection.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/ai/selection.ts",
+      "line": 9
+    },
+    {
+      "source": "tests/phase-05.test.ts",
+      "target": "lib/desktop/protocol.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/desktop/protocol.ts",
+      "line": 11
+    },
+    {
+      "source": "tests/phase-05.test.ts",
+      "target": "lib/desktop/storage-protocol.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/desktop/storage-protocol.ts",
+      "line": 12
+    },
+    {
+      "source": "tests/phase-05.test.ts",
+      "target": "lib/engine/adapters/typescript.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/adapters/typescript.ts",
+      "line": 7
+    },
+    {
+      "source": "tests/phase-05.test.ts",
+      "target": "lib/storage/sqlite.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/storage/sqlite.ts",
+      "line": 10
+    },
+    {
+      "source": "tests/phase-06.test.ts",
+      "target": "lib/ai/evidence.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/ai/evidence.ts",
+      "line": 12
+    },
+    {
+      "source": "tests/phase-06.test.ts",
+      "target": "lib/engine/adapters/typescript.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/adapters/typescript.ts",
+      "line": 8
+    },
+    {
+      "source": "tests/phase-06.test.ts",
+      "target": "lib/engine/behavior.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/behavior.ts",
+      "line": 10
+    },
+    {
+      "source": "tests/phase-06.test.ts",
+      "target": "lib/engine/contract.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/contract.ts",
+      "line": 9
+    },
+    {
+      "source": "tests/phase-06.test.ts",
+      "target": "lib/engine/index.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/index.ts",
+      "line": 11
+    },
+    {
+      "source": "tests/phase-06.test.ts",
+      "target": "lib/storage/sqlite.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/storage/sqlite.ts",
+      "line": 13
+    },
+    {
+      "source": "tests/phase-06.test.ts",
+      "target": "scripts/phase06-fixture.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../scripts/phase06-fixture.ts",
+      "line": 7
+    },
+    {
+      "source": "tests/phase-07.test.ts",
+      "target": "lib/ai/evidence.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/ai/evidence.ts",
+      "line": 9
+    },
+    {
+      "source": "tests/phase-07.test.ts",
+      "target": "lib/desktop/protocol.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/desktop/protocol.ts",
+      "line": 11
+    },
+    {
+      "source": "tests/phase-07.test.ts",
+      "target": "lib/engine/adapters/typescript.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/adapters/typescript.ts",
+      "line": 6
+    },
+    {
+      "source": "tests/phase-07.test.ts",
+      "target": "lib/engine/refresh.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/refresh.ts",
+      "line": 7
+    },
+    {
+      "source": "tests/phase-07.test.ts",
+      "target": "lib/repository/read-policy.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/repository/read-policy.ts",
+      "line": 12
+    },
+    {
+      "source": "tests/phase-07.test.ts",
+      "target": "lib/storage/sqlite.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/storage/sqlite.ts",
+      "line": 8
+    },
+    {
+      "source": "tests/phase-07.test.ts",
+      "target": "scripts/phase06-fixture.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../scripts/phase06-fixture.ts",
+      "line": 10
+    },
+    {
+      "source": "tests/phase-08.test.ts",
+      "target": "lib/engine/adapters/typescript.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/adapters/typescript.ts",
+      "line": 7
+    },
+    {
+      "source": "tests/phase-08.test.ts",
+      "target": "lib/engine/evaluation.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/evaluation.ts",
+      "line": 9
+    },
+    {
+      "source": "tests/phase-08.test.ts",
+      "target": "lib/engine/investigations.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/investigations.ts",
+      "line": 11
+    },
+    {
+      "source": "tests/phase-08.test.ts",
+      "target": "lib/engine/ranking.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/ranking.ts",
+      "line": 8
+    },
+    {
+      "source": "tests/phase-08.test.ts",
+      "target": "lib/storage/evaluations.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/storage/evaluations.ts",
+      "line": 10
+    },
+    {
+      "source": "tests/phase-09.test.ts",
+      "target": "lib/desktop/protocol.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/desktop/protocol.ts",
+      "line": 16
+    },
+    {
+      "source": "tests/phase-09.test.ts",
+      "target": "lib/desktop/ranking.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/desktop/ranking.ts",
+      "line": 17
+    },
+    {
+      "source": "tests/phase-09.test.ts",
+      "target": "lib/engine/adapters/typescript.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/adapters/typescript.ts",
+      "line": 15
+    },
+    {
+      "source": "tests/phase-09.test.ts",
+      "target": "lib/engine/investigations.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/investigations.ts",
+      "line": 14
+    },
+    {
+      "source": "tests/phase-09.test.ts",
+      "target": "lib/engine/ranking.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/ranking.ts",
+      "line": 13
+    },
+    {
+      "source": "tests/phase-09.test.ts",
+      "target": "lib/engine/refresh.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/refresh.ts",
+      "line": 21
+    },
+    {
+      "source": "tests/phase-09.test.ts",
+      "target": "lib/engine/snapshot-identity.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/engine/snapshot-identity.ts",
+      "line": 20
+    },
+    {
+      "source": "tests/phase-09.test.ts",
+      "target": "lib/laya/artifact.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/laya/artifact.ts",
+      "line": 10
+    },
+    {
+      "source": "tests/phase-09.test.ts",
+      "target": "lib/laya/input.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/laya/input.ts",
+      "line": 9
+    },
+    {
+      "source": "tests/phase-09.test.ts",
+      "target": "lib/laya/investigation.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/laya/investigation.ts",
+      "line": 12
+    },
+    {
+      "source": "tests/phase-09.test.ts",
+      "target": "lib/laya/model.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/laya/model.ts",
+      "line": 8
+    },
+    {
+      "source": "tests/phase-09.test.ts",
+      "target": "lib/laya/runtime.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../lib/laya/runtime.ts",
+      "line": 11
+    },
+    {
+      "source": "tests/phase-09.test.ts",
+      "target": "scripts/laya-dataset.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../scripts/laya-dataset.ts",
+      "line": 19
+    },
+    {
+      "source": "tests/phase-09.test.ts",
+      "target": "scripts/laya-training.ts",
+      "kind": "import",
+      "typeOnly": false,
+      "specifier": "../scripts/laya-training.ts",
+      "line": 18
+    }
+  ],
+  "routes": [],
+  "coverage": {
+    "files": {
+      "found": 137,
+      "parsed": 135,
+      "skipped": 2,
+      "skippedFiles": [
+        {
+          "path": "next-env.d.ts",
+          "reason": "declaration-file",
+          "detail": "types only, no runtime imports"
+        },
+        {
+          "path": "types/globals.d.ts",
+          "reason": "declaration-file",
+          "detail": "types only, no runtime imports"
+        }
+      ],
+      "excludedDirectories": [
+        {
+          "path": ".agents",
+          "reason": "dot-directory"
+        },
+        {
+          "path": ".claude",
+          "reason": "dot-directory"
+        },
+        {
+          "path": ".git",
+          "reason": "dot-directory"
+        },
+        {
+          "path": ".next",
+          "reason": "dot-directory"
+        },
+        {
+          "path": "artifacts/laya-nav-1/generated",
+          "reason": "dependency, build, vendored or generated directory"
+        },
+        {
+          "path": "node_modules",
+          "reason": "dependency, build, vendored or generated directory"
+        },
+        {
+          "path": "out",
+          "reason": "dependency, build, vendored or generated directory"
+        },
+        {
+          "path": "src-tauri/resources/generated",
+          "reason": "dependency, build, vendored or generated directory"
+        },
+        {
+          "path": "src-tauri/target",
+          "reason": "dependency, build, vendored or generated directory"
+        }
+      ]
+    },
+    "imports": {
+      "total": {
+        "seen": 636,
+        "internal": 422,
+        "external": 211,
+        "excluded": 1,
+        "unresolved": 2
+      },
+      "byKind": {
+        "import": {
+          "seen": 630,
+          "internal": 419,
+          "external": 210,
+          "excluded": 1,
+          "unresolved": 0
+        },
+        "re-export": {
+          "seen": 3,
+          "internal": 3,
+          "external": 0,
+          "excluded": 0,
+          "unresolved": 0
+        },
+        "dynamic-import": {
+          "seen": 1,
+          "internal": 0,
+          "external": 1,
+          "excluded": 0,
+          "unresolved": 0
+        },
+        "require": {
+          "seen": 2,
+          "internal": 0,
+          "external": 0,
+          "excluded": 0,
+          "unresolved": 2
+        }
+      },
+      "external": {
+        "package": 52,
+        "builtin": 159,
+        "outside-root": 0
+      },
+      "excluded": {
+        "non-code-file": 1
+      },
+      "unresolvedByReason": {
+        "non-literal-require": 2
+      },
+      "unresolved": [
+        {
+          "from": "tests/framework-support/fs-01.test.ts",
+          "specifier": "path.resolve(name.replace(\"@/\", \"\") + \".ts\")",
+          "kind": "require",
+          "line": 143,
+          "reason": "non-literal-require",
+          "detail": "the path is computed at runtime"
+        },
+        {
+          "from": "tests/framework-support/fs-01.test.ts",
+          "specifier": "name",
+          "kind": "require",
+          "line": 144,
+          "reason": "non-literal-require",
+          "detail": "the path is computed at runtime"
+        }
+      ]
+    },
+    "routes": {
+      "omitted": [],
+      "withheld": []
+    }
+  },
+  "configs": [
+    {
+      "path": "tsconfig.json",
+      "errors": []
+    },
+    {
+      "path": ".",
+      "errors": [
+        "Read policy: <outside-root>: outside selected repository",
+        "Read policy: node_modules/@dagrejs/dagre: symbolic link not followed",
+        "Read policy: node_modules/@fontsource-variable/geist-mono: symbolic link not followed",
+        "Read policy: node_modules/@fontsource-variable/geist: symbolic link not followed",
+        "Read policy: node_modules/@tauri-apps/api/core: symbolic link not followed",
+        "Read policy: node_modules/@tauri-apps/api/event: symbolic link not followed",
+        "Read policy: node_modules/@tauri-apps/api: symbolic link not followed",
+        "Read policy: node_modules/@types/react-dom/server: symbolic link not followed",
+        "Read policy: node_modules/@types/react-dom: symbolic link not followed",
+        "Read policy: node_modules/@types/react: symbolic link not followed",
+        "Read policy: node_modules/@types/xyflow__react/dist/base.css: dependency, build, vendored or generated directory",
+        "Read policy: node_modules/@xyflow/react/dist/base.css: dependency, build, vendored or generated directory",
+        "Read policy: node_modules/@xyflow/react/dist: symbolic link not followed",
+        "Read policy: node_modules/@xyflow/react: symbolic link not followed",
+        "Read policy: node_modules/eslint-config-next/core-web-vitals: symbolic link not followed",
+        "Read policy: node_modules/eslint-config-next/typescript: symbolic link not followed",
+        "Read policy: node_modules/eslint-config-next: symbolic link not followed",
+        "Read policy: node_modules/eslint/config: symbolic link not followed",
+        "Read policy: node_modules/eslint: symbolic link not followed",
+        "Read policy: node_modules/next: symbolic link not followed",
+        "Read policy: node_modules/react-dom/server: symbolic link not followed",
+        "Read policy: node_modules/react-dom: symbolic link not followed",
+        "Read policy: node_modules/react: symbolic link not followed",
+        "Read policy: node_modules/ts-morph: symbolic link not followed",
+        "Read policy: node_modules/typescript: symbolic link not followed"
+      ]
+    }
+  ]
+}

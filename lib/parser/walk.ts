@@ -4,6 +4,8 @@ import { directoryExclusion, RepositoryReader, RepositoryReadError, READ_LIMITS 
 import { fallbackAdapter } from "./adapters/fallback.ts";
 import { selectAdapter, type FrameworkAdapter } from "./adapters/index.ts";
 import type { ExcludedDirectory, Project, SkippedFile } from "./types.ts";
+import { ProjectDiscovery, type Discovery } from "../engine/discovery.ts";
+import { GenerationBoundary } from "../engine/boundary.ts";
 
 export const CODE_EXTENSIONS = [".ts", ".tsx", ".mts", ".cts", ".js", ".jsx", ".mjs", ".cjs"];
 const DECLARATION = /\.d\.(ts|mts|cts)$|\.d\.[^/.]+\.ts$/;
@@ -20,12 +22,15 @@ export type CandidateFile = {
   bytes: number;
   lines: number;
   hash: string;
+  /** Qualification marker only; legacy decoding/selection stays unchanged. */
+  validUtf8?: boolean;
   reachedBy: string | null;
   /** Path of the project the file belongs to. */
   project: string;
 };
 
 export type WalkResult = {
+  discovery: Discovery;
   candidates: CandidateFile[];
   skipped: SkippedFile[];
   excludedDirectories: ExcludedDirectory[];
@@ -72,8 +77,9 @@ function countLines(content: string): number {
   return content.endsWith("\n") ? breaks - 1 : breaks;
 }
 
-export function walkRepository(root: string, reader = new RepositoryReader(root)): WalkResult {
-  const result: WalkResult = {
+export function walkRepository(root: string, reader = new RepositoryReader(root), boundary = new GenerationBoundary()): WalkResult {
+  const discovery = new ProjectDiscovery(reader, boundary);
+  const result: Omit<WalkResult, "discovery"> = {
     candidates: [],
     skipped: [],
     excludedDirectories: [],
@@ -87,7 +93,9 @@ export function walkRepository(root: string, reader = new RepositoryReader(root)
   const within = (project: CurrentProject, relativePath: string) => withinProject(project.path, relativePath);
 
   const visit = (absoluteDir: string, parent: CurrentProject | null): void => {
+    boundary.check();
     const entries = reader.list(absoluteDir);
+    discovery.directory(absoluteDir, entries);
 
     // The root is always a project. Below it, a package.json starts one only
     // when a framework is detected there; otherwise the folder stays in its
@@ -107,6 +115,7 @@ export function walkRepository(root: string, reader = new RepositoryReader(root)
     if (!project) throw new Error(`No project for ${absoluteDir}`);
 
     for (const entry of entries) {
+      boundary.check();
       const absolutePath = path.join(absoluteDir, entry.name);
       const relativePath = toPosix(path.relative(root, absolutePath));
 
@@ -122,6 +131,7 @@ export function walkRepository(root: string, reader = new RepositoryReader(root)
       }
 
       if (entry.isSymbolicLink()) {
+        discovery.file(relativePath, true);
         // Following links can leave the repository or loop; neither is walked.
         if (isCodeFile(entry.name)) {
           reader.countFile();
@@ -132,24 +142,27 @@ export function walkRepository(root: string, reader = new RepositoryReader(root)
         continue;
       }
 
-      if (!entry.isFile() || !isCodeFile(entry.name)) continue;
+      if (!entry.isFile()) continue;
+      discovery.file(relativePath);
+      if (!isCodeFile(entry.name)) continue;
       reader.countFile();
       result.found++;
       result.projectOf.set(relativePath, project.path);
 
       if (isDeclarationFile(entry.name)) {
+        discovery.skip(relativePath);
         result.skipped.push({ path: relativePath, reason: "declaration-file", detail: "types only, no runtime imports" });
         continue;
       }
 
       const candidate = readCandidate(absolutePath, relativePath, project.path, project.adapter.reachedBy(within(project, relativePath)), reader);
-      if ("reason" in candidate) result.skipped.push(candidate);
-      else result.candidates.push(candidate);
+      if ("reason" in candidate) { discovery.skip(relativePath); result.skipped.push(candidate); }
+      else { discovery.source(relativePath, candidate.hash, candidate.content, candidate.validUtf8); result.candidates.push(candidate); }
     }
   };
 
   visit(root, null);
-  return result;
+  return { ...result, discovery: discovery.finish() };
 }
 
 function readPackage(absolutePath: string, reader: RepositoryReader): { name: string | null; dependencies: Set<string> } | null {
@@ -198,11 +211,14 @@ function readCandidate(
     return { path: relativePath, reason: "binary", detail: "contains NUL bytes" };
   }
   const content = buffer.toString("utf8");
+  let validUtf8 = true;
+  try { new TextDecoder("utf-8",{fatal:true}).decode(buffer); } catch { validUtf8=false; }
   return {
     path: relativePath,
     absolutePath,
     module: moduleOf(relativePath),
     content,
+    validUtf8,
     bytes: buffer.byteLength,
     lines: countLines(content),
     hash: createHash("sha256").update(buffer).digest("hex"),

@@ -1,0 +1,84 @@
+{
+  "tuple": "vite8-react19",
+  "versions": {
+    "node": "24.19.0",
+    "vite": "8.3.3",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-router": "7.18.4",
+    "typescript": "5.9.3",
+    "@vitejs/plugin-react": "6.1.2"
+  },
+  "testCase": "tsconfig-paths",
+  "profile": "ssr-production",
+  "workerModules": [],
+  "bundles": [
+    {
+      "file": "assets/Page-CLf66Y1K.mjs",
+      "type": "chunk",
+      "hash": "e745a04d499c6baaa3cbd3229f01df36b2ad0f447f2388c6ba86dee0ff83f423"
+    },
+    {
+      "file": "ssr.mjs",
+      "type": "chunk",
+      "hash": "b2ef35f3fe0f4f8cee428f767c01b4b526e93824dd0a1a5a76710aecb26b478e"
+    }
+  ],
+  "workerHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "bundleHash": "d06e2ec2bb62a6dcd5198edf85d6053f52b2bdfcdc08aae867000e404dba7524",
+  "configPolicy": "configFile:false/environment-files-disabled/application-owned collector; no fixture app execution",
+  "fixtureHash": "4a243dc353ff5ea74b105c8a0d44ce4a7cc196b231a45b375508fa0158042ace",
+  "materializedHash": "b931ac013c7b96c301f7e94391d745b54e94ed3df984b3ed10b908825e3f0e0e",
+  "modules": [
+    {
+      "id": "src/App.tsx",
+      "imports": [
+        "react",
+        "react-router",
+        "react/jsx-runtime",
+        "src/View.tsx"
+      ],
+      "dynamic": [
+        "src/pages/Page.tsx"
+      ]
+    },
+    {
+      "id": "src/pages/Page.tsx",
+      "imports": [
+        "react",
+        "react/jsx-runtime"
+      ],
+      "dynamic": []
+    },
+    {
+      "id": "src/Selected.ts",
+      "imports": [],
+      "dynamic": []
+    },
+    {
+      "id": "src/server.ts",
+      "imports": [],
+      "dynamic": []
+    },
+    {
+      "id": "src/ssr.tsx",
+      "imports": [
+        "react-dom/server",
+        "react/jsx-runtime",
+        "src/App.tsx",
+        "src/Selected.ts",
+        "src/server.ts"
+      ],
+      "dynamic": []
+    },
+    {
+      "id": "src/View.tsx",
+      "imports": [
+        "react",
+        "react/jsx-runtime"
+      ],
+      "dynamic": []
+    }
+  ],
+  "outputHash": "2aa49dcfcef946853ad1906550eb2563969ddb63669caf507c86fd1d2f6c1aa0"
+}

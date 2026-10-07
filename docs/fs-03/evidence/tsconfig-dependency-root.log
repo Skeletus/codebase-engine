@@ -1,0 +1,9 @@
+✔ F03: Vite 8 opt-in TS paths resolve separately; Vite 7 never assumes the plugin (832.8036ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1952.2153

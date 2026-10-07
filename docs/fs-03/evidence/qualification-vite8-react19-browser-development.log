@@ -1,0 +1,10 @@
+✔ qualification vite8-react19/browser-development: pinned expanded module oracle and source witnesses (3307.3583ms)
+ℹ {"tuple":"vite8-react19","profile":"browser-development","facts":51,"registrations":3,"candidates":0,"gaps":19,"forbiddenGuessedFacts":0}
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4322.3906

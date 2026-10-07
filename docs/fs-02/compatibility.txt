@@ -1,0 +1,11 @@
+const fs=require('fs'),path=require('path'),zlib=require('zlib'),crypto=require('crypto'),assert=require('assert/strict');
+(async()=>{
+const {inspectSnapshot,serializeSnapshot,deserializeSnapshot}=await import(require('url').pathToFileURL(path.resolve('lib/engine/contract.ts')).href);
+const bytes=zlib.gunzipSync(fs.readFileSync('docs/fs-01/evidence/baseline-snapshot.json.gz'));
+const artifact=JSON.parse(fs.readFileSync('docs/fs-01/evidence/snapshot-artifact.json','utf8'));
+assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),artifact.sha256Original);
+const original=JSON.parse(bytes.toString('utf8')),prior=inspectSnapshot(original);assert.equal(prior.state,'current');assert.equal(prior.snapshot.version,3);assert.deepEqual(deserializeSnapshot(serializeSnapshot(prior.snapshot)),original);
+const oldBytes=zlib.gunzipSync(fs.readFileSync('docs/fs-00/evidence/baseline-snapshot.json.gz'));const legacy=inspectSnapshot(JSON.parse(oldBytes.toString('utf8')));assert.equal(legacy.state,'reanalysis-required');assert.equal(legacy.snapshot.version,2);
+const result={status:'passed',retainedFs01V3Bytes:bytes.length,retainedFs01V3Sha256:artifact.sha256Original,retainedFs01V3ReadsAsCurrent:true,retainedFs01V3RoundTripUnchanged:true,retainedFs00V2RequiresReanalysis:true,snapshotVersion:3,sourceFreshnessClaim:'not claimed: historical payload compatibility only; evidence requires a current hash check'};
+fs.writeFileSync('docs/fs-02/evidence/historical-snapshot-compatibility.json',JSON.stringify(result,null,2)+'\n');console.log(result);
+})().catch(e=>{console.error(e);process.exitCode=1});

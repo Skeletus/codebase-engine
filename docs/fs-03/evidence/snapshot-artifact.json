@@ -1,0 +1,21 @@
+{
+  "policy": "Lossless archive of generated FS03 verification output; original source and accepted FS00/01/02 artifacts untouched",
+  "records": [
+    {
+      "file": "baseline-parse.json",
+      "originalBytes": 170473,
+      "originalHash": "a7b16e53fc305f5cbd09834889c7ebb0b6aef7f09cff001e592dc8b2077264ac",
+      "archive": "baseline-parse.json.gz",
+      "archiveBytes": 19915,
+      "archiveHash": "91903527880d2f1d02e0fb2db47ad6cb923cd4b38467acafb231a6ea06dce96f"
+    },
+    {
+      "file": "baseline-snapshot.json",
+      "originalBytes": 22674761,
+      "originalHash": "7765371be71a7c6b08d5fd055110fd81b19414ed18eeab026211f779974e5d9a",
+      "archive": "baseline-snapshot.json.gz",
+      "archiveBytes": 814861,
+      "archiveHash": "efb4efb0ef009a771759745855b330a6031335a651a7fc9ae81a34165b2102ae"
+    }
+  ]
+}

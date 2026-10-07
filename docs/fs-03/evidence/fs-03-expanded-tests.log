@@ -1,0 +1,34 @@
+✔ vite7-react18: entries, composition, handlers, hooks and dependencies keep independent witnesses (2566.7319ms)
+✔ vite8-react19: entries, composition, handlers, hooks and dependencies keep independent witnesses (2102.3133ms)
+✔ F03: legacy import projection, exact Impact and type-only edges remain unchanged (374.9299ms)
+✔ F03: glob exclusion/eager/lazy options and asset/worker facts never become calls (207.1699ms)
+✔ F03: computed config produces boundaries instead of guessed runtime edges (153.9083ms)
+✔ F03: plugins config produces boundaries instead of guessed runtime edges (193.1323ms)
+✔ F03: escape config produces boundaries instead of guessed runtime edges (202.6566ms)
+✔ F03: unsupported callback props, inline effects and dynamic navigation stay explicit (210.3108ms)
+✔ F03: nested route/loader/action bindings are navigation, never HTTP claims (217.9363ms)
+✔ F03: incremental/full equivalence and changed HTML/config witnesses become stale (459.2239ms)
+✔ F03: contract rejects binary source masquerading and malformed resource bindings (167.067ms)
+✔ vite7-react18: retained controlled build oracle hashes and named runtime module parity (690.4006ms)
+✔ vite8-react19: retained controlled build oracle hashes and named runtime module parity (218.3269ms)
+✔ F03: original UTF-16/BOM/CRLF/Unicode witnesses and explicit browser/SSR variants (919.9945ms)
+✔ F03: literal aliases preserve runtime/type distinctions and divergent calls stay outside framework traces (317.4109ms)
+✔ F03: Vite 8 opt-in TS paths resolve separately; Vite 7 never assumes the plugin (288.5555ms)
+✔ F03: JavaScript/class/memo/forwardRef aliases and inline callbacks retain lexical ownership (192.3677ms)
+✔ F03: named barrel aliases retain intermediate witnesses and stale barrel changes are detected (187.8166ms)
+✔ F03: developer proxy facts never establish a production origin; rewrites remain exact or unknown (307.8995ms)
+✔ F03: HTML comments/raw text/templates/duplicate attributes never create guessed entries (0.9808ms)
+✔ F03: configuration execution/egress, escaped aliases and symlinks remain denied (471.5389ms)
+✔ F03: aliased React implementation and reassigned exported handlers cannot create framework facts (296.2553ms)
+✔ F03: retained accepted FS-02 v3 payload remains byte/canonical compatible (1009.5092ms)
+✔ F03: adapter fact budget is generation-local and cancellation never returns a partial snapshot (175.4125ms)
+✔ F03: React DOM version mismatch and shadowed classic JSX factory withhold roots (323.9813ms)
+✔ F03: custom proxy request hooks and worker queries on assets remain boundaries (164.238ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 13624.3485

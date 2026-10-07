@@ -1,0 +1,10 @@
+✔ qualification vite8-react19/ssr-production: pinned expanded module oracle and source witnesses (3033.9893ms)
+ℹ {"tuple":"vite8-react19","profile":"ssr-production","facts":47,"registrations":3,"candidates":0,"gaps":23,"forbiddenGuessedFacts":0}
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3984.0727

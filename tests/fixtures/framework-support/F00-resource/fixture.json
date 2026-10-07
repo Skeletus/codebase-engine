@@ -1,0 +1,29 @@
+{
+  "id": "F00-resource",
+  "phase": "FS-02",
+  "tuple": {
+    "node": "24.19.0",
+    "typescript": "5.9.3",
+    "tsMorph": "28.0.0"
+  },
+  "extractorVersion": "fs-02/1",
+  "license": "synthetic first-party fixture; repository license",
+  "budgets": {
+    "configDepth": 32,
+    "configNodes": 10000,
+    "metadataDependencies": 64,
+    "globPatterns": 100,
+    "globMatches": 20000
+  },
+  "oracle": "hand-authored below/at/above budget and cancellation truth tables in fs-02.test.ts",
+  "expectedFailureReasons": [
+    "resource-limit",
+    "config-cycle",
+    "cancelled"
+  ],
+  "forbidden": [
+    "partial generation publication",
+    "silent truncation",
+    "repository code execution"
+  ]
+}

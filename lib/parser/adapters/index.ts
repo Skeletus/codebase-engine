@@ -23,4 +23,9 @@ export function selectAdapter(project: ProjectInfo): FrameworkAdapter {
   return ADAPTERS.find((adapter) => adapter.detect(project)) ?? fallbackAdapter;
 }
 
+/** Compatible detections are additive; legacy fact precedence stays first-match. */
+export function compatibleAdapters(project: ProjectInfo): readonly FrameworkAdapter[] {
+  return ADAPTERS.filter(adapter => adapter !== fallbackAdapter && adapter.detect(project));
+}
+
 export type { FrameworkAdapter, ProjectInfo };

@@ -1,0 +1,28 @@
+{
+  "id": "F03-qualification",
+  "license": "synthetic first-party fixture",
+  "sources": {
+    "package.json": "{\"name\":\"f03\",\"dependencies\":{\"vite\":\"8.3.3\",\"react\":\"19.2.8\",\"react-dom\":\"19.2.8\",\"react-router\":\"7.18.4\"},\"devDependencies\":{\"@vitejs/plugin-react\":\"6.1.2\"},\"exports\":{\"./branch\":{\"browser\":{\"development\":\"./src/development.ts\",\"production\":\"./src/production.ts\"},\"node\":\"./src/server.ts\",\"default\":\"./src/fallback.ts\"}}}",
+    "vite.config.ts": "import {defineConfig} from 'vite';import react from '@vitejs/plugin-react';export default defineConfig({plugins:[react()],base:'/app/',resolve:{alias:{'@selected':'./src/Selected.ts'},conditions:['module','browser','development|production']},ssr:{resolve:{conditions:['module','node','production']}},build:{rollupOptions:{input:{main:'index.html',admin:'admin.html'}}}})",
+    "index.html": "<script type=\"module\" src=\"/main.tsx\"></script>",
+    "admin.html": "<script type=\"module\" src=\"/src/admin.tsx\"></script>\n",
+    "src/main.tsx": "import React from 'react'; import {createRoot as root} from 'react-dom/client'; import {App} from './App'; import './style.module.css'; const pages=import.meta.glob(['./pages/*.tsx','!./pages/Excluded.tsx'], {eager:true, import:'default'}); const lazyPages=import.meta.glob('./pages/*.tsx'); const logo=new URL('./logo.svg',import.meta.url); const worker=new Worker(new URL('./worker.ts',import.meta.url), {type:'module'}); root(document.getElementById('root')).render(<App/>); export {pages,lazyPages,logo,worker};\n",
+    "src/admin.tsx": "import React from 'react'; import {hydrateRoot} from 'react-dom/client'; import {App} from './App'; hydrateRoot(document.getElementById('root'),<App/>);\n",
+    "src/App.tsx": "import React,{memo as cache,lazy,useEffect as effect,createContext,useContext} from 'react'; import {BrowserRouter,Link,Route,Routes,createBrowserRouter} from 'react-router'; import {View as Alias} from './View'; export const Theme=createContext('light'); function cleanup(){release();} function release(){} function installed(){return cleanup;} export function save(){persist();} function persist(){} export function useTheme(){return useContext(Theme);} const Cached=cache(Alias); const Lazy=lazy(()=>import('./pages/Page')); export function App(){effect(installed,[]); useTheme(); return <BrowserRouter><Theme.Provider value='dark'><Cached/><Lazy/><button onClick={save}>Save</button><Link to='/home'>Home</Link><Routes><Route path='/home' element={<Alias/>}/></Routes></Theme.Provider></BrowserRouter>;} function load(){return 'data';} function act(){save();} export const router=createBrowserRouter([{path:'/data',Component:Alias,loader:load,action:act,children:[{index:true,Component:Alias}]}]); export function UppercaseHelper(){return 42;} export function Shadow(){function effect(cb){return cb;} effect(save); return <div/>;}\n",
+    "src/View.tsx": "import React from 'react'; export function View(){return <section/>;}\n",
+    "src/pages/Page.tsx": "import React from 'react'; export default function Page(){return <main/>;}\n",
+    "src/pages/Excluded.tsx": "import React from 'react'; export default function Excluded(){return <aside/>;}\n",
+    "src/style.module.css": ".button{color:red}\n",
+    "src/logo.svg": "<svg xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 0\"/></svg>\n",
+    "src/worker.ts": "export const workerValue=1;\n",
+    "main.tsx": "import {createRoot} from 'react-dom/client';import {App} from './src/App';import {value as branch} from 'f03/branch';import {selected} from '@selected';import icon from '/public.svg?url';import text from './src/raw.txt?raw';const modules=import.meta.glob('./src/pages/*.tsx',{eager:true,import:'default'});const urls=import.meta.glob('./src/pages/*.tsx',{query:'?url',import:'default'});const worker=new Worker(new URL('./src/worker.ts',import.meta.url),{type:'module'});createRoot(document.getElementById('root')).render(<App/>);export {branch,selected,icon,text,modules,urls,worker};",
+    "src/development.ts": "export const value=\"development\";",
+    "src/production.ts": "export const value=\"production\";",
+    "src/server.ts": "export const value=\"server\";",
+    "src/fallback.ts": "export const value=\"fallback\";",
+    "src/Selected.ts": "export const selected=1;",
+    "src/raw.txt": "Controlled raw fixture",
+    "public/public.svg": "<svg xmlns=\"http://www.w3.org/2000/svg\"/>",
+    "src/ssr.tsx": "import {renderToString} from 'react-dom/server';import {App} from './App';import {value} from 'f03/branch';export function render(){return renderToString(<App/>)}export {value};"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "fixture": "F02-profile",
+  "fixtureSha256": "b09c44880282b7607507228226bf89f8e94e37cfc4d0f8f51ab59c0fe4496c20",
+  "tuple": {
+    "node": "24.19.0",
+    "typescript": "5.9.3",
+    "tsMorph": "28.0.0"
+  },
+  "extractorVersion": "fs-02/1",
+  "platform": "win32",
+  "architecture": "x64",
+  "cpu": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  ",
+  "freshSessions": {
+    "runs": 5,
+    "medianMs": 25.707099999999855,
+    "p95Ms": 150.83759999999995,
+    "samplesMs": [
+      150.83759999999995,
+      42.970699999999965,
+      23.80320000000006,
+      25.613399999999956,
+      25.707099999999855
+    ]
+  },
+  "warm": {
+    "runs": 20,
+    "medianMs": 17.47550000000001,
+    "p95Ms": 25.159400000000005,
+    "samplesMs": [
+      19.471700000000055,
+      15.336000000000013,
+      17.416999999999916,
+      17.777499999999918,
+      21.083499999999958,
+      15.58770000000004,
+      16.474399999999832,
+      17.47550000000001,
+      14.72400000000016,
+      16.485799999999927,
+      21.268499999999904,
+      25.159400000000005,
+      19.55359999999996,
+      20.196699999999964,
+      25.52859999999987,
+      15.172600000000102,
+      18.78320000000008,
+      15.103799999999865,
+      14.964999999999918,
+      15.427400000000034
+    ]
+  },
+  "sourceBytes": 148,
+  "found": 3,
+  "parsed": 2,
+  "skipped": 1,
+  "imports": 1,
+  "resources": 3,
+  "snapshotBytes": 9289,
+  "maxSampledProcessRssBytes": 137887744,
+  "peakCommittedMemoryBytes": null,
+  "measurementLimit": "Five fresh sessions within one process, not cold processes; RSS samples after runs, not peak committed memory or isolated parser measurements; no framework throughput qualification",
+  "evidenceMismatches": 0,
+  "modelSha256": "aa499934b8197fb12c36eec2b367c523d5a6da77b439ab58dc4b30bb46ea3513"
+}

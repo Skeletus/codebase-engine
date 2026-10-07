@@ -1,0 +1,101 @@
+{
+  "tuple": "vite8-react19",
+  "versions": {
+    "node": "24.19.0",
+    "vite": "8.3.3",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-router": "7.18.4",
+    "typescript": "5.9.3"
+  },
+  "configPolicy": "configFile:false/environment-files-disabled/application-owned collector; no fixture app execution",
+  "fixtureHash": "72c94b0186ac841d491a575a8b8092c0bd98dd9b1a38d2ba03e7c9b33e36046a",
+  "materializedHash": "d742b93697b048101eb478fe39caece9927159aa1d3b7df669107ded4bf1f319",
+  "modules": [
+    {
+      "id": "admin.html",
+      "imports": [
+        "\u0000vite/modulepreload-polyfill.js",
+        "src/admin.tsx"
+      ],
+      "dynamic": []
+    },
+    {
+      "id": "index.html",
+      "imports": [
+        "\u0000vite/modulepreload-polyfill.js",
+        "src/main.tsx"
+      ],
+      "dynamic": []
+    },
+    {
+      "id": "src/admin.tsx",
+      "imports": [
+        "react",
+        "react-dom/client",
+        "react/jsx-runtime",
+        "src/App.tsx"
+      ],
+      "dynamic": []
+    },
+    {
+      "id": "src/App.tsx",
+      "imports": [
+        "\u0000vite/preload-helper.js",
+        "react",
+        "react-router",
+        "react/jsx-runtime",
+        "src/View.tsx"
+      ],
+      "dynamic": [
+        "src/pages/Page.tsx"
+      ]
+    },
+    {
+      "id": "src/main.tsx",
+      "imports": [
+        "\u0000vite/preload-helper.js",
+        "react",
+        "react-dom/client",
+        "react/jsx-runtime",
+        "src/App.tsx",
+        "src/pages/Page.tsx",
+        "src/style.module.css"
+      ],
+      "dynamic": [
+        "src/pages/Excluded.tsx",
+        "src/pages/Page.tsx"
+      ]
+    },
+    {
+      "id": "src/pages/Excluded.tsx",
+      "imports": [
+        "react",
+        "react/jsx-runtime"
+      ],
+      "dynamic": []
+    },
+    {
+      "id": "src/pages/Page.tsx",
+      "imports": [
+        "react",
+        "react/jsx-runtime"
+      ],
+      "dynamic": []
+    },
+    {
+      "id": "src/style.module.css",
+      "imports": [],
+      "dynamic": []
+    },
+    {
+      "id": "src/View.tsx",
+      "imports": [
+        "react",
+        "react/jsx-runtime"
+      ],
+      "dynamic": []
+    }
+  ],
+  "outputHash": "b46dba07a5421424fd2eb9a5e8800f5141d0c5468f05eae6b04d228a51ecffd9"
+}

@@ -2,7 +2,7 @@
 import { useMemo, useState } from "react";
 import type { CodeSnapshot } from "@/lib/engine/types";
 import type { Site } from "@/lib/model/behavior";
-import { traceCalls } from "@/lib/engine/behavior";
+import { traceCalls, traceFramework } from "@/lib/engine/behavior";
 
 export function BehaviorTraces({ snapshot, onReveal }: { snapshot: CodeSnapshot; onReveal: (file: string) => void }) {
   const [open, setOpen] = useState(false), [search, setSearch] = useState(""), [selected, setSelected] = useState(""), [depth, setDepth] = useState(8), [budget, setBudget] = useState(100);
@@ -12,11 +12,21 @@ export function BehaviorTraces({ snapshot, onReveal }: { snapshot: CodeSnapshot;
   const trace = useMemo(() => selected ? traceCalls(snapshot, selected, depth, budget) : null, [snapshot, selected, depth, budget]);
   const bindings = snapshot.behavior.handlers.filter((h) => h.target === selected);
   const references = snapshot.behavior.relations.filter((r) => r.relation === "references" && r.target === selected);
+  const [uiEntry, setUiEntry] = useState("");
+  const entries = snapshot.analysis.bindings.filter(b => b.kind === "entry-point");
+  const frameworkTrace = useMemo(() => {
+    const chosenEntry = snapshot.analysis.bindings.find(b => b.id === uiEntry);
+    return chosenEntry ? traceFramework(snapshot,chosenEntry.occurrence.file,chosenEntry.variantId,depth,budget) : null;
+  },[snapshot,uiEntry,depth,budget]);
   function witness(site: Site) { return <span><button className="text-accent underline" onClick={() => onReveal(site.file)}>{site.file}:{site.line}–{site.endLine}</button><span className="block break-all text-fg-muted">UTF-16 range [{site.start}, {site.end}) · SHA-256 {site.fileHash} · {site.extractor}</span></span>; }
   return <section aria-label="Static call traces" className="border-b border-line p-3 text-[11px]">
     <button className="text-accent" aria-expanded={open} onClick={() => setOpen(!open)}>Static call traces ({callable.length} callable declarations)</button>
     {open && <>
       <p className="my-2 text-fg-muted">Verified lexical calls are static possibilities, not guaranteed execution or temporal order. Receiver dispatch, DI, callbacks and unsupported exports may remain gaps. Every link opens Details; use Read / recheck source to verify its hash.</p>
+      {entries.length > 0 && <>
+        <label className="block">UI entry <select aria-label="UI entry investigation" className="w-full border border-line bg-canvas" value={uiEntry} onChange={e=>setUiEntry(e.target.value)}><option value="">Choose a witnessed UI entry…</option>{entries.slice(0,100).map(b=><option key={b.id} value={b.id}>{b.occurrence.file}:{b.occurrence.line} · {snapshot.analysis.variants.find(v=>v.id===b.variantId)?.environment}</option>)}</select></label>
+        {frameworkTrace && <div className="my-2 max-h-96 overflow-auto"><p>{frameworkTrace.meaning}</p>{frameworkTrace.steps.map((step,i)=><p key={i} className="my-2">{step.kind === "framework-binding" ? `Framework binding · ${step.binding.kind} · ${names.get(step.binding.targetId)?.name ?? step.binding.targetId}` : `Verified lexical call · ${names.get(step.call.target)?.name}`}{witness(step.kind === "framework-binding" ? step.binding.occurrence : step.call.site)}</p>)}<p>Omitted: {frameworkTrace.beyondDepth} at depth limit · {frameworkTrace.beyondBudget} at budget limit · {frameworkTrace.gapsOmitted} gaps.</p>{frameworkTrace.gaps.map(g=><p key={g.id}>{g.reason}{witness(g.occurrence)}</p>)}</div>}
+      </>}
       <label className="block">Handler <select aria-label="Route handler" className="w-full border border-line bg-canvas" value="" onChange={(e) => setSelected(e.target.value)}><option value="">Select a supported route handler…</option>{snapshot.behavior.handlers.filter((h) => h.target).map((h) => <option key={h.route} value={h.target!}>{snapshot.routes[h.route].method} {snapshot.routes[h.route].pattern} · {names.get(h.target!)?.name}</option>)}</select></label>
       {snapshot.behavior.handlers.filter((h) => !h.target).slice(0, 100).map((h) => <p key={h.route} className="my-2">Unbound route: {snapshot.routes[h.route].method} {snapshot.routes[h.route].pattern} · {h.reason}{witness(h.site)}</p>)}
       {snapshot.behavior.handlers.filter((h) => !h.target).length > 100 && <p>Unbound route list limited to 100; inspect route declarations in the route table.</p>}

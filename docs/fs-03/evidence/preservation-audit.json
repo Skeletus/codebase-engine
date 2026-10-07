@@ -1,0 +1,19 @@
+{
+  "baseline": "accepted working tree captured before FS-03",
+  "changed": [
+    "lib/engine/coordinator.ts",
+    "lib/engine/discovery.ts",
+    "components/behavior-traces.tsx",
+    "lib/engine/adapters/typescript.ts",
+    "lib/engine/behavior.ts",
+    "lib/engine/index.ts",
+    "lib/model/framework-validate.ts",
+    "lib/model/framework.ts",
+    "lib/parser/behavior.ts",
+    "lib/parser/walk.ts"
+  ],
+  "removed": [],
+  "frozenLayaHash": "aa499934b8197fb12c36eec2b367c523d5a6da77b439ab58dc4b30bb46ea3513",
+  "productionManifestsChanged": [],
+  "acceptedFs02EvidenceChanged": []
+}

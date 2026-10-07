@@ -1,6 +1,7 @@
-import { GAP_REASONS, factId, profileId, variantId, capabilityId, type AnalysisContracts, type Resource, type Witness } from "./framework.ts";
+import { BINDING_KINDS, GAP_REASONS, factId, profileId, variantId, capabilityId, type AnalysisContracts, type Resource, type Witness } from "./framework.ts";
 import type { LegacySnapshot } from "../engine/types.ts";
 import type { Site } from "./behavior.ts";
+import { publicMetadataName } from "../repository/metadata-policy.ts";
 
 function object(v: unknown, keys: string[]): Record<string, unknown> { if (!v || typeof v !== "object" || Array.isArray(v)) throw new Error("Invalid shared record"); const o = Object.fromEntries(Object.entries(v)); if (Object.keys(o).length !== keys.length || keys.some(k => !(k in o))) throw new Error("Unknown/missing shared field"); return o; }
 function list(v: unknown, limit = 200000): unknown[] { if (!Array.isArray(v) || v.length > limit) throw new Error("Invalid shared collection"); return v; }
@@ -17,14 +18,15 @@ function mapRecords(value: unknown, keys: string[], limit = 200000): Map<string,
 
 /** No parser AST, repository reads or graph algorithm lives in this validator. */
 export function validateAnalysis(value: unknown, snapshot: LegacySnapshot): AnalysisContracts {
-  const a = object(value, ["status", "projects", "resources", "profiles", "variants", "qualifications", "capabilities", "registrations", "bindings", "candidates", "gaps", "assumptions"]);
+  const hasProxies = !!value && typeof value === "object" && "developmentProxies" in value;
+  const a = object(value, ["status", "projects", "resources", "profiles", "variants", "qualifications", "capabilities", "registrations", "bindings", "candidates", "gaps", "assumptions", ...(hasProxies ? ["developmentProxies"] : [])]);
   one(a.status, ["legacy-observations", "assessed"]);
   const filesByPath = new Map(snapshot.files.map(f => [f.path, f]));
   const importIds = new Set(snapshot.relationships.map(r => r.id));
   const declarationIds = new Set(snapshot.behavior.declarations.map(d => d.id));
   const handlersByIndex = new Map(snapshot.behavior.handlers.map(h => [h.route, h]));
   const resources = new Map<string, Resource>();
-  for (const v of list(a.resources, 20000)) { const r = object(v, ["path", "hash", "bytes", "utf16Length", "lines", "encoding", "purpose"]), p = relative(r.path); hash(r.hash); integer(r.bytes); integer(r.utf16Length); if (!integer(r.lines) || integer(r.bytes) > 1048576 || integer(r.utf16Length) > integer(r.bytes)) throw new Error("Invalid source dimensions"); one(r.encoding, ["utf8", "legacy-decoded"]); one(r.purpose, ["source", "metadata"]); if (r.encoding === "legacy-decoded" && (a.status !== "legacy-observations" || r.purpose !== "source")) throw new Error("Unqualified source decoding"); if (resources.has(p)) throw new Error("Duplicate shared resource"); if (p.split('/').slice(0, -1).some(part => part.startsWith('.') || ['node_modules','dist','build','out','coverage','target','bin','obj','vendor','generated','__generated__'].includes(part.toLowerCase())) || /^(?:\.env(?:\..*)?|credentials(?:\..*)?|secrets?(?:\..*)?|id_(?:rsa|dsa|ecdsa|ed25519)(?:\..*)?|.*\.(?:pem|key|p12|pfx|keystore))$/i.test(p.split('/').at(-1)!)) throw new Error('Denied shared resource path'); if (r.purpose === 'metadata' && !/^(?:package|tsconfig(?:\.[^/]+)?|jsconfig(?:\.[^/]+)?)\.json$/.test(p.split('/').at(-1)!)) throw new Error('Unapproved metadata witness'); resources.set(p, r as Resource); }
+  for (const v of list(a.resources, 20000)) { const r = object(v, ["path", "hash", "bytes", "utf16Length", "lines", "encoding", "purpose"]), p = relative(r.path); hash(r.hash); integer(r.bytes); integer(r.utf16Length); if (!integer(r.lines) || integer(r.bytes) > 1048576 || integer(r.utf16Length) > integer(r.bytes)) throw new Error("Invalid source dimensions"); one(r.encoding, ["utf8", "legacy-decoded", "binary"]); if (r.encoding === "binary" && (r.purpose !== "framework-input" || r.utf16Length !== 0 || r.lines !== 1)) throw new Error("Invalid binary resource"); one(r.purpose, ["source", "metadata", "framework-input"]); if (r.encoding === "legacy-decoded" && (a.status !== "legacy-observations" || r.purpose !== "source")) throw new Error("Unqualified source decoding"); if (resources.has(p)) throw new Error("Duplicate shared resource"); if (p.split('/').slice(0, -1).some(part => part.startsWith('.') || ['node_modules','dist','build','out','coverage','target','bin','obj','vendor','generated','__generated__','venv','__pycache__','site-packages'].includes(part.toLowerCase())) || /^(?:\.env(?:\..*)?|credentials(?:\..*)?|secrets?(?:\..*)?|id_(?:rsa|dsa|ecdsa|ed25519)(?:\..*)?|.*\.(?:pem|key|p12|pfx|keystore))$/i.test(p.split('/').at(-1)!)) throw new Error('Denied shared resource path'); if (r.purpose === 'metadata' && !publicMetadataName(p.split('/').at(-1)!)) throw new Error('Unapproved metadata witness'); if (r.purpose === "framework-input" && !/\.(?:html|css|svg|png|jpe?g|gif|webp|ico|woff2?|ttf|mp4|webm|txt|json)$/.test(p)) throw new Error("Unsupported framework input"); resources.set(p, r as Resource); }
   for (const f of snapshot.files) { const r = resources.get(f.path); if (!r || r.hash !== f.hash || r.bytes !== f.bytes || r.lines !== f.lines || r.purpose !== "source") throw new Error("Source resource disagrees with file"); }
   for (const r of resources.values()) if (r.path.split("/").length > 64 || r.path.split("/").some(part => sensitivePath.test(part))) throw new Error("Denied shared resource path");
   if ([...resources.values()].reduce((sum, r) => sum + r.bytes, 0) > 128 * 1024 * 1024) throw new Error("Shared resource budget exceeded");
@@ -50,7 +52,7 @@ export function validateAnalysis(value: unknown, snapshot: LegacySnapshot): Anal
   if (allIds.length > 200000) throw new Error("Shared fact budget exceeded");
   if (new Set(allIds).size !== allIds.length || allIds.some(id => importIds.has(id) || filesByPath.has(id) || declarationIds.has(id))) throw new Error("Colliding shared identity");
   const declarations = new Map(snapshot.behavior.declarations.map(d => [d.id, d]));
-  const target = (id: unknown) => { const s = text(id); if (!filesByPath.has(s) && !declarations.has(s) && !registrations.has(s)) throw new Error("Dangling shared target"); return s; };
+  const target = (id: unknown) => { const s = text(id); if (!filesByPath.has(s) && resources.get(s)?.purpose !== "framework-input" && !declarations.has(s) && !registrations.has(s)) throw new Error("Dangling shared target"); return s; };
   const variant = (id: unknown) => { const s = text(id); if (!variants.has(s)) throw new Error("Unsupported shared variant"); return s; };
   const gapRefs = (value: unknown, variantId: string) => { const ids = strings(value); for (const id of ids) if (gaps.get(id)?.variantId !== variantId) throw new Error("Dangling/cross-variant gap"); return ids; };
   for (const g of gaps.values()) { const v = variant(g.variantId), s = site(g.occurrence), reason = one(g.reason, GAP_REASONS); if (g.id !== factId("gap", s, v, reason) || (g.capabilityId !== null && capabilities.get(text(g.capabilityId))?.variantId !== v)) throw new Error("Invalid gap identity/capability"); }
@@ -63,10 +65,34 @@ export function validateAnalysis(value: unknown, snapshot: LegacySnapshot): Anal
     if (r.legacyRouteIndex !== null) { const index = integer(r.legacyRouteIndex), route = snapshot.routes[index], handler = handlersByIndex.get(index); if (legacyIndices.has(index) || !route || !handler || route.file !== s.file || route.pattern !== r.rawPattern || handler.target !== r.handlerId || !sameSite(handler.site, s)) throw new Error("Invalid legacy registration projection"); legacyIndices.add(index); }
   }
   if (legacyIndices.size !== snapshot.routes.length) throw new Error("Missing legacy registration projection");
-  function owned(sourceId: unknown, occurrence: Site, variantId: string) { const id = target(sourceId), owner = declarations.get(id), registration = registrations.get(id); if (registration && (registration.variantId !== variantId || !sameSite(site(registration.occurrence), occurrence))) throw new Error("Registration source scope mismatch"); if (filesByPath.has(id) && id !== occurrence.file || owner && (owner.site.file !== occurrence.file || owner.site.start > occurrence.start || owner.site.end < occurrence.end)) throw new Error('Source ownership mismatch'); }
-  const kinds = ["component-reference", "event-handler", "lifecycle", "context", "navigation", "native-bridge", "registration"];
+  function owned(sourceId: unknown, occurrence: Site, variantId: string) { const id = target(sourceId), owner = declarations.get(id), registration = registrations.get(id); if (registration && (registration.variantId !== variantId || !sameSite(site(registration.occurrence), occurrence))) throw new Error("Registration source scope mismatch"); if ((filesByPath.has(id) || resources.get(id)?.purpose === "framework-input") && id !== occurrence.file || owner && (owner.site.file !== occurrence.file || owner.site.start > occurrence.start || owner.site.end < occurrence.end)) throw new Error('Source ownership mismatch'); }
+  const kinds = BINDING_KINDS;
+  for (const binding of bindings.values()) {
+    const kind=String(binding.kind),targetId=String(binding.targetId);
+    if (["module-dependency","worker"].includes(kind) && !filesByPath.has(targetId)
+      || kind === "entry-point" && !filesByPath.has(targetId) && !declarations.has(targetId)
+      || kind === "asset" && !filesByPath.has(targetId) && resources.get(targetId)?.purpose !== "framework-input") throw new Error("Wrong framework resource target");
+  }
   for (const b of bindings.values()) { const v = variant(b.variantId), s = site(b.occurrence), kind = one(b.kind, kinds); owned(b.sourceId, s, v); const t = target(b.targetId); if (b.id !== factId("binding:" + kind, s, v, t)) throw new Error("Invalid binding identity"); const proof = witnesses(b.witnesses, v); if (!proof.some(w => w.role !== 'framework-rule' && sameSite(w.site, s))) throw new Error('Binding occurrence missing from proof'); if (declarations.has(t) && !proof.some(w => w.role === 'declaration' && sameSite(w.site, declarations.get(t)!.site))) throw new Error('Missing binding declaration witness'); if (['event-handler','lifecycle','native-bridge'].includes(kind) && !declarations.get(t)?.callable) throw new Error('Noncallable framework binding'); if (kind === 'registration' && !registrations.has(t) || kind === 'navigation' && (!registrations.has(t) || registrations.get(t)!.kind === 'http')) throw new Error('Wrong framework endpoint kind'); if (registrations.has(t) && registrations.get(t)!.variantId !== v) throw new Error("Cross-variant binding"); }
   for (const c of candidates.values()) { const v = variant(c.variantId), s = site(c.occurrence), kind = one(c.relationKind, [...kinds, "request-endpoint"]); owned(c.sourceId, s, v); for (const t of strings(c.targetIds, 200)) { target(t); if (kind === "request-endpoint" && registrations.get(t)?.kind !== "http") throw new Error("Wrong candidate endpoint kind"); if (registrations.has(t) && registrations.get(t)!.variantId !== v) throw new Error("Cross-variant candidate"); } const reasons = strings(c.reasons, GAP_REASONS.length); if (!reasons.length) throw new Error("Candidate missing uncertainty"); for (const reason of reasons) one(reason, GAP_REASONS); bool(c.truncated); if (c.truncated && !reasons.includes("candidate-overflow")) throw new Error("Truncation missing reason"); if (c.id !== factId("candidate:" + kind, s, v, text(c.sourceId))) throw new Error("Invalid candidate identity"); const proof = witnesses(c.witnesses, v); if (!proof.some(w => w.role !== "framework-rule" && sameSite(w.site, s))) throw new Error("Candidate occurrence missing from proof"); }
   for (const x of assumptions.values()) { variant(x.variantId); if (!integer(x.revision) || x.provenance !== "user") throw new Error("Invalid assumption provenance"); text(x.service); const url = new URL(text(x.origin)); if (!["http:", "https:"].includes(url.protocol) || url.username || url.password || url.origin !== x.origin) throw new Error("Invalid assumed origin"); }
+  for (const raw of hasProxies ? list(a.developmentProxies, 64) : []) {
+    const p = object(raw,["id","variantId","scope","prefix","targetOrigin","targetBasePath","rewrite","occurrence","witnesses"]), v = variant(p.variantId), s = site(p.occurrence);
+    if (p.scope !== "development" || !/^vite\.config\.[cm]?[jt]s$/.test(s.file.split("/").at(-1)!) || !["metadata","source"].includes(resources.get(s.file)?.purpose ?? "") || !text(p.prefix).startsWith("/") || !text(p.targetBasePath).startsWith("/")) throw new Error("Invalid development routing scope");
+    const origin = new URL(text(p.targetOrigin));
+    if (!["http:","https:"].includes(origin.protocol) || origin.origin !== p.targetOrigin || origin.username || origin.password) throw new Error("Invalid proxy origin");
+    const identity = text(p.id);
+    if (identity !== factId("development-proxy",s,v,text(p.prefix)) || allIds.includes(identity)) throw new Error("Invalid proxy identity");
+    allIds.push(identity);
+    const proof = witnesses(p.witnesses,v);
+    if (!proof.some(w=>w.role === "configuration" && sameSite(w.site,s))) throw new Error("Missing proxy configuration proof");
+    const rewrite = p.rewrite as Record<string,unknown>;
+    if (!rewrite || typeof rewrite !== "object") throw new Error("Invalid proxy rewrite");
+    if (rewrite.state === "identity") object(rewrite,["state"]);
+    else if (rewrite.state === "prefix") {object(rewrite,["state","from","to"]); if (!text(rewrite.from).startsWith("/") || typeof rewrite.to !== "string" || rewrite.to.length > 16384 || rewrite.to.includes("\0")) throw new Error("Invalid prefix rewrite");}
+    else if (rewrite.state === "unknown") {object(rewrite,["state","gapId"]); if (gaps.get(text(rewrite.gapId))?.variantId !== v) throw new Error("Missing proxy rewrite gap");}
+    else throw new Error("Invalid proxy rewrite state");
+  }
+  if (allIds.length > 200000) throw new Error("Shared fact budget exceeded");
   return structuredClone(a) as AnalysisContracts;
 }

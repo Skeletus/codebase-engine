@@ -4,17 +4,26 @@ import { createSyntaxSession, parseSelection, selectFiles, type Selection } from
 import { validateParseResult } from "../../parser/contract.ts";
 import { validateSnapshot } from "../contract.ts";
 import { legacyObservations } from "../compatibility.ts";
+import { AnalysisCoordinator } from "../coordinator.ts";
+import { extractVite } from "../../parser/adapters/vite.ts";
+import type { ViteMode } from "../../parser/adapters/vite.ts";
+import type { FrameworkSource } from "../../parser/framework-bindings.ts";
 import type { LegacySnapshot } from "../types.ts";
 import { SNAPSHOT_VERSION, type CodeSnapshot, type Evidence, type LanguageAdapter } from "../types.ts";
 
 export const typescriptAdapter: LanguageAdapter = {
   id: "typescript-javascript",
-  analyze: analyzeTypescript,
+  analyze: (directory, progress) => new AnalysisCoordinator(typescriptDriver()).analyze(directory, true, progress).snapshot,
 };
-function analyzeTypescript(directory: string, onProgress?: (stage: "parse") => void, selection: Selection = selectFiles(directory), session?: ReturnType<typeof createSyntaxSession>): CodeSnapshot {
+function analyzeTypescript(directory: string, onProgress?: (stage: "parse") => void, selection: Selection = selectFiles(directory), session?: ReturnType<typeof createSyntaxSession>, capture?: (inputs: FrameworkSource[]) => void): CodeSnapshot {
     onProgress?.("parse");
     let behavior: Behavior | undefined;
-    const parsed = validateParseResult(parseSelection(selection, (sources, resolver, routes) => { behavior = extractBehavior(sources, resolver, routes); }, session));
+    const parsed = validateParseResult(parseSelection(selection, (sources, resolver, routes) => {
+      const projects = selection.walk.discovery.projects.filter(p => p.versions.vite === "7.3.7" && p.versions.react === "18.3.1" || p.versions.vite === "8.3.3" && p.versions.react === "19.2.8");
+      const eligible=new Set(projects.length ? sources.filter(s=>s.sourceFile.getDescendants().length<=100000).map(s=>s.candidate.path) : []);
+      const callbacks = new Set(selection.walk.discovery.inventory.filter(f => eligible.has(f.path) && projects.some(p => p.path === f.owner) && selection.walk.candidates.find(c=>c.path===f.path)?.validUtf8 !== false).map(f => f.path));
+      behavior = extractBehavior(sources, resolver, routes, callbacks); capture?.(sources);
+    }, session));
     if (!behavior) throw new Error("Missing static symbol analysis");
     const byPath = new Map(parsed.files.map((f) => [f.path, f]));
     const evidence = (file: string, line: number, extractor: string, description: string): Evidence => {
@@ -57,29 +66,31 @@ function analyzeTypescript(directory: string, onProgress?: (stage: "parse") => v
 }
 
 /** Ephemeral adapter-owned ASTs; shared engine contracts never expose ts-morph. */
-export function createTypescriptRefresh() {
-  let session = createSyntaxSession(), previous: Selection | undefined;
+export function createTypescriptRefresh(options: { signal?: AbortSignal; viteModes?: readonly ViteMode[] } = {}) {
+  return new AnalysisCoordinator(typescriptDriver(options.viteModes), options);
+}
+
+function typescriptDriver(modes?: readonly ViteMode[]) {
+  let inputs: FrameworkSource[] = [];
+  let session = createSyntaxSession();
   let unresolved = "";
   return {
-    analyze(root: string, forceFull: boolean, progress?: (stage: "parse") => void) {
-      const selection = selectFiles(root, root);
-      const topology = (s: Selection) => JSON.stringify({ paths: s.walk.candidates.map((c) => [c.path, c.project]), skipped: s.walk.skipped, projects: s.walk.projects, excluded: s.walk.excludedDirectories });
-      let full = forceFull || !previous || topology(previous) !== topology(selection);
-      // Resolution-only package/config metadata is also authoritative. Rebuild
-      // globally when it changes, even if no watcher event was delivered.
-      if (previous && !previous.reader.metadataStable()) full = true;
+    id: "typescript-javascript",
+    analyze(selection: Selection, forceFull: boolean, progress?: (stage: "parse") => void) {
+      const root = selection.root;
+      let full = forceFull;
       if (full) session = createSyntaxSession();
-      let snapshot = analyzeTypescript(root, progress, selection, session);
+      let snapshot = analyzeTypescript(root, progress, selection, session, sources => { inputs = sources; });
       const currentUnresolved = JSON.stringify(snapshot.diagnostics.filter((d) => d.category === "unresolved-import" || d.category === "config"));
       if (!full && currentUnresolved !== unresolved) {
         full = true; session = createSyntaxSession();
-        snapshot = analyzeTypescript(root, progress, selection, session);
+        snapshot = analyzeTypescript(root, progress, selection, session, sources => { inputs = sources; });
       }
       unresolved = currentUnresolved;
-      const candidate = { snapshot, reader: selection.reader, mode: full ? "full" as const : "incremental" as const, parsed: session.parsed, reused: session.reused };
-      previous = selection;
+      const candidate = { snapshot, mode: full ? "full" as const : "incremental" as const, parsed: session.parsed, reused: session.reused };
       return candidate;
     },
-    reset() { session = createSyntaxSession(); previous = undefined; unresolved = ""; },
+    project(snapshot: CodeSnapshot, selection: Selection) { return extractVite(snapshot, selection, inputs, modes); },
+    reset() { session = createSyntaxSession(); unresolved = ""; inputs = []; },
   };
 }

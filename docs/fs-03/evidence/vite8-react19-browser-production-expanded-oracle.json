@@ -1,0 +1,161 @@
+{
+  "tuple": "vite8-react19",
+  "versions": {
+    "node": "24.19.0",
+    "vite": "8.3.3",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-router": "7.18.4",
+    "typescript": "5.9.3",
+    "@vitejs/plugin-react": "6.1.2"
+  },
+  "profile": "browser-production",
+  "workerModules": [
+    {
+      "id": "src/worker.ts",
+      "imports": []
+    }
+  ],
+  "bundles": [
+    {
+      "file": "assets/admin-DycO6u6e.js",
+      "type": "chunk",
+      "hash": "0d328aa9a90c7920fc860d0b6a8004e68fe8ee31b93ae13a756e06020cd70a67"
+    },
+    {
+      "file": "assets/App-Crwj8wu4.js",
+      "type": "chunk",
+      "hash": "505bb314fddfb1af06fa125d6175fe7d2ff1e8cda0a1f1e44678114eb7ac304c"
+    },
+    {
+      "file": "assets/main-DbTZYICs.js",
+      "type": "chunk",
+      "hash": "ce3c71e165cc674cea3e18230f74aa724b9253632ad46fd003c35445e02fa4b3"
+    },
+    {
+      "file": "assets/Page-BfTU-Q4w.js",
+      "type": "chunk",
+      "hash": "2b29ffa17731eb95dbbd0509a77e7179b85bcfc393b56984f9281e95b7b6ffb4"
+    },
+    {
+      "file": "assets/worker-BvRk9kiK.js",
+      "type": "asset",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "workerHash": "650e9f9556dd3a3ce0aeb7f8575a8fb6f04d0afcfc09c3740c962ea484ef6ac5",
+  "bundleHash": "07172c508fc0c63d29ca2f8293137d5f264b5c3ec3da373491311efaa1860679",
+  "configPolicy": "configFile:false/environment-files-disabled/application-owned collector; no fixture app execution",
+  "fixtureHash": "4a243dc353ff5ea74b105c8a0d44ce4a7cc196b231a45b375508fa0158042ace",
+  "materializedHash": "df26fca1e0b042d838db8483ac089e46e97c923ac666519e52467cb0d83329bb",
+  "modules": [
+    {
+      "id": "admin.html",
+      "imports": [
+        "\u0000vite/modulepreload-polyfill.js",
+        "src/admin.tsx"
+      ],
+      "dynamic": []
+    },
+    {
+      "id": "index.html",
+      "imports": [
+        "\u0000vite/modulepreload-polyfill.js",
+        "main.tsx"
+      ],
+      "dynamic": []
+    },
+    {
+      "id": "main.tsx",
+      "imports": [
+        "\u0000vite/preload-helper.js",
+        "/public.svg?url",
+        "react-dom/client",
+        "react/jsx-runtime",
+        "src/App.tsx",
+        "src/Selected.ts",
+        "src/pages/Excluded.tsx",
+        "src/pages/Page.tsx",
+        "src/production.ts",
+        "src/raw.txt?raw"
+      ],
+      "dynamic": [
+        "src/pages/Excluded.tsx?url",
+        "src/pages/Page.tsx?url"
+      ]
+    },
+    {
+      "id": "src/admin.tsx",
+      "imports": [
+        "react",
+        "react-dom/client",
+        "react/jsx-runtime",
+        "src/App.tsx"
+      ],
+      "dynamic": []
+    },
+    {
+      "id": "src/App.tsx",
+      "imports": [
+        "\u0000vite/preload-helper.js",
+        "react",
+        "react-router",
+        "react/jsx-runtime",
+        "src/View.tsx"
+      ],
+      "dynamic": [
+        "src/pages/Page.tsx"
+      ]
+    },
+    {
+      "id": "src/pages/Excluded.tsx",
+      "imports": [
+        "react",
+        "react/jsx-runtime"
+      ],
+      "dynamic": []
+    },
+    {
+      "id": "src/pages/Excluded.tsx?url",
+      "imports": [],
+      "dynamic": []
+    },
+    {
+      "id": "src/pages/Page.tsx",
+      "imports": [
+        "react",
+        "react/jsx-runtime"
+      ],
+      "dynamic": []
+    },
+    {
+      "id": "src/pages/Page.tsx?url",
+      "imports": [],
+      "dynamic": []
+    },
+    {
+      "id": "src/production.ts",
+      "imports": [],
+      "dynamic": []
+    },
+    {
+      "id": "src/raw.txt?raw",
+      "imports": [],
+      "dynamic": []
+    },
+    {
+      "id": "src/Selected.ts",
+      "imports": [],
+      "dynamic": []
+    },
+    {
+      "id": "src/View.tsx",
+      "imports": [
+        "react",
+        "react/jsx-runtime"
+      ],
+      "dynamic": []
+    }
+  ],
+  "outputHash": "26067ffa984f8d45422d757ba1276d276001357ff31b401254ff603c75844d5e"
+}

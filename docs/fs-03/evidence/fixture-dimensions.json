@@ -1,0 +1,117 @@
+{
+  "policy": "Syntax only; in-memory parser, no libraries/dependency resolution/configuration/application execution",
+  "files": [
+    {
+      "file": "package.json",
+      "bytes": 323,
+      "visitedSyntaxNodes": 0
+    },
+    {
+      "file": "vite.config.ts",
+      "bytes": 370,
+      "visitedSyntaxNodes": 140
+    },
+    {
+      "file": "index.html",
+      "bytes": 47,
+      "visitedSyntaxNodes": 0
+    },
+    {
+      "file": "admin.html",
+      "bytes": 53,
+      "visitedSyntaxNodes": 0
+    },
+    {
+      "file": "src/main.tsx",
+      "bytes": 516,
+      "visitedSyntaxNodes": 208
+    },
+    {
+      "file": "src/admin.tsx",
+      "bytes": 153,
+      "visitedSyntaxNodes": 57
+    },
+    {
+      "file": "src/App.tsx",
+      "bytes": 1135,
+      "visitedSyntaxNodes": 532
+    },
+    {
+      "file": "src/View.tsx",
+      "bytes": 70,
+      "visitedSyntaxNodes": 31
+    },
+    {
+      "file": "src/pages/Page.tsx",
+      "bytes": 75,
+      "visitedSyntaxNodes": 32
+    },
+    {
+      "file": "src/pages/Excluded.tsx",
+      "bytes": 80,
+      "visitedSyntaxNodes": 32
+    },
+    {
+      "file": "src/style.module.css",
+      "bytes": 19,
+      "visitedSyntaxNodes": 0
+    },
+    {
+      "file": "src/logo.svg",
+      "bytes": 63,
+      "visitedSyntaxNodes": 0
+    },
+    {
+      "file": "src/worker.ts",
+      "bytes": 28,
+      "visitedSyntaxNodes": 13
+    },
+    {
+      "file": "main.tsx",
+      "bytes": 585,
+      "visitedSyntaxNodes": 229
+    },
+    {
+      "file": "src/development.ts",
+      "bytes": 33,
+      "visitedSyntaxNodes": 13
+    },
+    {
+      "file": "src/production.ts",
+      "bytes": 32,
+      "visitedSyntaxNodes": 13
+    },
+    {
+      "file": "src/server.ts",
+      "bytes": 28,
+      "visitedSyntaxNodes": 13
+    },
+    {
+      "file": "src/fallback.ts",
+      "bytes": 30,
+      "visitedSyntaxNodes": 13
+    },
+    {
+      "file": "src/Selected.ts",
+      "bytes": 24,
+      "visitedSyntaxNodes": 13
+    },
+    {
+      "file": "src/raw.txt",
+      "bytes": 22,
+      "visitedSyntaxNodes": 0
+    },
+    {
+      "file": "public/public.svg",
+      "bytes": 41,
+      "visitedSyntaxNodes": 0
+    },
+    {
+      "file": "src/ssr.tsx",
+      "bytes": 177,
+      "visitedSyntaxNodes": 73
+    }
+  ],
+  "totalBytes": 3904,
+  "totalVisitedSyntaxNodes": 1412
+}

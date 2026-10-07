@@ -1,0 +1,159 @@
+✖ qualification vite7-react18/browser-development: pinned expanded module oracle and source witnesses (607.5104ms)
+✖ qualification vite7-react18/browser-production: pinned expanded module oracle and source witnesses (373.564ms)
+✖ qualification vite8-react19/browser-development: pinned expanded module oracle and source witnesses (373.9518ms)
+✖ qualification vite8-react19/browser-production: pinned expanded module oracle and source witnesses (323.0891ms)
+✔ qualification vite8-react19/ssr-production: pinned expanded module oracle and source witnesses (2428.8787ms)
+✔ vite7-react18: entries, composition, handlers, hooks and dependencies keep independent witnesses (1825.6142ms)
+✔ vite8-react19: entries, composition, handlers, hooks and dependencies keep independent witnesses (1782.91ms)
+✔ F03: legacy import projection, exact Impact and type-only edges remain unchanged (403.7266ms)
+✔ F03: glob exclusion/eager/lazy options and asset/worker facts never become calls (268.3817ms)
+✔ F03: computed config produces boundaries instead of guessed runtime edges (180.1519ms)
+✔ F03: plugins config produces boundaries instead of guessed runtime edges (166.9973ms)
+✔ F03: escape config produces boundaries instead of guessed runtime edges (184.4842ms)
+✔ F03: unsupported callback props, inline effects and dynamic navigation stay explicit (226.1603ms)
+✔ F03: nested route/loader/action bindings are navigation, never HTTP claims (191.2092ms)
+✔ F03: incremental/full equivalence and changed HTML/config witnesses become stale (709.0997ms)
+✔ F03: contract rejects binary source masquerading and malformed resource bindings (185.2239ms)
+✔ vite7-react18: retained controlled build oracle hashes and named runtime module parity (187.9057ms)
+✔ vite8-react19: retained controlled build oracle hashes and named runtime module parity (172.8536ms)
+✔ F03: original UTF-16/BOM/CRLF/Unicode witnesses and explicit browser/SSR variants (884.1465ms)
+✔ F03: literal aliases preserve runtime/type distinctions and divergent calls stay outside framework traces (275.382ms)
+✔ F03: Vite 8 opt-in TS paths resolve separately; Vite 7 never assumes the plugin (273.1583ms)
+✔ F03: JavaScript/class/memo/forwardRef aliases and inline callbacks retain lexical ownership (225.1982ms)
+✔ F03: named barrel aliases retain intermediate witnesses and stale barrel changes are detected (195.8851ms)
+✔ F03: developer proxy facts never establish a production origin; rewrites remain exact or unknown (209.7702ms)
+✔ F03: HTML comments/raw text/templates/duplicate attributes never create guessed entries (0.6952ms)
+✔ F03: configuration execution/egress, escaped aliases and symlinks remain denied (400.5075ms)
+✔ F03: aliased React implementation and reassigned exported handlers cannot create framework facts (295.8575ms)
+✔ F03: retained accepted FS-02 v3 payload remains byte/canonical compatible (865.9095ms)
+✔ F03: adapter fact budget is generation-local and cancellation never returns a partial snapshot (225.9878ms)
+✔ F03: React DOM version mismatch and shadowed classic JSX factory withhold roots (388.5021ms)
+✔ F03: custom proxy request hooks and worker queries on assets remain boundaries (212.1419ms)
+✔ F03: production HTML entry selection never guesses custom build inputs (413.2811ms)
+✔ F03: aliased React DOM subpath cannot be mistaken for the qualified platform root API (189.1756ms)
+✔ F03: above-limit syntax and glob sets emit resource gaps without truncated framework facts (18496.9138ms)
+✔ F03: invalid UTF-8 preserves legacy decoding but explicitly excludes new framework facts (208.1525ms)
+ℹ tests 35
+ℹ suites 0
+ℹ pass 31
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 35418.0989
+
+✖ failing tests:
+
+test at tests\framework-support\fs-03.test.ts:22:39
+✖ qualification vite7-react18/browser-development: pinned expanded module oracle and source witnesses (607.5104ms)
+  AssertionError [ERR_ASSERTION]: main.tsx
+  + actual - expected
+  
+    [
+      'src/App.tsx',
+      'src/Selected.ts',
+      'src/development.ts',
+      'src/pages/Excluded.tsx',
+      'src/pages/Page.tsx',
+  -   'src/raw.txt'
+    ]
+  
+      at TestContext.<anonymous> (file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-03.test.ts:34:239)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [ 'src/App.tsx', 'src/Selected.ts', 'src/development.ts', 'src/pages/Excluded.tsx', 'src/pages/Page.tsx' ],
+    expected: [ 'src/App.tsx', 'src/Selected.ts', 'src/development.ts', 'src/pages/Excluded.tsx', 'src/pages/Page.tsx', 'src/raw.txt' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests\framework-support\fs-03.test.ts:22:39
+✖ qualification vite7-react18/browser-production: pinned expanded module oracle and source witnesses (373.564ms)
+  AssertionError [ERR_ASSERTION]: main.tsx
+  + actual - expected
+  
+    [
+      'src/App.tsx',
+      'src/Selected.ts',
+      'src/pages/Excluded.tsx',
+      'src/pages/Page.tsx',
+      'src/production.ts',
+  -   'src/raw.txt'
+    ]
+  
+      at TestContext.<anonymous> (file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-03.test.ts:34:239)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [ 'src/App.tsx', 'src/Selected.ts', 'src/pages/Excluded.tsx', 'src/pages/Page.tsx', 'src/production.ts' ],
+    expected: [ 'src/App.tsx', 'src/Selected.ts', 'src/pages/Excluded.tsx', 'src/pages/Page.tsx', 'src/production.ts', 'src/raw.txt' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests\framework-support\fs-03.test.ts:22:39
+✖ qualification vite8-react19/browser-development: pinned expanded module oracle and source witnesses (373.9518ms)
+  AssertionError [ERR_ASSERTION]: main.tsx
+  + actual - expected
+  
+    [
+      'src/App.tsx',
+      'src/Selected.ts',
+      'src/development.ts',
+      'src/pages/Excluded.tsx',
+      'src/pages/Page.tsx',
+  -   'src/raw.txt'
+    ]
+  
+      at TestContext.<anonymous> (file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-03.test.ts:34:239)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [ 'src/App.tsx', 'src/Selected.ts', 'src/development.ts', 'src/pages/Excluded.tsx', 'src/pages/Page.tsx' ],
+    expected: [ 'src/App.tsx', 'src/Selected.ts', 'src/development.ts', 'src/pages/Excluded.tsx', 'src/pages/Page.tsx', 'src/raw.txt' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests\framework-support\fs-03.test.ts:22:39
+✖ qualification vite8-react19/browser-production: pinned expanded module oracle and source witnesses (323.0891ms)
+  AssertionError [ERR_ASSERTION]: main.tsx
+  + actual - expected
+  
+    [
+      'src/App.tsx',
+      'src/Selected.ts',
+      'src/pages/Excluded.tsx',
+      'src/pages/Page.tsx',
+      'src/production.ts',
+  -   'src/raw.txt'
+    ]
+  
+      at TestContext.<anonymous> (file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-03.test.ts:34:239)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [ 'src/App.tsx', 'src/Selected.ts', 'src/pages/Excluded.tsx', 'src/pages/Page.tsx', 'src/production.ts' ],
+    expected: [ 'src/App.tsx', 'src/Selected.ts', 'src/pages/Excluded.tsx', 'src/pages/Page.tsx', 'src/production.ts', 'src/raw.txt' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
