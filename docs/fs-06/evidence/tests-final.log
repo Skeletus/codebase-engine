@@ -1,0 +1,30 @@
+✔ FS06 literal routing keeps order, namespaces, distinct registrations and framework calls separate (1320.6449ms)
+✔ FS06 source sentinels are never executed and similarly named APIs cannot register URLs (1040.5797ms)
+✔ FS06 repeated mounts at identical prefixes retain source-backed distinct IDs (976.8368ms)
+✔ FS06 django52 local C3 mixin override and custom dispatch boundary (974.2888ms)
+✔ FS06 django52 DRF api_view methods preserve external OPTIONS (1040.377ms)
+✔ FS06 django52 path-mode SimpleRouter list/detail/custom action declarations (1084.2105ms)
+✔ FS06 django60 local C3 mixin override and custom dispatch boundary (1045.0315ms)
+✔ FS06 django60 DRF api_view methods preserve external OPTIONS (1196.4979ms)
+✔ FS06 django60 path-mode SimpleRouter list/detail/custom action declarations (1061.7394ms)
+✔ FS06 templates preserve literal lookup and named URL witnesses without executing render (1145.5834ms)
+✔ FS06 models, ORM intent, signals and admin remain declared framework relationships (1427.7765ms)
+✔ FS06 explicit settings variant follows bounded named literal inheritance and missing selection stays unresolved (2414.3712ms)
+✔ FS06 wildcard and computed inherited settings never become verified routes (1284.0415ms)
+✔ FS06 repeated mounted CBV bindings retain each registration source (1257.1793ms)
+✔ FS06 exact oracle tuples and shared metadata are required, with no qualification badge from syntax alone (1163.9408ms)
+✔ FS06 unsupported regex/converters, stacked decorators and dynamic templates retain typed uncertainty (1413.3817ms)
+✔ FS06 middleware hooks, app-ready and command ownership are conditional declarations (1510.7319ms)
+✔ FS06 custom template engine and traversal names are withheld behind protected read boundaries (1196.3915ms)
+✔ FS06 explicit installed app association preserves FS02 owners and excludes independent child packages (2657.1215ms)
+✔ FS06 opaque class/method decorators cannot prove models or router dispatch (1657.7172ms)
+✔ FS06 template keyword names and explicit engine overrides preserve uncertainty (1441.3206ms)
+✔ FS06 local Django namespace shadowing cannot create verified framework registrations (1264.7841ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 30651.6128

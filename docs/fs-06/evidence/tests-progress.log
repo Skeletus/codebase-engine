@@ -1,0 +1,27 @@
+✔ FS06 literal routing keeps order, namespaces, distinct registrations and framework calls separate (1697.9379ms)
+✔ FS06 source sentinels are never executed and similarly named APIs cannot register URLs (1263.6377ms)
+✔ FS06 repeated mounts at identical prefixes retain source-backed distinct IDs (1201.9267ms)
+✔ FS06 django52 local C3 mixin override and custom dispatch boundary (1315.7369ms)
+✔ FS06 django52 DRF api_view methods preserve external OPTIONS (1261.2621ms)
+✔ FS06 django52 path-mode SimpleRouter list/detail/custom action declarations (1463.9905ms)
+✔ FS06 django60 local C3 mixin override and custom dispatch boundary (1339.6854ms)
+✔ FS06 django60 DRF api_view methods preserve external OPTIONS (1240.7956ms)
+✔ FS06 django60 path-mode SimpleRouter list/detail/custom action declarations (1251.3394ms)
+✔ FS06 templates preserve literal lookup and named URL witnesses without executing render (1384.6068ms)
+✔ FS06 models, ORM intent, signals and admin remain declared framework relationships (1391.6955ms)
+✔ FS06 explicit settings variant follows bounded named literal inheritance and missing selection stays unresolved (2524.9875ms)
+✔ FS06 wildcard and computed inherited settings never become verified routes (1046.8601ms)
+✔ FS06 repeated mounted CBV bindings retain each registration source (1122.4821ms)
+✔ FS06 exact oracle tuples and shared metadata are required, with no qualification badge from syntax alone (1232.9259ms)
+✔ FS06 unsupported regex/converters, stacked decorators and dynamic templates retain typed uncertainty (1258.188ms)
+✔ FS06 middleware hooks, app-ready and command ownership are conditional declarations (1384.5109ms)
+✔ FS06 custom template engine and traversal names are withheld behind protected read boundaries (1258.5042ms)
+✔ FS06 explicit installed app association preserves FS02 owners and excludes independent child packages (2527.8293ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 28302.4477

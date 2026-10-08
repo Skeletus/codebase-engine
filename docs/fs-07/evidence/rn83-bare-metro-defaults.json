@@ -1,0 +1,68 @@
+{
+  "tuple": "rn83-bare",
+  "tool": "@react-native/metro-config",
+  "version": "0.83.10",
+  "entryHash": "bd2c710faa94603fc8f015356f423c1488cb432a5e5b3542e8285dd25d7998c7",
+  "syntheticManifestHash": "6d773490b1798ad42c1d5849a2ff92e374db86ab01442f3fefb4c30ddbcdce05",
+  "outputHash": "0745d8362f8ad88febbc05117e4e1cca76b653902cfff5e3e322a2ab03192d53",
+  "output": {
+    "sourceExts": [
+      "js",
+      "jsx",
+      "json",
+      "ts",
+      "tsx"
+    ],
+    "assetExts": [
+      "bmp",
+      "gif",
+      "jpg",
+      "jpeg",
+      "png",
+      "psd",
+      "svg",
+      "webp",
+      "xml",
+      "m4v",
+      "mov",
+      "mp4",
+      "mpeg",
+      "mpg",
+      "webm",
+      "aac",
+      "aiff",
+      "caf",
+      "m4a",
+      "mp3",
+      "wav",
+      "html",
+      "pdf",
+      "yaml",
+      "yml",
+      "otf",
+      "ttf",
+      "zip"
+    ],
+    "resolverMainFields": [
+      "react-native",
+      "browser",
+      "main"
+    ],
+    "unstable_conditionNames": [
+      "react-native"
+    ],
+    "unstable_conditionsByPlatform": {
+      "web": [
+        "browser"
+      ]
+    },
+    "unstable_enablePackageExports": true,
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "inspectedConfigExecution": false,
+  "inspectedApplicationExecution": false,
+  "transformerExecution": false
+}

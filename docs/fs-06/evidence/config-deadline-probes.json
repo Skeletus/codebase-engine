@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "scope": "Named settings recursion 31/32/33 and generation deadline entry/during-extraction with fresh recovery; shared FS02 node/metadata/read ceilings retain inherited coverage",
+  "records": [
+    {
+      "case": "named-settings-depth",
+      "n": 31,
+      "limit": 32,
+      "status": "PASS",
+      "outcome": "supported literal resolution"
+    },
+    {
+      "case": "named-settings-depth",
+      "n": 32,
+      "limit": 32,
+      "status": "PASS",
+      "outcome": "supported literal resolution"
+    },
+    {
+      "case": "named-settings-depth",
+      "n": 33,
+      "limit": 32,
+      "status": "PASS",
+      "outcome": "explicit dynamic gap; no truncated proof"
+    },
+    {
+      "case": "generation-deadline",
+      "phase": "before-parser",
+      "limitMs": 120000,
+      "status": "PASS",
+      "checks": 0,
+      "clock": "existing trusted GenerationBoundary injection; no repository clock/config execution"
+    },
+    {
+      "case": "generation-deadline",
+      "phase": "during-extraction",
+      "limitMs": 120000,
+      "status": "PASS",
+      "checks": 9,
+      "clock": "existing trusted GenerationBoundary injection; no repository clock/config execution"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "cases": [
+    {"id": "classic", "source": "// @flow\nexport function helper(x: number): number { return x; }\nexport function outer(): number { return helper(1); }\n", "requiredTypes": ["FunctionDeclaration", "NumberTypeAnnotation", "CallExpression"]},
+    {"id": "enum", "source": "// @flow\nenum Status { Ready, Waiting }\nexport function status(): Status { return Status.Ready; }\n", "requiredTypes": ["EnumDeclaration", "FunctionDeclaration", "MemberExpression"]},
+    {"id": "component", "source": "// @flow\ncomponent Screen(title: string) { return <Text>{title}</Text>; }\nexport default Screen;\n", "requiredTypes": ["ComponentDeclaration", "ComponentParameter", "JSXElement"]},
+    {"id": "hook", "source": "// @flow\nhook useValue(value: number): number { return value; }\nexport function helper(): number { return useValue(1); }\n", "requiredTypes": ["HookDeclaration", "CallExpression"]},
+    {"id": "position", "source": "﻿// @flow\r\nconst emoji = '😀é';\r\nexport function helper(x: number): number { return x; }\r\nexport function outer(): number { return helper(1); }\r\n", "requiredTypes": ["FunctionDeclaration", "CallExpression"]},
+    {"id": "malformed", "source": "// @flow\nfunction broken(x: number { return x; }\n", "error": true}
+  ]
+}

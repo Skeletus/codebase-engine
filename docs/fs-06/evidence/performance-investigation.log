@@ -1,0 +1,23 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Accepted source must match starting inventory
++ actual - expected
+
++ '8bac1393fd8b91167b3ae121a702cc90c19b087c44ef0a81322be39c70e7c761'
+- 'c9b76f48011aebc132995602f0162f95e369587cb10c29ded7cde4c74e12a663'
+
+    at file:///D:/Repositorios%20Github/cartograph/scripts/fs-06-performance-investigation.ts:20:104
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: '8bac1393fd8b91167b3ae121a702cc90c19b087c44ef0a81322be39c70e7c761',
+  expected: 'c9b76f48011aebc132995602f0162f95e369587cb10c29ded7cde4c74e12a663',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

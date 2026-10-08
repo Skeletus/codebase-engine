@@ -1,0 +1,17 @@
+✔ FS06 qualification django52 routers (21043.6686ms)
+✔ FS06 qualification django52 formats (55986.0514ms)
+✔ FS06 qualification django52 includes (9296.5213ms)
+✔ FS06 qualification django52 decorators (12333.6235ms)
+✔ FS06 qualification django52 converters (4038.7513ms)
+✔ FS06 qualification django52 dynamic routes and decorators (8188.6107ms)
+✔ FS06 qualification django52 models and serializers (19945.4846ms)
+✔ FS06 qualification django52 signals boundaries (5520.7831ms)
+✔ FS06 qualification django52 templates boundaries and positions (12727.9251ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 150496.0202

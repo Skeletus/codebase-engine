@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "scope": "Existing shared reservation API used by Django: unit ceilings, not fabricated graph facts. Source integration is separately qualified.",
+  "records": [
+    {
+      "case": "per-file",
+      "below": 19999,
+      "at": 20000,
+      "above": 20001,
+      "status": "PASS",
+      "checks": [
+        "at succeeds",
+        "above refuses",
+        "other file has separate quota"
+      ]
+    },
+    {
+      "case": "generation",
+      "below": 199999,
+      "at": 200000,
+      "above": 200001,
+      "status": "PASS",
+      "checks": [
+        "ten per-file quotas compose",
+        "generation above refuses",
+        "fresh generation recovers"
+      ]
+    }
+  ],
+  "implementation": "import type { CodeSnapshot } from \"../engine/types.ts\";\nimport { AnalysisBoundaryError } from \"../engine/boundary.ts\";\n\nconst counts=new WeakMap<CodeSnapshot,{files:Map<string,number>;total:number}>();\nconst seeded=new WeakSet<CodeSnapshot>();\nexport function seedFrameworkCallbacks(snapshot:CodeSnapshot) {\n  if(seeded.has(snapshot))return;\n  seeded.add(snapshot);\n  for(const declaration of snapshot.behavior.declarations.filter(d=>d.name===\"<callback>\"&&d.kind===\"function\"))frameworkFact(snapshot,declaration.site.file);\n}\n/** Generation-local new facts only; inherited TS/JS limits remain unchanged. */\nexport function frameworkFact(snapshot:CodeSnapshot,file:string) {\n  let generation=counts.get(snapshot);if (!generation) {generation={files:new Map(),total:0};counts.set(snapshot,generation);}\n  const count=generation.files.get(file) ?? 0;\n  if (count>=20000||generation.total>=200000) throw new AnalysisBoundaryError(\"resource-limit\");\n  generation.files.set(file,count+1);generation.total++;\n}\n"
+}

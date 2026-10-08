@@ -1,0 +1,16 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Missing expected rejection.
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///D:/Repositorios%20Github/cartograph/scripts/fs-06-django-resource.ts:9:118 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: undefined,
+  expected: /resource-limit/,
+  operator: 'rejects',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

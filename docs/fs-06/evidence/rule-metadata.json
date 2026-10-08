@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "tuples": [
+    "django52",
+    "django60"
+  ],
+  "profile": "static-python-declared-environment",
+  "classesPerTuple": 19,
+  "oracleHash": "6683326094c0d595aa20c01b12fec6feac94a2c603b77c5f8d6cc7ee989043a2",
+  "outputHash": "24f056fd90a2af2e3ae05edc14ae18ad00824af8316a9ef1bd5ebf4e55ea2142",
+  "harnessHash": "3ae737dbfd991dd1788bb45622c54d54f74100dc5e8113e0d63a81cfaef76b02",
+  "scope": "Deterministic MRO/method metadata only. Reviewed public alias spellings are retained. This does not grant full framework qualification."
+}

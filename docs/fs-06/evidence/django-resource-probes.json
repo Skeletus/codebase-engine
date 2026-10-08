@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "scope": "Private Django node/observation and argument typed refusals, expression text bounded omission, and fresh real-worker recovery. Not full generation/template/route/binding/read ceilings or peak commitment qualification.",
+  "harnessHash": "72107edb060aca886a053f655c3b49ec81ccce9a9d946957ec0208c5052be11e",
+  "records": [
+    {
+      "case": "observation-or-node-ceiling",
+      "status": "PASS",
+      "outcome": "typed resource-limit refusal",
+      "bytes": 208901,
+      "sourceHash": "11e49ca7b703bc315cc3c097fc8f6b82d8970639048c6bf0cfc15a7e5bc8d9df",
+      "elapsedMs": 3591.0852999999997
+    },
+    {
+      "case": "argument-ceiling",
+      "status": "PASS",
+      "outcome": "typed resource-limit refusal",
+      "bytes": 405,
+      "sourceHash": "4cd1eb6f832e0bd05851cef1e1e4b21c55baa3bdb183564b10252f49ec582d14",
+      "elapsedMs": 2150.7218000000003
+    },
+    {
+      "case": "expression-text-ceiling",
+      "status": "PASS",
+      "outcome": "bounded empty observation; no truncated literal promoted",
+      "bytes": 4108,
+      "sourceHash": "d1a1efd55aec87def4ea72623a3eec1a9767ccae7ffbfd5c6d4e94b422a27c8f",
+      "elapsedMs": 2249.4250999999995
+    }
+  ]
+}

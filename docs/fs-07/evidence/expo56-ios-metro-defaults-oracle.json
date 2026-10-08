@@ -1,0 +1,118 @@
+{
+  "tuple": "expo56",
+  "versions": {
+    "node": "24.19.0",
+    "expo": "56.0.23",
+    "react": "19.2.3",
+    "react-native": "0.85.3",
+    "expo-router": "56.2.21",
+    "@expo/metro": "56.0.2",
+    "@expo/metro-config": "56.0.19"
+  },
+  "profile": "ios-development",
+  "contextProfile": "defaults",
+  "defaultsHash": "9049627ae3cbea259d44c276b91d4a9cb36dedf9e25184c6b4f193f97ccf7ba2",
+  "platform": "ios",
+  "resolver": "@expo/metro/metro-resolver",
+  "resolverVersion": "0.84.5",
+  "resolverEntryHash": "e3d1bcdef6dc9e3c5658e65a6c9484adfa8dedb44a8a4c2f77e769a07ac87728",
+  "fixtureHash": "38078e691e65c80deef24675f48d7b58bc6f1838c1320d8f83f3c971888e44c2",
+  "outputHash": "5064ae56e5767ec23456a81c891b0e5c5d005fc10a02519f5e105aa28d465764",
+  "outputs": [
+    {
+      "id": "platform",
+      "type": "sourceFile",
+      "targets": [
+        "src/Choice.ts"
+      ]
+    },
+    {
+      "id": "native-fallback",
+      "type": "sourceFile",
+      "targets": [
+        "src/Native.ts"
+      ]
+    },
+    {
+      "id": "extension-before-platform",
+      "type": "sourceFile",
+      "targets": [
+        "src/Extension.js"
+      ]
+    },
+    {
+      "id": "explicit-extension",
+      "type": "sourceFile",
+      "targets": [
+        "src/Exact.js"
+      ]
+    },
+    {
+      "id": "directory-index",
+      "type": "sourceFile",
+      "targets": [
+        "src/folder/index.ios.js"
+      ]
+    },
+    {
+      "id": "density-family",
+      "type": "assetFiles",
+      "targets": [
+        "src/logo.png",
+        "src/logo@2x.png",
+        "src/logo@3x.png"
+      ]
+    },
+    {
+      "id": "import-export",
+      "type": "sourceFile",
+      "targets": [
+        "packages/dep/import.js"
+      ]
+    },
+    {
+      "id": "require-export",
+      "type": "sourceFile",
+      "targets": [
+        "packages/dep/require.js"
+      ]
+    },
+    {
+      "id": "exact-subpath",
+      "type": "sourceFile",
+      "targets": [
+        "packages/dep/feature.js"
+      ]
+    },
+    {
+      "id": "wildcard-export",
+      "type": "sourceFile",
+      "targets": [
+        "packages/dep/feature.js"
+      ]
+    },
+    {
+      "id": "redirect",
+      "type": "sourceFile",
+      "targets": [
+        "src/replaced.js"
+      ]
+    },
+    {
+      "id": "disabled",
+      "type": "empty",
+      "targets": []
+    }
+  ],
+  "warnings": [],
+  "elapsedMs": 3.2789999999999964,
+  "resources": {
+    "rss": 69214208,
+    "heapTotal": 16613376,
+    "heapUsed": 12974816,
+    "external": 9047921,
+    "arrayBuffers": 143651
+  },
+  "applicationExecution": false,
+  "configExecution": false
+}

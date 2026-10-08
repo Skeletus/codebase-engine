@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "scope": "Actual source expansion with combined immutable budgets; a smaller snapshot/deadline bound may dominate below/at route quota. Not independent proof of every ceiling.",
+  "records": [
+    {
+      "name": "route-below",
+      "status": "PASS",
+      "requestedRoutes": 9999,
+      "requestedSourceCallbacks": 0,
+      "outcome": "typed resource-limit; no publication",
+      "snapshotBytes": 94248894,
+      "registrations": 9999,
+      "elapsedMs": 7023.1132,
+      "inputHash": "4a201113e1918ba0f59c655ca9e8b809db183d1f80e865808518718e6a4ea7f4"
+    },
+    {
+      "name": "route-at",
+      "status": "PASS",
+      "requestedRoutes": 10000,
+      "requestedSourceCallbacks": 0,
+      "outcome": "typed resource-limit; no publication",
+      "snapshotBytes": 94258318,
+      "registrations": 10000,
+      "elapsedMs": 7446.057299999999,
+      "inputHash": "4ec67ab6e9dfec1422e3d00af985ce6ed14357daa291318b4196fdecc7af8930"
+    },
+    {
+      "name": "route-above",
+      "status": "PASS",
+      "requestedRoutes": 10100,
+      "requestedSourceCallbacks": 0,
+      "outcome": "typed resource-limit; no publication",
+      "snapshotBytes": 94255706,
+      "registrations": 10000,
+      "elapsedMs": 6437.332399999999,
+      "inputHash": "1d99dd2be8efd617016ff45cbbbb60b85f814112ba5b08426213f90481439b41"
+    },
+    {
+      "name": "bindings-above",
+      "status": "PASS",
+      "requestedRoutes": 6000,
+      "requestedSourceCallbacks": 36000,
+      "outcome": "typed resource-limit; no publication",
+      "snapshotBytes": 139375875,
+      "registrations": 2849,
+      "elapsedMs": 27399.0886,
+      "inputHash": "8d3db3609d9d5d308f03afcebdb54b567798af99130d30fd10a6b8698ded3334"
+    }
+  ]
+}

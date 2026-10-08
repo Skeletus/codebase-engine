@@ -1,3 +1,4 @@
+import { extractDjango } from "./django-syntax.ts";
 import { readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { createRequire } from "node:module";
@@ -31,10 +32,10 @@ function consume() {
       const header: unknown = JSON.parse(buffer.subarray(4, 4 + headerBytes).toString("utf8"));
       if (!header || typeof header !== "object" || Array.isArray(header)) throw new Error("invalid-frame");
       const h = header as Record<string, unknown>;
-      if (h.version !== 1 || typeof h.file !== "string" || !h.file || h.file.length > 4096 || !Number.isSafeInteger(h.bytes) || typeof h.bytes !== "number" || h.bytes < 0 || h.bytes > 1048576 || Object.keys(h).some(k => !["version", "file", "bytes"].includes(k))) throw new Error("invalid-frame");
+      if (h.version !== 1 || typeof h.file !== "string" || !h.file || h.file.length > 4096 || !Number.isSafeInteger(h.bytes) || typeof h.bytes !== "number" || h.bytes < 0 || h.bytes > 1048576 || h.operation !== undefined && h.operation !== "django" || Object.keys(h).some(k => !["version", "file", "bytes", "operation"].includes(k))) throw new Error("invalid-frame");
       if (buffer.length < 4 + headerBytes + h.bytes) return;
       const source = buffer.subarray(4 + headerBytes, 4 + headerBytes + h.bytes); buffer = buffer.subarray(4 + headerBytes + h.bytes);
-      try { emit({ version: 1, result: extractPython(parser, h.file, source) }); } catch (error) { parser.reset(); emit({ version: 1, error: error instanceof Error && ["resource-limit", "unsupported-encoding"].includes(error.message) ? error.message : "parse-error" }); }
+      try { emit({ version: 1, result: h.operation === "django" ? extractDjango(parser, h.file, source) : extractPython(parser, h.file, source) }); } catch (error) { parser.reset(); emit({ version: 1, error: error instanceof Error && ["resource-limit", "unsupported-encoding"].includes(error.message) ? error.message : "parse-error" }); }
     }
   } finally { processing = false; }
 }

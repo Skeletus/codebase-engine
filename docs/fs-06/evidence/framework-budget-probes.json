@@ -1,0 +1,138 @@
+{
+  "status": "PASS",
+  "scope": "Template roots/tags/block depth/include depth below/at/above only; RSS is not worker commitment",
+  "records": [
+    {
+      "kind": "roots",
+      "level": "below",
+      "n": 63,
+      "limit": 64,
+      "status": "PASS",
+      "outcome": "complete generation",
+      "elapsedMs": 7825.321500000001,
+      "inputHash": "8dc7b622340d8dbcaf8d0eb7b151fe0e59e39579c8bc9da1f9d537c3922b0a08",
+      "rssBytes": 127418368
+    },
+    {
+      "kind": "roots",
+      "level": "at",
+      "n": 64,
+      "limit": 64,
+      "status": "PASS",
+      "outcome": "complete generation",
+      "elapsedMs": 9223.845500000001,
+      "inputHash": "d7c52fea1abaf202543da264eff995f7c3e636ed2df97f8536bf535905c702f7",
+      "rssBytes": 118575104
+    },
+    {
+      "kind": "roots",
+      "level": "above",
+      "n": 65,
+      "limit": 64,
+      "status": "PASS",
+      "outcome": "typed refusal",
+      "elapsedMs": 7071.806100000002,
+      "inputHash": "57d5a7baff5e304434b0a04af869129c44cca1399a000f7e61673549c380e69f",
+      "rssBytes": 119709696
+    },
+    {
+      "kind": "tags",
+      "level": "below",
+      "n": 19999,
+      "limit": 20000,
+      "status": "PASS",
+      "outcome": "complete generation",
+      "elapsedMs": 13828.066099999996,
+      "inputHash": "fa50ab40848d07a3cb01ed963a9dedd7d2ad5b7f05b0d967562f532f76819476",
+      "rssBytes": 124272640
+    },
+    {
+      "kind": "tags",
+      "level": "at",
+      "n": 20000,
+      "limit": 20000,
+      "status": "PASS",
+      "outcome": "complete generation",
+      "elapsedMs": 12367.761599999998,
+      "inputHash": "c9d0804586bcddc6fd090f0e94bc68f68737c6a437350e752047ac2e05baa237",
+      "rssBytes": 127045632
+    },
+    {
+      "kind": "tags",
+      "level": "above",
+      "n": 20001,
+      "limit": 20000,
+      "status": "PASS",
+      "outcome": "typed refusal",
+      "elapsedMs": 10346.0939,
+      "inputHash": "16b301ce0f5589c2e95f157a9b136618a30990276177d6b9f887d1d1b599044c",
+      "rssBytes": 129212416
+    },
+    {
+      "kind": "blocks",
+      "level": "below",
+      "n": 63,
+      "limit": 64,
+      "status": "PASS",
+      "outcome": "complete generation",
+      "elapsedMs": 3709.063999999991,
+      "inputHash": "3f446771ad75a9844ad57322d4e68ea27b20ff2da08e5708d29be54b402b7c9a",
+      "rssBytes": 128659456
+    },
+    {
+      "kind": "blocks",
+      "level": "at",
+      "n": 64,
+      "limit": 64,
+      "status": "PASS",
+      "outcome": "complete generation",
+      "elapsedMs": 5477.342499999999,
+      "inputHash": "597b8cd97c0e06b5006d678aeddc3206ea30806ad4822143b3d58037f9b277a7",
+      "rssBytes": 128843776
+    },
+    {
+      "kind": "blocks",
+      "level": "above",
+      "n": 65,
+      "limit": 64,
+      "status": "PASS",
+      "outcome": "typed refusal",
+      "elapsedMs": 3529.2841000000044,
+      "inputHash": "9d2559bb8faea61a7cfb5a789f374b17f54133f396252818725eada61543dc62",
+      "rssBytes": 128843776
+    },
+    {
+      "kind": "includes",
+      "level": "below",
+      "n": 63,
+      "limit": 64,
+      "status": "PASS",
+      "outcome": "complete generation",
+      "elapsedMs": 5546.174699999989,
+      "inputHash": "2462db9829077e5fe546ea6e0aca66133afd0114120c69eb788e150a9f7170b7",
+      "rssBytes": 130830336
+    },
+    {
+      "kind": "includes",
+      "level": "at",
+      "n": 64,
+      "limit": 64,
+      "status": "PASS",
+      "outcome": "complete generation",
+      "elapsedMs": 7063.852999999988,
+      "inputHash": "f1362728f7695028a98cd355ff7aa13d1cbd0ac47ef6ade9ff74e3447483c53b",
+      "rssBytes": 133955584
+    },
+    {
+      "kind": "includes",
+      "level": "above",
+      "n": 65,
+      "limit": 64,
+      "status": "PASS",
+      "outcome": "typed refusal",
+      "elapsedMs": 15222.731,
+      "inputHash": "bc088d0d2170779c6aa085340bbb1740da4dd5ac164e725b2c29d4bfb8c48140",
+      "rssBytes": 133681152
+    }
+  ]
+}

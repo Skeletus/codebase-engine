@@ -1,0 +1,76 @@
+✖ FS06 qualification django52 routers (2534.8048ms)
+✔ FS06 qualification django52 formats (34956.4436ms)
+✔ FS06 qualification django52 includes (12141.0862ms)
+✔ FS06 qualification django52 decorators (17058.4571ms)
+✖ FS06 qualification django60 routers (1779.419ms)
+✔ FS06 qualification django60 formats (30705.3232ms)
+✔ FS06 qualification django60 includes (11498.5941ms)
+✔ FS06 qualification django60 decorators (16836.7404ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 6
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 128892.8632
+
+✖ failing tests:
+
+test at tests\framework-support\fs-06.test.ts:255:3
+✖ FS06 qualification django52 routers (2534.8048ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+      state: 'known',
+      values: [
+        'GET',
+  +     'HEAD',
+        'OPTIONS'
+      ]
+    }
+  
+      at file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-06.test.ts:263:18
+      at file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-06.test.ts:22:5
+      at async fixture (file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-06.test.ts:12:330)
+      at async qualifyCase (file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-06.test.ts:20:3)
+      at async TestContext.<anonymous> (file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-06.test.ts:259:7)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { state: 'known', values: [ 'GET', 'HEAD', 'OPTIONS' ] },
+    expected: { state: 'known', values: [ 'GET', 'OPTIONS' ] },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests\framework-support\fs-06.test.ts:255:3
+✖ FS06 qualification django60 routers (1779.419ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+      state: 'known',
+      values: [
+        'GET',
+  +     'HEAD',
+        'OPTIONS'
+      ]
+    }
+  
+      at file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-06.test.ts:263:18
+      at file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-06.test.ts:22:5
+      at async fixture (file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-06.test.ts:12:330)
+      at async qualifyCase (file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-06.test.ts:20:3)
+      at async TestContext.<anonymous> (file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-06.test.ts:259:7)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { state: 'known', values: [ 'GET', 'HEAD', 'OPTIONS' ] },
+    expected: { state: 'known', values: [ 'GET', 'OPTIONS' ] },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

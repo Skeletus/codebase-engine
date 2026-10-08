@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "tuple": "django52",
+  "testHash": "c6a12167825f0bb721e6d11455e22cb0f2f2e85bc47e8557bbf3a357c4f390c4",
+  "oracleProgramHash": "da61b587f9f6eca2241904a9910e147f3466df97f31132b975edacec40ebd8f0",
+  "profile": "static-python-declared-environment",
+  "extractor": "django/fs-06/1",
+  "group": "models",
+  "id": "custom-manager",
+  "resources": {
+    "sourceBytes": 921,
+    "largestFileBytes": 232,
+    "snapshotBytes": 90272,
+    "elapsedMs": 1362.958799999993,
+    "rssBytes": 186585088,
+    "outcome": "complete generation; all framework witnesses current",
+    "workerCommitLimitBytes": 536870912,
+    "workerFileDeadlineMs": 2000
+  },
+  "inputHash": "21ca30825c1a5dc9e24421adf3c4f965faa6ca3e2c6c9b32f3887492f10c875f",
+  "outputHash": "860e17859c35eaf7f2654ee690466c3a028f8014395736376a62d058a582ad09",
+  "variants": [
+    "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"django-static\\\",\\\"fs-06/1\\\"]\",\"static-python-declared-environment\",null,[\"settings:project/settings.py\",\"module-root:.\"]]"
+  ],
+  "facts": {
+    "registrations": 4,
+    "bindings": 10
+  },
+  "gaps": [
+    "ambiguous-target",
+    "custom-resolver",
+    "dynamic-expression",
+    "external-boundary",
+    "unknown-method"
+  ],
+  "checks": [
+    "semantic assertions",
+    "all witnesses current",
+    "full/incremental equivalence"
+  ]
+}

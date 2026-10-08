@@ -1,0 +1,416 @@
+{
+  "status": "PASS",
+  "scope": "packaged foundations only",
+  "results": [
+    {
+      "tuple": "rn83-bare",
+      "platform": "android",
+      "profileId": "[\"profile\",\".\",\"metro-android\",\"fs-07/1\"]",
+      "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"fs-07/1\\\"]\",\"android-development\",\"android\",[\"react-native\"]]",
+      "extractorVersion": "fs-07/1",
+      "files": 6,
+      "bindings": 4,
+      "sourceHashes": [
+        {
+          "path": "App.tsx",
+          "hash": "1a8e867a0b9d5881da076fd172e72e15da1da159b33d967a49383e3038d17c4d"
+        },
+        {
+          "path": "Choice.android.ts",
+          "hash": "ce426e86c579f082ba2c477fbe39c0f25306053793f47de5b164cab4c6d4c128"
+        },
+        {
+          "path": "Choice.ios.ts",
+          "hash": "6ec1ed61fe9c508df0dacdbd31d92c94a3b1412ae7108fff3a18ba0c2d8b58e6"
+        },
+        {
+          "path": "Flow.js",
+          "hash": "5dbaf55919881d74195dfedb8c97993e922fed9b972cfb8089a73c34411f16df"
+        },
+        {
+          "path": "index.ts",
+          "hash": "71f09ef1f6bb417ce9e75ddac1a0b940b8b977074624137275f4347efc72bcfb"
+        },
+        {
+          "path": "sentinel.js",
+          "hash": "4d18e4c7edc447b928f38acd5259659b8bbc38b01484d55d01cb8b958771c6fb"
+        }
+      ],
+      "outputHash": "bc02313183d8c257d85dbc5542090703a46882dda6f5b0b63637ee8d9c377f9e",
+      "elapsedMs": 1518.9162000000001,
+      "rssBytes": 136552448,
+      "snapshotBytes": 48454,
+      "missingProof": [
+        "full pattern qualification",
+        "navigation",
+        "Expo routing",
+        "native spec boundaries",
+        "resource ceilings",
+        "fault containment matrix"
+      ]
+    },
+    {
+      "tuple": "rn83-bare",
+      "platform": "ios",
+      "profileId": "[\"profile\",\".\",\"metro-ios\",\"fs-07/1\"]",
+      "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-ios\\\",\\\"fs-07/1\\\"]\",\"ios-development\",\"ios\",[\"react-native\"]]",
+      "extractorVersion": "fs-07/1",
+      "files": 6,
+      "bindings": 4,
+      "sourceHashes": [
+        {
+          "path": "App.tsx",
+          "hash": "1a8e867a0b9d5881da076fd172e72e15da1da159b33d967a49383e3038d17c4d"
+        },
+        {
+          "path": "Choice.android.ts",
+          "hash": "ce426e86c579f082ba2c477fbe39c0f25306053793f47de5b164cab4c6d4c128"
+        },
+        {
+          "path": "Choice.ios.ts",
+          "hash": "6ec1ed61fe9c508df0dacdbd31d92c94a3b1412ae7108fff3a18ba0c2d8b58e6"
+        },
+        {
+          "path": "Flow.js",
+          "hash": "5dbaf55919881d74195dfedb8c97993e922fed9b972cfb8089a73c34411f16df"
+        },
+        {
+          "path": "index.ts",
+          "hash": "71f09ef1f6bb417ce9e75ddac1a0b940b8b977074624137275f4347efc72bcfb"
+        },
+        {
+          "path": "sentinel.js",
+          "hash": "4d18e4c7edc447b928f38acd5259659b8bbc38b01484d55d01cb8b958771c6fb"
+        }
+      ],
+      "outputHash": "a056cb512df95b79561934331ed989a9813b443ed695aa22528a3f54012da7d6",
+      "elapsedMs": 733.4672999999998,
+      "rssBytes": 144175104,
+      "snapshotBytes": 47934,
+      "missingProof": [
+        "full pattern qualification",
+        "navigation",
+        "Expo routing",
+        "native spec boundaries",
+        "resource ceilings",
+        "fault containment matrix"
+      ]
+    },
+    {
+      "tuple": "rn85-bare",
+      "platform": "android",
+      "profileId": "[\"profile\",\".\",\"metro-android\",\"fs-07/1\"]",
+      "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"fs-07/1\\\"]\",\"android-development\",\"android\",[\"react-native\"]]",
+      "extractorVersion": "fs-07/1",
+      "files": 6,
+      "bindings": 4,
+      "sourceHashes": [
+        {
+          "path": "App.tsx",
+          "hash": "1a8e867a0b9d5881da076fd172e72e15da1da159b33d967a49383e3038d17c4d"
+        },
+        {
+          "path": "Choice.android.ts",
+          "hash": "ce426e86c579f082ba2c477fbe39c0f25306053793f47de5b164cab4c6d4c128"
+        },
+        {
+          "path": "Choice.ios.ts",
+          "hash": "6ec1ed61fe9c508df0dacdbd31d92c94a3b1412ae7108fff3a18ba0c2d8b58e6"
+        },
+        {
+          "path": "Flow.js",
+          "hash": "5dbaf55919881d74195dfedb8c97993e922fed9b972cfb8089a73c34411f16df"
+        },
+        {
+          "path": "index.ts",
+          "hash": "71f09ef1f6bb417ce9e75ddac1a0b940b8b977074624137275f4347efc72bcfb"
+        },
+        {
+          "path": "sentinel.js",
+          "hash": "4d18e4c7edc447b928f38acd5259659b8bbc38b01484d55d01cb8b958771c6fb"
+        }
+      ],
+      "outputHash": "97a3d30525aec62281aab25c1ae4d1d491cfb7cfa0f103c410462bbabc7c4b43",
+      "elapsedMs": 673.8164999999999,
+      "rssBytes": 144793600,
+      "snapshotBytes": 48448,
+      "missingProof": [
+        "full pattern qualification",
+        "navigation",
+        "Expo routing",
+        "native spec boundaries",
+        "resource ceilings",
+        "fault containment matrix"
+      ]
+    },
+    {
+      "tuple": "rn85-bare",
+      "platform": "ios",
+      "profileId": "[\"profile\",\".\",\"metro-ios\",\"fs-07/1\"]",
+      "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-ios\\\",\\\"fs-07/1\\\"]\",\"ios-development\",\"ios\",[\"react-native\"]]",
+      "extractorVersion": "fs-07/1",
+      "files": 6,
+      "bindings": 4,
+      "sourceHashes": [
+        {
+          "path": "App.tsx",
+          "hash": "1a8e867a0b9d5881da076fd172e72e15da1da159b33d967a49383e3038d17c4d"
+        },
+        {
+          "path": "Choice.android.ts",
+          "hash": "ce426e86c579f082ba2c477fbe39c0f25306053793f47de5b164cab4c6d4c128"
+        },
+        {
+          "path": "Choice.ios.ts",
+          "hash": "6ec1ed61fe9c508df0dacdbd31d92c94a3b1412ae7108fff3a18ba0c2d8b58e6"
+        },
+        {
+          "path": "Flow.js",
+          "hash": "5dbaf55919881d74195dfedb8c97993e922fed9b972cfb8089a73c34411f16df"
+        },
+        {
+          "path": "index.ts",
+          "hash": "71f09ef1f6bb417ce9e75ddac1a0b940b8b977074624137275f4347efc72bcfb"
+        },
+        {
+          "path": "sentinel.js",
+          "hash": "4d18e4c7edc447b928f38acd5259659b8bbc38b01484d55d01cb8b958771c6fb"
+        }
+      ],
+      "outputHash": "1e94cc4b823a46b7829e8b3574d49c0d93a2ef1e20c777b200493603a93f6e03",
+      "elapsedMs": 676.0950000000003,
+      "rssBytes": 145108992,
+      "snapshotBytes": 47928,
+      "missingProof": [
+        "full pattern qualification",
+        "navigation",
+        "Expo routing",
+        "native spec boundaries",
+        "resource ceilings",
+        "fault containment matrix"
+      ]
+    },
+    {
+      "tuple": "expo55",
+      "platform": "android",
+      "profileId": "[\"profile\",\".\",\"metro-android\",\"fs-07/1\"]",
+      "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"fs-07/1\\\"]\",\"android-development\",\"android\",[\"react-native\"]]",
+      "extractorVersion": "fs-07/1",
+      "files": 6,
+      "bindings": 4,
+      "sourceHashes": [
+        {
+          "path": "App.tsx",
+          "hash": "1a8e867a0b9d5881da076fd172e72e15da1da159b33d967a49383e3038d17c4d"
+        },
+        {
+          "path": "Choice.android.ts",
+          "hash": "ce426e86c579f082ba2c477fbe39c0f25306053793f47de5b164cab4c6d4c128"
+        },
+        {
+          "path": "Choice.ios.ts",
+          "hash": "6ec1ed61fe9c508df0dacdbd31d92c94a3b1412ae7108fff3a18ba0c2d8b58e6"
+        },
+        {
+          "path": "Flow.js",
+          "hash": "5dbaf55919881d74195dfedb8c97993e922fed9b972cfb8089a73c34411f16df"
+        },
+        {
+          "path": "index.ts",
+          "hash": "71f09ef1f6bb417ce9e75ddac1a0b940b8b977074624137275f4347efc72bcfb"
+        },
+        {
+          "path": "sentinel.js",
+          "hash": "4d18e4c7edc447b928f38acd5259659b8bbc38b01484d55d01cb8b958771c6fb"
+        }
+      ],
+      "outputHash": "c7f3888309f2bdd11a06d48b5b946c9b2f584a4ce8ca88fa21b964110d72ef8f",
+      "elapsedMs": 683.4769999999999,
+      "rssBytes": 145616896,
+      "snapshotBytes": 50837,
+      "missingProof": [
+        "full pattern qualification",
+        "navigation",
+        "Expo routing",
+        "native spec boundaries",
+        "resource ceilings",
+        "fault containment matrix"
+      ]
+    },
+    {
+      "tuple": "expo55",
+      "platform": "ios",
+      "profileId": "[\"profile\",\".\",\"metro-ios\",\"fs-07/1\"]",
+      "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-ios\\\",\\\"fs-07/1\\\"]\",\"ios-development\",\"ios\",[\"react-native\"]]",
+      "extractorVersion": "fs-07/1",
+      "files": 6,
+      "bindings": 4,
+      "sourceHashes": [
+        {
+          "path": "App.tsx",
+          "hash": "1a8e867a0b9d5881da076fd172e72e15da1da159b33d967a49383e3038d17c4d"
+        },
+        {
+          "path": "Choice.android.ts",
+          "hash": "ce426e86c579f082ba2c477fbe39c0f25306053793f47de5b164cab4c6d4c128"
+        },
+        {
+          "path": "Choice.ios.ts",
+          "hash": "6ec1ed61fe9c508df0dacdbd31d92c94a3b1412ae7108fff3a18ba0c2d8b58e6"
+        },
+        {
+          "path": "Flow.js",
+          "hash": "5dbaf55919881d74195dfedb8c97993e922fed9b972cfb8089a73c34411f16df"
+        },
+        {
+          "path": "index.ts",
+          "hash": "71f09ef1f6bb417ce9e75ddac1a0b940b8b977074624137275f4347efc72bcfb"
+        },
+        {
+          "path": "sentinel.js",
+          "hash": "4d18e4c7edc447b928f38acd5259659b8bbc38b01484d55d01cb8b958771c6fb"
+        }
+      ],
+      "outputHash": "7c039fc50cb3e02b74ee0d6b27c03e6230c28175be388ff691f7a327497dcb79",
+      "elapsedMs": 759.9345000000003,
+      "rssBytes": 145936384,
+      "snapshotBytes": 50317,
+      "missingProof": [
+        "full pattern qualification",
+        "navigation",
+        "Expo routing",
+        "native spec boundaries",
+        "resource ceilings",
+        "fault containment matrix"
+      ]
+    },
+    {
+      "tuple": "expo56",
+      "platform": "android",
+      "profileId": "[\"profile\",\".\",\"metro-android\",\"fs-07/1\"]",
+      "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"fs-07/1\\\"]\",\"android-development\",\"android\",[\"react-native\"]]",
+      "extractorVersion": "fs-07/1",
+      "files": 6,
+      "bindings": 4,
+      "sourceHashes": [
+        {
+          "path": "App.tsx",
+          "hash": "1a8e867a0b9d5881da076fd172e72e15da1da159b33d967a49383e3038d17c4d"
+        },
+        {
+          "path": "Choice.android.ts",
+          "hash": "ce426e86c579f082ba2c477fbe39c0f25306053793f47de5b164cab4c6d4c128"
+        },
+        {
+          "path": "Choice.ios.ts",
+          "hash": "6ec1ed61fe9c508df0dacdbd31d92c94a3b1412ae7108fff3a18ba0c2d8b58e6"
+        },
+        {
+          "path": "Flow.js",
+          "hash": "5dbaf55919881d74195dfedb8c97993e922fed9b972cfb8089a73c34411f16df"
+        },
+        {
+          "path": "index.ts",
+          "hash": "71f09ef1f6bb417ce9e75ddac1a0b940b8b977074624137275f4347efc72bcfb"
+        },
+        {
+          "path": "sentinel.js",
+          "hash": "4d18e4c7edc447b928f38acd5259659b8bbc38b01484d55d01cb8b958771c6fb"
+        }
+      ],
+      "outputHash": "f94d1f3575aa76d354ec8e0ecb286034915e80490d205e58d598fa2de76f2993",
+      "elapsedMs": 856.9847,
+      "rssBytes": 146706432,
+      "snapshotBytes": 50831,
+      "missingProof": [
+        "full pattern qualification",
+        "navigation",
+        "Expo routing",
+        "native spec boundaries",
+        "resource ceilings",
+        "fault containment matrix"
+      ]
+    },
+    {
+      "tuple": "expo56",
+      "platform": "ios",
+      "profileId": "[\"profile\",\".\",\"metro-ios\",\"fs-07/1\"]",
+      "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-ios\\\",\\\"fs-07/1\\\"]\",\"ios-development\",\"ios\",[\"react-native\"]]",
+      "extractorVersion": "fs-07/1",
+      "files": 6,
+      "bindings": 4,
+      "sourceHashes": [
+        {
+          "path": "App.tsx",
+          "hash": "1a8e867a0b9d5881da076fd172e72e15da1da159b33d967a49383e3038d17c4d"
+        },
+        {
+          "path": "Choice.android.ts",
+          "hash": "ce426e86c579f082ba2c477fbe39c0f25306053793f47de5b164cab4c6d4c128"
+        },
+        {
+          "path": "Choice.ios.ts",
+          "hash": "6ec1ed61fe9c508df0dacdbd31d92c94a3b1412ae7108fff3a18ba0c2d8b58e6"
+        },
+        {
+          "path": "Flow.js",
+          "hash": "5dbaf55919881d74195dfedb8c97993e922fed9b972cfb8089a73c34411f16df"
+        },
+        {
+          "path": "index.ts",
+          "hash": "71f09ef1f6bb417ce9e75ddac1a0b940b8b977074624137275f4347efc72bcfb"
+        },
+        {
+          "path": "sentinel.js",
+          "hash": "4d18e4c7edc447b928f38acd5259659b8bbc38b01484d55d01cb8b958771c6fb"
+        }
+      ],
+      "outputHash": "e78de5220425826255022d453bea9c90eef34dec5e2989aa317cc011ed8c2306",
+      "elapsedMs": 1523.6455000000005,
+      "rssBytes": 154628096,
+      "snapshotBytes": 50311,
+      "missingProof": [
+        "full pattern qualification",
+        "navigation",
+        "Expo routing",
+        "native spec boundaries",
+        "resource ceilings",
+        "fault containment matrix"
+      ]
+    }
+  ],
+  "faults": [
+    {
+      "id": "missing-manifest",
+      "status": "PASS",
+      "noSyntaxFallback": true,
+      "previousSnapshotUnchanged": true
+    },
+    {
+      "id": "corrupt-manifest",
+      "status": "PASS",
+      "noSyntaxFallback": true,
+      "previousSnapshotUnchanged": true
+    },
+    {
+      "id": "corrupt-parser",
+      "status": "PASS",
+      "noSyntaxFallback": true,
+      "previousSnapshotUnchanged": true
+    }
+  ],
+  "emptyPath": true,
+  "egressDenied": true,
+  "inspectedExecution": false,
+  "probeHash": "b3f10b0921362a3cc7da7d6e4bbd904ce8dcca9b3259c40a738786868e84ef3c",
+  "runtimeManifest": {
+    "version": 1,
+    "runtime": "hermes-parser@0.25.1",
+    "launcher": "bin/parser-host.exe",
+    "launcherHash": "9c27000b57660f0c46b094d41f7750b13a8a63545018404ef9438df8df9e4e9c",
+    "memoryBytes": 536870912,
+    "oldSpaceMiB": 128,
+    "startupMs": 5000,
+    "fileMs": 2000
+  }
+}

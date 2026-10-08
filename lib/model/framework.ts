@@ -21,6 +21,14 @@ export type AnalysisContracts = { status: "legacy-observations" | "assessed"; pr
 
 /** Source-scoped identities exclude content hashes and timestamps. */
 export function factId(kind: string, site: Pick<Site, "file" | "start" | "end">, variantId: string, target = ""): string { return JSON.stringify([kind, site.file, site.start, site.end, variantId, target]); }
+/** Source-backed mount chains distinguish repeated instantiations of one leaf.
+ * The legacy identity remains unchanged when no registration prefix exists. */
+export function contextualRegistrationId(kind: string, site: Site, variant: string, pattern: string, prefixes: readonly Witness[]): string {
+  const chain = prefixes.filter((w): w is Extract<Witness, {site: Site}> => w.role === "registration").map(w => [w.site.file, w.site.start, w.site.end]);
+  return factId("registration:" + kind, site, variant, chain.length ? JSON.stringify([pattern, chain]) : pattern);
+}
+/** Distinguish bindings emitted by repeated source-backed registrations. */
+export function contextualBindingId(kind: FrameworkBinding["kind"], site: Site, variant: string, source: string, target: string): string { return factId("binding:" + kind, site, variant, JSON.stringify([source, target])); }
 export function profileId(projectId: string, resolverId: string, semanticsVersion: string): string { return JSON.stringify(["profile", projectId, resolverId, semanticsVersion]); }
 export function variantId(profile: string, environment: string, platform: string | null, conditions: string[]): string { return JSON.stringify(["variant", profile, environment, platform, conditions]); }
 export function capabilityId(c: Pick<CapabilityAssessment, "tupleId" | "capabilityId" | "profileId" | "variantId">): string { return JSON.stringify(["capability", c.tupleId, c.capabilityId, c.profileId, c.variantId]); }

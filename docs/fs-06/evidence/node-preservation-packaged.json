@@ -1,0 +1,148 @@
+{
+  "platform": "win32",
+  "arch": "x64",
+  "runtime": {
+    "node": "24.19.0",
+    "target": "x86_64-pc-windows-msvc",
+    "protocol": 1,
+    "snapshotVersion": 3,
+    "historicalSnapshotVersions": [
+      2
+    ]
+  },
+  "executableHash": "3602f2bb1a10f2cbab4c36886218a33c1ab3db87290e73b033c46c77147d0237",
+  "harnessHash": "7efa64ff85da8107c24d7d099ec3622e4b503e21830a8d8b5d34e2643826f67f",
+  "nativeFixtureHash": "90cec5e75f555236dcdaeaeffe8d47666d0c510a52b3b42002c94855ec4c0af7",
+  "nativeControlledSourceHash": "23839849fbb7576d496f21bac4bb1f0c3e5dcd1c3f618fdfcbf04ce6ba3a8df6",
+  "fixtureHash": "89354b94f45e8672d6ca6c2ae3bc2847d00368f9e505e3f1fd70986513064478",
+  "results": [
+    {
+      "tuple": "next15",
+      "node": "v24.19.0",
+      "profiles": [
+        "node-development",
+        "node-production",
+        "browser"
+      ],
+      "files": 15,
+      "bindings": 132,
+      "registrations": 28,
+      "distinctWitnesses": 203,
+      "extractorVersion": "fs-04/1",
+      "snapshotHash": "91a648834e27d307d46d69d23657d35981c1a92ded30925c94118bfcd7dc21d5",
+      "rssBytes": 187330560,
+      "checks": [
+        "offline",
+        "empty PATH",
+        "development tooling absent",
+        "three profiles",
+        "UI-action-call trace",
+        "witnesses current/stale",
+        "full/incremental",
+        "SQLite reopen"
+      ]
+    },
+    {
+      "tuple": "next16-preservation",
+      "node": "v24.19.0",
+      "profiles": [
+        "node-development",
+        "node-production",
+        "browser"
+      ],
+      "files": 15,
+      "bindings": 132,
+      "registrations": 28,
+      "distinctWitnesses": 203,
+      "extractorVersion": "fs-04/1",
+      "snapshotHash": "e90660f0683a2cb1535911924a778cff34bf84eab872e650a81c563f1710f6ca",
+      "rssBytes": 189345792,
+      "checks": [
+        "offline",
+        "empty PATH",
+        "development tooling absent",
+        "three profiles",
+        "UI-action-call trace",
+        "witnesses current/stale",
+        "full/incremental",
+        "SQLite reopen"
+      ]
+    },
+    {
+      "tuple": "next16-patch",
+      "node": "v24.19.0",
+      "profiles": [
+        "node-development",
+        "node-production",
+        "browser"
+      ],
+      "files": 15,
+      "bindings": 132,
+      "registrations": 28,
+      "distinctWitnesses": 203,
+      "extractorVersion": "fs-04/1",
+      "snapshotHash": "29d7faa051619c72d943f879e710cd03250c413a5546e224d1614ff591141acb",
+      "rssBytes": 190406656,
+      "checks": [
+        "offline",
+        "empty PATH",
+        "development tooling absent",
+        "three profiles",
+        "UI-action-call trace",
+        "witnesses current/stale",
+        "full/incremental",
+        "SQLite reopen"
+      ]
+    },
+    {
+      "tuple": "node22",
+      "sourceNode": "22.23.3",
+      "node": "v24.19.0",
+      "profiles": [
+        "node-development",
+        "node-production"
+      ],
+      "bindings": 22,
+      "extractorVersion": "fs-04/1",
+      "snapshotHash": "db4e73645516c78ad9e41db3034da2422607319119ad79105a6a98aecbbcc749",
+      "rssBytes": 144318464,
+      "checks": [
+        "offline",
+        "empty PATH",
+        "development tooling absent",
+        "two native profiles",
+        "resolver positive/negative",
+        "exports/events/workers",
+        "native TS erasure/type-only exclusion",
+        "duplicate CommonJS alias boundary",
+        "JSX native boundary",
+        "full/incremental"
+      ]
+    },
+    {
+      "tuple": "node24",
+      "sourceNode": "24.19.0",
+      "node": "v24.19.0",
+      "profiles": [
+        "node-development",
+        "node-production"
+      ],
+      "bindings": 22,
+      "extractorVersion": "fs-04/1",
+      "snapshotHash": "53d03d229edd4b7633ef34db5ff6c07c30047a879c3377dcd3f46048c3f72a39",
+      "rssBytes": 144277504,
+      "checks": [
+        "offline",
+        "empty PATH",
+        "development tooling absent",
+        "two native profiles",
+        "resolver positive/negative",
+        "exports/events/workers",
+        "native TS erasure/type-only exclusion",
+        "duplicate CommonJS alias boundary",
+        "JSX native boundary",
+        "full/incremental"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import path from 'node:path';
+import {readFileSync,writeFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {createComposedRefresh} from '../lib/engine/adapters/composed.ts';
+const pin=JSON.parse(readFileSync('docs/fs-06/evidence/supplementary-pin.json','utf8').replace(/^\uFEFF/,'')) as {repository:string;commit:string};
+assert.match(pin.commit,/^[0-9a-f]{40}$/);
+const root=path.resolve('node_modules/.fs06-experiments/tutorial','rest-framework-tutorial-'+pin.commit);
+const driver=createComposedRefresh({host:path.resolve('src-tauri/target/release/parser-host.exe')});
+const snapshot=(await driver.analyze(root,true)).snapshot;
+assert.deepEqual((await driver.analyze(root,false)).snapshot,snapshot);
+const reasons:Record<string,number>={};for(const gap of snapshot.analysis.gaps)reasons[gap.reason]=(reasons[gap.reason]??0)+1;
+writeFileSync('docs/fs-06/evidence/supplementary.json',JSON.stringify({...pin,status:'PASS source-only supplementary execution',qualification:'Not a capability acceptance oracle; repository dependency tuples are not rewritten',archiveHash:createHash('sha256').update(readFileSync('node_modules/.fs06-experiments/tutorial.zip')).digest('hex'),files:snapshot.files.map(f=>({path:f.path,hash:f.hash})),declarations:snapshot.behavior.declarations.length,lexicalCalls:snapshot.behavior.relations.filter(r=>r.relation==='calls').length,registrations:snapshot.analysis.registrations.length,frameworkBindings:snapshot.analysis.bindings.length,gaps:reasons,capabilities:snapshot.analysis.capabilities.map(c=>({tuple:c.tupleId,state:c.state})),checks:['Source-only analysis','full/incremental equivalence','no imports/settings/setup/manage or application execution']},null,2)+'\n');

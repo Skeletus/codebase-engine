@@ -1,0 +1,29 @@
+✖ FS06 real Windows watch publishes complete settings and template edits and pause retains prior publication (27062.3852ms)
+✔ FS06 qualification django52 models and serializers (15862.0178ms)
+✔ FS06 qualification django60 models and serializers (15678.9376ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 2
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 61103.7175
+
+✖ failing tests:
+
+test at tests\framework-support\fs-06.test.ts:15:1
+✖ FS06 real Windows watch publishes complete settings and template edits and pause retains prior publication (27062.3852ms)
+  AssertionError [ERR_ASSERTION]: watch publication deadline
+      at until (file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-06.test.ts:19:105)
+      at async file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-06.test.ts:24:146
+      at async fixture (file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-06.test.ts:13:330)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

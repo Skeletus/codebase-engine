@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "tuple": "django52",
+  "profile": "static-python-declared-environment",
+  "extractor": "django/fs-06/1",
+  "group": "formats",
+  "id": "13",
+  "inputHash": "e1aee7dfb0f7de7dc4c72dbdc16cb9e629728e0a0b0e547f529e36535ea499c8",
+  "outputHash": "48d77eabf2e54ad1542e4c3af9f7db062589dceb31271c2bfcb325d93cffe0ca",
+  "variants": [
+    "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"django-static\\\",\\\"fs-06/1\\\"]\",\"static-python-declared-environment\",null,[\"settings:project/settings.py\",\"module-root:.\"]]"
+  ],
+  "facts": {
+    "registrations": 1,
+    "bindings": 7
+  },
+  "gaps": [
+    "dynamic-expression",
+    "external-boundary",
+    "missing-metadata",
+    "unsupported-matcher"
+  ],
+  "checks": [
+    "semantic assertions",
+    "all witnesses current",
+    "full/incremental equivalence"
+  ]
+}

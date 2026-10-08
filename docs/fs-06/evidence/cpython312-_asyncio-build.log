@@ -1,0 +1,16 @@
+
+  Killing any running python.exe instances...
+  Regenerate Global Objects
+  # not changed: D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\Include\internal\pycore_global_strings.h
+  # not changed: D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\Include\internal\pycore_runtime_init_generated.h
+  # not changed: D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\Include\internal\pycore_unicodeobject_generated.h
+  # not changed: D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\Include\internal\pycore_global_objects_fini_generated.h
+  Generated sources are up to date
+  Getting build info from git
+  Building heads/main-dirty:34517b6 main
+  pythoncore.vcxproj -> D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\amd64\python312.dll
+  _asynciomodule.c
+     Creando biblioteca D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\amd64\_asyncio.lib y objeto D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\amd64\_asyncio.exp
+  Generando código
+  Generación de código finalizada
+  _asyncio.vcxproj -> D:\Repositorios Github\cartograph\node_modules\.fs05-experiments\Python-3.12.15\PCbuild\amd64\_asyncio.pyd

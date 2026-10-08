@@ -1,0 +1,6 @@
+   Compiling codebase-intelligence-desktop v0.1.0 (D:\Repositorios Github\cartograph\src-tauri)
+error: failed to remove file `D:\Repositorios Github\cartograph\src-tauri\target\debug\parser-host.exe`
+
+Caused by:
+  Acceso denegado. (os error 5)
+warning: build failed, waiting for other jobs to finish...

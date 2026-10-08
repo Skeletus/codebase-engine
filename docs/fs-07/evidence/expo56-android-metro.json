@@ -1,0 +1,117 @@
+{
+  "tuple": "expo56",
+  "versions": {
+    "node": "24.19.0",
+    "expo": "56.0.23",
+    "react": "19.2.3",
+    "react-native": "0.85.3",
+    "expo-router": "56.2.21",
+    "@expo/metro": "56.0.2",
+    "@expo/metro-config": "56.0.19"
+  },
+  "profile": "android-development",
+  "contextProfile": "controlled",
+  "platform": "android",
+  "resolver": "@expo/metro/metro-resolver",
+  "resolverVersion": "0.84.5",
+  "resolverEntryHash": "e3d1bcdef6dc9e3c5658e65a6c9484adfa8dedb44a8a4c2f77e769a07ac87728",
+  "fixtureHash": "38078e691e65c80deef24675f48d7b58bc6f1838c1320d8f83f3c971888e44c2",
+  "outputHash": "a23dd4d97e07e6de23940481297cf2137bf23d5002b2b3045104a027196bf5c8",
+  "outputs": [
+    {
+      "id": "platform",
+      "type": "sourceFile",
+      "targets": [
+        "src/Choice.android.js"
+      ]
+    },
+    {
+      "id": "native-fallback",
+      "type": "sourceFile",
+      "targets": [
+        "src/Native.native.js"
+      ]
+    },
+    {
+      "id": "extension-before-platform",
+      "type": "sourceFile",
+      "targets": [
+        "src/Extension.js"
+      ]
+    },
+    {
+      "id": "explicit-extension",
+      "type": "sourceFile",
+      "targets": [
+        "src/Exact.js"
+      ]
+    },
+    {
+      "id": "directory-index",
+      "type": "sourceFile",
+      "targets": [
+        "src/folder/index.android.js"
+      ]
+    },
+    {
+      "id": "density-family",
+      "type": "assetFiles",
+      "targets": [
+        "src/logo.png",
+        "src/logo@2x.png",
+        "src/logo@3x.png"
+      ]
+    },
+    {
+      "id": "import-export",
+      "type": "sourceFile",
+      "targets": [
+        "packages/dep/import.js"
+      ]
+    },
+    {
+      "id": "require-export",
+      "type": "sourceFile",
+      "targets": [
+        "packages/dep/require.js"
+      ]
+    },
+    {
+      "id": "exact-subpath",
+      "type": "sourceFile",
+      "targets": [
+        "packages/dep/feature.js"
+      ]
+    },
+    {
+      "id": "wildcard-export",
+      "type": "sourceFile",
+      "targets": [
+        "packages/dep/feature.js"
+      ]
+    },
+    {
+      "id": "redirect",
+      "type": "sourceFile",
+      "targets": [
+        "src/replaced.js"
+      ]
+    },
+    {
+      "id": "disabled",
+      "type": "empty",
+      "targets": []
+    }
+  ],
+  "warnings": [],
+  "elapsedMs": 6.719800000000021,
+  "resources": {
+    "rss": 69185536,
+    "heapTotal": 16613376,
+    "heapUsed": 11517776,
+    "external": 9047921,
+    "arrayBuffers": 143651
+  },
+  "applicationExecution": false,
+  "configExecution": false
+}

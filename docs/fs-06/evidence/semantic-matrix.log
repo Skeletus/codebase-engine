@@ -1,0 +1,58 @@
+✖ FS06 qualification django52 models and serializers (14042.0149ms)
+✔ FS06 qualification django52 signals boundaries (4862.527ms)
+✔ FS06 qualification django52 templates boundaries and positions (11879.5197ms)
+✖ FS06 qualification django60 models and serializers (14186.1596ms)
+✔ FS06 qualification django60 signals boundaries (4336.1475ms)
+✔ FS06 qualification django60 templates boundaries and positions (12054.9479ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 4
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 63090.662
+
+✖ failing tests:
+
+test at tests\framework-support\fs-06.test.ts:318:3
+✖ FS06 qualification django52 models and serializers (14042.0149ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert(snapshot.analysis.gaps.some(g=>g.reason==='custom-resolver'))
+  
+      at file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-06.test.ts:330:362
+      at file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-06.test.ts:22:5
+      at async fixture (file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-06.test.ts:12:330)
+      at async qualifyCase (file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-06.test.ts:20:3)
+      at async TestContext.<anonymous> (file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-06.test.ts:330:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests\framework-support\fs-06.test.ts:318:3
+✖ FS06 qualification django60 models and serializers (14186.1596ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert(snapshot.analysis.gaps.some(g=>g.reason==='custom-resolver'))
+  
+      at file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-06.test.ts:330:362
+      at file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-06.test.ts:22:5
+      at async fixture (file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-06.test.ts:12:330)
+      at async qualifyCase (file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-06.test.ts:20:3)
+      at async TestContext.<anonymous> (file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-06.test.ts:330:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

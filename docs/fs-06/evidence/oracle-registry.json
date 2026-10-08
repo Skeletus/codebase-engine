@@ -1,0 +1,237 @@
+[
+  {
+    "name": "django",
+    "version": "5.2.18",
+    "requiresPython": ">=3.10",
+    "requiresDist": [
+      "asgiref>=3.8.1",
+      "sqlparse>=0.3.1",
+      "tzdata; sys_platform == \"win32\"",
+      "argon2-cffi>=19.1.0; extra == \"argon2\"",
+      "bcrypt; extra == \"bcrypt\""
+    ],
+    "artifact": {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "5afb6cc7c65f4b99a05786639e8db232ff2de66d29b0d1f253061f43fc35f3be"
+      },
+      "digests": {
+        "blake2b_256": "d6016568ec52b26548ca1b83d33249f7274db3bf74698f42c0da42ec9db1a24a",
+        "md5": "20f747611032ab23df25f1cacc313a79",
+        "sha256": "92ed81d500be6408ecd704d7bd1366c534f30427bffcc63c5fefb129561aec7c"
+      },
+      "downloads": -1,
+      "filename": "django-5.2.18-py3-none-any.whl",
+      "has_sig": false,
+      "md5_digest": "20f747611032ab23df25f1cacc313a79",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.10",
+      "size": 8316071,
+      "upload_time": "2026-10-06T13:01:04",
+      "upload_time_iso_8601": "2026-10-06T13:01:04.413659Z",
+      "url": "https://files.pythonhosted.org/packages/d6/01/6568ec52b26548ca1b83d33249f7274db3bf74698f42c0da42ec9db1a24a/django-5.2.18-py3-none-any.whl",
+      "yanked": false,
+      "yanked_reason": null
+    }
+  },
+  {
+    "name": "django",
+    "version": "6.0.9",
+    "requiresPython": ">=3.12",
+    "requiresDist": [
+      "asgiref>=3.9.1",
+      "sqlparse>=0.5.0",
+      "tzdata; sys_platform == \"win32\"",
+      "argon2-cffi>=23.1.0; extra == \"argon2\"",
+      "bcrypt>=4.1.1; extra == \"bcrypt\""
+    ],
+    "artifact": {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "e71cb6c7198e21bdf65f40dd2f2b723a2d13b62d7ec56f5f8cbb573281386109"
+      },
+      "digests": {
+        "blake2b_256": "013ff0378bc671b528caf61b143ba91c1057204a7e863d9a309d62a64203f9c4",
+        "md5": "bbacdc82a9fdc1be33634bf45925cc63",
+        "sha256": "5c6473d05bbea9c43359cc36701b5deec3c925f5311963786e1346544c1a68c0"
+      },
+      "downloads": -1,
+      "filename": "django-6.0.9-py3-none-any.whl",
+      "has_sig": false,
+      "md5_digest": "bbacdc82a9fdc1be33634bf45925cc63",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.12",
+      "size": 8377504,
+      "upload_time": "2026-10-06T12:57:52",
+      "upload_time_iso_8601": "2026-10-06T12:57:52.649734Z",
+      "url": "https://files.pythonhosted.org/packages/01/3f/f0378bc671b528caf61b143ba91c1057204a7e863d9a309d62a64203f9c4/django-6.0.9-py3-none-any.whl",
+      "yanked": false,
+      "yanked_reason": null
+    }
+  },
+  {
+    "name": "djangorestframework",
+    "version": "3.16.1",
+    "requiresPython": ">=3.9",
+    "requiresDist": [
+      "django>=4.2"
+    ],
+    "artifact": {
+      "comment_text": "",
+      "core-metadata": {
+        "sha256": "5d07a3efed3b615883394a7bc5ccab3ef366cf641cc0b3418b374367e810babf"
+      },
+      "digests": {
+        "blake2b_256": "b0cebf8b9d3f415be4ac5588545b5fcdbbb841977db1c1d923f7568eeabe1689",
+        "md5": "1f22035a3817c0b02714719bb5e713aa",
+        "sha256": "33a59f47fb9c85ede792cbf88bde71893bcda0667bc573f784649521f1102cec"
+      },
+      "downloads": -1,
+      "filename": "djangorestframework-3.16.1-py3-none-any.whl",
+      "has_sig": false,
+      "md5_digest": "1f22035a3817c0b02714719bb5e713aa",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.9",
+      "size": 1080442,
+      "upload_time": "2025-08-06T17:50:50",
+      "upload_time_iso_8601": "2025-08-06T17:50:50.667293Z",
+      "url": "https://files.pythonhosted.org/packages/b0/ce/bf8b9d3f415be4ac5588545b5fcdbbb841977db1c1d923f7568eeabe1689/djangorestframework-3.16.1-py3-none-any.whl",
+      "yanked": false,
+      "yanked_reason": null
+    }
+  },
+  {
+    "name": "djangorestframework",
+    "version": "3.17.2",
+    "requiresPython": ">=3.10",
+    "requiresDist": [
+      "django>=4.2"
+    ],
+    "artifact": {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "6795f3fb338e593146e9701399117d8e3a7baeceb38d07f209abeea6bccb832b"
+      },
+      "digests": {
+        "blake2b_256": "a246c14108e400b208c394325eb63fbae06c81341b6447fa1a6f9da718b17fe7",
+        "md5": "19fecee1048cb1b6d2a01cd86b2a78f2",
+        "sha256": "cb0546a7415d5b46c04e0f4fe0a54b2109f4fdd5e83ca773c8c6183a6493d042"
+      },
+      "downloads": -1,
+      "filename": "djangorestframework-3.17.2-py3-none-any.whl",
+      "has_sig": false,
+      "md5_digest": "19fecee1048cb1b6d2a01cd86b2a78f2",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.10",
+      "size": 899109,
+      "upload_time": "2026-08-05T07:47:20",
+      "upload_time_iso_8601": "2026-08-05T07:47:20.853085Z",
+      "url": "https://files.pythonhosted.org/packages/a2/46/c14108e400b208c394325eb63fbae06c81341b6447fa1a6f9da718b17fe7/djangorestframework-3.17.2-py3-none-any.whl",
+      "yanked": false,
+      "yanked_reason": null
+    }
+  },
+  {
+    "name": "asgiref",
+    "version": "3.10.0",
+    "requiresPython": ">=3.9",
+    "requiresDist": [
+      "typing_extensions>=4; python_version < \"3.11\"",
+      "pytest; extra == \"tests\"",
+      "pytest-asyncio; extra == \"tests\"",
+      "mypy>=1.14.0; extra == \"tests\""
+    ],
+    "artifact": {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "4e570a3829f7170482183eb68d991b7243d187e4630219022cb0e77e60d94f20"
+      },
+      "digests": {
+        "blake2b_256": "179cfc2331f538fbf7eedba64b2052e99ccf9ba9d6888e2f41441ee28847004b",
+        "md5": "b3ab18457914d7cdc3e77eaa97a115f8",
+        "sha256": "aef8a81283a34d0ab31630c9b7dfe70c812c95eba78171367ca8745e88124734"
+      },
+      "downloads": -1,
+      "filename": "asgiref-3.10.0-py3-none-any.whl",
+      "has_sig": false,
+      "md5_digest": "b3ab18457914d7cdc3e77eaa97a115f8",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.9",
+      "size": 24050,
+      "upload_time": "2025-10-05T09:15:05",
+      "upload_time_iso_8601": "2025-10-05T09:15:05.110106Z",
+      "url": "https://files.pythonhosted.org/packages/17/9c/fc2331f538fbf7eedba64b2052e99ccf9ba9d6888e2f41441ee28847004b/asgiref-3.10.0-py3-none-any.whl",
+      "yanked": false,
+      "yanked_reason": null
+    }
+  },
+  {
+    "name": "sqlparse",
+    "version": "0.5.3",
+    "requiresPython": ">=3.8",
+    "requiresDist": [
+      "build; extra == \"dev\"",
+      "hatch; extra == \"dev\"",
+      "sphinx; extra == \"doc\""
+    ],
+    "artifact": {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "ea1e5df5a969ef19d62e05c00896a64d6aee79d65997c8d86ed4ee3b06e9ac8e"
+      },
+      "digests": {
+        "blake2b_256": "a95cbfd6bd0bf979426d405cc6e71eceb8701b148b16c21d2dc3c261efc61c7b",
+        "md5": "28a0ac4500fe5b9b0d7c7e593b21e6df",
+        "sha256": "cf2196ed3418f3ba5de6af7e82c694a9fbdbfecccdfc72e281548517081f16ca"
+      },
+      "downloads": -1,
+      "filename": "sqlparse-0.5.3-py3-none-any.whl",
+      "has_sig": false,
+      "md5_digest": "28a0ac4500fe5b9b0d7c7e593b21e6df",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.8",
+      "size": 44415,
+      "upload_time": "2024-12-10T12:05:27",
+      "upload_time_iso_8601": "2024-12-10T12:05:27.824643Z",
+      "url": "https://files.pythonhosted.org/packages/a9/5c/bfd6bd0bf979426d405cc6e71eceb8701b148b16c21d2dc3c261efc61c7b/sqlparse-0.5.3-py3-none-any.whl",
+      "yanked": false,
+      "yanked_reason": null
+    }
+  },
+  {
+    "name": "tzdata",
+    "version": "2025.2",
+    "requiresPython": ">=2",
+    "requiresDist": null,
+    "artifact": {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "c2cc876ee200b84d1b8bee22290bc673ae4cf8e8be1a85cd2909a2715215794b"
+      },
+      "digests": {
+        "blake2b_256": "5c23c7abc0ca0a1526a0774eca151daeb8de62ec457e77262b66b359c3c7679e",
+        "md5": "569bb6ed6b325726a0c73e8681085036",
+        "sha256": "1a403fada01ff9221ca8044d701868fa132215d84beb92242d9acd2147f667a8"
+      },
+      "downloads": -1,
+      "filename": "tzdata-2025.2-py2.py3-none-any.whl",
+      "has_sig": false,
+      "md5_digest": "569bb6ed6b325726a0c73e8681085036",
+      "packagetype": "bdist_wheel",
+      "python_version": "py2.py3",
+      "requires_python": ">=2",
+      "size": 347839,
+      "upload_time": "2025-03-23T13:54:41",
+      "upload_time_iso_8601": "2025-03-23T13:54:41.845043Z",
+      "url": "https://files.pythonhosted.org/packages/5c/23/c7abc0ca0a1526a0774eca151daeb8de62ec457e77262b66b359c3c7679e/tzdata-2025.2-py2.py3-none-any.whl",
+      "yanked": false,
+      "yanked_reason": null
+    }
+  }
+]

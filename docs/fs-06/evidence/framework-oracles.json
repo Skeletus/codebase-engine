@@ -1,0 +1,2930 @@
+[
+  {
+    "tuple": "django52",
+    "status": "PASS",
+    "profile": "static-python-declared-environment",
+    "generatorHash": "ded221a08857299b53ad8413e4f71b2f4aaa8fec02614897fa55b90faab3c564",
+    "oracleScriptHash": "da61b587f9f6eca2241904a9910e147f3466df97f31132b975edacec40ebd8f0",
+    "executableHash": "4b8cf6a848749369033dde65540c0c1c4ee53872037b836c8e64e74650ed3f11",
+    "outputHash": "da3c93d8989ffa5a8843b494b0704e77aab8421ce6766d6b4bfca5f6bccd1ec4",
+    "result": {
+      "python": "3.12.15",
+      "django": "5.2.18",
+      "drf": "3.16.1",
+      "urls": [
+        {
+          "path": "/",
+          "name": "home",
+          "kwargs": {},
+          "handler": "home"
+        },
+        {
+          "path": "/items/42/",
+          "name": "item",
+          "kwargs": {
+            "pk": 42
+          },
+          "handler": "ItemView"
+        },
+        {
+          "path": "/nested/hello/",
+          "name": "app:hello",
+          "kwargs": {},
+          "handler": "home"
+        }
+      ],
+      "cbvMethods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "apiViewMethods": [
+        "OPTIONS",
+        "GET"
+      ],
+      "routers": [
+        {
+          "router": "SimpleRouter",
+          "useRegexPath": true,
+          "trailingSlash": true,
+          "routes": [
+            {
+              "rootMethods": null,
+              "pattern": "^users/$",
+              "name": "users-list",
+              "actions": {
+                "get": "list",
+                "head": "list"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "^users/refresh/$",
+              "name": "users-refresh",
+              "actions": {
+                "post": "refresh"
+              },
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "^users/(?P<pk>[^/.]+)/$",
+              "name": "users-detail",
+              "actions": {
+                "get": "retrieve",
+                "head": "retrieve"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            }
+          ]
+        },
+        {
+          "router": "SimpleRouter",
+          "useRegexPath": true,
+          "trailingSlash": false,
+          "routes": [
+            {
+              "rootMethods": null,
+              "pattern": "^users$",
+              "name": "users-list",
+              "actions": {
+                "get": "list",
+                "head": "list"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "^users/refresh$",
+              "name": "users-refresh",
+              "actions": {
+                "post": "refresh"
+              },
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "^users/(?P<pk>[^/.]+)$",
+              "name": "users-detail",
+              "actions": {
+                "get": "retrieve",
+                "head": "retrieve"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            }
+          ]
+        },
+        {
+          "router": "SimpleRouter",
+          "useRegexPath": false,
+          "trailingSlash": true,
+          "routes": [
+            {
+              "rootMethods": null,
+              "pattern": "users/",
+              "name": "users-list",
+              "actions": {
+                "get": "list",
+                "head": "list"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "users/refresh/",
+              "name": "users-refresh",
+              "actions": {
+                "post": "refresh"
+              },
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "users/<str:pk>/",
+              "name": "users-detail",
+              "actions": {
+                "get": "retrieve",
+                "head": "retrieve"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            }
+          ]
+        },
+        {
+          "router": "SimpleRouter",
+          "useRegexPath": false,
+          "trailingSlash": false,
+          "routes": [
+            {
+              "rootMethods": null,
+              "pattern": "users",
+              "name": "users-list",
+              "actions": {
+                "get": "list",
+                "head": "list"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "users/refresh",
+              "name": "users-refresh",
+              "actions": {
+                "post": "refresh"
+              },
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "users/<str:pk>",
+              "name": "users-detail",
+              "actions": {
+                "get": "retrieve",
+                "head": "retrieve"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            }
+          ]
+        },
+        {
+          "router": "DefaultRouter",
+          "useRegexPath": true,
+          "trailingSlash": true,
+          "routes": [
+            {
+              "rootMethods": null,
+              "pattern": "^users/$",
+              "name": "users-list",
+              "actions": {
+                "get": "list",
+                "head": "list"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "^users\\.(?P<format>[a-z0-9]+)/?$",
+              "name": "users-list",
+              "actions": {
+                "get": "list",
+                "head": "list"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "^users/refresh/$",
+              "name": "users-refresh",
+              "actions": {
+                "post": "refresh"
+              },
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "^users/refresh\\.(?P<format>[a-z0-9]+)/?$",
+              "name": "users-refresh",
+              "actions": {
+                "post": "refresh"
+              },
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "^users/(?P<pk>[^/.]+)/$",
+              "name": "users-detail",
+              "actions": {
+                "get": "retrieve",
+                "head": "retrieve"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "^users/(?P<pk>[^/.]+)\\.(?P<format>[a-z0-9]+)/?$",
+              "name": "users-detail",
+              "actions": {
+                "get": "retrieve",
+                "head": "retrieve"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "pattern": "",
+              "name": "api-root",
+              "actions": {},
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "APIRootView"
+            },
+            {
+              "rootMethods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "pattern": "<drf_format_suffix:format>",
+              "name": "api-root",
+              "actions": {},
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "APIRootView"
+            }
+          ]
+        },
+        {
+          "router": "DefaultRouter",
+          "useRegexPath": true,
+          "trailingSlash": false,
+          "routes": [
+            {
+              "rootMethods": null,
+              "pattern": "^users$",
+              "name": "users-list",
+              "actions": {
+                "get": "list",
+                "head": "list"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "^users\\.(?P<format>[a-z0-9]+)/?$",
+              "name": "users-list",
+              "actions": {
+                "get": "list",
+                "head": "list"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "^users/refresh$",
+              "name": "users-refresh",
+              "actions": {
+                "post": "refresh"
+              },
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "^users/refresh\\.(?P<format>[a-z0-9]+)/?$",
+              "name": "users-refresh",
+              "actions": {
+                "post": "refresh"
+              },
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "^users/(?P<pk>[^/.]+)$",
+              "name": "users-detail",
+              "actions": {
+                "get": "retrieve",
+                "head": "retrieve"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "^users/(?P<pk>[^/.]+)\\.(?P<format>[a-z0-9]+)/?$",
+              "name": "users-detail",
+              "actions": {
+                "get": "retrieve",
+                "head": "retrieve"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "pattern": "",
+              "name": "api-root",
+              "actions": {},
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "APIRootView"
+            },
+            {
+              "rootMethods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "pattern": "<drf_format_suffix:format>",
+              "name": "api-root",
+              "actions": {},
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "APIRootView"
+            }
+          ]
+        },
+        {
+          "router": "DefaultRouter",
+          "useRegexPath": false,
+          "trailingSlash": true,
+          "routes": [
+            {
+              "rootMethods": null,
+              "pattern": "users/",
+              "name": "users-list",
+              "actions": {
+                "get": "list",
+                "head": "list"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "users<drf_format_suffix:format>",
+              "name": "users-list",
+              "actions": {
+                "get": "list",
+                "head": "list"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "users/refresh/",
+              "name": "users-refresh",
+              "actions": {
+                "post": "refresh"
+              },
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "users/refresh<drf_format_suffix:format>",
+              "name": "users-refresh",
+              "actions": {
+                "post": "refresh"
+              },
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "users/<str:pk>/",
+              "name": "users-detail",
+              "actions": {
+                "get": "retrieve",
+                "head": "retrieve"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "users/<str:pk><drf_format_suffix:format>",
+              "name": "users-detail",
+              "actions": {
+                "get": "retrieve",
+                "head": "retrieve"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "pattern": "",
+              "name": "api-root",
+              "actions": {},
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "APIRootView"
+            },
+            {
+              "rootMethods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "pattern": "<drf_format_suffix:format>",
+              "name": "api-root",
+              "actions": {},
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "APIRootView"
+            }
+          ]
+        },
+        {
+          "router": "DefaultRouter",
+          "useRegexPath": false,
+          "trailingSlash": false,
+          "routes": [
+            {
+              "rootMethods": null,
+              "pattern": "users",
+              "name": "users-list",
+              "actions": {
+                "get": "list",
+                "head": "list"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "users<drf_format_suffix:format>",
+              "name": "users-list",
+              "actions": {
+                "get": "list",
+                "head": "list"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "users/refresh",
+              "name": "users-refresh",
+              "actions": {
+                "post": "refresh"
+              },
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "users/refresh<drf_format_suffix:format>",
+              "name": "users-refresh",
+              "actions": {
+                "post": "refresh"
+              },
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "users/<str:pk>",
+              "name": "users-detail",
+              "actions": {
+                "get": "retrieve",
+                "head": "retrieve"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "users/<str:pk><drf_format_suffix:format>",
+              "name": "users-detail",
+              "actions": {
+                "get": "retrieve",
+                "head": "retrieve"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "pattern": "",
+              "name": "api-root",
+              "actions": {},
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "APIRootView"
+            },
+            {
+              "rootMethods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "pattern": "<drf_format_suffix:format>",
+              "name": "api-root",
+              "actions": {},
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "APIRootView"
+            }
+          ]
+        }
+      ],
+      "framework": [
+        {
+          "name": "django.views.generic.base.View",
+          "mro": [
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "django.views.generic.base.TemplateView",
+          "mro": [
+            "django.views.generic.base.TemplateView",
+            "django.views.generic.base.TemplateResponseMixin",
+            "django.views.generic.base.ContextMixin",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "GET",
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "django.views.generic.list.ListView",
+          "mro": [
+            "django.views.generic.list.ListView",
+            "django.views.generic.list.MultipleObjectTemplateResponseMixin",
+            "django.views.generic.base.TemplateResponseMixin",
+            "django.views.generic.list.BaseListView",
+            "django.views.generic.list.MultipleObjectMixin",
+            "django.views.generic.base.ContextMixin",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "GET",
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "django.views.generic.detail.DetailView",
+          "mro": [
+            "django.views.generic.detail.DetailView",
+            "django.views.generic.detail.SingleObjectTemplateResponseMixin",
+            "django.views.generic.base.TemplateResponseMixin",
+            "django.views.generic.detail.BaseDetailView",
+            "django.views.generic.detail.SingleObjectMixin",
+            "django.views.generic.base.ContextMixin",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "GET",
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "django.views.generic.edit.CreateView",
+          "mro": [
+            "django.views.generic.edit.CreateView",
+            "django.views.generic.detail.SingleObjectTemplateResponseMixin",
+            "django.views.generic.base.TemplateResponseMixin",
+            "django.views.generic.edit.BaseCreateView",
+            "django.views.generic.edit.ModelFormMixin",
+            "django.views.generic.edit.FormMixin",
+            "django.views.generic.detail.SingleObjectMixin",
+            "django.views.generic.base.ContextMixin",
+            "django.views.generic.edit.ProcessFormView",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "GET",
+            "POST",
+            "PUT",
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "django.views.generic.edit.UpdateView",
+          "mro": [
+            "django.views.generic.edit.UpdateView",
+            "django.views.generic.detail.SingleObjectTemplateResponseMixin",
+            "django.views.generic.base.TemplateResponseMixin",
+            "django.views.generic.edit.BaseUpdateView",
+            "django.views.generic.edit.ModelFormMixin",
+            "django.views.generic.edit.FormMixin",
+            "django.views.generic.detail.SingleObjectMixin",
+            "django.views.generic.base.ContextMixin",
+            "django.views.generic.edit.ProcessFormView",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "GET",
+            "POST",
+            "PUT",
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "django.views.generic.edit.DeleteView",
+          "mro": [
+            "django.views.generic.edit.DeleteView",
+            "django.views.generic.detail.SingleObjectTemplateResponseMixin",
+            "django.views.generic.base.TemplateResponseMixin",
+            "django.views.generic.edit.BaseDeleteView",
+            "django.views.generic.edit.DeletionMixin",
+            "django.views.generic.edit.FormMixin",
+            "django.views.generic.detail.BaseDetailView",
+            "django.views.generic.detail.SingleObjectMixin",
+            "django.views.generic.base.ContextMixin",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "GET",
+            "POST",
+            "DELETE",
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "rest_framework.views.APIView",
+          "mro": [
+            "rest_framework.views.APIView",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "rest_framework.generics.ListAPIView",
+          "mro": [
+            "rest_framework.generics.ListAPIView",
+            "rest_framework.mixins.ListModelMixin",
+            "rest_framework.generics.GenericAPIView",
+            "rest_framework.views.APIView",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "GET",
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "rest_framework.generics.RetrieveAPIView",
+          "mro": [
+            "rest_framework.generics.RetrieveAPIView",
+            "rest_framework.mixins.RetrieveModelMixin",
+            "rest_framework.generics.GenericAPIView",
+            "rest_framework.views.APIView",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "GET",
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "rest_framework.generics.CreateAPIView",
+          "mro": [
+            "rest_framework.generics.CreateAPIView",
+            "rest_framework.mixins.CreateModelMixin",
+            "rest_framework.generics.GenericAPIView",
+            "rest_framework.views.APIView",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "POST",
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "rest_framework.generics.UpdateAPIView",
+          "mro": [
+            "rest_framework.generics.UpdateAPIView",
+            "rest_framework.mixins.UpdateModelMixin",
+            "rest_framework.generics.GenericAPIView",
+            "rest_framework.views.APIView",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "PUT",
+            "PATCH",
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "rest_framework.generics.DestroyAPIView",
+          "mro": [
+            "rest_framework.generics.DestroyAPIView",
+            "rest_framework.mixins.DestroyModelMixin",
+            "rest_framework.generics.GenericAPIView",
+            "rest_framework.views.APIView",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "DELETE",
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "rest_framework.generics.ListCreateAPIView",
+          "mro": [
+            "rest_framework.generics.ListCreateAPIView",
+            "rest_framework.mixins.ListModelMixin",
+            "rest_framework.mixins.CreateModelMixin",
+            "rest_framework.generics.GenericAPIView",
+            "rest_framework.views.APIView",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "GET",
+            "POST",
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "rest_framework.generics.RetrieveUpdateDestroyAPIView",
+          "mro": [
+            "rest_framework.generics.RetrieveUpdateDestroyAPIView",
+            "rest_framework.mixins.RetrieveModelMixin",
+            "rest_framework.mixins.UpdateModelMixin",
+            "rest_framework.mixins.DestroyModelMixin",
+            "rest_framework.generics.GenericAPIView",
+            "rest_framework.views.APIView",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "GET",
+            "PUT",
+            "PATCH",
+            "DELETE",
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "rest_framework.viewsets.ViewSet",
+          "mro": [
+            "rest_framework.viewsets.ViewSet",
+            "rest_framework.viewsets.ViewSetMixin",
+            "rest_framework.views.APIView",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "rest_framework.viewsets.GenericViewSet",
+          "mro": [
+            "rest_framework.viewsets.GenericViewSet",
+            "rest_framework.viewsets.ViewSetMixin",
+            "rest_framework.generics.GenericAPIView",
+            "rest_framework.views.APIView",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "rest_framework.viewsets.ModelViewSet",
+          "mro": [
+            "rest_framework.viewsets.ModelViewSet",
+            "rest_framework.mixins.CreateModelMixin",
+            "rest_framework.mixins.RetrieveModelMixin",
+            "rest_framework.mixins.UpdateModelMixin",
+            "rest_framework.mixins.DestroyModelMixin",
+            "rest_framework.mixins.ListModelMixin",
+            "rest_framework.viewsets.GenericViewSet",
+            "rest_framework.viewsets.ViewSetMixin",
+            "rest_framework.generics.GenericAPIView",
+            "rest_framework.views.APIView",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "rest_framework.viewsets.ReadOnlyModelViewSet",
+          "mro": [
+            "rest_framework.viewsets.ReadOnlyModelViewSet",
+            "rest_framework.mixins.RetrieveModelMixin",
+            "rest_framework.mixins.ListModelMixin",
+            "rest_framework.viewsets.GenericViewSet",
+            "rest_framework.viewsets.ViewSetMixin",
+            "rest_framework.generics.GenericAPIView",
+            "rest_framework.views.APIView",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "OPTIONS"
+          ]
+        }
+      ],
+      "converters": [
+        {
+          "converter": "str",
+          "pattern": "value/<str:value>/",
+          "url": "/value/abc/",
+          "matched": true,
+          "trailingSlash": true
+        },
+        {
+          "converter": "str",
+          "pattern": "value/<str:value>/",
+          "url": "/value/a/b/",
+          "matched": false,
+          "trailingSlash": true
+        },
+        {
+          "converter": "str",
+          "pattern": "value/<str:value>",
+          "url": "/value/abc",
+          "matched": true,
+          "trailingSlash": false
+        },
+        {
+          "converter": "str",
+          "pattern": "value/<str:value>",
+          "url": "/value/a/b",
+          "matched": false,
+          "trailingSlash": false
+        },
+        {
+          "converter": "int",
+          "pattern": "value/<int:value>/",
+          "url": "/value/0042/",
+          "matched": true,
+          "trailingSlash": true
+        },
+        {
+          "converter": "int",
+          "pattern": "value/<int:value>/",
+          "url": "/value/-1/",
+          "matched": false,
+          "trailingSlash": true
+        },
+        {
+          "converter": "int",
+          "pattern": "value/<int:value>",
+          "url": "/value/0042",
+          "matched": true,
+          "trailingSlash": false
+        },
+        {
+          "converter": "int",
+          "pattern": "value/<int:value>",
+          "url": "/value/-1",
+          "matched": false,
+          "trailingSlash": false
+        },
+        {
+          "converter": "slug",
+          "pattern": "value/<slug:value>/",
+          "url": "/value/a_B-9/",
+          "matched": true,
+          "trailingSlash": true
+        },
+        {
+          "converter": "slug",
+          "pattern": "value/<slug:value>/",
+          "url": "/value/.bad/",
+          "matched": false,
+          "trailingSlash": true
+        },
+        {
+          "converter": "slug",
+          "pattern": "value/<slug:value>",
+          "url": "/value/a_B-9",
+          "matched": true,
+          "trailingSlash": false
+        },
+        {
+          "converter": "slug",
+          "pattern": "value/<slug:value>",
+          "url": "/value/.bad",
+          "matched": false,
+          "trailingSlash": false
+        },
+        {
+          "converter": "uuid",
+          "pattern": "value/<uuid:value>/",
+          "url": "/value/12345678-1234-1234-1234-123456789abc/",
+          "matched": true,
+          "trailingSlash": true
+        },
+        {
+          "converter": "uuid",
+          "pattern": "value/<uuid:value>/",
+          "url": "/value/12345678-1234-1234-1234-123456789ABC/",
+          "matched": false,
+          "trailingSlash": true
+        },
+        {
+          "converter": "uuid",
+          "pattern": "value/<uuid:value>",
+          "url": "/value/12345678-1234-1234-1234-123456789abc",
+          "matched": true,
+          "trailingSlash": false
+        },
+        {
+          "converter": "uuid",
+          "pattern": "value/<uuid:value>",
+          "url": "/value/12345678-1234-1234-1234-123456789ABC",
+          "matched": false,
+          "trailingSlash": false
+        },
+        {
+          "converter": "path",
+          "pattern": "value/<path:value>/",
+          "url": "/value/a/b/",
+          "matched": true,
+          "trailingSlash": true
+        },
+        {
+          "converter": "path",
+          "pattern": "value/<path:value>/",
+          "url": "/value//",
+          "matched": false,
+          "trailingSlash": true
+        },
+        {
+          "converter": "path",
+          "pattern": "value/<path:value>",
+          "url": "/value/a/b",
+          "matched": true,
+          "trailingSlash": false
+        },
+        {
+          "converter": "path",
+          "pattern": "value/<path:value>",
+          "url": "/value/",
+          "matched": false,
+          "trailingSlash": false
+        }
+      ],
+      "decorators": [
+        {
+          "decorator": "require_GET",
+          "async": false,
+          "methods": [
+            "GET"
+          ],
+          "isAsync": false
+        },
+        {
+          "decorator": "require_GET",
+          "async": true,
+          "methods": [
+            "GET"
+          ],
+          "isAsync": true
+        },
+        {
+          "decorator": "require_POST",
+          "async": false,
+          "methods": [
+            "POST"
+          ],
+          "isAsync": false
+        },
+        {
+          "decorator": "require_POST",
+          "async": true,
+          "methods": [
+            "POST"
+          ],
+          "isAsync": true
+        },
+        {
+          "decorator": "require_safe",
+          "async": false,
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "isAsync": false
+        },
+        {
+          "decorator": "require_safe",
+          "async": true,
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "isAsync": true
+        },
+        {
+          "decorator": "require_http_methods",
+          "async": false,
+          "methods": [
+            "GET",
+            "POST"
+          ],
+          "isAsync": false
+        },
+        {
+          "decorator": "require_http_methods",
+          "async": true,
+          "methods": [
+            "GET",
+            "POST"
+          ],
+          "isAsync": true
+        }
+      ],
+      "suffixes": [
+        {
+          "regex": false,
+          "required": false,
+          "allowed": null,
+          "patterns": [
+            "plain/",
+            "plain<drf_format_suffix:format>"
+          ]
+        },
+        {
+          "regex": false,
+          "required": false,
+          "allowed": [],
+          "patterns": [
+            "plain/",
+            "plain<drf_format_suffix:format>"
+          ]
+        },
+        {
+          "regex": false,
+          "required": false,
+          "allowed": [
+            "json"
+          ],
+          "patterns": [
+            "plain/",
+            "plain<drf_format_suffix_json:format>"
+          ]
+        },
+        {
+          "regex": false,
+          "required": false,
+          "allowed": [
+            "json",
+            "api"
+          ],
+          "patterns": [
+            "plain/",
+            "plain<drf_format_suffix_json_api:format>"
+          ]
+        },
+        {
+          "regex": false,
+          "required": true,
+          "allowed": null,
+          "patterns": [
+            "plain<drf_format_suffix:format>"
+          ]
+        },
+        {
+          "regex": false,
+          "required": true,
+          "allowed": [],
+          "patterns": [
+            "plain<drf_format_suffix:format>"
+          ]
+        },
+        {
+          "regex": false,
+          "required": true,
+          "allowed": [
+            "json"
+          ],
+          "patterns": [
+            "plain<drf_format_suffix_json:format>"
+          ]
+        },
+        {
+          "regex": false,
+          "required": true,
+          "allowed": [
+            "json",
+            "api"
+          ],
+          "patterns": [
+            "plain<drf_format_suffix_json_api:format>"
+          ]
+        },
+        {
+          "regex": true,
+          "required": false,
+          "allowed": null,
+          "patterns": [
+            "^plain/$",
+            "^plain\\.(?P<format>[a-z0-9]+)/?$"
+          ]
+        },
+        {
+          "regex": true,
+          "required": false,
+          "allowed": [],
+          "patterns": [
+            "^plain/$",
+            "^plain\\.(?P<format>[a-z0-9]+)/?$"
+          ]
+        },
+        {
+          "regex": true,
+          "required": false,
+          "allowed": [
+            "json"
+          ],
+          "patterns": [
+            "^plain/$",
+            "^plain\\.(?P<format>json)/?$"
+          ]
+        },
+        {
+          "regex": true,
+          "required": false,
+          "allowed": [
+            "json",
+            "api"
+          ],
+          "patterns": [
+            "^plain/$",
+            "^plain\\.(?P<format>(json|api))/?$"
+          ]
+        },
+        {
+          "regex": true,
+          "required": true,
+          "allowed": null,
+          "patterns": [
+            "^plain\\.(?P<format>[a-z0-9]+)/?$"
+          ]
+        },
+        {
+          "regex": true,
+          "required": true,
+          "allowed": [],
+          "patterns": [
+            "^plain\\.(?P<format>[a-z0-9]+)/?$"
+          ]
+        },
+        {
+          "regex": true,
+          "required": true,
+          "allowed": [
+            "json"
+          ],
+          "patterns": [
+            "^plain\\.(?P<format>json)/?$"
+          ]
+        },
+        {
+          "regex": true,
+          "required": true,
+          "allowed": [
+            "json",
+            "api"
+          ],
+          "patterns": [
+            "^plain\\.(?P<format>(json|api))/?$"
+          ]
+        }
+      ],
+      "includes": [
+        {
+          "declaredApp": null,
+          "namespace": null,
+          "name": "hint:child"
+        },
+        {
+          "declaredApp": null,
+          "namespace": "selected",
+          "name": "selected:child"
+        },
+        {
+          "declaredApp": null,
+          "namespace": "",
+          "name": "hint:child"
+        },
+        {
+          "declaredApp": "declared",
+          "namespace": null,
+          "name": "declared:child"
+        },
+        {
+          "declaredApp": "declared",
+          "namespace": "selected",
+          "name": "selected:child"
+        },
+        {
+          "declaredApp": "declared",
+          "namespace": "",
+          "name": "declared:child"
+        }
+      ],
+      "policy": "First-party synthetic declarations only; no django.setup, apps population, inspected imports/settings, database or view body execution"
+    }
+  },
+  {
+    "tuple": "django60",
+    "status": "PASS",
+    "profile": "static-python-declared-environment",
+    "generatorHash": "ded221a08857299b53ad8413e4f71b2f4aaa8fec02614897fa55b90faab3c564",
+    "oracleScriptHash": "da61b587f9f6eca2241904a9910e147f3466df97f31132b975edacec40ebd8f0",
+    "executableHash": "31fe10b4ed82a2f960af0ef9931f46a4b84ff286f8b6ffd9dee098cf4f10f17f",
+    "outputHash": "5a9150ec2b85030231b4fa540612d543d3b820b61b2b5b2c23d5ca2140dfb712",
+    "result": {
+      "python": "3.13.16",
+      "django": "6.0.9",
+      "drf": "3.17.2",
+      "urls": [
+        {
+          "path": "/",
+          "name": "home",
+          "kwargs": {},
+          "handler": "home"
+        },
+        {
+          "path": "/items/42/",
+          "name": "item",
+          "kwargs": {
+            "pk": 42
+          },
+          "handler": "ItemView"
+        },
+        {
+          "path": "/nested/hello/",
+          "name": "app:hello",
+          "kwargs": {},
+          "handler": "home"
+        }
+      ],
+      "cbvMethods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "apiViewMethods": [
+        "OPTIONS",
+        "GET"
+      ],
+      "routers": [
+        {
+          "router": "SimpleRouter",
+          "useRegexPath": true,
+          "trailingSlash": true,
+          "routes": [
+            {
+              "rootMethods": null,
+              "pattern": "^users/$",
+              "name": "users-list",
+              "actions": {
+                "get": "list",
+                "head": "list"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "^users/refresh/$",
+              "name": "users-refresh",
+              "actions": {
+                "post": "refresh"
+              },
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "^users/(?P<pk>[^/.]+)/$",
+              "name": "users-detail",
+              "actions": {
+                "get": "retrieve",
+                "head": "retrieve"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            }
+          ]
+        },
+        {
+          "router": "SimpleRouter",
+          "useRegexPath": true,
+          "trailingSlash": false,
+          "routes": [
+            {
+              "rootMethods": null,
+              "pattern": "^users$",
+              "name": "users-list",
+              "actions": {
+                "get": "list",
+                "head": "list"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "^users/refresh$",
+              "name": "users-refresh",
+              "actions": {
+                "post": "refresh"
+              },
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "^users/(?P<pk>[^/.]+)$",
+              "name": "users-detail",
+              "actions": {
+                "get": "retrieve",
+                "head": "retrieve"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            }
+          ]
+        },
+        {
+          "router": "SimpleRouter",
+          "useRegexPath": false,
+          "trailingSlash": true,
+          "routes": [
+            {
+              "rootMethods": null,
+              "pattern": "users/",
+              "name": "users-list",
+              "actions": {
+                "get": "list",
+                "head": "list"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "users/refresh/",
+              "name": "users-refresh",
+              "actions": {
+                "post": "refresh"
+              },
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "users/<str:pk>/",
+              "name": "users-detail",
+              "actions": {
+                "get": "retrieve",
+                "head": "retrieve"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            }
+          ]
+        },
+        {
+          "router": "SimpleRouter",
+          "useRegexPath": false,
+          "trailingSlash": false,
+          "routes": [
+            {
+              "rootMethods": null,
+              "pattern": "users",
+              "name": "users-list",
+              "actions": {
+                "get": "list",
+                "head": "list"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "users/refresh",
+              "name": "users-refresh",
+              "actions": {
+                "post": "refresh"
+              },
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "users/<str:pk>",
+              "name": "users-detail",
+              "actions": {
+                "get": "retrieve",
+                "head": "retrieve"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            }
+          ]
+        },
+        {
+          "router": "DefaultRouter",
+          "useRegexPath": true,
+          "trailingSlash": true,
+          "routes": [
+            {
+              "rootMethods": null,
+              "pattern": "^users/$",
+              "name": "users-list",
+              "actions": {
+                "get": "list",
+                "head": "list"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "^users\\.(?P<format>[a-z0-9]+)/?$",
+              "name": "users-list",
+              "actions": {
+                "get": "list",
+                "head": "list"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "^users/refresh/$",
+              "name": "users-refresh",
+              "actions": {
+                "post": "refresh"
+              },
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "^users/refresh\\.(?P<format>[a-z0-9]+)/?$",
+              "name": "users-refresh",
+              "actions": {
+                "post": "refresh"
+              },
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "^users/(?P<pk>[^/.]+)/$",
+              "name": "users-detail",
+              "actions": {
+                "get": "retrieve",
+                "head": "retrieve"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "^users/(?P<pk>[^/.]+)\\.(?P<format>[a-z0-9]+)/?$",
+              "name": "users-detail",
+              "actions": {
+                "get": "retrieve",
+                "head": "retrieve"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "pattern": "",
+              "name": "api-root",
+              "actions": {},
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "APIRootView"
+            },
+            {
+              "rootMethods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "pattern": "<drf_format_suffix:format>",
+              "name": "api-root",
+              "actions": {},
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "APIRootView"
+            }
+          ]
+        },
+        {
+          "router": "DefaultRouter",
+          "useRegexPath": true,
+          "trailingSlash": false,
+          "routes": [
+            {
+              "rootMethods": null,
+              "pattern": "^users$",
+              "name": "users-list",
+              "actions": {
+                "get": "list",
+                "head": "list"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "^users\\.(?P<format>[a-z0-9]+)/?$",
+              "name": "users-list",
+              "actions": {
+                "get": "list",
+                "head": "list"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "^users/refresh$",
+              "name": "users-refresh",
+              "actions": {
+                "post": "refresh"
+              },
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "^users/refresh\\.(?P<format>[a-z0-9]+)/?$",
+              "name": "users-refresh",
+              "actions": {
+                "post": "refresh"
+              },
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "^users/(?P<pk>[^/.]+)$",
+              "name": "users-detail",
+              "actions": {
+                "get": "retrieve",
+                "head": "retrieve"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "^users/(?P<pk>[^/.]+)\\.(?P<format>[a-z0-9]+)/?$",
+              "name": "users-detail",
+              "actions": {
+                "get": "retrieve",
+                "head": "retrieve"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "pattern": "",
+              "name": "api-root",
+              "actions": {},
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "APIRootView"
+            },
+            {
+              "rootMethods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "pattern": "<drf_format_suffix:format>",
+              "name": "api-root",
+              "actions": {},
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "APIRootView"
+            }
+          ]
+        },
+        {
+          "router": "DefaultRouter",
+          "useRegexPath": false,
+          "trailingSlash": true,
+          "routes": [
+            {
+              "rootMethods": null,
+              "pattern": "users/",
+              "name": "users-list",
+              "actions": {
+                "get": "list",
+                "head": "list"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "users<drf_format_suffix:format>",
+              "name": "users-list",
+              "actions": {
+                "get": "list",
+                "head": "list"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "users/refresh/",
+              "name": "users-refresh",
+              "actions": {
+                "post": "refresh"
+              },
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "users/refresh<drf_format_suffix:format>",
+              "name": "users-refresh",
+              "actions": {
+                "post": "refresh"
+              },
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "users/<str:pk>/",
+              "name": "users-detail",
+              "actions": {
+                "get": "retrieve",
+                "head": "retrieve"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "users/<str:pk><drf_format_suffix:format>",
+              "name": "users-detail",
+              "actions": {
+                "get": "retrieve",
+                "head": "retrieve"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "pattern": "",
+              "name": "api-root",
+              "actions": {},
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "APIRootView"
+            },
+            {
+              "rootMethods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "pattern": "<drf_format_suffix:format>",
+              "name": "api-root",
+              "actions": {},
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "APIRootView"
+            }
+          ]
+        },
+        {
+          "router": "DefaultRouter",
+          "useRegexPath": false,
+          "trailingSlash": false,
+          "routes": [
+            {
+              "rootMethods": null,
+              "pattern": "users",
+              "name": "users-list",
+              "actions": {
+                "get": "list",
+                "head": "list"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "users<drf_format_suffix:format>",
+              "name": "users-list",
+              "actions": {
+                "get": "list",
+                "head": "list"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "users/refresh",
+              "name": "users-refresh",
+              "actions": {
+                "post": "refresh"
+              },
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "users/refresh<drf_format_suffix:format>",
+              "name": "users-refresh",
+              "actions": {
+                "post": "refresh"
+              },
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "users/<str:pk>",
+              "name": "users-detail",
+              "actions": {
+                "get": "retrieve",
+                "head": "retrieve"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": null,
+              "pattern": "users/<str:pk><drf_format_suffix:format>",
+              "name": "users-detail",
+              "actions": {
+                "get": "retrieve",
+                "head": "retrieve"
+              },
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "ItemViewSet"
+            },
+            {
+              "rootMethods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "pattern": "",
+              "name": "api-root",
+              "actions": {},
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "APIRootView"
+            },
+            {
+              "rootMethods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "pattern": "<drf_format_suffix:format>",
+              "name": "api-root",
+              "actions": {},
+              "methods": [
+                "GET",
+                "HEAD",
+                "OPTIONS"
+              ],
+              "view": "APIRootView"
+            }
+          ]
+        }
+      ],
+      "framework": [
+        {
+          "name": "django.views.generic.base.View",
+          "mro": [
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "django.views.generic.base.TemplateView",
+          "mro": [
+            "django.views.generic.base.TemplateView",
+            "django.views.generic.base.TemplateResponseMixin",
+            "django.views.generic.base.ContextMixin",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "GET",
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "django.views.generic.list.ListView",
+          "mro": [
+            "django.views.generic.list.ListView",
+            "django.views.generic.list.MultipleObjectTemplateResponseMixin",
+            "django.views.generic.base.TemplateResponseMixin",
+            "django.views.generic.list.BaseListView",
+            "django.views.generic.list.MultipleObjectMixin",
+            "django.views.generic.base.ContextMixin",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "GET",
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "django.views.generic.detail.DetailView",
+          "mro": [
+            "django.views.generic.detail.DetailView",
+            "django.views.generic.detail.SingleObjectTemplateResponseMixin",
+            "django.views.generic.base.TemplateResponseMixin",
+            "django.views.generic.detail.BaseDetailView",
+            "django.views.generic.detail.SingleObjectMixin",
+            "django.views.generic.base.ContextMixin",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "GET",
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "django.views.generic.edit.CreateView",
+          "mro": [
+            "django.views.generic.edit.CreateView",
+            "django.views.generic.detail.SingleObjectTemplateResponseMixin",
+            "django.views.generic.base.TemplateResponseMixin",
+            "django.views.generic.edit.BaseCreateView",
+            "django.views.generic.edit.ModelFormMixin",
+            "django.views.generic.edit.FormMixin",
+            "django.views.generic.detail.SingleObjectMixin",
+            "django.views.generic.base.ContextMixin",
+            "django.views.generic.edit.ProcessFormView",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "GET",
+            "POST",
+            "PUT",
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "django.views.generic.edit.UpdateView",
+          "mro": [
+            "django.views.generic.edit.UpdateView",
+            "django.views.generic.detail.SingleObjectTemplateResponseMixin",
+            "django.views.generic.base.TemplateResponseMixin",
+            "django.views.generic.edit.BaseUpdateView",
+            "django.views.generic.edit.ModelFormMixin",
+            "django.views.generic.edit.FormMixin",
+            "django.views.generic.detail.SingleObjectMixin",
+            "django.views.generic.base.ContextMixin",
+            "django.views.generic.edit.ProcessFormView",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "GET",
+            "POST",
+            "PUT",
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "django.views.generic.edit.DeleteView",
+          "mro": [
+            "django.views.generic.edit.DeleteView",
+            "django.views.generic.detail.SingleObjectTemplateResponseMixin",
+            "django.views.generic.base.TemplateResponseMixin",
+            "django.views.generic.edit.BaseDeleteView",
+            "django.views.generic.edit.DeletionMixin",
+            "django.views.generic.edit.FormMixin",
+            "django.views.generic.detail.BaseDetailView",
+            "django.views.generic.detail.SingleObjectMixin",
+            "django.views.generic.base.ContextMixin",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "GET",
+            "POST",
+            "DELETE",
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "rest_framework.views.APIView",
+          "mro": [
+            "rest_framework.views.APIView",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "rest_framework.generics.ListAPIView",
+          "mro": [
+            "rest_framework.generics.ListAPIView",
+            "rest_framework.mixins.ListModelMixin",
+            "rest_framework.generics.GenericAPIView",
+            "rest_framework.views.APIView",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "GET",
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "rest_framework.generics.RetrieveAPIView",
+          "mro": [
+            "rest_framework.generics.RetrieveAPIView",
+            "rest_framework.mixins.RetrieveModelMixin",
+            "rest_framework.generics.GenericAPIView",
+            "rest_framework.views.APIView",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "GET",
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "rest_framework.generics.CreateAPIView",
+          "mro": [
+            "rest_framework.generics.CreateAPIView",
+            "rest_framework.mixins.CreateModelMixin",
+            "rest_framework.generics.GenericAPIView",
+            "rest_framework.views.APIView",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "POST",
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "rest_framework.generics.UpdateAPIView",
+          "mro": [
+            "rest_framework.generics.UpdateAPIView",
+            "rest_framework.mixins.UpdateModelMixin",
+            "rest_framework.generics.GenericAPIView",
+            "rest_framework.views.APIView",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "PUT",
+            "PATCH",
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "rest_framework.generics.DestroyAPIView",
+          "mro": [
+            "rest_framework.generics.DestroyAPIView",
+            "rest_framework.mixins.DestroyModelMixin",
+            "rest_framework.generics.GenericAPIView",
+            "rest_framework.views.APIView",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "DELETE",
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "rest_framework.generics.ListCreateAPIView",
+          "mro": [
+            "rest_framework.generics.ListCreateAPIView",
+            "rest_framework.mixins.ListModelMixin",
+            "rest_framework.mixins.CreateModelMixin",
+            "rest_framework.generics.GenericAPIView",
+            "rest_framework.views.APIView",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "GET",
+            "POST",
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "rest_framework.generics.RetrieveUpdateDestroyAPIView",
+          "mro": [
+            "rest_framework.generics.RetrieveUpdateDestroyAPIView",
+            "rest_framework.mixins.RetrieveModelMixin",
+            "rest_framework.mixins.UpdateModelMixin",
+            "rest_framework.mixins.DestroyModelMixin",
+            "rest_framework.generics.GenericAPIView",
+            "rest_framework.views.APIView",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "GET",
+            "PUT",
+            "PATCH",
+            "DELETE",
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "rest_framework.viewsets.ViewSet",
+          "mro": [
+            "rest_framework.viewsets.ViewSet",
+            "rest_framework.viewsets.ViewSetMixin",
+            "rest_framework.views.APIView",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "rest_framework.viewsets.GenericViewSet",
+          "mro": [
+            "rest_framework.viewsets.GenericViewSet",
+            "rest_framework.viewsets.ViewSetMixin",
+            "rest_framework.generics.GenericAPIView",
+            "rest_framework.views.APIView",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "rest_framework.viewsets.ModelViewSet",
+          "mro": [
+            "rest_framework.viewsets.ModelViewSet",
+            "rest_framework.mixins.CreateModelMixin",
+            "rest_framework.mixins.RetrieveModelMixin",
+            "rest_framework.mixins.UpdateModelMixin",
+            "rest_framework.mixins.DestroyModelMixin",
+            "rest_framework.mixins.ListModelMixin",
+            "rest_framework.viewsets.GenericViewSet",
+            "rest_framework.viewsets.ViewSetMixin",
+            "rest_framework.generics.GenericAPIView",
+            "rest_framework.views.APIView",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "OPTIONS"
+          ]
+        },
+        {
+          "name": "rest_framework.viewsets.ReadOnlyModelViewSet",
+          "mro": [
+            "rest_framework.viewsets.ReadOnlyModelViewSet",
+            "rest_framework.mixins.RetrieveModelMixin",
+            "rest_framework.mixins.ListModelMixin",
+            "rest_framework.viewsets.GenericViewSet",
+            "rest_framework.viewsets.ViewSetMixin",
+            "rest_framework.generics.GenericAPIView",
+            "rest_framework.views.APIView",
+            "django.views.generic.base.View",
+            "builtins.object"
+          ],
+          "httpMethods": [
+            "OPTIONS"
+          ]
+        }
+      ],
+      "converters": [
+        {
+          "converter": "str",
+          "pattern": "value/<str:value>/",
+          "url": "/value/abc/",
+          "matched": true,
+          "trailingSlash": true
+        },
+        {
+          "converter": "str",
+          "pattern": "value/<str:value>/",
+          "url": "/value/a/b/",
+          "matched": false,
+          "trailingSlash": true
+        },
+        {
+          "converter": "str",
+          "pattern": "value/<str:value>",
+          "url": "/value/abc",
+          "matched": true,
+          "trailingSlash": false
+        },
+        {
+          "converter": "str",
+          "pattern": "value/<str:value>",
+          "url": "/value/a/b",
+          "matched": false,
+          "trailingSlash": false
+        },
+        {
+          "converter": "int",
+          "pattern": "value/<int:value>/",
+          "url": "/value/0042/",
+          "matched": true,
+          "trailingSlash": true
+        },
+        {
+          "converter": "int",
+          "pattern": "value/<int:value>/",
+          "url": "/value/-1/",
+          "matched": false,
+          "trailingSlash": true
+        },
+        {
+          "converter": "int",
+          "pattern": "value/<int:value>",
+          "url": "/value/0042",
+          "matched": true,
+          "trailingSlash": false
+        },
+        {
+          "converter": "int",
+          "pattern": "value/<int:value>",
+          "url": "/value/-1",
+          "matched": false,
+          "trailingSlash": false
+        },
+        {
+          "converter": "slug",
+          "pattern": "value/<slug:value>/",
+          "url": "/value/a_B-9/",
+          "matched": true,
+          "trailingSlash": true
+        },
+        {
+          "converter": "slug",
+          "pattern": "value/<slug:value>/",
+          "url": "/value/.bad/",
+          "matched": false,
+          "trailingSlash": true
+        },
+        {
+          "converter": "slug",
+          "pattern": "value/<slug:value>",
+          "url": "/value/a_B-9",
+          "matched": true,
+          "trailingSlash": false
+        },
+        {
+          "converter": "slug",
+          "pattern": "value/<slug:value>",
+          "url": "/value/.bad",
+          "matched": false,
+          "trailingSlash": false
+        },
+        {
+          "converter": "uuid",
+          "pattern": "value/<uuid:value>/",
+          "url": "/value/12345678-1234-1234-1234-123456789abc/",
+          "matched": true,
+          "trailingSlash": true
+        },
+        {
+          "converter": "uuid",
+          "pattern": "value/<uuid:value>/",
+          "url": "/value/12345678-1234-1234-1234-123456789ABC/",
+          "matched": false,
+          "trailingSlash": true
+        },
+        {
+          "converter": "uuid",
+          "pattern": "value/<uuid:value>",
+          "url": "/value/12345678-1234-1234-1234-123456789abc",
+          "matched": true,
+          "trailingSlash": false
+        },
+        {
+          "converter": "uuid",
+          "pattern": "value/<uuid:value>",
+          "url": "/value/12345678-1234-1234-1234-123456789ABC",
+          "matched": false,
+          "trailingSlash": false
+        },
+        {
+          "converter": "path",
+          "pattern": "value/<path:value>/",
+          "url": "/value/a/b/",
+          "matched": true,
+          "trailingSlash": true
+        },
+        {
+          "converter": "path",
+          "pattern": "value/<path:value>/",
+          "url": "/value//",
+          "matched": false,
+          "trailingSlash": true
+        },
+        {
+          "converter": "path",
+          "pattern": "value/<path:value>",
+          "url": "/value/a/b",
+          "matched": true,
+          "trailingSlash": false
+        },
+        {
+          "converter": "path",
+          "pattern": "value/<path:value>",
+          "url": "/value/",
+          "matched": false,
+          "trailingSlash": false
+        }
+      ],
+      "decorators": [
+        {
+          "decorator": "require_GET",
+          "async": false,
+          "methods": [
+            "GET"
+          ],
+          "isAsync": false
+        },
+        {
+          "decorator": "require_GET",
+          "async": true,
+          "methods": [
+            "GET"
+          ],
+          "isAsync": true
+        },
+        {
+          "decorator": "require_POST",
+          "async": false,
+          "methods": [
+            "POST"
+          ],
+          "isAsync": false
+        },
+        {
+          "decorator": "require_POST",
+          "async": true,
+          "methods": [
+            "POST"
+          ],
+          "isAsync": true
+        },
+        {
+          "decorator": "require_safe",
+          "async": false,
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "isAsync": false
+        },
+        {
+          "decorator": "require_safe",
+          "async": true,
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "isAsync": true
+        },
+        {
+          "decorator": "require_http_methods",
+          "async": false,
+          "methods": [
+            "GET",
+            "POST"
+          ],
+          "isAsync": false
+        },
+        {
+          "decorator": "require_http_methods",
+          "async": true,
+          "methods": [
+            "GET",
+            "POST"
+          ],
+          "isAsync": true
+        }
+      ],
+      "suffixes": [
+        {
+          "regex": false,
+          "required": false,
+          "allowed": null,
+          "patterns": [
+            "plain/",
+            "plain<drf_format_suffix:format>"
+          ]
+        },
+        {
+          "regex": false,
+          "required": false,
+          "allowed": [],
+          "patterns": [
+            "plain/",
+            "plain<drf_format_suffix:format>"
+          ]
+        },
+        {
+          "regex": false,
+          "required": false,
+          "allowed": [
+            "json"
+          ],
+          "patterns": [
+            "plain/",
+            "plain<drf_format_suffix_json:format>"
+          ]
+        },
+        {
+          "regex": false,
+          "required": false,
+          "allowed": [
+            "json",
+            "api"
+          ],
+          "patterns": [
+            "plain/",
+            "plain<drf_format_suffix_json_api:format>"
+          ]
+        },
+        {
+          "regex": false,
+          "required": true,
+          "allowed": null,
+          "patterns": [
+            "plain<drf_format_suffix:format>"
+          ]
+        },
+        {
+          "regex": false,
+          "required": true,
+          "allowed": [],
+          "patterns": [
+            "plain<drf_format_suffix:format>"
+          ]
+        },
+        {
+          "regex": false,
+          "required": true,
+          "allowed": [
+            "json"
+          ],
+          "patterns": [
+            "plain<drf_format_suffix_json:format>"
+          ]
+        },
+        {
+          "regex": false,
+          "required": true,
+          "allowed": [
+            "json",
+            "api"
+          ],
+          "patterns": [
+            "plain<drf_format_suffix_json_api:format>"
+          ]
+        },
+        {
+          "regex": true,
+          "required": false,
+          "allowed": null,
+          "patterns": [
+            "^plain/$",
+            "^plain\\.(?P<format>[a-z0-9]+)/?$"
+          ]
+        },
+        {
+          "regex": true,
+          "required": false,
+          "allowed": [],
+          "patterns": [
+            "^plain/$",
+            "^plain\\.(?P<format>[a-z0-9]+)/?$"
+          ]
+        },
+        {
+          "regex": true,
+          "required": false,
+          "allowed": [
+            "json"
+          ],
+          "patterns": [
+            "^plain/$",
+            "^plain\\.(?P<format>json)/?$"
+          ]
+        },
+        {
+          "regex": true,
+          "required": false,
+          "allowed": [
+            "json",
+            "api"
+          ],
+          "patterns": [
+            "^plain/$",
+            "^plain\\.(?P<format>(json|api))/?$"
+          ]
+        },
+        {
+          "regex": true,
+          "required": true,
+          "allowed": null,
+          "patterns": [
+            "^plain\\.(?P<format>[a-z0-9]+)/?$"
+          ]
+        },
+        {
+          "regex": true,
+          "required": true,
+          "allowed": [],
+          "patterns": [
+            "^plain\\.(?P<format>[a-z0-9]+)/?$"
+          ]
+        },
+        {
+          "regex": true,
+          "required": true,
+          "allowed": [
+            "json"
+          ],
+          "patterns": [
+            "^plain\\.(?P<format>json)/?$"
+          ]
+        },
+        {
+          "regex": true,
+          "required": true,
+          "allowed": [
+            "json",
+            "api"
+          ],
+          "patterns": [
+            "^plain\\.(?P<format>(json|api))/?$"
+          ]
+        }
+      ],
+      "includes": [
+        {
+          "declaredApp": null,
+          "namespace": null,
+          "name": "hint:child"
+        },
+        {
+          "declaredApp": null,
+          "namespace": "selected",
+          "name": "selected:child"
+        },
+        {
+          "declaredApp": null,
+          "namespace": "",
+          "name": "hint:child"
+        },
+        {
+          "declaredApp": "declared",
+          "namespace": null,
+          "name": "declared:child"
+        },
+        {
+          "declaredApp": "declared",
+          "namespace": "selected",
+          "name": "selected:child"
+        },
+        {
+          "declaredApp": "declared",
+          "namespace": "",
+          "name": "declared:child"
+        }
+      ],
+      "policy": "First-party synthetic declarations only; no django.setup, apps population, inspected imports/settings, database or view body execution"
+    }
+  }
+]

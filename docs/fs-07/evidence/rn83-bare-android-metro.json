@@ -1,0 +1,116 @@
+{
+  "tuple": "rn83-bare",
+  "versions": {
+    "node": "24.19.0",
+    "react": "19.2.0",
+    "react-native": "0.83.10",
+    "metro": "0.83.8",
+    "@react-navigation/native": "7.5.0",
+    "@react-navigation/native-stack": "7.20.0"
+  },
+  "profile": "android-development",
+  "contextProfile": "controlled",
+  "platform": "android",
+  "resolver": "metro-resolver",
+  "resolverVersion": "0.83.8",
+  "resolverEntryHash": "e85566cb343bfa077a4526f84d980d2f2310ccfd475c17888c70fdbd173f9502",
+  "fixtureHash": "38078e691e65c80deef24675f48d7b58bc6f1838c1320d8f83f3c971888e44c2",
+  "outputHash": "a23dd4d97e07e6de23940481297cf2137bf23d5002b2b3045104a027196bf5c8",
+  "outputs": [
+    {
+      "id": "platform",
+      "type": "sourceFile",
+      "targets": [
+        "src/Choice.android.js"
+      ]
+    },
+    {
+      "id": "native-fallback",
+      "type": "sourceFile",
+      "targets": [
+        "src/Native.native.js"
+      ]
+    },
+    {
+      "id": "extension-before-platform",
+      "type": "sourceFile",
+      "targets": [
+        "src/Extension.js"
+      ]
+    },
+    {
+      "id": "explicit-extension",
+      "type": "sourceFile",
+      "targets": [
+        "src/Exact.js"
+      ]
+    },
+    {
+      "id": "directory-index",
+      "type": "sourceFile",
+      "targets": [
+        "src/folder/index.android.js"
+      ]
+    },
+    {
+      "id": "density-family",
+      "type": "assetFiles",
+      "targets": [
+        "src/logo.png",
+        "src/logo@2x.png",
+        "src/logo@3x.png"
+      ]
+    },
+    {
+      "id": "import-export",
+      "type": "sourceFile",
+      "targets": [
+        "packages/dep/import.js"
+      ]
+    },
+    {
+      "id": "require-export",
+      "type": "sourceFile",
+      "targets": [
+        "packages/dep/require.js"
+      ]
+    },
+    {
+      "id": "exact-subpath",
+      "type": "sourceFile",
+      "targets": [
+        "packages/dep/feature.js"
+      ]
+    },
+    {
+      "id": "wildcard-export",
+      "type": "sourceFile",
+      "targets": [
+        "packages/dep/feature.js"
+      ]
+    },
+    {
+      "id": "redirect",
+      "type": "sourceFile",
+      "targets": [
+        "src/replaced.js"
+      ]
+    },
+    {
+      "id": "disabled",
+      "type": "empty",
+      "targets": []
+    }
+  ],
+  "warnings": [],
+  "elapsedMs": 8.509500000000003,
+  "resources": {
+    "rss": 65449984,
+    "heapTotal": 15564800,
+    "heapUsed": 10856464,
+    "external": 8958436,
+    "arrayBuffers": 143651
+  },
+  "applicationExecution": false,
+  "configExecution": false
+}

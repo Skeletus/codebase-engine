@@ -1,0 +1,11 @@
+✔ FS06 literal routing keeps order, namespaces, distinct registrations and framework calls separate (1371.5629ms)
+✔ FS06 qualification django52 formats (41767.6952ms)
+✔ FS06 qualification django60 formats (41430.0157ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 85810.7012

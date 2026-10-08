@@ -1,0 +1,10 @@
+✔ FS06 django52 all pinned APIView and generic CBV classes retain method-specific external boundaries (3588.524ms)
+✔ FS06 django60 all pinned APIView and generic CBV classes retain method-specific external boundaries (1189.9196ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8747.4238

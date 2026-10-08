@@ -1,0 +1,88 @@
+{
+  "tuple": "expo56",
+  "tool": "@expo/metro-config",
+  "version": "56.0.19",
+  "entryHash": "b95ba4bb33756d89c8f038953554e788a23b5f461ee1c376ed8bae520f93f5ac",
+  "syntheticManifestHash": "c16c6bbc1db687beeca575cb9a73ac9b2bdc3a41123644525c2143326b6ff5e0",
+  "outputHash": "9049627ae3cbea259d44c276b91d4a9cb36dedf9e25184c6b4f193f97ccf7ba2",
+  "output": {
+    "sourceExts": [
+      "ts",
+      "tsx",
+      "mjs",
+      "js",
+      "jsx",
+      "json",
+      "cjs",
+      "scss",
+      "sass",
+      "css"
+    ],
+    "assetExts": [
+      "bmp",
+      "gif",
+      "jpg",
+      "jpeg",
+      "png",
+      "psd",
+      "svg",
+      "webp",
+      "xml",
+      "m4v",
+      "mov",
+      "mp4",
+      "mpeg",
+      "mpg",
+      "webm",
+      "aac",
+      "aiff",
+      "caf",
+      "m4a",
+      "mp3",
+      "wav",
+      "html",
+      "pdf",
+      "yaml",
+      "yml",
+      "otf",
+      "ttf",
+      "zip",
+      "heic",
+      "avif",
+      "db"
+    ],
+    "resolverMainFields": [
+      "react-native",
+      "browser",
+      "main"
+    ],
+    "unstable_conditionNames": [],
+    "unstable_conditionsByPlatform": {
+      "ios": [
+        "react-native"
+      ],
+      "android": [
+        "react-native"
+      ],
+      "tvos": [
+        "react-native"
+      ],
+      "macos": [
+        "react-native"
+      ],
+      "web": [
+        "browser"
+      ]
+    },
+    "unstable_enablePackageExports": true,
+    "platforms": [
+      "ios",
+      "android",
+      "tvos",
+      "macos"
+    ]
+  },
+  "inspectedConfigExecution": false,
+  "inspectedApplicationExecution": false,
+  "transformerExecution": false
+}

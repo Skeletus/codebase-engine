@@ -4,7 +4,9 @@ import type { Variant } from "../../model/framework.ts";
 import { frameworkBindings, type FrameworkSource } from "../framework-bindings.ts";
 
 /** React syntax/binding facts; none of these are executed CALLS edges. */
-export function extractReactBindings(snapshot: CodeSnapshot, inputs: FrameworkSource[], variant: Variant, resolve: (from: string, specifier: string) => string | undefined, reactVersion: string, checkpoint:()=>void = ()=>{}, domVersion?:string,automaticJsx=false,version="fs-03/1") {
+export function extractReactBindings(snapshot: CodeSnapshot, inputs: FrameworkSource[], variant: Variant, resolve: (from: string, specifier: string) => string | undefined, reactVersion: string, checkpoint:()=>void = ()=>{}, domVersion?:string,automaticJsx=false,version="fs-03/1", nativeUi?: {module: string; events: Readonly<Record<string, readonly string[]>>}) {
+  const nativeReact19 = version === "fs-07/1" && ["19.2.0", "19.2.3"].includes(reactVersion);
+  const react19 = reactVersion === "19.2.8" || nativeReact19;
   const b = frameworkBindings(snapshot, inputs, variant, resolve, checkpoint,version);
   const nodes = new Map(inputs.flatMap(i => i.sourceFile.getDescendants().flatMap(n => { const d = b.declaration(n); return d ? [[d.id, n] as const] : []; })));
   const checked = new Map<string, boolean>();
@@ -25,7 +27,7 @@ export function extractReactBindings(snapshot: CodeSnapshot, inputs: FrameworkSo
       } else if (init && Node.isIdentifier(init)) { const target = b.identifier(init); result = !!target && component(target.id, next);if(result&&target)b.bind("component-reference",init,target,"react/component-alias"); }
       else if (init && Node.isCallExpression(init)) {
         const api = b.api(init.getExpression());
-        if (api?.module === "react" && ["memo", "forwardRef"].includes(api.name) && /^(?:18\.3\.1|19\.2\.8)$/.test(reactVersion)) {
+        if (api?.module === "react" && ["memo", "forwardRef"].includes(api.name) && (/^(?:18\.3\.1|19\.2\.8)$/.test(reactVersion) || nativeReact19)) {
           const target = init.getArguments()[0], declaration = target ? b.target(target) : undefined;
           result = !!declaration && component(declaration.id, next);
           if (result && declaration) b.bind("wrapper", init, declaration, "react/" + api.name);
@@ -62,7 +64,7 @@ export function extractReactBindings(snapshot: CodeSnapshot, inputs: FrameworkSo
         const tag = node.getTagNameNode(), api = b.api(tag);
         if (Node.isIdentifier(tag) && /^[A-Z]/.test(tag.getText()) && !(api?.module === "react" && ["Fragment", "StrictMode", "Suspense"].includes(api.name))) {
           const target = b.identifier(tag);
-          if(target&&context(target.id)&&reactVersion==="19.2.8")b.bind("context",tag,target,"react/context-provider-shorthand");
+          if(target&&context(target.id)&&react19)b.bind("context",tag,target,"react/context-provider-shorthand");
           else if (target && component(target.id)) b.bind("component-reference", tag, target, "react/jsx"); else b.gap(tag, target ? "unsupported-syntax" : api ? "external-boundary" : "ambiguous-target");
         } else if (Node.isPropertyAccessExpression(tag) && ["Provider","Consumer"].includes(tag.getName())) {
           const target = b.identifier(tag.getExpression());
@@ -75,7 +77,7 @@ export function extractReactBindings(snapshot: CodeSnapshot, inputs: FrameworkSo
             }
           }else b.gap(tag);
         }else if(Node.isPropertyAccessExpression(tag)&&!(api?.module==="react"&&["Fragment","StrictMode","Suspense"].includes(api.name))) {
-          const target=b.identifier(tag);if(target&&component(target.id))b.bind("component-reference",tag,target,"react/jsx-namespace");else b.gap(tag,"ambiguous-target");
+          const target=b.identifier(tag);if(target&&component(target.id))b.bind("component-reference",tag,target,"react/jsx-namespace");else b.gap(tag,api?.module===nativeUi?.module ? "external-boundary" : "ambiguous-target");
         }
         for (const attribute of node.getAttributes()) {
           if (Node.isJsxSpreadAttribute(attribute)) { b.gap(attribute); continue; }
@@ -84,7 +86,9 @@ export function extractReactBindings(snapshot: CodeSnapshot, inputs: FrameworkSo
           const initializer = attribute.getInitializer(), expr = initializer && Node.isJsxExpression(initializer) ? initializer.getExpression() : undefined;
           const target = expr ? b.target(expr) : undefined;
           // Custom callback props require a separately proved receiving binding.
-          if (Node.isIdentifier(tag) && /^[a-z]/.test(tag.getText()) && target?.callable) b.bind("event-handler", attribute, target, "react/intrinsic-event"); else b.gap(attribute, "ambiguous-target");
+          if (Node.isIdentifier(tag) && /^[a-z]/.test(tag.getText()) && target?.callable) b.bind("event-handler", attribute, target, "react/intrinsic-event");
+          else if (nativeUi && api?.module === nativeUi.module && nativeUi.events[api.name]?.includes(attribute.getNameNode().getText()) && target?.callable) b.bind("event-handler", attribute, target, "rn/native-ui-event:"+api.name+":"+attribute.getNameNode().getText());
+          else b.gap(attribute, "ambiguous-target");
         }
       }
       if (!Node.isCallExpression(node)) continue;
@@ -108,12 +112,12 @@ export function extractReactBindings(snapshot: CodeSnapshot, inputs: FrameworkSo
           }
         } else b.gap(node, "unsupported-syntax");
       }
-      if (api?.module === "react" && (api.name === "useContext"||api.name==="use"&&reactVersion==="19.2.8")) {
+      if (api?.module === "react" && (api.name === "useContext"||api.name==="use"&&react19)) {
         const target = node.getArguments()[0], declaration = target ? b.identifier(target) : undefined;
         if (declaration && context(declaration.id)) b.bind("context", node, declaration, "react/context-consumer"); else b.gap(node);
       }
       if(api?.module==="react") {
-        const callbacks:Readonly<Record<string,readonly number[]>>={useCallback:[0],useMemo:[0],useReducer:[0,2],useImperativeHandle:[1],useSyncExternalStore:[0,1,2],...(reactVersion==="19.2.8" ? {useActionState:[0],useOptimistic:[1],useEffectEvent:[0]} : {})};
+        const callbacks:Readonly<Record<string,readonly number[]>>={useCallback:[0],useMemo:[0],useReducer:[0,2],useImperativeHandle:[1],useSyncExternalStore:[0,1,2],...(react19 ? {useActionState:[0],useOptimistic:[1],useEffectEvent:[0]} : {})};
         for(const index of callbacks[api.name]??[]){const argument=node.getArguments()[index];if(!argument)continue;const target=b.target(argument);if(target?.callable)b.bind("hook",argument,target,"react/"+api.name+"/callback/"+index);else b.gap(argument,"ambiguous-target");}
         if(api.name==="useState"){const argument=node.getArguments()[0],target=argument ? b.target(argument) : undefined;if(target?.callable)b.bind("hook",argument!,target,"react/useState/initializer");else if(argument&&(Node.isIdentifier(argument)||Node.isCallExpression(argument)))b.gap(argument,"ambiguous-target");}
         if(reactVersion==="18.3.1"&&["useActionState","useOptimistic","useEffectEvent"].includes(api.name))b.gap(node,"unsupported-syntax");

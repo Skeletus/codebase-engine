@@ -1,0 +1,372 @@
+{
+  "status": "MEASURED, qualification incomplete",
+  "node": "v24.19.0",
+  "cpu": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  ",
+  "scope": "Small literal fixture, five fresh engine sessions and twenty warm runs per tuple; does not establish parser commit maxima, adversarial limits, large corpus throughput or the historical comparison.",
+  "measurements": [
+    {
+      "tuple": "django52",
+      "profile": "static-python-declared-environment",
+      "fixtureHash": "79e591104308ca4b5ee23f9c7104b28b01c523b03555f4f1f9c6f6c60f4e390a",
+      "samples": [
+        {
+          "mode": "fresh-engine",
+          "elapsedMs": 1922.3388999999997,
+          "snapshotBytes": 86140,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "fresh-engine",
+          "elapsedMs": 1500.8763999999996,
+          "snapshotBytes": 86140,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "fresh-engine",
+          "elapsedMs": 1308.6419000000005,
+          "snapshotBytes": 86140,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "fresh-engine",
+          "elapsedMs": 1235.2358000000004,
+          "snapshotBytes": 86140,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "fresh-engine",
+          "elapsedMs": 1282.0942000000005,
+          "snapshotBytes": 86140,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 83.91760000000068,
+          "snapshotBytes": 86140,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 99.4372999999996,
+          "snapshotBytes": 86140,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 81.63630000000012,
+          "snapshotBytes": 86140,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 72.71479999999974,
+          "snapshotBytes": 86140,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 70.09300000000076,
+          "snapshotBytes": 86140,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 69.89120000000003,
+          "snapshotBytes": 86140,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 77.86949999999888,
+          "snapshotBytes": 86140,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 78.72309999999925,
+          "snapshotBytes": 86140,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 76.21620000000075,
+          "snapshotBytes": 86140,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 93.0056999999997,
+          "snapshotBytes": 86140,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 84.24829999999929,
+          "snapshotBytes": 86140,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 70.28409999999894,
+          "snapshotBytes": 86140,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 93.30119999999988,
+          "snapshotBytes": 86140,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 84.6224000000002,
+          "snapshotBytes": 86140,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 65.50959999999941,
+          "snapshotBytes": 86140,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 66.85339999999997,
+          "snapshotBytes": 86140,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 66.07120000000032,
+          "snapshotBytes": 86140,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 79.40329999999994,
+          "snapshotBytes": 86140,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 88.25470000000132,
+          "snapshotBytes": 86140,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 70.71060000000034,
+          "snapshotBytes": 86140,
+          "files": 7,
+          "registrations": 4
+        }
+      ]
+    },
+    {
+      "tuple": "django60",
+      "profile": "static-python-declared-environment",
+      "fixtureHash": "ede84d91a44172e29f14c1ae92b8aa3c633bce46c96cb319834ffb86cd939903",
+      "samples": [
+        {
+          "mode": "fresh-engine",
+          "elapsedMs": 1249.7043000000012,
+          "snapshotBytes": 86138,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "fresh-engine",
+          "elapsedMs": 1372.6379000000015,
+          "snapshotBytes": 86138,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "fresh-engine",
+          "elapsedMs": 1128.2351999999992,
+          "snapshotBytes": 86138,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "fresh-engine",
+          "elapsedMs": 1217.7672999999995,
+          "snapshotBytes": 86138,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "fresh-engine",
+          "elapsedMs": 1181.2517000000007,
+          "snapshotBytes": 86138,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 66.28000000000247,
+          "snapshotBytes": 86138,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 72.27610000000277,
+          "snapshotBytes": 86138,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 82.90430000000197,
+          "snapshotBytes": 86138,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 85.19350000000122,
+          "snapshotBytes": 86138,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 81.62640000000101,
+          "snapshotBytes": 86138,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 77.20579999999973,
+          "snapshotBytes": 86138,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 81.05559999999969,
+          "snapshotBytes": 86138,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 78.22750000000087,
+          "snapshotBytes": 86138,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 70.15769999999975,
+          "snapshotBytes": 86138,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 83.67890000000261,
+          "snapshotBytes": 86138,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 78.47340000000258,
+          "snapshotBytes": 86138,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 79.60910000000149,
+          "snapshotBytes": 86138,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 79.49120000000039,
+          "snapshotBytes": 86138,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 85.2619999999988,
+          "snapshotBytes": 86138,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 77.36269999999786,
+          "snapshotBytes": 86138,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 70.27630000000136,
+          "snapshotBytes": 86138,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 70.48960000000079,
+          "snapshotBytes": 86138,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 73.77649999999994,
+          "snapshotBytes": 86138,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 69.99759999999878,
+          "snapshotBytes": 86138,
+          "files": 7,
+          "registrations": 4
+        },
+        {
+          "mode": "warm-incremental",
+          "elapsedMs": 87.47869999999966,
+          "snapshotBytes": 86138,
+          "files": 7,
+          "registrations": 4
+        }
+      ]
+    }
+  ]
+}

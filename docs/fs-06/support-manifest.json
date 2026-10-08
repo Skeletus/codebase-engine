@@ -1,0 +1,63 @@
+{
+  "phase": "FS-06",
+  "status": "complete",
+  "extractor": "django/fs-06/1",
+  "capability": "django-drf-static",
+  "capabilityState": "partial",
+  "qualificationRecord": null,
+  "profile": "static-python-declared-environment",
+  "resolver": "django-static",
+  "snapshotVersion": 3,
+  "platformQualificationTarget": "windows-x64",
+  "targets": [
+    {
+      "id": "django52",
+      "python": "3.12.15",
+      "django": "5.2.18",
+      "drf": "3.16.1",
+      "isolatedOracle": "PASS",
+      "fullQualification": "PASS"
+    },
+    {
+      "id": "django60",
+      "python": "3.13.16",
+      "django": "6.0.9",
+      "drf": "3.17.2",
+      "isolatedOracle": "PASS",
+      "fullQualification": "PASS"
+    }
+  ],
+  "productionRuntime": {
+    "node": "24.19.0",
+    "webTreeSitter": "0.25.10",
+    "pythonGrammar": "0.25.0",
+    "grammarAbi": 15,
+    "systemPythonRequired": false,
+    "djangoRuntimeRequired": false
+  },
+  "mandatoryImplementationGaps": [],
+  "mandatoryQualificationGaps": [],
+  "resumedEvidence": {
+    "fullRegressionPass": 316,
+    "fs06FixturePass": 54,
+    "currentQualificationCasesPerTuple": 79,
+    "metadataClassesPerTuple": 19,
+    "packagedQualificationTestsPerTuple": 12,
+    "djangoOperationRecoveryCases": 8
+  },
+  "acceptanceLedger": "acceptance.md",
+  "oracleEvidence": "evidence/framework-oracles.json",
+  "customerExecution": "none",
+  "layaModified": false,
+  "productionDependenciesModified": false,
+  "patternQualification": "per-pattern-qualification.json",
+  "budgetDecision": "budget-decision.md",
+  "unsupportedBoundaries": [
+    "Arbitrary regex and format-suffix definitive matching",
+    "Dynamic settings/URL construction or runtime registration",
+    "Custom converters/routers/framework dispatch, opaque decorators and metaclasses",
+    "Runtime queryset/serializer selection, custom manager dispatch and SQL execution",
+    "Dynamic/custom template engines/tags/names and unavailable templates",
+    "Signal emission, application initialization and environment-dependent execution"
+  ]
+}

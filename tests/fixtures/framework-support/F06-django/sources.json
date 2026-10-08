@@ -1,0 +1,10 @@
+{
+  "pyproject.toml": "[project]\nname=\"controlled-django\"\nrequires-python=\"==3.12.15\"\ndependencies=[\"Django==5.2.18\", \"djangorestframework==3.16.1\"]\n",
+  "project/__init__.py": "",
+  "project/settings.py": "ROOT_URLCONF = 'project.urls'\nINSTALLED_APPS = ['app']\nMIDDLEWARE = []\nTEMPLATES = [{'BACKEND': 'django.template.backends.django.DjangoTemplates', 'DIRS': ['templates'], 'APP_DIRS': True}]\n",
+  "project/urls.py": "from django.urls import path, include\nfrom app.views import home, ItemView\nurlpatterns = [path('', home, name='home'), path('items/<int:pk>/', ItemView.as_view(), name='item'), path('nested/', include('app.urls', namespace='app'))]\n",
+  "app/__init__.py": "",
+  "app/urls.py": "from django.urls import path\nfrom .views import home\napp_name = 'app'\nurlpatterns = [path('hello/', home, name='hello'), path('hello/', home, name='duplicate')]\n",
+  "app/views.py": "from django.views import View\nfrom .service import serve\ndef home(request):\n    serve()\nclass ItemView(View):\n    def get(self, request, pk):\n        serve()\n",
+  "app/service.py": "def serve():\n    pass\n"
+}

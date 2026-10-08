@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "scope": "Django transport operation, strict result shape, in-flight cancellation and fresh real-worker recovery; not a watch or full resource-ceiling qualification",
+  "harnessHash": "36eb0bb463c35a8ff6a3bf5bf602a8408c6114cf7684ae936702f297910568df",
+  "records": [
+    {
+      "case": "exit-during-frame",
+      "status": "PASS",
+      "expected": "resource-limit|parser-unavailable"
+    },
+    {
+      "case": "output",
+      "status": "PASS",
+      "expected": "resource-limit"
+    },
+    {
+      "case": "diagnostics",
+      "status": "PASS",
+      "expected": "resource-limit"
+    },
+    {
+      "case": "parse-timeout",
+      "status": "PASS",
+      "expected": "resource-limit"
+    },
+    {
+      "case": "invalid-result",
+      "status": "PASS",
+      "expected": "parser-unavailable"
+    },
+    {
+      "case": "diagnostics-below",
+      "status": "PASS",
+      "expected": "parser-unavailable"
+    },
+    {
+      "case": "diagnostics-at",
+      "status": "PASS",
+      "expected": "parser-unavailable"
+    },
+    {
+      "case": "in-flight-Django-operation-cancellation-and-fresh-recovery",
+      "status": "PASS",
+      "expected": "cancelled"
+    }
+  ]
+}

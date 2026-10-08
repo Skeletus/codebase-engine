@@ -1,0 +1,1 @@
+{"status":"PASS","node":"v24.19.0","files":9,"imports":3,"bindings":10,"checks":["offline","empty PATH","no Python or development tooling","execution sentinel","Django/Python/TS composition","URL/method/framework bindings","direct calls","structural dependencies","snapshot round trip","full/incremental","SQLite persistence","evidence staleness"]}

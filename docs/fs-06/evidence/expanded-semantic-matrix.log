@@ -1,0 +1,14 @@
+✔ FS06 qualification django52 models and serializers (14451.7544ms)
+✔ FS06 qualification django52 signals boundaries (4189.6783ms)
+✔ FS06 qualification django52 templates boundaries and positions (11154.483ms)
+✔ FS06 qualification django60 models and serializers (14164.948ms)
+✔ FS06 qualification django60 signals boundaries (5047.4022ms)
+✔ FS06 qualification django60 templates boundaries and positions (9453.6145ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 59502.6443

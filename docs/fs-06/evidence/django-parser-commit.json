@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "scope": "Actual WASM Django parser worker Windows job commitment for controlled small/500-model/malformed inputs; not a whole-engine RAM ceiling",
+  "hostHash": "c48c94a3af34192af32bbee30a87b0ac7ded62c35b50ac55294c7f68de03e27e",
+  "records": [
+    {
+      "case": "small",
+      "status": "PASS",
+      "bytes": 46,
+      "sourceHash": "34942285c06c784172f6c9c5547858ed74a1fb2475694c569e0422ff35b8859e",
+      "counters": {
+        "memoryLimitBytes": 536870912,
+        "peakCommitBytes": 74649600
+      }
+    },
+    {
+      "case": "model-corpus",
+      "status": "PASS",
+      "bytes": 36419,
+      "sourceHash": "1027ad4894d359d8fe00f597000bac1db7a83e3c0c0877ae890e172ef297eca4",
+      "counters": {
+        "memoryLimitBytes": 536870912,
+        "peakCommitBytes": 88866816
+      }
+    },
+    {
+      "case": "malformed",
+      "status": "PASS",
+      "bytes": 50,
+      "sourceHash": "b3623e3a98217169eca3911b9d20c33e0bd7a255006d5d2e0d3b1676457b5f74",
+      "counters": {
+        "memoryLimitBytes": 536870912,
+        "peakCommitBytes": 74743808
+      }
+    }
+  ]
+}

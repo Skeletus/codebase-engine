@@ -9,6 +9,10 @@ import { extractVite } from "../../parser/adapters/vite.ts";
 import { extractNodeNext } from "../../parser/adapters/node-next.ts";
 import type { NodeMode } from "../../parser/adapters/node-profile.ts";
 import type { ViteMode } from "../../parser/adapters/vite.ts";
+import { extractReactNative } from "../../parser/adapters/react-native.ts";
+import type { MetroMode } from "../../parser/adapters/metro-profile.ts";
+import { metroTuple } from "../../parser/adapters/metro-profile.ts";
+import { flowFiles } from "../../parser/flow-dialect.ts";
 import type { FrameworkSource } from "../../parser/framework-bindings.ts";
 import type { LegacySnapshot } from "../types.ts";
 import { SNAPSHOT_VERSION, type CodeSnapshot, type Evidence, type LanguageAdapter } from "../types.ts";
@@ -20,9 +24,11 @@ export const typescriptAdapter: LanguageAdapter = {
 function analyzeTypescript(directory: string, onProgress?: (stage: "parse") => void, selection: Selection = selectFiles(directory), session?: ReturnType<typeof createSyntaxSession>, capture?: (inputs: FrameworkSource[]) => void): CodeSnapshot {
     onProgress?.("parse");
     let behavior: Behavior | undefined;
-    const parsed = validateParseResult(parseSelection(selection, (sources, resolver, routes) => {
+    const deferred = flowFiles(selection);
+    const typedSelection = deferred.size ? {...selection, walk: {...selection.walk, found: selection.walk.found - deferred.size, candidates: selection.walk.candidates.filter(c => !deferred.has(c.path))}} : selection;
+    const parsed = validateParseResult(parseSelection(typedSelection, (sources, resolver, routes) => {
       const nativeProjects=new Set(selection.walk.discovery.metadata.all().filter(r=>r.resource.path.endsWith("package.json")&&r.config.value.kind==="object"&&r.config.value.properties.engines?.kind==="object"&&r.config.value.properties.engines.properties.node?.kind==="literal"&&["22.23.3","24.19.0"].includes(String(r.config.value.properties.engines.properties.node.value))).map(r=>r.resource.path==="package.json" ? "." : r.resource.path.slice(0,-"/package.json".length)));
-      const projects = selection.walk.discovery.projects.filter(p => p.versions.vite === "7.3.7" && p.versions.react === "18.3.1" || p.versions.vite === "8.3.3" && p.versions.react === "19.2.8" || ["15.5.27","16.3.6","16.3.8"].includes(p.versions.next) || nativeProjects.has(p.path));
+      const projects = selection.walk.discovery.projects.filter(p => p.versions.vite === "7.3.7" && p.versions.react === "18.3.1" || p.versions.vite === "8.3.3" && p.versions.react === "19.2.8" || ["15.5.27","16.3.6","16.3.8"].includes(p.versions.next) || nativeProjects.has(p.path) || metroTuple(p.versions));
       const eligible=new Set(projects.length ? sources.filter(s=>s.sourceFile.getDescendants().length<=100000).map(s=>s.candidate.path) : []);
       const callbacks = new Set(selection.walk.discovery.inventory.filter(f => eligible.has(f.path) && projects.some(p => p.path === f.owner) && selection.walk.candidates.find(c=>c.path===f.path)?.validUtf8 !== false).map(f => f.path));
       behavior = extractBehavior(sources, resolver, routes, callbacks); capture?.(sources);
@@ -64,16 +70,20 @@ function analyzeTypescript(directory: string, onProgress?: (stage: "parse") => v
       ],
     };
     const candidatesByPath = new Map(selection.walk.candidates.map(c => [c.path, c]));
+    if (deferred.size) {
+      snapshot.coverage.files.found += deferred.size; snapshot.coverage.files.skipped += deferred.size;
+      snapshot.diagnostics.push(...[...deferred].map(file => ({path: file, category: "skipped-file", reason: "flow-session-required", detail: "Explicit Flow source requires the supervised language session; TS/JS syntax is not substituted"})));
+    }
     const resources = snapshot.files.map(f => { const candidate = candidatesByPath.get(f.path)!; return { path: f.path, hash: f.hash, bytes: f.bytes, lines: f.lines, utf16Length: candidate.content.length, encoding: "legacy-decoded" as const, purpose: "source" as const }; });
     return validateSnapshot({ ...snapshot, version: SNAPSHOT_VERSION, analysis: legacyObservations(snapshot, resources) });
 }
 
 /** Ephemeral adapter-owned ASTs; shared engine contracts never expose ts-morph. */
-export function createTypescriptRefresh(options: { signal?: AbortSignal; viteModes?: readonly ViteMode[]; nodeModes?:readonly NodeMode[] } = {}) {
-  return new AnalysisCoordinator(typescriptDriver(options.viteModes,options.nodeModes), options);
+export function createTypescriptRefresh(options: { signal?: AbortSignal; viteModes?: readonly ViteMode[]; nodeModes?:readonly NodeMode[]; metroModes?: readonly MetroMode[] } = {}) {
+  return new AnalysisCoordinator(typescriptDriver(options.viteModes,options.nodeModes,options.metroModes), options);
 }
 
-export function typescriptDriver(modes?: readonly ViteMode[],nodeModes?:readonly NodeMode[]) {
+export function typescriptDriver(modes?: readonly ViteMode[],nodeModes?:readonly NodeMode[],metroModes?:readonly MetroMode[]) {
   let inputs: FrameworkSource[] = [];
   let session = createSyntaxSession();
   let unresolved = "";
@@ -93,7 +103,7 @@ export function typescriptDriver(modes?: readonly ViteMode[],nodeModes?:readonly
       const candidate = { snapshot, mode: full ? "full" as const : "incremental" as const, parsed: session.parsed, reused: session.reused };
       return candidate;
     },
-    project(snapshot: CodeSnapshot, selection: Selection) { return extractNodeNext(extractVite(snapshot, selection, inputs, modes),selection,inputs,nodeModes); },
+    project(snapshot: CodeSnapshot, selection: Selection) { return extractReactNative(extractNodeNext(extractVite(snapshot, selection, inputs, modes),selection,inputs,nodeModes),selection,inputs,metroModes); },
     reset() { session = createSyntaxSession(); unresolved = ""; inputs = []; },
   };
 }

@@ -1,0 +1,1 @@
+scripts/fs-06-rule-metadata.ts(21,3): error TS2542: Index signature in type 'Readonly<Record<string, readonly { names: readonly string[]; mro: readonly string[]; methods: readonly string[]; }[]>>' only permits reading.

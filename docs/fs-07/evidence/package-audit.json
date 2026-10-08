@@ -1,0 +1,1008 @@
+{
+  "baselineHead": "34517b6ae82d029df911bc63066b13c896f1dc94",
+  "acceptedFilesCompared": 1421,
+  "acceptedSourceChanges": [
+    "lib/engine/adapters/composed.ts",
+    "lib/engine/adapters/typescript.ts",
+    "lib/engine/coordinator.ts",
+    "lib/engine/parser-worker.ts",
+    "lib/parser/adapters/vite-calls.ts",
+    "lib/parser/adapters/vite-react.ts",
+    "lib/parser/framework-bindings.ts",
+    "package.json",
+    "pnpm-lock.yaml",
+    "scripts/package-engine.ts"
+  ],
+  "regeneratedFS06Evidence": [
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-converters-boundaries.json",
+      "acceptedHash": "7ade9cd21225a6947ae99060a61466fccaf5cf4aeb6dee4f3d2f4960a477d623",
+      "rerunHash": "babae11c6263f48835b1c76c9b4889acd8c36d11793e870aadccb0fbd60719e6"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-converters-builtins.json",
+      "acceptedHash": "195cb328a0e2e71cd65b36b85a1db090127397831d79fb1e8d0e2a292ac1b3e9",
+      "rerunHash": "b5975fe30011fc23cf055fabd944e6014d31868b29631fef0ab57172739af36b"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-decorators-require_GET-false.json",
+      "acceptedHash": "512d2314c84f4c93bbaca46461807c6aba1b09fdf5127efc73f207a3055e1157",
+      "rerunHash": "46b68f486663e15cfe58f393c36deea3dc612c3d927ddc6bcac9a0327c495edc"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-decorators-require_GET-true.json",
+      "acceptedHash": "6aa3936963a16c8d7c2e5c47dafb3bbdbbef38a7af9556b6da16b0743eeb0f32",
+      "rerunHash": "c95aea2e5c73e294331f9d5935a52a5a1ca94146c0dd37a7b408cda17d26b50b"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-decorators-require_POST-false.json",
+      "acceptedHash": "f39be3210a85b9e36a3064c1e5e2efe7d3d6b4258c1e675db2071ec76c3affbb",
+      "rerunHash": "8cfd7920c283231b60da35b5bc0388bfa0e947bb27a059ffa19cb778d9e75b4f"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-decorators-require_POST-true.json",
+      "acceptedHash": "6776d3f070267d677fcc1eb49fdc3d5ad3e9e818a13d4c69b5c434aab09acdca",
+      "rerunHash": "023e079c5ea86b8d481cdabd62e6461f86711d89f192c51a1d410c3158dae492"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-decorators-require_http_methods-false.json",
+      "acceptedHash": "f070522987c35d5425a681a5ace72fddcda1b0574e16094b808b4783e98bf03d",
+      "rerunHash": "f973ae930b7cb9886223f6e4fcdd0f552d64ec64b66e2b33d4c70cc6857b728f"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-decorators-require_http_methods-true.json",
+      "acceptedHash": "e90567766d1b2aa7a7ae53347efd59e0ed2034fd5ec5d4acdc7e7663565a758c",
+      "rerunHash": "d139ab50aad661f2627c3e14f2a7123ecc06c99fc83720d2b98021f601a103e7"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-decorators-require_safe-false.json",
+      "acceptedHash": "606410e69b145394cb81aed3905004c2b833c51454dc85a0fe2ab8cc9ef8948a",
+      "rerunHash": "a570d22d1a3504b990035c0841535271b5e53fc0b75ed8f6f634de94451f29e0"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-decorators-require_safe-true.json",
+      "acceptedHash": "337e4bc552821aa49561247cb967702ed668359a358e02a9e87a1f851b443acf",
+      "rerunHash": "9e3b31791c9306609822848f44e624ba68443674950bd9ad860648eb785be2fc"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-dynamic-decorator.json",
+      "acceptedHash": "19fd97998ae0331cfe9f921de27182bade363f44624489e10d03065a1feacf47",
+      "rerunHash": "ae4cb4432e2769572cd805b5f34c9c516ea9a90235610cc8e6267894d049cd03"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-dynamic-escape.json",
+      "acceptedHash": "c6f15593d6a78dcaf137d96c42c498655cf90d4b57123b25eac941bac2e10c6e",
+      "rerunHash": "1ca465919747228b8efe399ff33a74f488173c7901a725a860811864bd2f7b2a"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-dynamic-format-settings.json",
+      "acceptedHash": "bb3ac93f0426709eae15b11068c0f06f17883e193c6008a26e7d7aeb841518c0",
+      "rerunHash": "e498f698a7328e275f242f8df85b2c5479960ee504a070dbecad63d77301738d"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-dynamic-index.json",
+      "acceptedHash": "e6760baf5750916a4c2b34cbab3dd6c01343cfbd0a4815418161a5bc5372cfbb",
+      "rerunHash": "a95b0e51699a8922a4707a3a47d03fbb5049e6886c2872b720d4ecd315a58061"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-dynamic-mutation.json",
+      "acceptedHash": "21c87a3e842d85529052511e5da8d8c39f57d83356f912c41aadf85a9fdff6e2",
+      "rerunHash": "ebb202900ebe90092f91350df9909a87f185c43dfc1dc92d2b67ad8bf6bc9144"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-0-inline.json",
+      "acceptedHash": "96a493af096c13e643555f7eb0c1134422b83f60427f42b9ae2e52282a7a3f13",
+      "rerunHash": "b787aa732f091d48d326a574044a0b38fbf47f17b021f5f99230fa10f1eb285b"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-0-reassignment.json",
+      "acceptedHash": "54835cea30928355cc1532d3847bcb5f217a535c81b004be43c993788131f07f",
+      "rerunHash": "6ff9d0955711420cab2e41c94b41fbd4a77b73e2a239c505abe5fdab90f72470"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-1-inline.json",
+      "acceptedHash": "8cca58fa2261e9cc0f75c709b985b7258def91309ce0f37125a65bc76ea8c28b",
+      "rerunHash": "dc1d5fd5e25cbfc5cf177d9317b1d6928debc8973514a893d9e74c309165cda7"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-1-reassignment.json",
+      "acceptedHash": "0705b076d0a97408a622cad91f01a1550ddb53fa73ceae35452675206cf25936",
+      "rerunHash": "ab2c442aa1b94f211877b95c36a64a0a01657868a7b0616cd7f86eec212fccb2"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-10-inline.json",
+      "acceptedHash": "40bcd558ec7f6e8efacaa96e84f7ab1caeb2b011c19a61a70cbc724585349989",
+      "rerunHash": "b9a6ae5d0bbec45bb6d7401686cb1513dd2ee017a0fdc97ec327eabf59664a9c"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-10-reassignment.json",
+      "acceptedHash": "93fd24e2d9c7391021861f1515673b1708c2173ffb4e01a222225971d320004f",
+      "rerunHash": "f1a6888f2600ccd9a874319ab3b655084032451b0927722f614dc01eab0f36cc"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-11-inline.json",
+      "acceptedHash": "d01738a6aefd4cf67eb5b7115ace9b2ad2a616136c3b246ce8a2120ac157ab84",
+      "rerunHash": "24a13100cd819697ba3fe308f1f597cd9d0de45a37c6e79ca8d41c0eb2be89be"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-11-reassignment.json",
+      "acceptedHash": "52d584b8b455f815ccd001eb96c3c1d71177ad8253e47bcd43d0e4693ffa324d",
+      "rerunHash": "eda10d28413d3d8d679022464ae74d262e3c5bbb726ad7f76e3995a7966d77c3"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-12-inline.json",
+      "acceptedHash": "f83de47cef536a12ad276b9cfbef9e3cc421ac4109df8995b68cdfa2d91d4c39",
+      "rerunHash": "af32672bad6a7943333341b4648a06bc15de288d2ebf08ccdc3f5edd6905f19b"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-12-reassignment.json",
+      "acceptedHash": "dc9104300f81e82a8482185aeaa54a1851646b32d55e844c77c8c22a77dc7fcb",
+      "rerunHash": "50ec1fe70ed8ca1be97f715d61317d5fed3df06bb1724715befd28b0fa01715e"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-13-inline.json",
+      "acceptedHash": "35bf4e6b2bbbc997d7cfbb1a2e7540074df446fdc29f81170cae251d71efe01e",
+      "rerunHash": "04543c8f18a34daa3d5af65a5c87461cadd1c888f1d3647b55c310fa714ab14a"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-13-reassignment.json",
+      "acceptedHash": "6858ed93faad4361911731925531a9c561a10baccf62941e7bfc31a4f462c943",
+      "rerunHash": "d67ad5d1882a6fafc156d01e64e6f5c9ed641ce5116b5b4ca2704d1b01c6fe1c"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-14-inline.json",
+      "acceptedHash": "9351f9caaea2a32f6176bf8ecab78ebd0a8b223ba1c1a136b880b2e7e53ef3f9",
+      "rerunHash": "bcae47a308fe80fb60833f8792b972f3afff9823a939a5b03c495331c976e59f"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-14-reassignment.json",
+      "acceptedHash": "80fa2ec528da32e3463a663968ac5b11b4f97158af432281391d65276322dcfd",
+      "rerunHash": "e179b12a9349aa616b806f8a4af58378d59444b3eab6286bb5a6a3ccbaa2984b"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-15-inline.json",
+      "acceptedHash": "7d8b0141be3e0b634ff93747e8a45b3acb3fc790fcee678803a024083801ff47",
+      "rerunHash": "23e6100453cf0e487eb51843c63f3710df85ff39712377fbe3ecfa8cf2201595"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-15-reassignment.json",
+      "acceptedHash": "713c08c86677fad00921bb94302b97098a4623b68069e51dc089db20bf54b339",
+      "rerunHash": "2c0129fea68be92cbea9ddf458468b3fe21121920cb786fc68dcf835c71312f8"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-2-inline.json",
+      "acceptedHash": "0e4e51bf560a276c70d16a955d239953793205e6e08ffa936bb9a3dcf863e84d",
+      "rerunHash": "c60cf7db6fdcdb6a42cd520b5fa7f4cd33f8ca04936f83ad19086679379a0ea8"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-2-reassignment.json",
+      "acceptedHash": "34baa164edbce3554ff5d191b74cdf3912150d34da809837341d93f5f2e22970",
+      "rerunHash": "d7bb1886048a8dca4d4d75036c1a9a5e3fcc7ac3e3348ed1baa74d5071698078"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-3-inline.json",
+      "acceptedHash": "29f38c9fa42dc7f4dddf8918d15038b2c0509dc3f3be75600436f8cccc1ff905",
+      "rerunHash": "7e9f03536939296d5c68fc14cebde7e69852ef039432fe850afdad8fc4ca048f"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-3-reassignment.json",
+      "acceptedHash": "20a56b77af827d4ae19ebcbfd9835ab192833937e6e97bbd6be064ddf19b565e",
+      "rerunHash": "f95da0d308a7596ef50912fd9c04396d4c4d0bd520e8586eff5ab0787446a3b8"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-4-inline.json",
+      "acceptedHash": "5d377d22276759771e0ebcab46692442cc6c3749478972ad05ec2c9390ca5660",
+      "rerunHash": "e3adbe718daf3aae6684ce3f0e06b3c8fc0d0efb2eaa910c9bbde8a75e11278d"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-4-reassignment.json",
+      "acceptedHash": "b34ac739b1bcb147f1210a726b63bbc4b4f08a5e83e094362b794f5848e3e16d",
+      "rerunHash": "8b687f33650db9de4781d3075f61a32428ad4154424c6422b3fbb41fb62458ad"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-5-inline.json",
+      "acceptedHash": "da5a85b7e355da4e6791577c2273ae3a1683647a6c59c4bed5bcba5b44cdeba4",
+      "rerunHash": "7ab17aa3eb8c72ffbc7ac804db286991dc14d87b23b856fbc03dd2cc60c2e242"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-5-reassignment.json",
+      "acceptedHash": "e61d1de460820b75512a15feee88abda0233ee524ddc0df5da674ee57d1e889f",
+      "rerunHash": "2dca0bbf04e0190bc6c502442f31646ffb371fe9cbb29e43296962da28e39997"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-6-inline.json",
+      "acceptedHash": "19baddc12d3d495bb79d1eb45bd73fb1429382931843673adf1457c8903ee42b",
+      "rerunHash": "1affb99761787aa95adbce039615fd49dcc0fc1c5c6d58cad7d0f9edec453ff3"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-6-reassignment.json",
+      "acceptedHash": "6edbb405489e20d9e1b3e1cf908ca810a2122bf751e2d53c2b81e712c4cd835a",
+      "rerunHash": "2e00f642df9fa6d63ce22f0a27364f498640baa6275df5b783b5d9a743cc40ff"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-7-inline.json",
+      "acceptedHash": "86f1dabd0f0bc0172073b4c979e3e7264b67711324fd20c8d7a4a4e70f52c291",
+      "rerunHash": "e6f38091ff9515e2b362469c3fa86f6786b0b9d9e15934be154b81855cb16602"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-7-reassignment.json",
+      "acceptedHash": "edf61c151727bb9f7058875c5433aa7560d04573eb43e8c4d7191798ed796117",
+      "rerunHash": "de6a2616621f44732dd5ba967bacddb14c1aea94023717ab343cf8e2d9cb10a8"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-8-inline.json",
+      "acceptedHash": "5d7ee223130940dd5562fcbdc60956e15e116be8ac365f9a82936e9db9e6dfb4",
+      "rerunHash": "c8e194cf94e1fbe5b5497ae8f559c9e53cd65f5a02fea5244523148bb08a035c"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-8-reassignment.json",
+      "acceptedHash": "936157330769fcf6ee715b4aa64b1236fd7c9f41dd5a88f39a7ed6159f803ad1",
+      "rerunHash": "6b8b4dcc40ef8375724507fb13b839bb49ea6691d66ce62da92b5bb363f3c769"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-9-inline.json",
+      "acceptedHash": "038684eda6d70b4672741ed36360d71302e77a27ab2e0239ca780bed758b6631",
+      "rerunHash": "e15795e022f97dcc15a48fef5ebb6ec884e8467fa7df7a7532a949ebb3435db7"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-formats-9-reassignment.json",
+      "acceptedHash": "a53b4cf1c505e1e924795d18891b71ec6d709db94bb6b78d8ea30b3c5acd6ba3",
+      "rerunHash": "4f8f29938441e8f7cde57c9bbc3299134e6b470c9acc6f1bb1661eee716cbec6"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-includes-0.json",
+      "acceptedHash": "6a632f68945d35d6c2acbc2a0b672541045938c388bbd43b501292120961b48c",
+      "rerunHash": "8768b45ce9002f42f8e6870c29db0007caa0aff6b65e38fdd973a519a407ede7"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-includes-1.json",
+      "acceptedHash": "0bdab2243b049795c5c32767856b104144e67fca73792505854facef09ff7192",
+      "rerunHash": "24608d297f3100838a7a2733bce0a4f7f6ef38cebd0c817472124accab1c810a"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-includes-2.json",
+      "acceptedHash": "9d67086dfc03187220dbec3cf519908a1c15302663bba0d0a2ad86e600cd4e84",
+      "rerunHash": "8d2ceadc6dda8fe157434f0c2ac50971c6ff0cb0cc368d8a939fb5a5cb048d10"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-includes-3.json",
+      "acceptedHash": "d36e5b01685edc84501cead4d119d84102f85c2bd3824ac0846aa5371f48f3ff",
+      "rerunHash": "cad2ff5bc8e11b0c2b91aad28f4b35423d4752b7a5b61915b2b8aea3ffbb0f4f"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-includes-4.json",
+      "acceptedHash": "c9f4524827c79742fc7bd7ab612ecb185ae1a89d5fa5324056f7c94b6ac63933",
+      "rerunHash": "2c21bdf2d198ceafe42d4e00f3e432a451fab8dc1ed0ca2ad0a22ea25a3e1537"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-includes-5.json",
+      "acceptedHash": "5319ef53852bfe15bada1a798a0cb92827013dad87372a5fc744020a5b6731e6",
+      "rerunHash": "afc7daee0c1c5d40025d3268d40106bbcc9d1bab48b2b7dc2d3765242358659e"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-models-custom-manager.json",
+      "acceptedHash": "77d89d5aac6f12ab08aec2187dc6ece7f63fd826f750d3ca01eb346135483212",
+      "rerunHash": "31b9a5e663a62c945712b1d4375c7be578a44fa1461059b08cc1a5a92018559a"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-models-field-operation-table.json",
+      "acceptedHash": "440d9ef89a10a8b7b189fd76e8ccf0c9e43760d4ae7ea9110c14f644508a61c9",
+      "rerunHash": "8b00056e24b9ab1ccd10497cc00efd52d21390a3406db9c1f83c6e0a1badad21"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-models-mutated-manager.json",
+      "acceptedHash": "4f0b0773e4b5a08b70b2bb8440d18e62f8e8c510040a03e29ee5be08b7f10933",
+      "rerunHash": "c9cc29d7403a4ced8f2979f040855e0737a1c9399b7c7ed17633465e3e58a08e"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-models-relationships.json",
+      "acceptedHash": "f5d8ef8db9f7929f3f04750397bbc6983ec28272e048ee25f49159e7310a4f8b",
+      "rerunHash": "ebcfa3592e0f139a6d348b78cbc62b9337970e263ccf3986f8778d2fc31523dc"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-routers-DefaultRouter-path-bare.json",
+      "acceptedHash": "438c718685b43182e2e88f84b1f2b8f35f4f987407923518ad80efe938e76ac7",
+      "rerunHash": "9e22f7d7d4aa2b8b52f39a8021aaac367f1a819c220ec3481a98684d2ba70dcb"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-routers-DefaultRouter-path-slash.json",
+      "acceptedHash": "bda26eee22dfed43237ba55c463db4c24456e7e8974549e4cbe8e53ce0a36821",
+      "rerunHash": "91c702ad04ef8edb01bd2cf1c9af6adc328b3d20b7060876c17022ca40d3cbff"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-routers-DefaultRouter-regex-bare.json",
+      "acceptedHash": "e3cc1cd821d1475850c3b8313c1ab1c367746a41687cc0bc3f62e80215693d86",
+      "rerunHash": "89cd21b35da06fbfde9369da84a7cf5b9ec99f0c0a6a80413b843d74742558e2"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-routers-DefaultRouter-regex-slash.json",
+      "acceptedHash": "fa9b3219dc21fbfbf902548b31dcf72977c39364fd5084054ca0f013a563cac1",
+      "rerunHash": "41a7eed99390fad6ce114b333997f2781b37d4293a3bb0369a1a5f4df3926711"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-routers-SimpleRouter-path-bare.json",
+      "acceptedHash": "4d83e3dbdd3e0064c42907e3e548520204f54127ce985f9e9a9aa5683022d4ad",
+      "rerunHash": "e8b6b5d0b14a9e5250984189a8885b850a0f80e3e4bdfce39794c5031ca11451"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-routers-SimpleRouter-path-slash.json",
+      "acceptedHash": "dd874bdd6062ce969a0363bc54e4970091516f7635161ec8816d4808c458ac1f",
+      "rerunHash": "c9a5336c468b11e36a5f64fee684de5c4eb6a982f75eace13ea0f69ba76063ec"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-routers-SimpleRouter-regex-bare.json",
+      "acceptedHash": "4adfc93a4496dd4f9aba21c64f779aa7d22c407848dbac891bb853e9c2ee76a0",
+      "rerunHash": "865fc542decaf0eda382fe09ba5884d82c851c23c48269336d33deda94895cd7"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-routers-SimpleRouter-regex-slash.json",
+      "acceptedHash": "3d09845f16bd34eb9caa393886d543a76fa7f9c58a931a266399425ec2e63572",
+      "rerunHash": "19eacb0b054e9b4604d1806eaea6426a8c13eff0152475b1e13118f339583309"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-serializers-HyperlinkedModelSerializer.json",
+      "acceptedHash": "79c4559f0666c8be64c2840ff041c6eb6494a012e58c31f398ecfc5257be30e0",
+      "rerunHash": "fc0c24b0de35524c5a46e1764555a267b131c8e8408ee7a9224eafac7060209b"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-serializers-ModelSerializer.json",
+      "acceptedHash": "c48fd0df47ac9a1e486c444c49484c3154a22bd055a59e6d472b00af56a3d639",
+      "rerunHash": "e44ea2e24127c3661342f9ce1563219c02ba4ff209e5b79c70b7d2136436d553"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-serializers-Serializer.json",
+      "acceptedHash": "2843d83c8525cb828af31582dab35f1af7a1876de6d415c7f0dd9d2d3a80af8f",
+      "rerunHash": "a90e4a158f80a329643ce0f68b8f1656eda8ac837be79c4d470f88e774e696ab"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-serializers-opaque-meta.json",
+      "acceptedHash": "37f523e03f0eb9de1fe35caca211f7b5a8388b922dcda44f336f19cb5fc7e931",
+      "rerunHash": "c10da1be43c2ac63b13d0ec8393bb483375438b4df6d3b22c0fffb833351f714"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-signals-conditional.json",
+      "acceptedHash": "6d0ca20281d5b2a76e9a0af1b6a6155f15e8cd623a4bf4e30870620f8255b59a",
+      "rerunHash": "f50045159538290af380afdf90b958dcaf1d5e88b263f5dfe5ae6251d73256f7"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-signals-custom.json",
+      "acceptedHash": "06e913342519ae5f57d71e68bdaa30e31937913ca220aa417a4fd1e07791e65d",
+      "rerunHash": "17afa39b08b6cda08cc975d6a78f1f6e40b76de6193f4b00e9141f19f168dfe8"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-signals-duplicates.json",
+      "acceptedHash": "47dd9c324f2c8e7d32679ee7c144252f8bd16198051e90a688955b26037b65ea",
+      "rerunHash": "a119ee6fe6ee7710fe23dc11fbf8d330ceef23386e8458103aeac024077d952c"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-templates-ambiguous-url.json",
+      "acceptedHash": "4b4ae7e03e222859aed24259a32ba84d16a579c3b6a3c108dd5e937170ff32af",
+      "rerunHash": "ad8202c467b170efdb3452c6da97ba8ee400b26a26e3440be24a8fe137b0717c"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-templates-conflict.json",
+      "acceptedHash": "6fa6699bc0598aa9792ae8bc58ef91069b901d4ab61887f5ebf3be76c63b0539",
+      "rerunHash": "139793b034874412344d59a5193f61c63ad1b683f28cb84e5c402cad34b8c9a6"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-templates-custom-engine.json",
+      "acceptedHash": "7c986455525a745cc8b0760869a7d8853845ecb1180259dacc2ac449098c8201",
+      "rerunHash": "03e7e91501861826fc9cda046101f2c2c1657793cb107121d8b2997a0b838f29"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-templates-cycle-unicode.json",
+      "acceptedHash": "7812894ec1e699251b938224b51851a157b3a52f047a2fa0dd1fb37497df125c",
+      "rerunHash": "120056fb64ba5c47fcaae5b6c7a35e789f29046164e06c96b322e1653c9b85ca"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-templates-dynamic.json",
+      "acceptedHash": "67f23ac50586390304d1d6bca33a0aa02361044b7af2c8bf73eccc3091045a56",
+      "rerunHash": "c6538a27a02164fcd5b3b1272201b2126bc70d5238f10f13686581c9eb48060d"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-templates-malformed.json",
+      "acceptedHash": "ec1169a0ca2357c795786fdcffd28c63efc602d7f033d3048ef6172c8a07aac9",
+      "rerunHash": "b06f6bd99736fffe495e99a4d15ebba16fe2cb6ed713cadab2744dac3e838e26"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django52-templates-tag.json",
+      "acceptedHash": "cb6d172a180b46a10badf48d75a6e967473ddfd592ef7b3ae5146c43933ed7e9",
+      "rerunHash": "0a090466629bf3d991226674a4d3652afe324f75432136e7d6fd387adf7590af"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-converters-boundaries.json",
+      "acceptedHash": "a3bc035211b43df56a2eae7b6f3a56629380fcd62cd3e75f99e697a248283c7f",
+      "rerunHash": "749ce3e9115eb773ea90aa04e32bb97a9ae78dcbf0f4073ed800351fffae7245"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-converters-builtins.json",
+      "acceptedHash": "e4e3cd5ac194603a3881a1af6adbc45b292eea6d0130d46640f9f820fb925247",
+      "rerunHash": "507b5883460271c2fd364f2c313150a28d31a662f78ef0394544e21cd0e84a04"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-decorators-require_GET-false.json",
+      "acceptedHash": "e04511aec4734de73fec12008ca008190340eb052fe1d7a44c08d513e05d3a50",
+      "rerunHash": "89a2215bf378c7b979a87da22afad95d6926d7ab260c8ec50c5197eda9ca3fbb"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-decorators-require_GET-true.json",
+      "acceptedHash": "5dcc256a14ef1e68af4a35a77f04dffcce4f5a616e76f6e59ca6500d027600fb",
+      "rerunHash": "9bf04139248435c0073eca5012d8d9635c3587cb57ef1008ea9647a36ec318ec"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-decorators-require_POST-false.json",
+      "acceptedHash": "16ac0dd98ec159affcd9f393ca94f38e887912b8a1e381a094c3248e16f89140",
+      "rerunHash": "a4fbb1d092d41b900ff28cf2ce26f34700d51db3b4c541ddf67638444295bbd6"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-decorators-require_POST-true.json",
+      "acceptedHash": "1dcd365862e2bd946bb07782f721e54f6649263585b80a5c1011a50f03b62e3c",
+      "rerunHash": "4e87d8b74848f9c6d0342fae96fccc0bf27da80e64b4ca4a97fe1fce6701d254"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-decorators-require_http_methods-false.json",
+      "acceptedHash": "288bfd4c22d940d8cc769b2666667ec0fc17f8fc45ec7ca5ad810b5a38f44389",
+      "rerunHash": "3863e32d70b7d12088a75d9353c0eb428d4d341f14c4b08cf3f6e00133651b50"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-decorators-require_http_methods-true.json",
+      "acceptedHash": "68a9ccbec177d967976e3b6f7be528eada160f8727a4321ae311e03a564ad17d",
+      "rerunHash": "704e223688b08b0ba79ee05ad323638713a068478692bde48d2b9ec10e863538"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-decorators-require_safe-false.json",
+      "acceptedHash": "29093d181bbc8aa359e627dd577705afea36ff826db5568c211415fb456ac87a",
+      "rerunHash": "6ebaa4135a1728b8f09b75fe866a8b7fe2785c8985452d9f3ef824ace7cbd06e"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-decorators-require_safe-true.json",
+      "acceptedHash": "9dd80779398022bb4a4624a70beb74edeb48d30427e74d5760c6603c4b2885f8",
+      "rerunHash": "7d02fa626aa462ec0152016d488fe2e1bb6d71095158fb1930fa81dcd76fae5d"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-dynamic-decorator.json",
+      "acceptedHash": "c1789d152744bef2e9ef253659e12c2e5fa47179c6c4b6c03bcb7cec9a687ffe",
+      "rerunHash": "9901e51c43c3ebd7507fbae1b0b439a1394871a2e6ab3193c77e4ff426b30326"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-dynamic-escape.json",
+      "acceptedHash": "f8f863ca317ae3d2cb256e9225a7bba12a8edfe4b1b9706336a1c9d8ff15407b",
+      "rerunHash": "7dc906bd5f99ae3af4af4b971b6b7d0562108e85cdc55b39bdef8ff3c9425607"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-dynamic-format-settings.json",
+      "acceptedHash": "ecee599ee0a8465ffa5217acd258e86eb3653e9cba8d7d949d7081b5069f7a80",
+      "rerunHash": "8e84d634272adfe61abf46bea9749102ee3a3bcee98bd94a14826ac589520b5b"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-dynamic-index.json",
+      "acceptedHash": "ba440dc3b090eaa999a0c9f58171f9c0b50246645c0ee7018fa72ded25f01736",
+      "rerunHash": "62352cd23fe204706ecd7c104fe2a7bc5218fcda48698d1d1ae4276fe1e3884d"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-dynamic-mutation.json",
+      "acceptedHash": "96148428bb4ad5b0c95cfa0062070b503ae4cb082d8d94cbb21d680a3cf0d32a",
+      "rerunHash": "8e719c278ce560debae913c25f9d938304f4760794b15d2fabdffd92d8ea1491"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-0-inline.json",
+      "acceptedHash": "a3bfe131e89f6d31dfced244f19dfeb58f5befb804645c63d2bd174a227705ae",
+      "rerunHash": "69bec9a086837d8fc3d429cab4ede44abf160afc9173d96174fc08aec918f50b"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-0-reassignment.json",
+      "acceptedHash": "6a79e7f4fbec043a9781642b32ede2c8005aad057c20d3fca69021153e9c4bc8",
+      "rerunHash": "f4ca6709d1a6a3b1b65e27c8b8702efd647defa06afa832625bb041c0b268df2"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-1-inline.json",
+      "acceptedHash": "75ceeef30fab4fb3973f50c1ea62555ba3ddf141d37ebe6c1001ec9ab09c209b",
+      "rerunHash": "fb043afc91b60f533f2d913cfeddb9fe9cdda89ade0bc729d9a869a1d16ce5f4"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-1-reassignment.json",
+      "acceptedHash": "a36ec48bccb50526be9e564bbf1a5c47da77162cbb1e7125d46b049741e0ce3d",
+      "rerunHash": "b9f0be8b85eda922a8bc76a2e0fbbc99dd3941b05fb68c14213242efede99770"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-10-inline.json",
+      "acceptedHash": "050f57dd0e8f41dcdbdf0a4365926b43c1a955e6ba4a2e669e79c05148954aa5",
+      "rerunHash": "cda0ef5e221ebd5462a28c256715bf7b499c4ea32bbaa67f4404811e69d6a962"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-10-reassignment.json",
+      "acceptedHash": "8401ee02e5ddf827223138f6d4ad36d0ad6929b8c97d663d4e9ce62d508ec40c",
+      "rerunHash": "dea4ebb4f896f6df861cf5fb751822e377ac90e06b3ce344b82e433af23a26e2"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-11-inline.json",
+      "acceptedHash": "382347fdcdc3a36ed628f402b82d4fbdc708601c1aaa39476551afaf50b391c7",
+      "rerunHash": "82d8013aaeee65beda227547240bcbe547479ae89312a5077617d8babc089612"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-11-reassignment.json",
+      "acceptedHash": "5bdd04641dccbbfbb758232658952be5b04c39721017e69c59a9041af2ad05d3",
+      "rerunHash": "ce0fc4ce1c17e1fa28761116a65dbdd754965df78b91fa1f6f39a229dadf19b3"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-12-inline.json",
+      "acceptedHash": "bd7305bb04f3f5bf87ef0a6581589bfd420fa09b6c78e01e7a422047445e267b",
+      "rerunHash": "5a6a2539d627ebd570d67b27119eae3d2ddf19d8ddca74b7dd73fdd8c21f97c5"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-12-reassignment.json",
+      "acceptedHash": "8ac6be561c603edb5287eafe8bf3463cf69f0be32b08c8ccbd67429e190fdf61",
+      "rerunHash": "ffc55f83bc2b66746736a0160f80eb6c8881f2aa405a58892346009945c57766"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-13-inline.json",
+      "acceptedHash": "dfd996e445e59cdbc4d09cd42b854e887b2e6ead1d5814a3ed0f66de50b1097a",
+      "rerunHash": "cf21d0e56ed5d80cdec0fe6ef76a00f74fbfb08279aa227cb1392d6a281d64c5"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-13-reassignment.json",
+      "acceptedHash": "e6ab5d154a6a0bd22254f1186abf7b63eae07b15d2f65bb5ba48bd73bde8db97",
+      "rerunHash": "3a870803e522cd9037a2eeff304199998de620c13a9c6b8fe6889dc6c10402d2"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-14-inline.json",
+      "acceptedHash": "9c453cc955b7a0d14c06e5c7d9add07efea481cea4a163e091e11e7bf40ad56b",
+      "rerunHash": "0efeeafadea0216aa961a6afd0b92070c7f32d732b3bb3f2042ba30eeb342d7b"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-14-reassignment.json",
+      "acceptedHash": "8769ca73fbc65a50f114c065798e900e66bcf0cfe8e96bab2ce52749197cfb54",
+      "rerunHash": "6ef5cedc7afa0cf496625184e883145118e5afe7efa129017a1ad3c2c52f91f7"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-15-inline.json",
+      "acceptedHash": "b72768a334b40ee669e17bb925ac8564021089ffb0cc9aa5863b9c950b46de96",
+      "rerunHash": "c8096b1717ebe567b3f174c4337f1d39a5d2d5aaee352b81305260acf22b8a6f"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-15-reassignment.json",
+      "acceptedHash": "5a6edb64094e6190657909ed21ee10561aa2eeb613dce8330b945ac43b357fcd",
+      "rerunHash": "20081aa0a97f3c02e2ad6305cbd3df73d69d7d824bb4687995ee88ede2b4c028"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-2-inline.json",
+      "acceptedHash": "896a6a1643aaf2d33cfb7a4e64fae7c9eaefd78b92f06405da52f5434952957e",
+      "rerunHash": "6fb97df2cbbaf599f4b5d9f521ead726f42399bd8b2e88a2b41f30ae7fc8764f"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-2-reassignment.json",
+      "acceptedHash": "8ba59a03bb6b65c82a6d247892521cadb76de6ab937f8ace9f465bfcc33232c2",
+      "rerunHash": "f6d126e2d8c589a10e66f954125851d60e180870206cadd9069f13e9b3e0314a"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-3-inline.json",
+      "acceptedHash": "111dfc707c7bfa16b0b223d3208b632295f96578e18e92ff8e0271dcdb3a05c2",
+      "rerunHash": "7a3502d51188db58c4846dea0f1e187db19e169b157662c4eefeaa8d3c646fac"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-3-reassignment.json",
+      "acceptedHash": "e4cc1a406e834df33a2c13b72608fe77a5d407560672536cee8b53f8e1771406",
+      "rerunHash": "acdc93b90c3645971ebb027305f6665c64f16e93d5824d222c94e8deb53b58fe"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-4-inline.json",
+      "acceptedHash": "020f120d275580a48244db4d7169563fa80a0a16cd5bf07e6d2530fbb10f476f",
+      "rerunHash": "3a80b40383096bdd6f2fcd4aad144d838a0c56e5a1f60e313cc789df84745168"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-4-reassignment.json",
+      "acceptedHash": "158456153d68c1956e764eaa415b17e98e375923f831dd6fe315f0328cede7b5",
+      "rerunHash": "1310a7610df1036167ffb15f70632f5a32e9525f66c82e85432d2747eb179f0e"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-5-inline.json",
+      "acceptedHash": "9808281ef73fbeac9e98f4cde37e7d6cb723e6413d874e537be8c8c7cf48ad93",
+      "rerunHash": "fdddf326798a3431cf535ae9488a346f950069c50a12ea26fcbff46bbe1b82f2"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-5-reassignment.json",
+      "acceptedHash": "2886da49f1b629fa45fd4878051a9effcd6e9b099210329b3e1684fc4393f5a5",
+      "rerunHash": "bd228ab5351338ec25733d57e1b8908742d247f7ed8087bb809dc44a950b0246"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-6-inline.json",
+      "acceptedHash": "ea8a77fdf6ee11e1efe1c0a5554340ee98385b4408b283e9e87d4b33f6f453a8",
+      "rerunHash": "bbc9608a789f0da31f881d188f15972264bf4311716eec9468cfa4941f8af40d"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-6-reassignment.json",
+      "acceptedHash": "a236fac35eb2bdf18690cef2b6b92cd2bda1a44497135d67112367096768c9c1",
+      "rerunHash": "7408e76ce322ce013b0a39357b19670d489b4aad9b0c56361ee3f1caeb198076"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-7-inline.json",
+      "acceptedHash": "be2db209da47cccd5bdf4dfbf7c64afabad7e871c346cdfe5cd023ff76a57f0a",
+      "rerunHash": "e07baca7879597cfd7a684f58d4376d939c2e16ff7870629dfb4dd06d0ccf0e2"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-7-reassignment.json",
+      "acceptedHash": "31a2a17385ae848cb620697d567e1fa69a3f1e804a98d7155fbd39f8e1ef7745",
+      "rerunHash": "aefd239591c7cda6a9ea2d11b9008dc13ac58f22c77012c04d3224abe6a6b4fc"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-8-inline.json",
+      "acceptedHash": "6808523afc650d612855008811b0109456815c25b4e80bf22fa48f677e3a1566",
+      "rerunHash": "af4f09e1a32f21efbb236e39852f055427cf96d451779157c78ab06f8aba354e"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-8-reassignment.json",
+      "acceptedHash": "28fbcfbe3fefba91250f62996cc59c5eacefd2f7c0009369f63c341a73be1813",
+      "rerunHash": "afb483205f6585aa0f9d2ca885c24e1282acf02c2cff03bec307002dd76ebd1a"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-9-inline.json",
+      "acceptedHash": "2d6dbc9de9058d4a1e39ee942d2dc04f07b68fcee15e05cedce84ee58b7da4ea",
+      "rerunHash": "305e1030e49374b2e10cc0bfbafe7ee06a9c786e4a3fa841594ff309489488cc"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-formats-9-reassignment.json",
+      "acceptedHash": "0966e8dbc562656351fadd0842f96a271a01771fb23f9f20705f3b0e3d22498d",
+      "rerunHash": "6f8550812173b63538b23978fccc452a1a5b21865a7062dd4c6c5419d689be1f"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-includes-0.json",
+      "acceptedHash": "86b144be53dd7b17715691ff220d34ec793363cbd9d6d06acca4959cc5864f66",
+      "rerunHash": "d4efd0492227b2c483efcc137c064804e5f00f3d0f9edb703411e4deea78bfd4"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-includes-1.json",
+      "acceptedHash": "667210eb0da0bc138b670079f3b04a887498ca5ff4cd4552fb8a3b06a5aac11e",
+      "rerunHash": "cc2bdfdf90918cfa0351c83ad76f2cc6aeb49b370a1998d8a4dd234cd60f88c1"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-includes-2.json",
+      "acceptedHash": "aa0495bd8cd0719f93dd4b4c27218d59b7cdc793c4a5cf405acb54285fc699a1",
+      "rerunHash": "1f434236ad32daeaf326389629b6eda4aaeb5fb942fcb935e14fed9448457483"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-includes-3.json",
+      "acceptedHash": "90f6d202cdade7b98364dc70a814aa7b185228592fe42cac01562fbe21beceff",
+      "rerunHash": "071c1dc733774ca6ee2fb7716aefd6d1952c6eb7834713ab4187fdb0ef392c70"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-includes-4.json",
+      "acceptedHash": "6060fbd06c7325288c951e32cf72f0420ba4bda20b17e64d7fff2216c7d9ec46",
+      "rerunHash": "9f219ac8040bd57da9cbbb2d22925b1977f08df88cb965428cbf7d3e8476cbc0"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-includes-5.json",
+      "acceptedHash": "afd87a74aa209ca1779cfde039c4738fc8aa30a8f4bd5df103e2633971860d12",
+      "rerunHash": "099f5c1d0cb4b8436f73297a866a18a2cc1b12baba220c604fd49b04c6ea7d28"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-models-custom-manager.json",
+      "acceptedHash": "45c4432f2f64a6261e691057f9d3015a813058a4386b54cbbec882b42f610479",
+      "rerunHash": "b7bc8eb7883c6dab4ecf18adec9b2b00ff67b780b32d9f922ac89391843a83b2"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-models-field-operation-table.json",
+      "acceptedHash": "a00a8888ee2669d303d99a1679f693cc77b663251866e34f1b5ba12327bddc96",
+      "rerunHash": "28476ac64c79fa520792a6c58d612f76c800f01e2cf6fc2387cfaf2151823975"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-models-mutated-manager.json",
+      "acceptedHash": "5aed3f3b4a09b09b095c7ed3658fa114f844985fc7591de660793877a23998fb",
+      "rerunHash": "a732344802a2b25cbdf1da07af4df16f6699b997865caeb0e004dbc5bef1f226"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-models-relationships.json",
+      "acceptedHash": "d1e3234f3eddd6a924e4dc58e9cec650eb59deec2dd0c7e25bd3848c5e96ad29",
+      "rerunHash": "4983ec0d37df0fb11219e87f82848d691ce7914f1ce833b7730b57e3a140b1a7"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-routers-DefaultRouter-path-bare.json",
+      "acceptedHash": "939b3d2b51d3edf5393b6dd44a534593a34fa23baf8a5073c88aa67f00643aa7",
+      "rerunHash": "8078035635e9668e20064184bb2b1845362b2ad56dedd8a60e7b9effb96326b7"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-routers-DefaultRouter-path-slash.json",
+      "acceptedHash": "e5770c4fe8e518d9c14620e22ac53080cb7272e623159edb1a4c11c6605b9d1d",
+      "rerunHash": "ca041f38222ff7eb3b6f41fa20dfd91b71bcaef67b3226edae3417f44dcebb86"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-routers-DefaultRouter-regex-bare.json",
+      "acceptedHash": "82a85d54930bcc87535ddc99771dcc5aa1f9b93aa563f69a208845565b43e308",
+      "rerunHash": "1501e027cb0387140ce7f0ea5c22435c3d9c16ddfa41ae2d4f13f5166ae918a7"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-routers-DefaultRouter-regex-slash.json",
+      "acceptedHash": "ea0c2a36122d3cf8c506199a926fd91ada500ac18928d80142e39ed84f6ac8cd",
+      "rerunHash": "540cac7324fabcb3f526448c1b2048c5c49605d61cd46d8e5b9d5f09ae1ea509"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-routers-SimpleRouter-path-bare.json",
+      "acceptedHash": "53e457de1d60b4311f4a6648e6831f3ef02a0e36268130245db42dace764bb6f",
+      "rerunHash": "de480ba1bd05d85be10d82df4722fe3a524518b90ecc152efff6a55b559e6497"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-routers-SimpleRouter-path-slash.json",
+      "acceptedHash": "15c231be1377268024633cd0331a31786a67ae3bed9d38a2ce17488fd84b0963",
+      "rerunHash": "f2379a5fb31ae20c86e58520f925336abe6d53d84ac40f0621968781c7b6d52e"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-routers-SimpleRouter-regex-bare.json",
+      "acceptedHash": "a16a247393824df1ae2918b00d34926adfce15a0c84ba17c92c4727fb6e8e11b",
+      "rerunHash": "35bd91f13421d9f4bed73e9742fac7e8251b78cb99a9b569a44040d5f548d199"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-routers-SimpleRouter-regex-slash.json",
+      "acceptedHash": "8a6cc5edab3a54faab5864c3a8b5e61fc8a1ca69179a2e91335dd3b917b6ced1",
+      "rerunHash": "e541ba3b5115733da1faff4384545e237e08490f1eb6fbf0f45e2031ca2c9372"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-serializers-HyperlinkedModelSerializer.json",
+      "acceptedHash": "16637423d9012cb5307809f1d7619d9ff5c844ea353137a41c2946d7086eadf8",
+      "rerunHash": "99d9061ee0bc04ed7d246682af4331d61f5369d45d33c64d88f87e5b7cb67c09"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-serializers-ModelSerializer.json",
+      "acceptedHash": "ea957a6e548aae1234d910dc5c9f78d0cdfd1a24d3a5c816c28ab167ef6826d8",
+      "rerunHash": "c6ff8deea49255d6f3abde3eb3f2d266ab88a83378734c4e7e1508b7e7b1c778"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-serializers-Serializer.json",
+      "acceptedHash": "e1de7b990e9580715fd156ecea59c01857c32cc69693dcae77ea3aa6760f742b",
+      "rerunHash": "35ed66f934eaccbf804175b448100bf5bff7351af0333f7065d3ffeb32eebaaf"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-serializers-opaque-meta.json",
+      "acceptedHash": "1442a2f0c6c104780e311e5b94d27e613828679c10afea0d611e2982db9e113c",
+      "rerunHash": "73ff07af78b59ad026e4c09cb65b918dc024210b54020302d02e2bab9e1979ec"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-signals-conditional.json",
+      "acceptedHash": "bed2d3c7c8b7da7f37df9f01ad68362d244607fba1f1af3406c99d99aa8fbace",
+      "rerunHash": "2a58a447659bc4d65de0a9e2db9bff30cf70406c5d928e27c66ce8c34cfe1a3a"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-signals-custom.json",
+      "acceptedHash": "44a1dbf19001d16dfb72dfc200239446d34fe0de781d4d5811e4b76561711e0e",
+      "rerunHash": "20c452d779217ade9b724d1229a5044c18b3d65f4aaba176c0fe67d088139354"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-signals-duplicates.json",
+      "acceptedHash": "3de63d85b7fd688349681fc2e82ea7b1fb21049d5abdd9d11d85f98ee62386d2",
+      "rerunHash": "eada5576eb131680fa0d4d8fd5fa11aba8963a63ce78cd155eb4b70bc0418dcb"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-templates-ambiguous-url.json",
+      "acceptedHash": "f49dea38ba766610b4388cb346d72fbd9511f800ca153ec311b1420c8de8ef90",
+      "rerunHash": "7074112cf02bbdc808eeb76090fa27c57363647474a10a433d7c88f3c04188f4"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-templates-conflict.json",
+      "acceptedHash": "fb08280282b1b321c4f5d437378cca3593a44e8179cb74805e212cd0037349a3",
+      "rerunHash": "163116006a827ad254910bcd395b8ba56bf6c3611632f3324c18cd2a5efb4803"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-templates-custom-engine.json",
+      "acceptedHash": "f11bbcfa6be769e13d9d307e146493b4adb191e0ff860be814413e90b3f8dd1e",
+      "rerunHash": "af61b5eae6d08ec6281444f929b5be2057e85892334c5d2e55bf6496ed961d01"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-templates-cycle-unicode.json",
+      "acceptedHash": "784313e0322cabb8010c7eb2c8d1641cc8568063886f1b9157582881d77848df",
+      "rerunHash": "5a6e26d0048e5a734dd9cd723b873dbc6f8e237cb5956510a99f8c9f3b1b7996"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-templates-dynamic.json",
+      "acceptedHash": "36358bf5b1c8d0612e701433b7c5b2cc54070f1b82d04e9864245590f11b728e",
+      "rerunHash": "e4e40d52d8b5a422436b2c562e0a426123044796fea38ca9467c37a7caa9e11d"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-templates-malformed.json",
+      "acceptedHash": "f443744dcef13183ebd1e8f9b831e214ac63ae02b1cc9e0aff0176adcb566669",
+      "rerunHash": "d03b315a97c5c8b10813e9678f19676b8467aae6e8cb0b0104010750a2e9acb5"
+    },
+    {
+      "file": "docs/fs-06/evidence/qualification/django60-templates-tag.json",
+      "acceptedHash": "fee8c443d858d34a715ff9a8a22ac8b83e290808a6abdc16155d5e1e903e7873",
+      "rerunHash": "25e26bcb02c890f0f80c3a14d0fc204c02c4cb3432e750ba92807e59ae710f5d"
+    }
+  ],
+  "protectedSourcePreserved": true,
+  "runtimeClosure": [
+    {
+      "name": "hermes-parser",
+      "version": "0.25.1",
+      "dependencies": {
+        "hermes-estree": "0.25.1"
+      },
+      "assets": [
+        {
+          "file": "dist/babel/TransformESTreeToBabel.js",
+          "sha256": "e94e44c6e4f0902af92a085310e5f750f641f4b8024273972ecaf8e6eaba0b47",
+          "bytes": 28107
+        },
+        {
+          "file": "dist/estree/StripComponentSyntax.js",
+          "sha256": "866cf8d9ffd494638e6cdd342beb6683f56dc7c60f7807d1bceb61a3e6c93192",
+          "bytes": 22713
+        },
+        {
+          "file": "dist/estree/StripFlowTypes.js",
+          "sha256": "daf09faadb50a427ee67a479702bd47658f1d69d539c6d28e48d4801a8c38276",
+          "bytes": 4387
+        },
+        {
+          "file": "dist/estree/StripFlowTypesForBabel.js",
+          "sha256": "67b74408b24b6bb5e512ce00c5c8445281618c1c6d6c4f205762f5b0579f4b08",
+          "bytes": 5298
+        },
+        {
+          "file": "dist/generated/ESTreeVisitorKeys.js",
+          "sha256": "f8cb43ffcdc2254946334a4ac58ef69953a79407cdbc22edc38555fdbec29184",
+          "bytes": 8497
+        },
+        {
+          "file": "dist/generated/ParserVisitorKeys.js",
+          "sha256": "0cdd8cfc223b7563eb3f7761914be049029e85d6e8038e8446c5f9ea478e6d53",
+          "bytes": 13741
+        },
+        {
+          "file": "dist/getModuleDocblock.js",
+          "sha256": "f225c5b0868604da201f143f8f86c46db41d5bc7410ef167e5c44ddaf44b2eeb",
+          "bytes": 2940
+        },
+        {
+          "file": "dist/HermesASTAdapter.js",
+          "sha256": "3b769c0182bed93fa4b6612aba3d6dc1fb66d48b60178dc5e12a1a2a8ac55a9c",
+          "bytes": 5064
+        },
+        {
+          "file": "dist/HermesParser.js",
+          "sha256": "47b474588d4f5a0a9aca17d2beea3264b8c5f741818dfe8a3295f41c7cf64cdb",
+          "bytes": 4092
+        },
+        {
+          "file": "dist/HermesParserDecodeUTF8String.js",
+          "sha256": "53e9f60f0e9a16913525ba6861015af451f4677c1fe69a4af3434292a7f07c45",
+          "bytes": 1904
+        },
+        {
+          "file": "dist/HermesParserDeserializer.js",
+          "sha256": "8a15fab5f9e9e5d62dd8130faabcc9f23e8969a8819926297dfa34ee900a68f7",
+          "bytes": 6569
+        },
+        {
+          "file": "dist/HermesParserNodeDeserializers.js",
+          "sha256": "8faa336ccc9505ccdfda8977127bfac41dd223997a183e73e0fa4876bf7cca66",
+          "bytes": 58931
+        },
+        {
+          "file": "dist/HermesParserWASM.js",
+          "sha256": "391b062f8e48418ca8f04df9e2d56eb15d90c32a6edc1c169b92f619ccdec3d9",
+          "bytes": 678244
+        },
+        {
+          "file": "dist/HermesToESTreeAdapter.js",
+          "sha256": "ff2904a1fe143467cf0af308a08be5d1d85885bf5dac8a1aa2eda9e7b00c6872",
+          "bytes": 11504
+        },
+        {
+          "file": "dist/index.js",
+          "sha256": "6008f7f41daee44ea1eb4d388f679620141af61fedaeed4ac45341bf865aa8f4",
+          "bytes": 6335
+        },
+        {
+          "file": "dist/ParserOptions.js",
+          "sha256": "a7eef01a612d39a032040f468dca20479c7c484ac5da4f72687e788319a6ce13",
+          "bytes": 557
+        },
+        {
+          "file": "dist/transform/astArrayMutationHelpers.js",
+          "sha256": "a09e54556e5acea8b05920ddb8b2880f08119dcd159ead789759d9af93d89b76",
+          "bytes": 1531
+        },
+        {
+          "file": "dist/transform/astNodeMutationHelpers.js",
+          "sha256": "74c946721b37274c6bfbd4980b4411181e932cdd231038b658e86a2dcf01a801",
+          "bytes": 5624
+        },
+        {
+          "file": "dist/transform/SimpleTransform.js",
+          "sha256": "933418ffa7759b6cb0f2e0306498b6a00fc9653920c57f51677ffae8e8658399",
+          "bytes": 3582
+        },
+        {
+          "file": "dist/traverse/getVisitorKeys.js",
+          "sha256": "0c76d5b3e0ad63be223f3ba6408a7dd3926f2cd97bc9437ae21e69c538f032ed",
+          "bytes": 1000
+        },
+        {
+          "file": "dist/traverse/SimpleTraverser.js",
+          "sha256": "c34207ed961a3835245c4ebec3bcfd09f7c91a497141078f8d33d87fdbd50aa4",
+          "bytes": 3002
+        },
+        {
+          "file": "dist/utils/createSyntaxError.js",
+          "sha256": "0f85e68998fcb8ef30b28518800af58ac1b86bf94dcd8b16c26d447a36054982",
+          "bytes": 573
+        },
+        {
+          "file": "dist/utils/mutateESTreeASTForPrettier.js",
+          "sha256": "15be93e170b39b6344c793ba758858423650b8227a81d1f088ec5f88ea355d42",
+          "bytes": 4428
+        },
+        {
+          "file": "LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+          "bytes": 1088
+        },
+        {
+          "file": "package.json",
+          "sha256": "768cc73e0cefe52baf831359bee1b37622dd917ca19bc08fb268493cd8144208",
+          "bytes": 517
+        }
+      ]
+    },
+    {
+      "name": "hermes-estree",
+      "version": "0.25.1",
+      "dependencies": {},
+      "assets": [
+        {
+          "file": "dist/generated/predicates.js",
+          "sha256": "33a648062768e1dd0ef635f79fb9ba7f46cefa0ad1a1da5f168386de67c69f30",
+          "bytes": 62068
+        },
+        {
+          "file": "dist/index.js",
+          "sha256": "9148e78eee09bade54fa02b921de8723751705744699ce460274982ba459b26e",
+          "bytes": 546
+        },
+        {
+          "file": "dist/predicates.js",
+          "sha256": "5d072b3bab27a0e3e41b341a6c917632c53149fcb206edaebddcf6828b8e1a39",
+          "bytes": 8916
+        },
+        {
+          "file": "dist/selectors.js",
+          "sha256": "74c6290df989ec091ef3b4023417e80acd0c37433526c48c5ef4c98e3f7ab373",
+          "bytes": 288
+        },
+        {
+          "file": "dist/types.js",
+          "sha256": "ebb85bd31ccb8eb5245cb2d664659f91134e222ce452cef60aa661937e199c4b",
+          "bytes": 1342
+        },
+        {
+          "file": "LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+          "bytes": 1088
+        },
+        {
+          "file": "package.json",
+          "sha256": "bc6e559f8a1f89a531c9ed45f3aacdb1a45d17302aa7e730edfc53170b9d9f2c",
+          "bytes": 337
+        }
+      ]
+    }
+  ],
+  "oracleLockHashes": [
+    {
+      "tuple": "rn83-bare",
+      "lockHash": "8fe6e8f3d891036e6de361388364856c4be8fe3aed8054f69464c133ebf2697a"
+    },
+    {
+      "tuple": "rn85-bare",
+      "lockHash": "444f0cbcbbb0c1bb1a9f07d33d4e7ab52eb5b5ba4432de1d5348e75ce3504c2c"
+    },
+    {
+      "tuple": "expo55",
+      "lockHash": "bfc4fff4473fafdaa6575e46ae9ca4ed738a1d901bc5536a0bf45400d5d0c821"
+    },
+    {
+      "tuple": "expo56",
+      "lockHash": "18ca9457e9dc2a25f80c7346318aa2e746cf590edf3a61bfb8b2b5837c165d17"
+    }
+  ],
+  "installScripts": false,
+  "supervisorQualified": false,
+  "stagedWindowsQualified": false
+}

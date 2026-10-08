@@ -1,0 +1,22 @@
+[
+  "refreshing:Full rebuild; previous snapshot retained",
+  "watching:Watching selected root; protected stability audit every 30s",
+  "refreshing:Full rebuild; previous snapshot retained",
+  "watching:Refresh published; watching selected root",
+  "paused:Watching paused; manual Full refresh remains available",
+  "watching:Watching selected root; protected stability audit every 30s",
+  "refreshing:Full rebuild; previous snapshot retained",
+  "watching:Refresh published; watching selected root",
+  "paused:Watching paused; manual Full refresh remains available",
+  "refreshing:Incremental refresh; recomputing all resolution and framework evidence",
+  "refreshing:Incremental refresh; recomputing all resolution and framework evidence",
+  "refreshing:Incremental refresh; recomputing all resolution and framework evidence",
+  "refreshing:Incremental refresh; recomputing all resolution and framework evidence",
+  "refreshing:Incremental refresh; recomputing all resolution and framework evidence",
+  "refreshing:Incremental refresh; recomputing all resolution and framework evidence",
+  "paused:Watching paused; manual Full refresh remains available",
+  "refreshing:Full rebuild; previous snapshot retained",
+  "paused:Watching paused; manual Full refresh remains available",
+  "refreshing:Full rebuild; previous snapshot retained",
+  "paused:Watching paused; manual Full refresh remains available"
+]

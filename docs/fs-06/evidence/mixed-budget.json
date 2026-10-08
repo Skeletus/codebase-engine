@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "profile": "static-python-declared-environment",
+  "sourceHash": "f7a5736b38ae1aa253f616e05679e1fb92909ea00efe1c218fbd91cc68eff30f",
+  "beforeBindings": 20008,
+  "afterBindings": 20010,
+  "addedDjangoBindings": 2,
+  "beforeBytes": 24268771,
+  "afterBytes": 24318615,
+  "elapsedMs": 30027.5462,
+  "checks": [
+    "real accepted TS/Python adapter baseline above 20,000 shared bindings",
+    "serialized baseline within inherited snapshot budget",
+    "every pre-existing binding preserved exactly",
+    "exact dependencies and lexical behavior unchanged",
+    "Django adds qualified routes without charging previous bindings"
+  ]
+}

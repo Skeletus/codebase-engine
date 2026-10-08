@@ -1,0 +1,77 @@
+{
+  "status": "PASS",
+  "records": [
+    {
+      "name": "missing-options",
+      "status": "PASS",
+      "outcome": "qualification refused",
+      "diagnosticHash": "388d33f1a62445280ad7e09644a0b2159f9507c53bcfc9d3207181e9ee605748"
+    },
+    {
+      "name": "missing-profile",
+      "status": "PASS",
+      "outcome": "qualification refused",
+      "diagnosticHash": "7f9599b5e8be9a2442ee95094e63821a2a50f748c0850098f669300d9cf27f18"
+    },
+    {
+      "name": "wrong-tuple",
+      "status": "PASS",
+      "outcome": "qualification refused",
+      "diagnosticHash": "388d33f1a62445280ad7e09644a0b2159f9507c53bcfc9d3207181e9ee605748"
+    },
+    {
+      "name": "wrong-profile",
+      "status": "PASS",
+      "outcome": "qualification refused",
+      "diagnosticHash": "d6a3fc54debbe58da8f4de5ff7880e06c4367c47a096eb161f0fd7094c9b1b85"
+    },
+    {
+      "name": "unknown-option",
+      "status": "PASS",
+      "outcome": "qualification refused",
+      "diagnosticHash": "7ba9efe696a96bc23abb75a0ed137a3837fe85454d7fa1da8e8a2ce86a0a94c0"
+    },
+    {
+      "name": "missing-oracle",
+      "status": "PASS",
+      "outcome": "qualification refused before fixture execution",
+      "diagnosticHash": "e35eaca3b94949fd3062621a03a875bfb8135164bd31173428b9f077793dcbb6"
+    },
+    {
+      "name": "duplicate-oracle",
+      "status": "PASS",
+      "outcome": "qualification refused before fixture execution",
+      "diagnosticHash": "e35eaca3b94949fd3062621a03a875bfb8135164bd31173428b9f077793dcbb6"
+    },
+    {
+      "name": "unavailable-oracle",
+      "status": "PASS",
+      "outcome": "qualification refused before fixture execution",
+      "diagnosticHash": "e35eaca3b94949fd3062621a03a875bfb8135164bd31173428b9f077793dcbb6"
+    },
+    {
+      "name": "wrong-version",
+      "status": "PASS",
+      "outcome": "qualification refused before fixture execution",
+      "diagnosticHash": "e35eaca3b94949fd3062621a03a875bfb8135164bd31173428b9f077793dcbb6"
+    },
+    {
+      "name": "incomplete-table",
+      "status": "PASS",
+      "outcome": "qualification refused before fixture execution",
+      "diagnosticHash": "e35eaca3b94949fd3062621a03a875bfb8135164bd31173428b9f077793dcbb6"
+    },
+    {
+      "name": "stale-generator",
+      "status": "PASS",
+      "outcome": "qualification refused before fixture execution",
+      "diagnosticHash": "e35eaca3b94949fd3062621a03a875bfb8135164bd31173428b9f077793dcbb6"
+    },
+    {
+      "name": "corrupt-output",
+      "status": "PASS",
+      "outcome": "qualification refused before fixture execution",
+      "diagnosticHash": "e35eaca3b94949fd3062621a03a875bfb8135164bd31173428b9f077793dcbb6"
+    }
+  ]
+}

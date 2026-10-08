@@ -1,0 +1,324 @@
+{
+  "status": "PASS",
+  "scope": "Five fresh and twenty warm runs per tuple; complete 507-file generations with equivalence. RSS samples are not peak commit or hard whole-engine memory bounds.",
+  "records": [
+    {
+      "tuple": "django52",
+      "status": "PASS",
+      "files": 507,
+      "sourceBytes": 51278,
+      "inputHash": "a3def5f42d3269cf7b8c486337067b9ebec621421f849b803dcb70aca4e01d11",
+      "samples": [
+        {
+          "mode": "fresh",
+          "elapsedMs": 10799.732,
+          "snapshotBytes": 5134862,
+          "rssBytes": 195936256
+        },
+        {
+          "mode": "fresh",
+          "elapsedMs": 9460.7823,
+          "snapshotBytes": 5134862,
+          "rssBytes": 284213248
+        },
+        {
+          "mode": "fresh",
+          "elapsedMs": 9072.4257,
+          "snapshotBytes": 5134862,
+          "rssBytes": 309141504
+        },
+        {
+          "mode": "fresh",
+          "elapsedMs": 8788.667199999996,
+          "snapshotBytes": 5134862,
+          "rssBytes": 331173888
+        },
+        {
+          "mode": "fresh",
+          "elapsedMs": 9109.212700000004,
+          "snapshotBytes": 5134862,
+          "rssBytes": 348209152
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 5872.154399999999,
+          "snapshotBytes": 5134862,
+          "rssBytes": 389685248
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 5867.636899999998,
+          "snapshotBytes": 5134862,
+          "rssBytes": 408309760
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 5557.455699999991,
+          "snapshotBytes": 5134862,
+          "rssBytes": 418189312
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 5337.285799999998,
+          "snapshotBytes": 5134862,
+          "rssBytes": 438370304
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 5692.223500000007,
+          "snapshotBytes": 5134862,
+          "rssBytes": 427163648
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 8029.492400000003,
+          "snapshotBytes": 5134862,
+          "rssBytes": 432926720
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 5820.394799999995,
+          "snapshotBytes": 5134862,
+          "rssBytes": 440262656
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 5669.632599999997,
+          "snapshotBytes": 5134862,
+          "rssBytes": 437522432
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 5784.916600000011,
+          "snapshotBytes": 5134862,
+          "rssBytes": 444030976
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 5843.9226999999955,
+          "snapshotBytes": 5134862,
+          "rssBytes": 450412544
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 6736.022799999992,
+          "snapshotBytes": 5134862,
+          "rssBytes": 433651712
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 6388.628599999996,
+          "snapshotBytes": 5134862,
+          "rssBytes": 437399552
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 5719.084899999987,
+          "snapshotBytes": 5134862,
+          "rssBytes": 442957824
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 11047.139200000005,
+          "snapshotBytes": 5134862,
+          "rssBytes": 446291968
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 8635.537400000001,
+          "snapshotBytes": 5134862,
+          "rssBytes": 446459904
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 11348.233299999993,
+          "snapshotBytes": 5134862,
+          "rssBytes": 451702784
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 12829.672099999996,
+          "snapshotBytes": 5134862,
+          "rssBytes": 452657152
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 6230.6142999999865,
+          "snapshotBytes": 5134862,
+          "rssBytes": 453844992
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 5442.767800000001,
+          "snapshotBytes": 5134862,
+          "rssBytes": 457814016
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 5262.962700000004,
+          "snapshotBytes": 5134862,
+          "rssBytes": 458682368
+        }
+      ]
+    },
+    {
+      "tuple": "django60",
+      "status": "PASS",
+      "files": 507,
+      "sourceBytes": 51269,
+      "inputHash": "b8db85f901202b227a6922929ab7295bbba6f942e87ffadac6352c9d0eef2127",
+      "samples": [
+        {
+          "mode": "fresh",
+          "elapsedMs": 8666.591399999976,
+          "snapshotBytes": 5134860,
+          "rssBytes": 476286976
+        },
+        {
+          "mode": "fresh",
+          "elapsedMs": 8617.244099999982,
+          "snapshotBytes": 5134860,
+          "rssBytes": 498159616
+        },
+        {
+          "mode": "fresh",
+          "elapsedMs": 9942.984799999977,
+          "snapshotBytes": 5134860,
+          "rssBytes": 467509248
+        },
+        {
+          "mode": "fresh",
+          "elapsedMs": 9649.5153,
+          "snapshotBytes": 5134860,
+          "rssBytes": 467050496
+        },
+        {
+          "mode": "fresh",
+          "elapsedMs": 10025.755900000018,
+          "snapshotBytes": 5134860,
+          "rssBytes": 467365888
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 7621.788700000005,
+          "snapshotBytes": 5134860,
+          "rssBytes": 474533888
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 6636.209000000032,
+          "snapshotBytes": 5134860,
+          "rssBytes": 475295744
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 5920.752900000021,
+          "snapshotBytes": 5134860,
+          "rssBytes": 477675520
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 7610.897600000026,
+          "snapshotBytes": 5134860,
+          "rssBytes": 480550912
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 7889.218099999998,
+          "snapshotBytes": 5134860,
+          "rssBytes": 482332672
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 7000.293599999975,
+          "snapshotBytes": 5134860,
+          "rssBytes": 483500032
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 5810.105500000005,
+          "snapshotBytes": 5134860,
+          "rssBytes": 489811968
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 6888.454900000012,
+          "snapshotBytes": 5134860,
+          "rssBytes": 489865216
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 6649.165099999984,
+          "snapshotBytes": 5134860,
+          "rssBytes": 501993472
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 5898.8047999999835,
+          "snapshotBytes": 5134860,
+          "rssBytes": 522702848
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 8999.977499999979,
+          "snapshotBytes": 5134860,
+          "rssBytes": 538083328
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 10089.77099999995,
+          "snapshotBytes": 5134860,
+          "rssBytes": 553701376
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 7940.547900000005,
+          "snapshotBytes": 5134860,
+          "rssBytes": 531947520
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 9892.559899999993,
+          "snapshotBytes": 5134860,
+          "rssBytes": 532213760
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 7406.526300000027,
+          "snapshotBytes": 5134860,
+          "rssBytes": 537878528
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 8892.6005,
+          "snapshotBytes": 5134860,
+          "rssBytes": 543420416
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 7317.5049,
+          "snapshotBytes": 5134860,
+          "rssBytes": 543944704
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 5668.292399999977,
+          "snapshotBytes": 5134860,
+          "rssBytes": 554348544
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 6086.3283999999985,
+          "snapshotBytes": 5134860,
+          "rssBytes": 559546368
+        },
+        {
+          "mode": "warm",
+          "elapsedMs": 6748.564899999998,
+          "snapshotBytes": 5134860,
+          "rssBytes": 559542272
+        }
+      ]
+    }
+  ]
+}

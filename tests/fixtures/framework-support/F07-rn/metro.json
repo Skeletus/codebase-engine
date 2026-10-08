@@ -1,0 +1,23 @@
+{
+  "files": ["index.js", "src/Choice.android.js", "src/Choice.ios.js", "src/Choice.native.js", "src/Choice.ts", "src/Native.native.js", "src/Native.ts", "src/Extension.js", "src/Extension.android.ts", "src/Exact.js", "src/Exact.android.js", "src/folder/index.ios.js", "src/folder/index.android.js", "src/logo.png", "src/logo@2x.png", "src/logo@3x.png", "packages/dep/package.json", "packages/dep/default.js", "packages/dep/import.js", "packages/dep/require.js", "packages/dep/import.android.js", "packages/dep/feature.js", "packages/dep/feature.ios.js", "src/replaced.js", "src/original.js"],
+  "packages": [
+    {"root": ".", "json": {"name": "application", "react-native": {"./src/original.js": "./src/replaced.js", "./src/disabled.js": false}}},
+    {"root": "packages/dep", "json": {"name": "dep", "exports": {".": {"import": "./import.js", "require": "./require.js", "default": "./default.js"}, "./feature": "./feature.js", "./wild/*": "./*.js"}}}
+  ],
+  "links": {"dep": "packages/dep"},
+  "sourceExts": ["js", "jsx", "json", "ts", "tsx"],
+  "cases": [
+    {"id": "platform", "specifier": "./src/Choice"},
+    {"id": "native-fallback", "specifier": "./src/Native"},
+    {"id": "extension-before-platform", "specifier": "./src/Extension"},
+    {"id": "explicit-extension", "specifier": "./src/Exact.js"},
+    {"id": "directory-index", "specifier": "./src/folder"},
+    {"id": "density-family", "specifier": "./src/logo.png"},
+    {"id": "import-export", "specifier": "dep", "isImport": true},
+    {"id": "require-export", "specifier": "dep", "isImport": false},
+    {"id": "exact-subpath", "specifier": "dep/feature"},
+    {"id": "wildcard-export", "specifier": "dep/wild/feature"},
+    {"id": "redirect", "specifier": "./src/original.js"},
+    {"id": "disabled", "specifier": "./src/disabled.js"}
+  ]
+}

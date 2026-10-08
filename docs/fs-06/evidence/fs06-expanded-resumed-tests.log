@@ -1,0 +1,62 @@
+✔ FS06 literal routing keeps order, namespaces, distinct registrations and framework calls separate (2251.6723ms)
+✔ FS06 source sentinels are never executed and similarly named APIs cannot register URLs (1764.7002ms)
+✔ FS06 repeated mounts at identical prefixes retain source-backed distinct IDs (1370.7826ms)
+✔ FS06 django52 local C3 mixin override and custom dispatch boundary (1960.9638ms)
+✔ FS06 django52 DRF api_view methods preserve external OPTIONS (1547.0252ms)
+✔ FS06 django52 path-mode SimpleRouter list/detail/custom action declarations (1458.4194ms)
+✔ FS06 django52 DefaultRouter path-mode suffix declarations preserve unsupported matchers and external root (1474.9946ms)
+✔ FS06 django52 manager and QuerySet declarations never establish custom runtime dispatch (1296.9902ms)
+✔ FS06 django60 local C3 mixin override and custom dispatch boundary (1251.9097ms)
+✔ FS06 django60 DRF api_view methods preserve external OPTIONS (1200.0499ms)
+✔ FS06 django60 path-mode SimpleRouter list/detail/custom action declarations (1264.8052ms)
+✔ FS06 django60 DefaultRouter path-mode suffix declarations preserve unsupported matchers and external root (1287.7037ms)
+✔ FS06 django60 manager and QuerySet declarations never establish custom runtime dispatch (1599.3882ms)
+✔ FS06 templates preserve literal lookup and named URL witnesses without executing render (1825.9587ms)
+✔ FS06 models, ORM intent, signals and admin remain declared framework relationships (1498.534ms)
+✔ FS06 explicit settings variant follows bounded named literal inheritance and missing selection stays unresolved (2768.3459ms)
+✔ FS06 wildcard and computed inherited settings never become verified routes (1520.0833ms)
+✔ FS06 repeated mounted CBV bindings retain each registration source (1224.5595ms)
+✔ FS06 exact oracle tuples and shared metadata are required, with no qualification badge from syntax alone (1240.7474ms)
+✔ FS06 unsupported regex/converters, stacked decorators and dynamic templates retain typed uncertainty (1295.7885ms)
+✔ FS06 middleware hooks, app-ready and command ownership are conditional declarations (1926.4512ms)
+✔ FS06 custom template engine and traversal names are withheld behind protected read boundaries (4264.2245ms)
+✖ FS06 explicit installed app association preserves FS02 owners and excludes independent child packages (9649.6699ms)
+✔ FS06 opaque class/method decorators cannot prove models or router dispatch (8287.5395ms)
+✔ FS06 template keyword names and explicit engine overrides preserve uncertainty (3729.7034ms)
+✔ FS06 local Django namespace shadowing cannot create verified framework registrations (4649.1419ms)
+✔ FS06 mutated or escaped router instances cannot create verified endpoints (7324.0623ms)
+✖ FS06 multiple explicit settings profiles retain separate variants and mutation never chooses a root (4099.7472ms)
+✔ FS06 standard converters and slash metadata stay literal while regex and custom converters retain gaps (2330.7346ms)
+ℹ tests 29
+ℹ suites 0
+ℹ pass 27
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 85590.0985
+
+✖ failing tests:
+
+test at tests\framework-support\fs-06.test.ts:134:1
+✖ FS06 explicit installed app association preserves FS02 owners and excludes independent child packages (9649.6699ms)
+  Error: parser-unavailable
+      at PythonParserWorker.fail (file:///D:/Repositorios%20Github/cartograph/lib/engine/parser-worker.ts:105:64)
+      at Timeout.<anonymous> (file:///D:/Repositorios%20Github/cartograph/lib/engine/parser-worker.ts:80:119)
+      at listOnTimeout (node:internal/timers:635:17)
+      at process.processTimers (node:internal/timers:571:7) {
+    reason: 'parser-unavailable'
+  }
+
+test at tests\framework-support\fs-06.test.ts:162:1
+✖ FS06 multiple explicit settings profiles retain separate variants and mutation never chooses a root (4099.7472ms)
+  Error: Duplicate shared values
+      at strings (file:///D:/Repositorios%20Github/cartograph/lib/model/framework-validate.ts:13:134)
+      at validateAnalysis (file:///D:/Repositorios%20Github/cartograph/lib/model/framework-validate.ts:38:288)
+      at validateSnapshot (file:///D:/Repositorios%20Github/cartograph/lib/engine/contract.ts:14:58)
+      at Object.analyze (file:///D:/Repositorios%20Github/cartograph/lib/engine/adapters/django.ts:207:22)
+      at async AnalysisCoordinator.analyzeAsync (file:///D:/Repositorios%20Github/cartograph/lib/engine/coordinator.ts:38:99)
+      at async file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-06.test.ts:163:19
+      at async fixture (file:///D:/Repositorios%20Github/cartograph/tests/framework-support/fs-06.test.ts:9:330)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)

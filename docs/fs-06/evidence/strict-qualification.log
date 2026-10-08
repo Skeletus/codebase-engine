@@ -1,0 +1,1 @@
+{"status":"PASS","targets":["django52","django60"],"profile":"static-python-declared-environment"}

@@ -6,7 +6,7 @@ import type { RefreshCandidate } from "./refresh.ts";
 
 export { coordinateSnapshot } from "./composition.ts";
 export type LanguageDriver = { id: string; analyze: (selection: Selection, full: boolean, progress?: (stage: "parse") => void) => { snapshot: CodeSnapshot; mode: "full" | "incremental"; parsed: number; reused: number }; project?: (snapshot: CodeSnapshot, selection: Selection) => CodeSnapshot; reset: () => void };
-export type AsyncLanguageExtension = { analyze: (snapshot: CodeSnapshot, selection: Selection, full: boolean) => Promise<{ snapshot: CodeSnapshot; parsed: number; reused: number }>; reset: () => void };
+export type AsyncLanguageExtension = { stage?: "before-project"; analyze: (snapshot: CodeSnapshot, selection: Selection, full: boolean) => Promise<{ snapshot: CodeSnapshot; parsed: number; reused: number }>; reset: () => void };
 
 /** Owns one generation/inventory. Syntax sessions and parser ASTs stay in drivers;
  * composition owns the additive neutral model, storage owns publication. */
@@ -34,8 +34,9 @@ export class AnalysisCoordinator {
     const full = forceFull || !this.previous || topology(this.previous) !== topology(selection) || !this.previous.reader.metadataStable();
     const result = this.driver.analyze(selection, full, progress);
     let snapshot = coordinateSnapshot(result.snapshot, selection), parsed = result.parsed, reused = result.reused;
+    for (const extension of extensions.filter(e => e.stage === "before-project")) { selection.walk.discovery.boundary.check(); const next = await extension.analyze(snapshot, selection, full); snapshot = next.snapshot; parsed += next.parsed; reused += next.reused; }
     snapshot = this.driver.project?.(snapshot, selection) ?? snapshot;
-    for (const extension of extensions) { selection.walk.discovery.boundary.check(); const next = await extension.analyze(snapshot, selection, full); snapshot = next.snapshot; parsed += next.parsed; reused += next.reused; }
+    for (const extension of extensions.filter(e => e.stage !== "before-project")) { selection.walk.discovery.boundary.check(); const next = await extension.analyze(snapshot, selection, full); snapshot = next.snapshot; parsed += next.parsed; reused += next.reused; }
     selection.walk.discovery.boundary.check();
     this.previous = selection;
     return { snapshot, mode: result.mode, parsed, reused, reader: selection.reader };

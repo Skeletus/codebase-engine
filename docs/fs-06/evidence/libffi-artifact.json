@@ -1,0 +1,7 @@
+{
+  "version": "3.4.4",
+  "repository": "https://github.com/python/cpython-bin-deps",
+  "commit": "94cb9a1c7feb608adf2b9f8fe2dbd6925ffbf90d",
+  "sha256": "6b0f53490e0dd958708bff32df689cf2163c214147fcb8edb76a403fa6a877ca",
+  "scope": "isolated CPython oracle only"
+}

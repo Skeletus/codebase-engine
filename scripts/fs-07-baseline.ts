@@ -1,0 +1,11 @@
+import {execFileSync} from 'node:child_process';
+import {existsSync,mkdirSync,readFileSync,writeFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+const destination='docs/fs-07/evidence/starting-inventory.json';
+if(existsSync(destination))throw new Error('FS07 baseline already exists');
+const names=execFileSync('git',['ls-files','--cached','--others','--exclude-standard','-z']).toString().split('\0').filter(file=>file&&!file.startsWith('docs/fs-07/')&&!file.startsWith('scripts/fs-07-'));
+const files=names.filter(existsSync).map(file=>({path:file,sha256:createHash('sha256').update(readFileSync(file)).digest('hex')}));
+const sourceFiles=names.filter(file=>/^(?:lib\/|scripts\/package-engine|package\.json|pnpm-lock)/.test(file));
+mkdirSync('docs/fs-07/evidence',{recursive:true});
+writeFileSync(destination,JSON.stringify({head:execFileSync('git',['rev-parse','HEAD']).toString().trim(),files,acceptedSource:sourceFiles.map(file=>({path:file,base64:readFileSync(file).toString('base64')}))},null,2)+'\n');
+console.log('Captured accepted FS06 baseline');

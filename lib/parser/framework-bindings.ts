@@ -9,6 +9,8 @@ import { frameworkFact } from "./framework-budget.ts";
 export type FrameworkSource = { candidate: { path: string; hash: string }; sourceFile: SourceFile; framework: string };
 /** Lexical binding only; compiler filesystem resolution is never used. */
 export function frameworkBindings(snapshot: CodeSnapshot, inputs: FrameworkSource[], variant: Variant, resolve: (from: string, specifier: string) => string | undefined, checkpoint:()=>void = ()=>{}, version="fs-03/1") {
+  const extractor = version === "fs-03/1" ? "vite-react" : version === "fs-07/1" ? "react-native" : "node-next";
+  const suffix = version.replaceAll("/", "-").replaceAll(".", "-");
   const bySource = new Map(inputs.map(i => [i.sourceFile, i.candidate]));
   const byPath = new Map(inputs.map(i => [i.candidate.path, i.sourceFile]));
   const bySite = new Map<string,Declaration[]>();
@@ -26,7 +28,7 @@ export function frameworkBindings(snapshot: CodeSnapshot, inputs: FrameworkSourc
   function whole(source: SourceFile): Site {
     const cached=wholeSites.get(source);if (cached) return cached;
     const input=bySource.get(source)!, text=source.getFullText(), end=text.length-(/\r\n$/.test(text)?2:/[\r\n]$/.test(text)?1:0);
-    const location={file:input.path,...normalizeRange(text,0,end,"utf16"),fileHash:input.hash,extractor:version==="fs-03/1" ? "vite-react/binding-context/fs-03-1" : "node-next/binding-context/fs-04-1",evidenceKind:"verified" as const};
+    const location={file:input.path,...normalizeRange(text,0,end,"utf16"),fileHash:input.hash,extractor:extractor+"/binding-context/"+suffix,evidenceKind:"verified" as const};
     wholeSites.set(source,location);return location;
   }
   function stable(node: Node): boolean {
@@ -43,7 +45,7 @@ export function frameworkBindings(snapshot: CodeSnapshot, inputs: FrameworkSourc
     const kind=Node.isClassDeclaration(node) ? "class" : Node.isMethodDeclaration(node) ? "method" : Node.isVariableDeclaration(node) ? "value" : Node.isParameterDeclaration(node) ? "parameter" : "function";
     return bySite.get(JSON.stringify([bySource.get(node.getSourceFile())?.path, node.getStart()]))?.find(d=>d.kind===kind);
   };
-  const site = (node: Node): Site => Node.isSourceFile(node) ? whole(node) : ({ file: bySource.get(node.getSourceFile())!.path, start:node.getStart(),end:node.getEnd(),line:node.getStartLineNumber(),endLine:node.getEndLineNumber(), fileHash: bySource.get(node.getSourceFile())!.hash, extractor: version==="fs-03/1" ? "vite-react/fs-03-1" : "node-next/fs-04-1", evidenceKind: "verified" });
+  const site = (node: Node): Site => Node.isSourceFile(node) ? whole(node) : ({ file: bySource.get(node.getSourceFile())!.path, start:node.getStart(),end:node.getEnd(),line:node.getStartLineNumber(),endLine:node.getEndLineNumber(), fileHash: bySource.get(node.getSourceFile())!.hash, extractor: extractor+"/"+suffix, evidenceKind: "verified" });
   const witness = (location: Site, role: "reference" | "declaration" | "registration" = "reference"): Witness => ({ site: location, role, variantId: variant.id, extractorVersion: version });
   const owner = (node: Node): string => {
     for (const parent of node.getAncestors()) {
@@ -111,6 +113,7 @@ export function frameworkBindings(snapshot: CodeSnapshot, inputs: FrameworkSourc
     if (!imported || imported.isTypeOnly() || mutatedDeclarations.has(def)) return;
     if (version === "fs-04/1" && Node.isImportClause(def) && !Node.isPropertyAccessExpression(node)) return { module: imported.getModuleSpecifierValue(), name: "default" };
     if (Node.isImportSpecifier(def) && !def.isTypeOnly() && !Node.isPropertyAccessExpression(node)) return { module: imported.getModuleSpecifierValue(), name: def.getName() };
+    if (version === "fs-07/1" && Node.isImportSpecifier(def) && !def.isTypeOnly() && Node.isPropertyAccessExpression(node)) return {module: imported.getModuleSpecifierValue(), name: def.getName()+"."+node.getName()};
     if ((Node.isNamespaceImport(def) || Node.isImportClause(def) && imported.getModuleSpecifierValue() === "react") && Node.isPropertyAccessExpression(node)) return { module: imported.getModuleSpecifierValue(), name: node.getName() };
   }
   function bind(kind: FrameworkBinding["kind"], node: Node, target: Declaration | string, rule: string, sourceId=owner(node),extra:readonly Witness[]=[]) {
@@ -121,7 +124,7 @@ export function frameworkBindings(snapshot: CodeSnapshot, inputs: FrameworkSourc
     const context=[witness(whole(node.getSourceFile())),...([...exportProofs.get(targetId) ?? []].map(source=>witness(whole(source)))),...extra];
     if (context.length + variant.configWitnesses.length + 3 > 200) {gap(node,"resource-limit");return;}
     frameworkFact(snapshot,occurrence.file);
-    snapshot.analysis.bindings.push({ id, kind, sourceId, targetId, occurrence, variantId: variant.id, witnesses: [witness(occurrence), ...(typeof target === "string" ? [] : [witness(target.site, "declaration")]), ...context,...variant.configWitnesses, { role: "framework-rule", tupleId: snapshot.analysis.capabilities.find(c=>c.variantId===variant.id&&c.extractorVersion===version)?.tupleId??"unqualified", ruleId: rule, extractor: version==="fs-03/1" ? "vite-react" : "node-next", extractorVersion: version, variantId: variant.id }] });
+    snapshot.analysis.bindings.push({ id, kind, sourceId, targetId, occurrence, variantId: variant.id, witnesses: [witness(occurrence), ...(typeof target === "string" ? [] : [witness(target.site, "declaration")]), ...context,...variant.configWitnesses, { role: "framework-rule", tupleId: snapshot.analysis.capabilities.find(c=>c.variantId===variant.id&&c.extractorVersion===version)?.tupleId??"unqualified", ruleId: rule, extractor, extractorVersion: version, variantId: variant.id }] });
   }
   function gap(node: Node, reason: GapReason = "dynamic-expression") {
     const occurrence = site(node), id = factId("gap", occurrence, variant.id, reason);

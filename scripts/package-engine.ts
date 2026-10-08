@@ -40,6 +40,9 @@ function copyPackage(name: string, from: string, destination: string, ancestry: 
 }
 copyPackage("ts-morph", path.join(root, "package.json"), resources);
 copyPackage("web-tree-sitter", path.join(root, "package.json"), resources);
+// FS-07 syntax resources are bundled offline; Metro/Expo/navigation oracles and
+// Hermes development dependencies are excluded by copyPackage's runtime closure.
+copyPackage("hermes-parser", path.join(root, "package.json"), resources);
 if (process.platform === "win32") {
 execFileSync("cargo", ["build", "--release", "--locked", "--offline", "--manifest-path", path.join(root, "src-tauri/Cargo.toml"), "--bin", "parser-host"], { stdio: "inherit" });
 mkdirSync(path.join(resources, "bin"), { recursive: true });
@@ -47,6 +50,7 @@ copyFileSync(path.join(root, "src-tauri/target/release/parser-host.exe"), path.j
 }
 const parserAssets = ["lib/engine/assets/python/tree-sitter-python.wasm", "lib/engine/assets/python/LICENSE", "node_modules/web-tree-sitter/tree-sitter.wasm", "node_modules/web-tree-sitter/tree-sitter.js", "node_modules/web-tree-sitter/LICENSE", "node_modules/web-tree-sitter/package.json", ...(process.platform === "win32" ? ["bin/parser-host.exe"] : [])].map(file => ({ file, sha256: createHash("sha256").update(readFileSync(path.join(resources, file))).digest("hex") }));
 writeFileSync(path.join(resources, "python-runtime.json"), JSON.stringify({ version: 1, runtime: "web-tree-sitter@0.25.10", grammar: "tree-sitter-python@0.25.0", abi: 15, assets: parserAssets, memoryBytes: 536870912, oldSpaceMiB: 128, startupMs: 5000, fileMs: 2000 }) + "\n");
+if (process.platform === "win32") writeFileSync(path.join(resources, "flow-runtime.json"), JSON.stringify({version: 1, runtime: "hermes-parser@0.25.1", launcher: "bin/parser-host.exe", launcherHash: createHash("sha256").update(readFileSync(path.join(resources, "bin/parser-host.exe"))).digest("hex"), memoryBytes: 536870912, oldSpaceMiB: 128, startupMs: 5000, fileMs: 2000}) + "\n");
 const binary = path.join(root, `src-tauri/binaries/code-engine-${target}${process.platform === "win32" ? ".exe" : ""}`);
 copyFileSync(process.execPath, binary);
 const license = process.env.CODE_INTELLIGENCE_NODE_LICENSE ?? path.join(path.dirname(process.execPath), "LICENSE");

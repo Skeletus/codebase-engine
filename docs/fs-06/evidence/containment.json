@@ -1,0 +1,155 @@
+{
+  "platform": "win32",
+  "node": "v24.19.0",
+  "helperHash": "c48c94a3af34192af32bbee30a87b0ac7ded62c35b50ac55294c7f68de03e27e",
+  "probeHash": "a047a5ed3806df85bde7a6c2760b7e15450b1478e05a69577e66da45318d8c81",
+  "records": [
+    {
+      "operation": "allocate",
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMs": 691.3167000000001,
+      "records": [
+        {
+          "ready": true,
+          "pid": 20884,
+          "flags": [
+            "--max-old-space-size=128",
+            "--wasm-num-compilation-tasks=1",
+            "--no-wasm-tier-up",
+            "--no-wasm-dynamic-tiering",
+            "--disable-warning=ExperimentalWarning"
+          ]
+        },
+        {
+          "rejected": true
+        }
+      ],
+      "counters": {
+        "memoryLimitBytes": 536870912,
+        "peakCommitBytes": 23359488
+      }
+    },
+    {
+      "operation": "complete",
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMs": 475.76060000000007,
+      "records": [
+        {
+          "ready": true,
+          "pid": 20612,
+          "flags": [
+            "--max-old-space-size=128",
+            "--wasm-num-compilation-tasks=1",
+            "--no-wasm-tier-up",
+            "--no-wasm-dynamic-tiering",
+            "--disable-warning=ExperimentalWarning"
+          ]
+        },
+        {
+          "complete": true
+        }
+      ],
+      "counters": {
+        "memoryLimitBytes": 536870912,
+        "peakCommitBytes": 21880832
+      }
+    },
+    {
+      "operation": "spin",
+      "exitCode": null,
+      "timedOut": true,
+      "elapsedMs": 605.7212000000002,
+      "records": [
+        {
+          "ready": true,
+          "pid": 2464,
+          "flags": [
+            "--max-old-space-size=128",
+            "--wasm-num-compilation-tasks=1",
+            "--no-wasm-tier-up",
+            "--no-wasm-dynamic-tiering",
+            "--disable-warning=ExperimentalWarning"
+          ]
+        }
+      ],
+      "counters": null
+    },
+    {
+      "operation": "complete",
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMs": 847.4292,
+      "records": [
+        {
+          "ready": true,
+          "pid": 16244,
+          "flags": [
+            "--max-old-space-size=128",
+            "--wasm-num-compilation-tasks=1",
+            "--no-wasm-tier-up",
+            "--no-wasm-dynamic-tiering",
+            "--disable-warning=ExperimentalWarning"
+          ]
+        },
+        {
+          "complete": true
+        }
+      ],
+      "counters": {
+        "memoryLimitBytes": 536870912,
+        "peakCommitBytes": 21057536
+      }
+    },
+    {
+      "operation": "heapoom",
+      "exitCode": 2,
+      "timedOut": false,
+      "elapsedMs": 2613.9786,
+      "records": [
+        {
+          "ready": true,
+          "pid": 25176,
+          "flags": [
+            "--max-old-space-size=128",
+            "--wasm-num-compilation-tasks=1",
+            "--no-wasm-tier-up",
+            "--no-wasm-dynamic-tiering",
+            "--disable-warning=ExperimentalWarning"
+          ]
+        }
+      ],
+      "counters": {
+        "memoryLimitBytes": 536870912,
+        "peakCommitBytes": 297472000
+      }
+    },
+    {
+      "operation": "complete",
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMs": 532.1315000000004,
+      "records": [
+        {
+          "ready": true,
+          "pid": 27416,
+          "flags": [
+            "--max-old-space-size=128",
+            "--wasm-num-compilation-tasks=1",
+            "--no-wasm-tier-up",
+            "--no-wasm-dynamic-tiering",
+            "--disable-warning=ExperimentalWarning"
+          ]
+        },
+        {
+          "complete": true
+        }
+      ],
+      "counters": {
+        "memoryLimitBytes": 536870912,
+        "peakCommitBytes": 20926464
+      }
+    }
+  ]
+}

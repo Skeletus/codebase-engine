@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "runtime": "hermes-parser@0.25.1",
+  "dependencies": [
+    {
+      "name": "hermes-parser",
+      "version": "0.25.1",
+      "dependencies": {
+        "hermes-estree": "0.25.1"
+      },
+      "assets": [
+        {
+          "file": "dist/babel/TransformESTreeToBabel.js",
+          "sha256": "e94e44c6e4f0902af92a085310e5f750f641f4b8024273972ecaf8e6eaba0b47",
+          "bytes": 28107
+        },
+        {
+          "file": "dist/estree/StripComponentSyntax.js",
+          "sha256": "866cf8d9ffd494638e6cdd342beb6683f56dc7c60f7807d1bceb61a3e6c93192",
+          "bytes": 22713
+        },
+        {
+          "file": "dist/estree/StripFlowTypes.js",
+          "sha256": "daf09faadb50a427ee67a479702bd47658f1d69d539c6d28e48d4801a8c38276",
+          "bytes": 4387
+        },
+        {
+          "file": "dist/estree/StripFlowTypesForBabel.js",
+          "sha256": "67b74408b24b6bb5e512ce00c5c8445281618c1c6d6c4f205762f5b0579f4b08",
+          "bytes": 5298
+        },
+        {
+          "file": "dist/generated/ESTreeVisitorKeys.js",
+          "sha256": "f8cb43ffcdc2254946334a4ac58ef69953a79407cdbc22edc38555fdbec29184",
+          "bytes": 8497
+        },
+        {
+          "file": "dist/generated/ParserVisitorKeys.js",
+          "sha256": "0cdd8cfc223b7563eb3f7761914be049029e85d6e8038e8446c5f9ea478e6d53",
+          "bytes": 13741
+        },
+        {
+          "file": "dist/getModuleDocblock.js",
+          "sha256": "f225c5b0868604da201f143f8f86c46db41d5bc7410ef167e5c44ddaf44b2eeb",
+          "bytes": 2940
+        },
+        {
+          "file": "dist/HermesASTAdapter.js",
+          "sha256": "3b769c0182bed93fa4b6612aba3d6dc1fb66d48b60178dc5e12a1a2a8ac55a9c",
+          "bytes": 5064
+        },
+        {
+          "file": "dist/HermesParser.js",
+          "sha256": "47b474588d4f5a0a9aca17d2beea3264b8c5f741818dfe8a3295f41c7cf64cdb",
+          "bytes": 4092
+        },
+        {
+          "file": "dist/HermesParserDecodeUTF8String.js",
+          "sha256": "53e9f60f0e9a16913525ba6861015af451f4677c1fe69a4af3434292a7f07c45",
+          "bytes": 1904
+        },
+        {
+          "file": "dist/HermesParserDeserializer.js",
+          "sha256": "8a15fab5f9e9e5d62dd8130faabcc9f23e8969a8819926297dfa34ee900a68f7",
+          "bytes": 6569
+        },
+        {
+          "file": "dist/HermesParserNodeDeserializers.js",
+          "sha256": "8faa336ccc9505ccdfda8977127bfac41dd223997a183e73e0fa4876bf7cca66",
+          "bytes": 58931
+        },
+        {
+          "file": "dist/HermesParserWASM.js",
+          "sha256": "391b062f8e48418ca8f04df9e2d56eb15d90c32a6edc1c169b92f619ccdec3d9",
+          "bytes": 678244
+        },
+        {
+          "file": "dist/HermesToESTreeAdapter.js",
+          "sha256": "ff2904a1fe143467cf0af308a08be5d1d85885bf5dac8a1aa2eda9e7b00c6872",
+          "bytes": 11504
+        },
+        {
+          "file": "dist/index.js",
+          "sha256": "6008f7f41daee44ea1eb4d388f679620141af61fedaeed4ac45341bf865aa8f4",
+          "bytes": 6335
+        },
+        {
+          "file": "dist/ParserOptions.js",
+          "sha256": "a7eef01a612d39a032040f468dca20479c7c484ac5da4f72687e788319a6ce13",
+          "bytes": 557
+        },
+        {
+          "file": "dist/transform/astArrayMutationHelpers.js",
+          "sha256": "a09e54556e5acea8b05920ddb8b2880f08119dcd159ead789759d9af93d89b76",
+          "bytes": 1531
+        },
+        {
+          "file": "dist/transform/astNodeMutationHelpers.js",
+          "sha256": "74c946721b37274c6bfbd4980b4411181e932cdd231038b658e86a2dcf01a801",
+          "bytes": 5624
+        },
+        {
+          "file": "dist/transform/SimpleTransform.js",
+          "sha256": "933418ffa7759b6cb0f2e0306498b6a00fc9653920c57f51677ffae8e8658399",
+          "bytes": 3582
+        },
+        {
+          "file": "dist/traverse/getVisitorKeys.js",
+          "sha256": "0c76d5b3e0ad63be223f3ba6408a7dd3926f2cd97bc9437ae21e69c538f032ed",
+          "bytes": 1000
+        },
+        {
+          "file": "dist/traverse/SimpleTraverser.js",
+          "sha256": "c34207ed961a3835245c4ebec3bcfd09f7c91a497141078f8d33d87fdbd50aa4",
+          "bytes": 3002
+        },
+        {
+          "file": "dist/utils/createSyntaxError.js",
+          "sha256": "0f85e68998fcb8ef30b28518800af58ac1b86bf94dcd8b16c26d447a36054982",
+          "bytes": 573
+        },
+        {
+          "file": "dist/utils/mutateESTreeASTForPrettier.js",
+          "sha256": "15be93e170b39b6344c793ba758858423650b8227a81d1f088ec5f88ea355d42",
+          "bytes": 4428
+        },
+        {
+          "file": "LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+          "bytes": 1088
+        },
+        {
+          "file": "package.json",
+          "sha256": "768cc73e0cefe52baf831359bee1b37622dd917ca19bc08fb268493cd8144208",
+          "bytes": 517
+        }
+      ]
+    },
+    {
+      "name": "hermes-estree",
+      "version": "0.25.1",
+      "dependencies": {},
+      "assets": [
+        {
+          "file": "dist/generated/predicates.js",
+          "sha256": "33a648062768e1dd0ef635f79fb9ba7f46cefa0ad1a1da5f168386de67c69f30",
+          "bytes": 62068
+        },
+        {
+          "file": "dist/index.js",
+          "sha256": "9148e78eee09bade54fa02b921de8723751705744699ce460274982ba459b26e",
+          "bytes": 546
+        },
+        {
+          "file": "dist/predicates.js",
+          "sha256": "5d072b3bab27a0e3e41b341a6c917632c53149fcb206edaebddcf6828b8e1a39",
+          "bytes": 8916
+        },
+        {
+          "file": "dist/selectors.js",
+          "sha256": "74c6290df989ec091ef3b4023417e80acd0c37433526c48c5ef4c98e3f7ab373",
+          "bytes": 288
+        },
+        {
+          "file": "dist/types.js",
+          "sha256": "ebb85bd31ccb8eb5245cb2d664659f91134e222ce452cef60aa661937e199c4b",
+          "bytes": 1342
+        },
+        {
+          "file": "LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+          "bytes": 1088
+        },
+        {
+          "file": "package.json",
+          "sha256": "bc6e559f8a1f89a531c9ed45f3aacdb1a45d17302aa7e730edfc53170b9d9f2c",
+          "bytes": 337
+        }
+      ]
+    }
+  ]
+}

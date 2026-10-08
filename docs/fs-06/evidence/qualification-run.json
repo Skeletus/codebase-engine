@@ -1,0 +1,658 @@
+{
+  "status": "PASS",
+  "scope": "controlled qualification groups only; does not grant whole-phase acceptance",
+  "results": [
+    {
+      "target": "django52",
+      "profile": "static-python-declared-environment",
+      "status": "PASS",
+      "testHash": "c6a12167825f0bb721e6d11455e22cb0f2f2e85bc47e8557bbf3a357c4f390c4",
+      "oracleHash": "0f3825c244a416fb0029ed53e666f54358264bafa401dbfc7433b140802296ba",
+      "outputHash": "1bb0a64938a9715ce8626a882d7b7495df478edc7cc56d4bbd734b0b3cd29595",
+      "records": [
+        {
+          "file": "django52-converters-boundaries.json",
+          "hash": "7ade9cd21225a6947ae99060a61466fccaf5cf4aeb6dee4f3d2f4960a477d623"
+        },
+        {
+          "file": "django52-converters-builtins.json",
+          "hash": "195cb328a0e2e71cd65b36b85a1db090127397831d79fb1e8d0e2a292ac1b3e9"
+        },
+        {
+          "file": "django52-decorators-require_GET-false.json",
+          "hash": "512d2314c84f4c93bbaca46461807c6aba1b09fdf5127efc73f207a3055e1157"
+        },
+        {
+          "file": "django52-decorators-require_GET-true.json",
+          "hash": "6aa3936963a16c8d7c2e5c47dafb3bbdbbef38a7af9556b6da16b0743eeb0f32"
+        },
+        {
+          "file": "django52-decorators-require_POST-false.json",
+          "hash": "f39be3210a85b9e36a3064c1e5e2efe7d3d6b4258c1e675db2071ec76c3affbb"
+        },
+        {
+          "file": "django52-decorators-require_POST-true.json",
+          "hash": "6776d3f070267d677fcc1eb49fdc3d5ad3e9e818a13d4c69b5c434aab09acdca"
+        },
+        {
+          "file": "django52-decorators-require_http_methods-false.json",
+          "hash": "f070522987c35d5425a681a5ace72fddcda1b0574e16094b808b4783e98bf03d"
+        },
+        {
+          "file": "django52-decorators-require_http_methods-true.json",
+          "hash": "e90567766d1b2aa7a7ae53347efd59e0ed2034fd5ec5d4acdc7e7663565a758c"
+        },
+        {
+          "file": "django52-decorators-require_safe-false.json",
+          "hash": "606410e69b145394cb81aed3905004c2b833c51454dc85a0fe2ab8cc9ef8948a"
+        },
+        {
+          "file": "django52-decorators-require_safe-true.json",
+          "hash": "337e4bc552821aa49561247cb967702ed668359a358e02a9e87a1f851b443acf"
+        },
+        {
+          "file": "django52-dynamic-decorator.json",
+          "hash": "19fd97998ae0331cfe9f921de27182bade363f44624489e10d03065a1feacf47"
+        },
+        {
+          "file": "django52-dynamic-escape.json",
+          "hash": "c6f15593d6a78dcaf137d96c42c498655cf90d4b57123b25eac941bac2e10c6e"
+        },
+        {
+          "file": "django52-dynamic-format-settings.json",
+          "hash": "bb3ac93f0426709eae15b11068c0f06f17883e193c6008a26e7d7aeb841518c0"
+        },
+        {
+          "file": "django52-dynamic-index.json",
+          "hash": "e6760baf5750916a4c2b34cbab3dd6c01343cfbd0a4815418161a5bc5372cfbb"
+        },
+        {
+          "file": "django52-dynamic-mutation.json",
+          "hash": "21c87a3e842d85529052511e5da8d8c39f57d83356f912c41aadf85a9fdff6e2"
+        },
+        {
+          "file": "django52-formats-0-inline.json",
+          "hash": "96a493af096c13e643555f7eb0c1134422b83f60427f42b9ae2e52282a7a3f13"
+        },
+        {
+          "file": "django52-formats-0-reassignment.json",
+          "hash": "54835cea30928355cc1532d3847bcb5f217a535c81b004be43c993788131f07f"
+        },
+        {
+          "file": "django52-formats-1-inline.json",
+          "hash": "8cca58fa2261e9cc0f75c709b985b7258def91309ce0f37125a65bc76ea8c28b"
+        },
+        {
+          "file": "django52-formats-1-reassignment.json",
+          "hash": "0705b076d0a97408a622cad91f01a1550ddb53fa73ceae35452675206cf25936"
+        },
+        {
+          "file": "django52-formats-10-inline.json",
+          "hash": "40bcd558ec7f6e8efacaa96e84f7ab1caeb2b011c19a61a70cbc724585349989"
+        },
+        {
+          "file": "django52-formats-10-reassignment.json",
+          "hash": "93fd24e2d9c7391021861f1515673b1708c2173ffb4e01a222225971d320004f"
+        },
+        {
+          "file": "django52-formats-11-inline.json",
+          "hash": "d01738a6aefd4cf67eb5b7115ace9b2ad2a616136c3b246ce8a2120ac157ab84"
+        },
+        {
+          "file": "django52-formats-11-reassignment.json",
+          "hash": "52d584b8b455f815ccd001eb96c3c1d71177ad8253e47bcd43d0e4693ffa324d"
+        },
+        {
+          "file": "django52-formats-12-inline.json",
+          "hash": "f83de47cef536a12ad276b9cfbef9e3cc421ac4109df8995b68cdfa2d91d4c39"
+        },
+        {
+          "file": "django52-formats-12-reassignment.json",
+          "hash": "dc9104300f81e82a8482185aeaa54a1851646b32d55e844c77c8c22a77dc7fcb"
+        },
+        {
+          "file": "django52-formats-13-inline.json",
+          "hash": "35bf4e6b2bbbc997d7cfbb1a2e7540074df446fdc29f81170cae251d71efe01e"
+        },
+        {
+          "file": "django52-formats-13-reassignment.json",
+          "hash": "6858ed93faad4361911731925531a9c561a10baccf62941e7bfc31a4f462c943"
+        },
+        {
+          "file": "django52-formats-14-inline.json",
+          "hash": "9351f9caaea2a32f6176bf8ecab78ebd0a8b223ba1c1a136b880b2e7e53ef3f9"
+        },
+        {
+          "file": "django52-formats-14-reassignment.json",
+          "hash": "80fa2ec528da32e3463a663968ac5b11b4f97158af432281391d65276322dcfd"
+        },
+        {
+          "file": "django52-formats-15-inline.json",
+          "hash": "7d8b0141be3e0b634ff93747e8a45b3acb3fc790fcee678803a024083801ff47"
+        },
+        {
+          "file": "django52-formats-15-reassignment.json",
+          "hash": "713c08c86677fad00921bb94302b97098a4623b68069e51dc089db20bf54b339"
+        },
+        {
+          "file": "django52-formats-2-inline.json",
+          "hash": "0e4e51bf560a276c70d16a955d239953793205e6e08ffa936bb9a3dcf863e84d"
+        },
+        {
+          "file": "django52-formats-2-reassignment.json",
+          "hash": "34baa164edbce3554ff5d191b74cdf3912150d34da809837341d93f5f2e22970"
+        },
+        {
+          "file": "django52-formats-3-inline.json",
+          "hash": "29f38c9fa42dc7f4dddf8918d15038b2c0509dc3f3be75600436f8cccc1ff905"
+        },
+        {
+          "file": "django52-formats-3-reassignment.json",
+          "hash": "20a56b77af827d4ae19ebcbfd9835ab192833937e6e97bbd6be064ddf19b565e"
+        },
+        {
+          "file": "django52-formats-4-inline.json",
+          "hash": "5d377d22276759771e0ebcab46692442cc6c3749478972ad05ec2c9390ca5660"
+        },
+        {
+          "file": "django52-formats-4-reassignment.json",
+          "hash": "b34ac739b1bcb147f1210a726b63bbc4b4f08a5e83e094362b794f5848e3e16d"
+        },
+        {
+          "file": "django52-formats-5-inline.json",
+          "hash": "da5a85b7e355da4e6791577c2273ae3a1683647a6c59c4bed5bcba5b44cdeba4"
+        },
+        {
+          "file": "django52-formats-5-reassignment.json",
+          "hash": "e61d1de460820b75512a15feee88abda0233ee524ddc0df5da674ee57d1e889f"
+        },
+        {
+          "file": "django52-formats-6-inline.json",
+          "hash": "19baddc12d3d495bb79d1eb45bd73fb1429382931843673adf1457c8903ee42b"
+        },
+        {
+          "file": "django52-formats-6-reassignment.json",
+          "hash": "6edbb405489e20d9e1b3e1cf908ca810a2122bf751e2d53c2b81e712c4cd835a"
+        },
+        {
+          "file": "django52-formats-7-inline.json",
+          "hash": "86f1dabd0f0bc0172073b4c979e3e7264b67711324fd20c8d7a4a4e70f52c291"
+        },
+        {
+          "file": "django52-formats-7-reassignment.json",
+          "hash": "edf61c151727bb9f7058875c5433aa7560d04573eb43e8c4d7191798ed796117"
+        },
+        {
+          "file": "django52-formats-8-inline.json",
+          "hash": "5d7ee223130940dd5562fcbdc60956e15e116be8ac365f9a82936e9db9e6dfb4"
+        },
+        {
+          "file": "django52-formats-8-reassignment.json",
+          "hash": "936157330769fcf6ee715b4aa64b1236fd7c9f41dd5a88f39a7ed6159f803ad1"
+        },
+        {
+          "file": "django52-formats-9-inline.json",
+          "hash": "038684eda6d70b4672741ed36360d71302e77a27ab2e0239ca780bed758b6631"
+        },
+        {
+          "file": "django52-formats-9-reassignment.json",
+          "hash": "a53b4cf1c505e1e924795d18891b71ec6d709db94bb6b78d8ea30b3c5acd6ba3"
+        },
+        {
+          "file": "django52-includes-0.json",
+          "hash": "6a632f68945d35d6c2acbc2a0b672541045938c388bbd43b501292120961b48c"
+        },
+        {
+          "file": "django52-includes-1.json",
+          "hash": "0bdab2243b049795c5c32767856b104144e67fca73792505854facef09ff7192"
+        },
+        {
+          "file": "django52-includes-2.json",
+          "hash": "9d67086dfc03187220dbec3cf519908a1c15302663bba0d0a2ad86e600cd4e84"
+        },
+        {
+          "file": "django52-includes-3.json",
+          "hash": "d36e5b01685edc84501cead4d119d84102f85c2bd3824ac0846aa5371f48f3ff"
+        },
+        {
+          "file": "django52-includes-4.json",
+          "hash": "c9f4524827c79742fc7bd7ab612ecb185ae1a89d5fa5324056f7c94b6ac63933"
+        },
+        {
+          "file": "django52-includes-5.json",
+          "hash": "5319ef53852bfe15bada1a798a0cb92827013dad87372a5fc744020a5b6731e6"
+        },
+        {
+          "file": "django52-models-custom-manager.json",
+          "hash": "77d89d5aac6f12ab08aec2187dc6ece7f63fd826f750d3ca01eb346135483212"
+        },
+        {
+          "file": "django52-models-field-operation-table.json",
+          "hash": "440d9ef89a10a8b7b189fd76e8ccf0c9e43760d4ae7ea9110c14f644508a61c9"
+        },
+        {
+          "file": "django52-models-mutated-manager.json",
+          "hash": "4f0b0773e4b5a08b70b2bb8440d18e62f8e8c510040a03e29ee5be08b7f10933"
+        },
+        {
+          "file": "django52-models-relationships.json",
+          "hash": "f5d8ef8db9f7929f3f04750397bbc6983ec28272e048ee25f49159e7310a4f8b"
+        },
+        {
+          "file": "django52-routers-DefaultRouter-path-bare.json",
+          "hash": "438c718685b43182e2e88f84b1f2b8f35f4f987407923518ad80efe938e76ac7"
+        },
+        {
+          "file": "django52-routers-DefaultRouter-path-slash.json",
+          "hash": "bda26eee22dfed43237ba55c463db4c24456e7e8974549e4cbe8e53ce0a36821"
+        },
+        {
+          "file": "django52-routers-DefaultRouter-regex-bare.json",
+          "hash": "e3cc1cd821d1475850c3b8313c1ab1c367746a41687cc0bc3f62e80215693d86"
+        },
+        {
+          "file": "django52-routers-DefaultRouter-regex-slash.json",
+          "hash": "fa9b3219dc21fbfbf902548b31dcf72977c39364fd5084054ca0f013a563cac1"
+        },
+        {
+          "file": "django52-routers-SimpleRouter-path-bare.json",
+          "hash": "4d83e3dbdd3e0064c42907e3e548520204f54127ce985f9e9a9aa5683022d4ad"
+        },
+        {
+          "file": "django52-routers-SimpleRouter-path-slash.json",
+          "hash": "dd874bdd6062ce969a0363bc54e4970091516f7635161ec8816d4808c458ac1f"
+        },
+        {
+          "file": "django52-routers-SimpleRouter-regex-bare.json",
+          "hash": "4adfc93a4496dd4f9aba21c64f779aa7d22c407848dbac891bb853e9c2ee76a0"
+        },
+        {
+          "file": "django52-routers-SimpleRouter-regex-slash.json",
+          "hash": "3d09845f16bd34eb9caa393886d543a76fa7f9c58a931a266399425ec2e63572"
+        },
+        {
+          "file": "django52-serializers-HyperlinkedModelSerializer.json",
+          "hash": "79c4559f0666c8be64c2840ff041c6eb6494a012e58c31f398ecfc5257be30e0"
+        },
+        {
+          "file": "django52-serializers-ModelSerializer.json",
+          "hash": "c48fd0df47ac9a1e486c444c49484c3154a22bd055a59e6d472b00af56a3d639"
+        },
+        {
+          "file": "django52-serializers-Serializer.json",
+          "hash": "2843d83c8525cb828af31582dab35f1af7a1876de6d415c7f0dd9d2d3a80af8f"
+        },
+        {
+          "file": "django52-serializers-opaque-meta.json",
+          "hash": "37f523e03f0eb9de1fe35caca211f7b5a8388b922dcda44f336f19cb5fc7e931"
+        },
+        {
+          "file": "django52-signals-conditional.json",
+          "hash": "6d0ca20281d5b2a76e9a0af1b6a6155f15e8cd623a4bf4e30870620f8255b59a"
+        },
+        {
+          "file": "django52-signals-custom.json",
+          "hash": "06e913342519ae5f57d71e68bdaa30e31937913ca220aa417a4fd1e07791e65d"
+        },
+        {
+          "file": "django52-signals-duplicates.json",
+          "hash": "47dd9c324f2c8e7d32679ee7c144252f8bd16198051e90a688955b26037b65ea"
+        },
+        {
+          "file": "django52-templates-ambiguous-url.json",
+          "hash": "4b4ae7e03e222859aed24259a32ba84d16a579c3b6a3c108dd5e937170ff32af"
+        },
+        {
+          "file": "django52-templates-conflict.json",
+          "hash": "6fa6699bc0598aa9792ae8bc58ef91069b901d4ab61887f5ebf3be76c63b0539"
+        },
+        {
+          "file": "django52-templates-custom-engine.json",
+          "hash": "7c986455525a745cc8b0760869a7d8853845ecb1180259dacc2ac449098c8201"
+        },
+        {
+          "file": "django52-templates-cycle-unicode.json",
+          "hash": "7812894ec1e699251b938224b51851a157b3a52f047a2fa0dd1fb37497df125c"
+        },
+        {
+          "file": "django52-templates-dynamic.json",
+          "hash": "67f23ac50586390304d1d6bca33a0aa02361044b7af2c8bf73eccc3091045a56"
+        },
+        {
+          "file": "django52-templates-malformed.json",
+          "hash": "ec1169a0ca2357c795786fdcffd28c63efc602d7f033d3048ef6172c8a07aac9"
+        },
+        {
+          "file": "django52-templates-tag.json",
+          "hash": "cb6d172a180b46a10badf48d75a6e967473ddfd592ef7b3ae5146c43933ed7e9"
+        }
+      ]
+    },
+    {
+      "target": "django60",
+      "profile": "static-python-declared-environment",
+      "status": "PASS",
+      "testHash": "c6a12167825f0bb721e6d11455e22cb0f2f2e85bc47e8557bbf3a357c4f390c4",
+      "oracleHash": "e177a71596343282e16c1be25f72d07534377e964ed569491bc325757f3196a0",
+      "outputHash": "7171e1821f85b8453ebd8013426ae515b40b51fa3ae8bae0b976c15de1482f61",
+      "records": [
+        {
+          "file": "django60-converters-boundaries.json",
+          "hash": "a3bc035211b43df56a2eae7b6f3a56629380fcd62cd3e75f99e697a248283c7f"
+        },
+        {
+          "file": "django60-converters-builtins.json",
+          "hash": "e4e3cd5ac194603a3881a1af6adbc45b292eea6d0130d46640f9f820fb925247"
+        },
+        {
+          "file": "django60-decorators-require_GET-false.json",
+          "hash": "e04511aec4734de73fec12008ca008190340eb052fe1d7a44c08d513e05d3a50"
+        },
+        {
+          "file": "django60-decorators-require_GET-true.json",
+          "hash": "5dcc256a14ef1e68af4a35a77f04dffcce4f5a616e76f6e59ca6500d027600fb"
+        },
+        {
+          "file": "django60-decorators-require_POST-false.json",
+          "hash": "16ac0dd98ec159affcd9f393ca94f38e887912b8a1e381a094c3248e16f89140"
+        },
+        {
+          "file": "django60-decorators-require_POST-true.json",
+          "hash": "1dcd365862e2bd946bb07782f721e54f6649263585b80a5c1011a50f03b62e3c"
+        },
+        {
+          "file": "django60-decorators-require_http_methods-false.json",
+          "hash": "288bfd4c22d940d8cc769b2666667ec0fc17f8fc45ec7ca5ad810b5a38f44389"
+        },
+        {
+          "file": "django60-decorators-require_http_methods-true.json",
+          "hash": "68a9ccbec177d967976e3b6f7be528eada160f8727a4321ae311e03a564ad17d"
+        },
+        {
+          "file": "django60-decorators-require_safe-false.json",
+          "hash": "29093d181bbc8aa359e627dd577705afea36ff826db5568c211415fb456ac87a"
+        },
+        {
+          "file": "django60-decorators-require_safe-true.json",
+          "hash": "9dd80779398022bb4a4624a70beb74edeb48d30427e74d5760c6603c4b2885f8"
+        },
+        {
+          "file": "django60-dynamic-decorator.json",
+          "hash": "c1789d152744bef2e9ef253659e12c2e5fa47179c6c4b6c03bcb7cec9a687ffe"
+        },
+        {
+          "file": "django60-dynamic-escape.json",
+          "hash": "f8f863ca317ae3d2cb256e9225a7bba12a8edfe4b1b9706336a1c9d8ff15407b"
+        },
+        {
+          "file": "django60-dynamic-format-settings.json",
+          "hash": "ecee599ee0a8465ffa5217acd258e86eb3653e9cba8d7d949d7081b5069f7a80"
+        },
+        {
+          "file": "django60-dynamic-index.json",
+          "hash": "ba440dc3b090eaa999a0c9f58171f9c0b50246645c0ee7018fa72ded25f01736"
+        },
+        {
+          "file": "django60-dynamic-mutation.json",
+          "hash": "96148428bb4ad5b0c95cfa0062070b503ae4cb082d8d94cbb21d680a3cf0d32a"
+        },
+        {
+          "file": "django60-formats-0-inline.json",
+          "hash": "a3bfe131e89f6d31dfced244f19dfeb58f5befb804645c63d2bd174a227705ae"
+        },
+        {
+          "file": "django60-formats-0-reassignment.json",
+          "hash": "6a79e7f4fbec043a9781642b32ede2c8005aad057c20d3fca69021153e9c4bc8"
+        },
+        {
+          "file": "django60-formats-1-inline.json",
+          "hash": "75ceeef30fab4fb3973f50c1ea62555ba3ddf141d37ebe6c1001ec9ab09c209b"
+        },
+        {
+          "file": "django60-formats-1-reassignment.json",
+          "hash": "a36ec48bccb50526be9e564bbf1a5c47da77162cbb1e7125d46b049741e0ce3d"
+        },
+        {
+          "file": "django60-formats-10-inline.json",
+          "hash": "050f57dd0e8f41dcdbdf0a4365926b43c1a955e6ba4a2e669e79c05148954aa5"
+        },
+        {
+          "file": "django60-formats-10-reassignment.json",
+          "hash": "8401ee02e5ddf827223138f6d4ad36d0ad6929b8c97d663d4e9ce62d508ec40c"
+        },
+        {
+          "file": "django60-formats-11-inline.json",
+          "hash": "382347fdcdc3a36ed628f402b82d4fbdc708601c1aaa39476551afaf50b391c7"
+        },
+        {
+          "file": "django60-formats-11-reassignment.json",
+          "hash": "5bdd04641dccbbfbb758232658952be5b04c39721017e69c59a9041af2ad05d3"
+        },
+        {
+          "file": "django60-formats-12-inline.json",
+          "hash": "bd7305bb04f3f5bf87ef0a6581589bfd420fa09b6c78e01e7a422047445e267b"
+        },
+        {
+          "file": "django60-formats-12-reassignment.json",
+          "hash": "8ac6be561c603edb5287eafe8bf3463cf69f0be32b08c8ccbd67429e190fdf61"
+        },
+        {
+          "file": "django60-formats-13-inline.json",
+          "hash": "dfd996e445e59cdbc4d09cd42b854e887b2e6ead1d5814a3ed0f66de50b1097a"
+        },
+        {
+          "file": "django60-formats-13-reassignment.json",
+          "hash": "e6ab5d154a6a0bd22254f1186abf7b63eae07b15d2f65bb5ba48bd73bde8db97"
+        },
+        {
+          "file": "django60-formats-14-inline.json",
+          "hash": "9c453cc955b7a0d14c06e5c7d9add07efea481cea4a163e091e11e7bf40ad56b"
+        },
+        {
+          "file": "django60-formats-14-reassignment.json",
+          "hash": "8769ca73fbc65a50f114c065798e900e66bcf0cfe8e96bab2ce52749197cfb54"
+        },
+        {
+          "file": "django60-formats-15-inline.json",
+          "hash": "b72768a334b40ee669e17bb925ac8564021089ffb0cc9aa5863b9c950b46de96"
+        },
+        {
+          "file": "django60-formats-15-reassignment.json",
+          "hash": "5a6edb64094e6190657909ed21ee10561aa2eeb613dce8330b945ac43b357fcd"
+        },
+        {
+          "file": "django60-formats-2-inline.json",
+          "hash": "896a6a1643aaf2d33cfb7a4e64fae7c9eaefd78b92f06405da52f5434952957e"
+        },
+        {
+          "file": "django60-formats-2-reassignment.json",
+          "hash": "8ba59a03bb6b65c82a6d247892521cadb76de6ab937f8ace9f465bfcc33232c2"
+        },
+        {
+          "file": "django60-formats-3-inline.json",
+          "hash": "111dfc707c7bfa16b0b223d3208b632295f96578e18e92ff8e0271dcdb3a05c2"
+        },
+        {
+          "file": "django60-formats-3-reassignment.json",
+          "hash": "e4cc1a406e834df33a2c13b72608fe77a5d407560672536cee8b53f8e1771406"
+        },
+        {
+          "file": "django60-formats-4-inline.json",
+          "hash": "020f120d275580a48244db4d7169563fa80a0a16cd5bf07e6d2530fbb10f476f"
+        },
+        {
+          "file": "django60-formats-4-reassignment.json",
+          "hash": "158456153d68c1956e764eaa415b17e98e375923f831dd6fe315f0328cede7b5"
+        },
+        {
+          "file": "django60-formats-5-inline.json",
+          "hash": "9808281ef73fbeac9e98f4cde37e7d6cb723e6413d874e537be8c8c7cf48ad93"
+        },
+        {
+          "file": "django60-formats-5-reassignment.json",
+          "hash": "2886da49f1b629fa45fd4878051a9effcd6e9b099210329b3e1684fc4393f5a5"
+        },
+        {
+          "file": "django60-formats-6-inline.json",
+          "hash": "ea8a77fdf6ee11e1efe1c0a5554340ee98385b4408b283e9e87d4b33f6f453a8"
+        },
+        {
+          "file": "django60-formats-6-reassignment.json",
+          "hash": "a236fac35eb2bdf18690cef2b6b92cd2bda1a44497135d67112367096768c9c1"
+        },
+        {
+          "file": "django60-formats-7-inline.json",
+          "hash": "be2db209da47cccd5bdf4dfbf7c64afabad7e871c346cdfe5cd023ff76a57f0a"
+        },
+        {
+          "file": "django60-formats-7-reassignment.json",
+          "hash": "31a2a17385ae848cb620697d567e1fa69a3f1e804a98d7155fbd39f8e1ef7745"
+        },
+        {
+          "file": "django60-formats-8-inline.json",
+          "hash": "6808523afc650d612855008811b0109456815c25b4e80bf22fa48f677e3a1566"
+        },
+        {
+          "file": "django60-formats-8-reassignment.json",
+          "hash": "28fbcfbe3fefba91250f62996cc59c5eacefd2f7c0009369f63c341a73be1813"
+        },
+        {
+          "file": "django60-formats-9-inline.json",
+          "hash": "2d6dbc9de9058d4a1e39ee942d2dc04f07b68fcee15e05cedce84ee58b7da4ea"
+        },
+        {
+          "file": "django60-formats-9-reassignment.json",
+          "hash": "0966e8dbc562656351fadd0842f96a271a01771fb23f9f20705f3b0e3d22498d"
+        },
+        {
+          "file": "django60-includes-0.json",
+          "hash": "86b144be53dd7b17715691ff220d34ec793363cbd9d6d06acca4959cc5864f66"
+        },
+        {
+          "file": "django60-includes-1.json",
+          "hash": "667210eb0da0bc138b670079f3b04a887498ca5ff4cd4552fb8a3b06a5aac11e"
+        },
+        {
+          "file": "django60-includes-2.json",
+          "hash": "aa0495bd8cd0719f93dd4b4c27218d59b7cdc793c4a5cf405acb54285fc699a1"
+        },
+        {
+          "file": "django60-includes-3.json",
+          "hash": "90f6d202cdade7b98364dc70a814aa7b185228592fe42cac01562fbe21beceff"
+        },
+        {
+          "file": "django60-includes-4.json",
+          "hash": "6060fbd06c7325288c951e32cf72f0420ba4bda20b17e64d7fff2216c7d9ec46"
+        },
+        {
+          "file": "django60-includes-5.json",
+          "hash": "afd87a74aa209ca1779cfde039c4738fc8aa30a8f4bd5df103e2633971860d12"
+        },
+        {
+          "file": "django60-models-custom-manager.json",
+          "hash": "45c4432f2f64a6261e691057f9d3015a813058a4386b54cbbec882b42f610479"
+        },
+        {
+          "file": "django60-models-field-operation-table.json",
+          "hash": "a00a8888ee2669d303d99a1679f693cc77b663251866e34f1b5ba12327bddc96"
+        },
+        {
+          "file": "django60-models-mutated-manager.json",
+          "hash": "5aed3f3b4a09b09b095c7ed3658fa114f844985fc7591de660793877a23998fb"
+        },
+        {
+          "file": "django60-models-relationships.json",
+          "hash": "d1e3234f3eddd6a924e4dc58e9cec650eb59deec2dd0c7e25bd3848c5e96ad29"
+        },
+        {
+          "file": "django60-routers-DefaultRouter-path-bare.json",
+          "hash": "939b3d2b51d3edf5393b6dd44a534593a34fa23baf8a5073c88aa67f00643aa7"
+        },
+        {
+          "file": "django60-routers-DefaultRouter-path-slash.json",
+          "hash": "e5770c4fe8e518d9c14620e22ac53080cb7272e623159edb1a4c11c6605b9d1d"
+        },
+        {
+          "file": "django60-routers-DefaultRouter-regex-bare.json",
+          "hash": "82a85d54930bcc87535ddc99771dcc5aa1f9b93aa563f69a208845565b43e308"
+        },
+        {
+          "file": "django60-routers-DefaultRouter-regex-slash.json",
+          "hash": "ea0c2a36122d3cf8c506199a926fd91ada500ac18928d80142e39ed84f6ac8cd"
+        },
+        {
+          "file": "django60-routers-SimpleRouter-path-bare.json",
+          "hash": "53e457de1d60b4311f4a6648e6831f3ef02a0e36268130245db42dace764bb6f"
+        },
+        {
+          "file": "django60-routers-SimpleRouter-path-slash.json",
+          "hash": "15c231be1377268024633cd0331a31786a67ae3bed9d38a2ce17488fd84b0963"
+        },
+        {
+          "file": "django60-routers-SimpleRouter-regex-bare.json",
+          "hash": "a16a247393824df1ae2918b00d34926adfce15a0c84ba17c92c4727fb6e8e11b"
+        },
+        {
+          "file": "django60-routers-SimpleRouter-regex-slash.json",
+          "hash": "8a6cc5edab3a54faab5864c3a8b5e61fc8a1ca69179a2e91335dd3b917b6ced1"
+        },
+        {
+          "file": "django60-serializers-HyperlinkedModelSerializer.json",
+          "hash": "16637423d9012cb5307809f1d7619d9ff5c844ea353137a41c2946d7086eadf8"
+        },
+        {
+          "file": "django60-serializers-ModelSerializer.json",
+          "hash": "ea957a6e548aae1234d910dc5c9f78d0cdfd1a24d3a5c816c28ab167ef6826d8"
+        },
+        {
+          "file": "django60-serializers-Serializer.json",
+          "hash": "e1de7b990e9580715fd156ecea59c01857c32cc69693dcae77ea3aa6760f742b"
+        },
+        {
+          "file": "django60-serializers-opaque-meta.json",
+          "hash": "1442a2f0c6c104780e311e5b94d27e613828679c10afea0d611e2982db9e113c"
+        },
+        {
+          "file": "django60-signals-conditional.json",
+          "hash": "bed2d3c7c8b7da7f37df9f01ad68362d244607fba1f1af3406c99d99aa8fbace"
+        },
+        {
+          "file": "django60-signals-custom.json",
+          "hash": "44a1dbf19001d16dfb72dfc200239446d34fe0de781d4d5811e4b76561711e0e"
+        },
+        {
+          "file": "django60-signals-duplicates.json",
+          "hash": "3de63d85b7fd688349681fc2e82ea7b1fb21049d5abdd9d11d85f98ee62386d2"
+        },
+        {
+          "file": "django60-templates-ambiguous-url.json",
+          "hash": "f49dea38ba766610b4388cb346d72fbd9511f800ca153ec311b1420c8de8ef90"
+        },
+        {
+          "file": "django60-templates-conflict.json",
+          "hash": "fb08280282b1b321c4f5d437378cca3593a44e8179cb74805e212cd0037349a3"
+        },
+        {
+          "file": "django60-templates-custom-engine.json",
+          "hash": "f11bbcfa6be769e13d9d307e146493b4adb191e0ff860be814413e90b3f8dd1e"
+        },
+        {
+          "file": "django60-templates-cycle-unicode.json",
+          "hash": "784313e0322cabb8010c7eb2c8d1641cc8568063886f1b9157582881d77848df"
+        },
+        {
+          "file": "django60-templates-dynamic.json",
+          "hash": "36358bf5b1c8d0612e701433b7c5b2cc54070f1b82d04e9864245590f11b728e"
+        },
+        {
+          "file": "django60-templates-malformed.json",
+          "hash": "f443744dcef13183ebd1e8f9b831e214ac63ae02b1cc9e0aff0176adcb566669"
+        },
+        {
+          "file": "django60-templates-tag.json",
+          "hash": "fee8c443d858d34a715ff9a8a22ac8b83e290808a6abdc16155d5e1e903e7873"
+        }
+      ]
+    }
+  ]
+}

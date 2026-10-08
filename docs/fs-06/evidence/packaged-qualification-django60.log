@@ -1,0 +1,20 @@
+✔ FS06 real Windows watch publishes complete settings and template edits and pause retains prior publication (60469.4502ms)
+✔ FS06 middleware hooks, app-ready and command ownership are conditional declarations (2812.4203ms)
+✔ FS06 explicit installed app association preserves FS02 owners and excludes independent child packages (5280.726ms)
+✔ FS06 qualification django60 routers (36706.8281ms)
+✔ FS06 qualification django60 formats (85282.2129ms)
+✔ FS06 qualification django60 includes (15241.0905ms)
+✔ FS06 qualification django60 decorators (20153.9637ms)
+✔ FS06 qualification django60 converters (6866.9294ms)
+✔ FS06 qualification django60 dynamic routes and decorators (15088.4084ms)
+✔ FS06 qualification django60 models and serializers (34329.3101ms)
+✔ FS06 qualification django60 signals boundaries (8630.8784ms)
+✔ FS06 qualification django60 templates boundaries and positions (20538.2058ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 315603.4748

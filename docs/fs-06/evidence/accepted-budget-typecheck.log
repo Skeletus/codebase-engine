@@ -1,0 +1,2 @@
+scripts/fs-06-binding-boundary.ts(15,131): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ 'app/views.py': string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ 'app/views.py': string; }'.

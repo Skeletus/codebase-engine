@@ -1,0 +1,109 @@
+{
+  "commit": "c338449d616f613fdcbfa4ea368cdf163a0f183d",
+  "repository": "https://github.com/encode/rest-framework-tutorial",
+  "execution": "none",
+  "source": "GitHub official commit API",
+  "status": "PASS source-only supplementary execution",
+  "qualification": "Not a capability acceptance oracle; repository dependency tuples are not rewritten",
+  "archiveHash": "ab941ce577bf913b645041f75c3059f0f8fc154629e9d028935847f26e6e8557",
+  "files": [
+    {
+      "path": "manage.py",
+      "hash": "2584aaca3dc09b581ec25fb64e40874f5d6b5b7dac3fc0c1bbcceac8edd8bd3b"
+    },
+    {
+      "path": "snippets/__init__.py",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "snippets/apps.py",
+      "hash": "a4f2e7b51513ab1838f39b4af6c25d3319007106c6d8472da85e9ae25ce959f8"
+    },
+    {
+      "path": "snippets/migrations/__init__.py",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "snippets/migrations/0001_initial.py",
+      "hash": "1290a076010f21e65aa32a24dccb2363ca0825b8b31b2e34a7007c125e214d9d"
+    },
+    {
+      "path": "snippets/models.py",
+      "hash": "8ac0d23253acee9fe6d805e310d1b4b58f00bdbdd7efe606faa3841a10e53626"
+    },
+    {
+      "path": "snippets/permissions.py",
+      "hash": "6eb4ba851f74e463b506bbb64f8a60461f5e83d59601328d10d7fa1a7b6d5bf8"
+    },
+    {
+      "path": "snippets/serializers.py",
+      "hash": "f1ea3c7b383dac2e45232f7d551f163cf6a7579a767cdf726d30b24d07bcab4d"
+    },
+    {
+      "path": "snippets/urls.py",
+      "hash": "cd8b42d54835a7fd0235860ce321df00268fbf64fe0cc65e60f0f2ef93d225fd"
+    },
+    {
+      "path": "snippets/views.py",
+      "hash": "a29eda4ee53917005aa9cabebd561400f8b556f9525ec42e6f4e94837242267f"
+    },
+    {
+      "path": "tutorial/__init__.py",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tutorial/asgi.py",
+      "hash": "352e52a172454132694bdf6b9a8cded0d964b3f0054daf603513cb5e938eb814"
+    },
+    {
+      "path": "tutorial/settings.py",
+      "hash": "2e6db72b796da6e36001fb6628ee3f6afe4f3e5fa0398b466627982160f15bc9"
+    },
+    {
+      "path": "tutorial/urls.py",
+      "hash": "3aa1e66b4421b2b00bda9a79b11f907226dcc4fe83a20e227b8f0731b61a0d59"
+    },
+    {
+      "path": "tutorial/wsgi.py",
+      "hash": "5a36543df4b5b39e71369c6952782e68bb67ea5dd59dd022b87493411c694b82"
+    }
+  ],
+  "declarations": 98,
+  "lexicalCalls": 0,
+  "registrations": 0,
+  "frameworkBindings": 1,
+  "gaps": {
+    "parse-error": 1,
+    "unsupported-syntax": 13,
+    "dynamic-expression": 66,
+    "external-boundary": 5,
+    "missing-metadata": 37
+  },
+  "capabilities": [
+    {
+      "tuple": "legacy-unqualified",
+      "state": "partial"
+    },
+    {
+      "tuple": "discovery-unqualified",
+      "state": "partial"
+    },
+    {
+      "tuple": "discovery-unqualified",
+      "state": "partial"
+    },
+    {
+      "tuple": "python-unqualified",
+      "state": "partial"
+    },
+    {
+      "tuple": "python-unqualified",
+      "state": "partial"
+    }
+  ],
+  "checks": [
+    "Source-only analysis",
+    "full/incremental equivalence",
+    "no imports/settings/setup/manage or application execution"
+  ]
+}

@@ -1,0 +1,921 @@
+{
+  "parser": "hermes-parser@0.25.1",
+  "estree": "hermes-estree@0.25.1",
+  "fixtureHash": "627db31b1cfba8543381a39f3a253c6e12dbb17039ba85a3f5f75859e98f94a6",
+  "outputHash": "ad833c895e1e54775b1a53c4527c8687ad5a9f4f22cb2af46558a84f9b5ad5ea",
+  "outputs": [
+    {
+      "id": "classic",
+      "sourceHash": "dbb11ef2eba3a7e13d5c7bf6dfdc1b3649149acaabea8f5171627a0875cd4801",
+      "outcome": "parsed",
+      "nodes": [
+        {
+          "type": "Program",
+          "start": 9,
+          "end": 118,
+          "text": "export function helper(x: number): number { return x; }\nexport function outer(): number { return helper(1); }",
+          "line": 2,
+          "endLine": 3
+        },
+        {
+          "type": "ExportNamedDeclaration",
+          "start": 65,
+          "end": 118,
+          "text": "export function outer(): number { return helper(1); }",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "FunctionDeclaration",
+          "start": 72,
+          "end": 118,
+          "text": "function outer(): number { return helper(1); }",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "TypeAnnotation",
+          "start": 88,
+          "end": 96,
+          "text": ": number",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "NumberTypeAnnotation",
+          "start": 90,
+          "end": 96,
+          "text": "number",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "BlockStatement",
+          "start": 97,
+          "end": 118,
+          "text": "{ return helper(1); }",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "ReturnStatement",
+          "start": 99,
+          "end": 116,
+          "text": "return helper(1);",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "CallExpression",
+          "start": 106,
+          "end": 115,
+          "text": "helper(1)",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "Literal",
+          "start": 113,
+          "end": 114,
+          "text": "1",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "Identifier",
+          "start": 106,
+          "end": 112,
+          "text": "helper",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "Identifier",
+          "start": 81,
+          "end": 86,
+          "text": "outer",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "ExportNamedDeclaration",
+          "start": 9,
+          "end": 64,
+          "text": "export function helper(x: number): number { return x; }",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "FunctionDeclaration",
+          "start": 16,
+          "end": 64,
+          "text": "function helper(x: number): number { return x; }",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "TypeAnnotation",
+          "start": 42,
+          "end": 50,
+          "text": ": number",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "NumberTypeAnnotation",
+          "start": 44,
+          "end": 50,
+          "text": "number",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "BlockStatement",
+          "start": 51,
+          "end": 64,
+          "text": "{ return x; }",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "ReturnStatement",
+          "start": 53,
+          "end": 62,
+          "text": "return x;",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "Identifier",
+          "start": 60,
+          "end": 61,
+          "text": "x",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "Identifier",
+          "start": 32,
+          "end": 41,
+          "text": "x: number",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "TypeAnnotation",
+          "start": 33,
+          "end": 41,
+          "text": ": number",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "NumberTypeAnnotation",
+          "start": 35,
+          "end": 41,
+          "text": "number",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "Identifier",
+          "start": 25,
+          "end": 31,
+          "text": "helper",
+          "line": 2,
+          "endLine": 2
+        }
+      ],
+      "elapsedMs": 41.096600000000024
+    },
+    {
+      "id": "enum",
+      "sourceHash": "3cce1298fcd73960f8adfb6f9d5a044a614ee6bf424b4e124c4b95bb15455084",
+      "outcome": "parsed",
+      "nodes": [
+        {
+          "type": "Program",
+          "start": 9,
+          "end": 97,
+          "text": "enum Status { Ready, Waiting }\nexport function status(): Status { return Status.Ready; }",
+          "line": 2,
+          "endLine": 3
+        },
+        {
+          "type": "ExportNamedDeclaration",
+          "start": 40,
+          "end": 97,
+          "text": "export function status(): Status { return Status.Ready; }",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "FunctionDeclaration",
+          "start": 47,
+          "end": 97,
+          "text": "function status(): Status { return Status.Ready; }",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "TypeAnnotation",
+          "start": 64,
+          "end": 72,
+          "text": ": Status",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "GenericTypeAnnotation",
+          "start": 66,
+          "end": 72,
+          "text": "Status",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "Identifier",
+          "start": 66,
+          "end": 72,
+          "text": "Status",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "BlockStatement",
+          "start": 73,
+          "end": 97,
+          "text": "{ return Status.Ready; }",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "ReturnStatement",
+          "start": 75,
+          "end": 95,
+          "text": "return Status.Ready;",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "MemberExpression",
+          "start": 82,
+          "end": 94,
+          "text": "Status.Ready",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "Identifier",
+          "start": 89,
+          "end": 94,
+          "text": "Ready",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "Identifier",
+          "start": 82,
+          "end": 88,
+          "text": "Status",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "Identifier",
+          "start": 56,
+          "end": 62,
+          "text": "status",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "EnumDeclaration",
+          "start": 9,
+          "end": 39,
+          "text": "enum Status { Ready, Waiting }",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "EnumStringBody",
+          "start": 21,
+          "end": 39,
+          "text": "{ Ready, Waiting }",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "EnumDefaultedMember",
+          "start": 30,
+          "end": 37,
+          "text": "Waiting",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "Identifier",
+          "start": 30,
+          "end": 37,
+          "text": "Waiting",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "EnumDefaultedMember",
+          "start": 23,
+          "end": 28,
+          "text": "Ready",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "Identifier",
+          "start": 23,
+          "end": 28,
+          "text": "Ready",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "Identifier",
+          "start": 14,
+          "end": 20,
+          "text": "Status",
+          "line": 2,
+          "endLine": 2
+        }
+      ],
+      "elapsedMs": 2.336999999999989
+    },
+    {
+      "id": "component",
+      "sourceHash": "e8a5edf6dfd8b16fc6cd9a4ce4bdc2db5b22da9b7fd815fce4b694ebfa21beda",
+      "outcome": "parsed",
+      "nodes": [
+        {
+          "type": "Program",
+          "start": 9,
+          "end": 96,
+          "text": "component Screen(title: string) { return <Text>{title}</Text>; }\nexport default Screen;",
+          "line": 2,
+          "endLine": 3
+        },
+        {
+          "type": "ExportDefaultDeclaration",
+          "start": 74,
+          "end": 96,
+          "text": "export default Screen;",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "Identifier",
+          "start": 89,
+          "end": 95,
+          "text": "Screen",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "ComponentDeclaration",
+          "start": 9,
+          "end": 73,
+          "text": "component Screen(title: string) { return <Text>{title}</Text>; }",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "BlockStatement",
+          "start": 41,
+          "end": 73,
+          "text": "{ return <Text>{title}</Text>; }",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "ReturnStatement",
+          "start": 43,
+          "end": 71,
+          "text": "return <Text>{title}</Text>;",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "JSXElement",
+          "start": 50,
+          "end": 70,
+          "text": "<Text>{title}</Text>",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "JSXClosingElement",
+          "start": 63,
+          "end": 70,
+          "text": "</Text>",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "JSXIdentifier",
+          "start": 65,
+          "end": 69,
+          "text": "Text",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "JSXExpressionContainer",
+          "start": 56,
+          "end": 63,
+          "text": "{title}",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "Identifier",
+          "start": 57,
+          "end": 62,
+          "text": "title",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "JSXOpeningElement",
+          "start": 50,
+          "end": 56,
+          "text": "<Text>",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "JSXIdentifier",
+          "start": 51,
+          "end": 55,
+          "text": "Text",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "ComponentParameter",
+          "start": 26,
+          "end": 39,
+          "text": "title: string",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "Identifier",
+          "start": 26,
+          "end": 39,
+          "text": "title: string",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "TypeAnnotation",
+          "start": 31,
+          "end": 39,
+          "text": ": string",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "StringTypeAnnotation",
+          "start": 33,
+          "end": 39,
+          "text": "string",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "Identifier",
+          "start": 26,
+          "end": 31,
+          "text": "title",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "Identifier",
+          "start": 19,
+          "end": 25,
+          "text": "Screen",
+          "line": 2,
+          "endLine": 2
+        }
+      ],
+      "elapsedMs": 2.5335000000000036
+    },
+    {
+      "id": "hook",
+      "sourceHash": "eca53b9f727066deb8867966edbaf756f3c12553a47cd686a598ab03870af850",
+      "outcome": "parsed",
+      "nodes": [
+        {
+          "type": "Program",
+          "start": 9,
+          "end": 120,
+          "text": "hook useValue(value: number): number { return value; }\nexport function helper(): number { return useValue(1); }",
+          "line": 2,
+          "endLine": 3
+        },
+        {
+          "type": "ExportNamedDeclaration",
+          "start": 64,
+          "end": 120,
+          "text": "export function helper(): number { return useValue(1); }",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "FunctionDeclaration",
+          "start": 71,
+          "end": 120,
+          "text": "function helper(): number { return useValue(1); }",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "TypeAnnotation",
+          "start": 88,
+          "end": 96,
+          "text": ": number",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "NumberTypeAnnotation",
+          "start": 90,
+          "end": 96,
+          "text": "number",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "BlockStatement",
+          "start": 97,
+          "end": 120,
+          "text": "{ return useValue(1); }",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "ReturnStatement",
+          "start": 99,
+          "end": 118,
+          "text": "return useValue(1);",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "CallExpression",
+          "start": 106,
+          "end": 117,
+          "text": "useValue(1)",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "Literal",
+          "start": 115,
+          "end": 116,
+          "text": "1",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "Identifier",
+          "start": 106,
+          "end": 114,
+          "text": "useValue",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "Identifier",
+          "start": 80,
+          "end": 86,
+          "text": "helper",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "HookDeclaration",
+          "start": 9,
+          "end": 63,
+          "text": "hook useValue(value: number): number { return value; }",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "TypeAnnotation",
+          "start": 37,
+          "end": 45,
+          "text": ": number",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "NumberTypeAnnotation",
+          "start": 39,
+          "end": 45,
+          "text": "number",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "BlockStatement",
+          "start": 46,
+          "end": 63,
+          "text": "{ return value; }",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "ReturnStatement",
+          "start": 48,
+          "end": 61,
+          "text": "return value;",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "Identifier",
+          "start": 55,
+          "end": 60,
+          "text": "value",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "Identifier",
+          "start": 23,
+          "end": 36,
+          "text": "value: number",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "TypeAnnotation",
+          "start": 28,
+          "end": 36,
+          "text": ": number",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "NumberTypeAnnotation",
+          "start": 30,
+          "end": 36,
+          "text": "number",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "Identifier",
+          "start": 14,
+          "end": 22,
+          "text": "useValue",
+          "line": 2,
+          "endLine": 2
+        }
+      ],
+      "elapsedMs": 1.1037000000000035
+    },
+    {
+      "id": "position",
+      "sourceHash": "2177c51ae9ab76fb802ae6cc6a70993cc1f10a5753c9c1a3cbf98d544cda4bcb",
+      "outcome": "parsed",
+      "nodes": [
+        {
+          "type": "Program",
+          "start": 11,
+          "end": 144,
+          "text": "const emoji = '😀é';\r\nexport function helper(x: number): number { return x; }\r\nexport function outer(): number { return helper(1); }",
+          "line": 2,
+          "endLine": 4
+        },
+        {
+          "type": "ExportNamedDeclaration",
+          "start": 91,
+          "end": 144,
+          "text": "export function outer(): number { return helper(1); }",
+          "line": 4,
+          "endLine": 4
+        },
+        {
+          "type": "FunctionDeclaration",
+          "start": 98,
+          "end": 144,
+          "text": "function outer(): number { return helper(1); }",
+          "line": 4,
+          "endLine": 4
+        },
+        {
+          "type": "TypeAnnotation",
+          "start": 114,
+          "end": 122,
+          "text": ": number",
+          "line": 4,
+          "endLine": 4
+        },
+        {
+          "type": "NumberTypeAnnotation",
+          "start": 116,
+          "end": 122,
+          "text": "number",
+          "line": 4,
+          "endLine": 4
+        },
+        {
+          "type": "BlockStatement",
+          "start": 123,
+          "end": 144,
+          "text": "{ return helper(1); }",
+          "line": 4,
+          "endLine": 4
+        },
+        {
+          "type": "ReturnStatement",
+          "start": 125,
+          "end": 142,
+          "text": "return helper(1);",
+          "line": 4,
+          "endLine": 4
+        },
+        {
+          "type": "CallExpression",
+          "start": 132,
+          "end": 141,
+          "text": "helper(1)",
+          "line": 4,
+          "endLine": 4
+        },
+        {
+          "type": "Literal",
+          "start": 139,
+          "end": 140,
+          "text": "1",
+          "line": 4,
+          "endLine": 4
+        },
+        {
+          "type": "Identifier",
+          "start": 132,
+          "end": 138,
+          "text": "helper",
+          "line": 4,
+          "endLine": 4
+        },
+        {
+          "type": "Identifier",
+          "start": 107,
+          "end": 112,
+          "text": "outer",
+          "line": 4,
+          "endLine": 4
+        },
+        {
+          "type": "ExportNamedDeclaration",
+          "start": 34,
+          "end": 89,
+          "text": "export function helper(x: number): number { return x; }",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "FunctionDeclaration",
+          "start": 41,
+          "end": 89,
+          "text": "function helper(x: number): number { return x; }",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "TypeAnnotation",
+          "start": 67,
+          "end": 75,
+          "text": ": number",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "NumberTypeAnnotation",
+          "start": 69,
+          "end": 75,
+          "text": "number",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "BlockStatement",
+          "start": 76,
+          "end": 89,
+          "text": "{ return x; }",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "ReturnStatement",
+          "start": 78,
+          "end": 87,
+          "text": "return x;",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "Identifier",
+          "start": 85,
+          "end": 86,
+          "text": "x",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "Identifier",
+          "start": 57,
+          "end": 66,
+          "text": "x: number",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "TypeAnnotation",
+          "start": 58,
+          "end": 66,
+          "text": ": number",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "NumberTypeAnnotation",
+          "start": 60,
+          "end": 66,
+          "text": "number",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "Identifier",
+          "start": 50,
+          "end": 56,
+          "text": "helper",
+          "line": 3,
+          "endLine": 3
+        },
+        {
+          "type": "VariableDeclaration",
+          "start": 11,
+          "end": 32,
+          "text": "const emoji = '😀é';",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "VariableDeclarator",
+          "start": 17,
+          "end": 31,
+          "text": "emoji = '😀é'",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "Literal",
+          "start": 25,
+          "end": 31,
+          "text": "'😀é'",
+          "line": 2,
+          "endLine": 2
+        },
+        {
+          "type": "Identifier",
+          "start": 17,
+          "end": 22,
+          "text": "emoji",
+          "line": 2,
+          "endLine": 2
+        }
+      ],
+      "elapsedMs": 3.1382000000000403
+    },
+    {
+      "id": "malformed",
+      "sourceHash": "b6bab4c717340cc5c99a07e8e02484d33a50b51dd52d7500331e3740dae46450",
+      "outcome": "parse-error",
+      "nodes": [],
+      "elapsedMs": 7.166099999999972
+    }
+  ],
+  "process": {
+    "rss": 70774784,
+    "heapTotal": 16900096,
+    "heapUsed": 13175568,
+    "external": 26317143,
+    "arrayBuffers": 634282
+  },
+  "scopeQualification": false,
+  "productionSupervisionQualification": false,
+  "repositoryExecution": false
+}
