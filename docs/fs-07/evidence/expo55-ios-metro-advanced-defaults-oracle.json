@@ -1,0 +1,91 @@
+{
+  "tuple": "expo55",
+  "versions": {
+    "node": "24.19.0",
+    "expo": "55.0.31",
+    "react": "19.2.0",
+    "react-native": "0.83.10",
+    "expo-router": "55.0.18",
+    "@expo/metro": "55.1.2",
+    "@expo/metro-config": "55.0.27"
+  },
+  "profile": "ios-development",
+  "contextProfile": "defaults",
+  "defaultsHash": "9049627ae3cbea259d44c276b91d4a9cb36dedf9e25184c6b4f193f97ccf7ba2",
+  "platform": "ios",
+  "resolver": "@expo/metro/metro-resolver",
+  "resolverVersion": "0.83.8",
+  "resolverEntryHash": "e3d1bcdef6dc9e3c5658e65a6c9484adfa8dedb44a8a4c2f77e769a07ac87728",
+  "fixtureHash": "cd51c85233a8c4e3430bfe5238c4169718109ea2b1c5de80259ec88a71ac30b9",
+  "outputHash": "a46eb41673916a7b84c7c294bebfee1a5494f736606ef3f20d7ee9962baddd10",
+  "outputs": [
+    {
+      "id": "root-array",
+      "type": "sourceFile",
+      "targets": [
+        "packages/array/entry.js"
+      ]
+    },
+    {
+      "id": "subpath-array",
+      "type": "sourceFile",
+      "targets": [
+        "packages/subarray/entry.js"
+      ]
+    },
+    {
+      "id": "unexported-fallback",
+      "type": "sourceFile",
+      "targets": [
+        "packages/fallback/private.ios.js"
+      ]
+    },
+    {
+      "id": "missing-export-fallback",
+      "type": "sourceFile",
+      "targets": [
+        "packages/missing/entry.js"
+      ]
+    },
+    {
+      "id": "imports-exact",
+      "type": "sourceFile",
+      "targets": [
+        "src/local.js"
+      ]
+    },
+    {
+      "id": "bare-disabled",
+      "type": "empty",
+      "targets": []
+    },
+    {
+      "id": "bare-redirect",
+      "type": "sourceFile",
+      "targets": [
+        "packages/array/entry.js"
+      ]
+    },
+    {
+      "id": "main-map",
+      "type": "sourceFile",
+      "targets": [
+        "packages/entry/replaced.js"
+      ]
+    }
+  ],
+  "warnings": [
+    "Attempted to import the module \"D:\\Repositorios Github\\cartograph\\node_modules\\.fs07-experiments\\virtual-oracle\\packages\\fallback\\private\" which is not listed in the \"exports\" of \"D:\\Repositorios Github\\cartograph\\node_modules\\.fs07-experiments\\virtual-oracle\\packages\\fallback\" under the requested subpath \"./private\". Falling back to file-based resolution. Consider updating the call site or asking the package maintainer(s) to expose this API.",
+    "The package D:\\Repositorios Github\\cartograph\\node_modules\\.fs07-experiments\\virtual-oracle\\packages\\missing contains an invalid package.json configuration. Consider raising this issue with the package maintainer(s).\nReason: The resolution for \"D:\\Repositorios Github\\cartograph\\node_modules\\.fs07-experiments\\virtual-oracle\\packages\\missing\" defined in \"exports\" is D:\\Repositorios Github\\cartograph\\node_modules\\.fs07-experiments\\virtual-oracle\\packages\\missing\\absent.js, however this file does not exist. Falling back to file-based resolution."
+  ],
+  "elapsedMs": 3.615199999999959,
+  "resources": {
+    "rss": 74924032,
+    "heapTotal": 16351232,
+    "heapUsed": 12989912,
+    "external": 9047921,
+    "arrayBuffers": 143651
+  },
+  "applicationExecution": false,
+  "configExecution": false
+}

@@ -1,0 +1,33 @@
+{
+  "tuple": "rn85-bare",
+  "platform": "android",
+  "rnVersion": "0.85.3",
+  "sourceHash": "2e31b16c7bf029963c47b3792271e6cc829c582789722af7bb7d1487f8008f25",
+  "expressionHash": "8f7bd0486af2a2f88a05fcc80445da801139f62ad36fb2f5ed8ec12eee642036",
+  "fixtureHash": "661f21ae145e789b48e1fbc2fdff91caa489b60abd521b2340af0df1e69e23a8",
+  "outputHash": "d441ce44e7e6e56b4f36f7173fd5ac615e4d62a82b11976d21dbecb438e7daa4",
+  "outputs": [
+    {
+      "id": "specific",
+      "selected": "AndroidScreen"
+    },
+    {
+      "id": "native-fallback",
+      "selected": "NativeScreen"
+    },
+    {
+      "id": "default-fallback",
+      "selected": "DefaultScreen"
+    },
+    {
+      "id": "other-platform",
+      "selected": "AndroidScreen"
+    },
+    {
+      "id": "empty",
+      "selected": null
+    }
+  ],
+  "inspectedExecution": false,
+  "scope": "approved framework-owned select expression only"
+}

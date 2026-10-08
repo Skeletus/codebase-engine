@@ -10,6 +10,12 @@ const baseline = JSON.parse(readFileSync("docs/fs-07/evidence/starting-inventory
 // Explicit FS-07 extension surfaces. All other accepted files remain hashed;
 // additions to this list require reviewing their FS-07 scope, never a glob.
 const authorized = new Set(["package.json", "pnpm-lock.yaml", "scripts/package-engine.ts", "lib/engine/parser-worker.ts", "lib/engine/adapters/composed.ts", "lib/engine/adapters/typescript.ts", "lib/engine/coordinator.ts", "lib/parser/adapters/vite-calls.ts", "lib/parser/adapters/vite-react.ts", "lib/parser/framework-bindings.ts"]);
+// Reviewed resume surfaces: protected app metadata names, deferred-language
+// resolution and shared fact charging. The before/after hashes remain retained.
+for(const file of ["lib/repository/metadata-policy.ts","lib/parser/framework-budget.ts","lib/parser/index.ts","lib/parser/resolve.ts"])authorized.add(file);
+// Shipped entry points request both qualified mobile projections. The existing
+// protocol and UI entry chooser remain unchanged; web/Python defaults do not.
+for(const file of ["scripts/sidecar.ts","scripts/engine.ts"])authorized.add(file);
 const differences = baseline.files.filter(f => !existsSync(f.path) || hash(readFileSync(f.path)) !== f.sha256);
 const regeneratedEvidence = differences.filter(f => /^docs\/fs-06\/evidence\/qualification\/[^/]+\.json$/.test(f.path) || f.path === "docs/fs-06/evidence/watch-statuses.json");
 const changes = differences.filter(f => !regeneratedEvidence.includes(f)).map(f => f.path);

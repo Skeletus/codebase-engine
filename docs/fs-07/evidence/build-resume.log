@@ -1,0 +1,39 @@
+
+> cartograph@0.1.0 desktop:prepare D:\Repositorios Github\cartograph
+> node scripts/package-engine.ts && pnpm build && pnpm desktop:verify-assets
+
+   Compiling codebase-intelligence-desktop v0.1.0 (D:\Repositorios Github\cartograph\src-tauri)
+    Finished `release` profile [optimized] target(s) in 13.26s
+Packaged Node 24.19.0 and TS/JS engine for x86_64-pc-windows-msvc
+
+> cartograph@0.1.0 build D:\Repositorios Github\cartograph
+> next build
+
+▲ Next.js 16.3.6 (Turbopack)
+- Environments: .env.local
+✓ Running next.config.ts took 1397ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 45s
+  Running TypeScript ...
+  Finished TypeScript in 5.9s ...
+  Collecting page data using 5 workers ...
+  Generating static pages using 5 workers (0/4) ...
+  Generating static pages using 5 workers (1/4) 
+  Generating static pages using 5 workers (2/4) 
+  Generating static pages using 5 workers (3/4) 
+✓ Generating static pages using 5 workers (4/4) in 2.1s
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+└ ○ /_not-found
+
+
+○  (Static)  prerendered as static content
+
+
+> cartograph@0.1.0 desktop:verify-assets D:\Repositorios Github\cartograph
+> node scripts/verify-desktop-assets.ts
+
+PASS: static HTML, 11 bundled fonts, no cloud credential/configuration markers

@@ -8,6 +8,11 @@ import { seedFrameworkCallbacks } from "../framework-budget.ts";
 import { qualifyViteCalls } from "./vite-calls.ts";
 import { validateSnapshot } from "../../engine/contract.ts";
 import { extractReactBindings } from "./vite-react.ts";
+import { rnPlatform } from "./rn-platform.ts";
+import { extractReactNavigation } from "./rn-navigation.ts";
+import { extractExpoRouter } from "./expo-router.ts";
+import { extractNativeBoundaries } from "./rn-native-boundaries.ts";
+import { extractNavigationLinking } from "./rn-linking.ts";
 
 /** RN application projection; native implementations and executable tooling are
  * never loaded. Partial capability assessments retain missing pattern proof.
@@ -24,7 +29,9 @@ export function extractReactNative(snapshot: CodeSnapshot, selection: Selection,
     const profile = metroProfile(snapshot, discovery, project, mode);
     const owned = inputs.filter(i => profile.sources.has(i.candidate.path));
     const resolve = (from: string, specifier: string) => { const result = profile.resolve(from, specifier); return result.state === "resolved" && result.category === "module" && result.targets.length === 1 ? result.targets[0] : undefined; };
-    const b = frameworkBindings(snapshot, owned, profile.variant, resolve, () => discovery.boundary.check(), "fs-07/1");
+    const base = frameworkBindings(snapshot, owned, profile.variant, resolve, () => discovery.boundary.check(), "fs-07/1");
+    const projection = rnPlatform(owned, profile.variant.platform as "android" | "ios", base.api, base.gap, () => discovery.boundary.check());
+    const b = frameworkBindings(snapshot, owned, profile.variant, resolve, () => discovery.boundary.check(), "fs-07/1", projection);
     for (const input of owned) {
       const first = input.sourceFile.getStatements()[0];
       if (first && (!profile.configSafe || !profile.tuple)) profile.gap(b.site(first), profile.tuple ? "custom-resolver" : "missing-metadata");
@@ -33,6 +40,7 @@ export function extractReactNative(snapshot: CodeSnapshot, selection: Selection,
       }
       for (const n of input.sourceFile.getDescendants()) {
         discovery.boundary.check();
+        if (!projection.active(n)) continue;
         let specifier: string | undefined, isImport = true;
         if (Node.isImportDeclaration(n) && !n.isTypeOnly() && (!n.getNamedImports().length || n.getDefaultImport() || n.getNamespaceImport() || n.getNamedImports().some(i => !i.isTypeOnly()))) specifier = n.getModuleSpecifierValue();
         if (Node.isExportDeclaration(n) && !n.isTypeOnly() && (!n.getNamedExports().length || n.getNamedExports().some(e => !e.isTypeOnly()))) specifier = n.getModuleSpecifierValue();
@@ -59,9 +67,16 @@ export function extractReactNative(snapshot: CodeSnapshot, selection: Selection,
       const frameworkNames = ["react", "react-native", "expo", "expo-router", "@react-navigation/native", "@react-navigation/native-stack"];
       const redirectedFramework = object(metadata) && (["react-native", "browser"].some(field => object(metadata[field]) && Object.keys(metadata[field]).some(key => frameworkNames.some(name => key === name || key.startsWith(name + "/")))) || frameworkNames.includes(String(metadata.name)));
       if (!redirectedFramework) {
+        extractNativeBoundaries(snapshot,discovery,project,owned,profile,resolve,projection);
+        if (profile.tuple?.startsWith("expo")) extractExpoRouter(snapshot,discovery,project,owned,profile,resolve,projection);
+        if (project.versions["@react-navigation/native"] === "7.5.0" && project.versions["@react-navigation/native-stack"] === "7.20.0") {
+          extractReactNavigation(snapshot, owned, profile.variant, resolve, () => discovery.boundary.check(), projection);
+          extractNavigationLinking(snapshot,owned,profile.variant,resolve,()=>discovery.boundary.check(),projection);
+        }
         const nativeEvents: Readonly<Record<string, readonly string[]>> = {Pressable: ["onPress", "onLongPress", "onPressIn", "onPressOut"], TouchableOpacity: ["onPress", "onLongPress", "onPressIn", "onPressOut"], Button: ["onPress"], TextInput: ["onChange", "onChangeText", "onFocus", "onBlur", "onSubmitEditing", "onEndEditing"], ScrollView: ["onScroll", "onScrollBeginDrag", "onScrollEndDrag", "onMomentumScrollBegin", "onMomentumScrollEnd"], View: ["onLayout"]};
-        extractReactBindings(snapshot, owned, profile.variant, resolve, project.versions.react, () => discovery.boundary.check(), undefined, true, "fs-07/1", {module: "react-native", events: nativeEvents});
+        extractReactBindings(snapshot, owned, profile.variant, resolve, project.versions.react, () => discovery.boundary.check(), undefined, true, "fs-07/1", {module: "react-native", events: nativeEvents}, projection);
         for (const input of owned) for (const call of input.sourceFile.getDescendantsOfKind(SyntaxKind.CallExpression)) {
+          if (!projection.active(call)) continue;
           const api = b.api(call.getExpression());
           if (api?.module === "react-native" && api.name === "AppRegistry.registerComponent") {
             const [name, provider] = call.getArguments();

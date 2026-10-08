@@ -7,7 +7,8 @@ import { createHash } from "node:crypto";
  * No filesystem-based project/config/plugin/application loader is invoked.
  */
 const digest = (value: string | Buffer) => createHash("sha256").update(value).digest("hex");
-const fixtureBytes = readFileSync("tests/fixtures/framework-support/F07-rn/metro.json");
+const advanced=process.argv.includes("--advanced");
+const fixtureBytes = readFileSync("tests/fixtures/framework-support/F07-rn/metro"+(advanced?"-advanced":"")+".json");
 const fixture = JSON.parse(fixtureBytes.toString()) as {files: string[]; packages: {root: string; json: Record<string, unknown>}[]; links: Record<string, string>; sourceExts: string[]; cases: {id: string; specifier: string; isImport?: boolean}[]};
 const manifest = JSON.parse(readFileSync("docs/fs-00/support-manifest.json", "utf8")) as {tuples: {id: string; phase: string; versions: Record<string, string>}[]};
 const root = path.resolve("node_modules/.fs07-experiments/virtual-oracle");
@@ -52,7 +53,7 @@ for (const tuple of manifest.tuples.filter(t => t.phase === "FS-07")) {
       return {id: c.id, type: outcome.type, targets: (outcome.filePaths ?? (outcome.filePath ? [outcome.filePath] : [])).map(relative).sort()};
     });
     const record = {tuple: tuple.id, versions: tuple.versions, profile: platform + "-development", contextProfile, ...(contextProfile === "defaults" ? {defaultsHash: defaults.outputHash} : {}), platform, resolver: name, resolverVersion, resolverEntryHash: digest(readFileSync(resolverPath)), fixtureHash: digest(fixtureBytes), outputHash: digest(JSON.stringify(outputs)), outputs, warnings, elapsedMs: performance.now() - started, resources: process.memoryUsage(), applicationExecution: false, configExecution: false};
-    writeFileSync(`docs/fs-07/evidence/${tuple.id}-${platform}-metro${contextProfile === "defaults" ? "-defaults-oracle" : ""}.json`, JSON.stringify(record, null, 2) + "\n");
+    writeFileSync(`docs/fs-07/evidence/${tuple.id}-${platform}-metro${advanced?"-advanced":""}${contextProfile === "defaults" ? "-defaults-oracle" : ""}.json`, JSON.stringify(record, null, 2) + "\n");
     console.log(tuple.id, contextProfile, platform, outputs.length, warnings.length);
   }
 }

@@ -28,6 +28,8 @@ export type RepositoryIndex = {
   /** Repository-relative paths that became nodes. */
   nodes: Set<string>;
   skipped: Map<string, SkippedFile>;
+  /** Protected source inventory delegated to another language session. */
+  deferredSources?: ReadonlySet<string>;
   excludedDirectories: ExcludedDirectory[];
   workspacePackages: Set<string>;
 };
@@ -100,6 +102,7 @@ export function createResolver(index: RepositoryIndex): Resolver {
   // Where a resolved path lands inside the repository decides its status.
   const classifyInRepository = (relativePath: string): ImportStatus => {
     if (index.nodes.has(relativePath)) return { status: "internal", target: relativePath };
+    if(index.deferredSources?.has(relativePath))return{status:"excluded",reason:"target-skipped",detail:`${relativePath} (syntax delegated to composed language session)`};
 
     if (isDeclarationFile(relativePath)) {
       // TypeScript prefers foo.d.ts over foo.js; at runtime foo.js is what loads.

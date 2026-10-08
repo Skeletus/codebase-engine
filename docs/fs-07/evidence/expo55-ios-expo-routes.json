@@ -1,0 +1,93 @@
+{
+  "tuple": "expo55",
+  "platform": "ios",
+  "routerVersion": "55.0.18",
+  "toolSourceHash": "a3d6723d67e557ffb73a9378c40a9394590aa87705cd6716bda955a0c2ee9c87",
+  "fixtureHash": "613fca37cae5aa9b1bb5fabe8df390e7b4cbb2149b57ef4f9e9a9459652db871",
+  "outputHash": "21dcea78827114adb1cb61682ebdbb4adbd0d6cb1ab51734f6ef175cba97b16f",
+  "outputs": [
+    {
+      "route": "(one)/shared/[id]",
+      "contextKey": "./(one,two)/shared/[id].tsx",
+      "dynamic": [
+        {
+          "name": "id",
+          "deep": false
+        }
+      ],
+      "layouts": [
+        "./_layout.tsx",
+        "./(one,two)/_layout.tsx"
+      ]
+    },
+    {
+      "route": "(two)/shared/[id]",
+      "contextKey": "./(one,two)/shared/[id].tsx",
+      "dynamic": [
+        {
+          "name": "id",
+          "deep": false
+        }
+      ],
+      "layouts": [
+        "./_layout.tsx",
+        "./(one,two)/_layout.tsx"
+      ]
+    },
+    {
+      "route": "(tabs)/settings",
+      "contextKey": "./(tabs)/settings.tsx",
+      "dynamic": null,
+      "layouts": [
+        "./_layout.tsx",
+        "./(tabs)/_layout.tsx"
+      ]
+    },
+    {
+      "route": "docs/[...path]",
+      "contextKey": "./docs/[...path].tsx",
+      "dynamic": [
+        {
+          "name": "path",
+          "deep": true
+        }
+      ],
+      "layouts": [
+        "./_layout.tsx"
+      ]
+    },
+    {
+      "route": "index",
+      "contextKey": "./index.ios.tsx",
+      "dynamic": null,
+      "layouts": [
+        "./_layout.tsx"
+      ]
+    },
+    {
+      "route": "native",
+      "contextKey": "./native.native.tsx",
+      "dynamic": null,
+      "layouts": [
+        "./_layout.tsx"
+      ]
+    },
+    {
+      "route": "users/[id]",
+      "contextKey": "./users/[id].tsx",
+      "dynamic": [
+        {
+          "name": "id",
+          "deep": false
+        }
+      ],
+      "layouts": [
+        "./_layout.tsx"
+      ]
+    }
+  ],
+  "syntheticLayoutDataRequests": 4,
+  "customerModuleLoads": 0,
+  "negative": "opposite platform ignored",
+  "inspectedExecution": false
+}

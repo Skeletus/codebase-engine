@@ -1,0 +1,16 @@
+{
+  "config": {
+    "screens": {
+      "Home": "",
+      "Detail": "detail/:id",
+      "Nested": { "path": "nested", "screens": { "Settings": "settings", "Profile": "profile/:name" } }
+    }
+  },
+  "cases": [
+    { "path": "", "screens": ["Home"] },
+    { "path": "detail/42", "screens": ["Detail"] },
+    { "path": "nested/settings", "screens": ["Nested", "Settings"] },
+    { "path": "nested/profile/alice", "screens": ["Nested", "Profile"] },
+    { "path": "unknown", "screens": [] }
+  ]
+}

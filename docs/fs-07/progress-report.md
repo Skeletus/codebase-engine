@@ -1,52 +1,33 @@
-# FS-07 progress and verification
+# FS-07 continuation report
 
-FS-07 remains incomplete. The [mandatory ledger](acceptance.md) reports every criterion separately: **0 PASS, 6 FAIL, 21 UNVERIFIED**. These are complete-criterion statuses; passing foundation checks do not waive missing framework scope. No complete qualification record or supported badge was issued.
+**FS-07 remains incomplete.** See the [complete per-criterion ledger](acceptance.md). Earlier implementation failures have been addressed for recorded TS/JS patterns; their complete qualification matrices remain UNVERIFIED. Passing subsets never waive mandatory scope.
 
 ## Implementation
 
-- Protected Metro inventory resolution and independently pinned RN/Expo defaults integrate with the existing TS/JS framework projection. Android/iOS dependencies and assets remain variant-specific.
-- Existing React projection supplies component composition, wrapper, event, hook/effect and context facts. The initial RN layer adds literal AppRegistry/provider and Expo root bindings, with native event properties and conservative dynamic/spread negatives.
-- Bundled Hermes 0.25.1 and hermes-estree 0.25.1 are integrity-pinned and licensed. The fixed adapter-owned Flow worker shares the existing Python single-worker lease and Windows job launcher. Private ASTs never enter the shared graph.
-- Leading Flow pragmas in exact RN tuples defer TS parsing. The composed language session adds validated neutral declarations, local lexical calls, original-position evidence and Metro import dependencies. Imported callable targets and unsupported type/runtime semantics remain explicit boundaries.
-- Generic composition adds an optional before-project extension stage; Python/Django ordering remains unchanged. Reused Metro profiles are idempotent across language/framework contributors. Existing snapshot v3 contracts and binding kinds suffice; no schema migration was introduced.
+The continuation preserves the Metro/React Native/Flow foundations and adds bounded Metro helper/configuration composition and advanced resolution; Android/iOS Platform projections; static/JSX and nested React Navigation; Expo root layouts, array groups, package entry roots and literal group-qualified hrefs; conservative linking maps; and JS/TS native registry/component/codegen/legacy boundaries. SDK mutation, callbacks, conditional or ambiguous navigation, unknown origins and missing generated artifacts remain explicit uncertainty. Native implementations are never analyzed.
 
-The [changed-file inventory](evidence/changed-files.json) records files added/modified relative to the accepted uncommitted FS-06 starting state, with SHA-256 hashes. The [source/package audit](evidence/package-audit.json) distinguishes intentional extension surfaces from regenerated FS-06 test evidence. The latter does not represent new FS-06 implementation changes. Laya, UI and native implementation sources remain outside the FS-07 changes.
+Flow adds conservative scopes, original positions, witnessed exports, canonical imports and stable unique imported calls only when every selected profile agrees. Complete Flow framework/native projection and interoperability remain unfinished. Private ASTs stay in the supervised worker. CLI/sidecar publish both mobile development profiles through unchanged contracts; watch/settings, stale evidence, atomic publication and SQLite reopening are covered without UI changes.
 
-## Verification results
+Snapshot remains v3. Exact Impact, frozen Laya, optional AI and completed UI are preserved. No packages were installed during this continuation; approved isolated oracles were reused.
 
-| Verification | Result | Retained evidence |
-| --- | --- | --- |
-| Complete existing phase suites and FS-01–07 fixtures | PASS: 345 tests, zero failures/skips; 387,932.7 ms | `evidence/regression.log` |
-| Focused FS-07 suite | PASS: 29 tests, zero failures/skips | `evidence/fs-07-kernel-tests.log` |
-| Typecheck | PASS | `evidence/typecheck.log` |
-| Lint | PASS | `evidence/lint.log` |
-| Production build | PASS | `evidence/build.log` |
-| Desktop static asset/privacy verification | PASS | `evidence/desktop-assets.log` |
-| Rebuilt staged Windows engine | PASS | `evidence/package-engine.log` |
-| Packaged foundation: four tuples × Android/iOS, empty PATH/denied parent egress | PASS for tested foundation subset | `evidence/packaged-foundation.json` |
-| Packaged missing manifest/corrupt manifest/corrupt parser, snapshot preservation/recovery | PASS for these three controlled faults | `evidence/packaged-foundation.json` |
-| Runtime closure/licenses and accepted-source audit | PASS outside explicitly listed FS-07 extension surfaces | `evidence/package-audit.json` |
-| Sequential locked/offline Rust verification | PASS; includes Windows job-assignment containment tests | `evidence/rust-tests-retry.log` |
+## Verification
 
-Initial Rust verification encountered a Windows executable lock while the regression suite was using parser-host.exe. Its failed log is retained in `evidence/rust-tests.log`; the sequential rerun is recorded separately in `evidence/rust-tests-retry.log`. Final Rust status must be taken from the rerun, not inferred from packaging success.
+- Frozen full regression: **361 PASS, 0 FAIL, 0 skipped**, 783,323 ms; evidence/regression-resume-final.log.
+- Standalone FS-07: **45 PASS, 0 FAIL, 0 skipped**; evidence/fs-07-kernel-tests.log.
+- Typecheck, lint, production build and desktop asset verification pass, with separate retained logs.
+- Rust: 36 passing tests, one existing ignored test; Windows parser host: two passing tests.
+- Independent controlled oracles: 192 original plus 128 advanced Metro records, eight platform records, four Expo routing records and eight linking utility records. Expo56 uses its own bundled navigation core.
+- Eight TS/JS React reuse records cover wrappers/lazy, composition, native events, hooks/effects/cleanup and context. They do not qualify missing Flow framework behavior.
+- Actual parser Windows peak commitment: 60,473,344–78,434,304 bytes for recorded probes. Source/node/fact/route limits and OOM/deadline/reaping/recovery pass for tested cases; complete ceiling matrices remain outstanding.
+- Final staged Windows and historical performance results are recorded in [resource-results.md](resource-results.md), with their limited fixture scope. These do not establish complete criteria 24/25.
+- Supplementary Expo examples stickersmash inspection pins commit `76a1dd12978a7ba54b0e318cec01a8578db3b0c0`. Upstream versions are not rewritten or treated as exact-tuple acceptance evidence.
 
-## Exact tuples and profiles
+Earlier concurrent deadline failures and an intermediate array-registration failure remain retained. The registration defect was corrected before the frozen full suite. No deadline was relaxed or failing test removed.
 
-| Tuple | React / RN | Resolver | Additional exact tooling |
-| --- | --- | --- | --- |
-| rn83-bare | 19.2.0 / 0.83.10 | Metro 0.83.8 | RN metro-config 0.83.10; Navigation native 7.5.0/native-stack 7.20.0 |
-| rn85-bare | 19.2.3 / 0.85.3 | Metro 0.84.6 | RN metro-config 0.85.3; Navigation native 7.5.0/native-stack 7.20.0 |
-| expo55 | 19.2.0 / 0.83.10 | @expo/metro 55.1.2 → resolver 0.83.8 | Expo 55.0.31; Router 55.0.18; metro-config 55.0.27 |
-| expo56 | 19.2.3 / 0.85.3 | @expo/metro 56.0.2 → resolver 0.84.5 | Expo 56.0.23; Router 56.2.21; metro-config 56.0.19 |
+## Files and remaining scope
 
-Node runtime is 24.19.0. Mobile profiles are `android-development` and `ios-development`; `flow-static` supplies neutral syntax facts, not a runtime/type inference claim. Navigation/Router package identities are installed oracle tuples, not completed capabilities. No RN Windows, web export or native implementation qualification is claimed.
+[qualification.md](qualification.md) records exact tuples/profiles. [changed-files.json](evidence/changed-files.json) hashes changes against the captured accepted FS-06 worktree, including accepted uncommitted work and the committed FS-07 foundation. Regenerated FS-06 evidence is identified separately. [package-audit.json](evidence/package-audit.json) checks reviewed integration surfaces, licenses and the production closure.
 
-Packaged synthetic foundation observations were approximately 0.67–1.52 seconds per full-plus-repeat case, 130–148 MiB observed parent RSS, and 47–50 KiB snapshots. These small-case observations are **not** resource-ceiling tests or an equivalent historical performance comparison.
+Changes cover Metro/platform/navigation/linking/Expo/native-boundary adapters, Flow/shared projection integration, CLI/sidecar profile selection, controlled fixtures/tests, qualification scripts and records. No FS-08+, native implementation analysis, inspected repository execution, Laya modification/retraining, commit or push occurred.
 
-## Remaining required work
-
-Criteria 08 and 14–18 FAIL because platform branch extraction, navigator declarations, nested navigation, Expo routes, linking configuration and native-spec boundary inventory are not implemented. All other criteria remain UNVERIFIED for their complete scope, with precise missing proof listed in the ledger.
-
-Remaining implementation includes bounded common Metro config composition, package export/redirect/import-map semantics, complete ownership/security matrices, Flow imported callable resolution and complete scope/framework semantics. Remaining qualification includes all per-pattern tuples, watch/publication/variant-switch behavior, full cancellation/fault/resource matrices, equivalent historical performance, representative pinned public repositories and complete offline Windows pattern coverage. Native Android/iOS implementation tracing remains out of scope.
-
-No FS-08 work, Laya retraining, inspected repository execution, commit or push was performed.
+Remaining mandatory work includes Flow framework/native neutral intents and interoperability; complete Metro/package/config/asset/workspace/dialect matrices; complete Navigation/Expo/action/linking conventions; parser IPC/fault and resource-ceiling matrices; representative unchanged accepted TS/JS performance comparison; full offline Windows pattern qualification; and complete per-pattern production records. The ledger details each criterion. These are engineering/verification gaps, not missing permissions. No complete support badge is issued.

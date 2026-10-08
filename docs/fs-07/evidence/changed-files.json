@@ -1,1207 +1,1899 @@
-[
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-converters-boundaries.json",
-    "change": "modified",
-    "sha256": "babae11c6263f48835b1c76c9b4889acd8c36d11793e870aadccb0fbd60719e6"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-converters-builtins.json",
-    "change": "modified",
-    "sha256": "b5975fe30011fc23cf055fabd944e6014d31868b29631fef0ab57172739af36b"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-decorators-require_GET-false.json",
-    "change": "modified",
-    "sha256": "46b68f486663e15cfe58f393c36deea3dc612c3d927ddc6bcac9a0327c495edc"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-decorators-require_GET-true.json",
-    "change": "modified",
-    "sha256": "c95aea2e5c73e294331f9d5935a52a5a1ca94146c0dd37a7b408cda17d26b50b"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-decorators-require_http_methods-false.json",
-    "change": "modified",
-    "sha256": "f973ae930b7cb9886223f6e4fcdd0f552d64ec64b66e2b33d4c70cc6857b728f"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-decorators-require_http_methods-true.json",
-    "change": "modified",
-    "sha256": "d139ab50aad661f2627c3e14f2a7123ecc06c99fc83720d2b98021f601a103e7"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-decorators-require_POST-false.json",
-    "change": "modified",
-    "sha256": "8cfd7920c283231b60da35b5bc0388bfa0e947bb27a059ffa19cb778d9e75b4f"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-decorators-require_POST-true.json",
-    "change": "modified",
-    "sha256": "023e079c5ea86b8d481cdabd62e6461f86711d89f192c51a1d410c3158dae492"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-decorators-require_safe-false.json",
-    "change": "modified",
-    "sha256": "a570d22d1a3504b990035c0841535271b5e53fc0b75ed8f6f634de94451f29e0"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-decorators-require_safe-true.json",
-    "change": "modified",
-    "sha256": "9e3b31791c9306609822848f44e624ba68443674950bd9ad860648eb785be2fc"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-dynamic-decorator.json",
-    "change": "modified",
-    "sha256": "ae4cb4432e2769572cd805b5f34c9c516ea9a90235610cc8e6267894d049cd03"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-dynamic-escape.json",
-    "change": "modified",
-    "sha256": "1ca465919747228b8efe399ff33a74f488173c7901a725a860811864bd2f7b2a"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-dynamic-format-settings.json",
-    "change": "modified",
-    "sha256": "e498f698a7328e275f242f8df85b2c5479960ee504a070dbecad63d77301738d"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-dynamic-index.json",
-    "change": "modified",
-    "sha256": "a95b0e51699a8922a4707a3a47d03fbb5049e6886c2872b720d4ecd315a58061"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-dynamic-mutation.json",
-    "change": "modified",
-    "sha256": "ebb202900ebe90092f91350df9909a87f185c43dfc1dc92d2b67ad8bf6bc9144"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-0-inline.json",
-    "change": "modified",
-    "sha256": "b787aa732f091d48d326a574044a0b38fbf47f17b021f5f99230fa10f1eb285b"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-0-reassignment.json",
-    "change": "modified",
-    "sha256": "6ff9d0955711420cab2e41c94b41fbd4a77b73e2a239c505abe5fdab90f72470"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-1-inline.json",
-    "change": "modified",
-    "sha256": "dc1d5fd5e25cbfc5cf177d9317b1d6928debc8973514a893d9e74c309165cda7"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-1-reassignment.json",
-    "change": "modified",
-    "sha256": "ab2c442aa1b94f211877b95c36a64a0a01657868a7b0616cd7f86eec212fccb2"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-10-inline.json",
-    "change": "modified",
-    "sha256": "b9a6ae5d0bbec45bb6d7401686cb1513dd2ee017a0fdc97ec327eabf59664a9c"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-10-reassignment.json",
-    "change": "modified",
-    "sha256": "f1a6888f2600ccd9a874319ab3b655084032451b0927722f614dc01eab0f36cc"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-11-inline.json",
-    "change": "modified",
-    "sha256": "24a13100cd819697ba3fe308f1f597cd9d0de45a37c6e79ca8d41c0eb2be89be"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-11-reassignment.json",
-    "change": "modified",
-    "sha256": "eda10d28413d3d8d679022464ae74d262e3c5bbb726ad7f76e3995a7966d77c3"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-12-inline.json",
-    "change": "modified",
-    "sha256": "af32672bad6a7943333341b4648a06bc15de288d2ebf08ccdc3f5edd6905f19b"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-12-reassignment.json",
-    "change": "modified",
-    "sha256": "50ec1fe70ed8ca1be97f715d61317d5fed3df06bb1724715befd28b0fa01715e"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-13-inline.json",
-    "change": "modified",
-    "sha256": "04543c8f18a34daa3d5af65a5c87461cadd1c888f1d3647b55c310fa714ab14a"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-13-reassignment.json",
-    "change": "modified",
-    "sha256": "d67ad5d1882a6fafc156d01e64e6f5c9ed641ce5116b5b4ca2704d1b01c6fe1c"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-14-inline.json",
-    "change": "modified",
-    "sha256": "bcae47a308fe80fb60833f8792b972f3afff9823a939a5b03c495331c976e59f"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-14-reassignment.json",
-    "change": "modified",
-    "sha256": "e179b12a9349aa616b806f8a4af58378d59444b3eab6286bb5a6a3ccbaa2984b"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-15-inline.json",
-    "change": "modified",
-    "sha256": "23e6100453cf0e487eb51843c63f3710df85ff39712377fbe3ecfa8cf2201595"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-15-reassignment.json",
-    "change": "modified",
-    "sha256": "2c0129fea68be92cbea9ddf458468b3fe21121920cb786fc68dcf835c71312f8"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-2-inline.json",
-    "change": "modified",
-    "sha256": "c60cf7db6fdcdb6a42cd520b5fa7f4cd33f8ca04936f83ad19086679379a0ea8"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-2-reassignment.json",
-    "change": "modified",
-    "sha256": "d7bb1886048a8dca4d4d75036c1a9a5e3fcc7ac3e3348ed1baa74d5071698078"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-3-inline.json",
-    "change": "modified",
-    "sha256": "7e9f03536939296d5c68fc14cebde7e69852ef039432fe850afdad8fc4ca048f"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-3-reassignment.json",
-    "change": "modified",
-    "sha256": "f95da0d308a7596ef50912fd9c04396d4c4d0bd520e8586eff5ab0787446a3b8"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-4-inline.json",
-    "change": "modified",
-    "sha256": "e3adbe718daf3aae6684ce3f0e06b3c8fc0d0efb2eaa910c9bbde8a75e11278d"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-4-reassignment.json",
-    "change": "modified",
-    "sha256": "8b687f33650db9de4781d3075f61a32428ad4154424c6422b3fbb41fb62458ad"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-5-inline.json",
-    "change": "modified",
-    "sha256": "7ab17aa3eb8c72ffbc7ac804db286991dc14d87b23b856fbc03dd2cc60c2e242"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-5-reassignment.json",
-    "change": "modified",
-    "sha256": "2dca0bbf04e0190bc6c502442f31646ffb371fe9cbb29e43296962da28e39997"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-6-inline.json",
-    "change": "modified",
-    "sha256": "1affb99761787aa95adbce039615fd49dcc0fc1c5c6d58cad7d0f9edec453ff3"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-6-reassignment.json",
-    "change": "modified",
-    "sha256": "2e00f642df9fa6d63ce22f0a27364f498640baa6275df5b783b5d9a743cc40ff"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-7-inline.json",
-    "change": "modified",
-    "sha256": "e6f38091ff9515e2b362469c3fa86f6786b0b9d9e15934be154b81855cb16602"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-7-reassignment.json",
-    "change": "modified",
-    "sha256": "de6a2616621f44732dd5ba967bacddb14c1aea94023717ab343cf8e2d9cb10a8"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-8-inline.json",
-    "change": "modified",
-    "sha256": "c8e194cf94e1fbe5b5497ae8f559c9e53cd65f5a02fea5244523148bb08a035c"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-8-reassignment.json",
-    "change": "modified",
-    "sha256": "6b8b4dcc40ef8375724507fb13b839bb49ea6691d66ce62da92b5bb363f3c769"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-9-inline.json",
-    "change": "modified",
-    "sha256": "e15795e022f97dcc15a48fef5ebb6ec884e8467fa7df7a7532a949ebb3435db7"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-formats-9-reassignment.json",
-    "change": "modified",
-    "sha256": "4f8f29938441e8f7cde57c9bbc3299134e6b470c9acc6f1bb1661eee716cbec6"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-includes-0.json",
-    "change": "modified",
-    "sha256": "8768b45ce9002f42f8e6870c29db0007caa0aff6b65e38fdd973a519a407ede7"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-includes-1.json",
-    "change": "modified",
-    "sha256": "24608d297f3100838a7a2733bce0a4f7f6ef38cebd0c817472124accab1c810a"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-includes-2.json",
-    "change": "modified",
-    "sha256": "8d2ceadc6dda8fe157434f0c2ac50971c6ff0cb0cc368d8a939fb5a5cb048d10"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-includes-3.json",
-    "change": "modified",
-    "sha256": "cad2ff5bc8e11b0c2b91aad28f4b35423d4752b7a5b61915b2b8aea3ffbb0f4f"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-includes-4.json",
-    "change": "modified",
-    "sha256": "2c21bdf2d198ceafe42d4e00f3e432a451fab8dc1ed0ca2ad0a22ea25a3e1537"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-includes-5.json",
-    "change": "modified",
-    "sha256": "afc7daee0c1c5d40025d3268d40106bbcc9d1bab48b2b7dc2d3765242358659e"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-models-custom-manager.json",
-    "change": "modified",
-    "sha256": "31b9a5e663a62c945712b1d4375c7be578a44fa1461059b08cc1a5a92018559a"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-models-field-operation-table.json",
-    "change": "modified",
-    "sha256": "8b00056e24b9ab1ccd10497cc00efd52d21390a3406db9c1f83c6e0a1badad21"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-models-mutated-manager.json",
-    "change": "modified",
-    "sha256": "c9cc29d7403a4ced8f2979f040855e0737a1c9399b7c7ed17633465e3e58a08e"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-models-relationships.json",
-    "change": "modified",
-    "sha256": "ebcfa3592e0f139a6d348b78cbc62b9337970e263ccf3986f8778d2fc31523dc"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-routers-DefaultRouter-path-bare.json",
-    "change": "modified",
-    "sha256": "9e22f7d7d4aa2b8b52f39a8021aaac367f1a819c220ec3481a98684d2ba70dcb"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-routers-DefaultRouter-path-slash.json",
-    "change": "modified",
-    "sha256": "91c702ad04ef8edb01bd2cf1c9af6adc328b3d20b7060876c17022ca40d3cbff"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-routers-DefaultRouter-regex-bare.json",
-    "change": "modified",
-    "sha256": "89cd21b35da06fbfde9369da84a7cf5b9ec99f0c0a6a80413b843d74742558e2"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-routers-DefaultRouter-regex-slash.json",
-    "change": "modified",
-    "sha256": "41a7eed99390fad6ce114b333997f2781b37d4293a3bb0369a1a5f4df3926711"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-routers-SimpleRouter-path-bare.json",
-    "change": "modified",
-    "sha256": "e8b6b5d0b14a9e5250984189a8885b850a0f80e3e4bdfce39794c5031ca11451"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-routers-SimpleRouter-path-slash.json",
-    "change": "modified",
-    "sha256": "c9a5336c468b11e36a5f64fee684de5c4eb6a982f75eace13ea0f69ba76063ec"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-routers-SimpleRouter-regex-bare.json",
-    "change": "modified",
-    "sha256": "865fc542decaf0eda382fe09ba5884d82c851c23c48269336d33deda94895cd7"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-routers-SimpleRouter-regex-slash.json",
-    "change": "modified",
-    "sha256": "19eacb0b054e9b4604d1806eaea6426a8c13eff0152475b1e13118f339583309"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-serializers-HyperlinkedModelSerializer.json",
-    "change": "modified",
-    "sha256": "fc0c24b0de35524c5a46e1764555a267b131c8e8408ee7a9224eafac7060209b"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-serializers-ModelSerializer.json",
-    "change": "modified",
-    "sha256": "e44ea2e24127c3661342f9ce1563219c02ba4ff209e5b79c70b7d2136436d553"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-serializers-opaque-meta.json",
-    "change": "modified",
-    "sha256": "c10da1be43c2ac63b13d0ec8393bb483375438b4df6d3b22c0fffb833351f714"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-serializers-Serializer.json",
-    "change": "modified",
-    "sha256": "a90e4a158f80a329643ce0f68b8f1656eda8ac837be79c4d470f88e774e696ab"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-signals-conditional.json",
-    "change": "modified",
-    "sha256": "f50045159538290af380afdf90b958dcaf1d5e88b263f5dfe5ae6251d73256f7"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-signals-custom.json",
-    "change": "modified",
-    "sha256": "17afa39b08b6cda08cc975d6a78f1f6e40b76de6193f4b00e9141f19f168dfe8"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-signals-duplicates.json",
-    "change": "modified",
-    "sha256": "a119ee6fe6ee7710fe23dc11fbf8d330ceef23386e8458103aeac024077d952c"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-templates-ambiguous-url.json",
-    "change": "modified",
-    "sha256": "ad8202c467b170efdb3452c6da97ba8ee400b26a26e3440be24a8fe137b0717c"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-templates-conflict.json",
-    "change": "modified",
-    "sha256": "139793b034874412344d59a5193f61c63ad1b683f28cb84e5c402cad34b8c9a6"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-templates-custom-engine.json",
-    "change": "modified",
-    "sha256": "03e7e91501861826fc9cda046101f2c2c1657793cb107121d8b2997a0b838f29"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-templates-cycle-unicode.json",
-    "change": "modified",
-    "sha256": "120056fb64ba5c47fcaae5b6c7a35e789f29046164e06c96b322e1653c9b85ca"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-templates-dynamic.json",
-    "change": "modified",
-    "sha256": "c6538a27a02164fcd5b3b1272201b2126bc70d5238f10f13686581c9eb48060d"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-templates-malformed.json",
-    "change": "modified",
-    "sha256": "b06f6bd99736fffe495e99a4d15ebba16fe2cb6ed713cadab2744dac3e838e26"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django52-templates-tag.json",
-    "change": "modified",
-    "sha256": "0a090466629bf3d991226674a4d3652afe324f75432136e7d6fd387adf7590af"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-converters-boundaries.json",
-    "change": "modified",
-    "sha256": "749ce3e9115eb773ea90aa04e32bb97a9ae78dcbf0f4073ed800351fffae7245"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-converters-builtins.json",
-    "change": "modified",
-    "sha256": "507b5883460271c2fd364f2c313150a28d31a662f78ef0394544e21cd0e84a04"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-decorators-require_GET-false.json",
-    "change": "modified",
-    "sha256": "89a2215bf378c7b979a87da22afad95d6926d7ab260c8ec50c5197eda9ca3fbb"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-decorators-require_GET-true.json",
-    "change": "modified",
-    "sha256": "9bf04139248435c0073eca5012d8d9635c3587cb57ef1008ea9647a36ec318ec"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-decorators-require_http_methods-false.json",
-    "change": "modified",
-    "sha256": "3863e32d70b7d12088a75d9353c0eb428d4d341f14c4b08cf3f6e00133651b50"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-decorators-require_http_methods-true.json",
-    "change": "modified",
-    "sha256": "704e223688b08b0ba79ee05ad323638713a068478692bde48d2b9ec10e863538"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-decorators-require_POST-false.json",
-    "change": "modified",
-    "sha256": "a4fbb1d092d41b900ff28cf2ce26f34700d51db3b4c541ddf67638444295bbd6"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-decorators-require_POST-true.json",
-    "change": "modified",
-    "sha256": "4e87d8b74848f9c6d0342fae96fccc0bf27da80e64b4ca4a97fe1fce6701d254"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-decorators-require_safe-false.json",
-    "change": "modified",
-    "sha256": "6ebaa4135a1728b8f09b75fe866a8b7fe2785c8985452d9f3ef824ace7cbd06e"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-decorators-require_safe-true.json",
-    "change": "modified",
-    "sha256": "7d02fa626aa462ec0152016d488fe2e1bb6d71095158fb1930fa81dcd76fae5d"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-dynamic-decorator.json",
-    "change": "modified",
-    "sha256": "9901e51c43c3ebd7507fbae1b0b439a1394871a2e6ab3193c77e4ff426b30326"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-dynamic-escape.json",
-    "change": "modified",
-    "sha256": "7dc906bd5f99ae3af4af4b971b6b7d0562108e85cdc55b39bdef8ff3c9425607"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-dynamic-format-settings.json",
-    "change": "modified",
-    "sha256": "8e84d634272adfe61abf46bea9749102ee3a3bcee98bd94a14826ac589520b5b"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-dynamic-index.json",
-    "change": "modified",
-    "sha256": "62352cd23fe204706ecd7c104fe2a7bc5218fcda48698d1d1ae4276fe1e3884d"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-dynamic-mutation.json",
-    "change": "modified",
-    "sha256": "8e719c278ce560debae913c25f9d938304f4760794b15d2fabdffd92d8ea1491"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-0-inline.json",
-    "change": "modified",
-    "sha256": "69bec9a086837d8fc3d429cab4ede44abf160afc9173d96174fc08aec918f50b"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-0-reassignment.json",
-    "change": "modified",
-    "sha256": "f4ca6709d1a6a3b1b65e27c8b8702efd647defa06afa832625bb041c0b268df2"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-1-inline.json",
-    "change": "modified",
-    "sha256": "fb043afc91b60f533f2d913cfeddb9fe9cdda89ade0bc729d9a869a1d16ce5f4"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-1-reassignment.json",
-    "change": "modified",
-    "sha256": "b9f0be8b85eda922a8bc76a2e0fbbc99dd3941b05fb68c14213242efede99770"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-10-inline.json",
-    "change": "modified",
-    "sha256": "cda0ef5e221ebd5462a28c256715bf7b499c4ea32bbaa67f4404811e69d6a962"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-10-reassignment.json",
-    "change": "modified",
-    "sha256": "dea4ebb4f896f6df861cf5fb751822e377ac90e06b3ce344b82e433af23a26e2"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-11-inline.json",
-    "change": "modified",
-    "sha256": "82d8013aaeee65beda227547240bcbe547479ae89312a5077617d8babc089612"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-11-reassignment.json",
-    "change": "modified",
-    "sha256": "ce0fc4ce1c17e1fa28761116a65dbdd754965df78b91fa1f6f39a229dadf19b3"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-12-inline.json",
-    "change": "modified",
-    "sha256": "5a6a2539d627ebd570d67b27119eae3d2ddf19d8ddca74b7dd73fdd8c21f97c5"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-12-reassignment.json",
-    "change": "modified",
-    "sha256": "ffc55f83bc2b66746736a0160f80eb6c8881f2aa405a58892346009945c57766"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-13-inline.json",
-    "change": "modified",
-    "sha256": "cf21d0e56ed5d80cdec0fe6ef76a00f74fbfb08279aa227cb1392d6a281d64c5"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-13-reassignment.json",
-    "change": "modified",
-    "sha256": "3a870803e522cd9037a2eeff304199998de620c13a9c6b8fe6889dc6c10402d2"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-14-inline.json",
-    "change": "modified",
-    "sha256": "0efeeafadea0216aa961a6afd0b92070c7f32d732b3bb3f2042ba30eeb342d7b"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-14-reassignment.json",
-    "change": "modified",
-    "sha256": "6ef5cedc7afa0cf496625184e883145118e5afe7efa129017a1ad3c2c52f91f7"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-15-inline.json",
-    "change": "modified",
-    "sha256": "c8096b1717ebe567b3f174c4337f1d39a5d2d5aaee352b81305260acf22b8a6f"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-15-reassignment.json",
-    "change": "modified",
-    "sha256": "20081aa0a97f3c02e2ad6305cbd3df73d69d7d824bb4687995ee88ede2b4c028"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-2-inline.json",
-    "change": "modified",
-    "sha256": "6fb97df2cbbaf599f4b5d9f521ead726f42399bd8b2e88a2b41f30ae7fc8764f"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-2-reassignment.json",
-    "change": "modified",
-    "sha256": "f6d126e2d8c589a10e66f954125851d60e180870206cadd9069f13e9b3e0314a"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-3-inline.json",
-    "change": "modified",
-    "sha256": "7a3502d51188db58c4846dea0f1e187db19e169b157662c4eefeaa8d3c646fac"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-3-reassignment.json",
-    "change": "modified",
-    "sha256": "acdc93b90c3645971ebb027305f6665c64f16e93d5824d222c94e8deb53b58fe"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-4-inline.json",
-    "change": "modified",
-    "sha256": "3a80b40383096bdd6f2fcd4aad144d838a0c56e5a1f60e313cc789df84745168"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-4-reassignment.json",
-    "change": "modified",
-    "sha256": "1310a7610df1036167ffb15f70632f5a32e9525f66c82e85432d2747eb179f0e"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-5-inline.json",
-    "change": "modified",
-    "sha256": "fdddf326798a3431cf535ae9488a346f950069c50a12ea26fcbff46bbe1b82f2"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-5-reassignment.json",
-    "change": "modified",
-    "sha256": "bd228ab5351338ec25733d57e1b8908742d247f7ed8087bb809dc44a950b0246"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-6-inline.json",
-    "change": "modified",
-    "sha256": "bbc9608a789f0da31f881d188f15972264bf4311716eec9468cfa4941f8af40d"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-6-reassignment.json",
-    "change": "modified",
-    "sha256": "7408e76ce322ce013b0a39357b19670d489b4aad9b0c56361ee3f1caeb198076"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-7-inline.json",
-    "change": "modified",
-    "sha256": "e07baca7879597cfd7a684f58d4376d939c2e16ff7870629dfb4dd06d0ccf0e2"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-7-reassignment.json",
-    "change": "modified",
-    "sha256": "aefd239591c7cda6a9ea2d11b9008dc13ac58f22c77012c04d3224abe6a6b4fc"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-8-inline.json",
-    "change": "modified",
-    "sha256": "af4f09e1a32f21efbb236e39852f055427cf96d451779157c78ab06f8aba354e"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-8-reassignment.json",
-    "change": "modified",
-    "sha256": "afb483205f6585aa0f9d2ca885c24e1282acf02c2cff03bec307002dd76ebd1a"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-9-inline.json",
-    "change": "modified",
-    "sha256": "305e1030e49374b2e10cc0bfbafe7ee06a9c786e4a3fa841594ff309489488cc"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-formats-9-reassignment.json",
-    "change": "modified",
-    "sha256": "6f8550812173b63538b23978fccc452a1a5b21865a7062dd4c6c5419d689be1f"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-includes-0.json",
-    "change": "modified",
-    "sha256": "d4efd0492227b2c483efcc137c064804e5f00f3d0f9edb703411e4deea78bfd4"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-includes-1.json",
-    "change": "modified",
-    "sha256": "cc2bdfdf90918cfa0351c83ad76f2cc6aeb49b370a1998d8a4dd234cd60f88c1"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-includes-2.json",
-    "change": "modified",
-    "sha256": "1f434236ad32daeaf326389629b6eda4aaeb5fb942fcb935e14fed9448457483"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-includes-3.json",
-    "change": "modified",
-    "sha256": "071c1dc733774ca6ee2fb7716aefd6d1952c6eb7834713ab4187fdb0ef392c70"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-includes-4.json",
-    "change": "modified",
-    "sha256": "9f219ac8040bd57da9cbbb2d22925b1977f08df88cb965428cbf7d3e8476cbc0"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-includes-5.json",
-    "change": "modified",
-    "sha256": "099f5c1d0cb4b8436f73297a866a18a2cc1b12baba220c604fd49b04c6ea7d28"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-models-custom-manager.json",
-    "change": "modified",
-    "sha256": "b7bc8eb7883c6dab4ecf18adec9b2b00ff67b780b32d9f922ac89391843a83b2"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-models-field-operation-table.json",
-    "change": "modified",
-    "sha256": "28476ac64c79fa520792a6c58d612f76c800f01e2cf6fc2387cfaf2151823975"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-models-mutated-manager.json",
-    "change": "modified",
-    "sha256": "a732344802a2b25cbdf1da07af4df16f6699b997865caeb0e004dbc5bef1f226"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-models-relationships.json",
-    "change": "modified",
-    "sha256": "4983ec0d37df0fb11219e87f82848d691ce7914f1ce833b7730b57e3a140b1a7"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-routers-DefaultRouter-path-bare.json",
-    "change": "modified",
-    "sha256": "8078035635e9668e20064184bb2b1845362b2ad56dedd8a60e7b9effb96326b7"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-routers-DefaultRouter-path-slash.json",
-    "change": "modified",
-    "sha256": "ca041f38222ff7eb3b6f41fa20dfd91b71bcaef67b3226edae3417f44dcebb86"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-routers-DefaultRouter-regex-bare.json",
-    "change": "modified",
-    "sha256": "1501e027cb0387140ce7f0ea5c22435c3d9c16ddfa41ae2d4f13f5166ae918a7"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-routers-DefaultRouter-regex-slash.json",
-    "change": "modified",
-    "sha256": "540cac7324fabcb3f526448c1b2048c5c49605d61cd46d8e5b9d5f09ae1ea509"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-routers-SimpleRouter-path-bare.json",
-    "change": "modified",
-    "sha256": "de480ba1bd05d85be10d82df4722fe3a524518b90ecc152efff6a55b559e6497"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-routers-SimpleRouter-path-slash.json",
-    "change": "modified",
-    "sha256": "f2379a5fb31ae20c86e58520f925336abe6d53d84ac40f0621968781c7b6d52e"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-routers-SimpleRouter-regex-bare.json",
-    "change": "modified",
-    "sha256": "35bd91f13421d9f4bed73e9742fac7e8251b78cb99a9b569a44040d5f548d199"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-routers-SimpleRouter-regex-slash.json",
-    "change": "modified",
-    "sha256": "e541ba3b5115733da1faff4384545e237e08490f1eb6fbf0f45e2031ca2c9372"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-serializers-HyperlinkedModelSerializer.json",
-    "change": "modified",
-    "sha256": "99d9061ee0bc04ed7d246682af4331d61f5369d45d33c64d88f87e5b7cb67c09"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-serializers-ModelSerializer.json",
-    "change": "modified",
-    "sha256": "c6ff8deea49255d6f3abde3eb3f2d266ab88a83378734c4e7e1508b7e7b1c778"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-serializers-opaque-meta.json",
-    "change": "modified",
-    "sha256": "73ff07af78b59ad026e4c09cb65b918dc024210b54020302d02e2bab9e1979ec"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-serializers-Serializer.json",
-    "change": "modified",
-    "sha256": "35ed66f934eaccbf804175b448100bf5bff7351af0333f7065d3ffeb32eebaaf"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-signals-conditional.json",
-    "change": "modified",
-    "sha256": "2a58a447659bc4d65de0a9e2db9bff30cf70406c5d928e27c66ce8c34cfe1a3a"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-signals-custom.json",
-    "change": "modified",
-    "sha256": "20c452d779217ade9b724d1229a5044c18b3d65f4aaba176c0fe67d088139354"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-signals-duplicates.json",
-    "change": "modified",
-    "sha256": "eada5576eb131680fa0d4d8fd5fa11aba8963a63ce78cd155eb4b70bc0418dcb"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-templates-ambiguous-url.json",
-    "change": "modified",
-    "sha256": "7074112cf02bbdc808eeb76090fa27c57363647474a10a433d7c88f3c04188f4"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-templates-conflict.json",
-    "change": "modified",
-    "sha256": "163116006a827ad254910bcd395b8ba56bf6c3611632f3324c18cd2a5efb4803"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-templates-custom-engine.json",
-    "change": "modified",
-    "sha256": "af61b5eae6d08ec6281444f929b5be2057e85892334c5d2e55bf6496ed961d01"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-templates-cycle-unicode.json",
-    "change": "modified",
-    "sha256": "5a6e26d0048e5a734dd9cd723b873dbc6f8e237cb5956510a99f8c9f3b1b7996"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-templates-dynamic.json",
-    "change": "modified",
-    "sha256": "e4e40d52d8b5a422436b2c562e0a426123044796fea38ca9467c37a7caa9e11d"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-templates-malformed.json",
-    "change": "modified",
-    "sha256": "d03b315a97c5c8b10813e9678f19676b8467aae6e8cb0b0104010750a2e9acb5"
-  },
-  {
-    "path": "docs/fs-06/evidence/qualification/django60-templates-tag.json",
-    "change": "modified",
-    "sha256": "25e26bcb02c890f0f80c3a14d0fc204c02c4cb3432e750ba92807e59ae710f5d"
-  },
-  {
-    "path": "docs/fs-07/acceptance.md",
-    "change": "added",
-    "sha256": "3dfd352901400a6fcb5138f5f5da95fabbfee9f89f8fd2f3ed726776891955e0"
-  },
-  {
-    "path": "docs/fs-07/decisions.md",
-    "change": "added",
-    "sha256": "f9def028756f750df7d5fb2f62b989ac8ccf166968eb80b443eafe76c0d30b2b"
-  },
-  {
-    "path": "docs/fs-07/evidence/build.log",
-    "change": "added",
-    "sha256": "6812143a17798a1594558ae70effbd9e350dd8a9b4bff2fb202026e4412dc1ad"
-  },
-  {
-    "path": "docs/fs-07/evidence/desktop-assets.log",
-    "change": "added",
-    "sha256": "86dbb973e37188228f652a04f09e0c1c3421efd77b40e357a7c33e2b38ac5a90"
-  },
-  {
-    "path": "docs/fs-07/evidence/expo55-android-metro-defaults-oracle.json",
-    "change": "added",
-    "sha256": "9093a0c98b3100b2e1a37e4747721d8055d8789c00490185d34eff298f130474"
-  },
-  {
-    "path": "docs/fs-07/evidence/expo55-android-metro.json",
-    "change": "added",
-    "sha256": "30ea6db7df08370feb8ea048fd288f710d9ae931934b7da06ca8b8cdc5623cc0"
-  },
-  {
-    "path": "docs/fs-07/evidence/expo55-ios-metro-defaults-oracle.json",
-    "change": "added",
-    "sha256": "ec4a0ad7790ad4d52c5958c7df52db154af57d83551a3cc290f0fcdc3e47eb3a"
-  },
-  {
-    "path": "docs/fs-07/evidence/expo55-ios-metro.json",
-    "change": "added",
-    "sha256": "67c4c871929df35f0e3dd992ade1500df6d20b0220e0b6da83956ce97b5109b6"
-  },
-  {
-    "path": "docs/fs-07/evidence/expo55-metro-defaults.json",
-    "change": "added",
-    "sha256": "72a72af6ab68834b76cfce61aebdef64c6228f13f48d232aabc6121f753b35a8"
-  },
-  {
-    "path": "docs/fs-07/evidence/expo56-android-metro-defaults-oracle.json",
-    "change": "added",
-    "sha256": "e8bbdbd10159730b8bdb7ec1a2e517f90a777eaed624a671dbe25b6efd3da87a"
-  },
-  {
-    "path": "docs/fs-07/evidence/expo56-android-metro.json",
-    "change": "added",
-    "sha256": "aa422b926eaaab4f93dfa40c40f2b4efc80ab76cc4ee3aab221341375cb23b02"
-  },
-  {
-    "path": "docs/fs-07/evidence/expo56-ios-metro-defaults-oracle.json",
-    "change": "added",
-    "sha256": "e0717924616bc89e0f7bf61eb0bc5cff7e8cfcced29c81798b180bfe73a1cf91"
-  },
-  {
-    "path": "docs/fs-07/evidence/expo56-ios-metro.json",
-    "change": "added",
-    "sha256": "20668f07213d07f440ad7e24f97b56c4fbe21e6146e2c645f2e3b1f4c11ceb7f"
-  },
-  {
-    "path": "docs/fs-07/evidence/expo56-metro-defaults.json",
-    "change": "added",
-    "sha256": "05819e752675f99a6ee31615ba7006b97ee50979d15f0177fb25b2886b901ee6"
-  },
-  {
-    "path": "docs/fs-07/evidence/fs-07-kernel-tests.log",
-    "change": "added",
-    "sha256": "477767d3e5e30fd146b138601470e895f969698798b7b1a9041db65f1375c514"
-  },
-  {
-    "path": "docs/fs-07/evidence/hermes-syntax-experiment.json",
-    "change": "added",
-    "sha256": "92fc210a8f7c2a3f8cf3896befd41602422dcdc93771a32a93fbf2581ec2685c"
-  },
-  {
-    "path": "docs/fs-07/evidence/install-expo55.log",
-    "change": "added",
-    "sha256": "27b8f1daee31fe0fe222e05a42dd02ec73b385edbeacf7d68bd615d6e970a4f7"
-  },
-  {
-    "path": "docs/fs-07/evidence/install-expo56.log",
-    "change": "added",
-    "sha256": "b588d8c264b0f57130762e2c893544b1ee12bb3754b2fc51935eacaf5f19f6b9"
-  },
-  {
-    "path": "docs/fs-07/evidence/install-rn83-bare-config.log",
-    "change": "added",
-    "sha256": "c98333c052803535428129189cb0ce8688d6c902d86e47006685519ebd2b4a70"
-  },
-  {
-    "path": "docs/fs-07/evidence/install-rn83-bare.log",
-    "change": "added",
-    "sha256": "6b146eced07088ac964581ee20b0ea020053c7cbe1e0e855dc76e33868967392"
-  },
-  {
-    "path": "docs/fs-07/evidence/install-rn85-bare-config.log",
-    "change": "added",
-    "sha256": "4a607f3b2efa4e32de4d41ff4eafadacc9b52348be8d4f30207f41f007c59c8f"
-  },
-  {
-    "path": "docs/fs-07/evidence/install-rn85-bare.log",
-    "change": "added",
-    "sha256": "d1dceec50ad2cfa62da8fc739873c581c2c0791c98851d07119d5047e216c7d6"
-  },
-  {
-    "path": "docs/fs-07/evidence/lint.log",
-    "change": "added",
-    "sha256": "38e69076c8b19c473efccebf7857ec23abdef569180efd41811d8f4a664b15fe"
-  },
-  {
-    "path": "docs/fs-07/evidence/oracle-locks.json",
-    "change": "added",
-    "sha256": "1324abadd751f2d904f7b79500fdf17dbcc13cef7edb7d0b2d01f6f68f0592a1"
-  },
-  {
-    "path": "docs/fs-07/evidence/package-audit.json",
-    "change": "added",
-    "sha256": "e02cfa4edaf2cf4035c23b4fd40eed2bbe5c32ec3cf126d3c52f35e837a7f7bf"
-  },
-  {
-    "path": "docs/fs-07/evidence/package-audit.log",
-    "change": "added",
-    "sha256": "4adfc045727e9f4b7e2ce29af9cb3936b9a39c1db57cf02ee15534d24b11ca0c"
-  },
-  {
-    "path": "docs/fs-07/evidence/package-engine.log",
-    "change": "added",
-    "sha256": "3c33ed19e8b786ec223b0117a09b31d07ce1f47ded77196a6e59156ae6a60e4c"
-  },
-  {
-    "path": "docs/fs-07/evidence/packaged-foundation.json",
-    "change": "added",
-    "sha256": "82b18d8644707d721bdd4c5af7b72ffe5bdd704543fdcf1f1b0bce0e65806087"
-  },
-  {
-    "path": "docs/fs-07/evidence/packaged-foundation.log",
-    "change": "added",
-    "sha256": "c6f90aa5e349ebee5859038d6e1ae5016bf7629e0ea2b8a7967a9995e958edc0"
-  },
-  {
-    "path": "docs/fs-07/evidence/regression.log",
-    "change": "added",
-    "sha256": "910e33e91ad5c2a11304ef9861f98c092fc9a1829004bc15eceec5d9448f0f3d"
-  },
-  {
-    "path": "docs/fs-07/evidence/rn83-bare-android-metro-defaults-oracle.json",
-    "change": "added",
-    "sha256": "39a3bdae0c334616f86b1fafcd40ff602de3855b6066e09506da7a596a3f048c"
-  },
-  {
-    "path": "docs/fs-07/evidence/rn83-bare-android-metro.json",
-    "change": "added",
-    "sha256": "96766e13fdf53a28fede44655495ed1f89890dd31b3f6eecba45368302e9ed21"
-  },
-  {
-    "path": "docs/fs-07/evidence/rn83-bare-ios-metro-defaults-oracle.json",
-    "change": "added",
-    "sha256": "86be4399ce0acceae3c3eea0dd333a30837d004dcab2ea1858e14c02e6a3cb84"
-  },
-  {
-    "path": "docs/fs-07/evidence/rn83-bare-ios-metro.json",
-    "change": "added",
-    "sha256": "d03b52bcdbdcc8396009050789c203141bb32bb32823756839a356711e780c5e"
-  },
-  {
-    "path": "docs/fs-07/evidence/rn83-bare-metro-defaults.json",
-    "change": "added",
-    "sha256": "824da5e8d8cc411bc55c7601ae58dbfc4b2cf409b2839a249c2a7754e3f70c01"
-  },
-  {
-    "path": "docs/fs-07/evidence/rn85-bare-android-metro-defaults-oracle.json",
-    "change": "added",
-    "sha256": "30027ef1afd6b7bf22cd0c0afc358be9c8ec07ed779ecdf1bf7dbad4d55cee02"
-  },
-  {
-    "path": "docs/fs-07/evidence/rn85-bare-android-metro.json",
-    "change": "added",
-    "sha256": "c0926169b22e9701320c338d9a98e164e17f47dfaafcda2667948d58636aa226"
-  },
-  {
-    "path": "docs/fs-07/evidence/rn85-bare-ios-metro-defaults-oracle.json",
-    "change": "added",
-    "sha256": "341cc7c659b0cde7bc5fed63b738f8f35a515ed9d937a1776822e28e0f303434"
-  },
-  {
-    "path": "docs/fs-07/evidence/rn85-bare-ios-metro.json",
-    "change": "added",
-    "sha256": "099a7e7317a6bf880e09a3b72a730423e71cbad8b59a7d53cf1b34b53db0d5c0"
-  },
-  {
-    "path": "docs/fs-07/evidence/rn85-bare-metro-defaults.json",
-    "change": "added",
-    "sha256": "5e8f16e99e42e864d3179e89652b54fcd11bebab9e8cedca365c54a641e3fb2f"
-  },
-  {
-    "path": "docs/fs-07/evidence/rust-tests-retry.log",
-    "change": "added",
-    "sha256": "3b5f9055aa2a4db2cefa4c86a9aa8d26c1662533e6ff680f06b204523f4c53e4"
-  },
-  {
-    "path": "docs/fs-07/evidence/rust-tests.log",
-    "change": "added",
-    "sha256": "3d7864238e32f9199412ce91e4f88bfc14234cde294e2c69f19923e3097be635"
-  },
-  {
-    "path": "docs/fs-07/evidence/shared-contract-regression.log",
-    "change": "added",
-    "sha256": "591997aa775f72ee0b05b9c1b74f53bda489894184056d46f52260509404ad6a"
-  },
-  {
-    "path": "docs/fs-07/evidence/starting-inventory.json",
-    "change": "added",
-    "sha256": "0dce0f414c5a79431c15a414ab1be5136a480b1d589929aba148ee206c8cb6bf"
-  },
-  {
-    "path": "docs/fs-07/evidence/typecheck.log",
-    "change": "added",
-    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-  },
-  {
-    "path": "docs/fs-07/licenses/hermes-estree-MIT.txt",
-    "change": "added",
-    "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
-  },
-  {
-    "path": "docs/fs-07/licenses/hermes-parser-MIT.txt",
-    "change": "added",
-    "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
-  },
-  {
-    "path": "docs/fs-07/progress-report.md",
-    "change": "added",
-    "sha256": "ad8e5f217d76e83f9cca1dd9df9c782d62d20d8329d265aecc7e870773836d11"
-  },
-  {
-    "path": "docs/fs-07/qualification.md",
-    "change": "added",
-    "sha256": "df211b0b570e22a7bd1b50027f931b7095a01151901d9f8430d5fa9bff89ae9f"
-  },
-  {
-    "path": "docs/fs-07/README.md",
-    "change": "added",
-    "sha256": "26c767c222c34d55394746f29151b169c91364f470718162cb461ad6365c958d"
-  },
-  {
-    "path": "lib/engine/adapters/composed.ts",
-    "change": "modified",
-    "sha256": "f4bedf3188691f91f40b2cb1772ab7797ead35d0d617e1902c90ea50ab6242d9"
-  },
-  {
-    "path": "lib/engine/adapters/flow-contract.ts",
-    "change": "added",
-    "sha256": "85598219a77e2e9f439c389615ff38160ceb5bf94eb5cf6d243cf56e3b8bf9a0"
-  },
-  {
-    "path": "lib/engine/adapters/flow-resource-pin.ts",
-    "change": "added",
-    "sha256": "9e0591256d4677e55372908c82f6e6c96cae7d2d96975bc4da8ecf9ade2f5123"
-  },
-  {
-    "path": "lib/engine/adapters/flow-runtime.ts",
-    "change": "added",
-    "sha256": "f5f74744767a95d2ee86f5a133507b8977aa2c686bed3b926a600f53ff1fc867"
-  },
-  {
-    "path": "lib/engine/adapters/flow-syntax.ts",
-    "change": "added",
-    "sha256": "0e21bc3eabf8d9ea220b67a70233cce12da7b8ed644ddc13f3adfdd226a77e81"
-  },
-  {
-    "path": "lib/engine/adapters/flow-worker.ts",
-    "change": "added",
-    "sha256": "25bb63017968a07fc4c76e5cac8b993b98abf73c896a71d48107fc6471fa5091"
-  },
-  {
-    "path": "lib/engine/adapters/flow.ts",
-    "change": "added",
-    "sha256": "d8d577aec7c8347f844c42c6981f19e83bb7ca27367bbebcbf65526ae810f628"
-  },
-  {
-    "path": "lib/engine/adapters/typescript.ts",
-    "change": "modified",
-    "sha256": "68c317745fd412f3cd698a7ca122b2d206ffcb04dd3bc14767881c860f9de3e8"
-  },
-  {
-    "path": "lib/engine/assets/flow/runtime.json",
-    "change": "added",
-    "sha256": "3db34e3b74f331f4f287f4e1f315b0c16554cb9a17ada6400449591124ca1559"
-  },
-  {
-    "path": "lib/engine/coordinator.ts",
-    "change": "modified",
-    "sha256": "bab38fd35dad8981409d2d6e9396145463077be702f77e9a14a59e74034aeca6"
-  },
-  {
-    "path": "lib/engine/parser-worker.ts",
-    "change": "modified",
-    "sha256": "e1f37829241241eb2c47cdadd2198928e39ba86ad4d775d5d490c2043ee7bbb4"
-  },
-  {
-    "path": "lib/parser/adapters/metro-defaults.ts",
-    "change": "added",
-    "sha256": "7b3f3f98bc0784d4c2f5d1ea434d7238e3dec0fef15a1b16a8aa9ba008cf0675"
-  },
-  {
-    "path": "lib/parser/adapters/metro-profile.ts",
-    "change": "added",
-    "sha256": "0b1f5ff3589af2fdf872774c2bf40f27a95ce731a4b28d820d17041a01f99077"
-  },
-  {
-    "path": "lib/parser/adapters/metro-resolution.ts",
-    "change": "added",
-    "sha256": "dbd993e46a24a40753208b6786aea1cb3a1f8338777fd798773c6548b7138905"
-  },
-  {
-    "path": "lib/parser/adapters/react-native.ts",
-    "change": "added",
-    "sha256": "249cc92930734b8d9cf3d0b9e0bac562f898d7aaed29b0b9a396fd9fcc242cce"
-  },
-  {
-    "path": "lib/parser/adapters/vite-calls.ts",
-    "change": "modified",
-    "sha256": "01d1b5fe73f73a506a01d4ba1e46c97bc57a56b641539ee1d40d6a6f1d553929"
-  },
-  {
-    "path": "lib/parser/adapters/vite-react.ts",
-    "change": "modified",
-    "sha256": "d3c0651aed62beecfb40b2892306653f6abc3129faf1c57bee790ccfb4cbdf30"
-  },
-  {
-    "path": "lib/parser/flow-dialect.ts",
-    "change": "added",
-    "sha256": "c04c2aa515c8550511042c71a5e26978247e0dfa8811a78dcf6e6cb3012200e8"
-  },
-  {
-    "path": "lib/parser/framework-bindings.ts",
-    "change": "modified",
-    "sha256": "0449bc9a6281ec211fcc9849b62c977dfcf8b1b162917eb72e9a4793a8687ac9"
-  },
-  {
-    "path": "package.json",
-    "change": "modified",
-    "sha256": "d4796ffc5745b27157a3ece610a2bf04cf4bdedfe5428b880483c5447c4292be"
-  },
-  {
-    "path": "pnpm-lock.yaml",
-    "change": "modified",
-    "sha256": "08912b2e0f687cacd9ce5f54d25bdc5d73de7eca807d28316ffd2d1e4eeff67c"
-  },
-  {
-    "path": "scripts/fs-07-baseline.ts",
-    "change": "added",
-    "sha256": "2ce4a04b5756807442c5983ece7ad45a4b36acca5ffa1a75e88037b8cc8664b3"
-  },
-  {
-    "path": "scripts/fs-07-hermes-experiment.ts",
-    "change": "added",
-    "sha256": "95fa70db2ae055e66d513c43baa5892dbdff8466741c1773a583a84e04008dc2"
-  },
-  {
-    "path": "scripts/fs-07-metro-defaults.ts",
-    "change": "added",
-    "sha256": "9d853f2eafe63687377e541c9dec0a9d48992f88eef0db7a25ec37f946897c2d"
-  },
-  {
-    "path": "scripts/fs-07-metro-oracles.ts",
-    "change": "added",
-    "sha256": "8e74b2ae8f32075a70f1160aff1e2538c308a32b0f25ec5ad87a858ebe4765b2"
-  },
-  {
-    "path": "scripts/fs-07-package-audit.ts",
-    "change": "added",
-    "sha256": "3090dc61e6ae06147b2c430c2ffcc646f6a7cfe0e255b49595da186d45f9f732"
-  },
-  {
-    "path": "scripts/fs-07-packaged-foundation.ts",
-    "change": "added",
-    "sha256": "742a9eaf432d56c9f9a413f3d76a3cd08e5aa972223533e0392b097de67cf43d"
-  },
-  {
-    "path": "scripts/fs-07-parser-resources.ts",
-    "change": "added",
-    "sha256": "80e8bedac0df3dc013517b310158f42413d0aebdf712dde96dcff6dbae78a9e2"
-  },
-  {
-    "path": "scripts/fs-07-pin-metro-defaults.ts",
-    "change": "added",
-    "sha256": "2e6c4b2d0db73ebb3814e80eccf6d2eeef755caf79ad8db7d55561a8600ed92d"
-  },
-  {
-    "path": "scripts/package-engine.ts",
-    "change": "modified",
-    "sha256": "0939b9a8781c8623c2fcc85f073c90ee74e5c13854fb0c7622f55423520582ba"
-  },
-  {
-    "path": "tests/fixtures/framework-support/F07-rn/flow.json",
-    "change": "added",
-    "sha256": "627db31b1cfba8543381a39f3a253c6e12dbb17039ba85a3f5f75859e98f94a6"
-  },
-  {
-    "path": "tests/fixtures/framework-support/F07-rn/metro.json",
-    "change": "added",
-    "sha256": "38078e691e65c80deef24675f48d7b58bc6f1838c1320d8f83f3c971888e44c2"
-  },
-  {
-    "path": "tests/framework-support/fs-07.test.ts",
-    "change": "added",
-    "sha256": "197122f114bacef37955eb2bf82c7968120c52e7b9f7dda4bca79c26b7343c5e"
-  }
-]
+{
+  "acceptedFS06Head": "34517b6ae82d029df911bc63066b13c896f1dc94",
+  "currentHead": "349c40839acb03508f7a983bd06aa69bbaeef6e5",
+  "basis": "Captured accepted FS-06 worktree, including its accepted uncommitted changes",
+  "changes": [
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-converters-boundaries.json",
+      "sha256": "6230d77733bb57f49bf60676deb26203b18a98203bf93890a71773110eea81bf",
+      "acceptedHash": "7ade9cd21225a6947ae99060a61466fccaf5cf4aeb6dee4f3d2f4960a477d623"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-converters-builtins.json",
+      "sha256": "81f450784fe60753433b58ca35e8bec47abb2f56731c6f49856d39a70eeeb0cb",
+      "acceptedHash": "195cb328a0e2e71cd65b36b85a1db090127397831d79fb1e8d0e2a292ac1b3e9"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-decorators-require_GET-false.json",
+      "sha256": "38c77138fb8ce87ae65ee6e3e5850e50d7cecc0fac79d8701ee65fccafd0efb7",
+      "acceptedHash": "512d2314c84f4c93bbaca46461807c6aba1b09fdf5127efc73f207a3055e1157"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-decorators-require_GET-true.json",
+      "sha256": "5d00a93353973adc3b74fee22340d354e945bb3d0957bc2461d45485f9a866f4",
+      "acceptedHash": "6aa3936963a16c8d7c2e5c47dafb3bbdbbef38a7af9556b6da16b0743eeb0f32"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-decorators-require_POST-false.json",
+      "sha256": "6552b89ebe0b66aca232ba19b773008631db4797cf41934e298f4cf9eb8611c1",
+      "acceptedHash": "f39be3210a85b9e36a3064c1e5e2efe7d3d6b4258c1e675db2071ec76c3affbb"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-decorators-require_POST-true.json",
+      "sha256": "a5e6db8b2004e72afe2b3f4928369671a5ea39ef1725568ba44027479c87f0d9",
+      "acceptedHash": "6776d3f070267d677fcc1eb49fdc3d5ad3e9e818a13d4c69b5c434aab09acdca"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-decorators-require_http_methods-false.json",
+      "sha256": "589ba5ff13b2efdf6e0e8fe673bf59a9ed1b7d84f0da493b02575ba5289b4725",
+      "acceptedHash": "f070522987c35d5425a681a5ace72fddcda1b0574e16094b808b4783e98bf03d"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-decorators-require_http_methods-true.json",
+      "sha256": "78ae45dfb1ff3a6c69cefaba0bbb32d012ab989aa4638f7c9fb954a8b452d300",
+      "acceptedHash": "e90567766d1b2aa7a7ae53347efd59e0ed2034fd5ec5d4acdc7e7663565a758c"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-decorators-require_safe-false.json",
+      "sha256": "5042d8c9f9d718ffb07bb00f7e1b4c08c75ec6ce20aed029267aa100245cf8ea",
+      "acceptedHash": "606410e69b145394cb81aed3905004c2b833c51454dc85a0fe2ab8cc9ef8948a"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-decorators-require_safe-true.json",
+      "sha256": "c6dca432f3d7daa2a6fd3cabeb2c57ef14e4e34d1112511a86d55a25240892e1",
+      "acceptedHash": "337e4bc552821aa49561247cb967702ed668359a358e02a9e87a1f851b443acf"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-dynamic-decorator.json",
+      "sha256": "d0f761713d867e4561a0aef4a2be926b0ab61459c2e439e1b75c81509d0e30ec",
+      "acceptedHash": "19fd97998ae0331cfe9f921de27182bade363f44624489e10d03065a1feacf47"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-dynamic-escape.json",
+      "sha256": "f464d4a1b05579210fc88c604118a9ffb5cd509145e6a018e6038966b7e310ac",
+      "acceptedHash": "c6f15593d6a78dcaf137d96c42c498655cf90d4b57123b25eac941bac2e10c6e"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-dynamic-format-settings.json",
+      "sha256": "711652938a751b7e1131669e0d030f16ed3c8179b4fb6dcfd0f5b8f13230e9b7",
+      "acceptedHash": "bb3ac93f0426709eae15b11068c0f06f17883e193c6008a26e7d7aeb841518c0"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-dynamic-index.json",
+      "sha256": "2177da5f0de3cecf1e75accf02be7437f76c37f141e69fad0f1ac412799b6480",
+      "acceptedHash": "e6760baf5750916a4c2b34cbab3dd6c01343cfbd0a4815418161a5bc5372cfbb"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-dynamic-mutation.json",
+      "sha256": "25e54eeeed463ac7242b61f49fa01223ea6113e1488a24d066a91171356dd4c8",
+      "acceptedHash": "21c87a3e842d85529052511e5da8d8c39f57d83356f912c41aadf85a9fdff6e2"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-0-inline.json",
+      "sha256": "8d4707616c6b9c95fe31827d8719de0b9555e3785a92118b226c85b03e47e272",
+      "acceptedHash": "96a493af096c13e643555f7eb0c1134422b83f60427f42b9ae2e52282a7a3f13"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-0-reassignment.json",
+      "sha256": "358c4916bb2aebff84b216f996be419a3b9d1e90d6605c45cb9d88508ecd8208",
+      "acceptedHash": "54835cea30928355cc1532d3847bcb5f217a535c81b004be43c993788131f07f"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-1-inline.json",
+      "sha256": "ef3ed6a6f1db2b6c86f6acc149b8cd13a82954359a1779f533c059be2f65e39d",
+      "acceptedHash": "8cca58fa2261e9cc0f75c709b985b7258def91309ce0f37125a65bc76ea8c28b"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-1-reassignment.json",
+      "sha256": "2fa67316333302ec10a120efecf220533ee04c3dce84271a4def580cedf89bfc",
+      "acceptedHash": "0705b076d0a97408a622cad91f01a1550ddb53fa73ceae35452675206cf25936"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-10-inline.json",
+      "sha256": "5e3e9fdd9c430540f52c13672ceffc6073cd4610c8d227cc8153af70f382a3dc",
+      "acceptedHash": "40bcd558ec7f6e8efacaa96e84f7ab1caeb2b011c19a61a70cbc724585349989"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-10-reassignment.json",
+      "sha256": "4cda4e2343b6c7c580bc19ba411aee5fb4cd44fa82c0bd7a7a0400c4819105b8",
+      "acceptedHash": "93fd24e2d9c7391021861f1515673b1708c2173ffb4e01a222225971d320004f"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-11-inline.json",
+      "sha256": "a63b76b6a84b3fa5faf1b8c3229b573fd5a99b3cbeab0ceffdcff7f83a0605db",
+      "acceptedHash": "d01738a6aefd4cf67eb5b7115ace9b2ad2a616136c3b246ce8a2120ac157ab84"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-11-reassignment.json",
+      "sha256": "d3beac61677248815495cc029c5258c6aa1a3837170b3f3956b013d0c645610a",
+      "acceptedHash": "52d584b8b455f815ccd001eb96c3c1d71177ad8253e47bcd43d0e4693ffa324d"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-12-inline.json",
+      "sha256": "a0d37589db110f74ca28989a367c44968d5ef75546b43fa49cfbbd3a492518f7",
+      "acceptedHash": "f83de47cef536a12ad276b9cfbef9e3cc421ac4109df8995b68cdfa2d91d4c39"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-12-reassignment.json",
+      "sha256": "72df1af8b73b7d5de87d2583e90efdf9d8c47d15d22d7e6d2f124c50d407cdc8",
+      "acceptedHash": "dc9104300f81e82a8482185aeaa54a1851646b32d55e844c77c8c22a77dc7fcb"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-13-inline.json",
+      "sha256": "8020fecb6541ab2a9720b786676f702b9fe0a4721092a4b042a062485dcc194d",
+      "acceptedHash": "35bf4e6b2bbbc997d7cfbb1a2e7540074df446fdc29f81170cae251d71efe01e"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-13-reassignment.json",
+      "sha256": "232b720bdf0827e3df91849877c9a1c43dba7489d2ae3b825d601f7db173a5d5",
+      "acceptedHash": "6858ed93faad4361911731925531a9c561a10baccf62941e7bfc31a4f462c943"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-14-inline.json",
+      "sha256": "e1dfab40032628882fec9788015cd7464d8b8362a6ea5236028d634d5f2ff946",
+      "acceptedHash": "9351f9caaea2a32f6176bf8ecab78ebd0a8b223ba1c1a136b880b2e7e53ef3f9"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-14-reassignment.json",
+      "sha256": "39d73e05491866f8f004bd4af38db50431e55f36d1d00fe0189c89871a5f0934",
+      "acceptedHash": "80fa2ec528da32e3463a663968ac5b11b4f97158af432281391d65276322dcfd"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-15-inline.json",
+      "sha256": "5cd41624db6de8250652a3448deb5f18ca5de98c21c6932ec11a09210a8d679e",
+      "acceptedHash": "7d8b0141be3e0b634ff93747e8a45b3acb3fc790fcee678803a024083801ff47"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-15-reassignment.json",
+      "sha256": "47e55d714f23aa37d0be2f1a84aa7d898eef36fb94cec90a822b3e8cdc4d5c4d",
+      "acceptedHash": "713c08c86677fad00921bb94302b97098a4623b68069e51dc089db20bf54b339"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-2-inline.json",
+      "sha256": "8acb32d0cbe844860bf6fda85639d6e13276ece45440d58e4b3fa702c7d63756",
+      "acceptedHash": "0e4e51bf560a276c70d16a955d239953793205e6e08ffa936bb9a3dcf863e84d"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-2-reassignment.json",
+      "sha256": "5be058cd6b7b7b6008ded98c369bb96b607f427713687c1405db69967e3bbfdb",
+      "acceptedHash": "34baa164edbce3554ff5d191b74cdf3912150d34da809837341d93f5f2e22970"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-3-inline.json",
+      "sha256": "35684c6686a1d2218f2d3036f47769a985b3355394d66be1b2be79014010bca6",
+      "acceptedHash": "29f38c9fa42dc7f4dddf8918d15038b2c0509dc3f3be75600436f8cccc1ff905"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-3-reassignment.json",
+      "sha256": "fcbfd3aa3b7cf528d1b0ffe56e31e216390ee01cb94c284660287485a835f64e",
+      "acceptedHash": "20a56b77af827d4ae19ebcbfd9835ab192833937e6e97bbd6be064ddf19b565e"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-4-inline.json",
+      "sha256": "7f6df5f5ff3575954af6ac381aaf7894b9246b26c960d1416f9f11d1830bf2b6",
+      "acceptedHash": "5d377d22276759771e0ebcab46692442cc6c3749478972ad05ec2c9390ca5660"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-4-reassignment.json",
+      "sha256": "e5ba17bd6ce73614544f1cd7d5708933eb7ae1ebb22c537a8a1e356e441bc774",
+      "acceptedHash": "b34ac739b1bcb147f1210a726b63bbc4b4f08a5e83e094362b794f5848e3e16d"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-5-inline.json",
+      "sha256": "f2f833de3363234ebe4d78a9854676cb64b23c290241b17e16cb1616435f9d9a",
+      "acceptedHash": "da5a85b7e355da4e6791577c2273ae3a1683647a6c59c4bed5bcba5b44cdeba4"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-5-reassignment.json",
+      "sha256": "5afab49c560ff9cce77b851b67eb106ef35556e98bbd9cfffeb1762622966ac4",
+      "acceptedHash": "e61d1de460820b75512a15feee88abda0233ee524ddc0df5da674ee57d1e889f"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-6-inline.json",
+      "sha256": "ab76b2561f73491a679d6aef242618d24fe89050a022ff792050c6c963bfb8a3",
+      "acceptedHash": "19baddc12d3d495bb79d1eb45bd73fb1429382931843673adf1457c8903ee42b"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-6-reassignment.json",
+      "sha256": "d274727257387a8349f0205b9f1d450f1f22bc5847029dd53a8715aa7db2e16b",
+      "acceptedHash": "6edbb405489e20d9e1b3e1cf908ca810a2122bf751e2d53c2b81e712c4cd835a"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-7-inline.json",
+      "sha256": "0f081d1cbeae11e17f7ee9a35bc3bc479b38585704ec4bb344423971175da1c8",
+      "acceptedHash": "86f1dabd0f0bc0172073b4c979e3e7264b67711324fd20c8d7a4a4e70f52c291"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-7-reassignment.json",
+      "sha256": "a90817e66a09cf7304df5287c71582477bcdc245049ad33f7e6154c8eceffab7",
+      "acceptedHash": "edf61c151727bb9f7058875c5433aa7560d04573eb43e8c4d7191798ed796117"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-8-inline.json",
+      "sha256": "2b37fd610d279705edc21f63d2a3502f9809554fa50a405f3e0ef9986bd468ab",
+      "acceptedHash": "5d7ee223130940dd5562fcbdc60956e15e116be8ac365f9a82936e9db9e6dfb4"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-8-reassignment.json",
+      "sha256": "5a062789226eb6b8a8a374e14fc873238131f218278f3b6bb7c04ace6b78dabf",
+      "acceptedHash": "936157330769fcf6ee715b4aa64b1236fd7c9f41dd5a88f39a7ed6159f803ad1"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-9-inline.json",
+      "sha256": "a07465b98a2c57d47985e4e6cdb5b7a7055da76b1c1f0ccc0aa2b903746b5959",
+      "acceptedHash": "038684eda6d70b4672741ed36360d71302e77a27ab2e0239ca780bed758b6631"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-formats-9-reassignment.json",
+      "sha256": "6ca07af3de1eae36825e0b424eeda357d4b240bed38aa7f70c410fd5967c8fe5",
+      "acceptedHash": "a53b4cf1c505e1e924795d18891b71ec6d709db94bb6b78d8ea30b3c5acd6ba3"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-includes-0.json",
+      "sha256": "3f42ca2319bf01d673abad10cfd483f8b530cd21326ab20a1af9a92b2974dd04",
+      "acceptedHash": "6a632f68945d35d6c2acbc2a0b672541045938c388bbd43b501292120961b48c"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-includes-1.json",
+      "sha256": "b0061d38becbe01f88bf228a6129aacfe4c07ea2201eb1f941f971b8c36c5a49",
+      "acceptedHash": "0bdab2243b049795c5c32767856b104144e67fca73792505854facef09ff7192"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-includes-2.json",
+      "sha256": "a2cc26c0fbbace6c0ca9cc9b02ec3960812981ae60387126e372ae6745e61243",
+      "acceptedHash": "9d67086dfc03187220dbec3cf519908a1c15302663bba0d0a2ad86e600cd4e84"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-includes-3.json",
+      "sha256": "0b1609a8be863df0ae84bbb889292278c309414b829d0dcf64808c4c99eb8f27",
+      "acceptedHash": "d36e5b01685edc84501cead4d119d84102f85c2bd3824ac0846aa5371f48f3ff"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-includes-4.json",
+      "sha256": "5bbcfa32f370720653775831099386ef2b401a8d32b9396da3dffd5ec473e2a1",
+      "acceptedHash": "c9f4524827c79742fc7bd7ab612ecb185ae1a89d5fa5324056f7c94b6ac63933"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-includes-5.json",
+      "sha256": "28a07e304e1ac74e9e6d6a800035c459efa6f2e0d6b63662e744d187eb11dd0c",
+      "acceptedHash": "5319ef53852bfe15bada1a798a0cb92827013dad87372a5fc744020a5b6731e6"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-models-custom-manager.json",
+      "sha256": "ca6139e6d498f3e9024789a391b53bd9be1d85b34a25e4ea527eb91a534ac7fc",
+      "acceptedHash": "77d89d5aac6f12ab08aec2187dc6ece7f63fd826f750d3ca01eb346135483212"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-models-field-operation-table.json",
+      "sha256": "6863c883fec751a48c4e862b1c662f7c7e11dffcefcacf663fdbbd3906cb7def",
+      "acceptedHash": "440d9ef89a10a8b7b189fd76e8ccf0c9e43760d4ae7ea9110c14f644508a61c9"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-models-mutated-manager.json",
+      "sha256": "cba1db16feb461302cd735b63a385ff470cca247e9c2e6509cff486c00dc2f4e",
+      "acceptedHash": "4f0b0773e4b5a08b70b2bb8440d18e62f8e8c510040a03e29ee5be08b7f10933"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-models-relationships.json",
+      "sha256": "3c24ad55196567b1d2763875033b2800ddb1a0b86c27db5153ae1993da5c3f0a",
+      "acceptedHash": "f5d8ef8db9f7929f3f04750397bbc6983ec28272e048ee25f49159e7310a4f8b"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-routers-DefaultRouter-path-bare.json",
+      "sha256": "7d0597ff4eded42bf2c6bb2c10944ae05d47c3e47cb51acb8ed07799d5004bea",
+      "acceptedHash": "438c718685b43182e2e88f84b1f2b8f35f4f987407923518ad80efe938e76ac7"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-routers-DefaultRouter-path-slash.json",
+      "sha256": "a1b20e2cbbcbb85347905890b3d5e9e09e77e4af1a3ab742824ac79db94542a4",
+      "acceptedHash": "bda26eee22dfed43237ba55c463db4c24456e7e8974549e4cbe8e53ce0a36821"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-routers-DefaultRouter-regex-bare.json",
+      "sha256": "6460a2ede970f844fe2dfd33a793378c8ac2ed669bec095b2d2e72e08ef1d4dd",
+      "acceptedHash": "e3cc1cd821d1475850c3b8313c1ab1c367746a41687cc0bc3f62e80215693d86"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-routers-DefaultRouter-regex-slash.json",
+      "sha256": "338db89579ccf4a85b5cbeb934a9ba6999627f5208c7dce36c897b1c5d71c5c6",
+      "acceptedHash": "fa9b3219dc21fbfbf902548b31dcf72977c39364fd5084054ca0f013a563cac1"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-routers-SimpleRouter-path-bare.json",
+      "sha256": "13e13cd3462d69a6489422611e5dfbd536499323c7847cee9140c9415804d739",
+      "acceptedHash": "4d83e3dbdd3e0064c42907e3e548520204f54127ce985f9e9a9aa5683022d4ad"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-routers-SimpleRouter-path-slash.json",
+      "sha256": "d049669d1c456d179dada0a5000c3fe01e4c1b2a499b87f4507718b36102f83b",
+      "acceptedHash": "dd874bdd6062ce969a0363bc54e4970091516f7635161ec8816d4808c458ac1f"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-routers-SimpleRouter-regex-bare.json",
+      "sha256": "5949f02d7af8118244d07e5ba3ecd348bed70caf106b1a73b2b3852082eb1831",
+      "acceptedHash": "4adfc93a4496dd4f9aba21c64f779aa7d22c407848dbac891bb853e9c2ee76a0"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-routers-SimpleRouter-regex-slash.json",
+      "sha256": "6c4fa42b578875782dad16f4bc3d6a64fffb9ec272ddf8fa52e635a1622dbec8",
+      "acceptedHash": "3d09845f16bd34eb9caa393886d543a76fa7f9c58a931a266399425ec2e63572"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-serializers-HyperlinkedModelSerializer.json",
+      "sha256": "46a521f20dc028e72bab6cbb3f34e7efe23b2a861725d77802132fe90a7af4af",
+      "acceptedHash": "79c4559f0666c8be64c2840ff041c6eb6494a012e58c31f398ecfc5257be30e0"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-serializers-ModelSerializer.json",
+      "sha256": "189576aca461b2203c169180ad69e453298a23126ef380a21f5fbebc4f1cd779",
+      "acceptedHash": "c48fd0df47ac9a1e486c444c49484c3154a22bd055a59e6d472b00af56a3d639"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-serializers-Serializer.json",
+      "sha256": "ad77a2274f3c369b73598c67dbf560eef6b687689c830a22b47bf575bf3ce30a",
+      "acceptedHash": "2843d83c8525cb828af31582dab35f1af7a1876de6d415c7f0dd9d2d3a80af8f"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-serializers-opaque-meta.json",
+      "sha256": "27df2a6a3924558be6f493de25ef0a232302e6a7c645ccf5b80acce6fd50ca1b",
+      "acceptedHash": "37f523e03f0eb9de1fe35caca211f7b5a8388b922dcda44f336f19cb5fc7e931"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-signals-conditional.json",
+      "sha256": "7c07a9144104272801cd1e9a654002974173311d0e4fd25676b46bc25a2f6d80",
+      "acceptedHash": "6d0ca20281d5b2a76e9a0af1b6a6155f15e8cd623a4bf4e30870620f8255b59a"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-signals-custom.json",
+      "sha256": "67128217a15afe975cb8778b30394c85ed8cfd404cba707c2473775914c400cd",
+      "acceptedHash": "06e913342519ae5f57d71e68bdaa30e31937913ca220aa417a4fd1e07791e65d"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-signals-duplicates.json",
+      "sha256": "e1503544545b002a6ff81188cbe87eb0b7c938918f2955bdcb77ebf3a53e8642",
+      "acceptedHash": "47dd9c324f2c8e7d32679ee7c144252f8bd16198051e90a688955b26037b65ea"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-templates-ambiguous-url.json",
+      "sha256": "d0894d2a6d3f5739a7432993c36a6ee6f54f3d88eb23be659619381b27f3d2bf",
+      "acceptedHash": "4b4ae7e03e222859aed24259a32ba84d16a579c3b6a3c108dd5e937170ff32af"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-templates-conflict.json",
+      "sha256": "0b014bca428d1f797c4dc13600799df660614e8f96b4fe8cd2d170a76568907d",
+      "acceptedHash": "6fa6699bc0598aa9792ae8bc58ef91069b901d4ab61887f5ebf3be76c63b0539"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-templates-custom-engine.json",
+      "sha256": "fee90c90f9d3c1ed812ea72e4007fc8ad92abb8946564a81413339a6f021e321",
+      "acceptedHash": "7c986455525a745cc8b0760869a7d8853845ecb1180259dacc2ac449098c8201"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-templates-cycle-unicode.json",
+      "sha256": "39133fb4ef8608f334b6be5c7d3060f265286e7e32489a532a1f2f9779e0803c",
+      "acceptedHash": "7812894ec1e699251b938224b51851a157b3a52f047a2fa0dd1fb37497df125c"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-templates-dynamic.json",
+      "sha256": "2bd8c68d68c0dd540d51937487f23b3baacec8a3c2b3f17d7bf32f545b69486b",
+      "acceptedHash": "67f23ac50586390304d1d6bca33a0aa02361044b7af2c8bf73eccc3091045a56"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-templates-malformed.json",
+      "sha256": "fdc87f079578e0dbc8f4b263cab8f560593a791c9417d63b9b056af7feca340c",
+      "acceptedHash": "ec1169a0ca2357c795786fdcffd28c63efc602d7f033d3048ef6172c8a07aac9"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django52-templates-tag.json",
+      "sha256": "19b0f721aeb82bd9a47ecfd775eaedc669d7b4e18ab3c732a4ea334cbb35c7dd",
+      "acceptedHash": "cb6d172a180b46a10badf48d75a6e967473ddfd592ef7b3ae5146c43933ed7e9"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-converters-boundaries.json",
+      "sha256": "9f4bd5df6c51636842da807fed264f374858cd6757a4ba344a66302743881be4",
+      "acceptedHash": "a3bc035211b43df56a2eae7b6f3a56629380fcd62cd3e75f99e697a248283c7f"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-converters-builtins.json",
+      "sha256": "2dab66317f58caaaa73519e07f9c4f0466cfd7d203df0e5f79e0ddda34a79cdc",
+      "acceptedHash": "e4e3cd5ac194603a3881a1af6adbc45b292eea6d0130d46640f9f820fb925247"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-decorators-require_GET-false.json",
+      "sha256": "1b32ce17644b028d34e4e92c4c5b8d104c83eea489b3d09b9b763a708bf92bfe",
+      "acceptedHash": "e04511aec4734de73fec12008ca008190340eb052fe1d7a44c08d513e05d3a50"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-decorators-require_GET-true.json",
+      "sha256": "7dc80af575a50a0eceffd0669057a30c5db55ea8e169cff6cca9c9b7d1f91304",
+      "acceptedHash": "5dcc256a14ef1e68af4a35a77f04dffcce4f5a616e76f6e59ca6500d027600fb"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-decorators-require_POST-false.json",
+      "sha256": "0a3af87727b318b0cf990d31ea7e269a48f7b90d5f31b5bd5fbc92099a5f7db9",
+      "acceptedHash": "16ac0dd98ec159affcd9f393ca94f38e887912b8a1e381a094c3248e16f89140"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-decorators-require_POST-true.json",
+      "sha256": "0c31b50cc3a0ff1451f65e08c1ca1a1de417bd5cdb3f224b7b94ff8314c036f9",
+      "acceptedHash": "1dcd365862e2bd946bb07782f721e54f6649263585b80a5c1011a50f03b62e3c"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-decorators-require_http_methods-false.json",
+      "sha256": "31c09dfdf7df134fc6b4138333b199cd084e4de662cb88f42d536f3092fe2d46",
+      "acceptedHash": "288bfd4c22d940d8cc769b2666667ec0fc17f8fc45ec7ca5ad810b5a38f44389"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-decorators-require_http_methods-true.json",
+      "sha256": "57baf1f39d3a54b69522482dae1b6b270ccaa6c31ae75651238fe7c6ed83a581",
+      "acceptedHash": "68a9ccbec177d967976e3b6f7be528eada160f8727a4321ae311e03a564ad17d"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-decorators-require_safe-false.json",
+      "sha256": "ccdeff0a3c050dd786732903e109ee19a0f767e963bf18fd15cb4743ed66c022",
+      "acceptedHash": "29093d181bbc8aa359e627dd577705afea36ff826db5568c211415fb456ac87a"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-decorators-require_safe-true.json",
+      "sha256": "cefcb675a4599988af4d6a3306aa2b045c7f841a7d3660cac70470cae99fc3af",
+      "acceptedHash": "9dd80779398022bb4a4624a70beb74edeb48d30427e74d5760c6603c4b2885f8"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-dynamic-decorator.json",
+      "sha256": "6534952de8165a16834bca51b02193f42073785fc2b74daff2ec2996a0faad32",
+      "acceptedHash": "c1789d152744bef2e9ef253659e12c2e5fa47179c6c4b6c03bcb7cec9a687ffe"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-dynamic-escape.json",
+      "sha256": "a48e64aef047f525584cbecedd3c6b25fda9df926f7e182f5bd80df79af103b7",
+      "acceptedHash": "f8f863ca317ae3d2cb256e9225a7bba12a8edfe4b1b9706336a1c9d8ff15407b"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-dynamic-format-settings.json",
+      "sha256": "a3ef304feddcbfb065e5c4c5a4bd2758093501611240f12cd0512539879da0fe",
+      "acceptedHash": "ecee599ee0a8465ffa5217acd258e86eb3653e9cba8d7d949d7081b5069f7a80"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-dynamic-index.json",
+      "sha256": "1fba51594f9d142add1239a9e743acba6c975fc7de3fcd2904559679b05b70c6",
+      "acceptedHash": "ba440dc3b090eaa999a0c9f58171f9c0b50246645c0ee7018fa72ded25f01736"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-dynamic-mutation.json",
+      "sha256": "91854e0c4f4a4d0557411333d08c7f4d25a01f24f4b0a130326b8abbf2c23f17",
+      "acceptedHash": "96148428bb4ad5b0c95cfa0062070b503ae4cb082d8d94cbb21d680a3cf0d32a"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-0-inline.json",
+      "sha256": "c1d15c136be702a88af90b98706dd6829a4be69a54b91528f34ce17b30124461",
+      "acceptedHash": "a3bfe131e89f6d31dfced244f19dfeb58f5befb804645c63d2bd174a227705ae"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-0-reassignment.json",
+      "sha256": "0944c2248da0f3ca310339c65a108f7580ab030fa0bce950be02b6e054d1ce31",
+      "acceptedHash": "6a79e7f4fbec043a9781642b32ede2c8005aad057c20d3fca69021153e9c4bc8"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-1-inline.json",
+      "sha256": "b046774e75b831282eaf6026a2eda3df387ce810561a928e1393fb1757aa1e21",
+      "acceptedHash": "75ceeef30fab4fb3973f50c1ea62555ba3ddf141d37ebe6c1001ec9ab09c209b"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-1-reassignment.json",
+      "sha256": "c7be20be922dcbb0487d0fd4bede91c6446c2617db41bdfdbfb7c68b364e703c",
+      "acceptedHash": "a36ec48bccb50526be9e564bbf1a5c47da77162cbb1e7125d46b049741e0ce3d"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-10-inline.json",
+      "sha256": "d8b2e160853d79fa9afe66f2479633165245a278493125d325a8e73fa279f025",
+      "acceptedHash": "050f57dd0e8f41dcdbdf0a4365926b43c1a955e6ba4a2e669e79c05148954aa5"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-10-reassignment.json",
+      "sha256": "0e911ef79b717a2bf27c6c62a0099fac0594cd795b33c52986bfbfc319e4c45d",
+      "acceptedHash": "8401ee02e5ddf827223138f6d4ad36d0ad6929b8c97d663d4e9ce62d508ec40c"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-11-inline.json",
+      "sha256": "c3ca9ee1a9ebba7436df065920b9029acefa78e2ab021b46273c078a5bc3f8ed",
+      "acceptedHash": "382347fdcdc3a36ed628f402b82d4fbdc708601c1aaa39476551afaf50b391c7"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-11-reassignment.json",
+      "sha256": "fec3ae11adb9931258b09c62d533219c2308113b1ecf8d78ad279e3697c207df",
+      "acceptedHash": "5bdd04641dccbbfbb758232658952be5b04c39721017e69c59a9041af2ad05d3"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-12-inline.json",
+      "sha256": "c29cb4cacabb0eb389dffc3d0b63892abbcd8b3142b5804c74866f2c41c902fd",
+      "acceptedHash": "bd7305bb04f3f5bf87ef0a6581589bfd420fa09b6c78e01e7a422047445e267b"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-12-reassignment.json",
+      "sha256": "a3342603621bada48a7a194d7ce3eb9712f316f7229a539684cda6a44c91056d",
+      "acceptedHash": "8ac6be561c603edb5287eafe8bf3463cf69f0be32b08c8ccbd67429e190fdf61"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-13-inline.json",
+      "sha256": "571743cd363cb5405e92c4b7a90e2602c722883d5caebabe26c3e6b6a1fe49ea",
+      "acceptedHash": "dfd996e445e59cdbc4d09cd42b854e887b2e6ead1d5814a3ed0f66de50b1097a"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-13-reassignment.json",
+      "sha256": "7785e0d83882395a0b574d0d404a778355509ee6b2c31a0b945f818823da8079",
+      "acceptedHash": "e6ab5d154a6a0bd22254f1186abf7b63eae07b15d2f65bb5ba48bd73bde8db97"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-14-inline.json",
+      "sha256": "9ec4c884a6f1cd79bf77beb30a1b69fc4b1d564e12cf1f33906804b566a2fcf3",
+      "acceptedHash": "9c453cc955b7a0d14c06e5c7d9add07efea481cea4a163e091e11e7bf40ad56b"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-14-reassignment.json",
+      "sha256": "27901670a320b5e16a2fa91609a18c857376181ddd8eca53b97d4170bbd9d8ec",
+      "acceptedHash": "8769ca73fbc65a50f114c065798e900e66bcf0cfe8e96bab2ce52749197cfb54"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-15-inline.json",
+      "sha256": "8b8f9e19ef54bb8b377cca32f17ba8a6bff7352289c960442466ffed7fc7bd64",
+      "acceptedHash": "b72768a334b40ee669e17bb925ac8564021089ffb0cc9aa5863b9c950b46de96"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-15-reassignment.json",
+      "sha256": "41ba1cb7b982125d075522dbeace9b0a9f220d83e36299d704d6ed55e4cdba67",
+      "acceptedHash": "5a6edb64094e6190657909ed21ee10561aa2eeb613dce8330b945ac43b357fcd"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-2-inline.json",
+      "sha256": "4635903df5067cf7206a51980ee1a7a68d97e4ae91263002064b1da8987c539b",
+      "acceptedHash": "896a6a1643aaf2d33cfb7a4e64fae7c9eaefd78b92f06405da52f5434952957e"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-2-reassignment.json",
+      "sha256": "ca046773ceba53aa6c7e939a535e2a3355a285d5b09371c2bd494d786be41ae6",
+      "acceptedHash": "8ba59a03bb6b65c82a6d247892521cadb76de6ab937f8ace9f465bfcc33232c2"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-3-inline.json",
+      "sha256": "88e0f4c3ace500ad3b5ff0357556fdaec98e7298749c37cc8bc699c887cd29f7",
+      "acceptedHash": "111dfc707c7bfa16b0b223d3208b632295f96578e18e92ff8e0271dcdb3a05c2"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-3-reassignment.json",
+      "sha256": "16c516c53e5dc25a0d1b098049f4ca96cb44183f6342c32ec59c42258d7c0cdf",
+      "acceptedHash": "e4cc1a406e834df33a2c13b72608fe77a5d407560672536cee8b53f8e1771406"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-4-inline.json",
+      "sha256": "f18e774c284244a069e745118d8e44dbaf6709b27d2d74402276e995418a1a79",
+      "acceptedHash": "020f120d275580a48244db4d7169563fa80a0a16cd5bf07e6d2530fbb10f476f"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-4-reassignment.json",
+      "sha256": "57d9431dbef50c3846ffe42917d1f14d501368070fd2866eae51d52ad5fdb9b1",
+      "acceptedHash": "158456153d68c1956e764eaa415b17e98e375923f831dd6fe315f0328cede7b5"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-5-inline.json",
+      "sha256": "fc36453b228d725625dcfef479a64d8cff29fb4d04afd3f6fd6eb23c9bfe7b49",
+      "acceptedHash": "9808281ef73fbeac9e98f4cde37e7d6cb723e6413d874e537be8c8c7cf48ad93"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-5-reassignment.json",
+      "sha256": "10a180e1276709554dba1b8701c43cc04e6415e5e1325b90a405005c197f4c22",
+      "acceptedHash": "2886da49f1b629fa45fd4878051a9effcd6e9b099210329b3e1684fc4393f5a5"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-6-inline.json",
+      "sha256": "27eedefbcc136f8374f205220e90e680e6a0610f4a081432c146b047381b6d07",
+      "acceptedHash": "ea8a77fdf6ee11e1efe1c0a5554340ee98385b4408b283e9e87d4b33f6f453a8"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-6-reassignment.json",
+      "sha256": "e4033d502e9cea2d77dfb0138857bd27cfae874caf66b84e2801d72ac017f2a3",
+      "acceptedHash": "a236fac35eb2bdf18690cef2b6b92cd2bda1a44497135d67112367096768c9c1"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-7-inline.json",
+      "sha256": "a38742f9a08b4531043b8a26fd5fdf7c591ba2159b636cd9748c14094ac69617",
+      "acceptedHash": "be2db209da47cccd5bdf4dfbf7c64afabad7e871c346cdfe5cd023ff76a57f0a"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-7-reassignment.json",
+      "sha256": "ad3068e3582a0a4ada469b1ca23b4a9ff0129ecee2c5918d4b90be55c1361a30",
+      "acceptedHash": "31a2a17385ae848cb620697d567e1fa69a3f1e804a98d7155fbd39f8e1ef7745"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-8-inline.json",
+      "sha256": "cad86f0df3fc032cbe9501983f14dcc9f7dad16e2b29ac141c0b1cd83589654f",
+      "acceptedHash": "6808523afc650d612855008811b0109456815c25b4e80bf22fa48f677e3a1566"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-8-reassignment.json",
+      "sha256": "036bce37636d7c272ec72c2951d7b450169ed45ac86a14d0573f1e7dd1156709",
+      "acceptedHash": "28fbcfbe3fefba91250f62996cc59c5eacefd2f7c0009369f63c341a73be1813"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-9-inline.json",
+      "sha256": "a0fb45b419a16c47507b3ae99d5498bcf504be3c2fca51b45fc87863ede05493",
+      "acceptedHash": "2d6dbc9de9058d4a1e39ee942d2dc04f07b68fcee15e05cedce84ee58b7da4ea"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-formats-9-reassignment.json",
+      "sha256": "fcd80de37a09a098391bbea6584272cb98aca200bf44ff1a0ea31347b02aa282",
+      "acceptedHash": "0966e8dbc562656351fadd0842f96a271a01771fb23f9f20705f3b0e3d22498d"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-includes-0.json",
+      "sha256": "a38a68cee9d6251ffd9e802510751f1622a90c7f85019f064532d422bd84ff7c",
+      "acceptedHash": "86b144be53dd7b17715691ff220d34ec793363cbd9d6d06acca4959cc5864f66"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-includes-1.json",
+      "sha256": "b1d064e57e616b1ff0866c052fb804e1ffc707fa8d7c254587028d5abdf87599",
+      "acceptedHash": "667210eb0da0bc138b670079f3b04a887498ca5ff4cd4552fb8a3b06a5aac11e"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-includes-2.json",
+      "sha256": "747d664401fdceb47c3c6449eb37edfb7f7cbc35fb93a16e994b21956226a9ec",
+      "acceptedHash": "aa0495bd8cd0719f93dd4b4c27218d59b7cdc793c4a5cf405acb54285fc699a1"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-includes-3.json",
+      "sha256": "f608d25be9469e17b04f980f11489186b352e3319654ecfc59ded7c73450bef7",
+      "acceptedHash": "90f6d202cdade7b98364dc70a814aa7b185228592fe42cac01562fbe21beceff"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-includes-4.json",
+      "sha256": "9d945c1b4ec83dc33342651c0c4f2250efc0c87d7b4710d16d43a3bae25916ea",
+      "acceptedHash": "6060fbd06c7325288c951e32cf72f0420ba4bda20b17e64d7fff2216c7d9ec46"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-includes-5.json",
+      "sha256": "4cda7222a5d8bb41b6ee9dad060de1b2d13cbd0ace81d1f71f13c9ba23782e81",
+      "acceptedHash": "afd87a74aa209ca1779cfde039c4738fc8aa30a8f4bd5df103e2633971860d12"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-models-custom-manager.json",
+      "sha256": "1ba4e3f7eac094c26c28258268bb21794e5cb3ca45d82ee9574b4793c85f1c95",
+      "acceptedHash": "45c4432f2f64a6261e691057f9d3015a813058a4386b54cbbec882b42f610479"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-models-field-operation-table.json",
+      "sha256": "1af747254a851c63f12258ffd8a792529273f298115b8e94940f1f1dc827043b",
+      "acceptedHash": "a00a8888ee2669d303d99a1679f693cc77b663251866e34f1b5ba12327bddc96"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-models-mutated-manager.json",
+      "sha256": "2d328c5e732757ce3ab5f76b4e88f9c0066c8aa4ae9390b9ac93c90c6a96e04e",
+      "acceptedHash": "5aed3f3b4a09b09b095c7ed3658fa114f844985fc7591de660793877a23998fb"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-models-relationships.json",
+      "sha256": "d56b0d6379d748550bcc001c010bb113ff2ef2e0cd0423e3d36ade83e44f3587",
+      "acceptedHash": "d1e3234f3eddd6a924e4dc58e9cec650eb59deec2dd0c7e25bd3848c5e96ad29"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-routers-DefaultRouter-path-bare.json",
+      "sha256": "4811bad67abccec6bdaadf60ae5f0fd4ef187c37d2762790ab45845641888edf",
+      "acceptedHash": "939b3d2b51d3edf5393b6dd44a534593a34fa23baf8a5073c88aa67f00643aa7"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-routers-DefaultRouter-path-slash.json",
+      "sha256": "bb4c1d0b2ca5d6d81e8489d224704649139b5f88b3a10406d7e6731753eaf12a",
+      "acceptedHash": "e5770c4fe8e518d9c14620e22ac53080cb7272e623159edb1a4c11c6605b9d1d"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-routers-DefaultRouter-regex-bare.json",
+      "sha256": "ca20667757e71c66dfc59b536698c41cf4346547971e441c4f8a98299a2c0f83",
+      "acceptedHash": "82a85d54930bcc87535ddc99771dcc5aa1f9b93aa563f69a208845565b43e308"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-routers-DefaultRouter-regex-slash.json",
+      "sha256": "2b3f584c5a479c94b4661f7767307f5443c2a2ce000b231a411389c1bb951efd",
+      "acceptedHash": "ea0c2a36122d3cf8c506199a926fd91ada500ac18928d80142e39ed84f6ac8cd"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-routers-SimpleRouter-path-bare.json",
+      "sha256": "4f5ddc3ed425760ed5185c2de321a8edf338770b2c7f9489781d7e4ec447019e",
+      "acceptedHash": "53e457de1d60b4311f4a6648e6831f3ef02a0e36268130245db42dace764bb6f"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-routers-SimpleRouter-path-slash.json",
+      "sha256": "323428a1b09e250ed94d41679af3d169c325f35aa1d0e403c86e747453b0ebe4",
+      "acceptedHash": "15c231be1377268024633cd0331a31786a67ae3bed9d38a2ce17488fd84b0963"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-routers-SimpleRouter-regex-bare.json",
+      "sha256": "c56c45d2f1e50aae2836a9f7c73be212e2a0d50f81a0ef8530e8ad850def1647",
+      "acceptedHash": "a16a247393824df1ae2918b00d34926adfce15a0c84ba17c92c4727fb6e8e11b"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-routers-SimpleRouter-regex-slash.json",
+      "sha256": "506d5317891dc17eeb74aaa7a2af28b6d0a0b11d311c0b3c152594c962dd794d",
+      "acceptedHash": "8a6cc5edab3a54faab5864c3a8b5e61fc8a1ca69179a2e91335dd3b917b6ced1"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-serializers-HyperlinkedModelSerializer.json",
+      "sha256": "2102c57f379864e6408d7601ded83d616e6cae868501594963ee924c509d09e5",
+      "acceptedHash": "16637423d9012cb5307809f1d7619d9ff5c844ea353137a41c2946d7086eadf8"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-serializers-ModelSerializer.json",
+      "sha256": "ef0662b4c46520fc553f3a52574fd28d686ff5efaf28aed352dc8947ca2cd96c",
+      "acceptedHash": "ea957a6e548aae1234d910dc5c9f78d0cdfd1a24d3a5c816c28ab167ef6826d8"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-serializers-Serializer.json",
+      "sha256": "c456e5037b9e53f4679edfa38f92767ea04cd1d44b710cb0a8a6bd29aa981d71",
+      "acceptedHash": "e1de7b990e9580715fd156ecea59c01857c32cc69693dcae77ea3aa6760f742b"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-serializers-opaque-meta.json",
+      "sha256": "7594f7d3c23c8262140d9543091491303a33e92a5b7f1f649d0a86d74789e3a6",
+      "acceptedHash": "1442a2f0c6c104780e311e5b94d27e613828679c10afea0d611e2982db9e113c"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-signals-conditional.json",
+      "sha256": "6cda2f71ec7ec6be728c7706d01461420bed843b5490b1f7f2871691fa36559c",
+      "acceptedHash": "bed2d3c7c8b7da7f37df9f01ad68362d244607fba1f1af3406c99d99aa8fbace"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-signals-custom.json",
+      "sha256": "5ee047ade9263d4863a23efea8942d459727cdd9767abfdfe114955de970b232",
+      "acceptedHash": "44a1dbf19001d16dfb72dfc200239446d34fe0de781d4d5811e4b76561711e0e"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-signals-duplicates.json",
+      "sha256": "d11a18058c0cb241bc6b90e43cd0b6983e96b823b6e5013ed567d95a4c285ee5",
+      "acceptedHash": "3de63d85b7fd688349681fc2e82ea7b1fb21049d5abdd9d11d85f98ee62386d2"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-templates-ambiguous-url.json",
+      "sha256": "56afae6f2741e787f1460ad423aec8d7881f41e20b9a059a12cce57f2faf01d7",
+      "acceptedHash": "f49dea38ba766610b4388cb346d72fbd9511f800ca153ec311b1420c8de8ef90"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-templates-conflict.json",
+      "sha256": "d90ca6830347af3d6d18aee6106c7e7d1606c8904cc83ab157dfb41a6798b36f",
+      "acceptedHash": "fb08280282b1b321c4f5d437378cca3593a44e8179cb74805e212cd0037349a3"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-templates-custom-engine.json",
+      "sha256": "6a88e95ac020aaf2f1170c9f531d0563b398f2de92e9b42cb80b6a00ed77ac39",
+      "acceptedHash": "f11bbcfa6be769e13d9d307e146493b4adb191e0ff860be814413e90b3f8dd1e"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-templates-cycle-unicode.json",
+      "sha256": "cf8464d640f5daf1ccef2cc1d42bbb83d0e0a7532a19ea0e0286984c0426f5f2",
+      "acceptedHash": "784313e0322cabb8010c7eb2c8d1641cc8568063886f1b9157582881d77848df"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-templates-dynamic.json",
+      "sha256": "14e592bef0d5146e35a07cfaeea9e87dffc7b4aeb71b2a9046afb596d5831c8d",
+      "acceptedHash": "36358bf5b1c8d0612e701433b7c5b2cc54070f1b82d04e9864245590f11b728e"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-templates-malformed.json",
+      "sha256": "d6d0b8f6c40bf53d2a5f736ccad844d32bbe2184843e769ac94593f5e7673bbf",
+      "acceptedHash": "f443744dcef13183ebd1e8f9b831e214ac63ae02b1cc9e0aff0176adcb566669"
+    },
+    {
+      "path": "docs/fs-06/evidence/qualification/django60-templates-tag.json",
+      "sha256": "d61d9e987b64d67867c11176105fc8ba46c152f3b699d255ffc5d6d70d8079ed",
+      "acceptedHash": "fee8c443d858d34a715ff9a8a22ac8b83e290808a6abdc16155d5e1e903e7873"
+    },
+    {
+      "path": "docs/fs-07/README.md",
+      "sha256": "7164ee1a2abaac40ec50746fdb740f9848fe822fe770abf5e73d3a29051629bc",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/acceptance.md",
+      "sha256": "24a372c2aca1935c76f9ca46783ebce5f037adc24f7ce7e62fafcf807ede55a4",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/decisions.md",
+      "sha256": "5b40ededa170ca140f8d3a9086761e1c43a439c3c6714f1a3f5f98e1308fae6e",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/build-resume.log",
+      "sha256": "fcb7e9dd81a1120ea00d0586693d697b90715c6ba6920069cbeafddf42860c86",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/build.log",
+      "sha256": "6812143a17798a1594558ae70effbd9e350dd8a9b4bff2fb202026e4412dc1ad",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/containment.json",
+      "sha256": "56dec26c06714b353e04c26d0370f722d52230704f82606e02fdf8fa61ebc6ac",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/containment.log",
+      "sha256": "5ccbb50eb35dea6ccf1118462896964bfe912c089bc409d36d0b90652c331924",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/desktop-assets-resume.log",
+      "sha256": "5e29921d4221293fccdeb0547f9a18b6fbb098267b69aa3c71aaf6d87ab3c5ce",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/desktop-assets.log",
+      "sha256": "86dbb973e37188228f652a04f09e0c1c3421efd77b40e357a7c33e2b38ac5a90",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo-oracles.log",
+      "sha256": "4a81ece16e0ed6f3b3afd6a59ba85d75cf6a81c80a5bb24d2f5f7e936ec8dcdf",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo-root-entry.log",
+      "sha256": "f04c76812f3a9f20f960b8a48b4896be401204ac3fa688cb6a9449d53303f09a",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo55-android-expo-routes.json",
+      "sha256": "25bc5d7b79c9d7ea2d573a6ccb137f5a403ac43c93008a49d6238980a67c3b6f",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo55-android-metro-advanced-defaults-oracle.json",
+      "sha256": "76fa068f69ece93d23b90948a8b31601029731d76b3dc46806b567b3d845e172",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo55-android-metro-advanced.json",
+      "sha256": "2248fcd2c29a944e95fa517fa019070773e1e2c082422f3b2dc9f86bd346414e",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo55-android-metro-defaults-oracle.json",
+      "sha256": "9093a0c98b3100b2e1a37e4747721d8055d8789c00490185d34eff298f130474",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo55-android-metro.json",
+      "sha256": "30ea6db7df08370feb8ea048fd288f710d9ae931934b7da06ca8b8cdc5623cc0",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo55-android-navigation-linking.json",
+      "sha256": "93be9e8719510d059e3d71bc953925cc2a5b3a61ef6b9b3cd7ec37081d8b17de",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo55-android-platform.json",
+      "sha256": "d79374cbc813373f4a16dee9549b5fb2e055fbfe727e1888dea68707bc798406",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo55-ios-expo-routes.json",
+      "sha256": "9fecd40666d5bb2019bbf21cf11ff777cf3e24645192d5bb837336e4cc0cedd6",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo55-ios-metro-advanced-defaults-oracle.json",
+      "sha256": "97ffaaae303fbd007168ea6a5fde05d25076de69ecc62ea215d73d8d052265b9",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo55-ios-metro-advanced.json",
+      "sha256": "bed921e53978f4d15e81aae6361aa0b5c025145bac53ae645b287e6219b3f26d",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo55-ios-metro-defaults-oracle.json",
+      "sha256": "ec4a0ad7790ad4d52c5958c7df52db154af57d83551a3cc290f0fcdc3e47eb3a",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo55-ios-metro.json",
+      "sha256": "67c4c871929df35f0e3dd992ade1500df6d20b0220e0b6da83956ce97b5109b6",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo55-ios-navigation-linking.json",
+      "sha256": "3fef3d38a8c46eb28b010b92f50d656c9c3d4b5164ed91df9c75a4ba7940e08a",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo55-ios-platform.json",
+      "sha256": "731f03095f46577dbf829a209c8c7ab99948f23e133adb644496b0087303e9c3",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo55-metro-defaults.json",
+      "sha256": "72a72af6ab68834b76cfce61aebdef64c6228f13f48d232aabc6121f753b35a8",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo56-android-expo-routes.json",
+      "sha256": "7071533262a83bc74b38b9a3b153bdf62108298b0115ca83b50b7300624e142f",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo56-android-metro-advanced-defaults-oracle.json",
+      "sha256": "5266b925081c5dcfc667b99d800ebed9a90a8605f0325d1bf34374de0c13b6ac",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo56-android-metro-advanced.json",
+      "sha256": "87e635ee927411722b2ca4827869668ecfbbf1eb820689ae98a0ebb9f2002281",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo56-android-metro-defaults-oracle.json",
+      "sha256": "e8bbdbd10159730b8bdb7ec1a2e517f90a777eaed624a671dbe25b6efd3da87a",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo56-android-metro.json",
+      "sha256": "aa422b926eaaab4f93dfa40c40f2b4efc80ab76cc4ee3aab221341375cb23b02",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo56-android-navigation-linking.json",
+      "sha256": "8208a441609a70c8d5c998e6f4d7a8ea25da1858b0880864f87d37ef09027d72",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo56-android-platform.json",
+      "sha256": "0b325ae35a9da714a8378700db8e5315626a72e40ddde33ef5b7063aae0c7d5b",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo56-ios-expo-routes.json",
+      "sha256": "1feb1eebc280c4b2fe89a5a1fdf3030569cc69bb5769a7d0977363332d2e2011",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo56-ios-metro-advanced-defaults-oracle.json",
+      "sha256": "a6fb5ad811a44e30d534ae6e9025819eacd6815072a4844c6a74d203943fe6ee",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo56-ios-metro-advanced.json",
+      "sha256": "4495323695199ebad9f23e7e3532c469fec49f42e20ce4ea9dd54c736c696293",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo56-ios-metro-defaults-oracle.json",
+      "sha256": "e0717924616bc89e0f7bf61eb0bc5cff7e8cfcced29c81798b180bfe73a1cf91",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo56-ios-metro.json",
+      "sha256": "20668f07213d07f440ad7e24f97b56c4fbe21e6146e2c645f2e3b1f4c11ceb7f",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo56-ios-navigation-linking.json",
+      "sha256": "d91209e232998dc0809ef9906000b25f11c55fb53a02b9522d906e6f780623fc",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo56-ios-platform.json",
+      "sha256": "7144a52fea19265241f6166a5632b3f5cef7f1a88c6c88fe53257cca1866e44b",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/expo56-metro-defaults.json",
+      "sha256": "05819e752675f99a6ee31615ba7006b97ee50979d15f0177fb25b2886b901ee6",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/flow-parser-commit.json",
+      "sha256": "ccebdb1c568354d8b1ae95dadf94e976bdebf2bf0f5b8e1a7862c1762c9537cb",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/flow-resource-ceilings.json",
+      "sha256": "7bb4a3f17f7ff3574a37ee9c5160388ee4ef3d53230ce9a4109ba25e0afc7cf3",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/fs-07-kernel-tests.log",
+      "sha256": "f3e456354937db6fccf178653eb85cca740cec88d949688e98a36e1013db1878",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/hermes-syntax-experiment.json",
+      "sha256": "92fc210a8f7c2a3f8cf3896befd41602422dcdc93771a32a93fbf2581ec2685c",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/install-expo55.log",
+      "sha256": "27b8f1daee31fe0fe222e05a42dd02ec73b385edbeacf7d68bd615d6e970a4f7",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/install-expo56.log",
+      "sha256": "b588d8c264b0f57130762e2c893544b1ee12bb3754b2fc51935eacaf5f19f6b9",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/install-rn83-bare-config.log",
+      "sha256": "c98333c052803535428129189cb0ce8688d6c902d86e47006685519ebd2b4a70",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/install-rn83-bare.log",
+      "sha256": "6b146eced07088ac964581ee20b0ea020053c7cbe1e0e855dc76e33868967392",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/install-rn85-bare-config.log",
+      "sha256": "4a607f3b2efa4e32de4d41ff4eafadacc9b52348be8d4f30207f41f007c59c8f",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/install-rn85-bare.log",
+      "sha256": "d1dceec50ad2cfa62da8fc739873c581c2c0791c98851d07119d5047e216c7d6",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/inventory-resume.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/lint-resume.log",
+      "sha256": "38e69076c8b19c473efccebf7857ec23abdef569180efd41811d8f4a664b15fe",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/lint.log",
+      "sha256": "38e69076c8b19c473efccebf7857ec23abdef569180efd41811d8f4a664b15fe",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/navigation-guards.log",
+      "sha256": "78be32bf39848fe627c1b0670e14fe15ce30923d20400ad70a92548ca8d9d655",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/oracle-locks.json",
+      "sha256": "1324abadd751f2d904f7b79500fdf17dbcc13cef7edb7d0b2d01f6f68f0592a1",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/package-audit-resume.log",
+      "sha256": "4adfc045727e9f4b7e2ce29af9cb3936b9a39c1db57cf02ee15534d24b11ca0c",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/package-audit.json",
+      "sha256": "6b62adb0390855aa471b8c6c5edb0cf16883e01f42c666db7272f57b4c88a557",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/package-audit.log",
+      "sha256": "4adfc045727e9f4b7e2ce29af9cb3936b9a39c1db57cf02ee15534d24b11ca0c",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/package-engine-resume.log",
+      "sha256": "a04c71e444b23331f0c626e292bf34e90c06ed5c37837f9a0450b69319dcf656",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/package-engine.log",
+      "sha256": "3c33ed19e8b786ec223b0117a09b31d07ce1f47ded77196a6e59156ae6a60e4c",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/packaged-foundation.json",
+      "sha256": "e07cb58aa3c1808361ffc26bc8eb1db787b872c6123e9246ef73af25e5c9d6df",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/packaged-foundation.log",
+      "sha256": "c6f90aa5e349ebee5859038d6e1ae5016bf7629e0ea2b8a7967a9995e958edc0",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/packaged-resume-concurrent-failed.log",
+      "sha256": "5c03e1c0edc14e88e371c99e235672ed5de8ce11bc56d7727844526c3894d40c",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/packaged-resume-final.log",
+      "sha256": "c6f90aa5e349ebee5859038d6e1ae5016bf7629e0ea2b8a7967a9995e958edc0",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/packaged-resume.log",
+      "sha256": "c6f90aa5e349ebee5859038d6e1ae5016bf7629e0ea2b8a7967a9995e958edc0",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/parser-commit.log",
+      "sha256": "94e2a08e58f924c5d4cd7aee70295251f993721624720898685e5b4c9acbe848",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/performance-comparison.json",
+      "sha256": "ef7d69f23735dbad5913cae69224bd90d0ebba6cc7b8fe692a3552e019eab187",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/performance-resume-final.log",
+      "sha256": "c849da058edfc848d28edb104cb9f073d67c065a80b01f0b2f41ed3ca84980f2",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/performance-resume.log",
+      "sha256": "9f529e8ae7e0815b17bbbed99a867e1e1248bf9bf0ac0451155a03c412dd71ab",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/platform-guards.log",
+      "sha256": "75cb13450eaf44cdc565f5ee2c64f91c8265854050712a2924a0fe81d434cae8",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/public-stickersmash.json",
+      "sha256": "dee4177582c1e34f39b89ee103904e57246503a344343eb2ceb5d687bea3b6bc",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/public-validation.log",
+      "sha256": "892445466c19934160b1727c2cd1cbe12c4c5dca294a5e040f349bd21402bebb",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/qualification/expo55-android-react-reuse.json",
+      "sha256": "0cae2ad6da846c2537eff490b40846bda048bfe9c0bc6a04363d0b122357a957",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/qualification/expo55-ios-react-reuse.json",
+      "sha256": "342a9da2387710a5ed77d6c78e58f69693e70a61ae617536b97eb871d32e3527",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/qualification/expo56-android-react-reuse.json",
+      "sha256": "87cf7813e5aa259ba96f9aaa8c5e791eac39c389e017102b904e0ddf3f6beafa",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/qualification/expo56-ios-react-reuse.json",
+      "sha256": "dd805c7f697fff62ddfd599c474d6220e8563b0e533221b879b150c975566db9",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/qualification/rn83-bare-android-react-reuse.json",
+      "sha256": "55b53841e94a92054d6e64f728c34082f8fa08da4e596bee242eb92ed0fe809c",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/qualification/rn83-bare-ios-react-reuse.json",
+      "sha256": "ad4086036aef36e9945f9ae4edc3840456b649ea4a1ec6c3a55f71b345d39b04",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/qualification/rn85-bare-android-react-reuse.json",
+      "sha256": "f393dd214c60272382fc63e6d331de088737925ca4dc7f5188366687701a6b8d",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/qualification/rn85-bare-ios-react-reuse.json",
+      "sha256": "180c97cd8e7d70b17af512dc181d70ad0b3f5e12298298f8e477fe818f57d313",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/react-reuse.log",
+      "sha256": "373f01ff7e3b292cf3fd08a95e9c9789e2ddea09549c0642749d32812bdcdcd6",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/regression-resume-concurrent-failed.log",
+      "sha256": "f422ddaf5b0c3cf2422ecce799b69451b812ede2d8aaa1f0076af413d29319de",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/regression-resume-final.log",
+      "sha256": "18efe87eaf1a1354262ba3f55a785c9204d9921d2e6be33335237c224d7e941c",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/regression-resume-intermediate-array-id-failed.log",
+      "sha256": "8480bc0c76fef52b33c6f6f775b758aa1268c2072fc41409e5d6e1f94e52d74b",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/regression-resume.log",
+      "sha256": "c72ee30eb0cff6bb58d496290d2e2ea5fa8307dc32566c954644600694b17ea4",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/regression.log",
+      "sha256": "910e33e91ad5c2a11304ef9861f98c092fc9a1829004bc15eceec5d9448f0f3d",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/rn83-bare-android-metro-advanced-defaults-oracle.json",
+      "sha256": "e138111c725a72e9823264f0df83abeef27b4ac4c5e1dabbfcef33bf5f32b59a",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/rn83-bare-android-metro-advanced.json",
+      "sha256": "f7fdef2362b4510e5e6d270e11c2310db3496dd82e2ae7e241ca10f352fd369a",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/rn83-bare-android-metro-defaults-oracle.json",
+      "sha256": "39a3bdae0c334616f86b1fafcd40ff602de3855b6066e09506da7a596a3f048c",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/rn83-bare-android-metro.json",
+      "sha256": "96766e13fdf53a28fede44655495ed1f89890dd31b3f6eecba45368302e9ed21",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/rn83-bare-android-navigation-linking.json",
+      "sha256": "004b100e61bcd2cbe28b394a0a08b5627d7ac1a25af7055f3f372eaf7d9c0cd2",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/rn83-bare-android-platform.json",
+      "sha256": "ec4360104db7f64f5401172de3575b39adcdcacf96e7977572147a275c01d893",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/rn83-bare-ios-metro-advanced-defaults-oracle.json",
+      "sha256": "0db69dde154718b6e35652aae2c5333629a45c6dc1de4a5cad5644ac25e57150",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/rn83-bare-ios-metro-advanced.json",
+      "sha256": "7b2448ccdf925bb4c60ed7c99003a979f8679977bd3927ce44d66b0ba54db6d8",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/rn83-bare-ios-metro-defaults-oracle.json",
+      "sha256": "86be4399ce0acceae3c3eea0dd333a30837d004dcab2ea1858e14c02e6a3cb84",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/rn83-bare-ios-metro.json",
+      "sha256": "d03b52bcdbdcc8396009050789c203141bb32bb32823756839a356711e780c5e",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/rn83-bare-ios-navigation-linking.json",
+      "sha256": "669974ba5747842d1610dee32035763f7527fca6db0ff67f4b9d8df8ed699bb1",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/rn83-bare-ios-platform.json",
+      "sha256": "e0be6024adc0528f3961bd728a2c63c1a722b278ad17a8a84125980dd51087d0",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/rn83-bare-metro-defaults.json",
+      "sha256": "824da5e8d8cc411bc55c7601ae58dbfc4b2cf409b2839a249c2a7754e3f70c01",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/rn85-bare-android-metro-advanced-defaults-oracle.json",
+      "sha256": "a138971c9edf02fd429ef1c5b02a8ed89ce2aaa5eb9815d63d00f3d5e18ccd84",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/rn85-bare-android-metro-advanced.json",
+      "sha256": "94c7328f2e4d0242c96bf6f25543a4258b3e46faca1ac6563208964adcb58ba2",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/rn85-bare-android-metro-defaults-oracle.json",
+      "sha256": "30027ef1afd6b7bf22cd0c0afc358be9c8ec07ed779ecdf1bf7dbad4d55cee02",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/rn85-bare-android-metro.json",
+      "sha256": "c0926169b22e9701320c338d9a98e164e17f47dfaafcda2667948d58636aa226",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/rn85-bare-android-navigation-linking.json",
+      "sha256": "581e6144af0e83495f98232a1cdf55e6367bcc1c6f8072142b6e130e73b7d386",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/rn85-bare-android-platform.json",
+      "sha256": "9b34fc767d47f92aad0822b4d27a8e4f554120b50b94a33c19916df6a4781215",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/rn85-bare-ios-metro-advanced-defaults-oracle.json",
+      "sha256": "21a29f4d7fc7f08335f94e1a799c8835e037ab4b94ff06f1ba2a7267f04f9e66",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/rn85-bare-ios-metro-advanced.json",
+      "sha256": "6433a9bbb41296ad09d71024bb0769f2ce5bd1eaafd9ddacac00e75323126e92",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/rn85-bare-ios-metro-defaults-oracle.json",
+      "sha256": "341cc7c659b0cde7bc5fed63b738f8f35a515ed9d937a1776822e28e0f303434",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/rn85-bare-ios-metro.json",
+      "sha256": "099a7e7317a6bf880e09a3b72a730423e71cbad8b59a7d53cf1b34b53db0d5c0",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/rn85-bare-ios-navigation-linking.json",
+      "sha256": "fe577ae5a3aee55749fbc39199be8015774af138f2a5d5e4f6786fdb7c2505db",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/rn85-bare-ios-platform.json",
+      "sha256": "9c7d1fb481ca08d739eaf25bf5bf155c12dfee47191ea556bcdd5bbc5b787197",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/rn85-bare-metro-defaults.json",
+      "sha256": "5e8f16e99e42e864d3179e89652b54fcd11bebab9e8cedca365c54a641e3fb2f",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/route-resource-ceiling.json",
+      "sha256": "9dc8e3ad67687b864c570e49c3129e6dd1c0e374cffc166695f6a07777577054",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/rust-resume.log",
+      "sha256": "40a304020cf0e6f2a775c44d9d442536046a5ec00617bacc4ec322e8f8f2ca23",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/rust-tests-retry.log",
+      "sha256": "3b5f9055aa2a4db2cefa4c86a9aa8d26c1662533e6ff680f06b204523f4c53e4",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/rust-tests.log",
+      "sha256": "3d7864238e32f9199412ce91e4f88bfc14234cde294e2c69f19923e3097be635",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/shared-contract-regression.log",
+      "sha256": "591997aa775f72ee0b05b9c1b74f53bda489894184056d46f52260509404ad6a",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/sidecar-mobile-profiles.json",
+      "sha256": "2878867a2dabbffc2ec0c9be34799947fe7089e4fd90556ffc568e5c7fff8da5",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/sidecar-mobile-profiles.log",
+      "sha256": "8cc0ec8aceae70529a9e3ed494dc71e9f972b32e4c18a5fbe188174a96b625e5",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/starting-inventory.json",
+      "sha256": "0dce0f414c5a79431c15a414ab1be5136a480b1d589929aba148ee206c8cb6bf",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/typecheck-resume.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/evidence/watch-statuses.json",
+      "sha256": "17e8ea8dd0950959e1040beff051b683e404dc9b89a0dc0be15b1007867155d6",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/licenses/hermes-estree-MIT.txt",
+      "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/licenses/hermes-parser-MIT.txt",
+      "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/progress-report.md",
+      "sha256": "cbd6b46521501f7a9d06cbaefda0d8b05e1b09c9dbb65be2e65b31c6905ad349",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/qualification.md",
+      "sha256": "b708df94917c0aef6f475e9a0397fffd7d5c7e63e0d35329cf44e141f3ded1c2",
+      "acceptedHash": null
+    },
+    {
+      "path": "docs/fs-07/resource-results.md",
+      "sha256": "1380af00c24d2a3c5a88a14d169dac2bfff3d63564fc2616037fbc36a616236a",
+      "acceptedHash": null
+    },
+    {
+      "path": "lib/engine/adapters/composed.ts",
+      "sha256": "f4bedf3188691f91f40b2cb1772ab7797ead35d0d617e1902c90ea50ab6242d9",
+      "acceptedHash": "3e29708d2fc9c590c7c40e1e3fb3c5d6568a0d432c4230c3316906015fdedf08"
+    },
+    {
+      "path": "lib/engine/adapters/flow-contract.ts",
+      "sha256": "f4a5a0d50922f886b744e95882f0c103168aa589421df49958dd0e138da15aaa",
+      "acceptedHash": null
+    },
+    {
+      "path": "lib/engine/adapters/flow-resource-pin.ts",
+      "sha256": "9e0591256d4677e55372908c82f6e6c96cae7d2d96975bc4da8ecf9ade2f5123",
+      "acceptedHash": null
+    },
+    {
+      "path": "lib/engine/adapters/flow-runtime.ts",
+      "sha256": "f5f74744767a95d2ee86f5a133507b8977aa2c686bed3b926a600f53ff1fc867",
+      "acceptedHash": null
+    },
+    {
+      "path": "lib/engine/adapters/flow-syntax.ts",
+      "sha256": "c065d020fd03616f5b621fa0a0add33792e62e1d563f37a4b232a3781a7a8d88",
+      "acceptedHash": null
+    },
+    {
+      "path": "lib/engine/adapters/flow-worker.ts",
+      "sha256": "25bb63017968a07fc4c76e5cac8b993b98abf73c896a71d48107fc6471fa5091",
+      "acceptedHash": null
+    },
+    {
+      "path": "lib/engine/adapters/flow.ts",
+      "sha256": "0c8fd7582ffc5e008394250932b23330265339293d1d84aa2c31ef0c9f17d072",
+      "acceptedHash": null
+    },
+    {
+      "path": "lib/engine/adapters/typescript.ts",
+      "sha256": "3972ff1222882bc3998b8b2d32cc5965e5c623a6cde9b6478a329f96b634ac2e",
+      "acceptedHash": "6498f03acb4b3579f79906b8aee0b7a075d4ea33e1ff542cb687094dd9541a4e"
+    },
+    {
+      "path": "lib/engine/assets/flow/runtime.json",
+      "sha256": "3db34e3b74f331f4f287f4e1f315b0c16554cb9a17ada6400449591124ca1559",
+      "acceptedHash": null
+    },
+    {
+      "path": "lib/engine/coordinator.ts",
+      "sha256": "bab38fd35dad8981409d2d6e9396145463077be702f77e9a14a59e74034aeca6",
+      "acceptedHash": "875e2d2451b1cd176a90006582045bf0aa386d847b61347f51e766334f6409ad"
+    },
+    {
+      "path": "lib/engine/parser-worker.ts",
+      "sha256": "e1f37829241241eb2c47cdadd2198928e39ba86ad4d775d5d490c2043ee7bbb4",
+      "acceptedHash": "c9b8806ce8d34bc41f907d0973ad8e5d368920a489830e0336a05b1115e3f67f"
+    },
+    {
+      "path": "lib/parser/adapters/expo-router.ts",
+      "sha256": "0b8a8de3a71e5c7bf67a1a801e7094595dd39c6999d66d1e7a54d418e6ab8182",
+      "acceptedHash": null
+    },
+    {
+      "path": "lib/parser/adapters/metro-config.ts",
+      "sha256": "c37a04dff51d8b4eda32ed6c8dd8ae7556d3f5b34ac2d89ff8153bf65a8e82a9",
+      "acceptedHash": null
+    },
+    {
+      "path": "lib/parser/adapters/metro-defaults.ts",
+      "sha256": "7b3f3f98bc0784d4c2f5d1ea434d7238e3dec0fef15a1b16a8aa9ba008cf0675",
+      "acceptedHash": null
+    },
+    {
+      "path": "lib/parser/adapters/metro-profile.ts",
+      "sha256": "0c292e87a4269e911502b5b3003f5ea68dc0447349b4cb37c8529c8d3370fa49",
+      "acceptedHash": null
+    },
+    {
+      "path": "lib/parser/adapters/metro-resolution.ts",
+      "sha256": "8cbd1fff336a0ac5a950c65ffa39c31cf0cc42911f78c4b9bfe66c6340af86ca",
+      "acceptedHash": null
+    },
+    {
+      "path": "lib/parser/adapters/react-native.ts",
+      "sha256": "a794903ff3459bc5e095550f6d910b74b2ca78b6e01e605e9920d3a1a68b0f33",
+      "acceptedHash": null
+    },
+    {
+      "path": "lib/parser/adapters/rn-linking.ts",
+      "sha256": "88d8664b3a0a9a36e19e38f5b42c6bec3dcf47330db057ac3853fccb2fb8e03b",
+      "acceptedHash": null
+    },
+    {
+      "path": "lib/parser/adapters/rn-native-boundaries.ts",
+      "sha256": "885670ff884038b78fb431bff6399e5023a4498eee82f2ec1e46cdd33527c74e",
+      "acceptedHash": null
+    },
+    {
+      "path": "lib/parser/adapters/rn-navigation.ts",
+      "sha256": "2df2eac55b88a00e0cd21198a84cafbf459321d44af41535a5f70dabb35742e3",
+      "acceptedHash": null
+    },
+    {
+      "path": "lib/parser/adapters/rn-platform.ts",
+      "sha256": "4dd4a5c5f7395eaa762a113456f9e5fcf4a84217aa901843e7a58b1afeb9853f",
+      "acceptedHash": null
+    },
+    {
+      "path": "lib/parser/adapters/vite-calls.ts",
+      "sha256": "01d1b5fe73f73a506a01d4ba1e46c97bc57a56b641539ee1d40d6a6f1d553929",
+      "acceptedHash": "3682d5688b8c55d400aa2c445c0bf18cf605eafa3359ca76fb7b8a6f495dfc4f"
+    },
+    {
+      "path": "lib/parser/adapters/vite-react.ts",
+      "sha256": "37c091dd42c59c196a061ba52debf60ef04fb4703e0774750c436e71c8baadd1",
+      "acceptedHash": "9e00badc6d0942a4c0646476350486257a8967f7ed55c89c632e19b34e11dbf4"
+    },
+    {
+      "path": "lib/parser/flow-dialect.ts",
+      "sha256": "c04c2aa515c8550511042c71a5e26978247e0dfa8811a78dcf6e6cb3012200e8",
+      "acceptedHash": null
+    },
+    {
+      "path": "lib/parser/framework-bindings.ts",
+      "sha256": "83e2c260a98b1dd8436f5bf7e3f790cc1a78cb52f98bda35fd98b4761abe8f68",
+      "acceptedHash": "fb3726fd8b76933b579edb66693bc379f36764851a4e024b9aa5d9e525933a7f"
+    },
+    {
+      "path": "lib/parser/framework-budget.ts",
+      "sha256": "7936daf5999382a318b51109d03283143352ae850158e4cccae7e64a328f29a7",
+      "acceptedHash": "c37a5c76d26cdf29214ead9c19508014d2a65e622938ecbfd97464eec90e07b8"
+    },
+    {
+      "path": "lib/parser/index.ts",
+      "sha256": "1a4418afe52657fe9fc96ceff5c36bbc973836f310fd76e8448c045dc623bb2b",
+      "acceptedHash": "c88f88f86e56d53211594a87f8de3ef04e90c629048aff81c4715f99ed81ffe6"
+    },
+    {
+      "path": "lib/parser/resolve.ts",
+      "sha256": "9e0671e9e7a7fbb462a5a0fd5a57053f1a31a7e4ff21ae874badf8a3ec7a1b14",
+      "acceptedHash": "d4ab13efc022742cfc49a424028beb997b7e964d45f9c95928395760da6fa3dc"
+    },
+    {
+      "path": "lib/repository/metadata-policy.ts",
+      "sha256": "c189e5961167b2570ed39efd43fb88f87e04390af11b5afd9b35f8c595c09c6e",
+      "acceptedHash": "65c0961dc9c8756071a47c4a2575e731c221bd1532b2ced184ebed36ce24c514"
+    },
+    {
+      "path": "package.json",
+      "sha256": "d4796ffc5745b27157a3ece610a2bf04cf4bdedfe5428b880483c5447c4292be",
+      "acceptedHash": "8d3def5fb145e6282d59be4eb9c9ca157e5543b610bb8f3dde29fb83385c4f32"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "sha256": "08912b2e0f687cacd9ce5f54d25bdc5d73de7eca807d28316ffd2d1e4eeff67c",
+      "acceptedHash": "e0e7844d175d9524b7bd4bf52abd19259395fd11ab6ff83b31b179f6f3aedf7f"
+    },
+    {
+      "path": "scripts/engine.ts",
+      "sha256": "c78e7eed89e5ad2bf3c7e9fcdff44a1e10775ad37f65d9a1f274ffed9de1c20d",
+      "acceptedHash": "567b4784666671cfbf55a248973e39219aa25b8eaec031ddaf8b99a249c18671"
+    },
+    {
+      "path": "scripts/fs-07-baseline.ts",
+      "sha256": "2ce4a04b5756807442c5983ece7ad45a4b36acca5ffa1a75e88037b8cc8664b3",
+      "acceptedHash": null
+    },
+    {
+      "path": "scripts/fs-07-containment.ts",
+      "sha256": "17fb7e046b2110a16e3c5dff0e049a39d879e69dbfaca4ef530e24ffd66a8f57",
+      "acceptedHash": null
+    },
+    {
+      "path": "scripts/fs-07-expo-oracles.ts",
+      "sha256": "834c2a3387116aca9fd797955ec71cdd35d349eddadbf7222b23ab471ff3e51a",
+      "acceptedHash": null
+    },
+    {
+      "path": "scripts/fs-07-hermes-experiment.ts",
+      "sha256": "95fa70db2ae055e66d513c43baa5892dbdff8466741c1773a583a84e04008dc2",
+      "acceptedHash": null
+    },
+    {
+      "path": "scripts/fs-07-inventory.ts",
+      "sha256": "34273290ef854bd4c11b39637a2ec6ca5b0a394f08d23b6f7bbfa3b8f64046f8",
+      "acceptedHash": null
+    },
+    {
+      "path": "scripts/fs-07-metro-defaults.ts",
+      "sha256": "9d853f2eafe63687377e541c9dec0a9d48992f88eef0db7a25ec37f946897c2d",
+      "acceptedHash": null
+    },
+    {
+      "path": "scripts/fs-07-metro-oracles.ts",
+      "sha256": "804577d216893a4ea2176f93203ddf525946c668fe93520c4668ee2020aa461e",
+      "acceptedHash": null
+    },
+    {
+      "path": "scripts/fs-07-navigation-oracles.ts",
+      "sha256": "dfaaa3b7057229b5838e8ccbd9b22613b3d754dcd997e92b96af2189df5ec2c5",
+      "acceptedHash": null
+    },
+    {
+      "path": "scripts/fs-07-package-audit.ts",
+      "sha256": "cb67ed84bf2ed444701fa7b185f7e939773be24e9090ec18b6eb194532e0920f",
+      "acceptedHash": null
+    },
+    {
+      "path": "scripts/fs-07-packaged-foundation.ts",
+      "sha256": "acdb97bde5509b61a0d60345f07bc2c3c114da6837c5d43cc01c28ef4d8dab22",
+      "acceptedHash": null
+    },
+    {
+      "path": "scripts/fs-07-parser-commit-worker.mjs",
+      "sha256": "3be533923be4e9965140c9922c8d6fb1eb33ecffeb9720ac7a5e90f54232c68d",
+      "acceptedHash": null
+    },
+    {
+      "path": "scripts/fs-07-parser-commit.ts",
+      "sha256": "ad79a0aebe6d27814d085848741b3ce625cd407d6c11fd0673adf80c27bfde3c",
+      "acceptedHash": null
+    },
+    {
+      "path": "scripts/fs-07-parser-resources.ts",
+      "sha256": "80e8bedac0df3dc013517b310158f42413d0aebdf712dde96dcff6dbae78a9e2",
+      "acceptedHash": null
+    },
+    {
+      "path": "scripts/fs-07-performance.ts",
+      "sha256": "d2ba2b5158a01a3106c9d2bdacacbb99663b5894e6c095f3fba5b0c4aab5c770",
+      "acceptedHash": null
+    },
+    {
+      "path": "scripts/fs-07-pin-metro-defaults.ts",
+      "sha256": "2e6c4b2d0db73ebb3814e80eccf6d2eeef755caf79ad8db7d55561a8600ed92d",
+      "acceptedHash": null
+    },
+    {
+      "path": "scripts/fs-07-platform-oracles.ts",
+      "sha256": "5b0f579bcea055f93014e4f52b22e4ec2113e5976056b43559dd8d3deaebedfa",
+      "acceptedHash": null
+    },
+    {
+      "path": "scripts/fs-07-public-validation.ts",
+      "sha256": "8b21669db1ddb9a2ae2c6635fc20bacf2cc9be566d86341b02bbcedfb89f9af3",
+      "acceptedHash": null
+    },
+    {
+      "path": "scripts/package-engine.ts",
+      "sha256": "0939b9a8781c8623c2fcc85f073c90ee74e5c13854fb0c7622f55423520582ba",
+      "acceptedHash": "ed246073c7e8844451b27cf3aa3e87f7b963f0b63983e74eabf8b2a9c280e383"
+    },
+    {
+      "path": "scripts/sidecar.ts",
+      "sha256": "e8d6fb865426f974e499ab3ba60f5ddce968e802c285132a640d259fd6a66afd",
+      "acceptedHash": "998b5f08517fc8d7875380d2b3bc9c337d1d4ec1ca2e73ffbc08b5cce4a5f795"
+    },
+    {
+      "path": "tests/fixtures/framework-support/F07-rn/expo-routes.json",
+      "sha256": "613fca37cae5aa9b1bb5fabe8df390e7b4cbb2149b57ef4f9e9a9459652db871",
+      "acceptedHash": null
+    },
+    {
+      "path": "tests/fixtures/framework-support/F07-rn/flow.json",
+      "sha256": "627db31b1cfba8543381a39f3a253c6e12dbb17039ba85a3f5f75859e98f94a6",
+      "acceptedHash": null
+    },
+    {
+      "path": "tests/fixtures/framework-support/F07-rn/linking.json",
+      "sha256": "a3c00f2e7c66db197a6c85ca7fc39d820049a0c4ed128558fe7235ca10f259eb",
+      "acceptedHash": null
+    },
+    {
+      "path": "tests/fixtures/framework-support/F07-rn/metro-advanced.json",
+      "sha256": "cd51c85233a8c4e3430bfe5238c4169718109ea2b1c5de80259ec88a71ac30b9",
+      "acceptedHash": null
+    },
+    {
+      "path": "tests/fixtures/framework-support/F07-rn/metro.json",
+      "sha256": "38078e691e65c80deef24675f48d7b58bc6f1838c1320d8f83f3c971888e44c2",
+      "acceptedHash": null
+    },
+    {
+      "path": "tests/fixtures/framework-support/F07-rn/platform.json",
+      "sha256": "661f21ae145e789b48e1fbc2fdff91caa489b60abd521b2340af0df1e69e23a8",
+      "acceptedHash": null
+    },
+    {
+      "path": "tests/fixtures/framework-support/F07-rn/react-patterns.json",
+      "sha256": "a64df5a61f362e88ae771fcbb9b736dd0c2b4f57c0d670a6d1fd6a5478923bbc",
+      "acceptedHash": null
+    },
+    {
+      "path": "tests/framework-support/fs-07.test.ts",
+      "sha256": "7a9ba8c37705df09f429b49eefdb0bc76abffd8dcdae727c9d645341bfdcc6c2",
+      "acceptedHash": null
+    }
+  ],
+  "deleted": [],
+  "regeneratedFS06Evidence": [
+    "docs/fs-06/evidence/qualification/django52-converters-boundaries.json",
+    "docs/fs-06/evidence/qualification/django52-converters-builtins.json",
+    "docs/fs-06/evidence/qualification/django52-decorators-require_GET-false.json",
+    "docs/fs-06/evidence/qualification/django52-decorators-require_GET-true.json",
+    "docs/fs-06/evidence/qualification/django52-decorators-require_POST-false.json",
+    "docs/fs-06/evidence/qualification/django52-decorators-require_POST-true.json",
+    "docs/fs-06/evidence/qualification/django52-decorators-require_http_methods-false.json",
+    "docs/fs-06/evidence/qualification/django52-decorators-require_http_methods-true.json",
+    "docs/fs-06/evidence/qualification/django52-decorators-require_safe-false.json",
+    "docs/fs-06/evidence/qualification/django52-decorators-require_safe-true.json",
+    "docs/fs-06/evidence/qualification/django52-dynamic-decorator.json",
+    "docs/fs-06/evidence/qualification/django52-dynamic-escape.json",
+    "docs/fs-06/evidence/qualification/django52-dynamic-format-settings.json",
+    "docs/fs-06/evidence/qualification/django52-dynamic-index.json",
+    "docs/fs-06/evidence/qualification/django52-dynamic-mutation.json",
+    "docs/fs-06/evidence/qualification/django52-formats-0-inline.json",
+    "docs/fs-06/evidence/qualification/django52-formats-0-reassignment.json",
+    "docs/fs-06/evidence/qualification/django52-formats-1-inline.json",
+    "docs/fs-06/evidence/qualification/django52-formats-1-reassignment.json",
+    "docs/fs-06/evidence/qualification/django52-formats-10-inline.json",
+    "docs/fs-06/evidence/qualification/django52-formats-10-reassignment.json",
+    "docs/fs-06/evidence/qualification/django52-formats-11-inline.json",
+    "docs/fs-06/evidence/qualification/django52-formats-11-reassignment.json",
+    "docs/fs-06/evidence/qualification/django52-formats-12-inline.json",
+    "docs/fs-06/evidence/qualification/django52-formats-12-reassignment.json",
+    "docs/fs-06/evidence/qualification/django52-formats-13-inline.json",
+    "docs/fs-06/evidence/qualification/django52-formats-13-reassignment.json",
+    "docs/fs-06/evidence/qualification/django52-formats-14-inline.json",
+    "docs/fs-06/evidence/qualification/django52-formats-14-reassignment.json",
+    "docs/fs-06/evidence/qualification/django52-formats-15-inline.json",
+    "docs/fs-06/evidence/qualification/django52-formats-15-reassignment.json",
+    "docs/fs-06/evidence/qualification/django52-formats-2-inline.json",
+    "docs/fs-06/evidence/qualification/django52-formats-2-reassignment.json",
+    "docs/fs-06/evidence/qualification/django52-formats-3-inline.json",
+    "docs/fs-06/evidence/qualification/django52-formats-3-reassignment.json",
+    "docs/fs-06/evidence/qualification/django52-formats-4-inline.json",
+    "docs/fs-06/evidence/qualification/django52-formats-4-reassignment.json",
+    "docs/fs-06/evidence/qualification/django52-formats-5-inline.json",
+    "docs/fs-06/evidence/qualification/django52-formats-5-reassignment.json",
+    "docs/fs-06/evidence/qualification/django52-formats-6-inline.json",
+    "docs/fs-06/evidence/qualification/django52-formats-6-reassignment.json",
+    "docs/fs-06/evidence/qualification/django52-formats-7-inline.json",
+    "docs/fs-06/evidence/qualification/django52-formats-7-reassignment.json",
+    "docs/fs-06/evidence/qualification/django52-formats-8-inline.json",
+    "docs/fs-06/evidence/qualification/django52-formats-8-reassignment.json",
+    "docs/fs-06/evidence/qualification/django52-formats-9-inline.json",
+    "docs/fs-06/evidence/qualification/django52-formats-9-reassignment.json",
+    "docs/fs-06/evidence/qualification/django52-includes-0.json",
+    "docs/fs-06/evidence/qualification/django52-includes-1.json",
+    "docs/fs-06/evidence/qualification/django52-includes-2.json",
+    "docs/fs-06/evidence/qualification/django52-includes-3.json",
+    "docs/fs-06/evidence/qualification/django52-includes-4.json",
+    "docs/fs-06/evidence/qualification/django52-includes-5.json",
+    "docs/fs-06/evidence/qualification/django52-models-custom-manager.json",
+    "docs/fs-06/evidence/qualification/django52-models-field-operation-table.json",
+    "docs/fs-06/evidence/qualification/django52-models-mutated-manager.json",
+    "docs/fs-06/evidence/qualification/django52-models-relationships.json",
+    "docs/fs-06/evidence/qualification/django52-routers-DefaultRouter-path-bare.json",
+    "docs/fs-06/evidence/qualification/django52-routers-DefaultRouter-path-slash.json",
+    "docs/fs-06/evidence/qualification/django52-routers-DefaultRouter-regex-bare.json",
+    "docs/fs-06/evidence/qualification/django52-routers-DefaultRouter-regex-slash.json",
+    "docs/fs-06/evidence/qualification/django52-routers-SimpleRouter-path-bare.json",
+    "docs/fs-06/evidence/qualification/django52-routers-SimpleRouter-path-slash.json",
+    "docs/fs-06/evidence/qualification/django52-routers-SimpleRouter-regex-bare.json",
+    "docs/fs-06/evidence/qualification/django52-routers-SimpleRouter-regex-slash.json",
+    "docs/fs-06/evidence/qualification/django52-serializers-HyperlinkedModelSerializer.json",
+    "docs/fs-06/evidence/qualification/django52-serializers-ModelSerializer.json",
+    "docs/fs-06/evidence/qualification/django52-serializers-Serializer.json",
+    "docs/fs-06/evidence/qualification/django52-serializers-opaque-meta.json",
+    "docs/fs-06/evidence/qualification/django52-signals-conditional.json",
+    "docs/fs-06/evidence/qualification/django52-signals-custom.json",
+    "docs/fs-06/evidence/qualification/django52-signals-duplicates.json",
+    "docs/fs-06/evidence/qualification/django52-templates-ambiguous-url.json",
+    "docs/fs-06/evidence/qualification/django52-templates-conflict.json",
+    "docs/fs-06/evidence/qualification/django52-templates-custom-engine.json",
+    "docs/fs-06/evidence/qualification/django52-templates-cycle-unicode.json",
+    "docs/fs-06/evidence/qualification/django52-templates-dynamic.json",
+    "docs/fs-06/evidence/qualification/django52-templates-malformed.json",
+    "docs/fs-06/evidence/qualification/django52-templates-tag.json",
+    "docs/fs-06/evidence/qualification/django60-converters-boundaries.json",
+    "docs/fs-06/evidence/qualification/django60-converters-builtins.json",
+    "docs/fs-06/evidence/qualification/django60-decorators-require_GET-false.json",
+    "docs/fs-06/evidence/qualification/django60-decorators-require_GET-true.json",
+    "docs/fs-06/evidence/qualification/django60-decorators-require_POST-false.json",
+    "docs/fs-06/evidence/qualification/django60-decorators-require_POST-true.json",
+    "docs/fs-06/evidence/qualification/django60-decorators-require_http_methods-false.json",
+    "docs/fs-06/evidence/qualification/django60-decorators-require_http_methods-true.json",
+    "docs/fs-06/evidence/qualification/django60-decorators-require_safe-false.json",
+    "docs/fs-06/evidence/qualification/django60-decorators-require_safe-true.json",
+    "docs/fs-06/evidence/qualification/django60-dynamic-decorator.json",
+    "docs/fs-06/evidence/qualification/django60-dynamic-escape.json",
+    "docs/fs-06/evidence/qualification/django60-dynamic-format-settings.json",
+    "docs/fs-06/evidence/qualification/django60-dynamic-index.json",
+    "docs/fs-06/evidence/qualification/django60-dynamic-mutation.json",
+    "docs/fs-06/evidence/qualification/django60-formats-0-inline.json",
+    "docs/fs-06/evidence/qualification/django60-formats-0-reassignment.json",
+    "docs/fs-06/evidence/qualification/django60-formats-1-inline.json",
+    "docs/fs-06/evidence/qualification/django60-formats-1-reassignment.json",
+    "docs/fs-06/evidence/qualification/django60-formats-10-inline.json",
+    "docs/fs-06/evidence/qualification/django60-formats-10-reassignment.json",
+    "docs/fs-06/evidence/qualification/django60-formats-11-inline.json",
+    "docs/fs-06/evidence/qualification/django60-formats-11-reassignment.json",
+    "docs/fs-06/evidence/qualification/django60-formats-12-inline.json",
+    "docs/fs-06/evidence/qualification/django60-formats-12-reassignment.json",
+    "docs/fs-06/evidence/qualification/django60-formats-13-inline.json",
+    "docs/fs-06/evidence/qualification/django60-formats-13-reassignment.json",
+    "docs/fs-06/evidence/qualification/django60-formats-14-inline.json",
+    "docs/fs-06/evidence/qualification/django60-formats-14-reassignment.json",
+    "docs/fs-06/evidence/qualification/django60-formats-15-inline.json",
+    "docs/fs-06/evidence/qualification/django60-formats-15-reassignment.json",
+    "docs/fs-06/evidence/qualification/django60-formats-2-inline.json",
+    "docs/fs-06/evidence/qualification/django60-formats-2-reassignment.json",
+    "docs/fs-06/evidence/qualification/django60-formats-3-inline.json",
+    "docs/fs-06/evidence/qualification/django60-formats-3-reassignment.json",
+    "docs/fs-06/evidence/qualification/django60-formats-4-inline.json",
+    "docs/fs-06/evidence/qualification/django60-formats-4-reassignment.json",
+    "docs/fs-06/evidence/qualification/django60-formats-5-inline.json",
+    "docs/fs-06/evidence/qualification/django60-formats-5-reassignment.json",
+    "docs/fs-06/evidence/qualification/django60-formats-6-inline.json",
+    "docs/fs-06/evidence/qualification/django60-formats-6-reassignment.json",
+    "docs/fs-06/evidence/qualification/django60-formats-7-inline.json",
+    "docs/fs-06/evidence/qualification/django60-formats-7-reassignment.json",
+    "docs/fs-06/evidence/qualification/django60-formats-8-inline.json",
+    "docs/fs-06/evidence/qualification/django60-formats-8-reassignment.json",
+    "docs/fs-06/evidence/qualification/django60-formats-9-inline.json",
+    "docs/fs-06/evidence/qualification/django60-formats-9-reassignment.json",
+    "docs/fs-06/evidence/qualification/django60-includes-0.json",
+    "docs/fs-06/evidence/qualification/django60-includes-1.json",
+    "docs/fs-06/evidence/qualification/django60-includes-2.json",
+    "docs/fs-06/evidence/qualification/django60-includes-3.json",
+    "docs/fs-06/evidence/qualification/django60-includes-4.json",
+    "docs/fs-06/evidence/qualification/django60-includes-5.json",
+    "docs/fs-06/evidence/qualification/django60-models-custom-manager.json",
+    "docs/fs-06/evidence/qualification/django60-models-field-operation-table.json",
+    "docs/fs-06/evidence/qualification/django60-models-mutated-manager.json",
+    "docs/fs-06/evidence/qualification/django60-models-relationships.json",
+    "docs/fs-06/evidence/qualification/django60-routers-DefaultRouter-path-bare.json",
+    "docs/fs-06/evidence/qualification/django60-routers-DefaultRouter-path-slash.json",
+    "docs/fs-06/evidence/qualification/django60-routers-DefaultRouter-regex-bare.json",
+    "docs/fs-06/evidence/qualification/django60-routers-DefaultRouter-regex-slash.json",
+    "docs/fs-06/evidence/qualification/django60-routers-SimpleRouter-path-bare.json",
+    "docs/fs-06/evidence/qualification/django60-routers-SimpleRouter-path-slash.json",
+    "docs/fs-06/evidence/qualification/django60-routers-SimpleRouter-regex-bare.json",
+    "docs/fs-06/evidence/qualification/django60-routers-SimpleRouter-regex-slash.json",
+    "docs/fs-06/evidence/qualification/django60-serializers-HyperlinkedModelSerializer.json",
+    "docs/fs-06/evidence/qualification/django60-serializers-ModelSerializer.json",
+    "docs/fs-06/evidence/qualification/django60-serializers-Serializer.json",
+    "docs/fs-06/evidence/qualification/django60-serializers-opaque-meta.json",
+    "docs/fs-06/evidence/qualification/django60-signals-conditional.json",
+    "docs/fs-06/evidence/qualification/django60-signals-custom.json",
+    "docs/fs-06/evidence/qualification/django60-signals-duplicates.json",
+    "docs/fs-06/evidence/qualification/django60-templates-ambiguous-url.json",
+    "docs/fs-06/evidence/qualification/django60-templates-conflict.json",
+    "docs/fs-06/evidence/qualification/django60-templates-custom-engine.json",
+    "docs/fs-06/evidence/qualification/django60-templates-cycle-unicode.json",
+    "docs/fs-06/evidence/qualification/django60-templates-dynamic.json",
+    "docs/fs-06/evidence/qualification/django60-templates-malformed.json",
+    "docs/fs-06/evidence/qualification/django60-templates-tag.json"
+  ],
+  "selfExcluded": true
+}

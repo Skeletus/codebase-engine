@@ -1,0 +1,1241 @@
+{
+  "status": "PASS",
+  "scope": "supplementary static robustness only; upstream versions are not rewritten or qualified",
+  "repository": "https://github.com/expo/examples",
+  "commit": "76a1dd12978a7ba54b0e318cec01a8578db3b0c0",
+  "project": "stickersmash",
+  "sources": [
+    {
+      "path": "app.json",
+      "hash": "284fd6795316fe75a1d1d1ec244f885f9ddd5525b09d162ab8dd27687abe7c36",
+      "bytes": 925
+    },
+    {
+      "path": "app/(tabs)/_layout.tsx",
+      "hash": "d052d548b05fee0935c3e94a00294a47dd7df97f1ce9dc2ea3e8020f90a6ee87",
+      "bytes": 1145
+    },
+    {
+      "path": "app/(tabs)/about.tsx",
+      "hash": "3df49e332528d09fe780032c795cb2fc89423ef8d7e0d8a8036d9d28238d6d00",
+      "bytes": 409
+    },
+    {
+      "path": "app/(tabs)/index.tsx",
+      "hash": "f176abdec2a0c50f4dbaf17f0d7d10c205fef4247248c518ba59732dda146baa",
+      "bytes": 4498
+    },
+    {
+      "path": "app/+not-found.tsx",
+      "hash": "86f118b622a05ab181ff91ff76cb6cd02a3ef6335f910cb813b895cb0b12886f",
+      "bytes": 631
+    },
+    {
+      "path": "app/_layout.tsx",
+      "hash": "cee735801e61fda7a5af44c17b9b7bee790c1c1258783b3eeb169f1b65e15a26",
+      "bytes": 290
+    },
+    {
+      "path": "components/Button.tsx",
+      "hash": "3fa87d9d3dfcafbc2c0c25ac25fe1b764d3496680857ad754af4da354eed5ea1",
+      "bytes": 1557
+    },
+    {
+      "path": "components/CircleButton.tsx",
+      "hash": "ac08afc7e9ec5b5aa6ac408bb873b4bb16a5d6facf9db7e8b3a05dcdc051a392",
+      "bytes": 806
+    },
+    {
+      "path": "components/EmojiList.tsx",
+      "hash": "4a9dac42c0de90cf0262b430089607a5f6f773bf746898a03604ab6806d1e517",
+      "bytes": 1427
+    },
+    {
+      "path": "components/EmojiPicker.tsx",
+      "hash": "9763eb2379442d69d8b11d8e86c18849005dab406be9e924256143e53480e805",
+      "bytes": 1352
+    },
+    {
+      "path": "components/EmojiSticker.tsx",
+      "hash": "108b2831f20559068ed6b8d5d9ff380b4ea8e6152aabed183fd1fed3390c2d3e",
+      "bytes": 1720
+    },
+    {
+      "path": "components/IconButton.tsx",
+      "hash": "e30ee1b53032eaecc656f08f92f1a1cc083a67a007e2f6533297bcc529715141",
+      "bytes": 690
+    },
+    {
+      "path": "components/ImageViewer.tsx",
+      "hash": "d789734e9b1d16f3b778c5b7c626f9280a50c5d07008191b7176b3b4f557378a",
+      "bytes": 505
+    },
+    {
+      "path": "expo-env.d.ts",
+      "hash": "6fc02634da46d3edc5a88eec9173ba6bf709726be3cba83c73ebd8e859d5c147",
+      "bytes": 110
+    },
+    {
+      "path": "package.json",
+      "hash": "d09a556c21884d475b93f2993ec4048e8b77372a7ad4ee1eb1860651f31aff4f",
+      "bytes": 1717
+    },
+    {
+      "path": "tsconfig.json",
+      "hash": "e8e9605c3b1a521e797d6d3a5fd271121fdfbd0aab0904be0873469bc0347a77",
+      "bytes": 242
+    },
+    {
+      "path": "types.d.ts",
+      "hash": "34c76c403aee16c7125d73202b6386a1eefc77469697b07121fa3f883ce95788",
+      "bytes": 31
+    }
+  ],
+  "results": [
+    {
+      "platform": "android",
+      "outputHash": "bbe8dc7cdf8457f0e40265172ffb5ce0e18a897ee8bd62aae56099a98631e12f",
+      "files": 12,
+      "diagnostics": [
+        {
+          "path": "expo-env.d.ts",
+          "category": "skipped-file",
+          "reason": "declaration-file",
+          "detail": "types only, no runtime imports"
+        },
+        {
+          "path": "types.d.ts",
+          "category": "skipped-file",
+          "reason": "declaration-file",
+          "detail": "types only, no runtime imports"
+        },
+        {
+          "path": "app/_layout.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import expo-router: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 1
+        },
+        {
+          "path": "app/_layout.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import expo-status-bar: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 2
+        },
+        {
+          "path": "app/(tabs)/_layout.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import expo-router: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 1
+        },
+        {
+          "path": "app/(tabs)/_layout.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import @expo/vector-icons/Ionicons: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 2
+        },
+        {
+          "path": "app/(tabs)/about.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react-native: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 1
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import dom-to-image: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 1
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import expo-image-picker: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 2
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import expo-media-library: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 3
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 4
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react-native: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 5
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react-native-gesture-handler: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 6
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react-native-view-shot: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 7
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import @/components/Button: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 9
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import @/components/CircleButton: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 10
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import @/components/EmojiList: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 11
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import @/components/EmojiPicker: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 12
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import @/components/EmojiSticker: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 13
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import @/components/IconButton: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 14
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import @/components/ImageViewer: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 15
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "require @/assets/images/background-image.png: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 17
+        },
+        {
+          "path": "app/+not-found.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import expo-router: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 1
+        },
+        {
+          "path": "app/+not-found.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react-native: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 2
+        },
+        {
+          "path": "components/Button.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import @expo/vector-icons/FontAwesome: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 1
+        },
+        {
+          "path": "components/Button.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react-native: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 2
+        },
+        {
+          "path": "components/CircleButton.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import @expo/vector-icons/MaterialIcons: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 1
+        },
+        {
+          "path": "components/CircleButton.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react-native: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 2
+        },
+        {
+          "path": "components/EmojiList.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import expo-image: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 1
+        },
+        {
+          "path": "components/EmojiList.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 2
+        },
+        {
+          "path": "components/EmojiList.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react-native: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 3
+        },
+        {
+          "path": "components/EmojiList.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "require ../assets/images/emoji1.png: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 18
+        },
+        {
+          "path": "components/EmojiList.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "require ../assets/images/emoji2.png: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 19
+        },
+        {
+          "path": "components/EmojiList.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "require ../assets/images/emoji3.png: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 20
+        },
+        {
+          "path": "components/EmojiList.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "require ../assets/images/emoji4.png: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 21
+        },
+        {
+          "path": "components/EmojiList.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "require ../assets/images/emoji5.png: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 22
+        },
+        {
+          "path": "components/EmojiList.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "require ../assets/images/emoji6.png: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 23
+        },
+        {
+          "path": "components/EmojiPicker.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import @expo/vector-icons/MaterialIcons: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 1
+        },
+        {
+          "path": "components/EmojiPicker.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 2
+        },
+        {
+          "path": "components/EmojiPicker.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react-native: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 3
+        },
+        {
+          "path": "components/EmojiSticker.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react-native: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 1
+        },
+        {
+          "path": "components/EmojiSticker.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react-native-gesture-handler: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 2
+        },
+        {
+          "path": "components/EmojiSticker.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react-native-reanimated: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 3
+        },
+        {
+          "path": "components/IconButton.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import @expo/vector-icons/MaterialIcons: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 1
+        },
+        {
+          "path": "components/IconButton.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react-native: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 2
+        },
+        {
+          "path": "components/ImageViewer.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import expo-image: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 1
+        },
+        {
+          "path": "components/ImageViewer.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react-native: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 2
+        },
+        {
+          "path": "tsconfig.json",
+          "category": "config",
+          "reason": "config-diagnostic",
+          "detail": "File 'expo/tsconfig.base' not found."
+        },
+        {
+          "path": "tsconfig.json",
+          "category": "config",
+          "reason": "config-diagnostic",
+          "detail": "Read policy: <outside-root>: outside selected repository"
+        },
+        {
+          "path": ".",
+          "category": "config",
+          "reason": "config-diagnostic",
+          "detail": "Read policy: <outside-root>: outside selected repository"
+        },
+        {
+          "path": "tsconfig.json",
+          "category": "discovery",
+          "reason": "policy-denied",
+          "detail": "only explicit local metadata extends"
+        },
+        {
+          "path": "app.json",
+          "category": "config-discovery",
+          "reason": "parse-error",
+          "detail": "malformed JSON metadata"
+        }
+      ],
+      "capabilities": [
+        {
+          "tupleId": "legacy-unqualified",
+          "capabilityId": "existing-ts-js-observations",
+          "profileId": "[\"profile\",\".\",\"legacy-typescript\",\"4\"]",
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"legacy-typescript\\\",\\\"4\\\"]\",\"legacy-static\",null,[]]",
+          "id": "[\"capability\",\"legacy-unqualified\",\"existing-ts-js-observations\",\"[\\\"profile\\\",\\\".\\\",\\\"legacy-typescript\\\",\\\"4\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"legacy-typescript\\\\\\\",\\\\\\\"4\\\\\\\"]\\\",\\\"legacy-static\\\",null,[]]\"]",
+          "state": "partial",
+          "extractorVersion": "4",
+          "qualificationRecord": null,
+          "gapIds": []
+        },
+        {
+          "tupleId": "discovery-unqualified",
+          "capabilityId": "resolution-infrastructure/node-esm",
+          "profileId": "[\"profile\",\".\",\"node-esm\",\"infrastructure-1\"]",
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"node-esm\\\",\\\"infrastructure-1\\\"]\",\"node-development\",null,[]]",
+          "id": "[\"capability\",\"discovery-unqualified\",\"resolution-infrastructure/node-esm\",\"[\\\"profile\\\",\\\".\\\",\\\"node-esm\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"node-esm\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"node-development\\\",null,[]]\"]",
+          "state": "partial",
+          "extractorVersion": "fs-02/1",
+          "qualificationRecord": null,
+          "gapIds": [
+            "[\"gap\",\"tsconfig.json\",0,241,\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"node-esm\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"node-development\\\",null,[]]\",\"policy-denied\"]"
+          ]
+        },
+        {
+          "tupleId": "declared/react@19.2.3",
+          "capabilityId": "detected-only/React",
+          "profileId": "[\"profile\",\".\",\"node-esm\",\"infrastructure-1\"]",
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"node-esm\\\",\\\"infrastructure-1\\\"]\",\"node-development\",null,[]]",
+          "id": "[\"capability\",\"declared/react@19.2.3\",\"detected-only/React\",\"[\\\"profile\\\",\\\".\\\",\\\"node-esm\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"node-esm\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"node-development\\\",null,[]]\"]",
+          "state": "partial",
+          "extractorVersion": "fs-02/1",
+          "qualificationRecord": null,
+          "gapIds": []
+        },
+        {
+          "tupleId": "declared/react-native@0.86.0",
+          "capabilityId": "detected-only/react-native",
+          "profileId": "[\"profile\",\".\",\"node-esm\",\"infrastructure-1\"]",
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"node-esm\\\",\\\"infrastructure-1\\\"]\",\"node-development\",null,[]]",
+          "id": "[\"capability\",\"declared/react-native@0.86.0\",\"detected-only/react-native\",\"[\\\"profile\\\",\\\".\\\",\\\"node-esm\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"node-esm\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"node-development\\\",null,[]]\"]",
+          "state": "partial",
+          "extractorVersion": "fs-02/1",
+          "qualificationRecord": null,
+          "gapIds": []
+        },
+        {
+          "tupleId": "declared/expo@~57.0.8",
+          "capabilityId": "detected-only/expo",
+          "profileId": "[\"profile\",\".\",\"node-esm\",\"infrastructure-1\"]",
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"node-esm\\\",\\\"infrastructure-1\\\"]\",\"node-development\",null,[]]",
+          "id": "[\"capability\",\"declared/expo@~57.0.8\",\"detected-only/expo\",\"[\\\"profile\\\",\\\".\\\",\\\"node-esm\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"node-esm\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"node-development\\\",null,[]]\"]",
+          "state": "partial",
+          "extractorVersion": "fs-02/1",
+          "qualificationRecord": null,
+          "gapIds": []
+        },
+        {
+          "tupleId": "discovery-unqualified",
+          "capabilityId": "resolution-infrastructure/node-commonjs",
+          "profileId": "[\"profile\",\".\",\"node-commonjs\",\"infrastructure-1\"]",
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"node-commonjs\\\",\\\"infrastructure-1\\\"]\",\"node-development\",null,[]]",
+          "id": "[\"capability\",\"discovery-unqualified\",\"resolution-infrastructure/node-commonjs\",\"[\\\"profile\\\",\\\".\\\",\\\"node-commonjs\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"node-commonjs\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"node-development\\\",null,[]]\"]",
+          "state": "partial",
+          "extractorVersion": "fs-02/1",
+          "qualificationRecord": null,
+          "gapIds": [
+            "[\"gap\",\"tsconfig.json\",0,241,\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"node-commonjs\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"node-development\\\",null,[]]\",\"policy-denied\"]"
+          ]
+        },
+        {
+          "tupleId": "declared/react@19.2.3",
+          "capabilityId": "detected-only/React",
+          "profileId": "[\"profile\",\".\",\"node-commonjs\",\"infrastructure-1\"]",
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"node-commonjs\\\",\\\"infrastructure-1\\\"]\",\"node-development\",null,[]]",
+          "id": "[\"capability\",\"declared/react@19.2.3\",\"detected-only/React\",\"[\\\"profile\\\",\\\".\\\",\\\"node-commonjs\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"node-commonjs\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"node-development\\\",null,[]]\"]",
+          "state": "partial",
+          "extractorVersion": "fs-02/1",
+          "qualificationRecord": null,
+          "gapIds": []
+        },
+        {
+          "tupleId": "declared/react-native@0.86.0",
+          "capabilityId": "detected-only/react-native",
+          "profileId": "[\"profile\",\".\",\"node-commonjs\",\"infrastructure-1\"]",
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"node-commonjs\\\",\\\"infrastructure-1\\\"]\",\"node-development\",null,[]]",
+          "id": "[\"capability\",\"declared/react-native@0.86.0\",\"detected-only/react-native\",\"[\\\"profile\\\",\\\".\\\",\\\"node-commonjs\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"node-commonjs\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"node-development\\\",null,[]]\"]",
+          "state": "partial",
+          "extractorVersion": "fs-02/1",
+          "qualificationRecord": null,
+          "gapIds": []
+        },
+        {
+          "tupleId": "declared/expo@~57.0.8",
+          "capabilityId": "detected-only/expo",
+          "profileId": "[\"profile\",\".\",\"node-commonjs\",\"infrastructure-1\"]",
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"node-commonjs\\\",\\\"infrastructure-1\\\"]\",\"node-development\",null,[]]",
+          "id": "[\"capability\",\"declared/expo@~57.0.8\",\"detected-only/expo\",\"[\\\"profile\\\",\\\".\\\",\\\"node-commonjs\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"node-commonjs\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"node-development\\\",null,[]]\"]",
+          "state": "partial",
+          "extractorVersion": "fs-02/1",
+          "qualificationRecord": null,
+          "gapIds": []
+        },
+        {
+          "tupleId": "discovery-unqualified",
+          "capabilityId": "resolution-infrastructure/metro-android",
+          "profileId": "[\"profile\",\".\",\"metro-android\",\"infrastructure-1\"]",
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"infrastructure-1\\\"]\",\"android-development\",\"android\",[]]",
+          "id": "[\"capability\",\"discovery-unqualified\",\"resolution-infrastructure/metro-android\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"metro-android\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"android-development\\\",\\\"android\\\",[]]\"]",
+          "state": "partial",
+          "extractorVersion": "fs-02/1",
+          "qualificationRecord": null,
+          "gapIds": [
+            "[\"gap\",\"tsconfig.json\",0,241,\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"metro-android\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"android-development\\\",\\\"android\\\",[]]\",\"policy-denied\"]"
+          ]
+        },
+        {
+          "tupleId": "declared/react@19.2.3",
+          "capabilityId": "detected-only/React",
+          "profileId": "[\"profile\",\".\",\"metro-android\",\"infrastructure-1\"]",
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"infrastructure-1\\\"]\",\"android-development\",\"android\",[]]",
+          "id": "[\"capability\",\"declared/react@19.2.3\",\"detected-only/React\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"metro-android\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"android-development\\\",\\\"android\\\",[]]\"]",
+          "state": "partial",
+          "extractorVersion": "fs-02/1",
+          "qualificationRecord": null,
+          "gapIds": []
+        },
+        {
+          "tupleId": "declared/react-native@0.86.0",
+          "capabilityId": "detected-only/react-native",
+          "profileId": "[\"profile\",\".\",\"metro-android\",\"infrastructure-1\"]",
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"infrastructure-1\\\"]\",\"android-development\",\"android\",[]]",
+          "id": "[\"capability\",\"declared/react-native@0.86.0\",\"detected-only/react-native\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"metro-android\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"android-development\\\",\\\"android\\\",[]]\"]",
+          "state": "partial",
+          "extractorVersion": "fs-02/1",
+          "qualificationRecord": null,
+          "gapIds": []
+        },
+        {
+          "tupleId": "declared/expo@~57.0.8",
+          "capabilityId": "detected-only/expo",
+          "profileId": "[\"profile\",\".\",\"metro-android\",\"infrastructure-1\"]",
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"infrastructure-1\\\"]\",\"android-development\",\"android\",[]]",
+          "id": "[\"capability\",\"declared/expo@~57.0.8\",\"detected-only/expo\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"metro-android\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"android-development\\\",\\\"android\\\",[]]\"]",
+          "state": "partial",
+          "extractorVersion": "fs-02/1",
+          "qualificationRecord": null,
+          "gapIds": []
+        }
+      ],
+      "bindings": 0,
+      "registrations": 0,
+      "gaps": [
+        {
+          "id": "[\"gap\",\"tsconfig.json\",0,241,\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"node-esm\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"node-development\\\",null,[]]\",\"policy-denied\"]",
+          "reason": "policy-denied",
+          "occurrence": {
+            "file": "tsconfig.json",
+            "start": 0,
+            "end": 241,
+            "line": 1,
+            "endLine": 17,
+            "fileHash": "e8e9605c3b1a521e797d6d3a5fd271121fdfbd0aab0904be0873469bc0347a77",
+            "extractor": "discovery/config",
+            "evidenceKind": "verified"
+          },
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"node-esm\\\",\\\"infrastructure-1\\\"]\",\"node-development\",null,[]]",
+          "capabilityId": "[\"capability\",\"discovery-unqualified\",\"resolution-infrastructure/node-esm\",\"[\\\"profile\\\",\\\".\\\",\\\"node-esm\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"node-esm\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"node-development\\\",null,[]]\"]"
+        },
+        {
+          "id": "[\"gap\",\"tsconfig.json\",0,241,\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"node-commonjs\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"node-development\\\",null,[]]\",\"policy-denied\"]",
+          "reason": "policy-denied",
+          "occurrence": {
+            "file": "tsconfig.json",
+            "start": 0,
+            "end": 241,
+            "line": 1,
+            "endLine": 17,
+            "fileHash": "e8e9605c3b1a521e797d6d3a5fd271121fdfbd0aab0904be0873469bc0347a77",
+            "extractor": "discovery/config",
+            "evidenceKind": "verified"
+          },
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"node-commonjs\\\",\\\"infrastructure-1\\\"]\",\"node-development\",null,[]]",
+          "capabilityId": "[\"capability\",\"discovery-unqualified\",\"resolution-infrastructure/node-commonjs\",\"[\\\"profile\\\",\\\".\\\",\\\"node-commonjs\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"node-commonjs\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"node-development\\\",null,[]]\"]"
+        },
+        {
+          "id": "[\"gap\",\"tsconfig.json\",0,241,\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"metro-android\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"android-development\\\",\\\"android\\\",[]]\",\"policy-denied\"]",
+          "reason": "policy-denied",
+          "occurrence": {
+            "file": "tsconfig.json",
+            "start": 0,
+            "end": 241,
+            "line": 1,
+            "endLine": 17,
+            "fileHash": "e8e9605c3b1a521e797d6d3a5fd271121fdfbd0aab0904be0873469bc0347a77",
+            "extractor": "discovery/config",
+            "evidenceKind": "verified"
+          },
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"infrastructure-1\\\"]\",\"android-development\",\"android\",[]]",
+          "capabilityId": "[\"capability\",\"discovery-unqualified\",\"resolution-infrastructure/metro-android\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"metro-android\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"android-development\\\",\\\"android\\\",[]]\"]"
+        }
+      ],
+      "elapsedMs": 788.2673999999997,
+      "rssBytes": 198569984
+    },
+    {
+      "platform": "ios",
+      "outputHash": "bbe8dc7cdf8457f0e40265172ffb5ce0e18a897ee8bd62aae56099a98631e12f",
+      "files": 12,
+      "diagnostics": [
+        {
+          "path": "expo-env.d.ts",
+          "category": "skipped-file",
+          "reason": "declaration-file",
+          "detail": "types only, no runtime imports"
+        },
+        {
+          "path": "types.d.ts",
+          "category": "skipped-file",
+          "reason": "declaration-file",
+          "detail": "types only, no runtime imports"
+        },
+        {
+          "path": "app/_layout.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import expo-router: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 1
+        },
+        {
+          "path": "app/_layout.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import expo-status-bar: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 2
+        },
+        {
+          "path": "app/(tabs)/_layout.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import expo-router: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 1
+        },
+        {
+          "path": "app/(tabs)/_layout.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import @expo/vector-icons/Ionicons: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 2
+        },
+        {
+          "path": "app/(tabs)/about.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react-native: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 1
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import dom-to-image: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 1
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import expo-image-picker: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 2
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import expo-media-library: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 3
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 4
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react-native: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 5
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react-native-gesture-handler: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 6
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react-native-view-shot: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 7
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import @/components/Button: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 9
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import @/components/CircleButton: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 10
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import @/components/EmojiList: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 11
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import @/components/EmojiPicker: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 12
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import @/components/EmojiSticker: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 13
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import @/components/IconButton: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 14
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import @/components/ImageViewer: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 15
+        },
+        {
+          "path": "app/(tabs)/index.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "require @/assets/images/background-image.png: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 17
+        },
+        {
+          "path": "app/+not-found.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import expo-router: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 1
+        },
+        {
+          "path": "app/+not-found.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react-native: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 2
+        },
+        {
+          "path": "components/Button.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import @expo/vector-icons/FontAwesome: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 1
+        },
+        {
+          "path": "components/Button.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react-native: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 2
+        },
+        {
+          "path": "components/CircleButton.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import @expo/vector-icons/MaterialIcons: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 1
+        },
+        {
+          "path": "components/CircleButton.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react-native: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 2
+        },
+        {
+          "path": "components/EmojiList.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import expo-image: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 1
+        },
+        {
+          "path": "components/EmojiList.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 2
+        },
+        {
+          "path": "components/EmojiList.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react-native: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 3
+        },
+        {
+          "path": "components/EmojiList.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "require ../assets/images/emoji1.png: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 18
+        },
+        {
+          "path": "components/EmojiList.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "require ../assets/images/emoji2.png: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 19
+        },
+        {
+          "path": "components/EmojiList.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "require ../assets/images/emoji3.png: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 20
+        },
+        {
+          "path": "components/EmojiList.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "require ../assets/images/emoji4.png: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 21
+        },
+        {
+          "path": "components/EmojiList.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "require ../assets/images/emoji5.png: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 22
+        },
+        {
+          "path": "components/EmojiList.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "require ../assets/images/emoji6.png: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 23
+        },
+        {
+          "path": "components/EmojiPicker.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import @expo/vector-icons/MaterialIcons: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 1
+        },
+        {
+          "path": "components/EmojiPicker.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 2
+        },
+        {
+          "path": "components/EmojiPicker.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react-native: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 3
+        },
+        {
+          "path": "components/EmojiSticker.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react-native: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 1
+        },
+        {
+          "path": "components/EmojiSticker.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react-native-gesture-handler: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 2
+        },
+        {
+          "path": "components/EmojiSticker.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react-native-reanimated: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 3
+        },
+        {
+          "path": "components/IconButton.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import @expo/vector-icons/MaterialIcons: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 1
+        },
+        {
+          "path": "components/IconButton.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react-native: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 2
+        },
+        {
+          "path": "components/ImageViewer.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import expo-image: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 1
+        },
+        {
+          "path": "components/ImageViewer.tsx",
+          "category": "unresolved-import",
+          "reason": "file-not-found",
+          "detail": "import react-native: module resolution withheld because the applicable configuration could not be read completely; see config diagnostics",
+          "line": 2
+        },
+        {
+          "path": "tsconfig.json",
+          "category": "config",
+          "reason": "config-diagnostic",
+          "detail": "File 'expo/tsconfig.base' not found."
+        },
+        {
+          "path": "tsconfig.json",
+          "category": "config",
+          "reason": "config-diagnostic",
+          "detail": "Read policy: <outside-root>: outside selected repository"
+        },
+        {
+          "path": ".",
+          "category": "config",
+          "reason": "config-diagnostic",
+          "detail": "Read policy: <outside-root>: outside selected repository"
+        },
+        {
+          "path": "tsconfig.json",
+          "category": "discovery",
+          "reason": "policy-denied",
+          "detail": "only explicit local metadata extends"
+        },
+        {
+          "path": "app.json",
+          "category": "config-discovery",
+          "reason": "parse-error",
+          "detail": "malformed JSON metadata"
+        }
+      ],
+      "capabilities": [
+        {
+          "tupleId": "legacy-unqualified",
+          "capabilityId": "existing-ts-js-observations",
+          "profileId": "[\"profile\",\".\",\"legacy-typescript\",\"4\"]",
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"legacy-typescript\\\",\\\"4\\\"]\",\"legacy-static\",null,[]]",
+          "id": "[\"capability\",\"legacy-unqualified\",\"existing-ts-js-observations\",\"[\\\"profile\\\",\\\".\\\",\\\"legacy-typescript\\\",\\\"4\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"legacy-typescript\\\\\\\",\\\\\\\"4\\\\\\\"]\\\",\\\"legacy-static\\\",null,[]]\"]",
+          "state": "partial",
+          "extractorVersion": "4",
+          "qualificationRecord": null,
+          "gapIds": []
+        },
+        {
+          "tupleId": "discovery-unqualified",
+          "capabilityId": "resolution-infrastructure/node-esm",
+          "profileId": "[\"profile\",\".\",\"node-esm\",\"infrastructure-1\"]",
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"node-esm\\\",\\\"infrastructure-1\\\"]\",\"node-development\",null,[]]",
+          "id": "[\"capability\",\"discovery-unqualified\",\"resolution-infrastructure/node-esm\",\"[\\\"profile\\\",\\\".\\\",\\\"node-esm\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"node-esm\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"node-development\\\",null,[]]\"]",
+          "state": "partial",
+          "extractorVersion": "fs-02/1",
+          "qualificationRecord": null,
+          "gapIds": [
+            "[\"gap\",\"tsconfig.json\",0,241,\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"node-esm\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"node-development\\\",null,[]]\",\"policy-denied\"]"
+          ]
+        },
+        {
+          "tupleId": "declared/react@19.2.3",
+          "capabilityId": "detected-only/React",
+          "profileId": "[\"profile\",\".\",\"node-esm\",\"infrastructure-1\"]",
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"node-esm\\\",\\\"infrastructure-1\\\"]\",\"node-development\",null,[]]",
+          "id": "[\"capability\",\"declared/react@19.2.3\",\"detected-only/React\",\"[\\\"profile\\\",\\\".\\\",\\\"node-esm\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"node-esm\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"node-development\\\",null,[]]\"]",
+          "state": "partial",
+          "extractorVersion": "fs-02/1",
+          "qualificationRecord": null,
+          "gapIds": []
+        },
+        {
+          "tupleId": "declared/react-native@0.86.0",
+          "capabilityId": "detected-only/react-native",
+          "profileId": "[\"profile\",\".\",\"node-esm\",\"infrastructure-1\"]",
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"node-esm\\\",\\\"infrastructure-1\\\"]\",\"node-development\",null,[]]",
+          "id": "[\"capability\",\"declared/react-native@0.86.0\",\"detected-only/react-native\",\"[\\\"profile\\\",\\\".\\\",\\\"node-esm\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"node-esm\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"node-development\\\",null,[]]\"]",
+          "state": "partial",
+          "extractorVersion": "fs-02/1",
+          "qualificationRecord": null,
+          "gapIds": []
+        },
+        {
+          "tupleId": "declared/expo@~57.0.8",
+          "capabilityId": "detected-only/expo",
+          "profileId": "[\"profile\",\".\",\"node-esm\",\"infrastructure-1\"]",
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"node-esm\\\",\\\"infrastructure-1\\\"]\",\"node-development\",null,[]]",
+          "id": "[\"capability\",\"declared/expo@~57.0.8\",\"detected-only/expo\",\"[\\\"profile\\\",\\\".\\\",\\\"node-esm\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"node-esm\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"node-development\\\",null,[]]\"]",
+          "state": "partial",
+          "extractorVersion": "fs-02/1",
+          "qualificationRecord": null,
+          "gapIds": []
+        },
+        {
+          "tupleId": "discovery-unqualified",
+          "capabilityId": "resolution-infrastructure/node-commonjs",
+          "profileId": "[\"profile\",\".\",\"node-commonjs\",\"infrastructure-1\"]",
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"node-commonjs\\\",\\\"infrastructure-1\\\"]\",\"node-development\",null,[]]",
+          "id": "[\"capability\",\"discovery-unqualified\",\"resolution-infrastructure/node-commonjs\",\"[\\\"profile\\\",\\\".\\\",\\\"node-commonjs\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"node-commonjs\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"node-development\\\",null,[]]\"]",
+          "state": "partial",
+          "extractorVersion": "fs-02/1",
+          "qualificationRecord": null,
+          "gapIds": [
+            "[\"gap\",\"tsconfig.json\",0,241,\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"node-commonjs\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"node-development\\\",null,[]]\",\"policy-denied\"]"
+          ]
+        },
+        {
+          "tupleId": "declared/react@19.2.3",
+          "capabilityId": "detected-only/React",
+          "profileId": "[\"profile\",\".\",\"node-commonjs\",\"infrastructure-1\"]",
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"node-commonjs\\\",\\\"infrastructure-1\\\"]\",\"node-development\",null,[]]",
+          "id": "[\"capability\",\"declared/react@19.2.3\",\"detected-only/React\",\"[\\\"profile\\\",\\\".\\\",\\\"node-commonjs\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"node-commonjs\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"node-development\\\",null,[]]\"]",
+          "state": "partial",
+          "extractorVersion": "fs-02/1",
+          "qualificationRecord": null,
+          "gapIds": []
+        },
+        {
+          "tupleId": "declared/react-native@0.86.0",
+          "capabilityId": "detected-only/react-native",
+          "profileId": "[\"profile\",\".\",\"node-commonjs\",\"infrastructure-1\"]",
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"node-commonjs\\\",\\\"infrastructure-1\\\"]\",\"node-development\",null,[]]",
+          "id": "[\"capability\",\"declared/react-native@0.86.0\",\"detected-only/react-native\",\"[\\\"profile\\\",\\\".\\\",\\\"node-commonjs\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"node-commonjs\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"node-development\\\",null,[]]\"]",
+          "state": "partial",
+          "extractorVersion": "fs-02/1",
+          "qualificationRecord": null,
+          "gapIds": []
+        },
+        {
+          "tupleId": "declared/expo@~57.0.8",
+          "capabilityId": "detected-only/expo",
+          "profileId": "[\"profile\",\".\",\"node-commonjs\",\"infrastructure-1\"]",
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"node-commonjs\\\",\\\"infrastructure-1\\\"]\",\"node-development\",null,[]]",
+          "id": "[\"capability\",\"declared/expo@~57.0.8\",\"detected-only/expo\",\"[\\\"profile\\\",\\\".\\\",\\\"node-commonjs\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"node-commonjs\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"node-development\\\",null,[]]\"]",
+          "state": "partial",
+          "extractorVersion": "fs-02/1",
+          "qualificationRecord": null,
+          "gapIds": []
+        },
+        {
+          "tupleId": "discovery-unqualified",
+          "capabilityId": "resolution-infrastructure/metro-android",
+          "profileId": "[\"profile\",\".\",\"metro-android\",\"infrastructure-1\"]",
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"infrastructure-1\\\"]\",\"android-development\",\"android\",[]]",
+          "id": "[\"capability\",\"discovery-unqualified\",\"resolution-infrastructure/metro-android\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"metro-android\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"android-development\\\",\\\"android\\\",[]]\"]",
+          "state": "partial",
+          "extractorVersion": "fs-02/1",
+          "qualificationRecord": null,
+          "gapIds": [
+            "[\"gap\",\"tsconfig.json\",0,241,\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"metro-android\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"android-development\\\",\\\"android\\\",[]]\",\"policy-denied\"]"
+          ]
+        },
+        {
+          "tupleId": "declared/react@19.2.3",
+          "capabilityId": "detected-only/React",
+          "profileId": "[\"profile\",\".\",\"metro-android\",\"infrastructure-1\"]",
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"infrastructure-1\\\"]\",\"android-development\",\"android\",[]]",
+          "id": "[\"capability\",\"declared/react@19.2.3\",\"detected-only/React\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"metro-android\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"android-development\\\",\\\"android\\\",[]]\"]",
+          "state": "partial",
+          "extractorVersion": "fs-02/1",
+          "qualificationRecord": null,
+          "gapIds": []
+        },
+        {
+          "tupleId": "declared/react-native@0.86.0",
+          "capabilityId": "detected-only/react-native",
+          "profileId": "[\"profile\",\".\",\"metro-android\",\"infrastructure-1\"]",
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"infrastructure-1\\\"]\",\"android-development\",\"android\",[]]",
+          "id": "[\"capability\",\"declared/react-native@0.86.0\",\"detected-only/react-native\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"metro-android\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"android-development\\\",\\\"android\\\",[]]\"]",
+          "state": "partial",
+          "extractorVersion": "fs-02/1",
+          "qualificationRecord": null,
+          "gapIds": []
+        },
+        {
+          "tupleId": "declared/expo@~57.0.8",
+          "capabilityId": "detected-only/expo",
+          "profileId": "[\"profile\",\".\",\"metro-android\",\"infrastructure-1\"]",
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"infrastructure-1\\\"]\",\"android-development\",\"android\",[]]",
+          "id": "[\"capability\",\"declared/expo@~57.0.8\",\"detected-only/expo\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"metro-android\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"android-development\\\",\\\"android\\\",[]]\"]",
+          "state": "partial",
+          "extractorVersion": "fs-02/1",
+          "qualificationRecord": null,
+          "gapIds": []
+        }
+      ],
+      "bindings": 0,
+      "registrations": 0,
+      "gaps": [
+        {
+          "id": "[\"gap\",\"tsconfig.json\",0,241,\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"node-esm\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"node-development\\\",null,[]]\",\"policy-denied\"]",
+          "reason": "policy-denied",
+          "occurrence": {
+            "file": "tsconfig.json",
+            "start": 0,
+            "end": 241,
+            "line": 1,
+            "endLine": 17,
+            "fileHash": "e8e9605c3b1a521e797d6d3a5fd271121fdfbd0aab0904be0873469bc0347a77",
+            "extractor": "discovery/config",
+            "evidenceKind": "verified"
+          },
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"node-esm\\\",\\\"infrastructure-1\\\"]\",\"node-development\",null,[]]",
+          "capabilityId": "[\"capability\",\"discovery-unqualified\",\"resolution-infrastructure/node-esm\",\"[\\\"profile\\\",\\\".\\\",\\\"node-esm\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"node-esm\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"node-development\\\",null,[]]\"]"
+        },
+        {
+          "id": "[\"gap\",\"tsconfig.json\",0,241,\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"node-commonjs\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"node-development\\\",null,[]]\",\"policy-denied\"]",
+          "reason": "policy-denied",
+          "occurrence": {
+            "file": "tsconfig.json",
+            "start": 0,
+            "end": 241,
+            "line": 1,
+            "endLine": 17,
+            "fileHash": "e8e9605c3b1a521e797d6d3a5fd271121fdfbd0aab0904be0873469bc0347a77",
+            "extractor": "discovery/config",
+            "evidenceKind": "verified"
+          },
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"node-commonjs\\\",\\\"infrastructure-1\\\"]\",\"node-development\",null,[]]",
+          "capabilityId": "[\"capability\",\"discovery-unqualified\",\"resolution-infrastructure/node-commonjs\",\"[\\\"profile\\\",\\\".\\\",\\\"node-commonjs\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"node-commonjs\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"node-development\\\",null,[]]\"]"
+        },
+        {
+          "id": "[\"gap\",\"tsconfig.json\",0,241,\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"metro-android\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"android-development\\\",\\\"android\\\",[]]\",\"policy-denied\"]",
+          "reason": "policy-denied",
+          "occurrence": {
+            "file": "tsconfig.json",
+            "start": 0,
+            "end": 241,
+            "line": 1,
+            "endLine": 17,
+            "fileHash": "e8e9605c3b1a521e797d6d3a5fd271121fdfbd0aab0904be0873469bc0347a77",
+            "extractor": "discovery/config",
+            "evidenceKind": "verified"
+          },
+          "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"infrastructure-1\\\"]\",\"android-development\",\"android\",[]]",
+          "capabilityId": "[\"capability\",\"discovery-unqualified\",\"resolution-infrastructure/metro-android\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"infrastructure-1\\\"]\",\"[\\\"variant\\\",\\\"[\\\\\\\"profile\\\\\\\",\\\\\\\".\\\\\\\",\\\\\\\"metro-android\\\\\\\",\\\\\\\"infrastructure-1\\\\\\\"]\\\",\\\"android-development\\\",\\\"android\\\",[]]\"]"
+        }
+      ],
+      "elapsedMs": 399.5088999999998,
+      "rssBytes": 204529664
+    }
+  ],
+  "applicationExecution": false,
+  "configurationExecution": false,
+  "dependencyInstallation": false,
+  "missingProof": [
+    "qualified exact-tuple public application interoperability",
+    "native binary assets excluded from text-only supplement"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "files":["index.js","src/local.js","src/replaced.js","packages/array/package.json","packages/array/entry.js","packages/subarray/package.json","packages/subarray/entry.js","packages/fallback/package.json","packages/fallback/public.js","packages/fallback/private.android.js","packages/fallback/private.ios.js","packages/missing/package.json","packages/missing/entry.js","packages/entry/package.json","packages/entry/start.js","packages/entry/replaced.js"],
+  "packages":[
+    {"root":".","json":{"name":"application","imports":{"#local":"./src/local.js"},"react-native":{"dead":false,"old":"array"}}},
+    {"root":"packages/array","json":{"name":"array","exports":["invalid","./entry.js"]}},
+    {"root":"packages/subarray","json":{"name":"subarray","exports":{".":["./entry.js","./absent.js"]}}},
+    {"root":"packages/fallback","json":{"name":"fallback","exports":{"./public":"./public.js"}}},
+    {"root":"packages/missing","json":{"name":"missing","main":"entry.js","exports":{".":"./absent.js"}}},
+    {"root":"packages/entry","json":{"name":"entry","main":"start.js","react-native":{"./start.js":"./replaced.js"}}}
+  ],
+  "links":{"array":"packages/array","subarray":"packages/subarray","fallback":"packages/fallback","missing":"packages/missing","entry":"packages/entry"},
+  "sourceExts":["js","jsx","json","ts","tsx"],
+  "cases":[
+    {"id":"root-array","specifier":"array"},
+    {"id":"subpath-array","specifier":"subarray"},
+    {"id":"unexported-fallback","specifier":"fallback/private","expectedWarning":true},
+    {"id":"missing-export-fallback","specifier":"missing","expectedWarning":true},
+    {"id":"imports-exact","specifier":"#local"},
+    {"id":"bare-disabled","specifier":"dead"},
+    {"id":"bare-redirect","specifier":"old"},
+    {"id":"main-map","specifier":"entry"}
+  ]
+}

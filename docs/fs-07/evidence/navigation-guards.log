@@ -1,0 +1,11 @@
+✔ React Navigation nested literal actions retain ancestry and reject conditional callbacks (2213.7375ms)
+✔ RN linking configuration: declared URL paths are separate from unresolved native URL receivers (771.6935ms)
+✔ React Navigation declarations: static groups, JSX screens and context-scoped literal targets (673.1638ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6468.319

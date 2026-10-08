@@ -1,22 +1,35 @@
-# FS-07 qualification matrix — no production qualification yet
+# FS-07 qualification matrix — incomplete
 
-All initial profiles are `android-development` and `ios-development`. Windows refers to the desktop analysis host; RN Windows and web exports are outside this initial matrix.
+No complete capability badge is issued. Exact tuples below are independently exercised for recorded controlled patterns; they are not claims of complete language/framework support.
 
-| Tuple | Node | React / RN | Metro oracle | Expo / Router / Metro config | React Navigation | Current qualification |
-| --- | --- | --- | --- | --- | --- | --- |
-| rn83-bare | 24.19.0 | 19.2.0 / 0.83.10 | 0.83.8 | — | native 7.5.0 / native-stack 7.20.0 | Search-kernel experiments only |
-| rn85-bare | 24.19.0 | 19.2.3 / 0.85.3 | 0.84.6 | — | native 7.5.0 / native-stack 7.20.0 | Search-kernel experiments only |
-| expo55 | 24.19.0 | 19.2.0 / 0.83.10 | @expo/metro 55.1.2 → resolver 0.83.8 | 55.0.31 / 55.0.18 / 55.0.27 | Not independently claimed | Search-kernel experiments only |
-| expo56 | 24.19.0 | 19.2.3 / 0.85.3 | @expo/metro 56.0.2 → resolver 0.84.5 | 56.0.23 / 56.2.21 / 56.0.19 | Not independently claimed | Search-kernel experiments only |
+| Tuple | Node | React / RN | Resolver identity | Expo / Router / config | Navigation |
+| --- | --- | --- | --- | --- | --- |
+| rn83-bare | 24.19.0 | 19.2.0 / 0.83.10 | Metro 0.83.8 | RN config 0.83.10 | native 7.5.0 / native-stack 7.20.0 |
+| rn85-bare | 24.19.0 | 19.2.3 / 0.85.3 | Metro 0.84.6 | RN config 0.85.3 | native 7.5.0 / native-stack 7.20.0 |
+| expo55 | 24.19.0 | 19.2.0 / 0.83.10 | @expo/metro 55.1.2 → 0.83.8 | 55.0.31 / 55.0.18 / 55.0.27 | Router's pinned navigation utility only |
+| expo56 | 24.19.0 | 19.2.3 / 0.85.3 | @expo/metro 56.0.2 → 0.84.5 | 56.0.23 / 56.2.21 / 56.0.19 | Router's bundled internal core utility |
 
-Flow grammar: `hermes-parser@0.25.1`, runtime dependency `hermes-estree@0.25.1`, ESTree/Flow enabled. No Flow typechecker version or complete language capability is qualified.
+Mobile profiles are android-development and ios-development. Windows is the analysis host; RN Windows, native implementation tracing and web exports are not qualified. Flow uses bundled hermes-parser 0.25.1 + hermes-estree 0.25.1 with original UTF-16 positions; flow-static establishes neutral facts, not typechecker/runtime certainty.
 
-## Controlled patterns
+## Retained controlled pattern proof
 
-All eight tuple/platform records agree with the kernel for the fixture's twelve cases: platform priority; native fallback; extension-before-platform ordering; exact explicit extension; directory index; image density family; import and require conditional exports; exact subpath exports; wildcard exports; literal local redirect; disabled redirect. See `evidence/*-metro.json` and the fixture hash embedded in each record.
+- Twelve original resolver cases: 192 independent tuple/platform/context records in evidence/*-metro.json.
+- Eight advanced resolver cases: 128 independent records in evidence/*-metro-advanced*.json. Arrays, imports, lenient fallback and redirects are qualified only for those fixtures.
+- Pinned Platform selection: eight records in evidence/*-platform.json. Production branch/root/dependency tests include dynamic negatives and cross-file SDK mutation.
+- Expo route/layout/dynamic/platform/array-group selection: four independent release/platform records in evidence/*-expo-routes.json. Source-backed package-entry roots and distinct array-context IDs are asserted in the production fixtures.
+- URL-to-state utility: eight evidence/*-navigation-linking.json records. Expo56 uses its own bundled implementation; these do not prove full native receiver or production linking support.
+- TS/JS React reuse: eight evidence/qualification/*-react-reuse.json records. Exact wrapper/event/hook/context assertions, witnesses, source/output hashes, repeated/incremental/full equality and resource observations are recorded. Flow framework extraction is explicitly missing.
+- Native boundary and static/nested navigator fixture assertions run in the FS-07 suite. evidence/sidecar-mobile-profiles.json verifies both shipped variants through the unchanged desktop protocol on four tuples. Complete per-pattern production records remain outstanding.
+- Packaged patterns and closure faults are recorded in evidence/packaged-foundation.json. The latest execution log determines freshness; an earlier PASS never overrides a later failing run.
+- Actual Flow parser Windows job commitment and synthetic OOM/deadline/recovery are in evidence/flow-parser-commit.json and evidence/containment.json. These are separate from parent RSS and whole-engine resource ceilings.
+- Equivalent captured FS-06 comparison is in evidence/performance-comparison.json. It qualifies unchanged TS/JS comparison only.
 
-Kernel extractor source: `lib/parser/adapters/metro-resolution.ts`. Production RN/Metro extractor version is `fs-07/1`; neutral Flow syntax uses `flow/syntax/fs-07/1`. No qualified capability badge exists. Focused pipeline witnesses and repeated/incremental tests pass for the implemented subset; complete publication/variant-switch, imported-call and configuration-composition proof is missing. Experiment records must not be promoted into complete snapshot qualification records.
+Every supported target still requires original source/hash, variant and framework-rule evidence. Conditions, candidates and unsupported boundaries are retained rather than promoted to verified edges.
 
-Hermes experiment records contain syntax node/range output for six controlled cases. They explicitly set scope and production supervision qualification to false. No inspected application was executed.
+## Supplementary public repository
 
-Approved framework-owned RN/Expo default tools were recorded independently and their context parity tested. `evidence/packaged-foundation.json` records eight offline Windows foundation profiles; full packaged pattern/fault qualification remains outstanding. Supplementary public repositories, navigation/Expo route matrices and equivalent resource/performance comparison also remain outstanding. Their absence cannot be replaced by foundation experiments.
+Expo examples / stickersmash, commit 76a1dd12978a7ba54b0e318cec01a8578db3b0c0, was inspected as bounded public text with source hashes and repeatability records in evidence/public-stickersmash.json. Upstream versions were not rewritten, packages/config/application code were not executed, and this unqualified upstream tuple is not acceptance evidence for the exact manifest tuples.
+
+## Remaining qualification
+
+Full configuration/package/asset/ownership matrices; all platform and entry negatives; Flow framework/native intent extraction and broader lexical interoperability; full navigation/linking and Expo conventions; all IPC/fault/below-at-above ceilings; complete offline Windows pattern matrices; and per-pattern production qualification records remain required. See acceptance.md for all 27 statuses. No missing matrix is waived by a passing subset.

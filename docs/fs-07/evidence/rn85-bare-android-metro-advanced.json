@@ -1,0 +1,89 @@
+{
+  "tuple": "rn85-bare",
+  "versions": {
+    "node": "24.19.0",
+    "react": "19.2.3",
+    "react-native": "0.85.3",
+    "metro": "0.84.6",
+    "@react-navigation/native": "7.5.0",
+    "@react-navigation/native-stack": "7.20.0"
+  },
+  "profile": "android-development",
+  "contextProfile": "controlled",
+  "platform": "android",
+  "resolver": "metro-resolver",
+  "resolverVersion": "0.84.6",
+  "resolverEntryHash": "e85566cb343bfa077a4526f84d980d2f2310ccfd475c17888c70fdbd173f9502",
+  "fixtureHash": "cd51c85233a8c4e3430bfe5238c4169718109ea2b1c5de80259ec88a71ac30b9",
+  "outputHash": "6c1e73c8f14f10efbcc96ed9de62ea4545ca3dd97ec088d642af529d329aac83",
+  "outputs": [
+    {
+      "id": "root-array",
+      "type": "sourceFile",
+      "targets": [
+        "packages/array/entry.js"
+      ]
+    },
+    {
+      "id": "subpath-array",
+      "type": "sourceFile",
+      "targets": [
+        "packages/subarray/entry.js"
+      ]
+    },
+    {
+      "id": "unexported-fallback",
+      "type": "sourceFile",
+      "targets": [
+        "packages/fallback/private.android.js"
+      ]
+    },
+    {
+      "id": "missing-export-fallback",
+      "type": "sourceFile",
+      "targets": [
+        "packages/missing/entry.js"
+      ]
+    },
+    {
+      "id": "imports-exact",
+      "type": "sourceFile",
+      "targets": [
+        "src/local.js"
+      ]
+    },
+    {
+      "id": "bare-disabled",
+      "type": "empty",
+      "targets": []
+    },
+    {
+      "id": "bare-redirect",
+      "type": "sourceFile",
+      "targets": [
+        "packages/array/entry.js"
+      ]
+    },
+    {
+      "id": "main-map",
+      "type": "sourceFile",
+      "targets": [
+        "packages/entry/replaced.js"
+      ]
+    }
+  ],
+  "warnings": [
+    "Attempted to import the module \"D:\\Repositorios Github\\cartograph\\node_modules\\.fs07-experiments\\virtual-oracle\\packages\\fallback\\private\" which is not listed in the \"exports\" of \"D:\\Repositorios Github\\cartograph\\node_modules\\.fs07-experiments\\virtual-oracle\\packages\\fallback\" under the requested subpath \"./private\". Falling back to file-based resolution. Consider updating the call site or asking the package maintainer(s) to expose this API.",
+    "The package D:\\Repositorios Github\\cartograph\\node_modules\\.fs07-experiments\\virtual-oracle\\packages\\missing contains an invalid package.json configuration. Consider raising this issue with the package maintainer(s).\nReason: The resolution for \"D:\\Repositorios Github\\cartograph\\node_modules\\.fs07-experiments\\virtual-oracle\\packages\\missing\" defined in \"exports\" is D:\\Repositorios Github\\cartograph\\node_modules\\.fs07-experiments\\virtual-oracle\\packages\\missing\\absent.js, however this file does not exist. Falling back to file-based resolution."
+  ],
+  "elapsedMs": 6.514100000000099,
+  "resources": {
+    "rss": 73687040,
+    "heapTotal": 15826944,
+    "heapUsed": 11986568,
+    "external": 9047921,
+    "arrayBuffers": 143651
+  },
+  "applicationExecution": false,
+  "configExecution": false
+}

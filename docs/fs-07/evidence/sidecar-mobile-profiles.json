@@ -1,0 +1,144 @@
+{
+  "status": "PASS",
+  "scope": "Existing desktop protocol publishes both mobile variants for controlled TS/JS projects",
+  "sidecarHash": "e8d6fb865426f974e499ab3ba60f5ddce968e802c285132a640d259fd6a66afd",
+  "testHash": "7a9ba8c37705df09f429b49eefdb0bc76abffd8dcdae727c9d645341bfdcc6c2",
+  "records": [
+    {
+      "tuple": "rn83-bare",
+      "status": "PASS",
+      "profiles": [
+        {
+          "id": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"fs-07/1\\\"]\",\"android-development\",\"android\",[\"react-native\"]]",
+          "profileId": "[\"profile\",\".\",\"metro-android\",\"fs-07/1\"]",
+          "platform": "android"
+        },
+        {
+          "id": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-ios\\\",\\\"fs-07/1\\\"]\",\"ios-development\",\"ios\",[\"react-native\"]]",
+          "profileId": "[\"profile\",\".\",\"metro-ios\",\"fs-07/1\"]",
+          "platform": "ios"
+        }
+      ],
+      "sourceHashes": [
+        {
+          "path": "App.tsx",
+          "hash": "db50515460f3386109858eca86176bfdbe40d7f1f5ca70b5ef0c82f932af3755"
+        },
+        {
+          "path": "Choice.android.ts",
+          "hash": "cf8cc9907cd591ffdc51cd42c7636b46db5c344d740e37f7516c71448c7d9ca2"
+        },
+        {
+          "path": "Choice.ios.ts",
+          "hash": "cf8cc9907cd591ffdc51cd42c7636b46db5c344d740e37f7516c71448c7d9ca2"
+        }
+      ],
+      "outputHash": "0a27333a0d583d8f3edaff1d5c0ba6aca124aec29ff6cbf50fea5ac68e502819",
+      "snapshotVersion": 3,
+      "emptyPath": true,
+      "inspectedExecution": false
+    },
+    {
+      "tuple": "rn85-bare",
+      "status": "PASS",
+      "profiles": [
+        {
+          "id": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"fs-07/1\\\"]\",\"android-development\",\"android\",[\"react-native\"]]",
+          "profileId": "[\"profile\",\".\",\"metro-android\",\"fs-07/1\"]",
+          "platform": "android"
+        },
+        {
+          "id": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-ios\\\",\\\"fs-07/1\\\"]\",\"ios-development\",\"ios\",[\"react-native\"]]",
+          "profileId": "[\"profile\",\".\",\"metro-ios\",\"fs-07/1\"]",
+          "platform": "ios"
+        }
+      ],
+      "sourceHashes": [
+        {
+          "path": "App.tsx",
+          "hash": "db50515460f3386109858eca86176bfdbe40d7f1f5ca70b5ef0c82f932af3755"
+        },
+        {
+          "path": "Choice.android.ts",
+          "hash": "cf8cc9907cd591ffdc51cd42c7636b46db5c344d740e37f7516c71448c7d9ca2"
+        },
+        {
+          "path": "Choice.ios.ts",
+          "hash": "cf8cc9907cd591ffdc51cd42c7636b46db5c344d740e37f7516c71448c7d9ca2"
+        }
+      ],
+      "outputHash": "8f65863489c69cdf61be2a22331eb85fa763e79f81442f119a16458c82ab75a5",
+      "snapshotVersion": 3,
+      "emptyPath": true,
+      "inspectedExecution": false
+    },
+    {
+      "tuple": "expo55",
+      "status": "PASS",
+      "profiles": [
+        {
+          "id": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"fs-07/1\\\"]\",\"android-development\",\"android\",[\"react-native\"]]",
+          "profileId": "[\"profile\",\".\",\"metro-android\",\"fs-07/1\"]",
+          "platform": "android"
+        },
+        {
+          "id": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-ios\\\",\\\"fs-07/1\\\"]\",\"ios-development\",\"ios\",[\"react-native\"]]",
+          "profileId": "[\"profile\",\".\",\"metro-ios\",\"fs-07/1\"]",
+          "platform": "ios"
+        }
+      ],
+      "sourceHashes": [
+        {
+          "path": "App.tsx",
+          "hash": "db50515460f3386109858eca86176bfdbe40d7f1f5ca70b5ef0c82f932af3755"
+        },
+        {
+          "path": "Choice.android.ts",
+          "hash": "cf8cc9907cd591ffdc51cd42c7636b46db5c344d740e37f7516c71448c7d9ca2"
+        },
+        {
+          "path": "Choice.ios.ts",
+          "hash": "cf8cc9907cd591ffdc51cd42c7636b46db5c344d740e37f7516c71448c7d9ca2"
+        }
+      ],
+      "outputHash": "7f89af7f0a69f3f4763fc4bfe7989040939acffc548e8bed40c3481f7b4ca35b",
+      "snapshotVersion": 3,
+      "emptyPath": true,
+      "inspectedExecution": false
+    },
+    {
+      "tuple": "expo56",
+      "status": "PASS",
+      "profiles": [
+        {
+          "id": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"fs-07/1\\\"]\",\"android-development\",\"android\",[\"react-native\"]]",
+          "profileId": "[\"profile\",\".\",\"metro-android\",\"fs-07/1\"]",
+          "platform": "android"
+        },
+        {
+          "id": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-ios\\\",\\\"fs-07/1\\\"]\",\"ios-development\",\"ios\",[\"react-native\"]]",
+          "profileId": "[\"profile\",\".\",\"metro-ios\",\"fs-07/1\"]",
+          "platform": "ios"
+        }
+      ],
+      "sourceHashes": [
+        {
+          "path": "App.tsx",
+          "hash": "db50515460f3386109858eca86176bfdbe40d7f1f5ca70b5ef0c82f932af3755"
+        },
+        {
+          "path": "Choice.android.ts",
+          "hash": "cf8cc9907cd591ffdc51cd42c7636b46db5c344d740e37f7516c71448c7d9ca2"
+        },
+        {
+          "path": "Choice.ios.ts",
+          "hash": "cf8cc9907cd591ffdc51cd42c7636b46db5c344d740e37f7516c71448c7d9ca2"
+        }
+      ],
+      "outputHash": "d1061f3b951c1d03d5f389861e446d1ea2a890d27a3e3831f64544b75e6ea093",
+      "snapshotVersion": 3,
+      "emptyPath": true,
+      "inspectedExecution": false
+    }
+  ]
+}

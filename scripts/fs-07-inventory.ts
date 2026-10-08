@@ -1,0 +1,11 @@
+import {execFileSync} from "node:child_process";
+import {readFileSync,writeFileSync,existsSync} from "node:fs";
+import {createHash} from "node:crypto";
+const hash=(value:Buffer)=>createHash("sha256").update(value).digest("hex");
+const baseline=JSON.parse(readFileSync("docs/fs-07/evidence/starting-inventory.json","utf8")) as {head:string;files:{path:string;sha256:string}[]},known=new Map(baseline.files.map(f=>[f.path,f.sha256]));
+const git=(args:string[])=>execFileSync("git",args,{encoding:"utf8",windowsHide:true}).trim().split(/\r?\n/).filter(Boolean);
+const files=[...new Set(git(["ls-files","--cached","--others","--exclude-standard"]))].sort();
+const report="docs/fs-07/evidence/changed-files.json";
+const changes=files.filter(file=>file!==report&&existsSync(file)).map(file=>({path:file,sha256:hash(readFileSync(file)),acceptedHash:known.get(file)??null})).filter(f=>f.acceptedHash!==f.sha256&&(f.acceptedHash!==null||/^(?:docs\/fs-07\/|scripts\/fs-07-|tests\/framework-support\/fs-07|tests\/fixtures\/framework-support\/F07-rn\/|lib\/engine\/(?:adapters\/flow|assets\/flow\/)|lib\/parser\/(?:flow-dialect|adapters\/(?:rn-|react-native|metro-|expo-router)))/.test(f.path)));
+writeFileSync(report,JSON.stringify({acceptedFS06Head:baseline.head,currentHead:git(["rev-parse","HEAD"])[0],basis:"Captured accepted FS-06 worktree, including its accepted uncommitted changes",changes,deleted:baseline.files.filter(f=>!existsSync(f.path)),regeneratedFS06Evidence:changes.filter(f=>f.path.startsWith("docs/fs-06/evidence/")).map(f=>f.path),selfExcluded:true},null,2)+"\n");
+console.log(JSON.stringify({changedFiles:changes.length,productionFiles:changes.filter(f=>f.path.startsWith("lib/")||["scripts/sidecar.ts","scripts/engine.ts"].includes(f.path)).map(f=>f.path)}));

@@ -8,9 +8,12 @@ import { flowFiles } from "../../parser/flow-dialect.ts";
 import { validateSnapshot } from "../contract.ts";
 import { capabilityId, factId, profileId, variantId } from "../../model/framework.ts";
 import { metroProfile, type MetroMode } from "../../parser/adapters/metro-profile.ts";
+import {frameworkFact} from "../../parser/framework-budget.ts";
+import {normalizeRange} from "../../model/positions.ts";
 
 /** Flow syntax remains adapter-owned. Only validated neutral facts cross into
- * the shared snapshot; imported callable targets are deliberately withheld. */
+ * the shared snapshot. Imported callable targets require a stable unique Flow
+ * export and agreement across every selected runtime profile. */
 export function flowExtension(options: PythonOptions & {metroModes?: readonly MetroMode[]}): AsyncLanguageExtension {
   const cache = new Map<string, {hash: string; syntax: FlowSyntax}>();
   let completedRoot: string | undefined;
@@ -55,7 +58,8 @@ export function flowExtension(options: PythonOptions & {metroModes?: readonly Me
       }
     } finally { await worker?.close(); }
     selection.walk.discovery.boundary.check();
-    if (unavailable && (completedRoot === selection.root || options.previousSnapshot?.()?.analysis.projects.some(p => p.extractors.includes("flow/fs-07/1")))) throw new ParserWorkerError("parser-unavailable");
+    const previousSnapshot=options.previousSnapshot?.();
+    if (unavailable && (completedRoot === selection.root || previousSnapshot?.origin.root===selection.root&&previousSnapshot.analysis.projects.some(p => p.extractors.includes("flow/fs-07/1")))) throw new ParserWorkerError("parser-unavailable");
     snapshot.diagnostics = snapshot.diagnostics.filter(d => !(files.has(d.path) && d.reason === "flow-session-required"));
     snapshot.diagnostics.push(...failures.map(f => ({path: f.file, category: "skipped-file", reason: f.reason, detail: "Flow analysis withheld; no TS syntax or runtime execution fallback"})));
     snapshot.coverage.files.parsed += records.length; snapshot.coverage.files.skipped -= records.length;
@@ -63,14 +67,16 @@ export function flowExtension(options: PythonOptions & {metroModes?: readonly Me
       const lines = Math.max(1, record.text.split("\n").length - (record.text.endsWith("\n") ? 1 : 0));
       snapshot.files.push({id: record.file, path: record.file, module: path.posix.dirname(record.file), hash: record.hash, bytes: record.bytes, lines, fanIn: 0, fanOut: 0, role: null, reachedBy: null, exports: record.syntax.exports.map(e => e.name)});
       snapshot.analysis.resources.push({path: record.file, hash: record.hash, bytes: record.bytes, lines, utf16Length: record.text.length, encoding: "utf8", purpose: "source"});
+      for(const d of record.syntax.behavior.declarations)frameworkFact(snapshot,record.file,d.id);
+      for(const r of record.syntax.behavior.relations)frameworkFact(snapshot,record.file,r.id);
+      for(const g of record.syntax.behavior.gaps)frameworkFact(snapshot,record.file,JSON.stringify(["flow-gap",g.site.start,g.reason]));
       snapshot.behavior.declarations.push(...record.syntax.behavior.declarations);
       snapshot.behavior.relations.push(...record.syntax.behavior.relations);
       snapshot.behavior.gaps.push(...record.syntax.behavior.gaps);
-      for (const call of record.syntax.importedCalls) snapshot.behavior.gaps.push({source: call.source, reason: "flow-imported-call-unqualified", site: call.site});
     }
     for (const project of selection.walk.discovery.projects.filter(p => selection.walk.discovery.inventory.some(i => i.owner === p.path && files.has(i.path)))) {
-      for (const mode of [...new Set(options.metroModes ?? ["android-development" as const])]) {
-        const metro = metroProfile(snapshot, selection.walk.discovery, project, mode);
+      const profiles=[...new Set(options.metroModes ?? ["android-development" as const])].map(mode=>metroProfile(snapshot,selection.walk.discovery,project,mode));
+      for (const metro of profiles) {
         for (const record of records.filter(r => r.owner === project.path)) for (const entry of record.syntax.imports) {
           // Types have no runtime module dependency in Metro. Their static type
           // resolution remains an explicit unsupported boundary below.
@@ -79,6 +85,40 @@ export function flowExtension(options: PythonOptions & {metroModes?: readonly Me
           if (answer.state === "resolved") for (const target of answer.targets) metro.bind(entry.site, target, answer.category === "asset" ? "asset" : "module-dependency", answer.rule);
           else metro.gap(entry.site, answer.state === "boundary" ? answer.reason : "external-boundary");
         }
+        for(const record of records.filter(r=>r.owner===project.path))for(const exported of record.syntax.exports){
+          const target=record.syntax.behavior.declarations.find(d=>d.id===exported.id)!;
+          frameworkFact(snapshot,record.file);
+          const context={file:record.file,...normalizeRange(record.text,0,record.text.length-(/\r\n$/.test(record.text)?2:/[\r\n]$/.test(record.text)?1:0),"utf16"),fileHash:record.hash,extractor:"flow/syntax/fs-07/1",evidenceKind:"verified" as const};
+          snapshot.analysis.bindings.push({id:factId("binding:module-export",exported.site,metro.variant.id,exported.id),kind:"module-export",sourceId:record.file,targetId:exported.id,variantId:metro.variant.id,occurrence:exported.site,witnesses:[{role:"reference",site:exported.site,variantId:metro.variant.id,extractorVersion:"fs-07/1"},{role:"reference",site:context,variantId:metro.variant.id,extractorVersion:"fs-07/1"},{role:"declaration",site:target.site,variantId:metro.variant.id,extractorVersion:"fs-07/1"},...metro.variant.configWitnesses]});
+        }
+      }
+      const unresolvedCalls:FlowSyntax["importedCalls"] = [];
+      // Lexical imports use the accepted language-neutral file graph only when
+      // every selected runtime profile agrees. Framework dependencies remain
+      // separately witnessed; incompatible platform targets never collapse.
+      for(const record of records.filter(r=>r.owner===project.path))for(const entry of record.syntax.imports){
+        if(entry.typeOnly)continue;
+        const answers=profiles.map(metro=>metro.resolve(record.file,entry.module)),first=answers[0];
+        const target=first?.state==="resolved"&&first.category==="module"&&first.targets.length===1?first.targets[0]:undefined;
+        const agreed=target&&snapshot.files.some(f=>f.path===target)&&answers.every(a=>a.state==="resolved"&&a.category==="module"&&a.targets.length===1&&a.targets[0]===target);
+        const state=agreed?"internal":answers.every(a=>a.state==="boundary"&&a.reason==="external-boundary")?"external":answers.some(a=>a.state==="boundary"&&a.reason==="policy-denied")?"excluded":"unresolved";
+        const syntax="flow-import",counts=snapshot.coverage.bySyntax[syntax]??={seen:0,internal:0,external:0,excluded:0,unresolved:0};counts.seen++;counts[state]++;snapshot.coverage.relationships.seen++;snapshot.coverage.relationships[state]++;
+        if(agreed){
+          const id=JSON.stringify([record.file,target,syntax]);if(!snapshot.relationships.some(r=>r.id===id)){frameworkFact(snapshot,record.file,id);snapshot.relationships.push({id,source:record.file,target:target!,relation:"imports",typeOnly:false,syntax,evidence:{file:record.file,line:entry.site.line,fileHash:record.hash,extractor:"flow/imports/fs-07/1",evidenceKind:"verified",occurrence:"first",description:entry.module}});}
+        }else if(state==="external")snapshot.coverage.external[entry.module]=(snapshot.coverage.external[entry.module]??0)+1;
+        else if(state==="excluded")snapshot.coverage.excluded[entry.module]=(snapshot.coverage.excluded[entry.module]??0)+1;
+        else{const reason="flow-runtime-target-unqualified";snapshot.coverage.unresolved[reason]=(snapshot.coverage.unresolved[reason]??0)+1;snapshot.diagnostics.push({path:record.file,line:entry.site.line,category:"unresolved-import",reason,detail:"Canonical lexical imports require one parsed code file shared by all selected Metro profiles"});for(const metro of profiles)metro.gap(entry.site,"ambiguous-target");}
+      }
+      for(const record of records.filter(r=>r.owner===project.path))for(const call of record.syntax.importedCalls){
+        const answers=profiles.map(metro=>{
+          const answer=metro.resolve(record.file,call.module),file=answer.state==="resolved"&&answer.category==="module"&&answer.targets.length===1?answer.targets[0]:undefined;
+          const target=records.find(r=>r.file===file&&r.owner===project.path),exports=target?.syntax.exports.filter(e=>e.name===call.name)??[];
+          return exports.length===1?target?.syntax.behavior.declarations.find(d=>d.id===exports[0].id&&d.callable):undefined;
+        });
+        if(answers.length&&answers.every(d=>d&&d.id===answers[0]?.id)){
+          frameworkFact(snapshot,record.file);
+          snapshot.behavior.relations.push({id:JSON.stringify([record.file,call.site.start,"calls"]),source:call.source,target:answers[0]!.id,relation:"calls",conditional:true,site:call.site});
+        }else{frameworkFact(snapshot,record.file);snapshot.behavior.gaps.push({source:call.source,reason:"flow-imported-call-unqualified",site:call.site});unresolvedCalls.push(call);for(const metro of profiles)metro.gap(call.site,"ambiguous-target");}
       }
       const profile = {id: profileId(project.path, "flow-static", "fs-07/1"), projectId: project.path, resolverId: "flow-static", semanticsVersion: "fs-07/1", language: "flow"};
       const variant = {id: variantId(profile.id, "static-flow-syntax", null, []), projectId: project.path, profileId: profile.id, resolverId: profile.resolverId, environment: "static-flow-syntax", platform: null, conditions: [], configWitnesses: []};
@@ -89,11 +129,16 @@ export function flowExtension(options: PythonOptions & {metroModes?: readonly Me
       const shared = snapshot.analysis.projects.find(p => p.projectId === project.path)!;
       shared.languages.push("flow"); shared.profileIds.push(profile.id); shared.extractors.push("flow/fs-07/1");
       for (const record of records.filter(r => r.owner === project.path)) {
-        for (const location of [...record.syntax.behavior.gaps.map(g => g.site), ...record.syntax.importedCalls.map(c => c.site)]) {
+        for (const location of [...record.syntax.behavior.gaps.map(g => g.site), ...unresolvedCalls.filter(c=>c.site.file===record.file).map(c => c.site)]) {
           const id = factId("gap", location, variant.id, "unsupported-syntax");
           if (!capability.gapIds.includes(id)) { snapshot.analysis.gaps.push({id, occurrence: location, variantId: variant.id, capabilityId: capability.id, reason: "unsupported-syntax"}); capability.gapIds.push(id); }
         }
       }
+    }
+    const flowPaths=new Set(records.map(r=>r.file));
+    for(const file of snapshot.files){
+      if(flowPaths.has(file.path)){file.fanIn=new Set(snapshot.relationships.filter(r=>r.target===file.path).map(r=>r.source)).size;file.fanOut=new Set(snapshot.relationships.filter(r=>r.source===file.path).map(r=>r.target)).size;}
+      else file.fanIn+=new Set(snapshot.relationships.filter(r=>r.target===file.path&&flowPaths.has(r.source)).map(r=>r.source)).size;
     }
     snapshot.files.sort((a,b) => a.path.localeCompare(b.path)); snapshot.analysis.resources.sort((a,b) => a.path.localeCompare(b.path));
     if (Buffer.byteLength(JSON.stringify(snapshot)) > 31 * 1024 * 1024) throw new ParserWorkerError("resource-limit");

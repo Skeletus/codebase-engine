@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "scope": "Actual bundled Flow parser Windows job commitment for controlled small/500-function/500-component/malformed inputs; not a whole-engine RAM ceiling",
+  "hostHash": "25ded76062168c8f1d0852a865fa52074834bac3ff44d014e64bc724fc30634f",
+  "records": [
+    {
+      "case": "small",
+      "status": "PASS",
+      "bytes": 57,
+      "sourceHash": "d1e60691fb302fb8986e6748df98e176b05ea2d8dcf525d1562797ff9c02b56f",
+      "counters": {
+        "memoryLimitBytes": 536870912,
+        "peakCommitBytes": 60792832
+      }
+    },
+    {
+      "case": "function-corpus",
+      "status": "PASS",
+      "bytes": 26899,
+      "sourceHash": "bc9c6b8f9bcf18e01ca7c7a80b9245db81486ac7c0d13ef6bb7ec865bf7de1e8",
+      "counters": {
+        "memoryLimitBytes": 536870912,
+        "peakCommitBytes": 78434304
+      }
+    },
+    {
+      "case": "component-corpus",
+      "status": "PASS",
+      "bytes": 24399,
+      "sourceHash": "d2e376fe01da24e7183a8f379d4d001e67484d3075488bcf8e8ed583e3afbcae",
+      "counters": {
+        "memoryLimitBytes": 536870912,
+        "peakCommitBytes": 67993600
+      }
+    },
+    {
+      "case": "malformed",
+      "status": "PASS",
+      "bytes": 37,
+      "sourceHash": "688689fa83d13e9cf7ed8c00895e0603778b2eca4f2a2e638c819a89b6547384",
+      "counters": {
+        "memoryLimitBytes": 536870912,
+        "peakCommitBytes": 60473344
+      }
+    }
+  ]
+}

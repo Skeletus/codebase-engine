@@ -14,7 +14,7 @@ if (!directory || (read >= 0 && !args[read + 1]) || (out >= 0 && !args[out + 1])
 }
 const snapshot = read >= 0
   ? deserializeSnapshot(readFileSync(args[read + 1], "utf8"))
-  : (await createComposedRefresh({ host: path.resolve(import.meta.dirname, "../src-tauri/target/release/parser-host.exe") }).analyze(directory, true)).snapshot;
+  : (await createComposedRefresh({ host: path.resolve(import.meta.dirname, "../src-tauri/target/release/parser-host.exe"), metroModes:["android-development","ios-development"] }).analyze(directory, true)).snapshot;
 console.log(`Local snapshot v${snapshot.version}: ${snapshot.files.length} files, ${snapshot.relationships.length} relationships, ${snapshot.routes.length} route declarations`);
 console.log(JSON.stringify(snapshot.coverage, null, 2));
 for (const diagnostic of snapshot.diagnostics) console.log(`${diagnostic.category}: ${diagnostic.path} ${diagnostic.reason}: ${diagnostic.detail}`);

@@ -1,0 +1,2804 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+... Skipped lines
+
+  '{\n' +
+    '  "behavior": {\n' +
+    '    "declarations": [\n' +
+    '      {\n' +
+    '        "id": "[\\"App.tsx\\",39,\\"function\\"]",\n' +
+...
+    '        }\n' +
+-   '      },\n' +
+-   '      {\n' +
+-   '        "id": "[\\"Flow.js\\",16,\\"function\\"]",\n' +
+-   '        "name": "local",\n' +
+-   '        "kind": "function",\n' +
+-   '        "callable": true,\n' +
+-   '        "site": {\n' +
+-   '          "file": "Flow.js",\n' +
+-   '          "start": 16,\n' +
+-   '          "end": 51,\n' +
+-   '          "line": 2,\n' +
+-   '          "endLine": 2,\n' +
+-   '          "fileHash": "5dbaf55919881d74195dfedb8c97993e922fed9b972cfb8089a73c34411f16df",\n' +
+-   '          "extractor": "flow/syntax/fs-07/1",\n' +
+-   '          "evidenceKind": "verified"\n' +
+-   '        }\n' +
+-   '      },\n' +
+-   '      {\n' +
+-   '        "id": "[\\"Flow.js\\",31,\\"parameter\\"]",\n' +
+-   '        "name": "x",\n' +
+-   '        "kind": "parameter",\n' +
+-   '        "callable": false,\n' +
+-   '        "site": {\n' +
+-   '          "file": "Flow.js",\n' +
+-   '          "start": 31,\n' +
+-   '          "end": 39,\n' +
+-   '          "line": 2,\n' +
+-   '          "endLine": 2,\n' +
+-   '          "fileHash": "5dbaf55919881d74195dfedb8c97993e922fed9b972cfb8089a73c34411f16df",\n' +
+-   '          "extractor": "flow/syntax/fs-07/1",\n' +
+-   '          "evidenceKind": "verified"\n' +
+-   '        }\n' +
+-   '      },\n' +
+-   '      {\n' +
+-   '        "id": "[\\"Flow.js\\",59,\\"function\\"]",\n' +
+-   '        "name": "outer",\n' +
+-   '        "kind": "function",\n' +
+-   '        "callable": true,\n' +
+-   '        "site": {\n' +
+-   '          "file": "Flow.js",\n' +
+-   '          "start": 59,\n' +
+-   '          "end": 86,\n' +
+-   '          "line": 2,\n' +
+-   '          "endLine": 2,\n' +
+-   '          "fileHash": "5dbaf55919881d74195dfedb8c97993e922fed9b972cfb8089a73c34411f16df",\n' +
+-   '          "extractor": "flow/syntax/fs-07/1",\n' +
+-   '          "evidenceKind": "verified"\n' +
+-   '        }\n' +
+    '      }\n' +
+    '    ],\n' +
+    '    "relations": [\n' +
+    '      {\n' +
+    '        "id": "[\\"App.tsx\\",115,\\"references\\"]",\n' +
+...
+    '          "endLine": 1,\n' +
++   '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\n' +
++   '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
++   '          "evidenceKind": "verified"\n' +
++   '        }\n' +
++   '      },\n' +
++   '      {\n' +
++   '        "id": "[\\"PlatformEntry.ts\\",116,\\"references\\"]",\n' +
++   '        "source": null,\n' +
++   '        "target": "[\\"App.tsx\\",66,\\"function\\"]",\n' +
++   '        "relation": "references",\n' +
++   '        "conditional": false,\n' +
++   '        "site": {\n' +
++   '          "file": "PlatformEntry.ts",\n' +
++   '          "start": 116,\n' +
++   '          "end": 119,\n' +
++   '          "line": 1,\n' +
++   '          "endLine": 1,\n' +
++   '          "fileHash": "4fe2af453930c7d747d0f1fbccadfa4d19fbd9f62072017d2f798203133a6a15",\n' +
++   '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
++   '          "evidenceKind": "verified"\n' +
++   '        }\n' +
++   '      },\n' +
++   '      {\n' +
++   '        "id": "[\\"PlatformEntry.ts\\",124,\\"references\\"]",\n' +
++   '        "source": null,\n' +
++   '        "target": "[\\"App.tsx\\",66,\\"function\\"]",\n' +
++   '        "relation": "references",\n' +
++   '        "conditional": false,\n' +
++   '        "site": {\n' +
++   '          "file": "PlatformEntry.ts",\n' +
++   '          "start": 124,\n' +
++   '          "end": 127,\n' +
++   '          "line": 1,\n' +
++   '          "endLine": 1,\n' +
++   '          "fileHash": "4fe2af453930c7d747d0f1fbccadfa4d19fbd9f62072017d2f798203133a6a15",\n' +
++   '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
++   '          "evidenceKind": "verified"\n' +
++   '        }\n' +
++   '      },\n' +
++   '      {\n' +
++   '        "id": "[\\"PlatformEntry.ts\\",185,\\"referenc'... 111308 more characters
+-   '          "fileH'... 120979 more characters
+
+    at file:///C:/Users/Jesus/AppData/Local/Temp/cartograph%20FS07%20packaged%20U4iVje/engine/fs07-probe.mjs:24:199 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '{\n' +
+    '  "behavior": {\n' +
+    '    "declarations": [\n' +
+    '      {\n' +
+    '        "id": "[\\"App.tsx\\",39,\\"function\\"]",\n' +
+    '        "name": "handle",\n' +
+    '        "kind": "function",\n' +
+    '        "callable": true,\n' +
+    '        "site": {\n' +
+    '          "file": "App.tsx",\n' +
+    '          "start": 39,\n' +
+    '          "end": 65,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "1a8e867a0b9d5881da076fd172e72e15da1da159b33d967a49383e3038d17c4d",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"App.tsx\\",66,\\"function\\"]",\n' +
+    '        "name": "App",\n' +
+    '        "kind": "function",\n' +
+    '        "callable": true,\n' +
+    '        "site": {\n' +
+    '          "file": "App.tsx",\n' +
+    '          "start": 66,\n' +
+    '          "end": 126,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "1a8e867a0b9d5881da076fd172e72e15da1da159b33d967a49383e3038d17c4d",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"Choice.android.ts\\",0,\\"function\\"]",\n' +
+    '        "name": "choice",\n' +
+    '        "kind": "function",\n' +
+    '        "callable": true,\n' +
+    '        "site": {\n' +
+    '          "file": "Choice.android.ts",\n' +
+    '          "start": 0,\n' +
+    '          "end": 43,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "ce426e86c579f082ba2c477fbe39c0f25306053793f47de5b164cab4c6d4c128",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"Choice.ios.ts\\",0,\\"function\\"]",\n' +
+    '        "name": "choice",\n' +
+    '        "kind": "function",\n' +
+    '        "callable": true,\n' +
+    '        "site": {\n' +
+    '          "file": "Choice.ios.ts",\n' +
+    '          "start": 0,\n' +
+    '          "end": 39,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "6ec1ed61fe9c508df0dacdbd31d92c94a3b1412ae7108fff3a18ba0c2d8b58e6",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"index.ts\\",145,\\"function\\"]",\n' +
+    '        "name": "<callback>",\n' +
+    '        "kind": "function",\n' +
+    '        "callable": true,\n' +
+    '        "site": {\n' +
+    '          "file": "index.ts",\n' +
+    '          "start": 145,\n' +
+    '          "end": 152,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "71f09ef1f6bb417ce9e75ddac1a0b940b8b977074624137275f4347efc72bcfb",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"NativeSpec.ts\\",165,\\"value\\"]",\n' +
+    '        "name": "native",\n' +
+    '        "kind": "value",\n' +
+    '        "callable": false,\n' +
+    '        "site": {\n' +
+    '          "file": "NativeSpec.ts",\n' +
+    '          "start": 165,\n' +
+    '          "end": 230,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "a6d69691f31e2262f8e7605c6e0c1e4ee762ee83e621ea0c5a2d3680348991dc",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"Navigation.tsx\\",129,\\"function\\"]",\n' +
+    '        "name": "Home",\n' +
+    '        "kind": "function",\n' +
+    '        "callable": true,\n' +
+    '        "site": {\n' +
+    '          "file": "Navigation.tsx",\n' +
+    '          "start": 129,\n' +
+    '          "end": 232,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"Navigation.tsx\\",158,\\"value\\"]",\n' +
+    '        "name": "nav",\n' +
+    '        "kind": "value",\n' +
+    '        "callable": false,\n' +
+    '        "site": {\n' +
+    '          "file": "Navigation.tsx",\n' +
+    '          "start": 158,\n' +
+    '          "end": 177,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"Navigation.tsx\\",232,\\"function\\"]",\n' +
+    '        "name": "Detail",\n' +
+    '        "kind": "function",\n' +
+    '        "callable": true,\n' +
+    '        "site": {\n' +
+    '          "file": "Navigation.tsx",\n' +
+    '          "start": 232,\n' +
+    '          "end": 270,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"Navigation.tsx\\",276,\\"value\\"]",\n' +
+    '        "name": "Child",\n' +
+    '        "kind": "value",\n' +
+    '        "callable": false,\n' +
+    '        "site": {\n' +
+    '          "file": "Navigation.tsx",\n' +
+    '          "start": 276,\n' +
+    '          "end": 328,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"Navigation.tsx\\",335,\\"value\\"]",\n' +
+    '        "name": "Root",\n' +
+    '        "kind": "value",\n' +
+    '        "callable": false,\n' +
+    '        "site": {\n' +
+    '          "file": "Navigation.tsx",\n' +
+    '          "start": 335,\n' +
+    '          "end": 397,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"PlatformEntry.ts\\",82,\\"value\\"]",\n' +
+    '        "name": "Selected",\n' +
+    '        "kind": "value",\n' +
+    '        "callable": false,\n' +
+    '        "site": {\n' +
+    '          "file": "PlatformEntry.ts",\n' +
+    '          "start": 82,\n' +
+    '          "end": 129,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "4fe2af453930c7d747d0f1fbccadfa4d19fbd9f62072017d2f798203133a6a15",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"PlatformEntry.ts\\",181,\\"function\\"]",\n' +
+    '        "name": "<callback>",\n' +
+    '        "kind": "function",\n' +
+    '        "callable": true,\n' +
+    '        "site": {\n' +
+    '          "file": "PlatformEntry.ts",\n' +
+    '          "start": 181,\n' +
+    '          "end": 193,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "4fe2af453930c7d747d0f1fbccadfa4d19fbd9f62072017d2f798203133a6a15",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      }\n' +
+    '    ],\n' +
+    '    "relations": [\n' +
+    '      {\n' +
+    '        "id": "[\\"App.tsx\\",115,\\"references\\"]",\n' +
+    '        "source": "[\\"App.tsx\\",66,\\"function\\"]",\n' +
+    '        "target": "[\\"App.tsx\\",39,\\"function\\"]",\n' +
+    '        "relation": "references",\n' +
+    '        "conditional": false,\n' +
+    '        "site": {\n' +
+    '          "file": "App.tsx",\n' +
+    '          "start": 115,\n' +
+    '          "end": 121,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "1a8e867a0b9d5881da076fd172e72e15da1da159b33d967a49383e3038d17c4d",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"index.ts\\",149,\\"references\\"]",\n' +
+    '        "source": "[\\"index.ts\\",145,\\"function\\"]",\n' +
+    '        "target": "[\\"App.tsx\\",66,\\"function\\"]",\n' +
+    '        "relation": "references",\n' +
+    '        "conditional": false,\n' +
+    '        "site": {\n' +
+    '          "file": "index.ts",\n' +
+    '          "start": 149,\n' +
+    '          "end": 152,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "71f09ef1f6bb417ce9e75ddac1a0b940b8b977074624137275f4347efc72bcfb",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"Navigation.tsx\\",178,\\"references\\"]",\n' +
+    '        "source": "[\\"Navigation.tsx\\",129,\\"function\\"]",\n' +
+    '        "target": "[\\"Navigation.tsx\\",158,\\"value\\"]",\n' +
+    '        "relation": "references",\n' +
+    '        "conditional": false,\n' +
+    '        "site": {\n' +
+    '          "file": "Navigation.tsx",\n' +
+    '          "start": 178,\n' +
+    '          "end": 181,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"Navigation.tsx\\",389,\\"references\\"]",\n' +
+    '        "source": null,\n' +
+    '        "target": "[\\"Navigation.tsx\\",276,\\"value\\"]",\n' +
+    '        "relation": "references",\n' +
+    '        "conditional": false,\n' +
+    '        "site": {\n' +
+    '          "file": "Navigation.tsx",\n' +
+    '          "start": 389,\n' +
+    '          "end": 394,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"PlatformEntry.ts\\",116,\\"references\\"]",\n' +
+    '        "source": null,\n' +
+    '        "target": "[\\"App.tsx\\",66,\\"function\\"]",\n' +
+    '        "relation": "references",\n' +
+    '        "conditional": false,\n' +
+    '        "site": {\n' +
+    '          "file": "PlatformEntry.ts",\n' +
+    '          "start": 116,\n' +
+    '          "end": 119,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "4fe2af453930c7d747d0f1fbccadfa4d19fbd9f62072017d2f798203133a6a15",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"PlatformEntry.ts\\",124,\\"references\\"]",\n' +
+    '        "source": null,\n' +
+    '        "target": "[\\"App.tsx\\",66,\\"function\\"]",\n' +
+    '        "relation": "references",\n' +
+    '        "conditional": false,\n' +
+    '        "site": {\n' +
+    '          "file": "PlatformEntry.ts",\n' +
+    '          "start": 124,\n' +
+    '          "end": 127,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "4fe2af453930c7d747d0f1fbccadfa4d19fbd9f62072017d2f798203133a6a15",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"PlatformEntry.ts\\",185,\\"referenc'... 111308 more characters,
+  expected: '{\n' +
+    '  "behavior": {\n' +
+    '    "declarations": [\n' +
+    '      {\n' +
+    '        "id": "[\\"App.tsx\\",39,\\"function\\"]",\n' +
+    '        "name": "handle",\n' +
+    '        "kind": "function",\n' +
+    '        "callable": true,\n' +
+    '        "site": {\n' +
+    '          "file": "App.tsx",\n' +
+    '          "start": 39,\n' +
+    '          "end": 65,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "1a8e867a0b9d5881da076fd172e72e15da1da159b33d967a49383e3038d17c4d",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"App.tsx\\",66,\\"function\\"]",\n' +
+    '        "name": "App",\n' +
+    '        "kind": "function",\n' +
+    '        "callable": true,\n' +
+    '        "site": {\n' +
+    '          "file": "App.tsx",\n' +
+    '          "start": 66,\n' +
+    '          "end": 126,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "1a8e867a0b9d5881da076fd172e72e15da1da159b33d967a49383e3038d17c4d",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"Choice.android.ts\\",0,\\"function\\"]",\n' +
+    '        "name": "choice",\n' +
+    '        "kind": "function",\n' +
+    '        "callable": true,\n' +
+    '        "site": {\n' +
+    '          "file": "Choice.android.ts",\n' +
+    '          "start": 0,\n' +
+    '          "end": 43,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "ce426e86c579f082ba2c477fbe39c0f25306053793f47de5b164cab4c6d4c128",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"Choice.ios.ts\\",0,\\"function\\"]",\n' +
+    '        "name": "choice",\n' +
+    '        "kind": "function",\n' +
+    '        "callable": true,\n' +
+    '        "site": {\n' +
+    '          "file": "Choice.ios.ts",\n' +
+    '          "start": 0,\n' +
+    '          "end": 39,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "6ec1ed61fe9c508df0dacdbd31d92c94a3b1412ae7108fff3a18ba0c2d8b58e6",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"index.ts\\",145,\\"function\\"]",\n' +
+    '        "name": "<callback>",\n' +
+    '        "kind": "function",\n' +
+    '        "callable": true,\n' +
+    '        "site": {\n' +
+    '          "file": "index.ts",\n' +
+    '          "start": 145,\n' +
+    '          "end": 152,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "71f09ef1f6bb417ce9e75ddac1a0b940b8b977074624137275f4347efc72bcfb",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"NativeSpec.ts\\",165,\\"value\\"]",\n' +
+    '        "name": "native",\n' +
+    '        "kind": "value",\n' +
+    '        "callable": false,\n' +
+    '        "site": {\n' +
+    '          "file": "NativeSpec.ts",\n' +
+    '          "start": 165,\n' +
+    '          "end": 230,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "a6d69691f31e2262f8e7605c6e0c1e4ee762ee83e621ea0c5a2d3680348991dc",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"Navigation.tsx\\",129,\\"function\\"]",\n' +
+    '        "name": "Home",\n' +
+    '        "kind": "function",\n' +
+    '        "callable": true,\n' +
+    '        "site": {\n' +
+    '          "file": "Navigation.tsx",\n' +
+    '          "start": 129,\n' +
+    '          "end": 232,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"Navigation.tsx\\",158,\\"value\\"]",\n' +
+    '        "name": "nav",\n' +
+    '        "kind": "value",\n' +
+    '        "callable": false,\n' +
+    '        "site": {\n' +
+    '          "file": "Navigation.tsx",\n' +
+    '          "start": 158,\n' +
+    '          "end": 177,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"Navigation.tsx\\",232,\\"function\\"]",\n' +
+    '        "name": "Detail",\n' +
+    '        "kind": "function",\n' +
+    '        "callable": true,\n' +
+    '        "site": {\n' +
+    '          "file": "Navigation.tsx",\n' +
+    '          "start": 232,\n' +
+    '          "end": 270,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"Navigation.tsx\\",276,\\"value\\"]",\n' +
+    '        "name": "Child",\n' +
+    '        "kind": "value",\n' +
+    '        "callable": false,\n' +
+    '        "site": {\n' +
+    '          "file": "Navigation.tsx",\n' +
+    '          "start": 276,\n' +
+    '          "end": 328,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"Navigation.tsx\\",335,\\"value\\"]",\n' +
+    '        "name": "Root",\n' +
+    '        "kind": "value",\n' +
+    '        "callable": false,\n' +
+    '        "site": {\n' +
+    '          "file": "Navigation.tsx",\n' +
+    '          "start": 335,\n' +
+    '          "end": 397,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"PlatformEntry.ts\\",82,\\"value\\"]",\n' +
+    '        "name": "Selected",\n' +
+    '        "kind": "value",\n' +
+    '        "callable": false,\n' +
+    '        "site": {\n' +
+    '          "file": "PlatformEntry.ts",\n' +
+    '          "start": 82,\n' +
+    '          "end": 129,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "4fe2af453930c7d747d0f1fbccadfa4d19fbd9f62072017d2f798203133a6a15",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"PlatformEntry.ts\\",181,\\"function\\"]",\n' +
+    '        "name": "<callback>",\n' +
+    '        "kind": "function",\n' +
+    '        "callable": true,\n' +
+    '        "site": {\n' +
+    '          "file": "PlatformEntry.ts",\n' +
+    '          "start": 181,\n' +
+    '          "end": 193,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "4fe2af453930c7d747d0f1fbccadfa4d19fbd9f62072017d2f798203133a6a15",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"Flow.js\\",16,\\"function\\"]",\n' +
+    '        "name": "local",\n' +
+    '        "kind": "function",\n' +
+    '        "callable": true,\n' +
+    '        "site": {\n' +
+    '          "file": "Flow.js",\n' +
+    '          "start": 16,\n' +
+    '          "end": 51,\n' +
+    '          "line": 2,\n' +
+    '          "endLine": 2,\n' +
+    '          "fileHash": "5dbaf55919881d74195dfedb8c97993e922fed9b972cfb8089a73c34411f16df",\n' +
+    '          "extractor": "flow/syntax/fs-07/1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"Flow.js\\",31,\\"parameter\\"]",\n' +
+    '        "name": "x",\n' +
+    '        "kind": "parameter",\n' +
+    '        "callable": false,\n' +
+    '        "site": {\n' +
+    '          "file": "Flow.js",\n' +
+    '          "start": 31,\n' +
+    '          "end": 39,\n' +
+    '          "line": 2,\n' +
+    '          "endLine": 2,\n' +
+    '          "fileHash": "5dbaf55919881d74195dfedb8c97993e922fed9b972cfb8089a73c34411f16df",\n' +
+    '          "extractor": "flow/syntax/fs-07/1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"Flow.js\\",59,\\"function\\"]",\n' +
+    '        "name": "outer",\n' +
+    '        "kind": "function",\n' +
+    '        "callable": true,\n' +
+    '        "site": {\n' +
+    '          "file": "Flow.js",\n' +
+    '          "start": 59,\n' +
+    '          "end": 86,\n' +
+    '          "line": 2,\n' +
+    '          "endLine": 2,\n' +
+    '          "fileHash": "5dbaf55919881d74195dfedb8c97993e922fed9b972cfb8089a73c34411f16df",\n' +
+    '          "extractor": "flow/syntax/fs-07/1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      }\n' +
+    '    ],\n' +
+    '    "relations": [\n' +
+    '      {\n' +
+    '        "id": "[\\"App.tsx\\",115,\\"references\\"]",\n' +
+    '        "source": "[\\"App.tsx\\",66,\\"function\\"]",\n' +
+    '        "target": "[\\"App.tsx\\",39,\\"function\\"]",\n' +
+    '        "relation": "references",\n' +
+    '        "conditional": false,\n' +
+    '        "site": {\n' +
+    '          "file": "App.tsx",\n' +
+    '          "start": 115,\n' +
+    '          "end": 121,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "1a8e867a0b9d5881da076fd172e72e15da1da159b33d967a49383e3038d17c4d",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"index.ts\\",149,\\"references\\"]",\n' +
+    '        "source": "[\\"index.ts\\",145,\\"function\\"]",\n' +
+    '        "target": "[\\"App.tsx\\",66,\\"function\\"]",\n' +
+    '        "relation": "references",\n' +
+    '        "conditional": false,\n' +
+    '        "site": {\n' +
+    '          "file": "index.ts",\n' +
+    '          "start": 149,\n' +
+    '          "end": 152,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "71f09ef1f6bb417ce9e75ddac1a0b940b8b977074624137275f4347efc72bcfb",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"Navigation.tsx\\",178,\\"references\\"]",\n' +
+    '        "source": "[\\"Navigation.tsx\\",129,\\"function\\"]",\n' +
+    '        "target": "[\\"Navigation.tsx\\",158,\\"value\\"]",\n' +
+    '        "relation": "references",\n' +
+    '        "conditional": false,\n' +
+    '        "site": {\n' +
+    '          "file": "Navigation.tsx",\n' +
+    '          "start": 178,\n' +
+    '          "end": 181,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\n' +
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+    '          "evidenceKind": "verified"\n' +
+    '        }\n' +
+    '      },\n' +
+    '      {\n' +
+    '        "id": "[\\"Navigation.tsx\\",389,\\"references\\"]",\n' +
+    '        "source": null,\n' +
+    '        "target": "[\\"Navigation.tsx\\",276,\\"value\\"]",\n' +
+    '        "relation": "references",\n' +
+    '        "conditional": false,\n' +
+    '        "site": {\n' +
+    '          "file": "Navigation.tsx",\n' +
+    '          "start": 389,\n' +
+    '          "end": 394,\n' +
+    '          "line": 1,\n' +
+    '          "endLine": 1,\n' +
+    '          "fileH'... 120979 more characters,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0
+node:internal/errors:985
+  const err = new Error(message);
+              ^
+
+Error: Command failed: C:\Users\Jesus\AppData\Local\Temp\cartograph FS07 packaged U4iVje\node.exe C:\Users\Jesus\AppData\Local\Temp\cartograph FS07 packaged U4iVje\engine\fs07-probe.mjs
+node:internal/modules/run_main:107
+
+    triggerUncaughtException(
+
+    ^
+
+
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
++ actual - expected
+
+... Skipped lines
+
+
+
+  '{\n' +
+
+    '  "behavior": {\n' +
+
+    '    "declarations": [\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"App.tsx\\",39,\\"function\\"]",\n' +
+
+...
+
+    '        }\n' +
+
+-   '      },\n' +
+
+-   '      {\n' +
+
+-   '        "id": "[\\"Flow.js\\",16,\\"function\\"]",\n' +
+
+-   '        "name": "local",\n' +
+
+-   '        "kind": "function",\n' +
+
+-   '        "callable": true,\n' +
+
+-   '        "site": {\n' +
+
+-   '          "file": "Flow.js",\n' +
+
+-   '          "start": 16,\n' +
+
+-   '          "end": 51,\n' +
+
+-   '          "line": 2,\n' +
+
+-   '          "endLine": 2,\n' +
+
+-   '          "fileHash": "5dbaf55919881d74195dfedb8c97993e922fed9b972cfb8089a73c34411f16df",\n' +
+
+-   '          "extractor": "flow/syntax/fs-07/1",\n' +
+
+-   '          "evidenceKind": "verified"\n' +
+
+-   '        }\n' +
+
+-   '      },\n' +
+
+-   '      {\n' +
+
+-   '        "id": "[\\"Flow.js\\",31,\\"parameter\\"]",\n' +
+
+-   '        "name": "x",\n' +
+
+-   '        "kind": "parameter",\n' +
+
+-   '        "callable": false,\n' +
+
+-   '        "site": {\n' +
+
+-   '          "file": "Flow.js",\n' +
+
+-   '          "start": 31,\n' +
+
+-   '          "end": 39,\n' +
+
+-   '          "line": 2,\n' +
+
+-   '          "endLine": 2,\n' +
+
+-   '          "fileHash": "5dbaf55919881d74195dfedb8c97993e922fed9b972cfb8089a73c34411f16df",\n' +
+
+-   '          "extractor": "flow/syntax/fs-07/1",\n' +
+
+-   '          "evidenceKind": "verified"\n' +
+
+-   '        }\n' +
+
+-   '      },\n' +
+
+-   '      {\n' +
+
+-   '        "id": "[\\"Flow.js\\",59,\\"function\\"]",\n' +
+
+-   '        "name": "outer",\n' +
+
+-   '        "kind": "function",\n' +
+
+-   '        "callable": true,\n' +
+
+-   '        "site": {\n' +
+
+-   '          "file": "Flow.js",\n' +
+
+-   '          "start": 59,\n' +
+
+-   '          "end": 86,\n' +
+
+-   '          "line": 2,\n' +
+
+-   '          "endLine": 2,\n' +
+
+-   '          "fileHash": "5dbaf55919881d74195dfedb8c97993e922fed9b972cfb8089a73c34411f16df",\n' +
+
+-   '          "extractor": "flow/syntax/fs-07/1",\n' +
+
+-   '          "evidenceKind": "verified"\n' +
+
+-   '        }\n' +
+
+    '      }\n' +
+
+    '    ],\n' +
+
+    '    "relations": [\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"App.tsx\\",115,\\"references\\"]",\n' +
+
+...
+
+    '          "endLine": 1,\n' +
+
++   '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\n' +
+
++   '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
++   '          "evidenceKind": "verified"\n' +
+
++   '        }\n' +
+
++   '      },\n' +
+
++   '      {\n' +
+
++   '        "id": "[\\"PlatformEntry.ts\\",116,\\"references\\"]",\n' +
+
++   '        "source": null,\n' +
+
++   '        "target": "[\\"App.tsx\\",66,\\"function\\"]",\n' +
+
++   '        "relation": "references",\n' +
+
++   '        "conditional": false,\n' +
+
++   '        "site": {\n' +
+
++   '          "file": "PlatformEntry.ts",\n' +
+
++   '          "start": 116,\n' +
+
++   '          "end": 119,\n' +
+
++   '          "line": 1,\n' +
+
++   '          "endLine": 1,\n' +
+
++   '          "fileHash": "4fe2af453930c7d747d0f1fbccadfa4d19fbd9f62072017d2f798203133a6a15",\n' +
+
++   '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
++   '          "evidenceKind": "verified"\n' +
+
++   '        }\n' +
+
++   '      },\n' +
+
++   '      {\n' +
+
++   '        "id": "[\\"PlatformEntry.ts\\",124,\\"references\\"]",\n' +
+
++   '        "source": null,\n' +
+
++   '        "target": "[\\"App.tsx\\",66,\\"function\\"]",\n' +
+
++   '        "relation": "references",\n' +
+
++   '        "conditional": false,\n' +
+
++   '        "site": {\n' +
+
++   '          "file": "PlatformEntry.ts",\n' +
+
++   '          "start": 124,\n' +
+
++   '          "end": 127,\n' +
+
++   '          "line": 1,\n' +
+
++   '          "endLine": 1,\n' +
+
++   '          "fileHash": "4fe2af453930c7d747d0f1fbccadfa4d19fbd9f62072017d2f798203133a6a15",\n' +
+
++   '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
++   '          "evidenceKind": "verified"\n' +
+
++   '        }\n' +
+
++   '      },\n' +
+
++   '      {\n' +
+
++   '        "id": "[\\"PlatformEntry.ts\\",185,\\"referenc'... 111308 more characters
+
+-   '          "fileH'... 120979 more characters
+
+
+
+    at file:///C:/Users/Jesus/AppData/Local/Temp/cartograph%20FS07%20packaged%20U4iVje/engine/fs07-probe.mjs:24:199 {
+
+  generatedMessage: true,
+
+  code: 'ERR_ASSERTION',
+
+  actual: '{\n' +
+
+    '  "behavior": {\n' +
+
+    '    "declarations": [\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"App.tsx\\",39,\\"function\\"]",\n' +
+
+    '        "name": "handle",\n' +
+
+    '        "kind": "function",\n' +
+
+    '        "callable": true,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "App.tsx",\n' +
+
+    '          "start": 39,\n' +
+
+    '          "end": 65,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "1a8e867a0b9d5881da076fd172e72e15da1da159b33d967a49383e3038d17c4d",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"App.tsx\\",66,\\"function\\"]",\n' +
+
+    '        "name": "App",\n' +
+
+    '        "kind": "function",\n' +
+
+    '        "callable": true,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "App.tsx",\n' +
+
+    '          "start": 66,\n' +
+
+    '          "end": 126,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "1a8e867a0b9d5881da076fd172e72e15da1da159b33d967a49383e3038d17c4d",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"Choice.android.ts\\",0,\\"function\\"]",\n' +
+
+    '        "name": "choice",\n' +
+
+    '        "kind": "function",\n' +
+
+    '        "callable": true,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "Choice.android.ts",\n' +
+
+    '          "start": 0,\n' +
+
+    '          "end": 43,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "ce426e86c579f082ba2c477fbe39c0f25306053793f47de5b164cab4c6d4c128",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"Choice.ios.ts\\",0,\\"function\\"]",\n' +
+
+    '        "name": "choice",\n' +
+
+    '        "kind": "function",\n' +
+
+    '        "callable": true,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "Choice.ios.ts",\n' +
+
+    '          "start": 0,\n' +
+
+    '          "end": 39,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "6ec1ed61fe9c508df0dacdbd31d92c94a3b1412ae7108fff3a18ba0c2d8b58e6",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"index.ts\\",145,\\"function\\"]",\n' +
+
+    '        "name": "<callback>",\n' +
+
+    '        "kind": "function",\n' +
+
+    '        "callable": true,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "index.ts",\n' +
+
+    '          "start": 145,\n' +
+
+    '          "end": 152,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "71f09ef1f6bb417ce9e75ddac1a0b940b8b977074624137275f4347efc72bcfb",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"NativeSpec.ts\\",165,\\"value\\"]",\n' +
+
+    '        "name": "native",\n' +
+
+    '        "kind": "value",\n' +
+
+    '        "callable": false,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "NativeSpec.ts",\n' +
+
+    '          "start": 165,\n' +
+
+    '          "end": 230,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "a6d69691f31e2262f8e7605c6e0c1e4ee762ee83e621ea0c5a2d3680348991dc",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"Navigation.tsx\\",129,\\"function\\"]",\n' +
+
+    '        "name": "Home",\n' +
+
+    '        "kind": "function",\n' +
+
+    '        "callable": true,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "Navigation.tsx",\n' +
+
+    '          "start": 129,\n' +
+
+    '          "end": 232,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"Navigation.tsx\\",158,\\"value\\"]",\n' +
+
+    '        "name": "nav",\n' +
+
+    '        "kind": "value",\n' +
+
+    '        "callable": false,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "Navigation.tsx",\n' +
+
+    '          "start": 158,\n' +
+
+    '          "end": 177,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"Navigation.tsx\\",232,\\"function\\"]",\n' +
+
+    '        "name": "Detail",\n' +
+
+    '        "kind": "function",\n' +
+
+    '        "callable": true,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "Navigation.tsx",\n' +
+
+    '          "start": 232,\n' +
+
+    '          "end": 270,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"Navigation.tsx\\",276,\\"value\\"]",\n' +
+
+    '        "name": "Child",\n' +
+
+    '        "kind": "value",\n' +
+
+    '        "callable": false,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "Navigation.tsx",\n' +
+
+    '          "start": 276,\n' +
+
+    '          "end": 328,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"Navigation.tsx\\",335,\\"value\\"]",\n' +
+
+    '        "name": "Root",\n' +
+
+    '        "kind": "value",\n' +
+
+    '        "callable": false,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "Navigation.tsx",\n' +
+
+    '          "start": 335,\n' +
+
+    '          "end": 397,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"PlatformEntry.ts\\",82,\\"value\\"]",\n' +
+
+    '        "name": "Selected",\n' +
+
+    '        "kind": "value",\n' +
+
+    '        "callable": false,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "PlatformEntry.ts",\n' +
+
+    '          "start": 82,\n' +
+
+    '          "end": 129,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "4fe2af453930c7d747d0f1fbccadfa4d19fbd9f62072017d2f798203133a6a15",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"PlatformEntry.ts\\",181,\\"function\\"]",\n' +
+
+    '        "name": "<callback>",\n' +
+
+    '        "kind": "function",\n' +
+
+    '        "callable": true,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "PlatformEntry.ts",\n' +
+
+    '          "start": 181,\n' +
+
+    '          "end": 193,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "4fe2af453930c7d747d0f1fbccadfa4d19fbd9f62072017d2f798203133a6a15",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      }\n' +
+
+    '    ],\n' +
+
+    '    "relations": [\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"App.tsx\\",115,\\"references\\"]",\n' +
+
+    '        "source": "[\\"App.tsx\\",66,\\"function\\"]",\n' +
+
+    '        "target": "[\\"App.tsx\\",39,\\"function\\"]",\n' +
+
+    '        "relation": "references",\n' +
+
+    '        "conditional": false,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "App.tsx",\n' +
+
+    '          "start": 115,\n' +
+
+    '          "end": 121,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "1a8e867a0b9d5881da076fd172e72e15da1da159b33d967a49383e3038d17c4d",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"index.ts\\",149,\\"references\\"]",\n' +
+
+    '        "source": "[\\"index.ts\\",145,\\"function\\"]",\n' +
+
+    '        "target": "[\\"App.tsx\\",66,\\"function\\"]",\n' +
+
+    '        "relation": "references",\n' +
+
+    '        "conditional": false,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "index.ts",\n' +
+
+    '          "start": 149,\n' +
+
+    '          "end": 152,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "71f09ef1f6bb417ce9e75ddac1a0b940b8b977074624137275f4347efc72bcfb",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"Navigation.tsx\\",178,\\"references\\"]",\n' +
+
+    '        "source": "[\\"Navigation.tsx\\",129,\\"function\\"]",\n' +
+
+    '        "target": "[\\"Navigation.tsx\\",158,\\"value\\"]",\n' +
+
+    '        "relation": "references",\n' +
+
+    '        "conditional": false,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "Navigation.tsx",\n' +
+
+    '          "start": 178,\n' +
+
+    '          "end": 181,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"Navigation.tsx\\",389,\\"references\\"]",\n' +
+
+    '        "source": null,\n' +
+
+    '        "target": "[\\"Navigation.tsx\\",276,\\"value\\"]",\n' +
+
+    '        "relation": "references",\n' +
+
+    '        "conditional": false,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "Navigation.tsx",\n' +
+
+    '          "start": 389,\n' +
+
+    '          "end": 394,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"PlatformEntry.ts\\",116,\\"references\\"]",\n' +
+
+    '        "source": null,\n' +
+
+    '        "target": "[\\"App.tsx\\",66,\\"function\\"]",\n' +
+
+    '        "relation": "references",\n' +
+
+    '        "conditional": false,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "PlatformEntry.ts",\n' +
+
+    '          "start": 116,\n' +
+
+    '          "end": 119,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "4fe2af453930c7d747d0f1fbccadfa4d19fbd9f62072017d2f798203133a6a15",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"PlatformEntry.ts\\",124,\\"references\\"]",\n' +
+
+    '        "source": null,\n' +
+
+    '        "target": "[\\"App.tsx\\",66,\\"function\\"]",\n' +
+
+    '        "relation": "references",\n' +
+
+    '        "conditional": false,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "PlatformEntry.ts",\n' +
+
+    '          "start": 124,\n' +
+
+    '          "end": 127,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "4fe2af453930c7d747d0f1fbccadfa4d19fbd9f62072017d2f798203133a6a15",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"PlatformEntry.ts\\",185,\\"referenc'... 111308 more characters,
+
+  expected: '{\n' +
+
+    '  "behavior": {\n' +
+
+    '    "declarations": [\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"App.tsx\\",39,\\"function\\"]",\n' +
+
+    '        "name": "handle",\n' +
+
+    '        "kind": "function",\n' +
+
+    '        "callable": true,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "App.tsx",\n' +
+
+    '          "start": 39,\n' +
+
+    '          "end": 65,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "1a8e867a0b9d5881da076fd172e72e15da1da159b33d967a49383e3038d17c4d",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"App.tsx\\",66,\\"function\\"]",\n' +
+
+    '        "name": "App",\n' +
+
+    '        "kind": "function",\n' +
+
+    '        "callable": true,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "App.tsx",\n' +
+
+    '          "start": 66,\n' +
+
+    '          "end": 126,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "1a8e867a0b9d5881da076fd172e72e15da1da159b33d967a49383e3038d17c4d",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"Choice.android.ts\\",0,\\"function\\"]",\n' +
+
+    '        "name": "choice",\n' +
+
+    '        "kind": "function",\n' +
+
+    '        "callable": true,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "Choice.android.ts",\n' +
+
+    '          "start": 0,\n' +
+
+    '          "end": 43,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "ce426e86c579f082ba2c477fbe39c0f25306053793f47de5b164cab4c6d4c128",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"Choice.ios.ts\\",0,\\"function\\"]",\n' +
+
+    '        "name": "choice",\n' +
+
+    '        "kind": "function",\n' +
+
+    '        "callable": true,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "Choice.ios.ts",\n' +
+
+    '          "start": 0,\n' +
+
+    '          "end": 39,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "6ec1ed61fe9c508df0dacdbd31d92c94a3b1412ae7108fff3a18ba0c2d8b58e6",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"index.ts\\",145,\\"function\\"]",\n' +
+
+    '        "name": "<callback>",\n' +
+
+    '        "kind": "function",\n' +
+
+    '        "callable": true,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "index.ts",\n' +
+
+    '          "start": 145,\n' +
+
+    '          "end": 152,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "71f09ef1f6bb417ce9e75ddac1a0b940b8b977074624137275f4347efc72bcfb",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"NativeSpec.ts\\",165,\\"value\\"]",\n' +
+
+    '        "name": "native",\n' +
+
+    '        "kind": "value",\n' +
+
+    '        "callable": false,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "NativeSpec.ts",\n' +
+
+    '          "start": 165,\n' +
+
+    '          "end": 230,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "a6d69691f31e2262f8e7605c6e0c1e4ee762ee83e621ea0c5a2d3680348991dc",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"Navigation.tsx\\",129,\\"function\\"]",\n' +
+
+    '        "name": "Home",\n' +
+
+    '        "kind": "function",\n' +
+
+    '        "callable": true,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "Navigation.tsx",\n' +
+
+    '          "start": 129,\n' +
+
+    '          "end": 232,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"Navigation.tsx\\",158,\\"value\\"]",\n' +
+
+    '        "name": "nav",\n' +
+
+    '        "kind": "value",\n' +
+
+    '        "callable": false,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "Navigation.tsx",\n' +
+
+    '          "start": 158,\n' +
+
+    '          "end": 177,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"Navigation.tsx\\",232,\\"function\\"]",\n' +
+
+    '        "name": "Detail",\n' +
+
+    '        "kind": "function",\n' +
+
+    '        "callable": true,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "Navigation.tsx",\n' +
+
+    '          "start": 232,\n' +
+
+    '          "end": 270,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"Navigation.tsx\\",276,\\"value\\"]",\n' +
+
+    '        "name": "Child",\n' +
+
+    '        "kind": "value",\n' +
+
+    '        "callable": false,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "Navigation.tsx",\n' +
+
+    '          "start": 276,\n' +
+
+    '          "end": 328,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"Navigation.tsx\\",335,\\"value\\"]",\n' +
+
+    '        "name": "Root",\n' +
+
+    '        "kind": "value",\n' +
+
+    '        "callable": false,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "Navigation.tsx",\n' +
+
+    '          "start": 335,\n' +
+
+    '          "end": 397,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"PlatformEntry.ts\\",82,\\"value\\"]",\n' +
+
+    '        "name": "Selected",\n' +
+
+    '        "kind": "value",\n' +
+
+    '        "callable": false,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "PlatformEntry.ts",\n' +
+
+    '          "start": 82,\n' +
+
+    '          "end": 129,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "4fe2af453930c7d747d0f1fbccadfa4d19fbd9f62072017d2f798203133a6a15",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"PlatformEntry.ts\\",181,\\"function\\"]",\n' +
+
+    '        "name": "<callback>",\n' +
+
+    '        "kind": "function",\n' +
+
+    '        "callable": true,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "PlatformEntry.ts",\n' +
+
+    '          "start": 181,\n' +
+
+    '          "end": 193,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "4fe2af453930c7d747d0f1fbccadfa4d19fbd9f62072017d2f798203133a6a15",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"Flow.js\\",16,\\"function\\"]",\n' +
+
+    '        "name": "local",\n' +
+
+    '        "kind": "function",\n' +
+
+    '        "callable": true,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "Flow.js",\n' +
+
+    '          "start": 16,\n' +
+
+    '          "end": 51,\n' +
+
+    '          "line": 2,\n' +
+
+    '          "endLine": 2,\n' +
+
+    '          "fileHash": "5dbaf55919881d74195dfedb8c97993e922fed9b972cfb8089a73c34411f16df",\n' +
+
+    '          "extractor": "flow/syntax/fs-07/1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"Flow.js\\",31,\\"parameter\\"]",\n' +
+
+    '        "name": "x",\n' +
+
+    '        "kind": "parameter",\n' +
+
+    '        "callable": false,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "Flow.js",\n' +
+
+    '          "start": 31,\n' +
+
+    '          "end": 39,\n' +
+
+    '          "line": 2,\n' +
+
+    '          "endLine": 2,\n' +
+
+    '          "fileHash": "5dbaf55919881d74195dfedb8c97993e922fed9b972cfb8089a73c34411f16df",\n' +
+
+    '          "extractor": "flow/syntax/fs-07/1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"Flow.js\\",59,\\"function\\"]",\n' +
+
+    '        "name": "outer",\n' +
+
+    '        "kind": "function",\n' +
+
+    '        "callable": true,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "Flow.js",\n' +
+
+    '          "start": 59,\n' +
+
+    '          "end": 86,\n' +
+
+    '          "line": 2,\n' +
+
+    '          "endLine": 2,\n' +
+
+    '          "fileHash": "5dbaf55919881d74195dfedb8c97993e922fed9b972cfb8089a73c34411f16df",\n' +
+
+    '          "extractor": "flow/syntax/fs-07/1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      }\n' +
+
+    '    ],\n' +
+
+    '    "relations": [\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"App.tsx\\",115,\\"references\\"]",\n' +
+
+    '        "source": "[\\"App.tsx\\",66,\\"function\\"]",\n' +
+
+    '        "target": "[\\"App.tsx\\",39,\\"function\\"]",\n' +
+
+    '        "relation": "references",\n' +
+
+    '        "conditional": false,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "App.tsx",\n' +
+
+    '          "start": 115,\n' +
+
+    '          "end": 121,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "1a8e867a0b9d5881da076fd172e72e15da1da159b33d967a49383e3038d17c4d",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"index.ts\\",149,\\"references\\"]",\n' +
+
+    '        "source": "[\\"index.ts\\",145,\\"function\\"]",\n' +
+
+    '        "target": "[\\"App.tsx\\",66,\\"function\\"]",\n' +
+
+    '        "relation": "references",\n' +
+
+    '        "conditional": false,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "index.ts",\n' +
+
+    '          "start": 149,\n' +
+
+    '          "end": 152,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "71f09ef1f6bb417ce9e75ddac1a0b940b8b977074624137275f4347efc72bcfb",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"Navigation.tsx\\",178,\\"references\\"]",\n' +
+
+    '        "source": "[\\"Navigation.tsx\\",129,\\"function\\"]",\n' +
+
+    '        "target": "[\\"Navigation.tsx\\",158,\\"value\\"]",\n' +
+
+    '        "relation": "references",\n' +
+
+    '        "conditional": false,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "Navigation.tsx",\n' +
+
+    '          "start": 178,\n' +
+
+    '          "end": 181,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\n' +
+
+    '          "extractor": "typescript-javascript/static-symbols-v1",\n' +
+
+    '          "evidenceKind": "verified"\n' +
+
+    '        }\n' +
+
+    '      },\n' +
+
+    '      {\n' +
+
+    '        "id": "[\\"Navigation.tsx\\",389,\\"references\\"]",\n' +
+
+    '        "source": null,\n' +
+
+    '        "target": "[\\"Navigation.tsx\\",276,\\"value\\"]",\n' +
+
+    '        "relation": "references",\n' +
+
+    '        "conditional": false,\n' +
+
+    '        "site": {\n' +
+
+    '          "file": "Navigation.tsx",\n' +
+
+    '          "start": 389,\n' +
+
+    '          "end": 394,\n' +
+
+    '          "line": 1,\n' +
+
+    '          "endLine": 1,\n' +
+
+    '          "fileH'... 120979 more characters,
+
+  operator: 'strictEqual',
+
+  diff: 'simple'
+
+}
+
+
+
+Node.js v24.19.0
+
+
+    at genericNodeError (node:internal/errors:985:15)
+    at wrappedFn (node:internal/errors:539:14)
+    at checkExecSyncError (node:child_process:942:11)
+    at execFileSync (node:child_process:978:15)
+    at file:///D:/Repositorios%20Github/cartograph/scripts/fs-07-packaged-foundation.ts:87:18
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  status: 1,
+  signal: null,
+  output: [
+    null,
+    '',
+    'node:internal/modules/run_main:107\r\n' +
+      '    triggerUncaughtException(\r\n' +
+      '    ^\r\n' +
+      '\r\n' +
+      'AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\r\n' +
+      '+ actual - expected\r\n' +
+      '... Skipped lines\r\n' +
+      '\r\n' +
+      "  '{\\n' +\r\n" +
+      `    '  "behavior": {\\n' +\r\n` +
+      `    '    "declarations": [\\n' +\r\n` +
+      "    '      {\\n' +\r\n" +
+      `    '        "id": "[\\\\"App.tsx\\\\",39,\\\\"function\\\\"]",\\n' +\r\n` +
+      '...\r\n' +
+      "    '        }\\n' +\r\n" +
+      "-   '      },\\n' +\r\n" +
+      "-   '      {\\n' +\r\n" +
+      `-   '        "id": "[\\\\"Flow.js\\\\",16,\\\\"function\\\\"]",\\n' +\r\n` +
+      `-   '        "name": "local",\\n' +\r\n` +
+      `-   '        "kind": "function",\\n' +\r\n` +
+      `-   '        "callable": true,\\n' +\r\n` +
+      `-   '        "site": {\\n' +\r\n` +
+      `-   '          "file": "Flow.js",\\n' +\r\n` +
+      `-   '          "start": 16,\\n' +\r\n` +
+      `-   '          "end": 51,\\n' +\r\n` +
+      `-   '          "line": 2,\\n' +\r\n` +
+      `-   '          "endLine": 2,\\n' +\r\n` +
+      `-   '          "fileHash": "5dbaf55919881d74195dfedb8c97993e922fed9b972cfb8089a73c34411f16df",\\n' +\r\n` +
+      `-   '          "extractor": "flow/syntax/fs-07/1",\\n' +\r\n` +
+      `-   '          "evidenceKind": "verified"\\n' +\r\n` +
+      "-   '        }\\n' +\r\n" +
+      "-   '      },\\n' +\r\n" +
+      "-   '      {\\n' +\r\n" +
+      `-   '        "id": "[\\\\"Flow.js\\\\",31,\\\\"parameter\\\\"]",\\n' +\r\n` +
+      `-   '        "name": "x",\\n' +\r\n` +
+      `-   '        "kind": "parameter",\\n' +\r\n` +
+      `-   '        "callable": false,\\n' +\r\n` +
+      `-   '        "site": {\\n' +\r\n` +
+      `-   '          "file": "Flow.js",\\n' +\r\n` +
+      `-   '          "start": 31,\\n' +\r\n` +
+      `-   '          "end": 39,\\n' +\r\n` +
+      `-   '          "line": 2,\\n' +\r\n` +
+      `-   '          "endLine": 2,\\n' +\r\n` +
+      `-   '          "fileHash": "5dbaf55919881d74195dfedb8c97993e922fed9b972cfb8089a73c34411f16df",\\n' +\r\n` +
+      `-   '          "extractor": "flow/syntax/fs-07/1",\\n' +\r\n` +
+      `-   '          "evidenceKind": "verified"\\n' +\r\n` +
+      "-   '        }\\n' +\r\n" +
+      "-   '      },\\n' +\r\n" +
+      "-   '      {\\n' +\r\n" +
+      `-   '        "id": "[\\\\"Flow.js\\\\",59,\\\\"function\\\\"]",\\n' +\r\n` +
+      `-   '        "name": "outer",\\n' +\r\n` +
+      `-   '        "kind": "function",\\n' +\r\n` +
+      `-   '        "callable": true,\\n' +\r\n` +
+      `-   '        "site": {\\n' +\r\n` +
+      `-   '          "file": "Flow.js",\\n' +\r\n` +
+      `-   '          "start": 59,\\n' +\r\n` +
+      `-   '          "end": 86,\\n' +\r\n` +
+      `-   '          "line": 2,\\n' +\r\n` +
+      `-   '          "endLine": 2,\\n' +\r\n` +
+      `-   '          "fileHash": "5dbaf55919881d74195dfedb8c97993e922fed9b972cfb8089a73c34411f16df",\\n' +\r\n` +
+      `-   '          "extractor": "flow/syntax/fs-07/1",\\n' +\r\n` +
+      `-   '          "evidenceKind": "verified"\\n' +\r\n` +
+      "-   '        }\\n' +\r\n" +
+      "    '      }\\n' +\r\n" +
+      "    '    ],\\n' +\r\n" +
+      `    '    "relations": [\\n' +\r\n` +
+      "    '      {\\n' +\r\n" +
+      `    '        "id": "[\\\\"App.tsx\\\\",115,\\\\"references\\\\"]",\\n' +\r\n` +
+      '...\r\n' +
+      `    '          "endLine": 1,\\n' +\r\n` +
+      `+   '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\\n' +\r\n` +
+      `+   '          "extractor": "typescript-javascript/static-symbols-v1",\\n' +\r\n` +
+      `+   '          "evidenceKind": "verified"\\n' +\r\n` +
+      "+   '        }\\n' +\r\n" +
+      "+   '      },\\n' +\r\n" +
+      "+   '      {\\n' +\r\n" +
+      `+   '        "id": "[\\\\"PlatformEntry.ts\\\\",116,\\\\"references\\\\"]",\\n' +\r\n` +
+      `+   '        "source": null,\\n' +\r\n` +
+      `+   '        "target": "[\\\\"App.tsx\\\\",66,\\\\"function\\\\"]",\\n' +\r\n` +
+      `+   '        "relation": "references",\\n' +\r\n` +
+      `+   '        "conditional": false,\\n' +\r\n` +
+      `+   '        "site": {\\n' +\r\n` +
+      `+   '          "file": "PlatformEntry.ts",\\n' +\r\n` +
+      `+   '          "start": 116,\\n' +\r\n` +
+      `+   '          "end": 119,\\n' +\r\n` +
+      `+   '          "line": 1,\\n' +\r\n` +
+      `+   '          "endLine": 1,\\n' +\r\n` +
+      `+   '          "fileHash": "4fe2af453930c7d747d0f1fbccadfa4d19fbd9f62072017d2f798203133a6a15",\\n' +\r\n` +
+      `+   '          "extractor": "typescript-javascript/static-symbols-v1",\\n' +\r\n` +
+      `+   '          "evidenceKind": "verified"\\n' +\r\n` +
+      "+   '        }\\n' +\r\n" +
+      "+   '      },\\n' +\r\n" +
+      "+   '      {\\n' +\r\n" +
+      `+   '        "id": "[\\\\"PlatformEntry.ts\\\\",124,\\\\"references\\\\"]",\\n' +\r\n` +
+      `+   '        "source": null,\\n' +\r\n` +
+      `+   '        "target": "[\\\\"App.tsx\\\\",66,\\\\"function\\\\"]",\\n' +\r\n` +
+      `+   '        "relation": "references",\\n' +\r\n` +
+      `+   '        "conditional": false,\\n' +\r\n` +
+      `+   '        "site": {\\n' +\r\n` +
+      `+   '          "file": "PlatformEntry.ts",\\n' +\r\n` +
+      `+   '          "start": 124,\\n' +\r\n` +
+      `+   '          "end": 127,\\n' +\r\n` +
+      `+   '          "line": 1,\\n' +\r\n` +
+      `+   '          "endLine": 1,\\n' +\r\n` +
+      `+   '          "fileHash": "4fe2af453930c7d747d0f1fbccadfa4d19fbd9f62072017d2f798203133a6a15",\\n' +\r\n` +
+      `+   '          "extractor": "typescript-javascript/static-symbols-v1",\\n' +\r\n` +
+      `+   '          "evidenceKind": "verified"\\n' +\r\n` +
+      "+   '        }\\n' +\r\n" +
+      "+   '      },\\n' +\r\n" +
+      "+   '      {\\n' +\r\n" +
+      `+   '        "id": "[\\\\"PlatformEntry.ts\\\\",185,\\\\"referenc'... 111308 more characters\r\n` +
+      `-   '          "fileH'... 120979 more characters\r\n` +
+      '\r\n' +
+      '    at file:///C:/Users/Jesus/AppData/Local/Temp/cartograph%20FS07%20packaged%20U4iVje/engine/fs07-probe.mjs:24:199 {\r\n' +
+      '  generatedMessage: true,\r\n' +
+      "  code: 'ERR_ASSERTION',\r\n" +
+      "  actual: '{\\n' +\r\n" +
+      `    '  "behavior": {\\n' +\r\n` +
+      `    '    "declarations": [\\n' +\r\n` +
+      "    '      {\\n' +\r\n" +
+      `    '        "id": "[\\\\"App.tsx\\\\",39,\\\\"function\\\\"]",\\n' +\r\n` +
+      `    '        "name": "handle",\\n' +\r\n` +
+      `    '        "kind": "function",\\n' +\r\n` +
+      `    '        "callable": true,\\n' +\r\n` +
+      `    '        "site": {\\n' +\r\n` +
+      `    '          "file": "App.tsx",\\n' +\r\n` +
+      `    '          "start": 39,\\n' +\r\n` +
+      `    '          "end": 65,\\n' +\r\n` +
+      `    '          "line": 1,\\n' +\r\n` +
+      `    '          "endLine": 1,\\n' +\r\n` +
+      `    '          "fileHash": "1a8e867a0b9d5881da076fd172e72e15da1da159b33d967a49383e3038d17c4d",\\n' +\r\n` +
+      `    '          "extractor": "typescript-javascript/static-symbols-v1",\\n' +\r\n` +
+      `    '          "evidenceKind": "verified"\\n' +\r\n` +
+      "    '        }\\n' +\r\n" +
+      "    '      },\\n' +\r\n" +
+      "    '      {\\n' +\r\n" +
+      `    '        "id": "[\\\\"App.tsx\\\\",66,\\\\"function\\\\"]",\\n' +\r\n` +
+      `    '        "name": "App",\\n' +\r\n` +
+      `    '        "kind": "function",\\n' +\r\n` +
+      `    '        "callable": true,\\n' +\r\n` +
+      `    '        "site": {\\n' +\r\n` +
+      `    '          "file": "App.tsx",\\n' +\r\n` +
+      `    '          "start": 66,\\n' +\r\n` +
+      `    '          "end": 126,\\n' +\r\n` +
+      `    '          "line": 1,\\n' +\r\n` +
+      `    '          "endLine": 1,\\n' +\r\n` +
+      `    '          "fileHash": "1a8e867a0b9d5881da076fd172e72e15da1da159b33d967a49383e3038d17c4d",\\n' +\r\n` +
+      `    '          "extractor": "typescript-javascript/static-symbols-v1",\\n' +\r\n` +
+      `    '          "evidenceKind": "verified"\\n' +\r\n` +
+      "    '        }\\n' +\r\n" +
+      "    '      },\\n' +\r\n" +
+      "    '      {\\n' +\r\n" +
+      `    '        "id": "[\\\\"Choice.android.ts\\\\",0,\\\\"function\\\\"]",\\n' +\r\n` +
+      `    '        "name": "choice",\\n' +\r\n` +
+      `    '        "kind": "function",\\n' +\r\n` +
+      `    '        "callable": true,\\n' +\r\n` +
+      `    '        "site": {\\n' +\r\n` +
+      `    '          "file": "Choice.android.ts",\\n' +\r\n` +
+      `    '          "start": 0,\\n' +\r\n` +
+      `    '          "end": 43,\\n' +\r\n` +
+      `    '          "line": 1,\\n' +\r\n` +
+      `    '          "endLine": 1,\\n' +\r\n` +
+      `    '          "fileHash": "ce426e86c579f082ba2c477fbe39c0f25306053793f47de5b164cab4c6d4c128",\\n' +\r\n` +
+      `    '          "extractor": "typescript-javascript/static-symbols-v1",\\n' +\r\n` +
+      `    '          "evidenceKind": "verified"\\n' +\r\n` +
+      "    '        }\\n' +\r\n" +
+      "    '      },\\n' +\r\n" +
+      "    '      {\\n' +\r\n" +
+      `    '        "id": "[\\\\"Choice.ios.ts\\\\",0,\\\\"function\\\\"]",\\n' +\r\n` +
+      `    '        "name": "choice",\\n' +\r\n` +
+      `    '        "kind": "function",\\n' +\r\n` +
+      `    '        "callable": true,\\n' +\r\n` +
+      `    '        "site": {\\n' +\r\n` +
+      `    '          "file": "Choice.ios.ts",\\n' +\r\n` +
+      `    '          "start": 0,\\n' +\r\n` +
+      `    '          "end": 39,\\n' +\r\n` +
+      `    '          "line": 1,\\n' +\r\n` +
+      `    '          "endLine": 1,\\n' +\r\n` +
+      `    '          "fileHash": "6ec1ed61fe9c508df0dacdbd31d92c94a3b1412ae7108fff3a18ba0c2d8b58e6",\\n' +\r\n` +
+      `    '          "extractor": "typescript-javascript/static-symbols-v1",\\n' +\r\n` +
+      `    '          "evidenceKind": "verified"\\n' +\r\n` +
+      "    '        }\\n' +\r\n" +
+      "    '      },\\n' +\r\n" +
+      "    '      {\\n' +\r\n" +
+      `    '        "id": "[\\\\"index.ts\\\\",145,\\\\"function\\\\"]",\\n' +\r\n` +
+      `    '        "name": "<callback>",\\n' +\r\n` +
+      `    '        "kind": "function",\\n' +\r\n` +
+      `    '        "callable": true,\\n' +\r\n` +
+      `    '        "site": {\\n' +\r\n` +
+      `    '          "file": "index.ts",\\n' +\r\n` +
+      `    '          "start": 145,\\n' +\r\n` +
+      `    '          "end": 152,\\n' +\r\n` +
+      `    '          "line": 1,\\n' +\r\n` +
+      `    '          "endLine": 1,\\n' +\r\n` +
+      `    '          "fileHash": "71f09ef1f6bb417ce9e75ddac1a0b940b8b977074624137275f4347efc72bcfb",\\n' +\r\n` +
+      `    '          "extractor": "typescript-javascript/static-symbols-v1",\\n' +\r\n` +
+      `    '          "evidenceKind": "verified"\\n' +\r\n` +
+      "    '        }\\n' +\r\n" +
+      "    '      },\\n' +\r\n" +
+      "    '      {\\n' +\r\n" +
+      `    '        "id": "[\\\\"NativeSpec.ts\\\\",165,\\\\"value\\\\"]",\\n' +\r\n` +
+      `    '        "name": "native",\\n' +\r\n` +
+      `    '        "kind": "value",\\n' +\r\n` +
+      `    '        "callable": false,\\n' +\r\n` +
+      `    '        "site": {\\n' +\r\n` +
+      `    '          "file": "NativeSpec.ts",\\n' +\r\n` +
+      `    '          "start": 165,\\n' +\r\n` +
+      `    '          "end": 230,\\n' +\r\n` +
+      `    '          "line": 1,\\n' +\r\n` +
+      `    '          "endLine": 1,\\n' +\r\n` +
+      `    '          "fileHash": "a6d69691f31e2262f8e7605c6e0c1e4ee762ee83e621ea0c5a2d3680348991dc",\\n' +\r\n` +
+      `    '          "extractor": "typescript-javascript/static-symbols-v1",\\n' +\r\n` +
+      `    '          "evidenceKind": "verified"\\n' +\r\n` +
+      "    '        }\\n' +\r\n" +
+      "    '      },\\n' +\r\n" +
+      "    '      {\\n' +\r\n" +
+      `    '        "id": "[\\\\"Navigation.tsx\\\\",129,\\\\"function\\\\"]",\\n' +\r\n` +
+      `    '        "name": "Home",\\n' +\r\n` +
+      `    '        "kind": "function",\\n' +\r\n` +
+      `    '        "callable": true,\\n' +\r\n` +
+      `    '        "site": {\\n' +\r\n` +
+      `    '          "file": "Navigation.tsx",\\n' +\r\n` +
+      `    '          "start": 129,\\n' +\r\n` +
+      `    '          "end": 232,\\n' +\r\n` +
+      `    '          "line": 1,\\n' +\r\n` +
+      `    '          "endLine": 1,\\n' +\r\n` +
+      `    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\\n' +\r\n` +
+      `    '          "extractor": "typescript-javascript/static-symbols-v1",\\n' +\r\n` +
+      `    '          "evidenceKind": "verified"\\n' +\r\n` +
+      "    '        }\\n' +\r\n" +
+      "    '      },\\n' +\r\n" +
+      "    '      {\\n' +\r\n" +
+      `    '        "id": "[\\\\"Navigation.tsx\\\\",158,\\\\"value\\\\"]",\\n' +\r\n` +
+      `    '        "name": "nav",\\n' +\r\n` +
+      `    '        "kind": "value",\\n' +\r\n` +
+      `    '        "callable": false,\\n' +\r\n` +
+      `    '        "site": {\\n' +\r\n` +
+      `    '          "file": "Navigation.tsx",\\n' +\r\n` +
+      `    '          "start": 158,\\n' +\r\n` +
+      `    '          "end": 177,\\n' +\r\n` +
+      `    '          "line": 1,\\n' +\r\n` +
+      `    '          "endLine": 1,\\n' +\r\n` +
+      `    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\\n' +\r\n` +
+      `    '          "extractor": "typescript-javascript/static-symbols-v1",\\n' +\r\n` +
+      `    '          "evidenceKind": "veri`... 22017 more characters
+  ],
+  pid: 23860,
+  stdout: '',
+  stderr: 'node:internal/modules/run_main:107\r\n' +
+    '    triggerUncaughtException(\r\n' +
+    '    ^\r\n' +
+    '\r\n' +
+    'AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\r\n' +
+    '+ actual - expected\r\n' +
+    '... Skipped lines\r\n' +
+    '\r\n' +
+    "  '{\\n' +\r\n" +
+    `    '  "behavior": {\\n' +\r\n` +
+    `    '    "declarations": [\\n' +\r\n` +
+    "    '      {\\n' +\r\n" +
+    `    '        "id": "[\\\\"App.tsx\\\\",39,\\\\"function\\\\"]",\\n' +\r\n` +
+    '...\r\n' +
+    "    '        }\\n' +\r\n" +
+    "-   '      },\\n' +\r\n" +
+    "-   '      {\\n' +\r\n" +
+    `-   '        "id": "[\\\\"Flow.js\\\\",16,\\\\"function\\\\"]",\\n' +\r\n` +
+    `-   '        "name": "local",\\n' +\r\n` +
+    `-   '        "kind": "function",\\n' +\r\n` +
+    `-   '        "callable": true,\\n' +\r\n` +
+    `-   '        "site": {\\n' +\r\n` +
+    `-   '          "file": "Flow.js",\\n' +\r\n` +
+    `-   '          "start": 16,\\n' +\r\n` +
+    `-   '          "end": 51,\\n' +\r\n` +
+    `-   '          "line": 2,\\n' +\r\n` +
+    `-   '          "endLine": 2,\\n' +\r\n` +
+    `-   '          "fileHash": "5dbaf55919881d74195dfedb8c97993e922fed9b972cfb8089a73c34411f16df",\\n' +\r\n` +
+    `-   '          "extractor": "flow/syntax/fs-07/1",\\n' +\r\n` +
+    `-   '          "evidenceKind": "verified"\\n' +\r\n` +
+    "-   '        }\\n' +\r\n" +
+    "-   '      },\\n' +\r\n" +
+    "-   '      {\\n' +\r\n" +
+    `-   '        "id": "[\\\\"Flow.js\\\\",31,\\\\"parameter\\\\"]",\\n' +\r\n` +
+    `-   '        "name": "x",\\n' +\r\n` +
+    `-   '        "kind": "parameter",\\n' +\r\n` +
+    `-   '        "callable": false,\\n' +\r\n` +
+    `-   '        "site": {\\n' +\r\n` +
+    `-   '          "file": "Flow.js",\\n' +\r\n` +
+    `-   '          "start": 31,\\n' +\r\n` +
+    `-   '          "end": 39,\\n' +\r\n` +
+    `-   '          "line": 2,\\n' +\r\n` +
+    `-   '          "endLine": 2,\\n' +\r\n` +
+    `-   '          "fileHash": "5dbaf55919881d74195dfedb8c97993e922fed9b972cfb8089a73c34411f16df",\\n' +\r\n` +
+    `-   '          "extractor": "flow/syntax/fs-07/1",\\n' +\r\n` +
+    `-   '          "evidenceKind": "verified"\\n' +\r\n` +
+    "-   '        }\\n' +\r\n" +
+    "-   '      },\\n' +\r\n" +
+    "-   '      {\\n' +\r\n" +
+    `-   '        "id": "[\\\\"Flow.js\\\\",59,\\\\"function\\\\"]",\\n' +\r\n` +
+    `-   '        "name": "outer",\\n' +\r\n` +
+    `-   '        "kind": "function",\\n' +\r\n` +
+    `-   '        "callable": true,\\n' +\r\n` +
+    `-   '        "site": {\\n' +\r\n` +
+    `-   '          "file": "Flow.js",\\n' +\r\n` +
+    `-   '          "start": 59,\\n' +\r\n` +
+    `-   '          "end": 86,\\n' +\r\n` +
+    `-   '          "line": 2,\\n' +\r\n` +
+    `-   '          "endLine": 2,\\n' +\r\n` +
+    `-   '          "fileHash": "5dbaf55919881d74195dfedb8c97993e922fed9b972cfb8089a73c34411f16df",\\n' +\r\n` +
+    `-   '          "extractor": "flow/syntax/fs-07/1",\\n' +\r\n` +
+    `-   '          "evidenceKind": "verified"\\n' +\r\n` +
+    "-   '        }\\n' +\r\n" +
+    "    '      }\\n' +\r\n" +
+    "    '    ],\\n' +\r\n" +
+    `    '    "relations": [\\n' +\r\n` +
+    "    '      {\\n' +\r\n" +
+    `    '        "id": "[\\\\"App.tsx\\\\",115,\\\\"references\\\\"]",\\n' +\r\n` +
+    '...\r\n' +
+    `    '          "endLine": 1,\\n' +\r\n` +
+    `+   '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\\n' +\r\n` +
+    `+   '          "extractor": "typescript-javascript/static-symbols-v1",\\n' +\r\n` +
+    `+   '          "evidenceKind": "verified"\\n' +\r\n` +
+    "+   '        }\\n' +\r\n" +
+    "+   '      },\\n' +\r\n" +
+    "+   '      {\\n' +\r\n" +
+    `+   '        "id": "[\\\\"PlatformEntry.ts\\\\",116,\\\\"references\\\\"]",\\n' +\r\n` +
+    `+   '        "source": null,\\n' +\r\n` +
+    `+   '        "target": "[\\\\"App.tsx\\\\",66,\\\\"function\\\\"]",\\n' +\r\n` +
+    `+   '        "relation": "references",\\n' +\r\n` +
+    `+   '        "conditional": false,\\n' +\r\n` +
+    `+   '        "site": {\\n' +\r\n` +
+    `+   '          "file": "PlatformEntry.ts",\\n' +\r\n` +
+    `+   '          "start": 116,\\n' +\r\n` +
+    `+   '          "end": 119,\\n' +\r\n` +
+    `+   '          "line": 1,\\n' +\r\n` +
+    `+   '          "endLine": 1,\\n' +\r\n` +
+    `+   '          "fileHash": "4fe2af453930c7d747d0f1fbccadfa4d19fbd9f62072017d2f798203133a6a15",\\n' +\r\n` +
+    `+   '          "extractor": "typescript-javascript/static-symbols-v1",\\n' +\r\n` +
+    `+   '          "evidenceKind": "verified"\\n' +\r\n` +
+    "+   '        }\\n' +\r\n" +
+    "+   '      },\\n' +\r\n" +
+    "+   '      {\\n' +\r\n" +
+    `+   '        "id": "[\\\\"PlatformEntry.ts\\\\",124,\\\\"references\\\\"]",\\n' +\r\n` +
+    `+   '        "source": null,\\n' +\r\n` +
+    `+   '        "target": "[\\\\"App.tsx\\\\",66,\\\\"function\\\\"]",\\n' +\r\n` +
+    `+   '        "relation": "references",\\n' +\r\n` +
+    `+   '        "conditional": false,\\n' +\r\n` +
+    `+   '        "site": {\\n' +\r\n` +
+    `+   '          "file": "PlatformEntry.ts",\\n' +\r\n` +
+    `+   '          "start": 124,\\n' +\r\n` +
+    `+   '          "end": 127,\\n' +\r\n` +
+    `+   '          "line": 1,\\n' +\r\n` +
+    `+   '          "endLine": 1,\\n' +\r\n` +
+    `+   '          "fileHash": "4fe2af453930c7d747d0f1fbccadfa4d19fbd9f62072017d2f798203133a6a15",\\n' +\r\n` +
+    `+   '          "extractor": "typescript-javascript/static-symbols-v1",\\n' +\r\n` +
+    `+   '          "evidenceKind": "verified"\\n' +\r\n` +
+    "+   '        }\\n' +\r\n" +
+    "+   '      },\\n' +\r\n" +
+    "+   '      {\\n' +\r\n" +
+    `+   '        "id": "[\\\\"PlatformEntry.ts\\\\",185,\\\\"referenc'... 111308 more characters\r\n` +
+    `-   '          "fileH'... 120979 more characters\r\n` +
+    '\r\n' +
+    '    at file:///C:/Users/Jesus/AppData/Local/Temp/cartograph%20FS07%20packaged%20U4iVje/engine/fs07-probe.mjs:24:199 {\r\n' +
+    '  generatedMessage: true,\r\n' +
+    "  code: 'ERR_ASSERTION',\r\n" +
+    "  actual: '{\\n' +\r\n" +
+    `    '  "behavior": {\\n' +\r\n` +
+    `    '    "declarations": [\\n' +\r\n` +
+    "    '      {\\n' +\r\n" +
+    `    '        "id": "[\\\\"App.tsx\\\\",39,\\\\"function\\\\"]",\\n' +\r\n` +
+    `    '        "name": "handle",\\n' +\r\n` +
+    `    '        "kind": "function",\\n' +\r\n` +
+    `    '        "callable": true,\\n' +\r\n` +
+    `    '        "site": {\\n' +\r\n` +
+    `    '          "file": "App.tsx",\\n' +\r\n` +
+    `    '          "start": 39,\\n' +\r\n` +
+    `    '          "end": 65,\\n' +\r\n` +
+    `    '          "line": 1,\\n' +\r\n` +
+    `    '          "endLine": 1,\\n' +\r\n` +
+    `    '          "fileHash": "1a8e867a0b9d5881da076fd172e72e15da1da159b33d967a49383e3038d17c4d",\\n' +\r\n` +
+    `    '          "extractor": "typescript-javascript/static-symbols-v1",\\n' +\r\n` +
+    `    '          "evidenceKind": "verified"\\n' +\r\n` +
+    "    '        }\\n' +\r\n" +
+    "    '      },\\n' +\r\n" +
+    "    '      {\\n' +\r\n" +
+    `    '        "id": "[\\\\"App.tsx\\\\",66,\\\\"function\\\\"]",\\n' +\r\n` +
+    `    '        "name": "App",\\n' +\r\n` +
+    `    '        "kind": "function",\\n' +\r\n` +
+    `    '        "callable": true,\\n' +\r\n` +
+    `    '        "site": {\\n' +\r\n` +
+    `    '          "file": "App.tsx",\\n' +\r\n` +
+    `    '          "start": 66,\\n' +\r\n` +
+    `    '          "end": 126,\\n' +\r\n` +
+    `    '          "line": 1,\\n' +\r\n` +
+    `    '          "endLine": 1,\\n' +\r\n` +
+    `    '          "fileHash": "1a8e867a0b9d5881da076fd172e72e15da1da159b33d967a49383e3038d17c4d",\\n' +\r\n` +
+    `    '          "extractor": "typescript-javascript/static-symbols-v1",\\n' +\r\n` +
+    `    '          "evidenceKind": "verified"\\n' +\r\n` +
+    "    '        }\\n' +\r\n" +
+    "    '      },\\n' +\r\n" +
+    "    '      {\\n' +\r\n" +
+    `    '        "id": "[\\\\"Choice.android.ts\\\\",0,\\\\"function\\\\"]",\\n' +\r\n` +
+    `    '        "name": "choice",\\n' +\r\n` +
+    `    '        "kind": "function",\\n' +\r\n` +
+    `    '        "callable": true,\\n' +\r\n` +
+    `    '        "site": {\\n' +\r\n` +
+    `    '          "file": "Choice.android.ts",\\n' +\r\n` +
+    `    '          "start": 0,\\n' +\r\n` +
+    `    '          "end": 43,\\n' +\r\n` +
+    `    '          "line": 1,\\n' +\r\n` +
+    `    '          "endLine": 1,\\n' +\r\n` +
+    `    '          "fileHash": "ce426e86c579f082ba2c477fbe39c0f25306053793f47de5b164cab4c6d4c128",\\n' +\r\n` +
+    `    '          "extractor": "typescript-javascript/static-symbols-v1",\\n' +\r\n` +
+    `    '          "evidenceKind": "verified"\\n' +\r\n` +
+    "    '        }\\n' +\r\n" +
+    "    '      },\\n' +\r\n" +
+    "    '      {\\n' +\r\n" +
+    `    '        "id": "[\\\\"Choice.ios.ts\\\\",0,\\\\"function\\\\"]",\\n' +\r\n` +
+    `    '        "name": "choice",\\n' +\r\n` +
+    `    '        "kind": "function",\\n' +\r\n` +
+    `    '        "callable": true,\\n' +\r\n` +
+    `    '        "site": {\\n' +\r\n` +
+    `    '          "file": "Choice.ios.ts",\\n' +\r\n` +
+    `    '          "start": 0,\\n' +\r\n` +
+    `    '          "end": 39,\\n' +\r\n` +
+    `    '          "line": 1,\\n' +\r\n` +
+    `    '          "endLine": 1,\\n' +\r\n` +
+    `    '          "fileHash": "6ec1ed61fe9c508df0dacdbd31d92c94a3b1412ae7108fff3a18ba0c2d8b58e6",\\n' +\r\n` +
+    `    '          "extractor": "typescript-javascript/static-symbols-v1",\\n' +\r\n` +
+    `    '          "evidenceKind": "verified"\\n' +\r\n` +
+    "    '        }\\n' +\r\n" +
+    "    '      },\\n' +\r\n" +
+    "    '      {\\n' +\r\n" +
+    `    '        "id": "[\\\\"index.ts\\\\",145,\\\\"function\\\\"]",\\n' +\r\n` +
+    `    '        "name": "<callback>",\\n' +\r\n` +
+    `    '        "kind": "function",\\n' +\r\n` +
+    `    '        "callable": true,\\n' +\r\n` +
+    `    '        "site": {\\n' +\r\n` +
+    `    '          "file": "index.ts",\\n' +\r\n` +
+    `    '          "start": 145,\\n' +\r\n` +
+    `    '          "end": 152,\\n' +\r\n` +
+    `    '          "line": 1,\\n' +\r\n` +
+    `    '          "endLine": 1,\\n' +\r\n` +
+    `    '          "fileHash": "71f09ef1f6bb417ce9e75ddac1a0b940b8b977074624137275f4347efc72bcfb",\\n' +\r\n` +
+    `    '          "extractor": "typescript-javascript/static-symbols-v1",\\n' +\r\n` +
+    `    '          "evidenceKind": "verified"\\n' +\r\n` +
+    "    '        }\\n' +\r\n" +
+    "    '      },\\n' +\r\n" +
+    "    '      {\\n' +\r\n" +
+    `    '        "id": "[\\\\"NativeSpec.ts\\\\",165,\\\\"value\\\\"]",\\n' +\r\n` +
+    `    '        "name": "native",\\n' +\r\n` +
+    `    '        "kind": "value",\\n' +\r\n` +
+    `    '        "callable": false,\\n' +\r\n` +
+    `    '        "site": {\\n' +\r\n` +
+    `    '          "file": "NativeSpec.ts",\\n' +\r\n` +
+    `    '          "start": 165,\\n' +\r\n` +
+    `    '          "end": 230,\\n' +\r\n` +
+    `    '          "line": 1,\\n' +\r\n` +
+    `    '          "endLine": 1,\\n' +\r\n` +
+    `    '          "fileHash": "a6d69691f31e2262f8e7605c6e0c1e4ee762ee83e621ea0c5a2d3680348991dc",\\n' +\r\n` +
+    `    '          "extractor": "typescript-javascript/static-symbols-v1",\\n' +\r\n` +
+    `    '          "evidenceKind": "verified"\\n' +\r\n` +
+    "    '        }\\n' +\r\n" +
+    "    '      },\\n' +\r\n" +
+    "    '      {\\n' +\r\n" +
+    `    '        "id": "[\\\\"Navigation.tsx\\\\",129,\\\\"function\\\\"]",\\n' +\r\n` +
+    `    '        "name": "Home",\\n' +\r\n` +
+    `    '        "kind": "function",\\n' +\r\n` +
+    `    '        "callable": true,\\n' +\r\n` +
+    `    '        "site": {\\n' +\r\n` +
+    `    '          "file": "Navigation.tsx",\\n' +\r\n` +
+    `    '          "start": 129,\\n' +\r\n` +
+    `    '          "end": 232,\\n' +\r\n` +
+    `    '          "line": 1,\\n' +\r\n` +
+    `    '          "endLine": 1,\\n' +\r\n` +
+    `    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\\n' +\r\n` +
+    `    '          "extractor": "typescript-javascript/static-symbols-v1",\\n' +\r\n` +
+    `    '          "evidenceKind": "verified"\\n' +\r\n` +
+    "    '        }\\n' +\r\n" +
+    "    '      },\\n' +\r\n" +
+    "    '      {\\n' +\r\n" +
+    `    '        "id": "[\\\\"Navigation.tsx\\\\",158,\\\\"value\\\\"]",\\n' +\r\n` +
+    `    '        "name": "nav",\\n' +\r\n` +
+    `    '        "kind": "value",\\n' +\r\n` +
+    `    '        "callable": false,\\n' +\r\n` +
+    `    '        "site": {\\n' +\r\n` +
+    `    '          "file": "Navigation.tsx",\\n' +\r\n` +
+    `    '          "start": 158,\\n' +\r\n` +
+    `    '          "end": 177,\\n' +\r\n` +
+    `    '          "line": 1,\\n' +\r\n` +
+    `    '          "endLine": 1,\\n' +\r\n` +
+    `    '          "fileHash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d",\\n' +\r\n` +
+    `    '          "extractor": "typescript-javascript/static-symbols-v1",\\n' +\r\n` +
+    `    '          "evidenceKind": "veri`... 22017 more characters
+}
+
+Node.js v24.19.0

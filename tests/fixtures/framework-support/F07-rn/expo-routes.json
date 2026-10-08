@@ -1,0 +1,4 @@
+{
+  "keys":["./_layout.tsx","./index.tsx","./index.android.tsx","./index.ios.tsx","./(tabs)/_layout.tsx","./(tabs)/settings.tsx","./users/[id].tsx","./docs/[...path].tsx","./native.tsx","./native.native.tsx","./(one,two)/_layout.tsx","./(one,two)/shared/[id].tsx"],
+  "negativeKeys":["./_layout.tsx","./only.android.tsx"]
+}

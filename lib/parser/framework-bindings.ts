@@ -5,10 +5,11 @@ import type { FrameworkBinding, GapReason, Variant, Witness } from "../model/fra
 import { factId } from "../model/framework.ts";
 import { normalizeRange } from "../model/positions.ts";
 import { frameworkFact } from "./framework-budget.ts";
+import type { FrameworkProjection } from "./adapters/rn-platform.ts";
 
 export type FrameworkSource = { candidate: { path: string; hash: string }; sourceFile: SourceFile; framework: string };
 /** Lexical binding only; compiler filesystem resolution is never used. */
-export function frameworkBindings(snapshot: CodeSnapshot, inputs: FrameworkSource[], variant: Variant, resolve: (from: string, specifier: string) => string | undefined, checkpoint:()=>void = ()=>{}, version="fs-03/1") {
+export function frameworkBindings(snapshot: CodeSnapshot, inputs: FrameworkSource[], variant: Variant, resolve: (from: string, specifier: string) => string | undefined, checkpoint:()=>void = ()=>{}, version="fs-03/1", projection?: FrameworkProjection) {
   const extractor = version === "fs-03/1" ? "vite-react" : version === "fs-07/1" ? "react-native" : "node-next";
   const suffix = version.replaceAll("/", "-").replaceAll(".", "-");
   const bySource = new Map(inputs.map(i => [i.sourceFile, i.candidate]));
@@ -17,11 +18,31 @@ export function frameworkBindings(snapshot: CodeSnapshot, inputs: FrameworkSourc
   for(const d of snapshot.behavior.declarations){const key=JSON.stringify([d.site.file,d.site.start]);bySite.set(key,[...(bySite.get(key)??[]),d]);}
   const stability = new Map<Node, boolean>();
   const mutatedDeclarations=new Set<Node>();
+  const mutatedApis=new Set<string>();
+  const apiMutationSites=new Set<Node>();
+  function importedIdentity(def:Node,seen=new Set<Node>()):{module:string;name:string}|undefined{
+    if(seen.size>=64||seen.has(def))return;const next=new Set(seen).add(def),imported=def.getFirstAncestorByKind(SyntaxKind.ImportDeclaration);
+    if(imported)return {module:imported.getModuleSpecifierValue(),name:Node.isImportSpecifier(def)?def.getName():"*"};
+    const init=Node.isVariableDeclaration(def)?def.getInitializer():undefined,definitions=init&&Node.isIdentifier(init)?init.getSymbol()?.getDeclarations()??[]:[];
+    return definitions.length===1?importedIdentity(definitions[0],next):undefined;
+  }
   for (const input of inputs) for (const ref of input.sourceFile.getDescendantsOfKind(SyntaxKind.Identifier)) {
     checkpoint();
     const p=ref.getParent();
     const assignment=ref.getAncestors().find(a=>Node.isBinaryExpression(a) && /^(?:=|.*=)$/.test(a.getOperatorToken().getText()) && !["==","===","!=","!==","<=",">="].includes(a.getOperatorToken().getText()));
-    if (assignment && Node.isBinaryExpression(assignment) && ref.getStart() >= assignment.getLeft().getStart() && ref.getEnd() <= assignment.getLeft().getEnd() || Node.isPostfixUnaryExpression(p) || Node.isPrefixUnaryExpression(p) && [SyntaxKind.PlusPlusToken,SyntaxKind.MinusMinusToken].includes(p.getOperatorToken())) for (const d of ref.getSymbol()?.getDeclarations() ?? []) mutatedDeclarations.add(d);
+    if (assignment && Node.isBinaryExpression(assignment) && ref.getStart() >= assignment.getLeft().getStart() && ref.getEnd() <= assignment.getLeft().getEnd() || Node.isPostfixUnaryExpression(p) || Node.isPrefixUnaryExpression(p) && [SyntaxKind.PlusPlusToken,SyntaxKind.MinusMinusToken].includes(p.getOperatorToken())) for (const d of ref.getSymbol()?.getDeclarations() ?? []) {
+      mutatedDeclarations.add(d);
+      if(version==="fs-07/1"){const identity=importedIdentity(d);if(identity){mutatedApis.add(JSON.stringify([identity.module,identity.name]));apiMutationSites.add(assignment??ref);}}
+    }
+  }
+  if(version==="fs-07/1")for(const input of inputs)for(const call of input.sourceFile.getDescendantsOfKind(SyntaxKind.CallExpression)){
+    checkpoint();const expression=call.getExpression();if(!Node.isPropertyAccessExpression(expression))continue;
+    const receiver=expression.getExpression();if(!Node.isIdentifier(receiver)||receiver.getSymbol()?.getDeclarations().length)continue;
+    if(!(receiver.getText()==="Object"&&["assign","defineProperty","defineProperties","setPrototypeOf"].includes(expression.getName())||receiver.getText()==="Reflect"&&["set","defineProperty","deleteProperty","setPrototypeOf"].includes(expression.getName())))continue;
+    let target=call.getArguments()[0];while(target&&Node.isPropertyAccessExpression(target))target=target.getExpression();
+    if(!target||!Node.isIdentifier(target))continue;
+    const definitions=target.getSymbol()?.getDeclarations()??[];if(definitions.length!==1)continue;
+    const identity=importedIdentity(definitions[0]);if(identity){mutatedApis.add(JSON.stringify([identity.module,identity.name]));apiMutationSites.add(call);}
   }
   const exportProofs = new Map<string, Set<SourceFile>>();
   const wholeSites = new Map<SourceFile, Site>();
@@ -90,7 +111,9 @@ export function frameworkBindings(snapshot: CodeSnapshot, inputs: FrameworkSourc
       return source ? exported(source,node.getName(),active) : undefined;
     }
     if (!Node.isIdentifier(node)) return;
-    const definitions = node.getSymbol()?.getDeclarations() ?? [];
+    const parent=node.getParent();
+    const symbol=version==="fs-07/1"&&Node.isShorthandPropertyAssignment(parent)?parent.getValueSymbol():node.getSymbol();
+    const definitions = symbol?.getDeclarations() ?? [];
     if (definitions.length !== 1) return;
     const def = definitions[0], imported = def.getFirstAncestorByKind(SyntaxKind.ImportDeclaration);
     if (imported) {
@@ -99,24 +122,42 @@ export function frameworkBindings(snapshot: CodeSnapshot, inputs: FrameworkSourc
       return target ? exported(target, Node.isImportSpecifier(def) ? def.getName() : "default", active) : undefined;
     }
     if (def.getSourceFile() !== node.getSourceFile()) return;
+    if (projection && Node.isVariableDeclaration(def) && stable(def)) {
+      const init = def.getInitializer(), selected = init ? projection.select(init) : undefined;
+      if (init && selected !== init) {
+        const key = def.getSourceFile().getFilePath()+":"+def.getStart();
+        if (!selected || active.has(key) || active.size >= 64) return;
+        return identifier(selected, new Set(active).add(key));
+      }
+    }
     const d = declaration(def);
     if (!d) return;
     // Mutable lexical bindings are never stable callback/component targets.
     return stable(def) ? d : undefined;
   }
-  function api(node: Node): { module: string; name: string } | undefined {
+  function api(node: Node,depth=0): { module: string; name: string } | undefined {
+    if(depth>8)return;
+    if(version==="fs-07/1"&&Node.isPropertyAccessExpression(node)&&Node.isPropertyAccessExpression(node.getExpression())){
+      const parent=api(node.getExpression(),depth+1);return parent?{module:parent.module,name:parent.name+"."+node.getName()}:undefined;
+    }
     const identifier = Node.isPropertyAccessExpression(node) ? node.getExpression() : node;
     if (!Node.isIdentifier(identifier)) return;
     const defs = identifier.getSymbol()?.getDeclarations() ?? [];
     if (defs.length !== 1) return;
     const def = defs[0], imported = def.getFirstAncestorByKind(SyntaxKind.ImportDeclaration);
     if (!imported || imported.isTypeOnly() || mutatedDeclarations.has(def)) return;
+    if(version==="fs-07/1"&&(mutatedApis.has(JSON.stringify([imported.getModuleSpecifierValue(),"*"]))||mutatedApis.has(JSON.stringify([imported.getModuleSpecifierValue(),Node.isImportSpecifier(def)?def.getName():"*"]))))return;
     if (version === "fs-04/1" && Node.isImportClause(def) && !Node.isPropertyAccessExpression(node)) return { module: imported.getModuleSpecifierValue(), name: "default" };
+    if (version === "fs-07/1" && Node.isImportClause(def) && !Node.isPropertyAccessExpression(node) && ["react-native/Libraries/Utilities/codegenNativeComponent", "react-native/Libraries/Utilities/codegenNativeCommands"].includes(imported.getModuleSpecifierValue())) return {module: imported.getModuleSpecifierValue(),name:"default"};
     if (Node.isImportSpecifier(def) && !def.isTypeOnly() && !Node.isPropertyAccessExpression(node)) return { module: imported.getModuleSpecifierValue(), name: def.getName() };
     if (version === "fs-07/1" && Node.isImportSpecifier(def) && !def.isTypeOnly() && Node.isPropertyAccessExpression(node)) return {module: imported.getModuleSpecifierValue(), name: def.getName()+"."+node.getName()};
-    if ((Node.isNamespaceImport(def) || Node.isImportClause(def) && imported.getModuleSpecifierValue() === "react") && Node.isPropertyAccessExpression(node)) return { module: imported.getModuleSpecifierValue(), name: node.getName() };
+    if ((Node.isNamespaceImport(def) || Node.isImportClause(def) && imported.getModuleSpecifierValue() === "react") && Node.isPropertyAccessExpression(node)) {
+      if(version==="fs-07/1"&&mutatedApis.has(JSON.stringify([imported.getModuleSpecifierValue(),node.getName()])))return;
+      return { module: imported.getModuleSpecifierValue(), name: node.getName() };
+    }
   }
   function bind(kind: FrameworkBinding["kind"], node: Node, target: Declaration | string, rule: string, sourceId=owner(node),extra:readonly Witness[]=[]) {
+    if (projection && !projection.active(node)) return;
     checkpoint();
     const occurrence = site(node), targetId = typeof target === "string" ? target : target.id;
     const id = factId("binding:" + kind, occurrence, variant.id, targetId);
@@ -127,6 +168,7 @@ export function frameworkBindings(snapshot: CodeSnapshot, inputs: FrameworkSourc
     snapshot.analysis.bindings.push({ id, kind, sourceId, targetId, occurrence, variantId: variant.id, witnesses: [witness(occurrence), ...(typeof target === "string" ? [] : [witness(target.site, "declaration")]), ...context,...variant.configWitnesses, { role: "framework-rule", tupleId: snapshot.analysis.capabilities.find(c=>c.variantId===variant.id&&c.extractorVersion===version)?.tupleId??"unqualified", ruleId: rule, extractor, extractorVersion: version, variantId: variant.id }] });
   }
   function gap(node: Node, reason: GapReason = "dynamic-expression") {
+    if (projection && !projection.active(node)) return;
     const occurrence = site(node), id = factId("gap", occurrence, variant.id, reason);
     if (!snapshot.analysis.gaps.some(g => g.id === id)) {frameworkFact(snapshot,occurrence.file);snapshot.analysis.gaps.push({ id, reason, occurrence, variantId: variant.id, capabilityId: null });}
   }
@@ -135,6 +177,7 @@ export function frameworkBindings(snapshot: CodeSnapshot, inputs: FrameworkSourc
     const def=definitions.length===1 ? definitions[0] : undefined,imported=def?.getFirstAncestorByKind(SyntaxKind.ImportDeclaration);
     return !!def && !mutatedDeclarations.has(def) && imported?.getModuleSpecifierValue()==="react" && !imported.isTypeOnly() && (Node.isImportClause(def) || Node.isNamespaceImport(def) || Node.isImportSpecifier(def) && !def.isTypeOnly() && def.getName()==="default");
   }
-  const target = (node: Node) => Node.isArrowFunction(node) || Node.isFunctionExpression(node) ? declaration(node) : identifier(node);
+  const target = (node: Node) => {const selected = projection ? projection.select(node) : node; return selected ? Node.isArrowFunction(selected) || Node.isFunctionExpression(selected) ? declaration(selected) : identifier(selected) : undefined;};
+  for(const node of apiMutationSites)gap(node,"dynamic-expression");
   return { declaration, identifier, target, implicitReact, local, exported: (source: SourceFile, name: string) => exported(source, name, new Set()), api, bind, gap, site, witness, owner, byPath };
 }

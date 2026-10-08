@@ -1,0 +1,91 @@
+{
+  "tuple": "expo56",
+  "versions": {
+    "node": "24.19.0",
+    "expo": "56.0.23",
+    "react": "19.2.3",
+    "react-native": "0.85.3",
+    "expo-router": "56.2.21",
+    "@expo/metro": "56.0.2",
+    "@expo/metro-config": "56.0.19"
+  },
+  "profile": "android-development",
+  "contextProfile": "defaults",
+  "defaultsHash": "9049627ae3cbea259d44c276b91d4a9cb36dedf9e25184c6b4f193f97ccf7ba2",
+  "platform": "android",
+  "resolver": "@expo/metro/metro-resolver",
+  "resolverVersion": "0.84.5",
+  "resolverEntryHash": "e3d1bcdef6dc9e3c5658e65a6c9484adfa8dedb44a8a4c2f77e769a07ac87728",
+  "fixtureHash": "cd51c85233a8c4e3430bfe5238c4169718109ea2b1c5de80259ec88a71ac30b9",
+  "outputHash": "6c1e73c8f14f10efbcc96ed9de62ea4545ca3dd97ec088d642af529d329aac83",
+  "outputs": [
+    {
+      "id": "root-array",
+      "type": "sourceFile",
+      "targets": [
+        "packages/array/entry.js"
+      ]
+    },
+    {
+      "id": "subpath-array",
+      "type": "sourceFile",
+      "targets": [
+        "packages/subarray/entry.js"
+      ]
+    },
+    {
+      "id": "unexported-fallback",
+      "type": "sourceFile",
+      "targets": [
+        "packages/fallback/private.android.js"
+      ]
+    },
+    {
+      "id": "missing-export-fallback",
+      "type": "sourceFile",
+      "targets": [
+        "packages/missing/entry.js"
+      ]
+    },
+    {
+      "id": "imports-exact",
+      "type": "sourceFile",
+      "targets": [
+        "src/local.js"
+      ]
+    },
+    {
+      "id": "bare-disabled",
+      "type": "empty",
+      "targets": []
+    },
+    {
+      "id": "bare-redirect",
+      "type": "sourceFile",
+      "targets": [
+        "packages/array/entry.js"
+      ]
+    },
+    {
+      "id": "main-map",
+      "type": "sourceFile",
+      "targets": [
+        "packages/entry/replaced.js"
+      ]
+    }
+  ],
+  "warnings": [
+    "Attempted to import the module \"D:\\Repositorios Github\\cartograph\\node_modules\\.fs07-experiments\\virtual-oracle\\packages\\fallback\\private\" which is not listed in the \"exports\" of \"D:\\Repositorios Github\\cartograph\\node_modules\\.fs07-experiments\\virtual-oracle\\packages\\fallback\" under the requested subpath \"./private\". Falling back to file-based resolution. Consider updating the call site or asking the package maintainer(s) to expose this API.",
+    "The package D:\\Repositorios Github\\cartograph\\node_modules\\.fs07-experiments\\virtual-oracle\\packages\\missing contains an invalid package.json configuration. Consider raising this issue with the package maintainer(s).\nReason: The resolution for \"D:\\Repositorios Github\\cartograph\\node_modules\\.fs07-experiments\\virtual-oracle\\packages\\missing\" defined in \"exports\" is D:\\Repositorios Github\\cartograph\\node_modules\\.fs07-experiments\\virtual-oracle\\packages\\missing\\absent.js, however this file does not exist. Falling back to file-based resolution."
+  ],
+  "elapsedMs": 5.823499999999967,
+  "resources": {
+    "rss": 75165696,
+    "heapTotal": 16875520,
+    "heapUsed": 11557816,
+    "external": 9047921,
+    "arrayBuffers": 143651
+  },
+  "applicationExecution": false,
+  "configExecution": false
+}

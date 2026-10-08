@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "scope": "TS/JS React reuse patterns only",
+  "tuple": "expo56",
+  "versions": {
+    "node": "24.19.0",
+    "expo": "56.0.23",
+    "react": "19.2.3",
+    "react-native": "0.85.3",
+    "expo-router": "56.2.21",
+    "@expo/metro": "56.0.2",
+    "@expo/metro-config": "56.0.19"
+  },
+  "profileId": "[\"profile\",\".\",\"metro-android\",\"fs-07/1\"]",
+  "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"fs-07/1\\\"]\",\"android-development\",\"android\",[\"react-native\"]]",
+  "extractorVersion": "fs-07/1",
+  "fixtureHash": "a64df5a61f362e88ae771fcbb9b736dd0c2b4f57c0d670a6d1fd6a5478923bbc",
+  "testHash": "7a9ba8c37705df09f429b49eefdb0bc76abffd8dcdae727c9d645341bfdcc6c2",
+  "sourceHashes": [
+    {
+      "path": "App.tsx",
+      "hash": "809113d3050e0147748285423667404b775a492d6a9d6280f89baea280d96671"
+    },
+    {
+      "path": "Lazy.tsx",
+      "hash": "bc0b0b123ab06fba8e76b89bd2270831c2916cf9d5fbb51cf2c27f6d5a6deaff"
+    }
+  ],
+  "outputHash": "4a2fb469434f2e063bdf183026a4c9de11233a297d1e42a47bdb740512f92e27",
+  "bindingCounts": {
+    "module-dependency": 1,
+    "component-reference": 6,
+    "hook": 14,
+    "lifecycle": 4,
+    "context": 4,
+    "wrapper": 3,
+    "event-handler": 2,
+    "entry-point": 1
+  },
+  "missingProof": [
+    "Flow framework bindings",
+    "whole-worker peak commit",
+    "full framework qualification"
+  ],
+  "resource": {
+    "elapsedMs": 2225.5812000000005,
+    "observedParentRss": 223989760,
+    "snapshotBytes": 363585
+  },
+  "gapReasons": [
+    "external-boundary",
+    "ambiguous-target",
+    "dynamic-expression"
+  ],
+  "inspectedExecution": false
+}

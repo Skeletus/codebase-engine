@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "intendedRegistrations": 12000,
+  "limit": 10000,
+  "profiles": [
+    "android-development",
+    "ios-development"
+  ],
+  "inputs": [
+    {
+      "path": "First.tsx",
+      "hash": "b35af6b0a3b25161bfd0938dc11a4fc60b53720236aa9025e9e1f5b391554757",
+      "bytes": 32053
+    },
+    {
+      "path": "Second.tsx",
+      "hash": "b35af6b0a3b25161bfd0938dc11a4fc60b53720236aa9025e9e1f5b391554757",
+      "bytes": 32053
+    }
+  ],
+  "elapsedMs": 18641.9536,
+  "previousPublicationUnchanged": true,
+  "recovery": true
+}

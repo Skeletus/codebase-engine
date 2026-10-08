@@ -37,9 +37,10 @@ let activeRanking: AbortController | null = null;
 let jobId: string | null = null;
 let ownsJob = false;
 let reopened = false;
-const adapter = createTypescriptRefresh();
+const mobileProfiles=["android-development","ios-development"] as const;
+const adapter = createTypescriptRefresh({metroModes:mobileProfiles});
 const parserCancellation = new AbortController();
-const composedAdapter = createComposedRefresh({ host: path.resolve(import.meta.dirname, "../bin/parser-host.exe"), signal: parserCancellation.signal, previousSnapshot: () => snapshot });
+const composedAdapter = createComposedRefresh({ host: path.resolve(import.meta.dirname, "../bin/parser-host.exe"), signal: parserCancellation.signal, previousSnapshot: () => snapshot, metroModes:mobileProfiles });
 let generation = 0;
 let storageJob: string | null = null;
 const refresher = new RepositoryRefresh({

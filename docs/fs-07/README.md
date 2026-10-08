@@ -1,45 +1,51 @@
-# FS-07 — implementation in progress
+# FS-07 — implementation and qualification in progress
 
-FS-07 is **incomplete**. Metro and the initial RN/React projection are connected to the production analysis pipeline. Identified Flow sources use the bundled supervised language session and the shared graph. No complete React Native, Flow or Expo capability is qualified yet; assessments remain partial and the full acceptance ledger is authoritative.
+**FS-07 remains incomplete.** The [27-criterion acceptance ledger](acceptance.md) is authoritative. The continuation extends the accepted foundations; no completed capability badge is issued.
 
-The user approved production `hermes-parser@0.25.1` and its `hermes-estree@0.25.1` runtime closure, plus four isolated oracle tuples. Production install used `--ignore-scripts`; isolated npm installs used `--ignore-scripts --legacy-peer-deps --no-audit --no-fund`. The peer-dependency flag does not establish framework interoperability. Qualification must demonstrate each supported pattern separately.
+Implemented TS/JS projections include bounded Metro helper configuration and advanced resolution, Android/iOS Platform selection, static/JSX React Navigation declarations and conservative nested actions, Expo routes/layouts and static app roots/schemes, declared linking paths with unresolved native receivers, and source-backed native/generated boundaries. Flow adds conservative scopes, source-backed exports, canonical imports and stable unique imported calls only when all selected profiles agree. Private ASTs stay in the supervised adapter.
 
-See [acceptance](acceptance.md), [qualification matrix](qualification.md), [implementation decisions](decisions.md), and [retained evidence](evidence/).
+The [qualification matrix](qualification.md) distinguishes eight exact tuple/profile controlled checks from complete support. New React reuse records cover memo/forwardRef/lazy, component composition, native events, hook callbacks, effect cleanup and context in TS/JS. Flow framework/native intent extraction and broader route/navigation/configuration/resource matrices remain unfinished.
 
-## Implemented foundation
+No Java, Kotlin, Swift, Objective-C or C++ native implementation is analyzed. Conditional/ambiguous registrations, unsupported configuration, dynamic targets and unknown native URL receivers remain explicit gaps/candidates. Snapshot v3, accepted TS/JS semantics, exact Impact and shared evidence contracts are preserved.
 
-- Data-only Metro search kernel with extension/platform/native ordering, literal redirects, exact exports/conditional import versus require, supported wildcard exports, directory index and density-family lookup. It accepts a protected inventory supplied by its caller and has no filesystem, module-loader, config-loader or plugin authority.
-- Cancellation/deadline and inventory ceilings use the existing generation boundary. Custom resolvers, denied paths, unestablished package links, unsupported exports shapes and missing exact exports targets remain boundaries.
-- Twelve controlled resolver cases produce 192 records: four pinned tuples × Android/iOS × twelve cases × controlled/default contexts. Defaults were independently recorded from approved RN/Expo tools using application-owned synthetic roots. This is search-kernel parity, **not** qualification of customer configuration composition, discovery, Metro transforms or framework behavior.
-- Six controlled Hermes syntax/location experiments cover classic Flow, enums, component/hook declarations, BOM/CRLF/Unicode offsets and malformed syntax. The private AST stays inside the adapter-owned worker; parent validation checks neutral facts and original ranges/hashes.
-- Flow is selected only by leading pragmas in exact supported RN tuples. Composed analysis adds neutral declarations/local calls and platform-specific module dependencies to the shared snapshot. Type-only imports and imported callable targets remain explicit unsupported boundaries. Complete Flow scopes and framework qualification remain outstanding.
-- Initial RN projection reuses accepted React composition, wrappers, hooks/effects and context, adds native event bindings and literal AppRegistry/Expo roots, and preserves variant-specific Metro dependencies/assets. No navigation or native implementation edge is guessed.
-- The existing single-parser lease and Windows job launcher supervise Hermes with pinned assets, startup/file deadlines, bounded protocol output and recovery tests. Source fixtures verify Python/Flow lease exclusion, cancellation and malformed-source recovery. Full fault/ceiling qualification is outstanding.
-- Approved runtime dependency and packaging closure addition, license copies, accepted-worktree inventory and integrity audit. No runtime parser download was added.
+## Verification and reproduction
 
-The expanded focused suite passes 29 tests. `scripts/fs-07-packaged-foundation.ts` checks the controlled RN/Flow foundation on all eight exact tuple/platform profiles using the staged Windows runtime, empty PATH, denied parent network access and no Metro/Expo/system Python/development tools. Its PASS applies only to roots, native events, platform dependencies, local Flow facts, serialization and repeated analysis. It does not pass the complete packaged acceptance criterion. See `evidence/packaged-foundation.json` for profile identities, hashes, observations and missing proof.
+Normal acceptance uses retained first-party fixtures and requires no oracle installation:
 
-The inherited FS-06 tests regenerate their qualification timing/resource JSON and watch-status evidence during a normal regression run. `evidence/package-audit.json` retains before/after hashes, validates regenerated PASS records against the unchanged FS-06 harness, and hashes all other accepted files. Original accepted FS-06 timings are historical; they must not be silently treated as newly measured evidence.
-
-## Reproduction
-
-Run normal fixture verification without any installed oracle:
-
-```powershell
+~~~powershell
 node --test tests/framework-support/fs-07.test.ts
-```
+~~~
 
-Developer-only regeneration, after the approved isolated tools are installed:
+Full regression should run the accepted phase/framework suites sequentially when sharing this Windows host with parser/resource verification. The concurrent failure logs are retained; deadlines and criteria are unchanged. Latest final verification and precise limitations are in [progress-report.md](progress-report.md).
 
-```powershell
+Developer-only independent oracle regeneration uses already approved isolated exact tools:
+
+~~~powershell
 node scripts/fs-07-metro-defaults.ts
 node scripts/fs-07-metro-oracles.ts
-node scripts/fs-07-hermes-experiment.ts
+node scripts/fs-07-metro-oracles.ts --advanced
+node scripts/fs-07-platform-oracles.ts
+node scripts/fs-07-expo-oracles.ts
+node scripts/fs-07-navigation-oracles.ts
+~~~
+
+Oracle inputs are virtual/application-owned fixture data. No inspected configuration or application modules load. Expo56 uses its own bundled navigation core, not the Expo55 implementation.
+
+Build the application-owned staged engine before isolated packaged qualification:
+
+~~~powershell
+node scripts/package-engine.ts
+node scripts/fs-07-packaged-foundation.ts
+node scripts/fs-07-performance.ts
+node scripts/fs-07-parser-commit.ts
+node scripts/fs-07-containment.ts
 node scripts/fs-07-package-audit.ts
-```
+~~~
 
-The Metro oracle uses virtual first-party files/packages and framework-owned resolver utilities. It never loads inspected configuration or application modules. Expo's actual installed wrapper is invoked independently for each release, and its resolved underlying version is recorded. Retained records include exact tuples, platform profiles, fixture/output hashes, process resource samples and missing-proof flags. These experiments do not substitute for the still-required full production, performance and packaged Windows qualification.
+Packaged checks use a copied Windows runtime/engine, empty PATH, denied parent egress and controlled fixtures. Actual parser job peak commitment is separate from observed parent RSS. Historical comparison restores/hash-checks the captured accepted FS-06 worktree. See [resource-results.md](resource-results.md).
 
-The initial baseline includes accepted uncommitted FS-06 changes. Comparing only Git HEAD would incorrectly omit that accepted work. Its source hashes and relevant contents are retained in `evidence/starting-inventory.json`.
+Approved Hermes 0.25.1/ESTree 0.25.1 runtime closure remains bundled and licensed; isolated RN/Expo/Navigation tools are never packaged. No new package installation was performed in this continuation. The source audit distinguishes regenerated FS-06 test evidence from implementation changes and checks frozen Laya/UI/AI sources.
 
-The full inherited regression run passed 327 tests (316 accepted tests plus the then-current eleven FS-07 checks). The expanded focused suite passes 22 tests. Full regressions must be repeated after production integration. Inherited FS-06 tests regenerate qualification timing/resource records; the audit distinguishes those verification artifacts from accepted source changes and records before/after hashes. Accepted implementation, tests, fixtures, UI, AI and Laya files remain unchanged.
+Supplementary public inspection pins Expo examples / stickersmash to 76a1dd12978a7ba54b0e318cec01a8578db3b0c0. Upstream versions are not rewritten or treated as exact-tuple acceptance evidence.
+
+No FS-08+, inspected repository execution, Laya modification/retraining, commit or push is included.

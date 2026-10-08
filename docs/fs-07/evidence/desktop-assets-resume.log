@@ -1,0 +1,5 @@
+
+> cartograph@0.1.0 desktop:verify-assets D:\Repositorios Github\cartograph
+> node scripts/verify-desktop-assets.ts
+
+PASS: static HTML, 11 bundled fonts, no cloud credential/configuration markers

@@ -31,7 +31,7 @@ export function validateFlowSyntax(value: unknown, file: string, bytes: Uint8Arr
   const behavior = validateBehavior(r.behavior, [{path: file, hash, bytes: bytes.length, lines}], []);
   const declarations = new Map(behavior.declarations.map(d => [d.id, d]));
   const imports = array(r.imports).map(value => { const i = object(value, ["module", "name", "alias", "typeOnly", "site"]); if (typeof i.typeOnly !== "boolean") throw Error("invalid-parser-output"); return {module: string(i.module), name: string(i.name), alias: string(i.alias), typeOnly: i.typeOnly, site: site(i.site)}; });
-  const exports = array(r.exports).map(value => { const e = object(value, ["name", "id"]), id = string(e.id); if (!declarations.has(id)) throw Error("invalid-parser-output"); return {name: string(e.name), id}; });
+  const exports = array(r.exports).map(value => { const e = object(value, ["name", "id","site"]), id = string(e.id); if (!declarations.has(id)) throw Error("invalid-parser-output"); return {name: string(e.name), id,site:site(e.site)}; });
   const importedCalls = array(r.importedCalls).map(value => {
     const c = object(value, ["module", "name", "bindingStart", "source", "site"]), source = c.source === null ? null : string(c.source), location = site(c.site);
     const owner = source === null ? undefined : declarations.get(source);

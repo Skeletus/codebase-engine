@@ -8,8 +8,8 @@
       "profileId": "[\"profile\",\".\",\"metro-android\",\"fs-07/1\"]",
       "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"fs-07/1\\\"]\",\"android-development\",\"android\",[\"react-native\"]]",
       "extractorVersion": "fs-07/1",
-      "files": 6,
-      "bindings": 4,
+      "files": 9,
+      "bindings": 14,
       "sourceHashes": [
         {
           "path": "App.tsx",
@@ -32,21 +32,79 @@
           "hash": "71f09ef1f6bb417ce9e75ddac1a0b940b8b977074624137275f4347efc72bcfb"
         },
         {
+          "path": "NativeSpec.ts",
+          "hash": "a6d69691f31e2262f8e7605c6e0c1e4ee762ee83e621ea0c5a2d3680348991dc"
+        },
+        {
+          "path": "Navigation.tsx",
+          "hash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d"
+        },
+        {
+          "path": "PlatformEntry.ts",
+          "hash": "4fe2af453930c7d747d0f1fbccadfa4d19fbd9f62072017d2f798203133a6a15"
+        },
+        {
           "path": "sentinel.js",
           "hash": "4d18e4c7edc447b928f38acd5259659b8bbc38b01484d55d01cb8b958771c6fb"
         }
       ],
-      "outputHash": "bc02313183d8c257d85dbc5542090703a46882dda6f5b0b63637ee8d9c377f9e",
-      "elapsedMs": 1518.9162000000001,
-      "rssBytes": 136552448,
-      "snapshotBytes": 48454,
+      "outputHash": "08e063e74822ba15a0db89f0ed0a796c8ee93efa32b14196206eab19631762b2",
+      "elapsedMs": 9728.6072,
+      "rssBytes": 187838464,
+      "performance": {
+        "cold": {
+          "samples": [
+            807.2364000000002,
+            864.1935000000003,
+            712.9016000000001,
+            932.6102000000001,
+            1068.9809999999998
+          ],
+          "medianMs": 864.1935000000003,
+          "p95Ms": 1068.9809999999998
+        },
+        "warm": {
+          "samples": [
+            184.27329999999984,
+            174.98719999999958,
+            178.41519999999946,
+            214.3744000000006,
+            180.39360000000124,
+            193.26879999999983,
+            136.32610000000022,
+            105.10909999999967,
+            115.93339999999989,
+            147.8782999999985,
+            158.2391000000007,
+            117.77950000000055,
+            110.98000000000138,
+            123.47459999999955,
+            129.8721000000005,
+            157.64669999999933,
+            212.10699999999997,
+            177.90749999999935,
+            162.2502999999997,
+            128.77770000000055
+          ],
+          "medianMs": 158.2391000000007,
+          "p95Ms": 212.10699999999997
+        },
+        "peakObservedParentRss": 188231680
+      },
+      "snapshotBytes": 133135,
+      "patterns": [
+        "Flow lexical",
+        "platform selection",
+        "Metro platform dependencies",
+        "application entries",
+        "native event",
+        "native interface/registry boundary",
+        "static nested navigation"
+      ],
       "missingProof": [
         "full pattern qualification",
-        "navigation",
-        "Expo routing",
-        "native spec boundaries",
-        "resource ceilings",
-        "fault containment matrix"
+        "worker peak commit/resource ceilings",
+        "complete fault containment matrix"
       ]
     },
     {
@@ -55,8 +113,8 @@
       "profileId": "[\"profile\",\".\",\"metro-ios\",\"fs-07/1\"]",
       "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-ios\\\",\\\"fs-07/1\\\"]\",\"ios-development\",\"ios\",[\"react-native\"]]",
       "extractorVersion": "fs-07/1",
-      "files": 6,
-      "bindings": 4,
+      "files": 9,
+      "bindings": 14,
       "sourceHashes": [
         {
           "path": "App.tsx",
@@ -79,21 +137,79 @@
           "hash": "71f09ef1f6bb417ce9e75ddac1a0b940b8b977074624137275f4347efc72bcfb"
         },
         {
+          "path": "NativeSpec.ts",
+          "hash": "a6d69691f31e2262f8e7605c6e0c1e4ee762ee83e621ea0c5a2d3680348991dc"
+        },
+        {
+          "path": "Navigation.tsx",
+          "hash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d"
+        },
+        {
+          "path": "PlatformEntry.ts",
+          "hash": "4fe2af453930c7d747d0f1fbccadfa4d19fbd9f62072017d2f798203133a6a15"
+        },
+        {
           "path": "sentinel.js",
           "hash": "4d18e4c7edc447b928f38acd5259659b8bbc38b01484d55d01cb8b958771c6fb"
         }
       ],
-      "outputHash": "a056cb512df95b79561934331ed989a9813b443ed695aa22528a3f54012da7d6",
-      "elapsedMs": 733.4672999999998,
-      "rssBytes": 144175104,
-      "snapshotBytes": 47934,
+      "outputHash": "c0e89147b69a585b2cd592ceec89c5db19fc47a7b00c04569a26fa63122eb0fc",
+      "elapsedMs": 7648.847,
+      "rssBytes": 190156800,
+      "performance": {
+        "cold": {
+          "samples": [
+            997.8235999999997,
+            773.4385999999995,
+            891.8793999999998,
+            787.8850000000002,
+            711.0989999999983
+          ],
+          "medianMs": 787.8850000000002,
+          "p95Ms": 997.8235999999997
+        },
+        "warm": {
+          "samples": [
+            156.5965000000033,
+            108.1118000000024,
+            98.58259999999791,
+            134.8858999999975,
+            88.32530000000042,
+            107.55110000000059,
+            88.85889999999927,
+            83.89949999999953,
+            81.98379999999815,
+            127.27590000000055,
+            163.14890000000014,
+            148.89480000000185,
+            113.5157999999974,
+            103.21939999999813,
+            101.58259999999791,
+            87.87299999999959,
+            138.43710000000283,
+            117.29420000000027,
+            92.89440000000104,
+            126.47509999999966
+          ],
+          "medianMs": 108.1118000000024,
+          "p95Ms": 156.5965000000033
+        },
+        "peakObservedParentRss": 192446464
+      },
+      "snapshotBytes": 130979,
+      "patterns": [
+        "Flow lexical",
+        "platform selection",
+        "Metro platform dependencies",
+        "application entries",
+        "native event",
+        "native interface/registry boundary",
+        "static nested navigation"
+      ],
       "missingProof": [
         "full pattern qualification",
-        "navigation",
-        "Expo routing",
-        "native spec boundaries",
-        "resource ceilings",
-        "fault containment matrix"
+        "worker peak commit/resource ceilings",
+        "complete fault containment matrix"
       ]
     },
     {
@@ -102,8 +218,8 @@
       "profileId": "[\"profile\",\".\",\"metro-android\",\"fs-07/1\"]",
       "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"fs-07/1\\\"]\",\"android-development\",\"android\",[\"react-native\"]]",
       "extractorVersion": "fs-07/1",
-      "files": 6,
-      "bindings": 4,
+      "files": 9,
+      "bindings": 14,
       "sourceHashes": [
         {
           "path": "App.tsx",
@@ -126,21 +242,79 @@
           "hash": "71f09ef1f6bb417ce9e75ddac1a0b940b8b977074624137275f4347efc72bcfb"
         },
         {
+          "path": "NativeSpec.ts",
+          "hash": "a6d69691f31e2262f8e7605c6e0c1e4ee762ee83e621ea0c5a2d3680348991dc"
+        },
+        {
+          "path": "Navigation.tsx",
+          "hash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d"
+        },
+        {
+          "path": "PlatformEntry.ts",
+          "hash": "4fe2af453930c7d747d0f1fbccadfa4d19fbd9f62072017d2f798203133a6a15"
+        },
+        {
           "path": "sentinel.js",
           "hash": "4d18e4c7edc447b928f38acd5259659b8bbc38b01484d55d01cb8b958771c6fb"
         }
       ],
-      "outputHash": "97a3d30525aec62281aab25c1ae4d1d491cfb7cfa0f103c410462bbabc7c4b43",
-      "elapsedMs": 673.8164999999999,
-      "rssBytes": 144793600,
-      "snapshotBytes": 48448,
+      "outputHash": "8292281b839ea8ef5cf41318412d08042e5625c7e4b3a91ab20161bd95365710",
+      "elapsedMs": 8812.4444,
+      "rssBytes": 262189056,
+      "performance": {
+        "cold": {
+          "samples": [
+            1018.1101999999992,
+            1160.7083999999995,
+            1100.0204000000012,
+            950.5721999999987,
+            781.0309000000016
+          ],
+          "medianMs": 1018.1101999999992,
+          "p95Ms": 1160.7083999999995
+        },
+        "warm": {
+          "samples": [
+            151.0730999999978,
+            127.1286,
+            131.0125999999982,
+            117.72730000000229,
+            118.66769999999815,
+            111.85510000000068,
+            120.74959999999919,
+            112.77449999999953,
+            128.19089999999778,
+            112.80159999999887,
+            127.26500000000306,
+            105.05529999999999,
+            151.4636999999966,
+            150.33789999999863,
+            168.492000000002,
+            156.19840000000113,
+            243.25520000000324,
+            227.19880000000194,
+            198.6257000000005,
+            132.78289999999834
+          ],
+          "medianMs": 131.0125999999982,
+          "p95Ms": 227.19880000000194
+        },
+        "peakObservedParentRss": 263655424
+      },
+      "snapshotBytes": 133129,
+      "patterns": [
+        "Flow lexical",
+        "platform selection",
+        "Metro platform dependencies",
+        "application entries",
+        "native event",
+        "native interface/registry boundary",
+        "static nested navigation"
+      ],
       "missingProof": [
         "full pattern qualification",
-        "navigation",
-        "Expo routing",
-        "native spec boundaries",
-        "resource ceilings",
-        "fault containment matrix"
+        "worker peak commit/resource ceilings",
+        "complete fault containment matrix"
       ]
     },
     {
@@ -149,8 +323,8 @@
       "profileId": "[\"profile\",\".\",\"metro-ios\",\"fs-07/1\"]",
       "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-ios\\\",\\\"fs-07/1\\\"]\",\"ios-development\",\"ios\",[\"react-native\"]]",
       "extractorVersion": "fs-07/1",
-      "files": 6,
-      "bindings": 4,
+      "files": 9,
+      "bindings": 14,
       "sourceHashes": [
         {
           "path": "App.tsx",
@@ -173,21 +347,79 @@
           "hash": "71f09ef1f6bb417ce9e75ddac1a0b940b8b977074624137275f4347efc72bcfb"
         },
         {
+          "path": "NativeSpec.ts",
+          "hash": "a6d69691f31e2262f8e7605c6e0c1e4ee762ee83e621ea0c5a2d3680348991dc"
+        },
+        {
+          "path": "Navigation.tsx",
+          "hash": "82605325eb46a579ac7790ba7bd614d4f8e73ea31ae0786ec818f2e14443911d"
+        },
+        {
+          "path": "PlatformEntry.ts",
+          "hash": "4fe2af453930c7d747d0f1fbccadfa4d19fbd9f62072017d2f798203133a6a15"
+        },
+        {
           "path": "sentinel.js",
           "hash": "4d18e4c7edc447b928f38acd5259659b8bbc38b01484d55d01cb8b958771c6fb"
         }
       ],
-      "outputHash": "1e94cc4b823a46b7829e8b3574d49c0d93a2ef1e20c777b200493603a93f6e03",
-      "elapsedMs": 676.0950000000003,
-      "rssBytes": 145108992,
-      "snapshotBytes": 47928,
+      "outputHash": "8fed7f6bed18680c09f775add0824ea7c1fb74c00d9e0fdb200cfaaddd48eac5",
+      "elapsedMs": 7979.548500000001,
+      "rssBytes": 261857280,
+      "performance": {
+        "cold": {
+          "samples": [
+            710.0748000000021,
+            665.1739000000016,
+            709.3421000000017,
+            908.1160999999993,
+            919.3296000000009
+          ],
+          "medianMs": 710.0748000000021,
+          "p95Ms": 919.3296000000009
+        },
+        "warm": {
+          "samples": [
+            159.03330000000278,
+            233.66309999999794,
+            144.79449999999633,
+            128.5048999999999,
+            249.8130999999994,
+            170.78919999999925,
+            131.84979999999632,
+            154.62049999999726,
+            155.5445999999938,
+            127.75880000000325,
+            138.14949999999953,
+            152.1823000000004,
+            140.2885000000024,
+            141.9681999999957,
+            147.33890000000247,
+            129.3565000000017,
+            133.98969999999827,
+            149.2551999999996,
+            143.53279999999359,
+            136.74629999999888
+          ],
+          "medianMs": 144.79449999999633,
+          "p95Ms": 233.66309999999794
+        },
+        "peakObservedParentRss": 261857280
+      },
+      "snapshotBytes": 130973,
+      "patterns": [
+        "Flow lexical",
+        "platform selection",
+        "Metro platform dependencies",
+        "application entries",
+        "native event",
+        "native interface/registry boundary",
+        "static nested navigation"
+      ],
       "missingProof": [
         "full pattern qualification",
-        "navigation",
-        "Expo routing",
-        "native spec boundaries",
-        "resource ceilings",
-        "fault containment matrix"
+        "worker peak commit/resource ceilings",
+        "complete fault containment matrix"
       ]
     },
     {
@@ -196,12 +428,24 @@
       "profileId": "[\"profile\",\".\",\"metro-android\",\"fs-07/1\"]",
       "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"fs-07/1\\\"]\",\"android-development\",\"android\",[\"react-native\"]]",
       "extractorVersion": "fs-07/1",
-      "files": 6,
-      "bindings": 4,
+      "files": 11,
+      "bindings": 15,
       "sourceHashes": [
         {
           "path": "App.tsx",
           "hash": "1a8e867a0b9d5881da076fd172e72e15da1da159b33d967a49383e3038d17c4d"
+        },
+        {
+          "path": "app/_layout.tsx",
+          "hash": "7af5d380c082c600ee99ed79e5b2e123fd50c0697dc51558be1c77742eab41b6"
+        },
+        {
+          "path": "app/detail/[id].tsx",
+          "hash": "ddc2452eb0254ddb2b96cc6c69cc24b1c437c6392738d4baed3bf007b9ee58c1"
+        },
+        {
+          "path": "app/index.tsx",
+          "hash": "89fe8ac2a118a841a827a318948f84310e66afba4b735ef59a383f5780e8d493"
         },
         {
           "path": "Choice.android.ts",
@@ -220,21 +464,75 @@
           "hash": "71f09ef1f6bb417ce9e75ddac1a0b940b8b977074624137275f4347efc72bcfb"
         },
         {
+          "path": "NativeSpec.ts",
+          "hash": "a6d69691f31e2262f8e7605c6e0c1e4ee762ee83e621ea0c5a2d3680348991dc"
+        },
+        {
+          "path": "PlatformEntry.ts",
+          "hash": "4fe2af453930c7d747d0f1fbccadfa4d19fbd9f62072017d2f798203133a6a15"
+        },
+        {
           "path": "sentinel.js",
           "hash": "4d18e4c7edc447b928f38acd5259659b8bbc38b01484d55d01cb8b958771c6fb"
         }
       ],
-      "outputHash": "c7f3888309f2bdd11a06d48b5b946c9b2f584a4ce8ca88fa21b964110d72ef8f",
-      "elapsedMs": 683.4769999999999,
-      "rssBytes": 145616896,
-      "snapshotBytes": 50837,
+      "outputHash": "e746b3976261b48ee0ce04451735b75defb6d450b83d13c6af654345db761f83",
+      "elapsedMs": 9167.610399999998,
+      "rssBytes": 263380992,
+      "performance": {
+        "cold": {
+          "samples": [
+            861.3549999999959,
+            1029.9667999999947,
+            1022.5789999999979,
+            909.9329999999973,
+            1013.6900999999998
+          ],
+          "medianMs": 1013.6900999999998,
+          "p95Ms": 1029.9667999999947
+        },
+        "warm": {
+          "samples": [
+            141.37580000000162,
+            140.4369000000006,
+            166.72219999999652,
+            146.41730000000098,
+            192.7742999999973,
+            205.31410000000324,
+            202.30940000000555,
+            244.88030000000435,
+            194.3257999999987,
+            193.5966999999946,
+            170.5370000000039,
+            193.79329999999754,
+            158.41500000000087,
+            158.55879999999888,
+            125.66879999999946,
+            131.2826999999961,
+            140.61960000000545,
+            145.6655000000028,
+            133.87860000000364,
+            162.5720999999976
+          ],
+          "medianMs": 162.5720999999976,
+          "p95Ms": 205.31410000000324
+        },
+        "peakObservedParentRss": 263233536
+      },
+      "snapshotBytes": 135756,
+      "patterns": [
+        "Flow lexical",
+        "platform selection",
+        "Metro platform dependencies",
+        "application entries",
+        "native event",
+        "native interface/registry boundary",
+        "Expo layout/file route/literal href/static scheme"
+      ],
       "missingProof": [
         "full pattern qualification",
-        "navigation",
-        "Expo routing",
-        "native spec boundaries",
-        "resource ceilings",
-        "fault containment matrix"
+        "worker peak commit/resource ceilings",
+        "complete fault containment matrix"
       ]
     },
     {
@@ -243,12 +541,24 @@
       "profileId": "[\"profile\",\".\",\"metro-ios\",\"fs-07/1\"]",
       "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-ios\\\",\\\"fs-07/1\\\"]\",\"ios-development\",\"ios\",[\"react-native\"]]",
       "extractorVersion": "fs-07/1",
-      "files": 6,
-      "bindings": 4,
+      "files": 11,
+      "bindings": 15,
       "sourceHashes": [
         {
           "path": "App.tsx",
           "hash": "1a8e867a0b9d5881da076fd172e72e15da1da159b33d967a49383e3038d17c4d"
+        },
+        {
+          "path": "app/_layout.tsx",
+          "hash": "7af5d380c082c600ee99ed79e5b2e123fd50c0697dc51558be1c77742eab41b6"
+        },
+        {
+          "path": "app/detail/[id].tsx",
+          "hash": "ddc2452eb0254ddb2b96cc6c69cc24b1c437c6392738d4baed3bf007b9ee58c1"
+        },
+        {
+          "path": "app/index.tsx",
+          "hash": "89fe8ac2a118a841a827a318948f84310e66afba4b735ef59a383f5780e8d493"
         },
         {
           "path": "Choice.android.ts",
@@ -267,21 +577,75 @@
           "hash": "71f09ef1f6bb417ce9e75ddac1a0b940b8b977074624137275f4347efc72bcfb"
         },
         {
+          "path": "NativeSpec.ts",
+          "hash": "a6d69691f31e2262f8e7605c6e0c1e4ee762ee83e621ea0c5a2d3680348991dc"
+        },
+        {
+          "path": "PlatformEntry.ts",
+          "hash": "4fe2af453930c7d747d0f1fbccadfa4d19fbd9f62072017d2f798203133a6a15"
+        },
+        {
           "path": "sentinel.js",
           "hash": "4d18e4c7edc447b928f38acd5259659b8bbc38b01484d55d01cb8b958771c6fb"
         }
       ],
-      "outputHash": "7c039fc50cb3e02b74ee0d6b27c03e6230c28175be388ff691f7a327497dcb79",
-      "elapsedMs": 759.9345000000003,
-      "rssBytes": 145936384,
-      "snapshotBytes": 50317,
+      "outputHash": "543304751a3f44d02928b5ddf5a765bec29b49839194e88917a1c33722948cbc",
+      "elapsedMs": 8426.223100000003,
+      "rssBytes": 263184384,
+      "performance": {
+        "cold": {
+          "samples": [
+            827.9549999999945,
+            847.4537000000055,
+            1004.7822000000015,
+            873.4311999999991,
+            698.3473000000013
+          ],
+          "medianMs": 847.4537000000055,
+          "p95Ms": 1004.7822000000015
+        },
+        "warm": {
+          "samples": [
+            131.64040000000386,
+            154.78889999999956,
+            119.04990000000544,
+            132.62760000000708,
+            149.71979999999894,
+            182.2696999999971,
+            253.63730000000214,
+            224.18970000000263,
+            144.2606999999989,
+            117.04260000000068,
+            162.2410000000018,
+            136.9221000000034,
+            147.41860000000452,
+            199.40980000000127,
+            119.94420000000537,
+            144.3223999999973,
+            141.0529000000024,
+            145.8047000000006,
+            157.20769999999902,
+            113.3773000000001
+          ],
+          "medianMs": 145.8047000000006,
+          "p95Ms": 224.18970000000263
+        },
+        "peakObservedParentRss": 265605120
+      },
+      "snapshotBytes": 133552,
+      "patterns": [
+        "Flow lexical",
+        "platform selection",
+        "Metro platform dependencies",
+        "application entries",
+        "native event",
+        "native interface/registry boundary",
+        "Expo layout/file route/literal href/static scheme"
+      ],
       "missingProof": [
         "full pattern qualification",
-        "navigation",
-        "Expo routing",
-        "native spec boundaries",
-        "resource ceilings",
-        "fault containment matrix"
+        "worker peak commit/resource ceilings",
+        "complete fault containment matrix"
       ]
     },
     {
@@ -290,12 +654,24 @@
       "profileId": "[\"profile\",\".\",\"metro-android\",\"fs-07/1\"]",
       "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-android\\\",\\\"fs-07/1\\\"]\",\"android-development\",\"android\",[\"react-native\"]]",
       "extractorVersion": "fs-07/1",
-      "files": 6,
-      "bindings": 4,
+      "files": 11,
+      "bindings": 15,
       "sourceHashes": [
         {
           "path": "App.tsx",
           "hash": "1a8e867a0b9d5881da076fd172e72e15da1da159b33d967a49383e3038d17c4d"
+        },
+        {
+          "path": "app/_layout.tsx",
+          "hash": "7af5d380c082c600ee99ed79e5b2e123fd50c0697dc51558be1c77742eab41b6"
+        },
+        {
+          "path": "app/detail/[id].tsx",
+          "hash": "ddc2452eb0254ddb2b96cc6c69cc24b1c437c6392738d4baed3bf007b9ee58c1"
+        },
+        {
+          "path": "app/index.tsx",
+          "hash": "89fe8ac2a118a841a827a318948f84310e66afba4b735ef59a383f5780e8d493"
         },
         {
           "path": "Choice.android.ts",
@@ -314,21 +690,75 @@
           "hash": "71f09ef1f6bb417ce9e75ddac1a0b940b8b977074624137275f4347efc72bcfb"
         },
         {
+          "path": "NativeSpec.ts",
+          "hash": "a6d69691f31e2262f8e7605c6e0c1e4ee762ee83e621ea0c5a2d3680348991dc"
+        },
+        {
+          "path": "PlatformEntry.ts",
+          "hash": "4fe2af453930c7d747d0f1fbccadfa4d19fbd9f62072017d2f798203133a6a15"
+        },
+        {
           "path": "sentinel.js",
           "hash": "4d18e4c7edc447b928f38acd5259659b8bbc38b01484d55d01cb8b958771c6fb"
         }
       ],
-      "outputHash": "f94d1f3575aa76d354ec8e0ecb286034915e80490d205e58d598fa2de76f2993",
-      "elapsedMs": 856.9847,
-      "rssBytes": 146706432,
-      "snapshotBytes": 50831,
+      "outputHash": "b1bf6d5ffb34dabb0b792ef7a0d6cbb220f6d661870c61abdb5de3ed6d275e4d",
+      "elapsedMs": 9540.897099999995,
+      "rssBytes": 264171520,
+      "performance": {
+        "cold": {
+          "samples": [
+            934.5354999999981,
+            1184.6348999999973,
+            790.772100000002,
+            852.8476999999984,
+            951.3234000000011
+          ],
+          "medianMs": 934.5354999999981,
+          "p95Ms": 1184.6348999999973
+        },
+        "warm": {
+          "samples": [
+            139.28139999999985,
+            204.50469999999768,
+            171.1811000000016,
+            148.02820000000065,
+            99.67899999999645,
+            211.27509999999893,
+            258.4693000000043,
+            128.09199999999691,
+            122.92540000000008,
+            143.65469999999914,
+            162.0949000000037,
+            152.1131000000023,
+            154.58200000000215,
+            186.33439999999973,
+            200.706299999998,
+            252.8333999999959,
+            254.4071999999942,
+            203.058100000002,
+            231.53349999999773,
+            248.00020000000222
+          ],
+          "medianMs": 186.33439999999973,
+          "p95Ms": 254.4071999999942
+        },
+        "peakObservedParentRss": 265003008
+      },
+      "snapshotBytes": 135750,
+      "patterns": [
+        "Flow lexical",
+        "platform selection",
+        "Metro platform dependencies",
+        "application entries",
+        "native event",
+        "native interface/registry boundary",
+        "Expo layout/file route/literal href/static scheme"
+      ],
       "missingProof": [
         "full pattern qualification",
-        "navigation",
-        "Expo routing",
-        "native spec boundaries",
-        "resource ceilings",
-        "fault containment matrix"
+        "worker peak commit/resource ceilings",
+        "complete fault containment matrix"
       ]
     },
     {
@@ -337,12 +767,24 @@
       "profileId": "[\"profile\",\".\",\"metro-ios\",\"fs-07/1\"]",
       "variantId": "[\"variant\",\"[\\\"profile\\\",\\\".\\\",\\\"metro-ios\\\",\\\"fs-07/1\\\"]\",\"ios-development\",\"ios\",[\"react-native\"]]",
       "extractorVersion": "fs-07/1",
-      "files": 6,
-      "bindings": 4,
+      "files": 11,
+      "bindings": 15,
       "sourceHashes": [
         {
           "path": "App.tsx",
           "hash": "1a8e867a0b9d5881da076fd172e72e15da1da159b33d967a49383e3038d17c4d"
+        },
+        {
+          "path": "app/_layout.tsx",
+          "hash": "7af5d380c082c600ee99ed79e5b2e123fd50c0697dc51558be1c77742eab41b6"
+        },
+        {
+          "path": "app/detail/[id].tsx",
+          "hash": "ddc2452eb0254ddb2b96cc6c69cc24b1c437c6392738d4baed3bf007b9ee58c1"
+        },
+        {
+          "path": "app/index.tsx",
+          "hash": "89fe8ac2a118a841a827a318948f84310e66afba4b735ef59a383f5780e8d493"
         },
         {
           "path": "Choice.android.ts",
@@ -361,21 +803,75 @@
           "hash": "71f09ef1f6bb417ce9e75ddac1a0b940b8b977074624137275f4347efc72bcfb"
         },
         {
+          "path": "NativeSpec.ts",
+          "hash": "a6d69691f31e2262f8e7605c6e0c1e4ee762ee83e621ea0c5a2d3680348991dc"
+        },
+        {
+          "path": "PlatformEntry.ts",
+          "hash": "4fe2af453930c7d747d0f1fbccadfa4d19fbd9f62072017d2f798203133a6a15"
+        },
+        {
           "path": "sentinel.js",
           "hash": "4d18e4c7edc447b928f38acd5259659b8bbc38b01484d55d01cb8b958771c6fb"
         }
       ],
-      "outputHash": "e78de5220425826255022d453bea9c90eef34dec5e2989aa317cc011ed8c2306",
-      "elapsedMs": 1523.6455000000005,
-      "rssBytes": 154628096,
-      "snapshotBytes": 50311,
+      "outputHash": "ee76abfbd9f956924219886f5379c628cab0a58a99cb523149c8359f5043a62b",
+      "elapsedMs": 8969.13010000001,
+      "rssBytes": 261816320,
+      "performance": {
+        "cold": {
+          "samples": [
+            959.9386999999988,
+            763.0089999999982,
+            800.1805999999924,
+            917.8166000000056,
+            715.5914000000048
+          ],
+          "medianMs": 800.1805999999924,
+          "p95Ms": 959.9386999999988
+        },
+        "warm": {
+          "samples": [
+            176.23670000000857,
+            176.76299999999173,
+            206.13790000000154,
+            182.50130000000354,
+            154.2603999999992,
+            140.83849999999802,
+            143.15209999999206,
+            134.3295999999973,
+            144.2682000000059,
+            177.71510000000126,
+            131.42269999999553,
+            187.95999999999185,
+            139.50070000000414,
+            181.71259999999893,
+            125.28949999999895,
+            188.7954999999929,
+            178.6811000000016,
+            245.38899999999558,
+            241.0338999999949,
+            248.75680000000284
+          ],
+          "medianMs": 177.71510000000126,
+          "p95Ms": 245.38899999999558
+        },
+        "peakObservedParentRss": 265994240
+      },
+      "snapshotBytes": 133546,
+      "patterns": [
+        "Flow lexical",
+        "platform selection",
+        "Metro platform dependencies",
+        "application entries",
+        "native event",
+        "native interface/registry boundary",
+        "Expo layout/file route/literal href/static scheme"
+      ],
       "missingProof": [
         "full pattern qualification",
-        "navigation",
-        "Expo routing",
-        "native spec boundaries",
-        "resource ceilings",
-        "fault containment matrix"
+        "worker peak commit/resource ceilings",
+        "complete fault containment matrix"
       ]
     }
   ],
@@ -397,17 +893,35 @@
       "status": "PASS",
       "noSyntaxFallback": true,
       "previousSnapshotUnchanged": true
+    },
+    {
+      "id": "missing-launcher",
+      "status": "PASS",
+      "noSyntaxFallback": true,
+      "previousSnapshotUnchanged": true
+    },
+    {
+      "id": "corrupt-estree",
+      "status": "PASS",
+      "noSyntaxFallback": true,
+      "previousSnapshotUnchanged": true
+    },
+    {
+      "id": "missing-license",
+      "status": "PASS",
+      "noSyntaxFallback": true,
+      "previousSnapshotUnchanged": true
     }
   ],
   "emptyPath": true,
   "egressDenied": true,
   "inspectedExecution": false,
-  "probeHash": "b3f10b0921362a3cc7da7d6e4bbd904ce8dcca9b3259c40a738786868e84ef3c",
+  "probeHash": "a95f7748656d05c82a5c98a868d34eb6b9b4f8940037ac52793281a35b1eb2b9",
   "runtimeManifest": {
     "version": 1,
     "runtime": "hermes-parser@0.25.1",
     "launcher": "bin/parser-host.exe",
-    "launcherHash": "9c27000b57660f0c46b094d41f7750b13a8a63545018404ef9438df8df9e4e9c",
+    "launcherHash": "067f9e76fab1493c7857da97760160725f0678637a8a324543babf8ff7d11612",
     "memoryBytes": 536870912,
     "oldSpaceMiB": 128,
     "startupMs": 5000,

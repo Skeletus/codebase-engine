@@ -1,0 +1,9 @@
+{
+  "cases": [
+    {"id":"specific","spec":{"android":"AndroidScreen","ios":"IosScreen","native":"NativeScreen","default":"DefaultScreen"}},
+    {"id":"native-fallback","spec":{"native":"NativeScreen","default":"DefaultScreen"}},
+    {"id":"default-fallback","spec":{"default":"DefaultScreen"}},
+    {"id":"other-platform","spec":{"android":"AndroidScreen"}},
+    {"id":"empty","spec":{}}
+  ]
+}

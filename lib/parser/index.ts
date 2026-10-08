@@ -37,7 +37,7 @@ export function createSyntaxSession() {
   return { project: new Project({ useInMemoryFileSystem: true, skipAddingFilesFromTsConfig: true, skipFileDependencyResolution: true, compilerOptions: { allowJs: true, noLib: true, noResolve: true, types: [] } }), hashes: new Map<string, string>(), parsed: 0, reused: 0 };
 }
 
-export function parseSelection({ root, walk, reader }: Selection, inspect?: (files: { candidate: { path: string; hash: string }; sourceFile: import("ts-morph").SourceFile; framework: string }[], resolver: import("./resolve.ts").Resolver, routes: Route[]) => void, session = createSyntaxSession()): ParseResult {
+export function parseSelection({ root, walk, reader }: Selection, inspect?: (files: { candidate: { path: string; hash: string }; sourceFile: import("ts-morph").SourceFile; framework: string }[], resolver: import("./resolve.ts").Resolver, routes: Route[]) => void, session = createSyntaxSession(), deferredSources?:ReadonlySet<string>): ParseResult {
 
   // Parsing only: no lib, no type resolution. Imports are resolved separately
   // so every outcome can be classified rather than left to the compiler.
@@ -80,6 +80,7 @@ export function parseSelection({ root, walk, reader }: Selection, inspect?: (fil
     reader,
     nodes: new Set(parsed.map((entry) => entry.candidate.path)),
     skipped: new Map(skipped.map((file) => [file.path, file])),
+    deferredSources,
     excludedDirectories: walk.excludedDirectories,
     workspacePackages: walk.workspacePackages,
   });

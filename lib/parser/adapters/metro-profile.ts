@@ -12,6 +12,7 @@ import { AnalysisBoundaryError } from "../../engine/boundary.ts";
 import { frameworkFact } from "../framework-budget.ts";
 import { createMetroResolver } from "./metro-resolution.ts";
 import { METRO_DEFAULTS } from "./metro-defaults.ts";
+import { interpretMetroConfig } from "./metro-config.ts";
 
 export type MetroMode = "android-development" | "ios-development";
 const tuples = {
@@ -36,10 +37,10 @@ export function metroProfile(snapshot: CodeSnapshot, discovery: Discovery, proje
   const records = discovery.metadata.all().filter(r => path.posix.dirname(r.resource.path) === project.path && (path.posix.basename(r.resource.path) === "package.json" || /^metro\.config\./.test(path.posix.basename(r.resource.path))));
   if (records.length > 64) throw new AnalysisBoundaryError("resource-limit");
   const configs = records.filter(r => /^metro\.config\./.test(path.posix.basename(r.resource.path)));
-  const config = configs.length === 1 ? configs[0].config.value : undefined, resolverConfig = property(config, "resolver");
+  const config = configs.length === 1 ? tuple ? interpretMetroConfig(configs[0].text,tuple,discovery.boundary).value : configs[0].config.value : undefined, resolverConfig = property(config, "resolver");
   let configSafe = configs.length <= 1 && (!config || config.kind === "object") && (!resolverConfig || resolverConfig.kind === "object");
   if (config?.kind === "object" && Object.keys(config.properties).some(k => k !== "resolver")) configSafe = false;
-  const allowed = new Set(["sourceExts", "assetExts", "resolverMainFields", "unstable_conditionNames", "unstable_enablePackageExports"]);
+  const allowed = new Set(["sourceExts", "assetExts", "resolverMainFields", "unstable_conditionNames", "unstable_conditionsByPlatform", "unstable_enablePackageExports"]);
   if (resolverConfig?.kind === "object" && Object.keys(resolverConfig.properties).some(k => !allowed.has(k))) configSafe = false;
   const list = (key: string, fallback: readonly string[]) => {
     const value = property(resolverConfig, key); if (!value) return [...fallback];
@@ -49,7 +50,13 @@ export function metroProfile(snapshot: CodeSnapshot, discovery: Discovery, proje
   const sourceExts = list("sourceExts", defaults?.sourceExts ?? []), assetExts = list("assetExts", defaults?.assetExts ?? []);
   if (sourceExts.some(e => !/^[a-z0-9]+$/.test(e)) || assetExts.some(e => !/^[a-z0-9]+$/.test(e))) configSafe = false;
   const mainFields = list("resolverMainFields", defaults?.resolverMainFields ?? []), conditions = list("unstable_conditionNames", defaults?.unstable_conditionNames ?? []);
-  if (defaults && "unstable_conditionsByPlatform" in defaults) {
+  const configuredPlatforms=property(resolverConfig,"unstable_conditionsByPlatform");
+  if(configuredPlatforms){
+    if(configuredPlatforms.kind!=="object")configSafe=false;
+    else for(const [key,value]of Object.entries(configuredPlatforms.properties)){
+      const parsed=strings(value);if(!parsed||parsed.length>100)configSafe=false;else if(key===platform)conditions.push(...parsed);
+    }
+  } else if (defaults && "unstable_conditionsByPlatform" in defaults) {
     const byPlatform = defaults.unstable_conditionsByPlatform as Readonly<Record<string, readonly string[]>>;
     conditions.push(...byPlatform[platform] ?? []);
   }

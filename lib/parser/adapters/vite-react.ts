@@ -2,12 +2,13 @@ import { Node, SyntaxKind } from "ts-morph";
 import type { CodeSnapshot } from "../../engine/types.ts";
 import type { Variant } from "../../model/framework.ts";
 import { frameworkBindings, type FrameworkSource } from "../framework-bindings.ts";
+import type { FrameworkProjection } from "./rn-platform.ts";
 
 /** React syntax/binding facts; none of these are executed CALLS edges. */
-export function extractReactBindings(snapshot: CodeSnapshot, inputs: FrameworkSource[], variant: Variant, resolve: (from: string, specifier: string) => string | undefined, reactVersion: string, checkpoint:()=>void = ()=>{}, domVersion?:string,automaticJsx=false,version="fs-03/1", nativeUi?: {module: string; events: Readonly<Record<string, readonly string[]>>}) {
+export function extractReactBindings(snapshot: CodeSnapshot, inputs: FrameworkSource[], variant: Variant, resolve: (from: string, specifier: string) => string | undefined, reactVersion: string, checkpoint:()=>void = ()=>{}, domVersion?:string,automaticJsx=false,version="fs-03/1", nativeUi?: {module: string; events: Readonly<Record<string, readonly string[]>>}, projection?: FrameworkProjection) {
   const nativeReact19 = version === "fs-07/1" && ["19.2.0", "19.2.3"].includes(reactVersion);
   const react19 = reactVersion === "19.2.8" || nativeReact19;
-  const b = frameworkBindings(snapshot, inputs, variant, resolve, checkpoint,version);
+  const b = frameworkBindings(snapshot, inputs, variant, resolve, checkpoint,version,projection);
   const nodes = new Map(inputs.flatMap(i => i.sourceFile.getDescendants().flatMap(n => { const d = b.declaration(n); return d ? [[d.id, n] as const] : []; })));
   const checked = new Map<string, boolean>();
   function component(id: string, active = new Set<string>()): boolean {

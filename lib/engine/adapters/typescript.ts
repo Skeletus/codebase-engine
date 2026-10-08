@@ -32,7 +32,7 @@ function analyzeTypescript(directory: string, onProgress?: (stage: "parse") => v
       const eligible=new Set(projects.length ? sources.filter(s=>s.sourceFile.getDescendants().length<=100000).map(s=>s.candidate.path) : []);
       const callbacks = new Set(selection.walk.discovery.inventory.filter(f => eligible.has(f.path) && projects.some(p => p.path === f.owner) && selection.walk.candidates.find(c=>c.path===f.path)?.validUtf8 !== false).map(f => f.path));
       behavior = extractBehavior(sources, resolver, routes, callbacks); capture?.(sources);
-    }, session));
+    }, session, deferred));
     if (!behavior) throw new Error("Missing static symbol analysis");
     const byPath = new Map(parsed.files.map((f) => [f.path, f]));
     const evidence = (file: string, line: number, extractor: string, description: string): Evidence => {

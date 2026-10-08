@@ -1,0 +1,33 @@
+{
+  "tuple": "expo56",
+  "platform": "ios",
+  "rnVersion": "0.85.3",
+  "sourceHash": "35b3df6994d373d7c5bad2fc94e98148439495ad6fd13762c46778148f25e336",
+  "expressionHash": "0082cef68dc9f16f1111a0e31d702719ac5988df3bc0f8533e34150662cd2422",
+  "fixtureHash": "661f21ae145e789b48e1fbc2fdff91caa489b60abd521b2340af0df1e69e23a8",
+  "outputHash": "b8e0c8013bcbaca3a238c11142941628112ec7945925a5a071fba08fd38a3316",
+  "outputs": [
+    {
+      "id": "specific",
+      "selected": "IosScreen"
+    },
+    {
+      "id": "native-fallback",
+      "selected": "NativeScreen"
+    },
+    {
+      "id": "default-fallback",
+      "selected": "DefaultScreen"
+    },
+    {
+      "id": "other-platform",
+      "selected": null
+    },
+    {
+      "id": "empty",
+      "selected": null
+    }
+  ],
+  "inspectedExecution": false,
+  "scope": "approved framework-owned select expression only"
+}

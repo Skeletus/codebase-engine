@@ -1,0 +1,586 @@
+{
+  "status": "PASS",
+  "scope": "unchanged TS/JS historical comparison only",
+  "baselineHead": "34517b6ae82d029df911bc63066b13c896f1dc94",
+  "baselineInventoryHash": "0dce0f414c5a79431c15a414ab1be5136a480b1d589929aba148ee206c8cb6bf",
+  "restored": [
+    {
+      "path": "lib/engine/adapters/django-dispatch.ts",
+      "hash": "5c7575ee4226c0f98e3928d3b6f65b257090b2732433d2b87b90d449145236da"
+    },
+    {
+      "path": "lib/engine/adapters/django-literals.ts",
+      "hash": "6a1f4c4563bd66112c2d35afd220a3cf5fdc0d607595b2697f0bc9f9510741ab"
+    },
+    {
+      "path": "lib/engine/adapters/django-rules.ts",
+      "hash": "24f056fd90a2af2e3ae05edc14ae18ad00824af8316a9ef1bd5ebf4e55ea2142"
+    },
+    {
+      "path": "lib/engine/adapters/django-syntax.ts",
+      "hash": "931f4ee148dc6844e4ed41e0bafbea072e223d37cceab311d5d5a243bd9cfdef"
+    },
+    {
+      "path": "lib/engine/adapters/django.ts",
+      "hash": "ac86d1a35aed7325f21574612f207a6544731e09a3705d318dc962084b18d398"
+    },
+    {
+      "path": "lib/ai/evidence.ts",
+      "hash": "400e1659ee9fd1fe656af4eba5b26e2e71c65aed7514c6bc5c1e21d86da63dca"
+    },
+    {
+      "path": "lib/ai/package.json",
+      "hash": "592f56e0d5a1da31d06e1a3cfc3dfb58d8dd5c257388fd9cc9f02a9f041b66f1"
+    },
+    {
+      "path": "lib/ai/prompts.ts",
+      "hash": "d2a215c2be5afffe20636d1fb3499b674a69c994f697370e0b1809a6d16f82ad"
+    },
+    {
+      "path": "lib/ai/selection.ts",
+      "hash": "9eb1788f985dc5a19a5e3366e88456f6d4d668f4185981a3733622e0d1a5c917"
+    },
+    {
+      "path": "lib/analysis/operations.ts",
+      "hash": "57829febd2bac823b62875aebb29e53234ff01a54d034ce62903e763090a3bc5"
+    },
+    {
+      "path": "lib/desktop/package.json",
+      "hash": "1239d4d885dcad42201a27ed9324f8f0f760b78700d8db9ced39a511cffe7eae"
+    },
+    {
+      "path": "lib/desktop/projection.ts",
+      "hash": "d14a3799aa7bd2312630446c4f0946bb6ddb011e2cffef19ec808648e641b8b9"
+    },
+    {
+      "path": "lib/desktop/protocol.ts",
+      "hash": "8ca87c7b1c99f0af1306fa7c8d38164eb373e5fd542db74e39929403df882aa7"
+    },
+    {
+      "path": "lib/desktop/ranking.ts",
+      "hash": "07901f06133e6d6f94b6d949975d378806ea831b29bfa7107b5d4a9c42817ba9"
+    },
+    {
+      "path": "lib/desktop/startup.js",
+      "hash": "1097b1486e7a08d986161172e286c6bae86109bab90cfd5f509864e7afe173d3"
+    },
+    {
+      "path": "lib/desktop/storage-protocol.ts",
+      "hash": "aef5792f54d144048e07c0a3ba0d24b07bb6f191a06a07173eb6be791ce79ef4"
+    },
+    {
+      "path": "lib/engine/README.md",
+      "hash": "9a41d1a93987ef04e84847794af52a5d46cb1b608be6e5d09527af31de028a5e"
+    },
+    {
+      "path": "lib/engine/adapters/composed.ts",
+      "hash": "3e29708d2fc9c590c7c40e1e3fb3c5d6568a0d432c4230c3316906015fdedf08"
+    },
+    {
+      "path": "lib/engine/adapters/python-contract.ts",
+      "hash": "9fb7a445b4a8023379fc40e4decceb193a2045b7bf820e427f5cfbbb20fe3c04"
+    },
+    {
+      "path": "lib/engine/adapters/python-module-priority.ts",
+      "hash": "5031fa4d822a28e72bd44627638558a0e0fac18707d82b69fcd8d19e0b4b378f"
+    },
+    {
+      "path": "lib/engine/adapters/python-source.ts",
+      "hash": "8165589e8966b24a4363e1c30458c1428d9ac829b7fcf275bf01847487d25779"
+    },
+    {
+      "path": "lib/engine/adapters/python-syntax.ts",
+      "hash": "afbb1534517cf3b5fb2b9d743b77dd7e8f461b39e8db2a971ad49a313bd787ad"
+    },
+    {
+      "path": "lib/engine/adapters/python-worker.ts",
+      "hash": "754445ea3ed103c3a0863a52c835914c9bb19db5dbf48c8fe01b170193bb328e"
+    },
+    {
+      "path": "lib/engine/adapters/python.ts",
+      "hash": "5400074b7da27743d25b9267c9fb20bfa7a472cb2f4b5211f803a2674ec1faef"
+    },
+    {
+      "path": "lib/engine/adapters/typescript.ts",
+      "hash": "6498f03acb4b3579f79906b8aee0b7a075d4ea33e1ff542cb687094dd9541a4e"
+    },
+    {
+      "path": "lib/engine/assets/python/LICENSE",
+      "hash": "d724405ce238a22c0d35769c5a36b386ad5958192efe8bbb304fb2896254575f"
+    },
+    {
+      "path": "lib/engine/assets/python/tree-sitter-python.wasm",
+      "hash": "16108b50df4ee9a30168794252ab55e7c93bfc5765d7fa0aa3e335752c515f47"
+    },
+    {
+      "path": "lib/engine/behavior.ts",
+      "hash": "fa6ca23e58afdd4195864034ab7abb6af18a253ea5bfd4160e3b985c981e8302"
+    },
+    {
+      "path": "lib/engine/boundary.ts",
+      "hash": "7184689361a9c886b33528504ebe642288372718866911307c13deef7e296253"
+    },
+    {
+      "path": "lib/engine/compatibility.ts",
+      "hash": "018996498643ce60a90f395127f9c22349b889d6051f3dda2a7fa4e5512be4cd"
+    },
+    {
+      "path": "lib/engine/composition.ts",
+      "hash": "690d85aab5b9a7b1d23aeebc3f04d654dfbb3cad54f121eeb92ce708c58a69fa"
+    },
+    {
+      "path": "lib/engine/contract.ts",
+      "hash": "139693b17e9a2aaa83dd94babd162e170d27c56171202b184a4bca0fd81b895b"
+    },
+    {
+      "path": "lib/engine/coordinator.ts",
+      "hash": "875e2d2451b1cd176a90006582045bf0aa386d847b61347f51e766334f6409ad"
+    },
+    {
+      "path": "lib/engine/declarative-metadata.ts",
+      "hash": "2b74068f803049c29660d195fc4489a11df492fb76e553978b50f600527f1c07"
+    },
+    {
+      "path": "lib/engine/discovery.ts",
+      "hash": "0feb23bcd479184edaff93254e499ebcd1d1259df3b8299f11d3018aa606f7ed"
+    },
+    {
+      "path": "lib/engine/evaluation.ts",
+      "hash": "cd81860bc096dc194ad914f960aa1ab2314c568986952e58266ef8d452fd0a6a"
+    },
+    {
+      "path": "lib/engine/index.ts",
+      "hash": "076b6fb4265810b446d4cde465aaa9ff0fe40182d0042937e9d63cd7c32469f1"
+    },
+    {
+      "path": "lib/engine/investigations.ts",
+      "hash": "388a3fe3fc3429fd0d8b71d7007672066c516ef86cc9a505ec4b1355a247b48b"
+    },
+    {
+      "path": "lib/engine/legacy-contract.ts",
+      "hash": "1a271fcf8455fc435c3b01751ff9d3c7cb62ad781ff71064edf9ad95e6a5b684"
+    },
+    {
+      "path": "lib/engine/metadata.ts",
+      "hash": "40cda0df3a7c5da8a89e3524d90ff46168a83ec65776cb7ea0f3743eeabbe362"
+    },
+    {
+      "path": "lib/engine/package.json",
+      "hash": "5a065fe7d8eab2a582f428e11c2ea63aaf70607a54f69cfd5c711b5c53d91b32"
+    },
+    {
+      "path": "lib/engine/parser-worker.ts",
+      "hash": "c9b8806ce8d34bc41f907d0973ad8e5d368920a489830e0336a05b1115e3f67f"
+    },
+    {
+      "path": "lib/engine/profiles.ts",
+      "hash": "000579f0bb75d75a4f6e0de4b1e811ac5c6e955c21e9489d66dbbdc23b34032a"
+    },
+    {
+      "path": "lib/engine/ranking.ts",
+      "hash": "f7b4bff1b8cef68aa3d2eeb771d4042e230961358cf184d252b24ef27f9789a7"
+    },
+    {
+      "path": "lib/engine/refresh.ts",
+      "hash": "93b1601b2df7c4f6c3fb11fc166db51f0ba21484f93ca65237349dcc6c549b63"
+    },
+    {
+      "path": "lib/engine/registry.ts",
+      "hash": "2375a00a5546de4874e81ae657b56e4869925bbaf815dd87e7d02aa2db27868b"
+    },
+    {
+      "path": "lib/engine/snapshot-identity.ts",
+      "hash": "fbe43b095e46d4c927a6615d32ba0531b357e3ce965a864349bb657b76ceb980"
+    },
+    {
+      "path": "lib/engine/static-config.ts",
+      "hash": "c0886ee67e3990a630d946fc3417a895cb9a963b8ea98ece105cb47ac580e25d"
+    },
+    {
+      "path": "lib/engine/types.ts",
+      "hash": "2723742b23dd021df58d406dadd88c37ffee2ce45ba58adafc3b3c9b720b0a91"
+    },
+    {
+      "path": "lib/graph/categories.ts",
+      "hash": "580f36aa5fae2a93b270f362d118ce50a29efab9e3dc0e888732d0559bde475a"
+    },
+    {
+      "path": "lib/graph/detail.ts",
+      "hash": "3586bde6fc121c0d051174bcc6773175187cb326e9db0d92a053f332a273ff6b"
+    },
+    {
+      "path": "lib/graph/fold.ts",
+      "hash": "93304f5a82081b2a4c2242e7fb92d2e056f11382e8a9370201fbe3ceb7a29155"
+    },
+    {
+      "path": "lib/graph/highlight.ts",
+      "hash": "97694b4a00669c372d2b070f159c279156a8eab1a81ed6bc858cbb72d35ee850"
+    },
+    {
+      "path": "lib/graph/insights.ts",
+      "hash": "52690a87d4b0fff23360958403a354169f956d92332d50d31149919ea495e05d"
+    },
+    {
+      "path": "lib/graph/labels.ts",
+      "hash": "40b2fafa88b2ebbd7dbd168b6abdfbd3cb51365bce267c384ea5461b839982f9"
+    },
+    {
+      "path": "lib/graph/package.json",
+      "hash": "592f56e0d5a1da31d06e1a3cfc3dfb58d8dd5c257388fd9cc9f02a9f041b66f1"
+    },
+    {
+      "path": "lib/graph/reach.ts",
+      "hash": "e83cbe20d13368f2ac9a37967b113a4aaf28b3669191825373af8b2d67954660"
+    },
+    {
+      "path": "lib/graph/view.ts",
+      "hash": "07d272ba438188f4a2f4cf9f69dc81bd19ac5151f17b8680b60d2036fa77d16d"
+    },
+    {
+      "path": "lib/laya/artifact.ts",
+      "hash": "f1c6b44cbeb4938dbbdda988a3dec4e4c7196290c1a3618e3604ee820edfc8f9"
+    },
+    {
+      "path": "lib/laya/inference-worker.ts",
+      "hash": "1a035b070adbc8ad955c37a4cf9bef2f86a6a5342890732fb70c41bb458e7ce5"
+    },
+    {
+      "path": "lib/laya/input.ts",
+      "hash": "435fadfaa4062d5fff34dc02e75e24cd95901555d1e8072e328eaec2727c7a5c"
+    },
+    {
+      "path": "lib/laya/investigation.ts",
+      "hash": "f22c93f49cec6d4834c1ee376b2fb4d0dcc7d457d561ae68bb6e6dd4c93cb958"
+    },
+    {
+      "path": "lib/laya/laya-nav-1.json",
+      "hash": "aa499934b8197fb12c36eec2b367c523d5a6da77b439ab58dc4b30bb46ea3513"
+    },
+    {
+      "path": "lib/laya/model.ts",
+      "hash": "1e77912857693b48f37f58ab26a5feee116fb5478c85363a83f20bb22faa936a"
+    },
+    {
+      "path": "lib/laya/package.json",
+      "hash": "1239d4d885dcad42201a27ed9324f8f0f760b78700d8db9ced39a511cffe7eae"
+    },
+    {
+      "path": "lib/laya/runtime.ts",
+      "hash": "9ec2b3ea72a41ef57bcd0d11c5c5dcdf2030f418c0278c68a40f8d0e7987d420"
+    },
+    {
+      "path": "lib/model/behavior.ts",
+      "hash": "d530f278a4280a55bca8a3785805bc19bb4ce0a916d7734462ff2cda90cfc0c6"
+    },
+    {
+      "path": "lib/model/framework-validate.ts",
+      "hash": "a2e9438da5d6b83eabfee266c353b1a3e60866adf44f3b3309e59504c8ea520e"
+    },
+    {
+      "path": "lib/model/framework.ts",
+      "hash": "fbfd2cb1c82bd62945eb1307f51c8f162480bb8cb9e8bfda75f061bed175c84e"
+    },
+    {
+      "path": "lib/model/package.json",
+      "hash": "ccdf8de44295f59be00f6b8cf1359959938a16a4ccf8c55940d8af1894748c5f"
+    },
+    {
+      "path": "lib/model/positions.ts",
+      "hash": "c39a72bca98681c9420eeab3b41f2a8d59b23af379ba837635646cb32546e168"
+    },
+    {
+      "path": "lib/model/validate.ts",
+      "hash": "01a2fd1acea479fcede5d5c5094434f4d5083bb8bbd3cf96e1192dedc895207b"
+    },
+    {
+      "path": "lib/package.json",
+      "hash": "592f56e0d5a1da31d06e1a3cfc3dfb58d8dd5c257388fd9cc9f02a9f041b66f1"
+    },
+    {
+      "path": "lib/parser/adapters/conventions.ts",
+      "hash": "cfaa13be8b57a9d6357c9f1104a456f56cb10b411d5518b5d9d1daedead811ce"
+    },
+    {
+      "path": "lib/parser/adapters/docusaurus.ts",
+      "hash": "640c4693c9e3fad15ea2028fe9831995997b67bcefba1a30ccbd4fab0ab75e62"
+    },
+    {
+      "path": "lib/parser/adapters/express.ts",
+      "hash": "4d0b579a4c44cf7d1923a01b216bc581d41b931dda69d014d0f957663409cd8b"
+    },
+    {
+      "path": "lib/parser/adapters/fallback.ts",
+      "hash": "805740ad31d34c4e31a756a45e16096909e4884dec7bdab8f89c7d60b7b4005e"
+    },
+    {
+      "path": "lib/parser/adapters/index.ts",
+      "hash": "d25bcb3927a2d0d63c74f51bb31ffddc6712843666ed56b911cfcf37733aa09c"
+    },
+    {
+      "path": "lib/parser/adapters/nestjs.ts",
+      "hash": "08fcf6088a4709cfefe9e2ef1d9084ef5a12af4e76abf50c82a23cfcc641a61c"
+    },
+    {
+      "path": "lib/parser/adapters/next-behavior.ts",
+      "hash": "b4cdc2a61d5e419b91d15aa7df1430831165a062fb1f55efafa78cc18823817f"
+    },
+    {
+      "path": "lib/parser/adapters/next-config.ts",
+      "hash": "4044a8e5681200ec45814252d7c007e2b84868fdd9fcf56cee55e0844ad504d1"
+    },
+    {
+      "path": "lib/parser/adapters/nextjs.ts",
+      "hash": "fe4855a0fbfba9dbedfe098f82cce2fd601ecb68347da0adf7d57afd1f6bc917"
+    },
+    {
+      "path": "lib/parser/adapters/node-commonjs.ts",
+      "hash": "c56967932b9d94f3d3cda62faf2978c6327f421e9d6b53efddcabeb00d9e95ba"
+    },
+    {
+      "path": "lib/parser/adapters/node-next.ts",
+      "hash": "880cdc8e05952311fda3b6238f7e11fdb99f9c98552e4a4fad8b65acc229566c"
+    },
+    {
+      "path": "lib/parser/adapters/node-profile.ts",
+      "hash": "a9453e20f92f84844f7338c8369b5417f191b27cbec8bd4eefcae45a6a94b05b"
+    },
+    {
+      "path": "lib/parser/adapters/react-router.ts",
+      "hash": "950d9dd3472d0d90fcfadc2d3f29d820ce35b126362e64e60f9c3dac1cec2a42"
+    },
+    {
+      "path": "lib/parser/adapters/react.ts",
+      "hash": "e4a9c9a3c72c984291852bdf06a8aa3c6369f1c03df198d251202086a7217c0c"
+    },
+    {
+      "path": "lib/parser/adapters/types.ts",
+      "hash": "51ae2cf468c23fb68f217fd65542b814eb22588a8da2e47c1f3755221487284d"
+    },
+    {
+      "path": "lib/parser/adapters/vite-calls.ts",
+      "hash": "3682d5688b8c55d400aa2c445c0bf18cf605eafa3359ca76fb7b8a6f495dfc4f"
+    },
+    {
+      "path": "lib/parser/adapters/vite-html.ts",
+      "hash": "6fbbdcd4c767b514e1b7ef5c3ef18386a35a732d46525236d6bcd90a62f4153b"
+    },
+    {
+      "path": "lib/parser/adapters/vite-profile.ts",
+      "hash": "3f56db169e2919ed96802911f20583781ffda773672de21848ead93889c2531d"
+    },
+    {
+      "path": "lib/parser/adapters/vite-proxy.ts",
+      "hash": "da390831bad0c67e3659a4c5e6a2ee30383976c172cf1456eb539a6dcbf31361"
+    },
+    {
+      "path": "lib/parser/adapters/vite-react-config.ts",
+      "hash": "bd0a53c72e7a95ce21d2d69dbe7434b5cce33a0b4dcf12a5031b2f9da3263a58"
+    },
+    {
+      "path": "lib/parser/adapters/vite-react.ts",
+      "hash": "9e00badc6d0942a4c0646476350486257a8967f7ed55c89c632e19b34e11dbf4"
+    },
+    {
+      "path": "lib/parser/adapters/vite.ts",
+      "hash": "72e7c52323046eed13f6d964476403102806843048b57dc971fd4b8b5da51239"
+    },
+    {
+      "path": "lib/parser/behavior.ts",
+      "hash": "f12119e6c355683a869c58ca17f8fbf07e5b18b8cc98b19c4a1e2061ed4b3709"
+    },
+    {
+      "path": "lib/parser/contract.ts",
+      "hash": "fb6949a41794a0de9ff4ab359de8880f8cbf83e53050c455941a66166e28c9fe"
+    },
+    {
+      "path": "lib/parser/extract.ts",
+      "hash": "6a9be62ad6bb53cc4eda0c08430807ab3670bddd1c7b56d1bac095b718569c87"
+    },
+    {
+      "path": "lib/parser/framework-bindings.ts",
+      "hash": "fb3726fd8b76933b579edb66693bc379f36764851a4e024b9aa5d9e525933a7f"
+    },
+    {
+      "path": "lib/parser/framework-budget.ts",
+      "hash": "c37a5c76d26cdf29214ead9c19508014d2a65e622938ecbfd97464eec90e07b8"
+    },
+    {
+      "path": "lib/parser/graph.ts",
+      "hash": "2041a96e914882663c058d6bb7c8832c0397ad3ee7a3d5b3e7b1f14001f82b1d"
+    },
+    {
+      "path": "lib/parser/index.ts",
+      "hash": "c88f88f86e56d53211594a87f8de3ef04e90c629048aff81c4715f99ed81ffe6"
+    },
+    {
+      "path": "lib/parser/package.json",
+      "hash": "592f56e0d5a1da31d06e1a3cfc3dfb58d8dd5c257388fd9cc9f02a9f041b66f1"
+    },
+    {
+      "path": "lib/parser/resolve.ts",
+      "hash": "d4ab13efc022742cfc49a424028beb997b7e964d45f9c95928395760da6fa3dc"
+    },
+    {
+      "path": "lib/parser/types.ts",
+      "hash": "ec3670f0db85dba7fa189ba09b42cda6fbcdfea98febd63e9028b5628b91b6d2"
+    },
+    {
+      "path": "lib/parser/walk.ts",
+      "hash": "893b69bf04226418755bf1311644e13673d4453d34eb6bc6aacb63a3d2e05498"
+    },
+    {
+      "path": "lib/repository/metadata-policy.ts",
+      "hash": "65c0961dc9c8756071a47c4a2575e731c221bd1532b2ced184ebed36ce24c514"
+    },
+    {
+      "path": "lib/repository/package.json",
+      "hash": "5a065fe7d8eab2a582f428e11c2ea63aaf70607a54f69cfd5c711b5c53d91b32"
+    },
+    {
+      "path": "lib/repository/read-policy.ts",
+      "hash": "16edc0cc52def8c40d4d43ab8e2f5afcba5d5722682084a3f70bbd417ec4512c"
+    },
+    {
+      "path": "lib/roles.ts",
+      "hash": "3476a3c1b50a7a54d5dfe25da6330830d387b21a17073dfcb4ec7ab6e90f4393"
+    },
+    {
+      "path": "lib/storage/evaluations.ts",
+      "hash": "a726c62c3ba3a2b703cfb4fae55c150dd1ad2f6fe7b5eb3107f54bb47c1fd00c"
+    },
+    {
+      "path": "lib/storage/measurements.ts",
+      "hash": "4e6eb88c823f0e0f84984cb8dd6f0b5ba3ad3c32473e76992b12270b50f1346a"
+    },
+    {
+      "path": "lib/storage/package.json",
+      "hash": "1239d4d885dcad42201a27ed9324f8f0f760b78700d8db9ced39a511cffe7eae"
+    },
+    {
+      "path": "lib/storage/sqlite.ts",
+      "hash": "50ce8b8f53d7f655bf11f2b407f78496bc5aa353e63e20b7012c9fbf0d04dc08"
+    },
+    {
+      "path": "lib/storage/types.ts",
+      "hash": "609ee149fdcda19a7716546db6ab7890e68ece342f177d267e6e263bf9462f3e"
+    },
+    {
+      "path": "lib/theme.ts",
+      "hash": "84a8dd7a93de7bd40bd28b28cf2c184ad2ba40ef491daf060dc25ca043520d6f"
+    },
+    {
+      "path": "lib/time.ts",
+      "hash": "fbd56cb604584b3cdf63dfdfdbd999d9f7d4569572bbe73200f5ca4198a595f5"
+    }
+  ],
+  "fixtureHash": "b09c44880282b7607507228226bf89f8e94e37cfc4d0f8f51ab59c0fe4496c20",
+  "runtime": "v24.19.0",
+  "host": {
+    "platform": "win32",
+    "arch": "x64",
+    "cpus": [
+      "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  ",
+      "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  ",
+      "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  ",
+      "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  ",
+      "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  ",
+      "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  ",
+      "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  ",
+      "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  "
+    ],
+    "memoryBytes": 14912454656
+  },
+  "results": [
+    {
+      "name": "accepted",
+      "cold": {
+        "samples": [
+          254.6196,
+          60.79139999999984,
+          34.88079999999991,
+          35.124000000000024,
+          44.44160000000011
+        ],
+        "medianMs": 44.44160000000011,
+        "p95Ms": 254.6196
+      },
+      "warm": {
+        "samples": [
+          21.867999999999938,
+          17.381799999999885,
+          16.306400000000167,
+          17.224100000000362,
+          16.53229999999985,
+          20.340499999999793,
+          21.544800000000123,
+          14.350300000000061,
+          21.031999999999698,
+          21.12920000000031,
+          24.28819999999996,
+          26.1884,
+          18.79639999999972,
+          23.481000000000222,
+          23.570500000000266,
+          18.83120000000008,
+          16.764900000000125,
+          17.171400000000176,
+          18.698699999999917,
+          18.42960000000039
+        ],
+        "medianMs": 18.83120000000008,
+        "p95Ms": 24.28819999999996
+      },
+      "snapshotHash": "1a778ed64f33c266ff2203ce46cd5c896ac5b9bbc6efa967503993e38ea00b0e",
+      "peakObservedRss": 150343680
+    },
+    {
+      "name": "current",
+      "cold": {
+        "samples": [
+          181.80610000000001,
+          27.360800000000154,
+          22.411699999999882,
+          19.72919999999999,
+          19.56990000000019
+        ],
+        "medianMs": 22.411699999999882,
+        "p95Ms": 181.80610000000001
+      },
+      "warm": {
+        "samples": [
+          26.4058,
+          26.724100000000135,
+          22.07269999999994,
+          20.513599999999997,
+          19.564499999999953,
+          19.37440000000015,
+          21.77449999999999,
+          21.227499999999964,
+          20.045700000000124,
+          22.29320000000007,
+          32.6241,
+          18.35219999999981,
+          18.633600000000115,
+          15.673599999999624,
+          17.99190000000044,
+          17.503299999999854,
+          30.25109999999995,
+          15.981200000000172,
+          14.240899999999783,
+          14.665700000000015
+        ],
+        "medianMs": 20.045700000000124,
+        "p95Ms": 30.25109999999995
+      },
+      "snapshotHash": "1a778ed64f33c266ff2203ce46cd5c896ac5b9bbc6efa967503993e38ea00b0e",
+      "peakObservedRss": 149889024
+    }
+  ],
+  "coldRatio": 0.5042955249135906,
+  "warmRatio": 1.0644940311822952,
+  "investigationRequired": false,
+  "limitations": [
+    "observed RSS is not peak committed memory",
+    "per-tuple new-domain 5 cold/20 warm measurements and ceilings remain separate mandatory gates"
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "tuple": "expo55",
+  "platform": "android",
+  "coreVersion": "7.23.0",
+  "fixtureHash": "a3c00f2e7c66db197a6c85ca7fc39d820049a0c4ed128558fe7235ca10f259eb",
+  "sourceHash": "c2ac8dde117edfc92ffbd463b49554b8913614949a3d980bcacabb24220e2958",
+  "outputHash": "d68123aed0cc5210ca05cfce9b401aeceb43b043ba17e37c831781ac0d2c5df2",
+  "outputs": [
+    {
+      "path": "",
+      "screens": [
+        "Home"
+      ],
+      "state": {
+        "routes": [
+          {
+            "name": "Home",
+            "path": ""
+          }
+        ]
+      }
+    },
+    {
+      "path": "detail/42",
+      "screens": [
+        "Detail"
+      ],
+      "state": {
+        "routes": [
+          {
+            "name": "Detail",
+            "params": {
+              "id": "42"
+            },
+            "path": "detail/42"
+          }
+        ]
+      }
+    },
+    {
+      "path": "nested/settings",
+      "screens": [
+        "Nested",
+        "Settings"
+      ],
+      "state": {
+        "routes": [
+          {
+            "name": "Nested",
+            "state": {
+              "routes": [
+                {
+                  "name": "Settings",
+                  "path": "nested/settings"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "path": "nested/profile/alice",
+      "screens": [
+        "Nested",
+        "Profile"
+      ],
+      "state": {
+        "routes": [
+          {
+            "name": "Nested",
+            "state": {
+              "routes": [
+                {
+                  "name": "Profile",
+                  "params": {
+                    "name": "alice"
+                  },
+                  "path": "nested/profile/alice"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "path": "unknown",
+      "screens": [],
+      "state": null
+    }
+  ],
+  "applicationModuleLoads": 0,
+  "configurationExecution": false,
+  "scope": "approved framework-owned path utility; static literal configuration"
+}

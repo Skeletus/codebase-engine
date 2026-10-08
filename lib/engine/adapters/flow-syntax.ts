@@ -7,7 +7,7 @@ export type FlowParser = {parse: (text: string, options: unknown) => unknown; Fl
 export type FlowSyntax = {
   behavior: Behavior;
   imports: {module: string; name: string; alias: string; typeOnly: boolean; site: Site}[];
-  exports: {name: string; id: string}[];
+  exports: {name: string; id: string; site: Site}[];
   importedCalls: {module: string; name: string; bindingStart: number; source: string | null; site: Site}[];
   visited: number;
 };
@@ -41,13 +41,32 @@ export function extractFlow(parser: FlowParser, file: string, bytes: Uint8Array)
   const root: Scope = {parent: null, owner: null, bindings: new Map(), uncertain: new Set()};
   const references: {n: SyntaxNode; occurrence: SyntaxNode; scope: Scope; call: boolean; conditional: boolean}[] = [];
   const writes: {n: SyntaxNode; scope: Scope}[] = [];
-  const exported: {name: string; local: string; scope: Scope}[] = [];
+  const exported: {name: string; local: string; scope: Scope; occurrence: SyntaxNode}[] = [];
   const gap = (n: SyntaxNode, scope: Scope, reason: string) => { count(); behavior.gaps.push({source: scope.owner, reason, site: site(n)}); };
   const bind = (scope: Scope, key: string, binding: Binding) => scope.bindings.set(key, [...scope.bindings.get(key) ?? [], binding]);
-  function declare(n: SyntaxNode, key: string, kind: Declaration["kind"], callable: boolean, scope: Scope, mutable = false) {
+  function declare(n: SyntaxNode, key: string, kind: Declaration["kind"], callable: boolean, scope: Scope, mutable = false, bindInScope=true) {
     count(); const location = site(n);
     const d: Declaration = {id: JSON.stringify([file, location.start, kind]), name: key, kind, callable, site: location};
-    behavior.declarations.push(d); bind(scope, key, {declaration: d, initialized: kind === "function" ? -1 : n.range[1], mutable}); return d;
+    behavior.declarations.push(d); if(bindInScope)bind(scope, key, {declaration: d, initialized: kind === "function" ? -1 : n.range[1], mutable}); return d;
+  }
+  function patternNames(n:SyntaxNode):string[]{
+    if(name(n))return[name(n)!];
+    if(n.type==="AssignmentPattern"&&node(n.left))return patternNames(n.left);
+    if(n.type==="RestElement"&&node(n.argument))return patternNames(n.argument);
+    if(n.type==="ObjectPattern")return(Array.isArray(n.properties)?n.properties.filter(node):[]).flatMap(p=>p.type==="RestElement"?patternNames(p):node(p.value)?patternNames(p.value):[]);
+    if(n.type==="ArrayPattern")return(Array.isArray(n.elements)?n.elements.filter(node):[]).flatMap(patternNames);
+    return[];
+  }
+  function uncertainFunction(scope:Scope,key:string){for(let s:Scope|null=scope;s&&s.owner===scope.owner;s=s.parent)s.uncertain.add(key);}
+  function parameters(params:unknown,inner:Scope){
+    const defaults:SyntaxNode[]=[];
+    for(const parameter of Array.isArray(params)?params.filter(node):[]){
+      const local=parameter.type==="ComponentParameter"&&node(parameter.local)?parameter.local:parameter;
+      const binding=local.type==="AssignmentPattern"&&node(local.left)?local.left:local,key=name(binding);
+      if(key)declare(binding,key,"parameter",false,inner);else{for(const key of patternNames(binding))inner.uncertain.add(key);gap(parameter,inner,"destructured-parameter-boundary");}
+      if(local.type==="AssignmentPattern"&&node(local.right))defaults.push(local.right);
+    }
+    for(const expression of defaults)walk(expression,inner,true);
   }
   function walk(n: SyntaxNode, scope: Scope, conditional = false): void {
     checkpoint();
@@ -55,6 +74,7 @@ export function extractFlow(parser: FlowParser, file: string, bytes: Uint8Array)
     if (n.type === "ImportDeclaration") {
       const moduleSpecifier = node(n.source) && typeof n.source.value === "string" ? n.source.value : undefined;
       if (!moduleSpecifier || !Array.isArray(n.specifiers)) { gap(n, scope, "dynamic-import-boundary"); return; }
+      if(!n.specifiers.length){count();result.imports.push({module:moduleSpecifier,name:"*",alias:"*",typeOnly:false,site:site(n)});}
       for (const specifier of n.specifiers.filter(node)) {
         const alias = name(specifier.local);
         const imported = specifier.type === "ImportDefaultSpecifier" ? "default" : specifier.type === "ImportNamespaceSpecifier" ? "*" : name(specifier.imported);
@@ -66,15 +86,10 @@ export function extractFlow(parser: FlowParser, file: string, bytes: Uint8Array)
     }
     if (functionTypes.has(n.type)) {
       const key = name(n.id) ?? "<callback>";
-      const d = declare(n, key, "function", true, scope);
+      const d = declare(n, key, "function", true, scope,false,!['FunctionExpression','ArrowFunctionExpression'].includes(n.type));
       const inner: Scope = {parent: scope, owner: d.id, bindings: new Map(), uncertain: new Set()};
       if (n.type === "FunctionExpression" && name(n.id)) bind(inner, key, {declaration: d, initialized: -1, mutable: false});
-      for (const parameter of Array.isArray(n.params) ? n.params.filter(node) : []) {
-        const local = parameter.type === "ComponentParameter" && node(parameter.local) ? parameter.local : parameter;
-        const key = name(local);
-        if (key) declare(local, key, "parameter", false, inner);
-        else gap(parameter, inner, "destructured-parameter-boundary");
-      }
+      parameters(n.params,inner);
       if (node(n.body)) walk(n.body, inner, conditional);
       return;
     }
@@ -82,17 +97,23 @@ export function extractFlow(parser: FlowParser, file: string, bytes: Uint8Array)
       const inner: Scope = {parent: scope, owner: scope.owner, bindings: new Map(), uncertain: new Set()};
       for (const child of children(n, true)) walk(child, inner, conditional); return;
     }
+    if(["ForStatement","ForInStatement","ForOfStatement","SwitchStatement","CatchClause"].includes(n.type)){
+      const inner:Scope={parent:scope,owner:scope.owner,bindings:new Map(),uncertain:new Set()};
+      if(n.type==="CatchClause"&&node(n.param)){if(name(n.param))declare(n.param,name(n.param)!,"parameter",false,inner);else for(const key of patternNames(n.param))inner.uncertain.add(key);}
+      for(const child of children(n,true))if(child!==n.param)walk(child,inner,true);return;
+    }
     if (n.type === "VariableDeclaration") {
       for (const variable of Array.isArray(n.declarations) ? n.declarations.filter(node) : []) {
         const key = name(variable.id), init = node(variable.init) ? variable.init : undefined;
-        if (!key) { gap(variable, scope, "destructured-binding-boundary"); continue; }
-        if (n.kind === "var") { scope.uncertain.add(key); gap(variable, scope, "var-hoisting-boundary"); continue; }
+        if (!key) { if(node(variable.id))for(const name of patternNames(variable.id)){if(n.kind==="var")uncertainFunction(scope,name);else scope.uncertain.add(name);} gap(variable, scope, "destructured-binding-boundary"); continue; }
+        if (n.kind === "var") { uncertainFunction(scope,key); gap(variable, scope, "var-hoisting-boundary"); continue; }
         const d = declare(variable, key, "value", !!init && functionTypes.has(init.type), scope, n.kind !== "const");
         const binding = scope.bindings.get(key)!.at(-1)!;
         if (init?.type === "Identifier" && n.kind === "const") binding.alias = name(init);
         if (init && functionTypes.has(init.type)) {
           const inner: Scope = {parent: scope, owner: d.id, bindings: new Map(), uncertain: new Set()};
-          for (const p of Array.isArray(init.params) ? init.params.filter(node) : []) if (name(p)) declare(p, name(p)!, "parameter", false, inner); else gap(p, inner, "destructured-parameter-boundary");
+          if(init.type==="FunctionExpression"&&name(init.id))bind(inner,name(init.id)!,{declaration:d,initialized:-1,mutable:false});
+          parameters(init.params,inner);
           if (node(init.body)) walk(init.body, inner, conditional);
         } else if (init) walk(init, scope, conditional);
       }
@@ -102,12 +123,13 @@ export function extractFlow(parser: FlowParser, file: string, bytes: Uint8Array)
       const declaration = node(n.declaration) ? n.declaration : undefined;
       if (declaration) {
         walk(declaration, scope, conditional);
-        if (n.type === "ExportDefaultDeclaration" && name(declaration)) exported.push({name: "default", local: name(declaration)!, scope});
-        else if (name(declaration.id)) exported.push({name: n.type === "ExportDefaultDeclaration" ? "default" : name(declaration.id)!, local: name(declaration.id)!, scope});
-        else if (declaration.type === "VariableDeclaration") for (const v of Array.isArray(declaration.declarations) ? declaration.declarations.filter(node) : []) if (name(v.id)) exported.push({name: name(v.id)!, local: name(v.id)!, scope});
+        if (n.type === "ExportDefaultDeclaration" && name(declaration)) exported.push({name: "default", local: name(declaration)!, scope,occurrence:n});
+        else if (name(declaration.id)) exported.push({name: n.type === "ExportDefaultDeclaration" ? "default" : name(declaration.id)!, local: name(declaration.id)!, scope,occurrence:n});
+        else if (declaration.type === "VariableDeclaration") for (const v of Array.isArray(declaration.declarations) ? declaration.declarations.filter(node) : []) if (name(v.id)) exported.push({name: name(v.id)!, local: name(v.id)!, scope,occurrence:n});
+        else if(n.type==="ExportDefaultDeclaration")gap(n,scope,"anonymous-default-export-boundary");
       }
       if (node(n.source)) { gap(n, scope, "reexport-resolution-boundary"); return; }
-      for (const specifier of Array.isArray(n.specifiers) ? n.specifiers.filter(node) : []) if (name(specifier.local) && name(specifier.exported)) exported.push({name: name(specifier.exported)!, local: name(specifier.local)!, scope});
+      for (const specifier of Array.isArray(n.specifiers) ? n.specifiers.filter(node) : []) if (name(specifier.local) && name(specifier.exported)) exported.push({name: name(specifier.exported)!, local: name(specifier.local)!, scope,occurrence:specifier});
       return;
     }
     if (n.type === "AssignmentExpression" || n.type === "UpdateExpression") {
@@ -119,8 +141,12 @@ export function extractFlow(parser: FlowParser, file: string, bytes: Uint8Array)
       if (name(n.id)) declare(n, name(n.id)!, n.type === "ClassDeclaration" ? "class" : "value", false, scope);
       gap(n, scope, n.type === "ClassDeclaration" ? "class-dispatch-boundary" : "enum-runtime-boundary"); return;
     }
+    if (["ImportExpression","OptionalCallExpression","NewExpression"].includes(n.type)) {
+      gap(n,scope,n.type==="ImportExpression"?"dynamic-module-boundary":"dynamic-dispatch-boundary");
+      for(const child of children(n,true))walk(child,scope,conditional);return;
+    }
     if (n.type === "CallExpression") {
-      if (node(n.callee) && name(n.callee) === "eval") { scope.uncertain.add("*"); gap(n, scope, "eval-scope-boundary"); }
+      if (node(n.callee) && name(n.callee) === "eval") { uncertainFunction(scope,"*"); gap(n, scope, "eval-scope-boundary"); }
       else if (node(n.callee) && name(n.callee)) references.push({n: n.callee, occurrence: n, scope, call: true, conditional});
       else gap(n, scope, "dynamic-dispatch-boundary");
       for (const argument of Array.isArray(n.arguments) ? n.arguments.filter(node) : []) walk(argument, scope, conditional);
@@ -143,7 +169,7 @@ export function extractFlow(parser: FlowParser, file: string, bytes: Uint8Array)
       const bindings = s.bindings.get(key); if (bindings) return bindings.length === 1 ? {scope: s, binding: bindings[0]} : undefined;
     }
   }
-  for (const write of writes) if (name(write.n)) { const found = lookup(write.scope, name(write.n)!); if (found) found.scope.uncertain.add(name(write.n)!); }
+  for (const write of writes) for(const key of patternNames(write.n)){ const found = lookup(write.scope,key); if (found) found.scope.uncertain.add(key); }
   function resolve(scope: Scope, key: string, offset: number, active = new Set<Binding>()): Binding | undefined {
     checkpoint(); const found = lookup(scope, key); if (!found || found.binding.mutable || found.binding.initialized > offset || active.size >= 64 || active.has(found.binding)) return;
     if (found.binding.alias) return resolve(found.scope, found.binding.alias, found.binding.initialized, new Set(active).add(found.binding));
@@ -159,6 +185,6 @@ export function extractFlow(parser: FlowParser, file: string, bytes: Uint8Array)
       behavior.relations.push({id: JSON.stringify([location.file, location.start, relation]), source: ref.scope.owner, target: binding.declaration.id, relation, conditional: ref.conditional, site: location});
     } else if (ref.call) gap(ref.occurrence, ref.scope, "unresolved-lexical-call");
   }
-  for (const entry of exported) { const binding = resolve(entry.scope, entry.local, text.length); if (binding?.declaration) { count(); result.exports.push({name: entry.name, id: binding.declaration.id}); } }
+  for (const entry of exported) { const binding = resolve(entry.scope, entry.local, text.length); if (binding?.declaration) { count(); result.exports.push({name: entry.name, id: binding.declaration.id,site:site(entry.occurrence)}); }else gap(entry.occurrence,entry.scope,"unresolved-export-boundary"); }
   checkpoint(); return result;
 }

@@ -11,8 +11,8 @@
     "sourceBytes": 1007,
     "largestFileBytes": 292,
     "snapshotBytes": 93758,
-    "elapsedMs": 1958.7575999999972,
-    "rssBytes": 146829312,
+    "elapsedMs": 1409.3986000000004,
+    "rssBytes": 150171648,
     "outcome": "complete generation; all framework witnesses current",
     "workerCommitLimitBytes": 536870912,
     "workerFileDeadlineMs": 2000

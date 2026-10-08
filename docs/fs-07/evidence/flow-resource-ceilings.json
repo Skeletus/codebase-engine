@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "records": [
+    {
+      "id": "source",
+      "sourceBytes": 1048577,
+      "inputHash": "9d78de4e5b12fc166bed811cd230621ea1e1e353553fe31b92a73bfbf45d68ee",
+      "elapsedMs": 2.0869999999995343,
+      "outcome": "resource-limit",
+      "unprovenFactsPublished": false
+    },
+    {
+      "id": "syntax-nodes",
+      "sourceBytes": 200027,
+      "inputHash": "5eae9de333aea59b42c9fd0de746586615333249e3cd3c2491a9301d6456d302",
+      "elapsedMs": 279.7471000000005,
+      "outcome": "resource-limit",
+      "unprovenFactsPublished": false
+    },
+    {
+      "id": "facts",
+      "sourceBytes": 388918,
+      "inputHash": "c6df68448c392336a49f54e4223f8bfde14653a0c380997894a816fdff7fd417",
+      "elapsedMs": 2002.9979999999996,
+      "outcome": "resource-limit",
+      "unprovenFactsPublished": false
+    }
+  ],
+  "recovery": true,
+  "workerMemoryLimitBytes": 536870912,
+  "oldSpaceMiB": 128,
+  "limitations": [
+    "worker peak commit measurement and full IPC/OOM fault matrix remain separate gates"
+  ]
+}
